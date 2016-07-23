@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window id="104">
+    <defaultcontrol always="true">-</defaultcontrol>
+	
+    <controls>
+	
+        <control type="group">
+            <posx>1260</posx>
+            <posy>30</posy>
+			
+            <control type="image">
+                <description>background image</description>
+                <width>600</width>
+                <height>75</height>
+                <include>Common_Color_BaseWhite</include>
+            </control>
+			
+			<control type="image">
+				<width>75</width>
+				<height>75</height>
+				<include>Common_Color_Accent</include>
+			</control>
+
+			<control type="group">
+                <visible>!player.passthrough</visible>
+		
+				<control type="image">
+                    <include>InfoDialog_Volume_Icon</include>
+                </control>
+				
+				<control type="label">
+                    <posx>90</posx>
+                    <include>InfoDialog_Volume_Label</include>
+                    <label>$LOCALIZE[13376]$INFO[Player.Volume,  ,]</label>
+                </control>
+				
+				<control type="label">
+					<posx>580</posx>
+					<width>100</width>
+					<include>InfoDialog_Volume_Label</include>
+					<align>right</align>
+                    <label>$INFO[Control.GetLabel(1),, %]</label>
+                </control>
+				
+                <control type="progress" id="1">
+                    <description>progress control</description>
+                    <posx>90</posx>
+                    <posy>50</posy>
+                    <width>490</width>
+                    <height>10</height>
+                    <info>Player.Volume</info>
+                </control>
+				
+            </control>
+			
+            <control type="group">			
+                <visible>player.passthrough</visible>
+				
+                <control type="image">
+                    <include>InfoDialog_Volume_Icon</include>
+                    <colordiffuse>Red</colordiffuse>
+                </control>
+				
+                <control type="label">
+                    <description>Passthrough Label</description>
+                    <posx>75</posx>
+                    <posy>15</posy>
+                    <width>495</width>
+                    <height>30</height>
+                    <label>29802</label>
+                </control>
+				
+            </control>
+			
+        </control>
+		
+    </controls>
+	
+</window>

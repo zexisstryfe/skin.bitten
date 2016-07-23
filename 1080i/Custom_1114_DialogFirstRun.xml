@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window type="dialog" id="1114">
+    <defaultcontrol always="true">10</defaultcontrol>
+	
+    <controls>
+        <include>DialogOverlay</include>
+		
+        <control type="group">
+            <posx>0</posx>
+            <posy>285</posy>
+            <include>InfoDialog_Base</include>
+
+			<control type="group">	
+				<posy>75</posy>
+				<width>1920</width>
+				<height>375</height>
+
+				<include>Common_Logo_Backing</include>
+				
+			</control>	
+			
+            <control type="grouplist">
+                <posx>285</posx>
+                <width>1350</width>
+                <itemgap>30</itemgap>
+                <orientation>vertical</orientation>
+				
+                <control type="label" id="1">
+                    <description>Heading</description>
+                    <label>31199</label>
+                    <posx>300</posx>
+					<width>885</width>
+					<height>75</height>
+					<font>font45R</font>
+					<textcolor>$VAR[Accent_100]</textcolor>
+                </control>
+				
+                <control type="label" id="2">
+                    <description>Line 1</description>
+                    <include>FirstRun_Labels</include>
+                    <label>31200</label>
+                    <textcolor>$VAR[Accent_100]</textcolor>
+                </control>
+				
+                <control type="label" id="3">
+                    <description>Line 2</description>
+                    <include>FirstRun_Labels</include>
+                    <label>31201</label>
+                    <textcolor>$VAR[Accent_100]</textcolor>
+                </control>
+				
+                <control type="label" id="4">
+                    <description>Line 3</description>
+                    <label>31202</label>
+                    <include>FirstRun_Labels</include>
+                </control>
+				
+            </control>
+			
+ 			<control type="grouplist">			
+				<posx>580</posx>
+				<posy>360</posy>
+				<width>760</width>
+				<itemgap>20</itemgap>
+				<orientation>horizontal</orientation>
+				<align>center</align>
+				
+                <control type="button" id="10">
+                    <description>Yes</description>
+                    <onclick>Skin.SetBool(FirstTimeRun)</onclick>
+                    <onclick>Dialog.Close(1114)</onclick>
+					<label>186</label>
+                    <include>InfoDialog_Button</include>
+                </control>
+				
+            </control>
+			
+        </control>
+		
+    </controls>
+	
+</window>

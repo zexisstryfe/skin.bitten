@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window id="123">
+    <defaultcontrol always="true">5</defaultcontrol>
+	
+    <controls>
+        <include>DialogOverlay</include>
+		<include>Common_LeftMenu_Mid_Backing</include>			
+		<include>Common_LeftBar_Mid_LeftMenu</include>
+		
+        <control type="group">
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="500" delay="700" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="200" />
+			</animation>
+
+            <control type="label" id="2">
+                <description>header label</description>
+                <posx>15</posx>
+                <width>660</width>
+                <include>InfoDialog_Heading</include>
+            </control>
+
+            <control type="grouplist" id="5">
+                <description>Control Area</description>
+                <posy>105</posy>
+                <height>920</height>
+                <width>690</width>
+                <onup>28</onup>
+                <ondown>28</ondown>
+            </control>
+			
+            <control type="button" id="7">
+                <description>button</description>
+				<include>InfoDialog_Label</include>
+            </control>
+			
+            <control type="radiobutton" id="8">
+                <description>radio_button</description>
+				<include>InfoDialog_Label</include>
+			</control>
+			
+            <control type="spincontrolex" id="9">
+                <description>spin_controlex</description>
+				<include>InfoDialog_Label</include>
+            </control>
+			
+            <control type="sliderex" id="13">
+                <description>Default Slider</description>
+                <include>InfoDialog_Label</include>
+				<texturesliderbar colordiffuse="BaseMid">OSD/slider_bg.png</texturesliderbar>
+			</control>
+			
+        </control>
+		
+    </controls>
+	
+</window>

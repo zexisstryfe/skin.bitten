@@ -1,0 +1,2418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<includes>
+
+    <include name="RCB_Context_Button">
+        <width>525</width>
+        <align>center</align>
+        <height>60</height>
+		<textcolor>BaseMediumHigh</textcolor>
+		<focusedcolor>TrueWhite</focusedcolor>		
+    </include>
+	
+	<include name="RCB_Import_Label1">
+		<posx>10</posx>
+		<width>300</width>
+		<height>60</height>
+		<font>font30R</font>	
+    </include>
+
+	<include name="RCB_Import_Label2">
+		<posx>360</posx>
+		<width>500</width>
+		<height>60</height>
+		<align>right</align>
+		<font>font30R</font>
+    </include>	
+
+	<include name="RCB_Import_Label3">
+		<posx>360</posx>
+		<width>380</width>
+		<height>60</height>
+		<align>right</align>
+		<font>font30R</font>	
+    </include>
+
+	<include name="RCB_Import_List1">
+		<width>960</width>
+		<height>60</height>	
+		<scrolltime>0</scrolltime>
+		<itemlayout height="60" width="960"></itemlayout>
+	</include>	
+
+	<include name="RCB_Import_List2">
+		<width>840</width>
+		<height>60</height>
+		<enable>false</enable>
+		<scrolltime>0</scrolltime>
+		<itemlayout height="60" width="840"></itemlayout>
+	</include>	
+
+	<include name="RCB_EditRC_Label1">
+		<posx>10</posx>
+		<width>300</width>
+		<height>60</height>
+		<font>font30R</font>	
+    </include>
+
+	<include name="RCB_EditRC_Label2">
+		<posx>360</posx>
+		<width>600</width>
+		<height>60</height>
+		<align>right</align>
+		<font>font30R</font>
+    </include>	
+
+    <include name="RCB_EditRC_RightButton">
+        <posx>360</posx>
+        <width>710</width>
+        <height>60</height>
+        <texturefocus>-</texturefocus>
+        <align>right</align>
+		<textcolor>BaseMediumHigh</textcolor>
+    </include>	
+
+    <include name="RCB_EditRC_RadioButton">
+        <width>1060</width>
+        <height>60</height>
+        <texturefocus colordiffuse="$VAR[Accent_100]">colors/color_white.png</texturefocus>
+        <align>left</align>
+        <textoffsetx>10</textoffsetx>
+		<textcolor>BaseMediumHigh</textcolor>
+    </include>
+
+	<include name="RCB_EditRC_List">
+		<width>1060</width>
+		<height>60</height>	
+		<scrolltime>0</scrolltime>
+		<itemlayout height="60" width="1060"></itemlayout>
+	</include>
+	
+    <include name="RCB_ArrowUp_Button">
+        <width>30</width>
+        <height>30</height>
+        <texturenofocus colordiffuse="BaseMediumHigh">controls/ArrowUpNF.png</texturenofocus>
+        <texturefocus>controls/ArrowUpFO.png</texturefocus>
+    </include>
+
+    <include name="RCB_ArrowDown_Button">
+        <width>30</width>
+        <height>30</height>
+        <texturenofocus colordiffuse="BaseMediumHigh">controls/ArrowDownNF.png</texturenofocus>
+        <texturefocus>controls/ArrowDownFO.png</texturefocus>
+    </include>
+
+    <include name="RCB_MissingInfo_GrayButton">
+        <posx>22</posx>
+        <textcolor>BaseMediumHigh</textcolor>
+        <focusedcolor>TrueWhite</focusedcolor>
+        <disabledcolor>80FFFFFF</disabledcolor>
+        <width>1100</width>
+        <height>60</height>
+    </include>
+
+	<include name="RCB_TopBlade">
+
+        <control type="group" id="100">
+            <animation effect="slide" start="0,0" end="0,0" delay="0" time="400" tween="quadratic" easing="out" condition="ControlGroup(100).HasFocus">Conditional</animation>
+            <animation effect="slide" start="0,0" end="0,-300" delay="0" time="400" tween="quadratic" easing="out" condition="!ControlGroup(100).HasFocus">Conditional</animation>
+
+            <control type="image">
+                <width>1920</width>
+                <height>260</height>
+                <include>Common_Color_BaseWhite</include>
+            </control>
+
+            <control type="image">
+                <posx>350</posx>
+                <posy>10</posy>
+                <width>2</width>
+                <height>240</height>
+                <include>Common_Color_BaseMediumHigh</include>
+            </control>
+			
+			<control type="image">
+				<posx>352</posx>
+				<posy>50</posy>
+				<width>1900</width>
+				<height>200</height>
+				<include>Common_Color_BaseLow</include>
+			</control>
+			
+            <control type="radiobutton" id="1000">
+                <posy>70</posy>
+                <width>350</width>
+                <height>60</height>
+                <label>$ADDON[script.games.rom.collection.browser 50004]:</label>
+                <texturefocus colordiffuse="$VAR[Accent_100]">colors/color_white.png</texturefocus>
+                <align>left</align>
+                <onleft>900</onleft>
+                <onright>500</onright>
+                <onup>50</onup>
+                <ondown>1100</ondown>
+				<font>font30R</font>
+				<textcolor>BaseMediumHigh</textcolor>
+            </control>
+			
+            <control type="button" id="1100">
+                <posy>130</posy>
+                <width>350</width>
+                <height>60</height>
+                <texturefocus colordiffuse="$VAR[Accent_100]">colors/color_white.png</texturefocus>
+                <label>$ADDON[script.games.rom.collection.browser 50005]:</label>
+                <disabledcolor>BaseLow</disabledcolor>
+                <align>left</align>
+                <onup>1000</onup>
+                <ondown>50</ondown>
+                <onleft>900</onleft>
+                <onright>500</onright>
+				<font>font30R</font>
+				<textcolor>BaseMediumHigh</textcolor>
+				</control>
+
+            <control type="group">
+                <posx>352</posx>
+				
+                <!-- Console filter -->
+				<control type="group">
+
+					<control type="label">
+						<width>311</width>
+						<height>45</height>
+						<align>center</align>
+						<textcolor>$VAR[Accent_100]</textcolor>
+						<font>font30B</font>
+						<label>$ADDON[script.games.rom.collection.browser 50006]</label>
+					</control>
+					
+					<control type="wraplist" id="500">
+						<posy>50</posy>
+						<width>311</width>
+						<height>200</height>
+						<onleft>1000</onleft>
+						<onright>600</onright>
+						<focusposition>1</focusposition>
+						<itemlayout height="45">
+						
+							<control type="label">
+								<posx>10</posx>
+								<width>291</width>
+								<height>45</height>
+								<font>font26R</font>
+								<info>ListItem.Label</info>
+								<textcolor>BaseMediumHigh</textcolor>
+							</control>
+							
+						</itemlayout>
+						
+						<focusedlayout height="45">
+						
+							<control type="image">
+								<width>311</width>
+								<height>45</height>
+								<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(500)">Conditional</animation>
+								<include>Common_Color_Accent</include>
+							</control>
+							
+							<control type="label">
+								<posx>10</posx>
+								<width>291</width>
+								<height>45</height>
+								<font>font26R</font>
+								<info>ListItem.Label</info>
+							</control>
+							
+						</focusedlayout>
+						
+					</control>
+
+				</control>
+				
+                <!-- Genre filter -->
+				<control type="image">
+					<posx>311</posx>
+					<include>RCB_Divider</include>
+				</control>				
+
+				<control type="group">
+					<posx>314</posx>
+				
+					<control type="label">
+						<width>311</width>
+						<height>45</height>
+						<align>center</align>
+						<textcolor>$VAR[Accent_100]</textcolor>
+						<font>font30B</font>
+						<label>$ADDON[script.games.rom.collection.browser 50001]</label>
+					</control>
+					
+					<control type="wraplist" id="600">
+						<posy>50</posy>
+						<width>311</width>
+						<height>200</height>
+						<onleft>500</onleft>
+						<onright>700</onright>
+						<focusposition>1</focusposition>
+						<itemlayout height="45">
+						
+							<control type="label">
+								<posx>10</posx>
+								<width>291</width>
+								<height>45</height>
+								<font>font26R</font>
+								<info>ListItem.Label</info>
+								<textcolor>BaseMediumHigh</textcolor>
+							</control>
+							
+						</itemlayout>
+						
+						<focusedlayout height="45">
+						
+							<control type="image">
+								<width>311</width>
+								<height>45</height>
+								<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(600)">Conditional</animation>
+								<include>Common_Color_Accent</include>
+							</control>
+							
+							<control type="label">
+								<posx>10</posx>
+								<width>291</width>
+								<height>45</height>
+								<font>font26R</font>
+								<info>ListItem.Label</info>
+							</control>
+							
+						</focusedlayout>
+						
+					</control>
+
+				</control>
+				
+                <!-- Year filter -->
+				<control type="image">
+					<posx>625</posx>
+					<include>RCB_Divider</include>
+				</control>
+
+				<control type="group">
+					<posx>628</posx>
+
+					<control type="label">
+						<description>Year</description>
+						<width>311</width>
+						<height>45</height>
+						<align>center</align>
+						<textcolor>$VAR[Accent_100]</textcolor>
+						<font>font30B</font>
+						<label>$ADDON[script.games.rom.collection.browser 50000]</label>
+					</control>
+
+					<control type="wraplist" id="700">
+						<posy>50</posy>
+						<width>311</width>
+						<height>200</height>
+						<onleft>600</onleft>
+						<onright>800</onright>
+						<viewtype label="$LOCALIZE[345]">wrap</viewtype>
+						<focusposition>1</focusposition>
+						<scrolltime>200</scrolltime>
+						<itemlayout height="45">
+						
+							<control type="label">
+								<posx>10</posx>
+								<width>291</width>
+								<height>45</height>
+								<font>font26R</font>
+								<info>ListItem.Label</info>
+								<textcolor>BaseMediumHigh</textcolor>
+							</control>
+							
+						</itemlayout>
+						
+						<focusedlayout height="45">
+						
+							<control type="image">
+								<width>311</width>
+								<height>45</height>
+								<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(700)">Conditional</animation>
+								<include>Common_Color_Accent</include>
+							</control>
+							
+							<control type="label">
+								<posx>10</posx>
+								<width>291</width>
+								<height>45</height>
+								<font>font26R</font>
+								<info>ListItem.Label</info>
+							</control>
+							
+						</focusedlayout>
+						
+					</control>
+					
+				</control>
+				
+                <!-- Publisher filter -->
+				<control type="image">
+					<posx>939</posx>
+					<include>RCB_Divider</include>
+				</control>
+
+				<control type="group">
+					<posx>942</posx>
+							
+					<control type="label">
+						<width>311</width>
+						<height>45</height>
+						<align>center</align>
+						<textcolor>$VAR[Accent_100]</textcolor>
+						<font>font30B</font>
+						<label>$ADDON[script.games.rom.collection.browser 50002]</label>
+					</control>
+
+					<control type="wraplist" id="800">
+						<posy>50</posy>
+						<width>311</width>
+						<height>200</height>
+						<onleft>700</onleft>
+						<onright>900</onright>
+						<focusposition>1</focusposition>
+						<itemlayout height="45">
+						
+							<control type="label">
+								<posx>10</posx>
+								<width>291</width>
+								<height>45</height>
+								<font>font26R</font>
+								<info>ListItem.Label</info>
+								<textcolor>BaseMediumHigh</textcolor>
+							</control>
+							
+						</itemlayout>
+						
+						<focusedlayout height="45">
+						
+							<control type="image">
+								<width>311</width>
+								<height>45</height>
+								<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(800)">Conditional</animation>
+								<include>Common_Color_Accent</include>
+							</control>
+							
+							<control type="label">
+								<posx>10</posx>
+								<width>291</width>
+								<height>45</height>
+								<font>font26R</font>
+								<info>ListItem.Label</info>
+							</control>
+							
+						</focusedlayout>
+						
+					</control>
+				
+				</control>
+				
+                <!-- Character filter -->
+				<control type="image">
+					<posx>1253</posx>
+					<include>RCB_Divider</include>
+				</control>
+
+				<control type="group">
+					<posx>1256</posx>
+										
+					<control type="label">
+						<width>312</width>
+						<height>45</height>
+						<align>center</align>
+						<textcolor>$VAR[Accent_100]</textcolor>
+						<font>font30B</font>
+						<label>$ADDON[script.games.rom.collection.browser 50007]</label>
+					</control>
+					
+					<control type="wraplist" id="900">
+						<posy>50</posy>
+						<width>312</width>
+						<height>200</height>
+						<onleft>800</onleft>
+						<onright>1000</onright>
+						<focusposition>1</focusposition>
+						<itemlayout height="45">
+						
+							<control type="label">
+								<posx>10</posx>
+								<width>291</width>
+								<height>45</height>
+								<font>font26R</font>
+								<info>ListItem.Label</info>
+								<textcolor>BaseMediumHigh</textcolor>
+							</control>
+							
+						</itemlayout>
+						
+						<focusedlayout height="45">
+						
+							<control type="image">
+								<width>312</width>
+								<height>45</height>
+								<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(900)">Conditional</animation>
+								<include>Common_Color_Accent</include>
+							</control>
+							
+							<control type="label">
+								<posx>10</posx>
+								<width>291</width>
+								<height>45</height>
+								<font>font26R</font>
+								<info>ListItem.Label</info>
+							</control>
+							
+						</focusedlayout>
+						
+					</control>
+					
+				</control>
+			
+			</control>
+			
+        </control>
+
+	</include>
+
+	<include name="RCB_Divider">		
+		<width>3</width>
+		<posy>60</posy>
+		<height>180</height>
+		<include>Common_Color_BaseMediumHigh</include>					
+	</include>
+
+	<include name="RCB_Busy">		
+
+		<control type="group">
+            <visible>!IsEmpty(Control.GetLabel(4000))</visible>
+            <include>DialogOverlay</include>
+			
+            <control type="group">
+                <posx>735</posx>
+                <posy>486</posy>
+                <include>Animation_Dialog_Center</include>
+				
+                <control type="image">
+                    <description>background image</description>
+                    <width>450</width>
+                    <height>117</height>
+                    <include>Common_Color_Accent</include>
+                </control>
+				
+                <control type="image">
+                    <description>Busy animation</description>
+                    <posx>30</posx>
+                    <posy>30</posy>
+                    <width>48</width>
+                    <height>48</height>
+                    <texture>busy/busy.png</texture>
+                    <aspectratio>scale</aspectratio>
+                    <animation effect="rotate" start="0" end="360" center="54,54" time="1200" loop="true" condition="true">conditional</animation>
+                </control>
+				
+                <control type="label" id="4000">
+                    <description>Notes</description>
+                    <posx>105</posx>
+                    <posy>30</posy>
+                    <width>420</width>
+                    <height>48</height>
+					<font>font30R</font>
+                </control>
+				
+            </control>
+			
+        </control>	
+		
+	</include>
+	
+	<include name="TVGuide_Sidebars">
+		
+		<control type="image">
+			<animation type="WindowOpen">
+				<effect type="slide" start="-500,0" end="0,0" center="auto" time="400" delay="200" tween="cubic" easing="out" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="slide" start="0,0" end="-500,0" center="auto" time="400" delay="700" tween="cubic" easing="out" />
+			</animation>			
+			<description>White Backing</description>
+			<width>500</width>7
+			<height>1080</height>
+			<visible>true</visible>
+			<texture border="2" colordiffuse="TrueWhite">colors/color_white.png</texture>
+		</control>	
+		
+		<include>Common_LeftBar</include>
+					
+	</include>
+
+    <include name="TVGuide_FixedList">
+		<onleft>50</onleft>
+		<onup>Control.Move(50,-1)</onup>
+		<onup>SetFocus(50)</onup>
+		<ondown>Control.Move(50,1)</ondown>
+		<ondown>SetFocus(50)</ondown>
+        <posx>85</posx>
+        <posy>315</posy>
+        <width>1500</width>
+        <height>825</height>
+        <viewtype label="$LOCALIZE[31368]">wrap</viewtype>
+        <orientation>horizontal</orientation>
+        <pagecontrol>63</pagecontrol>
+        <focusposition>0</focusposition>
+        <preloaditems>2</preloaditems>
+        <itemlayout width="330" height="472">
+		
+			<control type="image">
+				<width>320</width>
+				<height>472</height>
+				<include>Common_Color_BaseMediumHigh</include>
+			</control>
+			
+			<control type="image">
+				<description>Logo</description>
+				<posy>12</posy>
+				<width>320</width>
+				<height>90</height>
+				<aspectratio aligny="top">keep</aspectratio>
+				<texture background="true">$VAR[Common_Logo]</texture>
+			</control>
+			
+			<control type="textbox">
+				<posx>15</posx>
+				<posy>112</posy>
+				<width>290</width>
+				<height>90</height>
+				<label>$INFO[ListItem.Property(NextTitle)]</label>
+				<font>font24B</font>
+				<align>center</align>
+				<autoscroll>true</autoscroll>
+			</control>
+			
+			<control type="textbox">
+				<posx>15</posx>
+				<posy>202</posy>
+				<width>290</width>
+				<height>30</height>
+				<label>$INFO[ListItem.Property(ShortTime)]</label>
+				<font>font24R</font>
+				<align>center</align>
+			</control>
+			
+			<control type="image">
+				<description>Thumb</description>
+				<posy>240</posy>
+				<width>320</width>
+				<height>232</height>
+				<aspectratio aligny="top">scale</aspectratio>
+				<texture background="true">$INFO[ListItem.Property(Fanart)]</texture>
+			</control>
+			
+        </itemlayout>
+		
+        <focusedlayout width="330" height="472">
+
+            <control type="group">
+                <visible>Control.HasFocus(207)</visible>
+				
+				<control type="image">
+					<width>320</width>
+					<height>472</height>
+					<include>Common_Color_Accent</include>
+					<animation effect="fade" start="100" end="50" condition="!Control.HasFocus($PARAM[control])">Conditional</animation>
+				</control>
+				
+				<control type="image">
+					<description>Logo</description>
+					<posy>12</posy>
+					<width>320</width>
+					<height>90</height>
+					<aspectratio aligny="top">keep</aspectratio>
+					<texture background="true">$VAR[Common_Logo]</texture>
+				</control>
+				
+				<control type="textbox">
+					<posx>15</posx>
+					<posy>112</posy>
+					<width>290</width>
+					<height>90</height>
+					<label>$INFO[ListItem.Property(NextTitle)]</label>
+					<font>font24B</font>
+					<align>center</align>
+					<autoscroll>true</autoscroll>
+				</control>
+				
+				<control type="textbox">
+					<posx>15</posx>
+					<posy>202</posy>
+					<width>290</width>
+					<height>30</height>
+					<label>$INFO[ListItem.Property(ShortTime)]</label>
+					<font>font24R</font>
+					<align>center</align>
+				</control>
+				
+				<control type="image">
+					<description>Thumb</description>
+					<posy>240</posy>
+					<width>320</width>
+					<height>232</height>
+					<aspectratio aligny="top">scale</aspectratio>
+					<texture background="true">$INFO[ListItem.Property(Fanart)]</texture>
+				</control>
+
+            </control>		
+
+            <control type="group">
+                <visible>!Control.HasFocus(207)</visible>
+			
+				<control type="image">
+					<width>320</width>
+					<height>472</height>
+					<include>Common_Color_Accent</include>
+					<animation effect="fade" start="100" end="50" condition="!Control.HasFocus($PARAM[control])">Conditional</animation>
+				</control>
+				
+				<control type="image">
+					<description>Logo</description>
+					<posy>12</posy>
+					<width>320</width>
+					<height>90</height>
+					<aspectratio aligny="top">keep</aspectratio>
+					<texture background="true">$VAR[Common_Logo]</texture>
+				</control>
+				
+				<control type="textbox">
+					<posx>15</posx>
+					<posy>112</posy>
+					<width>290</width>
+					<height>90</height>
+					<label>$INFO[ListItem.Property(NextTitle)]</label>
+					<font>font24B</font>
+					<align>center</align>
+					<autoscroll>true</autoscroll>
+				</control>
+				
+				<control type="textbox">
+					<posx>15</posx>
+					<posy>202</posy>
+					<width>290</width>
+					<height>30</height>
+					<label>$INFO[ListItem.Property(ShortTime)]</label>
+					<font>font24R</font>
+					<align>center</align>
+				</control>
+				
+				<control type="image">
+					<description>Thumb</description>
+					<posy>240</posy>
+					<width>320</width>
+					<height>232</height>
+					<aspectratio aligny="top">scale</aspectratio>
+					<texture background="true">$INFO[ListItem.Property(Fanart)]</texture>
+				</control>
+			
+			</control>
+
+        </focusedlayout>
+		
+    </include>
+
+	<include name="HiddenCast">
+
+		<control type="list" id="50">
+			<left>-100</left>
+			<top>-100</top>
+			<width>100</width>
+			<height>100</height>
+			<itemlayout height="100" width="100" />
+			<focusedlayout height="100" width="100" />
+		</control>
+
+	</include>
+
+    <include name="VideoInfo_DefaultCast">
+
+		<control type="group"> 
+			<posy>600</posy>
+			<width>1070</width>	
+			<height>360</height>
+            <visible>!StringCompare(Container(50).NumItems,0)</visible>	
+
+			<control type="label">
+				<textcolor>$VAR[Accent_100]</textcolor>
+				<font>font26B</font>
+				<width>200</width>
+				<height>40</height>
+				<label>$LOCALIZE[344]</label>
+			</control>
+
+			<control type="fixedlist" id="50">
+				<description>Cast</description>
+				<posy>40</posy>
+				<width>1080</width>
+				<height>320</height>
+				<onup>9221</onup>
+				<ondown>9221</ondown>
+				<orientation>horizontal</orientation>
+				<pagecontrol>79</pagecontrol>
+				<scrolltime>200</scrolltime>
+				<itemlayout height="320" width="260">
+				
+					<control type="image">
+						<width>240</width>
+						<height>320</height>
+						<include>Common_Color_TrueWhite</include>
+					</control>
+					
+					<control type="image">
+						<width>240</width>
+						<height>240</height>
+						<texture border="2" colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
+					</control>
+					
+					<control type="image">
+						<description>Actor Image</description>
+						<width>240</width>
+						<height>240</height>
+						<texture fallback="DefaultActor.png">$INFO[ListItem.Icon]</texture>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+					</control>
+					
+					<control type="label">
+						<posy>240</posy>
+						<posx>10</posx>
+						<height>40</height>
+						<width>220</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Label]</label>
+						<font>font26B</font>
+						<textcolor>BaseMediumHigh</textcolor>
+					</control>
+					
+					<control type="label">
+						<posy>280</posy>
+						<posx>10</posx>
+						<height>40</height>
+						<width>220</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Label2]</label>
+						<font>font24R</font>
+						<textcolor>BaseMid</textcolor>
+					</control>
+					
+				</itemlayout>
+				
+				<focusedlayout height="320" width="260">
+				
+					<control type="image">
+						<width>240</width>
+						<height>320</height>
+						<include>Common_Color_TrueWhite</include>
+					</control>
+					
+					<control type="image">
+						<width>240</width>
+						<height>320</height>
+						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(50)">Conditional</animation>
+						<include>Common_Color_Accent</include>
+					</control>
+					
+					<control type="image">
+						<width>240</width>
+						<height>240</height>
+						<texture border="2" colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
+					</control>
+					
+					<control type="image">
+						<description>Actor Image</description>
+						<width>240</width>
+						<height>240</height>
+						<texture fallback="DefaultActor.png">$INFO[ListItem.Icon]</texture>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+					</control>
+					
+					<control type="label">
+						<posy>240</posy>
+						<posx>10</posx>
+						<height>40</height>
+						<width>220</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Label]</label>
+						<font>font26B</font>
+					</control>
+					
+					<control type="label">
+						<posy>280</posy>
+						<posx>10</posx>
+						<height>40</height>
+						<width>220</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Label2]</label>
+						<font>font24R</font>
+					</control>
+					
+				</focusedlayout>
+				
+			</control>
+
+		</control>
+
+    </include>
+
+    <include name="VideoInfo_ExtendedCast">
+
+		<control type="group"> 
+			<posy>600</posy>
+			<width>1070</width>	
+			<height>360</height>
+
+			<control type="label">
+				<textcolor>$VAR[Accent_100]</textcolor>
+				<font>font26B</font>
+				<width>200</width>
+				<height>40</height>
+				<label>$LOCALIZE[344]</label>
+			</control>
+
+			<control type="fixedlist" id="90019">
+				<description>Extended Cast</description>
+				<posy>40</posy>
+				<width>1080</width>
+				<height>320</height>
+				<onleft>90019</onleft>
+				<onright>90019</onright>
+				<onup>9221</onup>
+				<ondown>90011</ondown>
+				<orientation>horizontal</orientation>
+				<scrolltime>200</scrolltime>
+				<itemlayout height="320" width="260">
+				
+					<control type="image">
+						<width>240</width>
+						<height>320</height>
+						<include>Common_Color_TrueWhite</include>
+					</control>
+					
+					<control type="image">
+						<width>240</width>
+						<height>240</height>
+						<texture border="2" colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
+					</control>
+					
+					<control type="image">
+						<description>Actor Image</description>
+						<width>240</width>
+						<height>240</height>
+						<texture fallback="DefaultActor.png">$INFO[ListItem.Icon]</texture>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+					</control>
+					
+					<control type="label">
+						<posy>240</posy>
+						<posx>10</posx>
+						<height>40</height>
+						<width>220</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Label]</label>
+						<font>font26B</font>
+						<textcolor>BaseMediumHigh</textcolor>
+					</control>
+					
+					<control type="label">
+						<posy>280</posy>
+						<posx>10</posx>
+						<height>40</height>
+						<width>220</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Label2]</label>
+						<font>font24R</font>
+						<textcolor>BaseMid</textcolor>
+					</control>
+					
+				</itemlayout>
+				
+				<focusedlayout height="320" width="260">
+				
+					<control type="image">
+						<width>240</width>
+						<height>320</height>
+						<include>Common_Color_TrueWhite</include>
+					</control>
+					
+					<control type="image">
+						<width>240</width>
+						<height>320</height>
+						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(90019)">Conditional</animation>
+						<include>Common_Color_Accent</include>
+					</control>
+					
+					<control type="image">
+						<width>240</width>
+						<height>240</height>
+						<texture border="2" colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
+					</control>
+					
+					<control type="image">
+						<description>Actor Image</description>
+						<width>240</width>
+						<height>240</height>
+						<texture fallback="DefaultActor.png">$INFO[ListItem.Icon]</texture>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+					</control>
+					
+					<control type="label">
+						<posy>240</posy>
+						<posx>10</posx>
+						<height>40</height>
+						<width>220</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Label]</label>
+						<font>font26B</font>
+					</control>
+					
+					<control type="label">
+						<posy>280</posy>
+						<posx>10</posx>
+						<height>40</height>
+						<width>220</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Label2]</label>
+						<font>font24R</font>
+					</control>
+					
+				</focusedlayout>
+
+				<content>
+					<item>
+						<label>$INFO[Container(50).ListItemAbsolute(0).Label]</label>
+						<label2>$INFO[Container(50).ListItemAbsolute(0).Label2]</label2>
+						<icon>$INFO[Container(50).ListItemAbsolute(0).Icon]</icon>
+						<onclick>SetProperty(ActorID,0)</onclick>
+						<onclick>SetProperty(ActorName,$INFO[Container(50).ListItemAbsolute(0).Label])</onclick>
+						<onclick>ActivateWindow(1111)</onclick>
+						<visible>!IsEmpty(Container(50).ListItemAbsolute(0).Label)</visible>
+					</item>
+					<item>
+						<label>$INFO[Container(50).ListItemAbsolute(1).Label]</label>
+						<label2>$INFO[Container(50).ListItemAbsolute(1).Label2]</label2>
+						<icon>$INFO[Container(50).ListItemAbsolute(1).Icon]</icon>
+						<onclick>SetProperty(ActorID,1)</onclick>
+						<onclick>SetProperty(ActorName,$INFO[Container(50).ListItemAbsolute(1).Label])</onclick>
+						<onclick>ActivateWindow(1111)</onclick>
+						<visible>!IsEmpty(Container(50).ListItemAbsolute(1).Label)</visible>
+					</item>
+					<item>
+						<label>$INFO[Container(50).ListItemAbsolute(2).Label]</label>
+						<label2>$INFO[Container(50).ListItemAbsolute(2).Label2]</label2>
+						<icon>$INFO[Container(50).ListItemAbsolute(2).Icon]</icon>
+						<onclick>SetProperty(ActorID,2)</onclick>
+						<onclick>SetProperty(ActorName,$INFO[Container(50).ListItemAbsolute(2).Label])</onclick>
+						<onclick>ActivateWindow(1111)</onclick>
+						<visible>!IsEmpty(Container(50).ListItemAbsolute(2).Label)</visible>
+					</item>
+					<item>
+						<label>$INFO[Container(50).ListItemAbsolute(3).Label]</label>
+						<label2>$INFO[Container(50).ListItemAbsolute(3).Label2]</label2>
+						<icon>$INFO[Container(50).ListItemAbsolute(3).Icon]</icon>
+						<onclick>SetProperty(ActorID,3)</onclick>
+						<onclick>SetProperty(ActorName,$INFO[Container(50).ListItemAbsolute(3).Label])</onclick>
+						<onclick>ActivateWindow(1111)</onclick>
+						<visible>!IsEmpty(Container(50).ListItemAbsolute(3).Label)</visible>
+					</item>
+					<item>
+						<label>$INFO[Container(50).ListItemAbsolute(4).Label]</label>
+						<label2>$INFO[Container(50).ListItemAbsolute(4).Label2]</label2>
+						<icon>$INFO[Container(50).ListItemAbsolute(4).Icon]</icon>
+						<onclick>SetProperty(ActorID,4)</onclick>
+						<onclick>SetProperty(ActorName,$INFO[Container(50).ListItemAbsolute(4).Label])</onclick>
+						<onclick>ActivateWindow(1111)</onclick>
+						<visible>!IsEmpty(Container(50).ListItemAbsolute(4).Label)</visible>
+					</item>
+					<item>
+						<label>$INFO[Container(50).ListItemAbsolute(5).Label]</label>
+						<label2>$INFO[Container(50).ListItemAbsolute(5).Label2]</label2>
+						<icon>$INFO[Container(50).ListItemAbsolute(5).Icon]</icon>
+						<onclick>SetProperty(ActorID,5)</onclick>
+						<onclick>SetProperty(ActorName,$INFO[Container(50).ListItemAbsolute(5).Label])</onclick>
+						<onclick>ActivateWindow(1111)</onclick>
+						<visible>!IsEmpty(Container(50).ListItemAbsolute(5).Label)</visible>
+					</item>
+					<item>
+						<label>$INFO[Container(50).ListItemAbsolute(6).Label]</label>
+						<label2>$INFO[Container(50).ListItemAbsolute(6).Label2]</label2>
+						<icon>$INFO[Container(50).ListItemAbsolute(6).Icon]</icon>
+						<onclick>SetProperty(ActorID,6)</onclick>
+						<onclick>SetProperty(ActorName,$INFO[Container(50).ListItemAbsolute(6).Label])</onclick>
+						<onclick>ActivateWindow(1111)</onclick>
+						<visible>!IsEmpty(Container(50).ListItemAbsolute(6).Label)</visible>
+					</item>
+					<item>
+						<label>$INFO[Container(50).ListItemAbsolute(7).Label]</label>
+						<label2>$INFO[Container(50).ListItemAbsolute(7).Label2]</label2>
+						<icon>$INFO[Container(50).ListItemAbsolute(7).Icon]</icon>
+						<onclick>SetProperty(ActorID,7)</onclick>
+						<onclick>SetProperty(ActorName,$INFO[Container(50).ListItemAbsolute(7).Label])</onclick>
+						<onclick>ActivateWindow(1111)</onclick>
+						<visible>!IsEmpty(Container(50).ListItemAbsolute(7).Label)</visible>
+					</item>
+					<item>
+						<label>$INFO[Container(50).ListItemAbsolute(8).Label]</label>
+						<label2>$INFO[Container(50).ListItemAbsolute(8).Label2]</label2>
+						<icon>$INFO[Container(50).ListItemAbsolute(8).Icon]</icon>
+						<onclick>SetProperty(ActorID,8)</onclick>
+						<onclick>SetProperty(ActorName,$INFO[Container(50).ListItemAbsolute(8).Label])</onclick>
+						<onclick>ActivateWindow(1111)</onclick>
+						<visible>!IsEmpty(Container(50).ListItemAbsolute(8).Label)</visible>
+					</item>
+					<item>
+						<label>$INFO[Container(50).ListItemAbsolute(9).Label]</label>
+						<label2>$INFO[Container(50).ListItemAbsolute(9).Label2]</label2>
+						<icon>$INFO[Container(50).ListItemAbsolute(9).Icon]</icon>
+						<onclick>SetProperty(ActorID,9)</onclick>
+						<onclick>SetProperty(ActorName,$INFO[Container(50).ListItemAbsolute(9).Label])</onclick>
+						<onclick>ActivateWindow(1111)</onclick>
+						<visible>!IsEmpty(Container(50).ListItemAbsolute(9).Label)</visible>
+					</item>
+					<item>
+						<label>$INFO[Container(50).ListItemAbsolute(10).Label]</label>
+						<label2>$INFO[Container(50).ListItemAbsolute(10).Label2]</label2>
+						<icon>$INFO[Container(50).ListItemAbsolute(10).Icon]</icon>
+						<onclick>SetProperty(ActorID,10)</onclick>
+						<onclick>SetProperty(ActorName,$INFO[Container(50).ListItemAbsolute(10).Label])</onclick>
+						<onclick>ActivateWindow(1111)</onclick>
+						<visible>!IsEmpty(Container(50).ListItemAbsolute(10).Label)</visible>
+					</item>
+					<item>
+						<label>$INFO[Container(50).ListItemAbsolute(11).Label]</label>
+						<label2>$INFO[Container(50).ListItemAbsolute(11).Label2]</label2>
+						<icon>$INFO[Container(50).ListItemAbsolute(11).Icon]</icon>
+						<onclick>SetProperty(ActorID,11)</onclick>
+						<onclick>SetProperty(ActorName,$INFO[Container(50).ListItemAbsolute(11).Label])</onclick>
+						<onclick>ActivateWindow(1111)</onclick>
+						<visible>!IsEmpty(Container(50).ListItemAbsolute(11).Label)</visible>
+					</item>
+					<item>
+						<label>$INFO[Container(50).ListItemAbsolute(12).Label]</label>
+						<label2>$INFO[Container(50).ListItemAbsolute(12).Label2]</label2>
+						<icon>$INFO[Container(50).ListItemAbsolute(12).Icon]</icon>
+						<onclick>SetProperty(ActorID,12)</onclick>
+						<onclick>SetProperty(ActorName,$INFO[Container(50).ListItemAbsolute(12).Label])</onclick>
+						<onclick>ActivateWindow(1111)</onclick>
+						<visible>!IsEmpty(Container(50).ListItemAbsolute(12).Label)</visible>
+					</item>
+					<item>
+						<label>$INFO[Container(50).ListItemAbsolute(13).Label]</label>
+						<label2>$INFO[Container(50).ListItemAbsolute(13).Label2]</label2>
+						<icon>$INFO[Container(50).ListItemAbsolute(13).Icon]</icon>
+						<onclick>SetProperty(ActorID,13)</onclick>
+						<onclick>SetProperty(ActorName,$INFO[Container(50).ListItemAbsolute(13).Label])</onclick>
+						<onclick>ActivateWindow(1111)</onclick>
+						<visible>!IsEmpty(Container(50).ListItemAbsolute(13).Label)</visible>
+					</item>
+					<item>
+						<label>$INFO[Container(50).ListItemAbsolute(14).Label]</label>
+						<label2>$INFO[Container(50).ListItemAbsolute(14).Label2]</label2>
+						<icon>$INFO[Container(50).ListItemAbsolute(14).Icon]</icon>
+						<onclick>SetProperty(ActorID,14)</onclick>
+						<onclick>SetProperty(ActorName,$INFO[Container(50).ListItemAbsolute(14).Label])</onclick>
+						<onclick>ActivateWindow(1111)</onclick>
+						<visible>!IsEmpty(Container(50).ListItemAbsolute(14).Label)</visible>
+					</item>
+				</content>
+				
+			</control>
+
+		</control>
+
+	</include>   	
+
+    <include name="VideoInfo_ExtendedSimilarMovies">
+
+		<control type="group"> 
+			<posy>600</posy>
+			<width>1070</width>	
+			<height>360</height>
+			<visible>!StringCompare(Window(Home).Property(SimilarMovies.Count),0)</visible>
+			<visible>Container.Content(movies)</visible>
+
+			<control type="label">
+				<textcolor>$VAR[Accent_100]</textcolor>
+				<font>font26B</font>
+				<width>200</width>
+				<height>40</height>
+				<label>$LOCALIZE[31353]</label>
+			</control>
+
+			<control type="fixedlist" id="90011">
+				<description>Extended Cast</description>
+				<posy>40</posy>
+				<width>1080</width>
+				<height>320</height>
+				<onleft>90019</onleft>
+				<onright>90019</onright>
+				<onup>90019</onup>
+				<ondown>90012</ondown>				
+				<orientation>horizontal</orientation>
+				<scrolltime>200</scrolltime>
+				
+				<itemlayout height="320" width="234">
+				
+					<control type="image">
+						<width>214</width>
+						<height>320</height>
+						<include>Common_Color_TrueWhite</include>
+					</control>
+					
+					<control type="image">
+						<description>Movie Image</description>
+						<width>214</width>
+						<height>320</height>
+						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+					</control>
+					
+				</itemlayout>
+				
+				<focusedlayout height="320" width="234">
+				
+					<control type="image">
+						<width>214</width>
+						<height>320</height>
+						<include>Common_Color_TrueWhite</include>
+					</control>
+					
+					<control type="image">
+						<width>214</width>
+						<height>320</height>
+						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(90011)">Conditional</animation>
+						<include>Common_Color_Accent</include>
+					</control>
+					
+					<control type="image">
+						<description>Movie Image</description>
+						<width>214</width>
+						<height>320</height>
+						<bordersize>5</bordersize>
+						<bordertexture border="5" colordiffuse="$VAR[Accent_100]">colors/color_white.png</bordertexture>
+						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+					</control>
+					
+				</focusedlayout>
+
+				<content>plugin://script.extendedinfo?info=similarmovies&amp;&amp;id=$INFO[ListItem.DBID]</content>
+					
+			</control>
+
+		</control>
+
+	</include>   	
+
+    <include name="VideoInfo_ExtendedDirectorMovies">
+
+		<control type="group"> 
+			<posy>600</posy>
+			<width>1070</width>	
+			<height>360</height>
+			<visible>!StringCompare(Window(Home).Property(DirectorMovies.Count),0)</visible>
+			<visible>Container.Content(movies)</visible>
+
+			<control type="label">
+				<textcolor>$VAR[Accent_100]</textcolor>
+				<font>font26B</font>
+				<width>1000</width>
+				<height>40</height>
+				<label>$LOCALIZE[31354]</label>
+			</control>
+
+			<control type="fixedlist" id="90012">
+				<description>Director Movies</description>
+				<posy>40</posy>
+				<width>1080</width>
+				<height>320</height>
+				<onleft>90019</onleft>
+				<onright>90019</onright>
+				<onup>90011</onup>
+				<ondown>90013</ondown>				
+				<orientation>horizontal</orientation>
+				<scrolltime>200</scrolltime>
+				
+				<itemlayout height="320" width="234">
+				
+					<control type="image">
+						<width>214</width>
+						<height>320</height>
+						<include>Common_Color_TrueWhite</include>
+					</control>
+					
+					<control type="image">
+						<description>Movie Image</description>
+						<width>214</width>
+						<height>320</height>
+						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+					</control>
+					
+				</itemlayout>
+				
+				<focusedlayout height="320" width="234">
+				
+					<control type="image">
+						<width>214</width>
+						<height>320</height>
+						<include>Common_Color_TrueWhite</include>
+					</control>
+					
+					<control type="image">
+						<width>214</width>
+						<height>320</height>
+						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(90012)">Conditional</animation>
+						<include>Common_Color_Accent</include>
+					</control>
+					
+					<control type="image">
+						<description>Movie Image</description>
+						<width>214</width>
+						<height>320</height>
+						<bordersize>5</bordersize>
+						<bordertexture border="5" colordiffuse="$VAR[Accent_100]">colors/color_white.png</bordertexture>
+						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+					</control>
+					
+				</focusedlayout>
+
+				<content target="video">plugin://script.extendedinfo?info=directormovies&amp;&amp;director=$INFO[ListItem.Director]</content>
+					
+			</control>
+
+		</control>
+
+	</include>   	
+
+    <include name="VideoInfo_ExtendedWriterMovies">
+
+		<control type="group"> 
+			<posy>600</posy>
+			<width>1070</width>	
+			<height>360</height>
+			<visible>!StringCompare(Window(Home).Property(WriterMovies.Count),0)</visible>
+			<visible>Container.Content(movies)</visible>
+
+			<control type="label">
+				<textcolor>$VAR[Accent_100]</textcolor>
+				<font>font26B</font>
+				<width>1000</width>
+				<height>40</height>
+				<label>$LOCALIZE[31355]</label>
+			</control>
+
+			<control type="fixedlist" id="90013">
+				<description>Writer Movies</description>
+				<posy>40</posy>
+				<width>1080</width>
+				<height>320</height>
+				<onleft>90019</onleft>
+				<onright>90019</onright>
+				<onup>90012</onup>
+				<ondown>90014</ondown>				
+				<orientation>horizontal</orientation>
+				<scrolltime>200</scrolltime>
+				
+				<itemlayout height="320" width="234">
+				
+					<control type="image">
+						<width>214</width>
+						<height>320</height>
+						<include>Common_Color_TrueWhite</include>
+					</control>
+					
+					<control type="image">
+						<description>Movie Image</description>
+						<width>214</width>
+						<height>320</height>
+						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+					</control>
+					
+				</itemlayout>
+				
+				<focusedlayout height="320" width="234">
+				
+					<control type="image">
+						<width>214</width>
+						<height>320</height>
+						<include>Common_Color_TrueWhite</include>
+					</control>
+					
+					<control type="image">
+						<width>214</width>
+						<height>320</height>
+						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(90013)">Conditional</animation>
+						<include>Common_Color_Accent</include>
+					</control>
+					
+					<control type="image">
+						<description>Movie Image</description>
+						<width>214</width>
+						<height>320</height>
+						<bordersize>5</bordersize>
+						<bordertexture border="5" colordiffuse="$VAR[Accent_100]">colors/color_white.png</bordertexture>
+						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+					</control>
+					
+				</focusedlayout>
+
+				<content target="video">plugin://script.extendedinfo?info=writermovies&amp;&amp;writer=$INFO[ListItem.Writer]</content>
+					
+			</control>
+
+		</control>
+
+	</include>   	
+	
+    <include name="VideoInfo_ExtendedStudioMovies">
+
+		<control type="group"> 
+			<posy>600</posy>
+			<width>1070</width>	
+			<height>360</height>
+			<visible>!StringCompare(Window(Home).Property(StudioInfo.Count),0)</visible>
+			<visible>Container.Content(movies)</visible>
+
+			<control type="label">
+				<textcolor>$VAR[Accent_100]</textcolor>
+				<font>font26B</font>
+				<width>1000</width>
+				<height>40</height>
+				<label>$LOCALIZE[31356]</label>
+			</control>
+
+			<control type="fixedlist" id="90014">
+				<description>Writer Movies</description>
+				<posy>40</posy>
+				<width>1080</width>
+				<height>320</height>
+				<onleft>90019</onleft>
+				<onright>90019</onright>
+				<onup>90013</onup>
+				<ondown>90015</ondown>				
+				<orientation>horizontal</orientation>
+				<scrolltime>200</scrolltime>
+				
+				<itemlayout height="320" width="234">
+				
+					<control type="image">
+						<width>214</width>
+						<height>320</height>
+						<include>Common_Color_TrueWhite</include>
+					</control>
+					
+					<control type="image">
+						<description>Movie Image</description>
+						<width>214</width>
+						<height>320</height>
+						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+					</control>
+					
+				</itemlayout>
+				
+				<focusedlayout height="320" width="234">
+				
+					<control type="image">
+						<width>214</width>
+						<height>320</height>
+						<include>Common_Color_TrueWhite</include>
+					</control>
+					
+					<control type="image">
+						<width>214</width>
+						<height>320</height>
+						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(90014)">Conditional</animation>
+						<include>Common_Color_Accent</include>
+					</control>
+					
+					<control type="image">
+						<description>Movie Image</description>
+						<width>214</width>
+						<height>320</height>
+						<bordersize>5</bordersize>
+						<bordertexture border="5" colordiffuse="$VAR[Accent_100]">colors/color_white.png</bordertexture>
+						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+					</control>
+					
+				</focusedlayout>
+
+				<content target="video">plugin://script.extendedinfo?info=studio&amp;&amp;studio=$INFO[ListItem.Studio]</content>
+					
+			</control>
+
+		</control>
+
+	</include>   	
+
+    <include name="VideoInfo_ExtendedSimilarTVShows">
+
+		<control type="group"> 
+			<posy>600</posy>
+			<width>1070</width>	
+			<height>360</height>
+			<visible>!StringCompare(Window(Home).Property(SimilarTVShows.Count),0)</visible>
+			<visible>Container.Content(tvshows)</visible>
+
+			<control type="label">
+				<textcolor>$VAR[Accent_100]</textcolor>
+				<font>font26B</font>
+				<width>1000</width>
+				<height>40</height>
+				<label>$LOCALIZE[31357]</label>
+			</control>
+
+			<control type="fixedlist" id="90015">
+				<description>Writer Movies</description>
+				<posy>40</posy>
+				<width>1080</width>
+				<height>320</height>
+				<onleft>90019</onleft>
+				<onright>90019</onright>
+				<onup>90014</onup>
+				<ondown>90016</ondown>				
+				<orientation>horizontal</orientation>
+				<scrolltime>200</scrolltime>				
+				<itemlayout height="320" width="234">
+				
+					<control type="image">
+						<width>214</width>
+						<height>320</height>
+						<include>Common_Color_TrueWhite</include>
+					</control>
+					
+					<control type="image">
+						<description>Movie Image</description>
+						<width>214</width>
+						<height>320</height>
+						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+					</control>
+					
+				</itemlayout>
+				
+				<focusedlayout height="320" width="234">
+				
+					<control type="image">
+						<width>214</width>
+						<height>320</height>
+						<include>Common_Color_TrueWhite</include>
+					</control>
+					
+					<control type="image">
+						<width>214</width>
+						<height>320</height>
+						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(90015)">Conditional</animation>
+						<include>Common_Color_Accent</include>
+					</control>
+					
+					<control type="image">
+						<description>Movie Image</description>
+						<width>214</width>
+						<height>320</height>
+						<bordersize>5</bordersize>
+						<bordertexture border="5" colordiffuse="$VAR[Accent_100]">colors/color_white.png</bordertexture>
+						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+					</control>
+					
+				</focusedlayout>
+
+				<content target="video">plugin://script.extendedinfo?info=similartvshows&amp;&amp;dbid=$INFO[ListItem.DBID]</content>
+					
+			</control>
+
+		</control>
+
+	</include>   	
+
+    <include name="VideoInfo_DefaultSeasons">
+
+		<control type="group"> 
+			<posy>600</posy>
+			<width>1070</width>	
+			<height>360</height>
+			<visible>IntegerGreaterThan(ListItem.Property(TotalSeasons),0)</visible>
+			<visible>Container.Content(tvshows)</visible>
+
+			<control type="label">
+				<textcolor>$VAR[Accent_100]</textcolor>
+				<font>font26B</font>
+				<width>1000</width>
+				<height>40</height>
+				<label>$LOCALIZE[33054]</label>
+			</control>
+
+			<control type="fixedlist" id="90016">
+				<description>Seasons</description>
+				<posy>40</posy>
+				<width>1080</width>
+				<height>320</height>
+				<onleft>90019</onleft>
+				<onright>90019</onright>
+				<onup>90015</onup>
+				<ondown>9221</ondown>				
+				<orientation>horizontal</orientation>
+				<scrolltime>200</scrolltime>				
+				<itemlayout height="320" width="234">
+				
+					<control type="image">
+						<width>214</width>
+						<height>320</height>
+						<include>Common_Color_TrueWhite</include>
+					</control>
+					
+					<control type="image">
+						<description>Movie Image</description>
+						<width>214</width>
+						<height>320</height>
+						<texture fallback="DefaultTVShows.png">$INFO[ListItem.Art(poster)]</texture>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+					</control>
+
+					<control type="image">
+						<posy>280</posy>						
+						<width>214</width>
+						<height>40</height>
+						<include>Common_Color_BaseWhite80</include>
+					</control>
+
+					<control type="label">
+						<posy>280</posy>
+						<posx>10</posx>
+						<height>40</height>
+						<width>194</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Label]</label>
+						<font>font26B</font>
+						<textcolor>BaseMediumHigh</textcolor>
+					</control>
+					
+				</itemlayout>
+				
+				<focusedlayout height="320" width="234">
+				
+					<control type="image">
+						<width>214</width>
+						<height>320</height>
+						<include>Common_Color_TrueWhite</include>
+					</control>
+					
+					<control type="image">
+						<width>214</width>
+						<height>320</height>
+						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(90016)">Conditional</animation>
+						<include>Common_Color_Accent</include>
+					</control>
+					
+					<control type="image">
+						<description>Movie Image</description>
+						<width>214</width>
+						<height>320</height>
+						<bordersize>5</bordersize>
+						<bordertexture border="5" colordiffuse="$VAR[Accent_100]">colors/color_white.png</bordertexture>
+						<texture fallback="DefaultTVShows.png">$INFO[ListItem.Art(poster)]</texture>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+					</control>
+
+					<control type="image">
+						<posy>280</posy>						
+						<width>214</width>
+						<height>40</height>
+						<include>Common_Color_Accent_80</include>
+					</control>
+
+					<control type="label">
+						<posy>280</posy>
+						<posx>10</posx>
+						<height>40</height>
+						<width>194</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Label]</label>
+						<font>font26B</font>
+					</control>
+					
+				</focusedlayout>
+
+				<content target="video">videodb://tvshows/titles/$INFO[ListItem.DBID]/</content>
+					
+			</control>
+
+		</control>
+
+	</include>  
+
+    <include name="ActorInfo_MovieRoles">
+
+		<control type="group"> 
+			<posy>600</posy>
+			<width>1070</width>	
+			<height>360</height>
+			<visible>!StringCompare(Container(150).NumItems,0)</visible>
+
+			<control type="label">
+				<textcolor>$VAR[Accent_100]</textcolor>
+				<font>font26B</font>
+				<width>1000</width>
+				<height>40</height>
+				<label>$LOCALIZE[31270]$INFO[Container(150).NumItems, (,)]</label>
+			</control>
+
+			<control type="fixedlist" id="150">
+				<description>Movie Roles</description>
+				<posy>40</posy>
+				<width>1080</width>
+				<height>320</height>
+				<onleft>90019</onleft>
+				<onright>90019</onright>
+				<onup>450</onup>
+				<ondown>550</ondown>				
+				<orientation>horizontal</orientation>
+				<scrolltime>200</scrolltime>				
+				<itemlayout height="320" width="234">
+				
+					<control type="image">
+						<width>214</width>
+						<height>320</height>
+						<include>Common_Color_BaseMediumHigh</include>
+					</control>
+					
+					<control type="image">
+						<description>Movie Image</description>
+						<width>214</width>
+						<height>320</height>
+						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+					</control>
+
+					<control type="image">
+						<posy>240</posy>						
+						<width>214</width>
+						<height>80</height>
+						<include>Common_Color_BaseWhite80</include>
+					</control>
+
+                    <control type="image">
+                        <width>30</width>
+                        <height>30</height>
+                        <posy>10</posy>
+                        <posx>174</posx>
+                        <texture>flags/ratings/star.png</texture>
+                        <visible>!IsEmpty(ListItem.Property(DBID))</visible>
+                    </control>
+
+					<control type="label">
+						<posy>240</posy>
+						<posx>10</posx>
+						<height>40</height>
+						<width>194</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Label]</label>
+						<font>font26B</font>
+						<textcolor>BaseMediumHigh</textcolor>
+					</control>
+					
+					<control type="label">
+						<posy>280</posy>
+						<posx>10</posx>
+						<height>40</height>
+						<width>194</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Property(character)]</label>
+						<font>font24R</font>
+						<textcolor>BaseMid</textcolor>
+					</control>
+					
+				</itemlayout>
+				
+				<focusedlayout height="320" width="234">
+					
+					<control type="image">
+						<width>214</width>
+						<height>320</height>
+						<include>Common_Color_Accent</include>
+					</control>
+					
+					<control type="image">
+						<description>Movie Image</description>
+						<width>214</width>
+						<height>320</height>
+						<bordersize>5</bordersize>
+						<bordertexture border="5" colordiffuse="$VAR[Accent_100]">colors/color_white.png</bordertexture>
+						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+					</control>
+
+					<control type="image">
+						<posy>240</posy>						
+						<width>214</width>
+						<height>80</height>
+						<include>Common_Color_Accent_80</include>
+					</control>
+
+                    <control type="image">
+                        <width>30</width>
+                        <height>30</height>
+                        <posy>10</posy>
+                        <posx>174</posx>
+                        <texture colordiffuse="$VAR[Accent_100]">flags/ratings/star.png</texture>
+                        <visible>!IsEmpty(ListItem.Property(DBID))</visible>
+                    </control>
+
+					<control type="label">
+						<posy>240</posy>
+						<posx>10</posx>
+						<height>40</height>
+						<width>194</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Label]</label>
+						<font>font26B</font>
+					</control>
+					
+					<control type="label">
+						<posy>280</posy>
+						<posx>10</posx>
+						<height>40</height>
+						<width>194</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Property(character)]</label>
+						<font>font24R</font>
+					</control>
+					
+				</focusedlayout>
+					
+			</control>
+
+		</control>
+
+	</include>  
+
+    <include name="ActorInfo_MovieCrew">
+
+		<control type="group"> 
+			<posy>600</posy>
+			<width>1070</width>	
+			<height>360</height>
+			<visible>!StringCompare(Container(550).NumItems,0)</visible>
+
+			<control type="label">
+				<textcolor>$VAR[Accent_100]</textcolor>
+				<font>font26B</font>
+				<width>1000</width>
+				<height>40</height>
+				<label>$LOCALIZE[31272]$INFO[Container(550).NumItems, (,)]</label>
+			</control>
+
+			<control type="fixedlist" id="550">
+				<description>Movie Crew</description>
+				<posy>40</posy>
+				<width>1080</width>
+				<height>320</height>
+				<onleft>90019</onleft>
+				<onright>90019</onright>
+				<onup>150</onup>
+				<ondown>250</ondown>				
+				<orientation>horizontal</orientation>
+				<scrolltime>200</scrolltime>				
+				<itemlayout height="320" width="234">
+				
+					<control type="image">
+						<width>214</width>
+						<height>320</height>
+						<include>Common_Color_BaseMediumHigh</include>
+					</control>
+					
+					<control type="image">
+						<description>Movie Image</description>
+						<width>214</width>
+						<height>320</height>
+						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+					</control>
+
+					<control type="image">
+						<posy>240</posy>						
+						<width>214</width>
+						<height>80</height>
+						<include>Common_Color_BaseWhite80</include>
+					</control>
+
+                    <control type="image">
+                        <width>30</width>
+                        <height>30</height>
+                        <posy>10</posy>
+                        <posx>174</posx>
+                        <texture>flags/ratings/star.png</texture>
+                        <visible>!IsEmpty(ListItem.Property(DBID))</visible>
+                    </control>
+
+					<control type="label">
+						<posy>240</posy>
+						<posx>10</posx>
+						<height>40</height>
+						<width>194</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Label]</label>
+						<font>font26B</font>
+						<textcolor>BaseMediumHigh</textcolor>
+					</control>
+					
+					<control type="label">
+						<posy>280</posy>
+						<posx>10</posx>
+						<height>40</height>
+						<width>194</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Property(job)]</label>
+						<font>font24R</font>
+						<textcolor>BaseMid</textcolor>
+					</control>
+					
+				</itemlayout>
+				
+				<focusedlayout height="320" width="234">
+					
+					<control type="image">
+						<width>214</width>
+						<height>320</height>
+						<include>Common_Color_Accent</include>
+					</control>
+					
+					<control type="image">
+						<description>Movie Image</description>
+						<width>214</width>
+						<height>320</height>
+						<bordersize>5</bordersize>
+						<bordertexture border="5" colordiffuse="$VAR[Accent_100]">colors/color_white.png</bordertexture>
+						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+					</control>
+
+					<control type="image">
+						<posy>240</posy>						
+						<width>214</width>
+						<height>80</height>
+						<include>Common_Color_Accent_80</include>
+					</control>
+
+                    <control type="image">
+                        <width>30</width>
+                        <height>30</height>
+                        <posy>10</posy>
+                        <posx>174</posx>
+                        <texture colordiffuse="$VAR[Accent_100]">flags/ratings/star.png</texture>
+                        <visible>!IsEmpty(ListItem.Property(DBID))</visible>
+                    </control>
+
+					<control type="label">
+						<posy>240</posy>
+						<posx>10</posx>
+						<height>40</height>
+						<width>194</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Label]</label>
+						<font>font26B</font>
+					</control>
+					
+					<control type="label">
+						<posy>280</posy>
+						<posx>10</posx>
+						<height>40</height>
+						<width>194</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Property(job)]</label>
+						<font>font24R</font>
+					</control>
+					
+				</focusedlayout>
+					
+			</control>
+
+		</control>
+
+	</include>  
+
+    <include name="ActorInfo_TVRoles">
+
+		<control type="group"> 
+			<posy>600</posy>
+			<width>1070</width>	
+			<height>360</height>
+			<visible>!StringCompare(Container(250).NumItems,0)</visible>
+
+			<control type="label">
+				<textcolor>$VAR[Accent_100]</textcolor>
+				<font>font26B</font>
+				<width>1000</width>
+				<height>40</height>
+				<label>$LOCALIZE[31271]$INFO[Container(250).NumItems, (,)]</label>
+			</control>
+
+			<control type="fixedlist" id="250">
+				<description>TV Roles</description>
+				<posy>40</posy>
+				<width>1080</width>
+				<height>320</height>
+				<onleft>90019</onleft>
+				<onright>90019</onright>
+				<onup>550</onup>
+				<ondown>650</ondown>				
+				<orientation>horizontal</orientation>
+				<scrolltime>200</scrolltime>				
+				<itemlayout height="320" width="234">
+				
+					<control type="image">
+						<width>214</width>
+						<height>320</height>
+						<include>Common_Color_BaseMediumHigh</include>
+					</control>
+					
+					<control type="image">
+						<description>Movie Image</description>
+						<width>214</width>
+						<height>320</height>
+						<texture fallback="DefaultTVShows.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+					</control>
+
+					<control type="image">
+						<posy>240</posy>						
+						<width>214</width>
+						<height>80</height>
+						<include>Common_Color_BaseWhite80</include>
+					</control>
+
+                    <control type="image">
+                        <width>30</width>
+                        <height>30</height>
+                        <posy>10</posy>
+                        <posx>174</posx>
+                        <texture>flags/ratings/star.png</texture>
+                        <visible>!IsEmpty(ListItem.Property(DBID))</visible>
+                    </control>
+
+					<control type="label">
+						<posy>240</posy>
+						<posx>10</posx>
+						<height>40</height>
+						<width>194</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Label]</label>
+						<font>font26B</font>
+						<textcolor>BaseMediumHigh</textcolor>
+					</control>
+					
+					<control type="label">
+						<posy>280</posy>
+						<posx>10</posx>
+						<height>40</height>
+						<width>194</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Property(character)]</label>
+						<font>font24R</font>
+						<textcolor>BaseMid</textcolor>
+					</control>
+					
+				</itemlayout>
+				
+				<focusedlayout height="320" width="234">
+					
+					<control type="image">
+						<width>214</width>
+						<height>320</height>
+						<include>Common_Color_Accent</include>
+					</control>
+					
+					<control type="image">
+						<description>Movie Image</description>
+						<width>214</width>
+						<height>320</height>
+						<bordersize>5</bordersize>
+						<bordertexture border="5" colordiffuse="$VAR[Accent_100]">colors/color_white.png</bordertexture>
+						<texture fallback="DefaultTVShows.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+					</control>
+
+					<control type="image">
+						<posy>240</posy>						
+						<width>214</width>
+						<height>80</height>
+						<include>Common_Color_Accent_80</include>
+					</control>
+
+                    <control type="image">
+                        <width>30</width>
+                        <height>30</height>
+                        <posy>10</posy>
+                        <posx>174</posx>
+                        <texture colordiffuse="$VAR[Accent_100]">flags/ratings/star.png</texture>
+                        <visible>!IsEmpty(ListItem.Property(DBID))</visible>
+                    </control>
+
+					<control type="label">
+						<posy>240</posy>
+						<posx>10</posx>
+						<height>40</height>
+						<width>194</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Label]</label>
+						<font>font26B</font>
+					</control>
+					
+					<control type="label">
+						<posy>280</posy>
+						<posx>10</posx>
+						<height>40</height>
+						<width>194</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Property(character)]</label>
+						<font>font24R</font>
+					</control>
+					
+				</focusedlayout>
+					
+			</control>
+
+		</control>
+
+	</include>  
+
+    <include name="ActorInfo_TVCrew">
+
+		<control type="group"> 
+			<posy>600</posy>
+			<width>1070</width>	
+			<height>360</height>
+			<visible>!StringCompare(Container(650).NumItems,0)</visible>
+
+			<control type="label">
+				<textcolor>$VAR[Accent_100]</textcolor>
+				<font>font26B</font>
+				<width>1000</width>
+				<height>40</height>
+				<label>$LOCALIZE[31273]$INFO[Container(650).NumItems, (,)]</label>
+			</control>
+
+			<control type="fixedlist" id="650">
+				<description>Movie Crew</description>
+				<posy>40</posy>
+				<width>1080</width>
+				<height>320</height>
+				<onleft>90019</onleft>
+				<onright>90019</onright>
+				<onup>250</onup>
+				<ondown>350</ondown>				
+				<orientation>horizontal</orientation>
+				<scrolltime>200</scrolltime>				
+				<itemlayout height="320" width="234">
+				
+					<control type="image">
+						<width>214</width>
+						<height>320</height>
+						<include>Common_Color_BaseMediumHigh</include>
+					</control>
+					
+					<control type="image">
+						<description>Movie Image</description>
+						<width>214</width>
+						<height>320</height>
+						<texture fallback="DefaultTVShows.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+					</control>
+
+					<control type="image">
+						<posy>240</posy>						
+						<width>214</width>
+						<height>80</height>
+						<include>Common_Color_BaseWhite80</include>
+					</control>
+
+                    <control type="image">
+                        <width>30</width>
+                        <height>30</height>
+                        <posy>10</posy>
+                        <posx>174</posx>
+                        <texture>flags/ratings/star.png</texture>
+                        <visible>!IsEmpty(ListItem.Property(DBID))</visible>
+                    </control>
+
+					<control type="label">
+						<posy>240</posy>
+						<posx>10</posx>
+						<height>40</height>
+						<width>194</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Label]</label>
+						<font>font26B</font>
+						<textcolor>BaseMediumHigh</textcolor>
+					</control>
+					
+					<control type="label">
+						<posy>280</posy>
+						<posx>10</posx>
+						<height>40</height>
+						<width>194</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Property(job)]</label>
+						<font>font24R</font>
+						<textcolor>BaseMid</textcolor>
+					</control>
+					
+				</itemlayout>
+				
+				<focusedlayout height="320" width="234">
+					
+					<control type="image">
+						<width>214</width>
+						<height>320</height>
+						<include>Common_Color_Accent</include>
+					</control>
+					
+					<control type="image">
+						<description>Movie Image</description>
+						<width>214</width>
+						<height>320</height>
+						<bordersize>5</bordersize>
+						<bordertexture border="5" colordiffuse="$VAR[Accent_100]">colors/color_white.png</bordertexture>
+						<texture fallback="DefaultTVShows.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+					</control>
+
+					<control type="image">
+						<posy>240</posy>						
+						<width>214</width>
+						<height>80</height>
+						<include>Common_Color_Accent_80</include>
+					</control>
+
+                    <control type="image">
+                        <width>30</width>
+                        <height>30</height>
+                        <posy>10</posy>
+                        <posx>174</posx>
+                        <texture colordiffuse="$VAR[Accent_100]">flags/ratings/star.png</texture>
+                        <visible>!IsEmpty(ListItem.Property(DBID))</visible>
+                    </control>
+
+					<control type="label">
+						<posy>240</posy>
+						<posx>10</posx>
+						<height>40</height>
+						<width>194</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Label]</label>
+						<font>font26B</font>
+					</control>
+					
+					<control type="label">
+						<posy>280</posy>
+						<posx>10</posx>
+						<height>40</height>
+						<width>194</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Property(job)]</label>
+						<font>font24R</font>
+					</control>
+					
+				</focusedlayout>
+					
+			</control>
+
+		</control>
+
+	</include>  
+
+    <include name="ActorInfo_YouTube">
+
+		<control type="group"> 
+			<posy>600</posy>
+			<width>1070</width>	
+			<height>360</height>
+			<visible>!StringCompare(Container(350).NumItems,0)</visible>
+
+			<control type="label">
+				<textcolor>$VAR[Accent_100]</textcolor>
+				<font>font26B</font>
+				<width>1000</width>
+				<height>40</height>
+				<label>$LOCALIZE[31262]$INFO[Container(350).NumItems, (,)]</label>
+			</control>
+
+			<control type="fixedlist" id="350">
+				<description>YouTube</description>
+				<posy>40</posy>
+				<width>1080</width>
+				<height>320</height>
+				<onleft>90019</onleft>
+				<onright>90019</onright>
+				<onup>650</onup>
+				<ondown>450</ondown>				
+				<orientation>horizontal</orientation>
+				<scrolltime>200</scrolltime>				
+				<itemlayout height="320" width="589">
+				
+					<control type="image">
+						<width>569</width>
+						<height>320</height>
+						<include>Common_Color_BaseMediumHigh</include>
+					</control>
+					
+					<control type="image">
+						<description>Movie Image</description>
+						<width>569</width>
+						<height>320</height>
+						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+					</control>
+
+					<control type="image">
+						<posy>280</posy>						
+						<width>569</width>
+						<height>40</height>
+						<include>Common_Color_BaseWhite80</include>
+					</control>
+
+					<control type="label">
+						<posy>280</posy>
+						<posx>10</posx>
+						<height>40</height>
+						<width>549</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Label]</label>
+						<font>font26B</font>
+						<textcolor>BaseMediumHigh</textcolor>
+					</control>
+					
+				</itemlayout>
+				
+				<focusedlayout height="320" width="589">
+					
+					<control type="image">
+						<width>569</width>
+						<height>320</height>
+						<include>Common_Color_Accent</include>
+					</control>
+					
+					<control type="image">
+						<description>Movie Image</description>
+						<width>569</width>
+						<height>320</height>
+						<bordersize>5</bordersize>
+						<bordertexture border="5" colordiffuse="$VAR[Accent_100]">colors/color_white.png</bordertexture>
+						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+					</control>
+
+					<control type="image">
+						<posy>280</posy>						
+						<width>569</width>
+						<height>40</height>
+						<include>Common_Color_Accent_80</include>
+					</control>
+
+					<control type="label">
+						<posy>280</posy>
+						<posx>10</posx>
+						<height>40</height>
+						<width>549</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Label]</label>
+						<font>font26B</font>
+					</control>
+					
+				</focusedlayout>
+					
+			</control>
+
+		</control>
+
+	</include> 
+
+    <include name="ActorInfo_Headshots">
+
+		<control type="group"> 
+			<posy>600</posy>
+			<width>1070</width>	
+			<height>360</height>
+			<visible>!StringCompare(Container(450).NumItems,0)</visible>
+
+			<control type="label">
+				<textcolor>$VAR[Accent_100]</textcolor>
+				<font>font26B</font>
+				<width>1000</width>
+				<height>40</height>
+				<label>$LOCALIZE[31274]$INFO[Container(450).NumItems, (,)]</label>
+			</control>
+
+			<control type="fixedlist" id="450">
+				<description>Movie Roles</description>
+				<posy>40</posy>
+				<width>1080</width>
+				<height>320</height>
+				<onleft>90019</onleft>
+				<onright>90019</onright>
+				<onup>350</onup>
+				<ondown>150</ondown>				
+				<orientation>horizontal</orientation>
+				<scrolltime>200</scrolltime>				
+				<itemlayout height="320" width="234">
+				
+					<control type="image">
+						<width>214</width>
+						<height>320</height>
+						<include>Common_Color_BaseMediumHigh</include>
+					</control>
+					
+					<control type="image">
+						<description>Movie Image</description>
+						<width>214</width>
+						<height>320</height>
+						<texture fallback="DefaultActor.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+					</control>
+					
+				</itemlayout>
+				
+				<focusedlayout height="320" width="234">
+					
+					<control type="image">
+						<width>214</width>
+						<height>320</height>
+						<include>Common_Color_Accent</include>
+					</control>
+					
+					<control type="image">
+						<description>Movie Image</description>
+						<width>214</width>
+						<height>320</height>
+						<bordersize>5</bordersize>
+						<bordertexture border="5" colordiffuse="$VAR[Accent_100]">colors/color_white.png</bordertexture>
+						<texture fallback="DefaultActor.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+					</control>
+		
+				</focusedlayout>
+					
+			</control>
+
+		</control>
+
+	</include>  
+
+</includes>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<includes>
+
+    <include name="Viewtype_Tiles">
+	
+        <control type="group">
+            <visible>Control.IsVisible(55)</visible>
+
+            <include>BG_Fanart_1080</include>
+			<include>FanartOverlay</include>
+
+			<control type="image">	
+				<include>Common_Animation_CenterMenu_Stage1</include>
+				<posy>370</posy>
+				<width>1920</width>
+				<height>630</height>
+				<texture colordiffuse="BaseMid">colors/color_white.png</texture>			
+			</control>	
+
+			<!--List Area-->			
+            <control type="group">
+                <include>Animation_Slide_Right</include>
+				
+                <control type="panel" id="55"> 
+                    <viewtype label="$LOCALIZE[31370]">tiles</viewtype>
+                    <posx>225</posx>
+                    <posy>380</posy>
+                    <width>1800</width>
+                    <height>620</height>
+                    <orientation>horizontal</orientation>
+                    <include>ShowOptions_Up</include>
+                    <ondown>70</ondown>
+                    <pagecontrol>70</pagecontrol>
+                    <preloaditems>2</preloaditems>
+                    <visible>Window.IsActive(1) | Container.Content(files) | Container.Content(albums) | Container.Content(artists) | Container.Content(addons) | Container.Content(musicvideos)</visible>
+                    <itemlayout width="610" height="155">
+
+						<control type="image">
+                            <width>600</width>
+                            <height>145</height>
+                            <include>Common_Color_BaseWhite</include>
+                        </control>
+						
+                        <control type="image">
+                            <width>145</width>
+                            <height>145</height>
+                            <aspectratio align="left" aligny="center">stretch</aspectratio>
+                            <texture fallback="$VAR[Common_Fallback]">$INFO[ListItem.Icon]</texture>
+							<bordertexture border="0" colordiffuse="BaseMediumHigh">colors/color_white.png</bordertexture>
+                        </control>
+						
+                        <control type="label">
+                            <label>$VAR[Fanart_List_Title]</label>
+                            <posx>170</posx>
+                            <posy>8</posy>
+                            <height>45</height>
+                            <width>390</width>
+                            <textcolor>$VAR[Accent_100]</textcolor>
+                            <font>font36R</font>
+                        </control>
+
+                        <control type="label">
+                            <label>$INFO[ListItem.Artist]</label>
+                            <posx>170</posx>
+                            <posy>52</posy>
+                            <height>45</height>
+                            <width>390</width>
+                            <font>font26B</font>
+							<textcolor>BaseMid</textcolor>
+                            <visible>Container.Content(albums) | Container.Content(musicvideos)</visible>
+                        </control>
+						
+                        <control type="label">
+                            <label>$VAR[Tiles_List_Label2]</label>
+                            <posx>170</posx>
+                            <posy>90</posy>
+                            <height>45</height>
+                            <width>390</width>
+                            <font>font26B</font>
+							<textcolor>BaseMediumHigh</textcolor>
+                        </control>
+						
+                        <control type="label">
+                            <label>$INFO[ListItem.Property(Addon.Status)]</label>
+                            <posx>170</posx>
+                            <posy>90</posy>
+                            <height>45</height>
+                            <width>410</width>
+                            <font>font26R</font>
+                            <align>right</align>
+							<textcolor>BaseMediumHigh</textcolor>
+                            <visible>Container.Content(addons)</visible>
+                        </control>
+						
+                    </itemlayout>
+					
+                    <focusedlayout width="610" height="155">
+					
+						<control type="image">
+                            <width>600</width>
+                            <height>145</height>
+                            <include>Common_Color_Accent</include>
+                        </control>
+						
+                        <control type="image">
+                            <width>145</width>
+                            <height>145</height>
+                            <aspectratio align="left" aligny="center">stretch</aspectratio>
+                            <texture fallback="$VAR[Common_Fallback]">$INFO[ListItem.Icon]</texture>
+							<bordertexture border="0" colordiffuse="BaseMediumHigh">colors/color_white.png</bordertexture>
+                        </control>
+						
+                        <control type="label">
+                            <label>$VAR[Fanart_List_Title]</label>
+                            <posx>170</posx>
+                            <posy>8</posy>
+                            <height>45</height>
+                            <width>390</width>
+                            <font>font36R</font>
+                        </control>
+
+                        <control type="label">
+                            <label>$INFO[ListItem.Artist]</label>
+                            <posx>170</posx>
+                            <posy>52</posy>
+                            <height>45</height>
+                            <width>390</width>
+                            <font>font26B</font>
+							<textcolor>BaseLow</textcolor>
+                            <visible>Container.Content(albums) | Container.Content(musicvideos)</visible>
+                        </control>
+						
+                        <control type="label">
+                            <label>$VAR[Tiles_List_Label2]</label>
+                            <posx>170</posx>
+                            <posy>90</posy>
+                            <height>45</height>
+                            <width>390</width>
+                            <font>font26B</font>
+							<textcolor>BaseLow</textcolor>
+                        </control>
+						
+                        <control type="label">
+                            <label>$INFO[ListItem.Property(Addon.Status)]</label>
+                            <posx>170</posx>
+                            <posy>90</posy>
+                            <height>45</height>
+                            <width>410</width>
+                            <font>font26R</font>
+                            <align>right</align>
+							<textcolor>BaseLow</textcolor>
+                            <visible>Container.Content(addons)</visible>
+                        </control>
+						
+                    </focusedlayout>
+					
+                </control>
+				
+            </control>
+
+            <control type="scrollbar" id="70">
+                <posx>80</posx>
+                <posy>990</posy>
+                <width>1840</width>
+                <height>10</height>
+                <onup>54</onup>
+                <include>ShowOptions_Down</include>
+				<showonepage>false</showonepage>
+                <orientation>horizontal</orientation>
+            </control>
+
+        </control>
+
+    </include>
+	
+</includes>

@@ -1,0 +1,182 @@
+<colors>
+	<!-- NEW COLORS- DO NOT RESPECT THEME -->
+	<color name="TrueWhite">FFFFFFFF</color>
+	<color name="TrueBlack">FF000000</color>
+	<!-- NEW COLORS- RESPECT THEME -->
+	<color name="BaseWhite">FFE8E8E8</color>
+	<color name="BaseBlack">FF000000</color>
+	<color name="BaseWhite80">CCE8E8E8</color>
+	<color name="BaseLow">FFBBBBBB</color>
+	<color name="BaseLow40">66BBBBBB</color>
+	<color name="BaseLow80">CCBBBBBB</color>
+	<color name="BaseMediumMid">FF999999</color>
+	<color name="BaseMediumMid40">66999999</color>
+	<color name="BaseMediumMid80">CC999999</color>
+	<color name="BaseMid">FF666666</color>
+	<color name="BaseMediumHigh">FF333333</color>
+	<color name="BaseMediumHigh60">99333333</color>
+	<color name="BaseHigh">FF000000</color>
+	<color name="Red">FFA40000</color>
+	<color name="ListHover">FFE5E5E5</color>
+	<color name="ListPress">FFCCCCCC</color>
+	<color name="ListSelectRest">FF99C9EF</color>
+	<color name="ListSelectHover">FF66AEE7</color>
+	<color name="ListSelectPress">FF4DA1E3</color>
+	<color name="AccentHigh">FF0078D7</color>
+	<color name="ChromeLow">FFF2F2F2</color>
+	<color name="ChromeMediumMid">FFE6E6E6</color>
+	<color name="ChromeMid">FFE6E6E6</color>
+	<color name="ChromeHigh">FFCCCCCC</color>
+	<color name="ChromeContrast">FF1F1F1F</color>
+	<!-- COLOR DIFFUSES -->
+	<color name="FanartDiffuse">73FFFFFF</color>
+	<color name="BaseWhiteDiffuse">73E8E8E8</color>
+	<!-- NEW COLORS- ACCENTS -->
+	<color name="FFA40000">FFA40000</color>
+	<color name="FFD13438">FFD13438</color>
+	<color name="FFE81123">FFE81123</color>
+	<color name="FFDA3B01">FFDA3B01</color>
+	<color name="FFCA5010">FFCA5010</color>
+	<color name="FF107C10">FF107C10</color>
+	<color name="FF498205">FF498205</color>
+	<color name="FF10893E">FF10893E</color>
+	<color name="FF018574">FF018574</color>
+	<color name="FF038387">FF038387</color>
+	<color name="FF2D7D9A">FF2D7D9A</color>
+	<color name="FF1B75BC">FF1B75BC</color>	
+	<color name="FF0063B1">FF0063B1</color>
+	<color name="FF0078D7">FF0078D7</color>
+	<color name="FF6B69D6">FF6B69D6</color>
+	<color name="FF744DA9">FF744DA9</color>
+	<color name="FF8764B8">FF8764B8</color>
+	<color name="FF881798">FF881798</color>
+	<color name="FFB146C2">FFB146C2</color>
+	<color name="FF9A0089">FF9A0089</color>	
+	<color name="FFC239B3">FFC239B3</color>
+	<color name="FFBF0077">FFBF0077</color>
+	<color name="FFE300BC">FFE300BC</color>
+	<color name="FFC30052">FFC30052</color>
+	<color name="FFEA005E">FFEA005E</color>
+	<color name="FF486860">FF486860</color>
+	<color name="FF567C73">FF567C73</color>
+	<color name="FF525E54">FF525E54</color>
+	<color name="FF647C64">FF647C64</color>
+	<color name="FF7E735F">FF7E735F</color>
+	<color name="FF847545">FF847545</color>	
+	<color name="FF8F013A">FF8F013A</color>	
+	
+	<!-- OLD COLORS -->
+	<color name="TrueWhite">FFFFFFFF</color>
+	<color name="TrueBlack">FF000000</color>
+	<color name="Black">FF000000</color>
+	<color name="Black20">33000000</color>
+	<color name="Black40">66000000</color>	
+	<color name="Black60">99000000</color>
+	<color name="Black70">B3000000</color>
+	<color name="Black80">CC000000</color>
+	<color name="White">FFFFFFFF</color>
+	<color name="White40">66FFFFFF</color>
+	<color name="White60">99FFFFFF</color>
+	<color name="White80">CCFFFFFF</color>
+	
+	<color name="Blue">FF0000FF</color>
+	<color name="HomeDiffuse">99FFFFFF</color>
+	<color name="Home2Diffuse">66FFFFFF</color>
+	<color name="InfoDiffuse">99FFFFFF</color>
+	<color name="HomeFanart">AAAAAAAA</color>
+	<color name="ImageDiffuse">FF555555</color>
+	<color name="PanelDiffuse">88888888</color>
+	<color name="ImageDiffuse2">44666666</color>
+	<color name="WallsDiffuse">BBFFFFFF</color>
+	<color name="Diffuse3">AAFFFFFF</color>
+	<color name="Diffuse4">E3FFFFFF</color>
+	<color name="Accent">FF1B75BC</color>
+	<color name="Accent40">661B75BC</color>
+	<color name="Accent60">991B75BC</color>
+	<color name="Accent80">CC21B75BC</color>
+	<color name="Keyback1">FF3d3d3d</color>
+	<color name="Keyback1-80">CC3d3d3d</color>
+	<color name="Keyback2">FF2c2c2c</color>
+	<color name="Nokey">FF0b0b0b</color>
+	<color name="Editback">FFababab</color>
+	<color name="Icon">FFFFFFFF</color>
+	<color name="Watched">ffdddddd</color>
+	<!--Greens-->
+	<color name="FF93ce5f">FF93ce5f</color>
+	<color name="FF80d535">FF80d535</color>
+	<color name="FF6dbd25">FF6dbd25</color>
+	<color name="FF5eb113">FF5eb113</color>
+	<color name="FF5aa615">FF5aa615</color>
+	<color name="FF69a013">FF69a013</color>
+	<color name="FF91ad10">FF91ad10</color>
+	<color name="FFa3b90f">FFa3b90f</color>
+	<color name="FFb5c814">FFb5c814</color>
+	<color name="FFc7d92b">FFc7d92b</color>
+	<color name="FFdde339">FFdde339</color>
+	<color name="FFe8ef23">FFe8ef23</color>
+	<!--Yellows-->
+	<color name="FFfed530">FFfed530</color>
+	<color name="FFffcc00">FFffcc00</color>
+	<color name="FFebbd04">FFebbd04</color>
+	<color name="FFe0b403">FFe0b403</color>
+	<color name="FFd1a408">FFd1a408</color>
+	<!--Oranges-->
+	<color name="FFf6983c">FFf6983c</color>
+	<color name="FFff9329">FFff9329</color>
+	<color name="FFfb8512">FFfb8512</color>
+	<color name="FFee7b0a">FFee7b0a</color>
+	<color name="FFf16816">FFf16816</color>
+	<color name="FFf14416">FFf14416</color>
+	<!--Reds-->
+	<color name="FFe95d4e">FFe95d4e</color>
+	<color name="FFed4938">FFed4938</color>
+	<color name="FFe23b29">FFe23b29</color>
+	<color name="FFed2914">FFed2914</color>
+	<color name="FFe01d08">FFe01d08</color>
+	<color name="FFc81805">FFc81805</color>
+	<color name="FFc90533">FFc90533</color>
+	<color name="FFcf205a">FFcf205a</color>
+	<color name="FFd82f76">FFd82f76</color>
+	<color name="FFe6589e">FFe6589e</color>
+	<!--Pinks-->
+	<color name="FFee7fc9">FFee7fc9</color>
+	<color name="FFfd76d0">FFfd76d0</color>
+	<color name="FFfb61c7">FFfb61c7</color>
+	<color name="FFf250bb">FFf250bb</color>
+	<color name="FFf038b2">FFf038b2</color>
+	<color name="FFeb37d0">FFeb37d0</color>
+	<color name="FFdf3ae9">FFdf3ae9</color>
+	<color name="FFdd53ed">FFdd53ed</color>
+	<!--Purples-->
+	<color name="FFb47bdc">FFb47bdc</color>
+	<color name="FFaf6bdf">FFaf6bdf</color>
+	<color name="FFa45bd7">FFa45bd7</color>
+	<color name="FF9544ce">FF9544ce</color>
+	<color name="FF862ec3">FF862ec3</color>
+	<color name="FF6d2ac8">FF6d2ac8</color>
+	<color name="FF5334da">FF5334da</color>
+	<color name="FF305bd4">FF305bd4</color>
+	<color name="FF3d70d7">FF3d70d7</color>
+	<color name="FF4b82de">FF4b82de</color>
+	<!--Blues-->
+	<color name="FF87cbf6">FF87cbf6</color>
+	<color name="FF6ebff1">FF6ebff1</color>
+	<color name="FF4bb4f6">FF4bb4f6</color>
+	<color name="FF3ea6e8">FF3ea6e8</color>
+	<color name="FF2d95d7">FF2d95d7</color>
+	<color name="FF2dadd7">FF2dadd7</color>
+	<color name="FF34c4d9">FF34c4d9</color>
+	<!--Aquas-->
+	<color name="FF5aeadb">FF5aeadb</color>
+	<color name="FF45e5c9">FF45e5c9</color>
+	<color name="FF2ae1b8">FF2ae1b8</color>
+	<color name="FF19dca7">FF19dca7</color>
+	<color name="FF0fd39e">FF0fd39e</color>
+	<color name="FF0fd382">FF0fd382</color>
+	<color name="FF18ca74">FF18ca74</color>
+	<color name="FF2ad96c">FF2ad96c</color>
+	<color name="FF3ee672">FF3ee672</color>
+	<color name="FF5aec72">FF5aec72</color>
+	<color name="FF67e964">FF67e964</color>
+	
+</colors>

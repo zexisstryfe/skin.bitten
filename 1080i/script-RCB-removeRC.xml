@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<window id="5400">
+    <defaultcontrol>5411</defaultcontrol>
+	
+    <coordinates>
+        <system>1</system>
+    </coordinates>
+	
+    <controls>
+        <include>DialogOverlay</include>
+		
+        <control type="group">
+			<posx>0</posx>
+			<posy>315</posy>
+			<include>Common_Animation_Dialog</include>
+
+			<control type="image">			
+				<width>1920</width>
+				<height>450</height>
+				<texture colordiffuse="BaseWhite">colors/color_white.png</texture>			
+			</control>		
+
+			<control type="group">	
+				<posy>75</posy>
+				<width>1920</width>
+				<height>375</height>
+
+				<include>Common_Logo_Backing</include>
+				
+			</control>	
+			
+			<control type="image">			
+				<width>1920</width>
+				<include>InfoDialog_Header</include>		
+			</control>	
+			
+            <control type="label">
+                <description>Heading</description>
+				<posx>300</posx>
+				<width>885</width>
+				<height>75</height>
+				<font>font45R</font>
+                <label>$ADDON[script.games.rom.collection.browser 57000]</label>
+            </control>
+
+            <control type="group">
+				<posx>450</posx>
+				<posy>110</posy>			
+			
+				<!-- Rom Collection List -->
+				<control type="list" id="5410">
+					<include>RCB_Import_List1</include>
+					<onleft>5410</onleft>
+					<onright>5410</onright>
+					<onup>5410</onup>
+					<ondown>5410</ondown>
+					<focusedlayout height="60" width="960">
+					
+						<control type="image">
+							<width>960</width>
+							<height>60</height>
+							<include>Common_Color_Accent</include>
+							<visible>[Control.HasFocus(5411) | Control.HasFocus(5412)]</visible>
+						</control>
+						
+						<control type="label">
+							<include>RCB_Import_Label1</include>
+							<label>$ADDON[script.games.rom.collection.browser 52001]</label>
+							<textcolor>BaseMediumHigh</textcolor>
+							<visible>![Control.HasFocus(5411) | Control.HasFocus(5412)]</visible>
+						</control>
+						
+						<control type="label">
+							<include>RCB_Import_Label1</include>
+							<label>$ADDON[script.games.rom.collection.browser 52001]</label>
+							<visible>[Control.HasFocus(5411) | Control.HasFocus(5412)]</visible>
+						</control>
+						
+						<control type="label">
+							<include>RCB_Import_Label2</include>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>BaseMediumHigh</textcolor>
+							<visible>![Control.HasFocus(5411) | Control.HasFocus(5412)]</visible>
+						</control>
+						
+						<control type="label">
+							<include>RCB_Import_Label2</include>
+							<label>$INFO[ListItem.Label]</label>
+							<visible>[Control.HasFocus(5411) | Control.HasFocus(5412)]</visible>
+						</control>
+						
+					</focusedlayout>
+					
+				</control>
+				
+				<control type="button" id="5411">
+					<description>Menu Item Next Button</description>
+					<posx>890</posx>
+					<posy>15</posy>
+					<include>RCB_ArrowDown_Button</include>
+					<onclick>Control.Move(5410,1)</onclick>
+					<onleft>6000</onleft>
+					<onright>5412</onright>
+					<onup>5101</onup>
+					<ondown>5491</ondown>
+				</control>
+				
+				<control type="button" id="5412">
+					<description>Menu Item Prev Button</description>
+					<posx>920</posx>
+					<posy>15</posy>
+					<include>RCB_ArrowUp_Button</include>
+					<onclick>Control.Move(5410,-1)</onclick>
+					<onleft>5411</onleft>
+					<onright>6000</onright>
+					<onup>5101</onup>
+					<ondown>5492</ondown>
+				</control>
+				
+				<!-- Delete Options -->
+				<control type="list" id="5490">
+					<posy>60</posy>
+					<include>RCB_Import_List1</include>
+					<onleft>5490</onleft>
+					<onright>5490</onright>
+					<onup>5490</onup>
+					<ondown>5490</ondown>
+					<focusedlayout height="45" width="1020">
+					
+						<control type="image">
+							<width>960</width>
+							<height>60</height>
+							<include>Common_Color_Accent</include>
+							<visible>[Control.HasFocus(5491) | Control.HasFocus(5492)]</visible>
+						</control>
+						
+						<control type="label">
+							<include>RCB_Import_Label1</include>
+							<label>$ADDON[script.games.rom.collection.browser 57001]</label>
+							<textcolor>BaseMediumHigh</textcolor>
+							<visible>![Control.HasFocus(5491) | Control.HasFocus(5492)]</visible>
+						</control>
+						
+						<control type="label">
+							<include>RCB_Import_Label1</include>
+							<label>$ADDON[script.games.rom.collection.browser 57001]</label>
+							<visible>[Control.HasFocus(5491) | Control.HasFocus(5492)]</visible>
+						</control>
+						
+						<control type="label">
+							<include>RCB_Import_Label2</include>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>BaseMediumHigh</textcolor>
+							<visible>![Control.HasFocus(5491) | Control.HasFocus(5492)]</visible>
+						</control>
+						
+						<control type="label">
+							<include>RCB_Import_Label2</include>
+							<label>$INFO[ListItem.Label]</label>
+							<visible>[Control.HasFocus(5491) | Control.HasFocus(5492)]</visible>
+						</control>
+						
+					</focusedlayout>
+					
+				</control>
+				
+				<control type="button" id="5491">
+					<description>Menu Item Next Button</description>
+					<posx>890</posx>
+					<posy>75</posy>
+					<include>RCB_ArrowDown_Button</include>
+					<onclick>Control.Move(5490,1)</onclick>
+					<onleft>6000</onleft>
+					<onright>5492</onright>
+					<onup>5411</onup>
+					<ondown>6000</ondown>
+				</control>
+				
+				<control type="button" id="5492">
+					<description>Menu Item Prev Button</description>
+					<posx>920</posx>
+					<posy>75</posy>
+					<include>RCB_ArrowUp_Button</include>
+					<onclick>Control.Move(5490,-1)</onclick>
+					<onleft>5491</onleft>
+					<onright>6000</onright>
+					<onup>5412</onup>
+					<ondown>6000</ondown>
+				</control>
+			
+			</control>
+
+			<control type="grouplist">			
+				<posx>630</posx>
+				<posy>360</posy>
+				<width>660</width>
+				<itemgap>20</itemgap>
+				<orientation>horizontal</orientation>
+				<align>right</align>
+			
+				<control type="button" id="6000">
+					<description>Delete</description>
+					<label>$ADDON[script.games.rom.collection.browser 32902]</label>
+					<include>InfoDialog_Button</include>
+					<onup>5491</onup>
+					<ondown>5101</ondown>
+					<onleft>6010</onleft>
+					<onright>6010</onright>
+				</control>
+				
+				<control type="button" id="6010">
+					<description>Cancel</description>
+					<label>$ADDON[script.games.rom.collection.browser 32635]</label>
+					<include>InfoDialog_Button</include>
+					<onup>5491</onup>
+					<ondown>5101</ondown>
+					<onleft>6000</onleft>
+					<onright>6000</onright>
+				</control>
+				
+			</control>	
+
+        </control>
+		
+    </controls>
+	
+</window>

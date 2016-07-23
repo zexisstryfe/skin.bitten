@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window id="34">
+    <defaultcontrol always="true">10</defaultcontrol>
+	
+    <controls>
+        <include>BG_Fanart_1080</include>
+		<include>FanartOverlay</include>
+
+		<control type="group">	
+			<posy>200</posy>
+
+			<include>Settings_GrayBand</include>
+
+			<control type="group">	
+				<posy>10</posy>
+			
+				<include>Settings_Backing</include>
+				
+				<control type="group">	
+					<posx>80</posx>
+					<include>Common_Animation_CenterMenu_Fade1</include>
+					
+					<control type="image">
+						<posx>20</posx>
+						<posy>80</posy>
+						<width>340</width>
+						<height>2</height>
+						<include>Common_Color_BaseMediumHigh</include>
+					</control>
+				
+					<control type="label">
+						<posx>20</posx>
+						<width>340</width>
+						<height>75</height>
+						<font>font45R</font>
+						<textcolor>$VAR[Accent_100]</textcolor>
+						<label>$LOCALIZE[13200]</label>
+					</control>
+					
+					<control type="button" id="10">
+						<description>Default Category Button</description>
+						<width>380</width>
+						<posy>100</posy>
+						<include>Common_Settings_Label</include>
+						<label>33063</label>
+						<onleft>4</onleft>
+						<onright>4</onright>
+					</control>
+				
+				</control>				
+
+				<control type="group">	
+					<posx>460</posx>
+					<include>Common_Animation_CenterMenu_Fade2</include>				
+					
+					<control type="image">
+						<posx>20</posx>
+						<posy>80</posy>
+						<width>1020</width>
+						<height>2</height>
+						<include>Common_Color_BaseMediumHigh</include>
+					</control>
+					
+					<control type="radiobutton" id="4">
+						<description>Enable Login Screen</description>
+						<posy>100</posy>
+						<width>1060</width>
+						<label>$LOCALIZE[20096]</label>
+						<include>Common_Settings_Label</include>
+						<radioposx>960</radioposx>
+						<onright>10</onright>
+						<onleft>10</onleft>
+						<onup>2</onup>
+						<ondown>5</ondown>
+					</control>
+					
+					<control type="radiobutton" id="5">
+						<description>Auto Login</description>
+						<posy>160</posy>
+						<width>1060</width>
+						<label>$LOCALIZE[33084]$INFO[system.profileautologin,:  ]</label>
+						<include>Common_Settings_Label</include>
+						<radioposx>960</radioposx>
+						<onright>10</onright>
+						<onleft>10</onleft>
+						<onup>4</onup>
+						<ondown>2</ondown>
+					</control>
+
+					<control type="label">
+						<description>users label</description>
+						<posx>40</posx>
+						<posy>220</posy>
+						<width>600</width>
+						<textcolor>$VAR[Accent_100]</textcolor>
+						<label>$LOCALIZE[31134]</label>						
+						<align>left</align>
+						<font>font30</font>
+					</control>
+
+					<control type="list" id="2">
+						<posy>280</posy>
+						<width>1060</width>
+						<height>466</height>
+						<onleft>10</onleft>
+						<onright>10</onright>
+						<onup>5</onup>
+						<ondown>4</ondown>
+						<itemlayout height="60">
+						
+							<control type="label">
+								<posx>20</posx>
+								<width>500</width>
+								<info>ListItem.Label</info>
+								<include>Common_Settings_Label</include>
+							</control>
+							
+							<control type="label">
+								<posx>500</posx>
+								<width>525</width>
+								<align>right</align>
+								<info>ListItem.Label2</info>
+								<textcolor>BaseMediumHigh</textcolor>
+								<font>font30</font>
+							</control>
+							
+						</itemlayout>
+						
+						<focusedlayout height="60">
+						
+							<control type="image">
+								<width>1060</width>
+								<height>60</height>
+								<include>Common_Color_Accent</include>
+								<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(2)">Conditional</animation>
+							</control>
+							
+							<control type="label">
+								<posx>20</posx>
+								<width>500</width>
+								<info>ListItem.Label</info>
+								<align>left</align>
+								<font>font30</font>
+								<textcolor>BaseWhite</textcolor>
+							</control>
+							
+							<control type="label">
+								<posx>500</posx>
+								<width>525</width>
+								<align>right</align>
+								<info>ListItem.Label2</info>
+								<textcolor>BaseWhite</textcolor>
+								<font>font30</font>
+							</control>
+							
+						</focusedlayout>
+						
+					</control>
+
+				</control>
+
+				<control type="group">	
+					<posx>1520</posx>
+					<include>Common_Animation_CenterMenu_Fade3</include>
+					
+					<control type="image">
+						<posx>20</posx>
+						<posy>80</posy>
+						<width>360</width>
+						<height>2</height>					
+						<include>Common_Color_BaseWhite</include>
+					</control>
+				
+					<control type="label">
+						<posx>20</posx>
+						<width>360</width>
+						<height>75</height>
+						<font>font45R</font>
+						<label>21821</label>
+						<textcolor>BaseLow</textcolor>
+					</control>
+					
+					<control type="textbox" id="6">
+						<description>description area</description>
+						<posx>40</posx>
+						<posy>100</posy>
+						<width>320</width>
+						<height>660</height>
+						<font>font30</font>
+						<textcolor>BaseWhite</textcolor>
+						<label>$VAR[Settings_Profile_Description]</label>
+						<autoscroll time="1000" delay="2000" repeat="3000">true</autoscroll>
+					</control>
+				
+				</control>				
+				
+			</control>	
+		
+		</control>
+		
+		<include>Common_LeftBar</include>
+
+    </controls>
+	
+</window>

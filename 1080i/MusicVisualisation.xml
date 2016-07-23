@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window id="2006">
+    <defaultcontrol always="true">-</defaultcontrol>
+	
+    <controls>
+	
+        <control type="visualisation" id="2">
+            <visible>!SubString(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>
+            <include>Dimensions_Fullscreen</include>
+        </control>
+		
+        <control type="group">
+            <visible>!SubString(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>
+            <visible>Player.ShowInfo + ![Window.IsVisible(VisualisationSettings) | Window.IsVisible(VisualisationPresetList)]</visible>
+            <animation type="WindowOpen">
+                <effect type="zoom" start="108" end="100" time="400" center="960,540" tween="cubic" easing="out" />
+                <effect type="fade" start="0" end="100" time="400" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="zoom" start="100" end="108" time="400" center="960,540" tween="cubic" easing="out" />
+                <effect type="fade" start="100" end="0" time="400" />
+            </animation>
+			
+            <control type="image">
+                <posx>45</posx>
+                <posy>45</posy>
+                <width>360</width>
+                <height>360</height>
+                <fadetime>200</fadetime>
+                <texture background="true">$INFO[MusicPlayer.cover]</texture>
+                <aspectratio align="left" aligny="top">keep</aspectratio>
+                <bordertexture border="5" colordiffuse="BaseWhite">colors/color_white.png</bordertexture>
+                <bordersize>8</bordersize>
+                <visible>!Window.IsVisible(script-cu-lrclyrics-main.xml)</visible>
+            </control>
+			
+            <control type="group">
+                <visible>!Window.IsVisible(MusicOSD.xml)</visible>
+				<posy>915</posy>
+				
+                <control type="image">
+                    <width>1950</width>
+                    <height>165</height>
+                    <include>Common_Color_Black60</include>
+                </control>
+				
+                <control type="label">
+                    <posx>45</posx>
+                    <width>1320</width>
+                    <label>$INFO[MusicPlayer.Album]$INFO[MusicPlayer.Artist, - ]</label>
+                    <font>font36B</font>
+                </control>
+				
+                <control type="label">
+                    <posx>45</posx>
+                    <posy>50</posy>
+                    <width>1320</width>
+                    <label>$INFO[MusicPlayer.Title]</label>
+                    <scroll>true</scroll>
+                    <font>font36R</font>
+                </control>
+				
+                <control type="label">
+                    <description>Track Count</description>
+                    <posx>1875</posx>
+                    <width>450</width>
+                    <label>$INFO[MusicPlayer.PlaylistPosition,[B][COLOR=Accent]$LOCALIZE[554]:[/COLOR][/B] ]$INFO[MusicPlayer.PlaylistLength, / ]</label>
+                    <align>right</align>
+                    <font>font36R</font>
+                    <visible>MusicPlayer.ChapterCount</visible>
+                </control>
+				
+                <control type="label">
+                    <description>Player Times</description>
+                    <posx>1875</posx>
+                    <posy>50</posy>
+                    <width>750</width>
+                    <label>$INFO[MusicPlayer.Time]$INFO[MusicPlayer.Duration, / ]</label>
+                    <align>right</align>
+                    <font>font36R</font>
+                </control>
+				
+                <control type="progress">
+                    <description>Progressbar</description>
+                    <posx>45</posx>
+                    <posy>45r</posy>
+                    <width>1830</width>
+                    <height>10</height>
+                    <info>Player.Progress</info>
+                </control>
+				
+            </control>
+			
+        </control>
+		
+    </controls>
+	
+</window>

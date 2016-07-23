@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<window id="5600">
+    <defaultcontrol>5201</defaultcontrol>
+    <coordinates>
+        <system>1</system>
+    </coordinates>
+
+    <controls>
+        <include>DialogOverlay</include>
+        <include>Common_LeftMenu_Wide_Backing</include>         
+        <include>Common_LeftBar_Wide_LeftMenu</include>     
+
+        <control type="image">
+            <description>Light Backing</description>
+            <posx>0</posx>
+            <posy>100</posy>
+            <width>1100</width>
+            <height>900</height>
+            <visible>true</visible>
+            <texture border="2" colordiffuse="BaseLow">colors/color_white.png</texture>
+            <animation type="WindowOpen">
+                <effect type="slide" start="-1100,0" end="0,0" center="auto" time="800" delay="200" tween="cubic" easing="out"/>
+            </animation>
+            <animation type="WindowClose">
+                <effect type="slide" start="0,0" end="-1100,0" center="auto" time="800" delay="200" tween="cubic" easing="out"/>
+            </animation>
+        </control>  
+
+        <control type="group">
+            <animation type="WindowOpen">
+                <effect type="fade" start="0" end="100" time="500" delay="900" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="fade" start="100" end="0" time="200" />
+            </animation>
+
+            <control type="label">
+                <posx>20</posx>
+                <height>80</height>
+                <font>font45R</font>
+                <label>$ADDON[script.games.rom.collection.browser 56000]</label>
+            </control>
+
+            <control type="list" id="5200">
+                <posy>100</posy>
+                <width>1100</width>
+                <height>60</height>
+                <onleft>5200</onleft>
+                <onright>5200</onright>
+                <onup>5200</onup>
+                <ondown>5200</ondown>
+                <pagecontrol>-</pagecontrol>
+                <scrolltime>0</scrolltime>
+                <itemlayout height="60" width="1100"></itemlayout>
+
+                <focusedlayout height="60" width="1100">
+
+                    <control type="image">
+                        <width>1100</width>
+                        <height>60</height>
+                        <include>Common_Color_Accent</include>
+                        <visible>[Control.HasFocus(5201)]</visible>
+                    </control>
+
+                    <control type="label">
+                        <posx>20</posx>
+                        <width>450</width>
+                        <height>60</height>
+                        <label>$ADDON[script.games.rom.collection.browser 56001]</label>
+                        <textcolor>BaseMediumHigh</textcolor>
+                        <visible>![Control.HasFocus(5201)]</visible>
+                    </control>
+
+                    <control type="label">
+                        <posx>20</posx>
+                        <width>450</width>
+                        <height>60</height>
+                        <label>$ADDON[script.games.rom.collection.browser 56001]</label>
+                        <visible>[Control.HasFocus(5201)]</visible>
+                    </control>
+
+                    <control type="label">
+                        <posx>470</posx>
+                        <width>610</width>
+                        <height>60</height>
+                        <textcolor>BaseMid</textcolor>
+                        <align>right</align>
+                        <label>$INFO[ListItem.Label]</label>
+                        <visible>![Control.HasFocus(5201)]</visible>
+                    </control>
+
+                    <control type="label">
+                        <posx>470</posx>
+                        <width>610</width>
+                        <height>60</height>
+                        <align>right</align>
+                        <label>$INFO[ListItem.Label]</label>
+                        <visible>[Control.HasFocus(5201)]</visible>
+                    </control>
+
+                </focusedlayout>
+
+            </control>
+
+           <!-- Show/Hide missing info list -->
+            <control type="button" id="5201">
+                <description>Menu Item Next Button</description>
+                <posx>945</posx>
+                <posy>104</posy>
+                <width>30</width>
+                <height>52</height>
+                <texturefocus>-</texturefocus>
+                <onclick>Control.Move(5200,1)</onclick>
+                <onup>6000</onup>
+                <ondown>5230</ondown>
+            </control>
+
+            <control type="button" id="5202">
+                <description>Menu Item Prev Button</description>
+                <texturefocus>-</texturefocus>
+            </control>
+
+            <!-- Artwork -->
+            <control type="group">
+                <posy>160</posy>
+
+                <control type="label">
+                    <posx>20</posx>
+                    <width>1060</width>
+                    <height>60</height>
+                    <align>center</align>
+                    <textcolor>$VAR[Accent_100]</textcolor>
+                    <label>[B]$ADDON[script.games.rom.collection.browser 56002][/B]</label>
+                </control>
+
+                <control type="group">
+                    <posx>40</posx>
+                    <posy>60</posy>
+
+                    <control type="label">
+                        <width>550</width>
+                        <height>60</height>
+                        <textcolor>BaseMediumHigh</textcolor>
+                        <label>$ADDON[script.games.rom.collection.browser 56003]:</label>
+                    </control>
+
+                    <control type="label" id="5220">
+                        <posx>1020</posx>
+                        <width>510</width>
+                        <height>60</height>
+                        <align>right</align>
+                        <textcolor>BaseMid</textcolor>
+                        <label>$ADDON[script.games.rom.collection.browser 56004]</label>
+                    </control>
+
+                    <control type="button" id="5230">
+                        <description>Add item</description>
+                        <posy>60</posy>
+                        <posx>-40</posx>
+                        <include>RCB_MissingInfo_GrayButton</include>
+                        <label>- $ADDON[script.games.rom.collection.browser 56005]</label>
+                        <onup>5201</onup>
+                        <ondown>5240</ondown>
+                    </control>
+
+                    <control type="button" id="5240">
+                        <description>Remove item</description>
+                        <posy>120</posy>
+                        <posx>-40</posx>                        
+                        <include>RCB_MissingInfo_GrayButton</include>
+                        <label>- $ADDON[script.games.rom.collection.browser 56006]</label>
+                        <onup>5230</onup>
+                        <ondown>5260</ondown>
+                    </control>
+
+                </control>
+
+                <control type="group">
+                    <posx>40</posx>
+                    <posy>240</posy>
+
+                    <control type="label">
+                        <width>550</width>
+                        <height>60</height>
+                        <textcolor>BaseMediumHigh</textcolor>
+                        <label>$ADDON[script.games.rom.collection.browser 56007]:</label>
+                    </control>
+
+                    <control type="label" id="5250">
+                        <posx>1020</posx>
+                        <width>510</width>
+                        <height>60</height>
+                        <align>right</align>
+                        <textcolor>BaseMid</textcolor>
+                        <label>$ADDON[script.games.rom.collection.browser 56004]</label>
+                    </control>
+
+                    <control type="button" id="5260">
+                        <description>Add item</description>
+                        <posy>60</posy>
+                        <posx>-40</posx>
+                        <include>RCB_MissingInfo_GrayButton</include>
+                        <label>- $ADDON[script.games.rom.collection.browser 56005]</label>
+                        <onup>5240</onup>
+                        <ondown>5270</ondown>
+                    </control>
+
+                    <control type="button" id="5270">
+                        <description>Remove item</description>
+                        <posy>120</posy>
+                        <posx>-40</posx>
+                        <include>RCB_MissingInfo_GrayButton</include>
+                        <label>- $ADDON[script.games.rom.collection.browser 56006]</label>
+                        <onup>5260</onup>
+                        <ondown>5290</ondown>
+                    </control>
+
+                </control>
+
+            </control>
+
+            <!-- Info -->
+            <control type="group">
+                <posy>580</posy>
+
+                <control type="label">
+                    <posx>20</posx>
+                    <width>1060</width>
+                    <height>60</height>
+                    <align>center</align>
+                    <textcolor>$VAR[Accent_100]</textcolor>
+                    <label>[B]$ADDON[script.games.rom.collection.browser 56008][/B]</label>
+                </control>
+
+                <control type="group">
+                    <posx>40</posx>
+                    <posy>60</posy>
+
+                    <control type="label">
+                        <width>550</width>
+                        <height>60</height>
+                        <textcolor>BaseMediumHigh</textcolor>
+                        <label>$ADDON[script.games.rom.collection.browser 56003]:</label>
+                    </control>
+
+                    <control type="label" id="5280">
+                        <posx>1020</posx>
+                        <width>510</width>
+                        <height>60</height>
+                        <align>right</align>
+                        <textcolor>BaseMid</textcolor>
+                        <label>$ADDON[script.games.rom.collection.browser 56004]</label>
+                    </control>
+
+                    <control type="button" id="5290">
+                        <description>Add item</description>
+                        <posy>60</posy>
+                        <posx>-40</posx>
+                        <include>RCB_MissingInfo_GrayButton</include>
+                        <label>- $ADDON[script.games.rom.collection.browser 56005]</label>
+                        <onup>5270</onup>
+                        <ondown>5300</ondown>
+                    </control>
+
+                    <control type="button" id="5300">
+                        <description>Remove item</description>
+                        <posy>120</posy>
+                        <posx>-40</posx>                        
+                        <include>RCB_MissingInfo_GrayButton</include>
+                        <label>- $ADDON[script.games.rom.collection.browser 56006]</label>
+                        <onup>5290</onup>
+                        <ondown>5320</ondown>
+                    </control>
+
+                </control>
+
+                <control type="group">
+                    <posx>40</posx>
+                    <posy>240</posy>
+
+                    <control type="label">
+                        <width>550</width>
+                        <height>60</height>
+                        <textcolor>BaseMediumHigh</textcolor>
+                        <label>$ADDON[script.games.rom.collection.browser 56007]:</label>
+                    </control>
+
+                    <control type="label" id="5310">
+                        <posx>1020</posx>
+                        <width>510</width>
+                        <height>60</height>
+                        <align>right</align>
+                        <textcolor>BaseMid</textcolor>
+                        <label>$ADDON[script.games.rom.collection.browser 56004]</label>
+                    </control>
+
+                    <control type="button" id="5320">
+                        <description>Add item</description>
+                        <posy>60</posy>
+                        <posx>-40</posx>
+                        <include>RCB_MissingInfo_GrayButton</include>
+                        <label>- $ADDON[script.games.rom.collection.browser 56005]</label>
+                        <onup>5300</onup>
+                        <ondown>5330</ondown>
+                    </control>
+
+                    <control type="button" id="5330">
+                        <description>Remove item</description>
+                        <posy>120</posy>
+                        <posx>-40</posx>
+                        <include>RCB_MissingInfo_GrayButton</include>
+                        <label>- $ADDON[script.games.rom.collection.browser 56006]</label>
+                        <onup>5320</onup>
+                        <ondown>6000</ondown>
+                    </control>
+
+                </control>
+
+            </control>            
+            
+            <control type="grouplist">          
+                <posy>1010</posy>
+                <width>1100</width>
+                <itemgap>20</itemgap>
+                <onup>5330</onup>
+                <ondown>5201</ondown>
+                <orientation>horizontal</orientation>
+                <align>center</align>
+            
+                <control type="button" id="6000">
+                    <description>Save</description>
+                    <label>$LOCALIZE[190]</label>
+                    <include>InfoDialog_Button</include>
+
+                </control>
+
+                <control type="button" id="6010">
+                    <description>Cancel</description>
+                    <label>$LOCALIZE[222]</label>
+                    <include>InfoDialog_Button</include>
+
+                </control>
+
+            </control>
+                
+        </control>
+        
+    </controls>
+
+</window>

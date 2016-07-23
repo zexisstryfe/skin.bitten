@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window type="dialog" id="134">
+    <defaultcontrol always="true">450</defaultcontrol>
+
+    <controls>
+        <include>DialogOverlay</include>
+
+        <control type="group">
+            <posy>630</posy>
+            <include>InfoDialog_Base</include>
+
+            <control type="image">
+                <posy>450</posy>
+                <width>1920</width>
+                <height>100</height>
+                <include>Common_Color_BaseWhite</include>
+                <animation type="WindowOpen">
+                    <effect type="slide" start="0,450" end="0,0" center="auto" time="600" tween="back" easing="out" />
+                </animation>
+                <animation type="WindowClose">
+                    <effect type="slide" start="0,0" end="0,450" center="auto" time="400" tween="back" easing="in" />
+                </animation>
+            </control>
+
+            <control type="group">  
+                <posy>75</posy>
+                <width>1920</width>
+                <height>375</height>
+
+                <include>Common_Logo_Backing</include>
+                
+            </control>  
+
+            <control type="label" id="1">
+                <description>Heading</description>
+                <label>$LOCALIZE[1036]</label>
+                <width>1920</width>
+                <height>75</height>
+                <font>font45R</font>
+                <align>center</align>
+                <textcolor>$VAR[Accent_100]</textcolor>
+            </control>   
+
+
+            <control type="fixedlist" id="450">
+                <posx>420</posx>
+                <posy>95</posy>
+                <width>1080</width>
+                <height>300</height>
+                <onleft>451</onleft>
+                <onright>451</onright>
+                <pagecontrol>451</pagecontrol>
+                <focusposition>2</focusposition>
+                <orientation>horizontal</orientation>
+                <itemlayout height="300" width="220">
+
+                    <control type="image">
+                        <width>200</width>
+                        <height>300</height>
+                        <include>Common_Color_BaseMediumHigh</include>
+                    </control>
+
+                    <control type="image">
+                        <width>200</width>
+                        <height>300</height>
+                        <texture background="true" fallback="tiles/favourites.png">$INFO[ListItem.Icon]</texture>
+                        <aspectratio aligny="top">scale</aspectratio>
+                    </control>
+
+                    <control type="label">
+                        <posx>630</posx>
+                        <width>600</width>
+                        <height>135</height>
+                        <align>right</align>
+                        <info>ListItem.Label2</info>
+                    </control>
+
+                </itemlayout>
+
+                <focusedlayout height="300" width="220">
+
+                    <control type="group">
+                        <animation type="Focus" reversible="false">
+                            <effect type="zoom" center="auto" start="100" end="105" time="300" tween="back" easing="out" />
+                        </animation>
+
+                        <control type="image">
+                            <width>200</width>
+                            <height>300</height>
+                            <include>Common_Color_Accent</include>
+                            <include>VisibleFadeEffect</include>
+                        </control>
+
+                        <control type="image">
+                            <width>200</width>
+                            <height>300</height>
+                            <bordersize>10</bordersize>
+                            <bordertexture colordiffuse="$VAR[Accent_100]">colors/color_white.png</bordertexture>
+                            <texture background="true" fallback="tiles/favourites.png">$INFO[ListItem.Icon]</texture>
+                            <aspectratio aligny="top">scale</aspectratio>
+                        </control>
+
+                    </control> 
+
+                </focusedlayout>
+
+            </control>
+
+            <control type="label">
+                <posx>420</posx>
+                <posy>405</posy>
+                <width>1080</width>
+                <height>40</height>
+                <align>center</align>
+                <aligny>center</aligny>
+                <font>font30B</font>
+                <textcolor>BaseMediumHigh</textcolor>
+                <label>$INFO[ListItem.Label]</label>
+            </control>          
+
+        </control>
+
+    </controls>
+
+</window> 

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window id="0">
+    <defaultcontrol>1000</defaultcontrol>
+    <onload>Weather.Refresh</onload>
+    <onload condition="!Skin.HasSetting(FirstTimeRun)">ActivateWindow(skinsettings)</onload>
+    <onload condition="!Skin.HasSetting(FirstTimeRun)">ActivateWindow(1114)</onload>
+    <onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=trendingshows)</onload>
+    <onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=trendingmovies)</onload>
+    <onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=intheaters)</onload>
+    <controls>
+	
+        <include>HomeBackground</include>
+
+        <!-- HEADER / FOOTER -->
+		<include>HomeScreen_Header_Footer</include>
+		
+		<!--CONTENT LISTS -->
+		<control type="group">
+
+			<include>HomeScreen_Content_List</include>
+			
+			<include>HomeScreen_Options_List</include> 
+		
+		</control> 
+		
+        <!-- CONTENT -->
+        <control type="group">
+            <include>Homescreen_Animation</include>
+			
+			<!-- TILE GROUPS -->
+			<control type="group" id="600">	
+
+				<include name="HomeMenu_Tiles">
+					 <param name="homemenu" value="HomeMenu1"/>
+				</include> 
+				
+				<include name="HomeMenu_Tiles"> 
+					 <param name="homemenu" value="HomeMenu2"/>
+				</include>
+
+				<include name="HomeMenu_Tiles">
+					 <param name="homemenu" value="HomeMenu3"/>
+				</include>
+
+				<include name="HomeMenu_Tiles">
+					 <param name="homemenu" value="HomeMenu4"/>
+				</include>
+
+				<include name="HomeMenu_Tiles">
+					 <param name="homemenu" value="HomeMenu5"/>
+				</include>
+
+				<include name="HomeMenu_Tiles">
+					 <param name="homemenu" value="HomeMenu6"/>
+				</include>
+
+				<include name="HomeMenu_Tiles">
+					 <param name="homemenu" value="HomeMenu7"/>
+				</include>
+				
+				<include name="HomeMenu_Tiles">
+					 <param name="homemenu" value="HomeMenu8"/>
+				</include>				
+				
+				<include name="HomeMenu_Tiles">
+					 <param name="homemenu" value="HomeMenu9"/>
+				</include>
+
+				<include name="HomeMenu_Tiles">
+					 <param name="homemenu" value="HomeMenu10"/>
+				</include>
+				
+			</control>	
+			
+			<!-- PANELS -->
+			<control type="group" id="700">	
+
+				<include name="HomeMenu_Panel">
+					 <param name="homemenu" value="HomeMenu1"/>
+				</include>
+				
+				<include name="HomeMenu_Panel">
+					 <param name="homemenu" value="HomeMenu2"/>
+				</include>
+
+				<include name="HomeMenu_Panel">
+					 <param name="homemenu" value="HomeMenu3"/>
+				</include>
+
+				<include name="HomeMenu_Panel">
+					 <param name="homemenu" value="HomeMenu4"/>
+				</include>
+
+				<include name="HomeMenu_Panel">
+					 <param name="homemenu" value="HomeMenu5"/>
+				</include>
+
+				<include name="HomeMenu_Panel">
+					 <param name="homemenu" value="HomeMenu6"/>
+				</include>
+
+				<include name="HomeMenu_Panel">
+					 <param name="homemenu" value="HomeMenu7"/>
+				</include>
+
+				<include name="HomeMenu_Panel">
+					 <param name="homemenu" value="HomeMenu8"/>
+				</include>
+
+				<include name="HomeMenu_Panel">
+					 <param name="homemenu" value="HomeMenu9"/>
+				</include>				
+				
+				<include name="HomeMenu_Panel">
+					 <param name="homemenu" value="HomeMenu10"/>
+				</include>				
+
+			</control>
+
+        </control>
+		
+    </controls>
+	
+</window>

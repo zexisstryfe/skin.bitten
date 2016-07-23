@@ -1,0 +1,1517 @@
+# XBMC Media Center language file
+# Addon Name: Bit(ten)
+# Addon id: skin.bit(ten)
+# Addon Provider: ZexisStryfe
+msgid ""
+msgstr ""
+"Project-Id-Version: XBMC Skins\n"
+"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Kodi Translation Team\n"
+"Language-Team: English (http://www.transifex.com/projects/p/xbmc-skins/language/en/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "#31000"
+msgid "Select a Tile"
+msgstr ""
+
+msgctxt "#31001"
+msgid "Overview"
+msgstr ""
+
+msgctxt "#31002"
+msgid "IP"
+msgstr ""
+
+msgctxt "#31003"
+msgid "Smart Filter"
+msgstr ""
+
+msgctxt "#31004"
+msgid "Group Manager"
+msgstr ""
+
+msgctxt "#31005"
+msgid "Available Groups"
+msgstr ""
+
+msgctxt "#31006"
+msgid "Paused"
+msgstr ""
+
+msgctxt "#31007"
+msgid "Fast Forward"
+msgstr ""
+
+msgctxt "#31008"
+msgid "Rewind"
+msgstr ""
+
+msgctxt "#31009"
+msgid "Recently Added"
+msgstr ""
+
+msgctxt "#31010"
+msgid "All Movies"
+msgstr ""
+
+msgctxt "#31011"
+msgid "Review"
+msgstr ""
+
+msgctxt "#31012"
+msgid "Live TV"
+msgstr ""
+
+msgctxt "#31013"
+msgid "All Recent"
+msgstr ""
+
+msgctxt "#31014"
+msgid "Update Videos"
+msgstr ""
+
+msgctxt "#31015"
+msgid "All TV Shows"
+msgstr ""
+
+msgctxt "#31016"
+msgid "Views"
+msgstr ""
+
+msgctxt "#31017"
+msgid "All Artists"
+msgstr ""
+
+msgctxt "#31018"
+msgid "There are no episodes airing today"
+msgstr ""
+
+msgctxt "#31019"
+msgid "Update Music"
+msgstr ""
+
+msgctxt "#31020"
+msgid "Current"
+msgstr ""
+
+msgctxt "#31021"
+msgid "high | low"
+msgstr ""
+
+msgctxt "#31022"
+msgid "There are no recordings scheduled"
+msgstr ""
+
+msgctxt "#31023"
+msgid "All Channels"
+msgstr ""
+
+msgctxt "#31024"
+msgid "All Music Videos"
+msgstr ""
+
+msgctxt "#31025"
+msgid "All Pictures"
+msgstr ""
+
+msgctxt "#31026"
+msgid "On Deck"
+msgstr ""
+
+msgctxt "#31027"
+msgid "Current Conditions"
+msgstr ""
+
+msgctxt "#31028"
+msgid "Last Updated"
+msgstr ""
+
+msgctxt "#31029"
+msgid "Featured Movies"
+msgstr ""
+
+msgctxt "#31030"
+msgid "Featured Episodes"
+msgstr ""
+
+msgctxt "#31031"
+msgid "Airing Today"
+msgstr ""
+
+msgctxt "#31032"
+msgid "Recordings"
+msgstr ""
+
+msgctxt "#31033"
+msgid "Eject Disc"
+msgstr ""
+
+msgctxt "#31034"
+msgid "Popular Albums"
+msgstr ""
+
+msgctxt "#31035"
+msgid "Featured Albums"
+msgstr ""
+
+msgctxt "#31036"
+msgid "Featured Artists"
+msgstr ""
+
+msgctxt "#31037"
+msgid "Featured Songs"
+msgstr ""
+
+msgctxt "#31038"
+msgid "Popular Videos"
+msgstr ""
+
+msgctxt "#31039"
+msgid "Featured Videos"
+msgstr ""
+
+msgctxt "#31040"
+msgid "Click to change the default Lyrics add-on"
+msgstr ""
+
+msgctxt "#31041"
+msgid "Click to change the default Subtitles add-on"
+msgstr ""
+
+msgctxt "#31042"
+msgid "Background Visuals"
+msgstr ""
+
+msgctxt "#31043"
+msgid "Lyrics/Subtitles"
+msgstr ""
+
+msgctxt "#31044"
+msgid "Current Selected"
+msgstr ""
+
+msgctxt "#31045"
+msgid "Open Playlist"
+msgstr ""
+
+msgctxt "#31046"
+msgid "Save Playlist"
+msgstr ""
+
+msgctxt "#31047"
+msgid "Close Playlist"
+msgstr ""
+
+msgctxt "#31048"
+msgid "System Music Files"
+msgstr ""
+
+msgctxt "#31049"
+msgid "Disable Background Visualiser"
+msgstr ""
+
+msgctxt "#31050"
+msgid "Disable Background Video"
+msgstr ""
+
+msgctxt "#31051"
+msgid "Files Mode"
+msgstr ""
+
+msgctxt "#31052"
+msgid "Player Controls"
+msgstr ""
+
+msgctxt "#31053"
+msgid "Items"
+msgstr ""
+
+msgctxt "#31054"
+msgid "Page"
+msgstr ""
+
+msgctxt "#31055"
+msgid "Current Playlist"
+msgstr ""
+
+msgctxt "#31056"
+msgid "Memory Used"
+msgstr ""
+
+msgctxt "#31057"
+msgid "Karaoke Song Selector"
+msgstr ""
+
+msgctxt "#31058"
+msgid "Visualization Presets"
+msgstr ""
+
+msgctxt "#31059"
+msgid "Debug"
+msgstr ""
+
+msgctxt "#31060"
+msgid "Enable Debug Grid"
+msgstr ""
+
+msgctxt "#31061"
+msgid "Disable Debug Info"
+msgstr ""
+
+msgctxt "#31062"
+msgid "DVD Menu"
+msgstr ""
+
+msgctxt "#31063"
+msgid "Power Options"
+msgstr ""
+
+msgctxt "#31064"
+msgid "Most Played"
+msgstr ""
+
+msgctxt "#31065"
+msgid "5-day Forecast"
+msgstr ""
+
+msgctxt "#31066"
+msgid "Featured Add-ons"
+msgstr ""
+
+msgctxt "#31067"
+msgid "16x9"
+msgstr ""
+
+msgctxt "#31068"
+msgid "Logo"
+msgstr ""
+
+msgctxt "#31069"
+msgid "Banner"
+msgstr ""
+
+msgctxt "#31070"
+msgid "Dialog"
+msgstr ""
+
+msgctxt "#31071"
+msgid "Polaroid"
+msgstr ""
+
+msgctxt "#31072"
+msgid "Showcase"
+msgstr ""
+
+msgctxt "#31073"
+msgid "Panel"
+msgstr ""
+
+msgctxt "#31074"
+msgid "Tile"
+msgstr ""
+
+msgctxt "#31075"
+msgid "Info"
+msgstr ""
+
+msgctxt "#31076"
+msgid "Sort by:"
+msgstr ""
+
+msgctxt "#31077"
+msgid "Order:"
+msgstr ""
+
+msgctxt "#31078"
+msgid "Toggle Watched"
+msgstr ""
+
+msgctxt "#31079"
+msgid "Smart Filter"
+msgstr ""
+
+msgctxt "#31080"
+msgid "Party Mode"
+msgstr ""
+
+msgctxt "#31081"
+msgid "Start Slideshow"
+msgstr ""
+
+msgctxt "#31082"
+msgid "Random"
+msgstr ""
+
+msgctxt "#31083"
+msgid "Auto-update"
+msgstr ""
+
+msgctxt "#31084"
+msgid "View:"
+msgstr ""
+
+msgctxt "#31085"
+msgid "Notify Me"
+msgstr ""
+
+msgctxt "#31086"
+msgid "Hide Foreign"
+msgstr ""
+
+#: /1080i/Custom_1115_DialogAccent.xml
+msgctxt "#31087"
+msgid "Gold"
+msgstr ""
+
+msgctxt "#31088"
+msgid "Clear Playlist"
+msgstr ""
+
+msgctxt "#31089"
+msgid "Shuffle"
+msgstr ""
+
+msgctxt "#31090"
+msgid "Pause Playlist"
+msgstr ""
+
+msgctxt "#31091"
+msgid "Play Playlist"
+msgstr ""
+
+msgctxt "#31092"
+msgid "Repeat Playlist"
+msgstr ""
+
+msgctxt "#31093"
+msgid "Change Location"
+msgstr ""
+
+msgctxt "#31094"
+msgid "Refresh[CR]Data"
+msgstr ""
+
+msgctxt "#31095"
+msgid "Copy[CR]CD"
+msgstr ""
+
+msgctxt "#31096"
+msgid "Scan to[CR]Library"
+msgstr ""
+
+msgctxt "#31097"
+msgid "More Views"
+msgstr ""
+
+msgctxt "#31098"
+msgid "3D Movies"
+msgstr ""
+
+msgctxt "#31099"
+msgid "HD Movies"
+msgstr ""
+
+msgctxt "#31100"
+msgid "Video Files"
+msgstr ""
+
+msgctxt "#31101"
+msgid "Music Files"
+msgstr ""
+
+msgctxt "#31102"
+msgid "Update Files"
+msgstr ""
+
+msgctxt "#31103"
+msgid "TV Guide"
+msgstr ""
+
+msgctxt "#31104"
+msgid "Channel Listings"
+msgstr ""
+
+msgctxt "#31105"
+msgid "Radio Listings"
+msgstr ""
+
+msgctxt "#31106"
+msgid "TV Timers"
+msgstr ""
+
+msgctxt "#31107"
+msgid "Movie Sets"
+msgstr ""
+
+msgctxt "#31108"
+msgid "All Games"
+msgstr ""
+
+msgctxt "#31109"
+msgid "Add Tile"
+msgstr ""
+
+msgctxt "#31110"
+msgid "Random[CR]Off"
+msgstr ""
+
+msgctxt "#31111"
+msgid "Random[CR]On"
+msgstr ""
+
+msgctxt "#31112"
+msgid "Pause"
+msgstr ""
+
+msgctxt "#31113"
+msgid "Stop"
+msgstr ""
+
+msgctxt "#31114"
+msgid "Forward"
+msgstr ""
+
+msgctxt "#31115"
+msgid "Visuals"
+msgstr ""
+
+msgctxt "#31116"
+msgid "Visual[CR]Settings"
+msgstr ""
+
+msgctxt "#31117"
+msgid "Visual[CR]Presets"
+msgstr ""
+
+msgctxt "#31118"
+msgid "Repeat[CR]Off"
+msgstr ""
+
+msgctxt "#31119"
+msgid "Repeat[CR]One"
+msgstr ""
+
+msgctxt "#31120"
+msgid "Repeat[CR]All"
+msgstr ""
+
+msgctxt "#31121"
+msgid "Pressure"
+msgstr ""
+
+msgctxt "#31122"
+msgid "Heat Index"
+msgstr ""
+
+msgctxt "#31123"
+msgid "Hourly Forecast"
+msgstr ""
+
+msgctxt "#31124"
+msgid "10-day Forecast"
+msgstr ""
+
+msgctxt "#31125"
+msgid "Map & Alerts"
+msgstr ""
+
+msgctxt "#31126"
+msgid "No alerts at this time"
+msgstr ""
+
+msgctxt "#31127"
+msgid "Repeat[CR]On"
+msgstr ""
+
+msgctxt "#31128"
+msgid "Go to[CR]Video"
+msgstr ""
+
+msgctxt "#31129"
+msgid "Show Listings"
+msgstr ""
+
+msgctxt "#31130"
+msgid "Edit ROM Collection"
+msgstr ""
+
+msgctxt "#31131"
+msgid "KODI Subtitles"
+msgstr ""
+
+msgctxt "#31132"
+msgid "Personalize"
+msgstr ""
+
+msgctxt "#31133"
+msgid "Login Settings"
+msgstr ""
+
+msgctxt "#31134"
+msgid "Users"
+msgstr ""
+
+msgctxt "#31135"
+msgid "Home Screen"
+msgstr ""
+
+msgctxt "#31136"
+msgid "Media Views"
+msgstr ""
+
+msgctxt "#31137"
+msgid "Custom Items"
+msgstr ""
+
+msgctxt "#31138"
+msgid "Use background image for tiles"
+msgstr ""
+
+msgctxt "#31139"
+msgid "Use screen-flip transition animations"
+msgstr ""
+
+msgctxt "#31140"
+msgid "Fanart Overlays"
+msgstr ""
+
+msgctxt "#31141"
+msgid "Enable Favourites add-on"
+msgstr ""
+
+msgctxt "#31142"
+msgid "Enable Next-Aired add-on"
+msgstr ""
+
+msgctxt "#31143"
+msgid "Enable TVTunes add-on"
+msgstr ""
+
+msgctxt "#31144"
+msgid "Home Menu"
+msgstr ""
+
+msgctxt "#31145"
+msgid "Tile 1-"
+msgstr ""
+
+msgctxt "#31146"
+msgid "Tile 2-"
+msgstr ""
+
+msgctxt "#31147"
+msgid "Tile 3-"
+msgstr ""
+
+msgctxt "#31148"
+msgid "Tile 4-"
+msgstr ""
+
+msgctxt "#31149"
+msgid "Tile 5-"
+msgstr ""
+
+msgctxt "#31150"
+msgid "Select Tiles"
+msgstr ""
+
+msgctxt "#31151"
+msgid "Select Panel"
+msgstr ""
+
+msgctxt "#31152"
+msgid "No Panel"
+msgstr ""
+
+msgctxt "#31153"
+msgid "Still Watching"
+msgstr ""
+
+msgctxt "#31154"
+msgid "Featured"
+msgstr ""
+
+msgctxt "#31155"
+msgid "Popular Music"
+msgstr ""
+
+msgctxt "#31156"
+msgid "Most Played (RCB)"
+msgstr ""
+
+msgctxt "#31157"
+msgid "Forecast"
+msgstr ""
+
+msgctxt "#31158"
+msgid "Edit background for media type"
+msgstr ""
+
+msgctxt "#31159"
+msgid "Set Single Image"
+msgstr ""
+
+msgctxt "#31160"
+msgid "Set Multi Image"
+msgstr ""
+
+msgctxt "#31161"
+msgid "Reset to Default"
+msgstr ""
+
+msgctxt "#31162"
+msgid "Show details in tile views"
+msgstr ""
+
+msgctxt "#31163"
+msgid "Use series logos in TV views"
+msgstr ""
+
+msgctxt "#31164"
+msgid "Use collection overlays in Movie views"
+msgstr ""
+
+msgctxt "#31165"
+msgid "- set customer home menu name"
+msgstr ""
+
+msgctxt "#31166"
+msgid "Playlist Options"
+msgstr ""
+
+msgctxt "#31167"
+msgid "Channel List"
+msgstr ""
+
+msgctxt "#31168"
+msgid "Radio List"
+msgstr ""
+
+msgctxt "#31169"
+msgid "All Songs"
+msgstr ""
+
+msgctxt "#31170"
+msgid "Audio[CR]Settings"
+msgstr ""
+
+msgctxt "#31171"
+msgid "Video[CR]Settings"
+msgstr ""
+
+msgctxt "#31172"
+msgid "DVD[CR]Menu"
+msgstr ""
+
+msgctxt "#31173"
+msgid "Next Episode"
+msgstr ""
+
+msgctxt "#31174"
+msgid "Rated"
+msgstr ""
+
+msgctxt "#31175"
+msgid "Premiered"
+msgstr ""
+
+msgctxt "#31176"
+msgid "Total Episodes"
+msgstr ""
+
+msgctxt "#31177"
+msgid "Airs on"
+msgstr ""
+
+msgctxt "#31178"
+msgid "Showing"
+msgstr ""
+
+msgctxt "#31179"
+msgid "Categorized by"
+msgstr ""
+
+msgctxt "#31180"
+msgid "Group Manager"
+msgstr ""
+
+msgctxt "#31181"
+msgid "Finish Time"
+msgstr ""
+
+msgctxt "#31182"
+msgid "Sorted by"
+msgstr ""
+
+msgctxt "#31183"
+msgid "Next Aired"
+msgstr ""
+
+msgctxt "#31184"
+msgid "ROM Collection Browser"
+msgstr ""
+
+msgctxt "#31185"
+msgid "Advanced Launcher"
+msgstr ""
+
+msgctxt "#31186"
+msgid "Prog. Add-ons"
+msgstr ""
+
+msgctxt "#31187"
+msgid "Please log in..."
+msgstr ""
+
+msgctxt "#31188"
+msgid "What's on TV?"
+msgstr ""
+
+msgctxt "#31189"
+msgid "Teletext"
+msgstr ""
+
+msgctxt "#31190"
+msgid "Channel[CR]List"
+msgstr ""
+
+msgctxt "#31191"
+msgid "Stop[CR]Recording"
+msgstr ""
+
+msgctxt "#31192"
+msgid "Length"
+msgstr ""
+
+msgctxt "#31193"
+msgid "IMDB Rating"
+msgstr ""
+
+msgctxt "#31194"
+msgid "Parent Directory"
+msgstr ""
+
+msgctxt "#31195"
+msgid "Scheduled Time"
+msgstr ""
+
+msgctxt "#31196"
+msgid "Custom Tile"
+msgstr ""
+
+msgctxt "#31197"
+msgid "Create a Tile"
+msgstr ""
+
+msgctxt "#31198"
+msgid "Path"
+msgstr ""
+
+msgctxt "#31199"
+msgid "[B][COLOR BaseWhite]Welcome to [/COLOR]bit(ten)[COLOR BaseWhite]![/COLOR][/B]"
+msgstr ""
+
+msgctxt "#31200"
+msgid "Since this is your first time using [B]bit(ten)[/B], let's take a few moments to set it up."
+msgstr ""
+
+msgctxt "#31201"
+msgid "Here you will find all the options available to you to customize the appearance of [B]bit(ten)[/B] exactly how you want it."
+msgstr ""
+
+msgctxt "#31202"
+msgid "You can always come back to this page whenever you want by going to [B]Settings > Personalize[/B] if you ever need to change something."
+msgstr ""
+
+msgctxt "#31203"
+msgid "Welcome to"
+msgstr ""
+
+msgctxt "#31204"
+msgid "Settings Level"
+msgstr ""
+
+msgctxt "#31205"
+msgid "Icon"
+msgstr ""
+
+msgctxt "#31206"
+msgid "There ar eno episodes airing on thei day"
+msgstr ""
+
+msgctxt "#31207"
+msgid "There is no information for this album"
+msgstr ""
+
+msgctxt "#31208"
+msgid "Explore"
+msgstr ""
+
+msgctxt "#31209"
+msgid "Use Black band menu backing on Home and Hub Screens"
+msgstr ""
+
+msgctxt "#31210"
+msgid "Use scrollbar for Home Screen categories"
+msgstr ""
+
+msgctxt "#31211"
+msgid "°"
+msgstr ""
+
+msgctxt "#31212"
+msgid "In Cinemas"
+msgstr ""
+
+msgctxt "#31213"
+msgid "History"
+msgstr ""
+
+msgctxt "#31214"
+msgid "No videos have been watched in the last week"
+msgstr ""
+
+msgctxt "#31215"
+msgid "Trakt.TV"
+msgstr ""
+
+msgctxt "#31216"
+msgid "Hubs"
+msgstr ""
+
+msgctxt "#31217"
+msgid "Available Movie& TV Show Hub sections"
+msgstr ""
+
+msgctxt "#31218"
+msgid "Available Music Hub sections"
+msgstr ""
+
+msgctxt "#31219"
+msgid "Available Music Video Hub sections"
+msgstr ""
+
+msgctxt "#31220"
+msgid "Movie & TV Hubs"
+msgstr ""
+
+msgctxt "#31221"
+msgid "Movie Hub only"
+msgstr ""
+
+msgctxt "#31222"
+msgid "TV Hub only"
+msgstr ""
+
+msgctxt "#31223"
+msgid "Currently Trending"
+msgstr ""
+
+msgctxt "#31224"
+msgid "Nearby Events"
+msgstr ""
+
+msgctxt "#31225"
+msgid "No music has been listened to in the last week"
+msgstr ""
+
+msgctxt "#31226"
+msgid "Now Playing"
+msgstr ""
+
+msgctxt "#31227"
+msgid "Titles"
+msgstr ""
+
+msgctxt "#31228"
+msgid "Trending Movies"
+msgstr ""
+
+msgctxt "#31229"
+msgid "Trending Shows"
+msgstr ""
+
+msgctxt "#31230"
+msgid "Airing Episodes"
+msgstr ""
+
+msgctxt "#31231"
+msgid "Premiering Episodes"
+msgstr ""
+
+msgctxt "#31232"
+msgid "Manage"
+msgstr ""
+
+msgctxt "#31233"
+msgid "Extras"
+msgstr ""
+
+msgctxt "#31234"
+msgid "Get Theme"
+msgstr ""
+
+msgctxt "#31235"
+msgid "Edit Info"
+msgstr ""
+
+msgctxt "#31236"
+msgid "Ratings"
+msgstr ""
+
+msgctxt "#31237"
+msgid "You may also like"
+msgstr ""
+
+msgctxt "#31238"
+msgid "Comments"
+msgstr ""
+
+msgctxt "#31239"
+msgid "Details"
+msgstr ""
+
+msgctxt "#31240"
+msgid "File Location"
+msgstr ""
+
+msgctxt "#31241"
+msgid "Upcoming Events"
+msgstr ""
+
+msgctxt "#31242"
+msgid "Symbol"
+msgstr ""
+
+msgctxt "#31243"
+msgid "Caps"
+msgstr ""
+
+msgctxt "#31244"
+msgid "Thumbnail"
+msgstr ""
+
+msgctxt "#31245"
+msgid "No description is currently available"
+msgstr ""
+
+msgctxt "#31246"
+msgid "Custom Menu"
+msgstr ""
+
+msgctxt "#31247"
+msgid "Use alphabetic overlay when scrolling through media"
+msgstr ""
+
+msgctxt "#31248"
+msgid "Visualizations"
+msgstr ""
+
+msgctxt "#31249"
+msgid "Overlays"
+msgstr ""
+
+msgctxt "#31250"
+msgid "Transitions"
+msgstr ""
+
+msgctxt "#31251"
+msgid "Enable Trakt.TV add-on"
+msgstr ""
+
+msgctxt "#31252"
+msgid "General Settings"
+msgstr ""
+
+msgctxt "#31253"
+msgid " - Update art (landscape, logo, clearart) after database update"
+msgstr ""
+
+msgctxt "#31254"
+msgid "Enable Artwork Downloader add-on"
+msgstr ""
+
+msgctxt "#31255"
+msgid "Select Accent color"
+msgstr ""
+
+msgctxt "#31256"
+msgid "KODI"
+msgstr ""
+
+msgctxt "#31257"
+msgid "Budget"
+msgstr ""
+
+msgctxt "#31258"
+msgid "Revenue"
+msgstr ""
+
+msgctxt "#31259"
+msgid "Released"
+msgstr ""
+
+msgctxt "#31260"
+msgid "Crew"
+msgstr ""
+
+msgctxt "#31261"
+msgid "Movieset"
+msgstr ""
+
+msgctxt "#31262"
+msgid "YouTube"
+msgstr ""
+
+msgctxt "#31263"
+msgid "EPG"
+msgstr ""
+
+msgctxt "#31264"
+msgid "On Now"
+msgstr ""
+
+msgctxt "#31265"
+msgid "On Next"
+msgstr ""
+
+msgctxt "#31266"
+msgid "Channels"
+msgstr ""
+
+msgctxt "#31267"
+msgid "Enable ExtendedInfo script's Info screens"
+msgstr ""
+
+msgctxt "#31268"
+msgid "Production Companies"
+msgstr ""
+
+msgctxt "#31269"
+msgid "Releases"
+msgstr ""
+
+msgctxt "#31270"
+msgid "Movie Roles"
+msgstr ""
+
+msgctxt "#31271"
+msgid "TV Roles"
+msgstr ""
+
+msgctxt "#31272"
+msgid "Movie Crew"
+msgstr ""
+
+msgctxt "#31273"
+msgid "TV Crew"
+msgstr ""
+
+msgctxt "#31274"
+msgid "Headshots"
+msgstr ""
+
+msgctxt "#31275"
+msgid "No events are currently scheduled"
+msgstr ""
+
+msgctxt "#31276"
+msgid "Similar Artists"
+msgstr ""
+
+msgctxt "#31277"
+msgid "New Movies"
+msgstr ""
+
+msgctxt "#31278"
+msgid "New Episodes"
+msgstr ""
+
+msgctxt "#31279"
+msgid "New Albums"
+msgstr ""
+
+msgctxt "#31280"
+msgid "New Videos"
+msgstr ""
+
+msgctxt "#31281"
+msgid "Options"
+msgstr ""
+
+msgctxt "#31282"
+msgid "Force Update"
+msgstr ""
+
+msgctxt "#31283"
+msgid "Press Up/Down to return to menu"
+msgstr ""
+
+msgctxt "#31284"
+msgid "Category containing all profile related settings."
+msgstr ""
+
+msgctxt "#31285"
+msgid "Turn this off in order to bypass the login screen on startup."
+msgstr ""
+
+msgctxt "#31286"
+msgid "Select the profile to edit or select 'Add profile...' in order to create a new profile."
+msgstr ""
+
+msgctxt "#31287"
+msgid "Current Accent color"
+msgstr ""
+
+msgctxt "#31288"
+msgid "Color Name"
+msgstr ""
+
+msgctxt "#31289"
+msgid "Memory Usage:"
+msgstr ""
+
+msgctxt "#31290"
+msgid "Channel Guide"
+msgstr ""
+
+msgctxt "#31291"
+msgid "Movie Genres"
+msgstr ""
+
+msgctxt "#31292"
+msgid "TV Genres"
+msgstr ""
+
+msgctxt "#31293"
+msgid "Music Genres"
+msgstr ""
+
+msgctxt "#31294"
+msgid "Music Video Genres"
+msgstr ""
+
+msgctxt "#31295"
+msgid "Recent Movies"
+msgstr ""
+
+msgctxt "#31296"
+msgid "Recent Episodes"
+msgstr ""
+
+msgctxt "#31297"
+msgid "Recent Albums"
+msgstr ""
+
+msgctxt "#31298"
+msgid "Movie Tags"
+msgstr ""
+
+msgctxt "#31299"
+msgid "Recent Music Videos"
+msgstr ""
+
+msgctxt "#31300"
+msgid "Menu"
+msgstr ""
+
+msgctxt "#31301"
+msgid "Reset Menu to Defaults"
+msgstr ""
+
+msgctxt "#31302"
+msgid "Add Panel"
+msgstr ""
+
+msgctxt "#31303"
+msgid "[B]Configure Appearance Settings[/B][CR][CR] .     Change the skin[CR] .     Set language and region[CR] .     Change file listing options[CR] .     Set up a screensaver"
+msgstr ""
+
+msgctxt "#31304"
+msgid "[B]Configure Video Settings[/B][CR][CR] .     Manage your video library[CR] .     Set video playback options[CR] .     Change video listing options[CR] .     Set subtitle fonts"
+msgstr ""
+
+msgctxt "#31305"
+msgid "[B]Configure Music Settings[/B][CR][CR] .     Manage your music library[CR] .     Set music playback options[CR] .     Change music listing options[CR] .     Setup song submission"
+msgstr ""
+
+msgctxt "#31306"
+msgid "[B]Configure Picture Settings[/B][CR][CR] .     Set picture listing options[CR] .     Configure slideshows"
+msgstr ""
+
+msgctxt "#31307"
+msgid "[B]Configure Weather Settings[/B][CR][CR] .     Set up to three cities"
+msgstr ""
+
+msgctxt "#31308"
+msgid "[B]Configure System Settings[/B][CR][CR] .     Setup and calibrate displays[CR] .     Configure audio output[CR] .     Setup remote controls[CR] .     Set power saving options[CR] .     Enable debugging[CR] .     Setup master lock"
+msgstr ""
+
+msgctxt "#31309"
+msgid "[B]Configure Add-Ons[/B][CR][CR] .     Manage your installed Add-ons[CR] .     Install Add-ons from kodi.tv[CR] .     Modify Add-on settings"
+msgstr ""
+
+msgctxt "#31310"
+msgid "[B]Configure TV Settings[/B][CR][CR] .     Change full screen info[CR] .     Manage EPG data settings"
+msgstr ""
+
+msgctxt "#31311"
+msgid "[B]Configure Service Settings[/B][CR][CR] .     Control via UPnP and HTTP[CR] .     Configure file sharing[CR] .     Enable Zeroconf[CR] .     Configure AirPlay"
+msgstr ""
+
+msgctxt "#31312"
+msgid "[B]Configure Profile Settings[/B][CR][CR] .     Setup user profiles[CR] .     Enable login screen[CR] .     Set master locks[CR] .     Control access to content"
+msgstr ""
+
+msgctxt "#31313"
+msgid "[B]Configure Skin Settings[/B][CR][CR] .     Customize the home screen[CR] .     Set background options[CR] .     Configure OSD options[CR] .     Enable add-on support[CR] .     Disable screen elements"
+msgstr ""
+
+msgctxt "#31314"
+msgid "[B]View System Information[/B][CR][CR] .     Summary[CR] .     Storage[CR] .     Network[CR] .     Video[CR] .     Hardware[CR] .     PVR Backend"
+msgstr ""
+
+msgctxt "#31315"
+msgid "View Mode"
+msgstr ""
+
+msgctxt "#31316"
+msgid "Previous Menu"
+msgstr ""
+
+msgctxt "#31317"
+msgid "Select a background"
+msgstr ""
+
+msgctxt "#31318"
+msgid "Current Background"
+msgstr ""
+
+msgctxt "#31319"
+msgid "Manual Search"
+msgstr ""
+
+msgctxt "#31320"
+msgid "New Rule"
+msgstr ""
+
+msgctxt "#31321"
+msgid "Delete Rule"
+msgstr ""
+
+msgctxt "#31322"
+msgid "Edit Rule"
+msgstr ""
+
+msgctxt "#31323"
+msgid "Back"
+msgstr ""
+
+msgctxt "#31324"
+msgid "No."
+msgstr ""
+
+msgctxt "#31325"
+msgid "Extra Info"
+msgstr ""
+
+msgctxt "#31326"
+msgid "No Timer"
+msgstr ""
+
+msgctxt "#31327"
+msgid "Mirror[CR]Image"
+msgstr ""
+
+msgctxt "#31328"
+msgid "3D[CR]Mode"
+msgstr ""
+
+msgctxt "#31329"
+msgid "Play Movie"
+msgstr ""
+
+msgctxt "#31330"
+msgid "Play Show"
+msgstr ""
+
+msgctxt "#31331"
+msgid "Play Trailer"
+msgstr ""
+
+msgctxt "#31332"
+msgid "Update Art"
+msgstr ""
+
+msgctxt "#31333"
+msgid "Get TVTune"
+msgstr ""
+
+msgctxt "#31334"
+msgid "Select Art"
+msgstr ""
+
+msgctxt "#31335"
+msgid "Last played on"
+msgstr ""
+
+msgctxt "#31336"
+msgid "Play Count"
+msgstr ""
+
+msgctxt "#31337"
+msgid "Date Added"
+msgstr ""
+
+msgctxt "#31338"
+msgid "Play Episode"
+msgstr ""
+
+#: /1080i/Custom_1115_DialogAccent.xml
+msgctxt "#31339"
+msgid "Olive"
+msgstr ""
+
+msgctxt "#31340"
+msgid "Play Video"
+msgstr ""
+
+msgctxt "#31341"
+msgid "Rating"
+msgstr ""
+
+msgctxt "#31342"
+msgid "Never played"
+msgstr ""
+
+msgctxt "#31343"
+msgid "Get Thumb"
+msgstr ""
+
+msgctxt "#31344"
+msgid "Get Fanart"
+msgstr ""
+
+msgctxt "#31345"
+msgid "Years Active"
+msgstr ""
+
+msgctxt "#31346"
+msgid "Trending[CR]Movies"
+msgstr ""
+
+msgctxt "#31347"
+msgid "Trending[CR]Shows"
+msgstr ""
+
+msgctxt "#31348"
+msgid "New[CR]Shows"
+msgstr ""
+
+msgctxt "#31349"
+msgid "Airing[CR]Shows"
+msgstr ""
+
+msgctxt "#31350"
+msgid "View the Entire Week"
+msgstr ""
+
+msgctxt "#31351"
+msgid "Last Played"
+msgstr ""
+
+msgctxt "#31352"
+msgid "M. Videos"
+msgstr ""
+
+msgctxt "#31353"
+msgid "Similar Movies"
+msgstr ""
+
+msgctxt "#31354"
+msgid "Other Movies Directed by $INFO[ListItem.Director]"
+msgstr ""
+
+msgctxt "#31355"
+msgid "Other Movies Written by $INFO[ListItem.Writer]"
+msgstr ""
+
+msgctxt "#31356"
+msgid "Other Movies from $INFO[ListItem.Studio]"
+msgstr ""
+
+msgctxt "#31357"
+msgid "Similar TV Shows"
+msgstr ""
+
+msgctxt "#31358"
+msgid "List local library items"
+msgstr ""
+
+msgctxt "#31359"
+msgid "Online information from TMDb"
+msgstr ""
+
+msgctxt "#31360"
+msgid "Select..."
+msgstr ""
+
+msgctxt "#31361"
+msgid "No known aliases"
+msgstr ""
+
+#: /1080i/Custom_1115_DialogAccent.xml
+msgctxt "#31362"
+msgid "Teal"
+msgstr ""
+
+#: /1080i/Custom_1115_DialogAccent.xml
+msgctxt "#31363"
+msgid "Lavender"
+msgstr ""
+
+#: /1080i/Custom_1115_DialogAccent.xml
+msgctxt "#31364"
+msgid "Purple"
+msgstr ""
+
+#: /1080i/Custom_1115_DialogAccent.xml
+msgctxt "#31365"
+msgid "Pink"
+msgstr ""
+
+#: /1080i/Custom_1115_DialogAccent.xml
+msgctxt "#31366"
+msgid "Magenta"
+msgstr ""
+
+#: /1080i/DialogPVRRadioRDSInfo.xml
+msgctxt "#31367"
+msgid "My Favorite Station"
+msgstr ""
+
+#: /1080i/Includes_Script.xml
+msgctxt "#31368"
+msgid "Extended"
+msgstr ""
+
+#: /1080i/Startup.xml
+msgctxt "#31369"
+msgid "bit(ten)"
+msgstr ""
+
+#: /1080i/Viewtype_Tiles.xml
+msgctxt "#31370"
+msgid "tiles"
+msgstr ""
+
+#: /1080i/DialogAudioDSPManager.xml
+msgctxt "#31371"
+msgid "Audio DSP Manager"
+msgstr ""

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<window id="2002">
+    <defaultcontrol always="true">10</defaultcontrol>
+    <onload condition="Library.IsScanningVideo + Skin.HasSetting(UpdateArt.Enabled) + Skin.HasSetting(UseArtDownloader)">SetProperty(UpdateArt,1)</onload>
+    <onunload condition="!IsEmpty(Window.Property(UpdateArt)) + Skin.HasSetting(UpdateArt.Enabled) + Skin.HasSetting(UseArtDownloader)">XBMC.RunScript(script.artwork.downloader,mode=custom,silent=true,landscape,clearlogo,clearart)</onunload>
+    <onunload condition="!IsEmpty(Window.Property(UpdateArt)) + Skin.HasSetting(UpdateArt.Enabled) + Skin.HasSetting(UseArtDownloader)">ClearProperty(UpdateArt)</onunload>
+
+    <controls>
+
+		<control type="group">
+            <visible>!VideoPlayer.IsFullscreen + !Window.IsVisible(screencalibration) + !Window.IsVisible(settings) + !Window.IsVisible(SettingsCategory.xml) + !Window.IsVisible(volumebar) + !Window.IsVisible(mutebug) + !Window.IsVisible(infodialog) + !ControlGroup(9000).HasFocus</visible>
+            <include>Animation_Notification_Left</include>
+            
+			<control type="image">
+                <description>background image</description>
+                <width>600</width>
+                <height>150</height>
+                <include>Common_Color_Accent</include>
+            </control>
+			
+            <control type="image">
+                <posx>537</posx>
+                <posy>90</posy>
+                <width>48</width>
+                <height>48</height>
+                <texture colordiffuse="BaseWhite">kai/download.png</texture>
+            </control>
+			
+            <control type="label" id="30">
+                <description>heading</description>
+                <posx>30</posx>
+                <posy>15</posy>
+                <width>555</width>
+                <height>30</height>
+                <font>font30CB</font>
+                <scroll>false</scroll>
+                <align>left</align>
+                <aligny>top</aligny>
+            </control>
+			
+            <control type="label" id="31">
+                <description>Current Directory Label</description>
+                <posx>30</posx>
+                <posy>60</posy>
+                <width>555</width>
+                <height>30</height>
+                <font>font24</font>
+                <scroll>false</scroll>
+                <align>left</align>
+                <aligny>top</aligny>
+            </control>
+			
+            <control type="progress" id="32">
+                <description>progress control</description>
+                <posx>30</posx>
+                <posy>115</posy>
+                <width>480</width>
+                <height>10</height>
+                <texturebg colordiffuse="BaseMediumHigh">colors/color_white.png</texturebg>
+                <midtexture colordiffuse="BaseWhite">colors/color_white.png</midtexture>
+            </control>
+			
+        </control>
+		
+    </controls>
+	
+</window>

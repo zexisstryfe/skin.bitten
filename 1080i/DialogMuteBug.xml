@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window id="113">
+    <defaultcontrol always="true">901</defaultcontrol>
+	
+    <controls>
+	
+        <control type="group">
+            <posx>1833</posx>
+            <visible>!Window.IsActive(home)</visible>
+			
+            <control type="image">
+                <description>Mute Image</description>
+                <posy>30</posy>
+                <width>72</width>
+                <height>90</height>
+                <texture>volume/mute.png</texture>
+            </control>
+			
+        </control>
+		
+        <control type="group">
+            <posx>1833</posx>
+            <visible>Window.IsActive(home)</visible>
+			
+            <control type="image">
+                <description>Mute Image</description>
+                <posy>120</posy>
+                <width>72</width>
+                <height>90</height>
+                <texture>volume/mute.png</texture>
+            </control>
+			
+        </control>
+		
+    </controls>
+	
+</window>

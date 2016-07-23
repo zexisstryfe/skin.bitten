@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <onload condition="System.HasAddon(script.tv.show.next.aired) + Skin.HasSetting(UseNextAiredScript)">XBMC.RunScript(script.tv.show.next.aired,silent=True)</onload>
+    <onload condition="System.HasAddon(script.favourites) + Skin.HasSetting(UseFavouritesScript)">XBMC.RunScript(script.favourites,silent=True)</onload>
+    <onload condition="System.HasAddon(script.games.rom.collection.browser)">XBMC.RunScript(script.games.rom.collection.browser,limit=10)</onload>
+	
+    <!--Splash Screen-->
+    <onload>AlarmClock(CloseStartup,ReplaceWindow(home),00:03,silent)</onload>
+    <animation type="WindowOpen">
+        <effect type="fade" start="0" end="100" time="400" delay="200" />
+    </animation>
+    <animation type="WindowClose">
+        <effect type="fade" start="100" end="0" time="400" delay="200" />
+    </animation>
+	
+    <controls>
+	
+        <control type="image">
+            <include>Dimensions_Fullscreen</include>
+            <include>Common_Color_BaseWhite</include>
+        </control>
+		
+		<control type="group">
+            <animation effect="slide" start="1920,0" time="600" easing="out" tween="cubic" delay="200">WindowOpen</animation>
+			<include>Dimensions_Fullscreen</include>
+			
+			<include>Common_Logo_Backing</include>
+			
+        </control>
+		
+        <control type="label">
+            <animation effect="slide" start="-1920,0" time="800" easing="out" tween="cubic" delay="600">WindowOpen</animation>
+            <posy>275</posy>
+			<include>Common_Startup_Label</include>
+            <font>font120</font>
+            <textcolor>BaseMid</textcolor>
+            <label>$LOCALIZE[31203]</label>
+        </control>
+		
+		<control type="label">
+            <animation effect="slide" start="-1920,0" time="800" easing="out" tween="cubic" delay="1200">WindowOpen</animation>
+            <posy>525</posy>
+            <include>Common_Startup_Label</include>
+            <font>font240B</font>
+            <textcolor>BaseMediumHigh</textcolor>
+            <label>$LOCALIZE[31369]</label>
+        </control>
+		
+    </controls>
+	
+</window>

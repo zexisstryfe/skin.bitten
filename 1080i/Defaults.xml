@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<includes>
+
+    <default type="label">
+        <posx>0</posx>
+        <posy>0</posy>
+        <label>-</label>
+        <height>60</height>
+        <align>left</align>
+        <aligny>center</aligny>
+        <font>font30R</font>
+        <textcolor>BaseWhite</textcolor>
+        <focusedcolor>BaseWhite</focusedcolor>
+        <selectedcolor>BaseWhite</selectedcolor>
+        <disabledcolor>BaseBlack</disabledcolor>
+    </default>
+	
+    <default type="fadelabel">
+        <posx>0</posx>
+        <posy>0</posy>
+        <height>60</height>
+        <label>-</label>
+        <align>left</align>
+        <aligny>center</aligny>
+        <font>font30R</font>
+        <textcolor>BaseWhite</textcolor>
+        <focusedcolor>BaseWhite</focusedcolor>
+        <selectedcolor>BaseWhite</selectedcolor>
+        <disabledcolor>BaseBlack</disabledcolor>
+        <scrollout>false</scrollout>
+        <pauseatend>2000</pauseatend>
+    </default>
+	
+    <default type="image">
+        <posx>0</posx>
+        <posy>0</posy>
+        <width>-</width>
+        <height>-</height>
+        <align>center</align>
+        <aligny>center</aligny>
+        <texture>-</texture>
+    </default>
+	
+    <default type="button">
+        <posx>0</posx>
+        <posy>0</posy>
+        <width>450</width>
+        <height>60</height>
+        <align>center</align>
+        <aligny>center</aligny>
+        <font>font30R</font>
+        <label>-</label>
+        <textoffsetx>30</textoffsetx>
+        <textcolor>BaseWhite</textcolor>
+        <focusedcolor>BaseWhite</focusedcolor>
+        <disabledcolor>BaseBlack</disabledcolor>
+        <texturefocus colordiffuse="$VAR[Accent_100]">colors/color_white.png</texturefocus>
+        <pulseonselect>false</pulseonselect>
+    </default>
+	
+    <default type="togglebutton">
+        <posx>0</posx>
+        <posy>0</posy>
+        <width>450</width>
+        <height>60</height>
+        <label>-</label>
+        <textoffsetx>30</textoffsetx>
+        <font>font30R</font>
+        <textcolor>BaseWhite</textcolor>
+        <focusedcolor>BaseWhite</focusedcolor>
+        <disabledcolor>BaseBlack</disabledcolor>
+        <texturefocus colordiffuse="$VAR[Accent_100]">colors/color_white.png</texturefocus>
+        <alttexturefocus border="5" colordiffuse="$VAR[Accent_100]">colors/color_white.png</alttexturefocus>
+        <align>center</align>
+        <aligny>center</aligny>
+        <pulseonselect>false</pulseonselect>
+    </default>
+	
+    <default type="radiobutton">
+        <posx>0</posx>
+        <posy>0</posy>
+        <width>450</width>
+        <height>60</height>
+        <align>center</align>
+        <aligny>center</aligny>
+        <font>font30R</font>
+        <label>-</label>
+        <textcolor>BaseWhite</textcolor>
+        <focusedcolor>BaseWhite</focusedcolor>
+        <disabledcolor>BaseBlack</disabledcolor>
+        <radiowidth>75</radiowidth>
+        <radioheight>60</radioheight>
+        <texturefocus colordiffuse="$VAR[Accent_100]">colors/color_white.png</texturefocus>
+		<textureradioofffocus colordiffuse="BaseWhite">controls/RadiobuttonOFF.png</textureradioofffocus>
+		<textureradiooffnofocus colordiffuse="BaseMediumHigh">controls/RadiobuttonOFF.png</textureradiooffnofocus>
+        <textureradiooffdisabled colordiffuse="BaseLow">controls/RadiobuttonOFF.png</textureradiooffdisabled>
+		<textureradioonfocus colordiffuse="BaseWhite">controls/RadiobuttonON.png</textureradioonfocus>
+		<textureradioonnofocus colordiffuse="BaseMediumHigh">controls/RadiobuttonON.png</textureradioonnofocus>
+        <textureradioondisabled colordiffuse="BaseLow">controls/RadiobuttonON.png</textureradioondisabled>
+        <textoffsetx>30</textoffsetx>
+        <pulseonselect>false</pulseonselect>
+    </default>
+	
+    <default type="spincontrolex">
+        <posx>0</posx>
+        <posy>0</posy>
+        <width>450</width>
+        <height>60</height>
+        <label>-</label>
+        <font>font30R</font>
+        <spinwidth>39</spinwidth>
+        <spinheight>39</spinheight>
+        <texturefocus colordiffuse="$VAR[Accent_100]">colors/color_white.png</texturefocus>
+		<textureup colordiffuse="BaseMediumHigh">controls/ArrowUpNF.png</textureup>
+		<texturedown colordiffuse="BaseMediumHigh">controls/ArrowDownNF.png</texturedown>
+		<textureupfocus colordiffuse="BaseWhite">controls/ArrowUpFO.png</textureupfocus>
+		<texturedownfocus colordiffuse="BaseWhite">controls/ArrowDownFO.png</texturedownfocus>
+        <textureupdisabled colordiffuse="BaseLow">controls/ArrowUpFO.png</textureupdisabled>
+        <texturedowndisabled colordiffuse="BaseLow">controls/ArrowDownFO.png</texturedowndisabled>
+        <textcolor>BaseMediumHigh</textcolor>
+        <focusedcolor>BaseWhite</focusedcolor>
+        <disabledcolor>BaseLow</disabledcolor>
+        <textoffsetx>30</textoffsetx>
+        <align>left</align>
+        <aligny>center</aligny>
+        <reverse>yes</reverse>
+        <pulseonselect>false</pulseonselect>
+    </default>
+	
+    <default type="spincontrol">
+        <posx>0</posx>
+        <posy>0</posy>
+        <height>22</height>
+        <width>22</width>
+        <spinwidth>39</spinwidth>
+        <spinheight>39</spinheight>
+        <textureup colordiffuse="BaseWhite">controls/ArrowUpNF.png</textureup>
+        <texturedown colordiffuse="BaseWhite">controls/ArrowDownNF.png</texturedown>
+        <textureupfocus colordiffuse="BaseWhite">controls/ArrowUpFO.png</textureupfocus>
+        <texturedownfocus colordiffuse="BaseWhite">controls/ArrowDownFO.png</texturedownfocus>
+        <textureupdisabled colordiffuse="BaseLow">controls/ArrowUpFO.png</textureupdisabled>
+        <texturedowndisabled colordiffuse="BaseLow">controls/ArrowDownFO.png</texturedowndisabled>
+        <font>font30R</font>
+        <textcolor>BaseWhite</textcolor>
+        <focusedcolor>BaseWhite</focusedcolor>
+        <disabledcolor>BaseBlack</disabledcolor>
+        <textoffsetx>30</textoffsetx>
+        <align>left</align>
+        <aligny>center</aligny>
+        <reverse>yes</reverse>
+        <pulseonselect>false</pulseonselect>
+    </default>
+	
+    <default type="sliderex">
+        <posx>0</posx>
+        <posy>0</posy>
+        <height>60</height>
+        <width>450</width>
+        <texturefocus colordiffuse="$VAR[Accent_100]">colors/color_white.png</texturefocus>
+        <sliderwidth>150</sliderwidth>
+        <sliderheight>15</sliderheight>
+        <texturesliderbar>OSD/slider_bg.png</texturesliderbar>
+        <textureslidernib border="2">OSD/SliderNibNF.png</textureslidernib>
+        <textureslidernibfocus border="2">OSD/SliderNibFO.png</textureslidernibfocus>
+        <font>font30R</font>
+        <textcolor>BaseWhite</textcolor>
+        <focusedcolor>BaseWhite</focusedcolor>
+        <disabledcolor>BaseBlack</disabledcolor>
+        <textoffsetx>30</textoffsetx>
+        <textoffsety>0</textoffsety>
+    </default>
+	
+    <default type="progress">
+        <posx>225</posx>
+        <posy>488</posy>
+        <height>8</height>
+        <texturebg colordiffuse="BaseWhite">controls/ProgressBack.png</texturebg>
+        <lefttexture>-</lefttexture>
+        <midtexture colordiffuse="$VAR[Accent_100]">controls/ProgressMid.png</midtexture>
+        <righttexture>-</righttexture>
+        <overlaytexture>-</overlaytexture>
+    </default>
+	
+    <default type="slider">
+        <posx>0</posx>
+        <posy>0</posy>
+        <width>630</width>
+        <height>30</height>
+        <texturefocus>-</texturefocus>
+        <texturenofocus>-</texturenofocus>
+        <texturesliderbar colordiffuse="BaseMid">OSD/slider_bg.png</texturesliderbar>
+        <textureslidernib border="2" colordiffuse="BaseMediumMid">OSD/SliderNibFO.png</textureslidernib>
+        <textureslidernibfocus border="2" colordiffuse="$VAR[Accent_100]">OSD/SliderNibFO.png</textureslidernibfocus>
+    </default>
+	
+    <default type="scrollbar">
+        <width>8</width>
+        <texturesliderbar colordiffuse="BaseLow">colors/color_white.png</texturesliderbar>
+        <texturesliderbackground colordiffuse="BaseMid">colors/color_white.png</texturesliderbackground>
+        <texturesliderbarfocus colordiffuse="$VAR[Accent_100]">colors/color_white.png</texturesliderbarfocus>
+        <showonepage>true</showonepage>
+        <orientation>vertical</orientation>
+    </default>
+	
+    <default type="textbox">
+        <label>-</label>
+        <font>font30R</font>
+        <textcolor>BaseWhite</textcolor>
+        <pagecontrol>61</pagecontrol>
+        <autoscroll delay="6000" time="2000" repeat="10000" />
+    </default>
+	
+	<default type="edit">
+        <height>60</height>
+		<font>font30R</font>
+		<align>center</align>
+		<aligny>center</aligny>
+		<textcolor>BaseMediumHigh</textcolor>
+		<focusedcolor>BaseWhite</focusedcolor>
+		<texturenofocus border="2" colordiffuse="BaseLow">colors/color_white.png</texturenofocus>
+		<texturefocus border="5" colordiffuse="$VAR[Accent_100]">colors/color_white.png</texturefocus>
+		<pulseonselect>false</pulseonselect>
+    </default>
+	
+</includes>

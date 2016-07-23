@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window type="dialog" id="1118">
+    <defaultcontrol always="true">51</defaultcontrol>
+    <onload condition="System.HasAddon(script.extendedinfo) + StringCompare(Window.Property(Type),movie)">RunScript(script.extendedinfo,info=similarmovies,id=$INFO[Window.Property(ID)])</onload>
+    <onload condition="System.HasAddon(script.extendedinfo) + StringCompare(Window.Property(Type),tvshow)">RunScript(script.extendedinfo,info=similartvshows,id=$INFO[Window.Property(ID)])</onload>
+
+    <controls>
+        <!--Background Area-->
+        <control type="group">
+            <control type="image">
+                <include>Dimensions_Fullscreen</include>
+                <texture background="true" fallback="../extras/backgrounds/default.jpg">$INFO[Window.Property(Fanart)]</texture>
+                <aspectratio>scale</aspectratio>
+				<include>Animation_Common_InfoWindow</include>
+            </control>
+
+			<include>WhiteOverlay</include> 
+
+            <control type="image">
+				<posy>110</posy>
+                <height>80</height>
+				<width>1920</width>
+                <texture colordiffuse="BaseMediumMid40">colors/color_white.png</texture>
+				<include>Animation_Common_InfoWindow</include>
+            </control>
+
+            <control type="image">
+				<posy>1000</posy>
+                <height>80</height>
+				<width>1920</width>
+                <texture colordiffuse="BaseMediumHigh60">colors/color_white.png</texture>
+				<include>Animation_Common_InfoWindow</include> 
+			</control>
+			
+            <control type="image">
+                <width>720</width>
+                <height>1080</height>
+				<aspectratio>scale</aspectratio>
+                <texture background="true">$INFO[Window.Property(poster)]</texture>
+				<include>Animation_Common_InfoPoster</include> 
+           </control>		
+
+        </control>
+
+		<include>Common_LeftBar</include>		
+		
+        <!--Top Section-->
+		<control type="group">
+			<include>Animation_Common_Window</include>
+			<posx>820</posx>
+			<posy>20</posy>
+		
+			<control type="label">
+				<width>900</width>
+				<height>40</height>
+				<font>font45R</font>
+				<textcolor>$VAR[Accent_100]</textcolor>
+				<label>$INFO[Window.Property(title)]</label>
+			</control>
+
+			<control type="label" id="145">
+				<posy>50</posy>
+				<width>900</width>
+				<textcolor>BaseMid</textcolor>
+				<label>$INFO[Window.Property(genre)]</label>
+				<include>Common_Fanart_Subtitle</include>
+			</control>
+			
+			<control type="image">
+				<posx>920</posx>
+				<width>160</width>
+				<aspectratio align="right" aligny="center">center</aspectratio>
+				<height>80</height>
+				<texture background="true" fallback="flags/studios/default-studio.png">resource://resource.images.studios.white/$INFO[ListItem.Studio,,.png]</texture>
+				<colordiffuse>BaseMediumHigh</colordiffuse>
+				<visible>!IsEmpty(ListItem.Studio)</visible>
+			</control>
+
+			<!--Control Section-->
+            <control type="grouplist" id="9221">
+				<posy>100</posy>
+				<width>1080</width>
+				<height>60</height>
+				<itemgap>20</itemgap>
+				<onup>1</onup>
+				<ondown>1</ondown>
+				<orientation>horizontal</orientation>
+				<align>left</align>
+				<visible allowhiddenfocus="true">!ControlGroup(9222).HasFocus</visible>
+				<animation type="Visible" reversible="false">
+					<effect type="fade" start="0" end="100" time="300" tween="sine" easing="out"  />
+					<effect type="slide" start="-50,0" end="0,0" time="350" tween="sine" easing="out" />
+				</animation>
+				<animation type="Hidden" reversible="false">
+					<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+					<effect type="slide" start="0,0" end="-50,0" time="350" tween="sine" easing="out" />
+				</animation>
+
+				<control type="group">
+					<width>140</width>
+					
+					<control type="image">
+						<width>120</width>
+						<height>40</height>
+						<texture colordiffuse="BaseMid">flags\ratings\rating5.png</texture>
+						<aspectratio>keep</aspectratio>
+					</control>
+					
+					<control type="image">
+						<width>120</width>
+						<height>40</height>
+						<texture colordiffuse="$VAR[Accent_100]">$INFO[Window.Property(Rating),flags/ratings/,.png]</texture>
+						<aspectratio>keep</aspectratio>
+					</control>			
+
+					<control type="label">
+						<posy>30</posy>
+						<width>120</width>
+						<height>40</height>
+						<textcolor>BaseMid</textcolor>
+						<label>$LOCALIZE[563]- $INFO[Window.Property(Rating)]</label>
+						<font>font20R</font>
+						<align>center</align>
+						<aligny>top</aligny>
+					</control>
+				
+				</control>					
+				
+			</control>
+			
+			<!--Info Section-->
+			<control type="grouplist">
+				<posy>180</posy>
+				
+				<!-- Year label -->
+				<control type="group">
+					<width>850</width>
+					<height>40</height>
+					
+					<control type="label">
+						<include>Common_Info_Label</include>
+						<label>$LOCALIZE[345] </label>
+					</control>
+					
+					<control type="label">
+						<include>Common_Info_Video</include>
+						<label fallback="195">$INFO[Window.Property(Year)]</label>
+					</control>
+
+				</control>
+				
+				<!-- Runtime label -->
+				<control type="group">
+					<width>850</width>
+					<height>40</height>
+
+					<control type="label">
+						<include>Common_Info_Label</include>
+						<label>$LOCALIZE[2050] </label>
+					</control>
+					
+					<control type="label">
+						<include>Common_Info_Video</include>
+						<label fallback="195">$INFO[Window.Property(Runtime)] $LOCALIZE[12391]</label>
+					</control>
+					
+				</control>
+				
+				<!-- Rating label -->
+				<control type="group">
+					<width>850</width>
+					<height>40</height>
+
+					<control type="label">
+						<include>Common_Info_Label</include>
+						<label>$LOCALIZE[563] </label>
+					</control>
+					
+					<control type="label">
+						<include>Common_Info_Video</include>
+						<label>$INFO[Window.Property(MPAA)]</label>
+					</control>
+
+					
+				</control>
+
+				<!-- Premiered label -->
+				<control type="group">
+					<width>850</width>
+					<height>40</height>
+					
+					<control type="label">
+						<include>Common_Info_Label</include>
+						<label>$LOCALIZE[31175] </label>
+					</control>
+					
+					<control type="label">
+						<include>Common_Info_Video</include>
+						<label>$INFO[Window.Property(Premiered)]</label>
+					</control>
+					
+				</control>
+				
+				<!--Plot-->
+				<control type="group">
+					<width>850</width>
+					<height>365</height>
+					
+					<control type="image">
+						<height>2</height>						<width>1070</width>
+						<texture colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
+						<include>Animation_Common_Window</include>
+					</control>
+							
+					<control type="textbox">
+						<description>Plot</description>
+						<posy>10</posy>
+						<width>1070</width>
+						<height>185</height>
+						<font>font26R</font>
+						<align>justify</align>
+						<textcolor>BaseMid</textcolor>
+						<label>$INFO[Window.Property(Plot)]</label>
+					</control>
+					
+				</control>
+
+			</control>		
+
+			<control type="image">
+				<posy>560</posy>
+                <height>2</height>
+				<width>1070</width>
+                <texture colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
+				<include>Animation_Common_Window</include>
+            </control>
+
+			<!--Similar Section-->
+			<control type="group">
+				<posy>560</posy>
+				<width>1070</width>	
+				<height>320</height>
+
+				<control type="label">
+					<textcolor>$VAR[Accent_100]</textcolor>
+					<font>font26B</font>
+					<width>300</width>
+					<height>40</height>
+					<label>$LOCALIZE[31237]</label>
+				</control>
+
+				<control type="fixedlist" id="51">
+					<description>Similar</description>
+					<posy>40</posy>
+					<width>1080</width>
+					<height>765</height>
+					<onup>9221</onup>
+					<ondown>9221</ondown>
+					<orientation>horizontal</orientation>
+					<pagecontrol>79</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<visible>StringCompare(Window.Property(Type),movie)</visible>
+					<itemlayout height="360" width="260">
+					
+						<control type="image">
+							<width>240</width>
+							<height>360</height>
+							<include>Common_Color_TrueWhite</include>
+						</control>
+						
+						<control type="image">
+							<description>Poster</description>
+							<width>240</width>
+							<height>360</height>
+							<texture background="true">$INFO[ListItem.Thumb]</texture>
+						</control>
+						
+					</itemlayout>
+					
+					<focusedlayout height="360" width="260">
+											
+						<control type="image">
+							<width>240</width>
+							<height>360</height>
+							<include>Common_Color_Accent</include>
+						</control>
+						
+						<control type="image">
+							<description>Actor Image</description>
+							<width>240</width>
+							<height>360</height>
+							<texture fallback="DefaultMovie.png">$INFO[ListItem.Icon]</texture>
+                            <bordertexture colordiffuse="$VAR[Accent_100]">colors/color_white.png</bordertexture>
+                            <bordersize>5</bordersize>
+						</control>
+
+						<control type="label">
+							<font>font26B</font>
+							<width>300</width>
+							<height>40</height>
+							<label>$INFO[ListItem.Label]</label>
+						</control>						
+						
+					</focusedlayout>
+					
+					<content>
+						<item id="1">
+							<label>$INFO[Window(Home).Property(SimilarMovies.1.Title)]</label>
+							<thumb>$INFO[Window(Home).Property(SimilarMovies.1.Art(poster))]</thumb>						
+							<onclick>noop</onclick>
+						</item>
+						<item id="2">
+							<label>$INFO[Window(Home).Property(SimilarMovies.2.Title)]</label>
+							<thumb>$INFO[Window(Home).Property(SimilarMovies.2.Art(poster))]</thumb>
+							<onclick>noop</onclick>
+						</item>
+						<item id="3">
+							<label>$INFO[Window(Home).Property(SimilarMovies.3.Title)]</label>
+							<thumb>$INFO[Window(Home).Property(SimilarMovies.3.Art(poster))]</thumb>
+							<onclick>noop</onclick>
+						</item>
+						<item id="4">
+							<label>$INFO[Window(Home).Property(SimilarMovies.4.Title)]</label>
+							<thumb>$INFO[Window(Home).Property(SimilarMovies.4.Art(poster))]</thumb>
+							<onclick>noop</onclick>
+						</item>
+						<item id="5">
+							<label>$INFO[Window(Home).Property(SimilarMovies.5.Title)]</label>
+							<thumb>$INFO[Window(Home).Property(SimilarMovies.5.Art(poster))]</thumb>
+							<onclick>noop</onclick>
+						</item>
+						<item id="6">
+							<label>$INFO[Window(Home).Property(SimilarMovies.6.Title)]</label>
+							<thumb>$INFO[Window(Home).Property(SimilarMovies.6.Art(poster))]</thumb>
+							<onclick>noop</onclick>
+						</item>
+						<item id="7">
+							<label>$INFO[Window(Home).Property(SimilarMovies.7.Title)]</label>
+							<thumb>$INFO[Window(Home).Property(SimilarMovies.7.Art(poster))]</thumb>
+							<onclick>noop</onclick>
+						</item>
+						<item id="8">
+							<label>$INFO[Window(Home).Property(SimilarMovies.8.Title)]</label>
+							<thumb>$INFO[Window(Home).Property(SimilarMovies.8.Art(poster))]</thumb>
+							<onclick>noop</onclick>
+						</item>
+					</content>
+
+				</control>
+
+				<control type="fixedlist" id="51">
+					<description>Similar</description>
+					<posy>40</posy>
+					<width>1080</width>
+					<height>765</height>
+					<onup>9221</onup>
+					<ondown>9221</ondown>
+					<orientation>horizontal</orientation>
+					<pagecontrol>79</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<visible>StringCompare(Window.Property(Type),tvshow)</visible>
+					<itemlayout height="360" width="260">
+					
+						<control type="image">
+							<width>240</width>
+							<height>360</height>
+							<include>Common_Color_TrueWhite</include>
+						</control>
+						
+						<control type="image">
+							<description>Poster</description>
+							<width>240</width>
+							<height>360</height>
+							<texture background="true">$INFO[ListItem.Thumb]</texture>
+						</control>
+						
+					</itemlayout>
+					
+					<focusedlayout height="360" width="260">
+											
+						<control type="image">
+							<width>240</width>
+							<height>360</height>
+							<include>Common_Color_Accent</include>
+						</control>
+						
+						<control type="image">
+							<description>Actor Image</description>
+							<width>240</width>
+							<height>360</height>
+							<texture fallback="DefaultMovie.png">$INFO[ListItem.Icon]</texture>
+                            <bordertexture colordiffuse="$VAR[Accent_100]">colors/color_white.png</bordertexture>
+                            <bordersize>5</bordersize>
+						</control>
+
+						<control type="label">
+							<font>font26B</font>
+							<width>300</width>
+							<height>40</height>
+							<label>$INFO[ListItem.Label]</label>
+						</control>						
+						
+					</focusedlayout>
+					
+					<content>
+						<item id="1">
+							<label>$INFO[Window(Home).Property(SimilarTVShows.1.TVShowTitle)]</label>
+							<thumb>$INFO[Window(Home).Property(SimilarTVShows.1.Art(poster))]</thumb>						
+							<onclick>noop</onclick>
+						</item>
+						<item id="2">
+							<label>$INFO[Window(Home).Property(SimilarTVShows.2.TVShowTitle)]</label>
+							<thumb>$INFO[Window(Home).Property(SimilarTVShows.2.Art(poster))]</thumb>
+							<onclick>noop</onclick>
+						</item>
+						<item id="3">
+							<label>$INFO[Window(Home).Property(SimilarTVShows.3.TVShowTitle)]</label>
+							<thumb>$INFO[Window(Home).Property(SimilarTVShows.3.Art(poster))]</thumb>
+							<onclick>noop</onclick>
+						</item>
+						<item id="4">
+							<label>$INFO[Window(Home).Property(SimilarTVShows.4.TVShowTitle)]</label>
+							<thumb>$INFO[Window(Home).Property(SimilarTVShows.4.Art(poster))]</thumb>
+							<onclick>noop</onclick>
+						</item>
+						<item id="5">
+							<label>$INFO[Window(Home).Property(SimilarTVShows.5.TVShowTitle)]</label>
+							<thumb>$INFO[Window(Home).Property(SimilarTVShows.5.Art(poster))]</thumb>
+							<onclick>noop</onclick>
+						</item>
+						<item id="6">
+							<label>$INFO[Window(Home).Property(SimilarTVShows.6.TVShowTitle)]</label>
+							<thumb>$INFO[Window(Home).Property(SimilarTVShows.6.Art(poster))]</thumb>
+							<onclick>noop</onclick>
+						</item>
+						<item id="7">
+							<label>$INFO[Window(Home).Property(SimilarTVShows.7.TVShowTitle)]</label>
+							<thumb>$INFO[Window(Home).Property(SimilarTVShows.7.Art(poster))]</thumb>
+							<onclick>noop</onclick>
+						</item>
+						<item id="8">
+							<label>$INFO[Window(Home).Property(SimilarTVShows.8.TVShowTitle)]</label>
+							<thumb>$INFO[Window(Home).Property(SimilarTVShows.8.Art(poster))]</thumb>
+							<onclick>noop</onclick>
+						</item>
+					</content>
+
+				</control>
+				
+			</control>
+
+		</control>	
+			
+    </controls>
+	
+</window>

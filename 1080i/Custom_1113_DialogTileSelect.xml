@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window type="dialog" id="1113">
+    <defaultcontrol always="true">6</defaultcontrol>
+	
+    <controls>
+        <include>DialogOverlay</include>
+		<include>Common_LeftMenu_Mid_Backing</include>			
+		<include>Common_LeftBar_Mid_LeftMenu</include>
+
+		<control type="group">
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="500" delay="700" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="200" />
+			</animation>
+			
+			<control type="image">
+                <posy>175</posy>
+                <width>690</width>
+                <height>825</height>
+                <include>Common_Color_BaseLow</include>
+            </control>
+
+            <control type="label" id="1">
+                <description>header label</description>
+                <posx>15</posx>
+                <width>660</width>
+                <include>InfoDialog_Heading</include>
+				<label>$LOCALIZE[31000]</label>
+            </control>
+
+            <control type="scrollbar" id="7">
+                <posx>680</posx>
+                <posy>175</posy>
+				<width>10</width>
+                <height>825</height>
+                <onleft>6</onleft>
+                <onright>6</onright>
+            </control>			
+
+            <control type="list" id="6">
+                <posy>175</posy>
+                <width>680</width>
+                <height>825</height>
+                <onleft>7</onleft>
+                <onright>7</onright>
+                <pagecontrol>7</pagecontrol>
+                <itemlayout height="138">
+					
+                    <control type="image">
+                        <posx>8</posx>
+                        <posy>8</posy>
+                        <width>120</width>
+                        <height>120</height>
+                        <texture fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
+						<bordertexture colordiffuse="BaseMediumHigh">colors/color_white.png</bordertexture>
+						<bordersize>5</bordersize>
+                    </control>
+					
+                    <control type="label">
+                        <posx>150</posx>
+                        <width>600</width>
+                        <height>135</height>
+                        <font>font30R</font>
+                        <info>ListItem.Label</info>
+						<textcolor>BaseMediumHigh</textcolor>
+                    </control>
+					
+                </itemlayout>
+				
+                <focusedlayout height="138">
+				
+                    <control type="image">
+                        <width>680</width>
+                        <height>138</height>
+                        <include>Common_Color_Accent</include>
+                    </control>
+					
+                    <control type="image">
+                        <posx>8</posx>
+                        <posy>8</posy>
+                        <width>120</width>
+                        <height>120</height>
+                        <texture fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
+						<bordertexture colordiffuse="BaseMediumHigh">colors/color_white.png</bordertexture>
+						<bordersize>5</bordersize>
+					</control>
+					
+                    <control type="label">
+                        <posx>150</posx>
+                        <width>600</width>
+                        <height>135</height>
+                        <font>font30R</font>
+                        <info>ListItem.Label</info>
+                    </control>
+					
+                </focusedlayout>
+				
+				<content>
+				
+                    <include condition="Skin.String(SelectorType,Tile)">Tile_Content</include>
+					<include condition="Skin.String(SelectorType,Panel)">Panel_Content</include>
+					
+                </content>
+				
+            </control>
+									
+		</control>	
+		
+    </controls>
+	
+</window>

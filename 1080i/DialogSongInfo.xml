@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window id="135">
+    <defaultcontrol always="true">7</defaultcontrol>
+	
+    <controls>
+        <include>DialogOverlay</include>
+		
+        <control type="group">
+            <posx>375</posx>
+            <posy>315</posy>
+            <include>Animation_Dialog_Center</include>
+			
+            <control type="image">
+                <width>1170</width>
+                <height>450</height>
+                <include>Common_Color_BaseLow</include>
+            </control>
+			
+            <control type="image">
+                <description>line</description>
+                <width>1170</width>
+                <include>Dialog_Line</include>
+            </control>
+			
+            <control type="image">
+                <width>360</width>
+                <height>450</height>
+                <include>Common_Color_BaseMediumHigh</include>
+            </control>
+			
+            <control type="image" id="3">
+                <description>Cover Image</description>
+                <posx>30</posx>
+                <posy>30</posy>
+                <width>300</width>
+                <height>300</height>
+                <texture fallback="DefaultAlbumCover.png">$INFO[ListItem.Icon]</texture>
+                <aspectratio>stretch</aspectratio>
+                <bordertexture border="5" colordiffuse="$VAR[Accent_100]">colors/color_white.png</bordertexture>
+                <bordersize>5</bordersize>
+            </control>
+			
+            <control type="label">
+                <description>Title</description>
+                <posx>1140</posx>
+                <width>870</width>
+                <include>Dialog_Header</include>
+                <label>$INFO[ListItem.Title]</label>
+            </control>
+			
+            <control type="image" id="3">
+                <description>Rating value</description>
+                <posx>30</posx>
+                <posy>360</posy>
+                <width>300</width>
+                <height>42</height>
+                <texture>flags/ratings/$INFO[ListItem.StarRating]</texture>
+                <aspectratio align="center">keep</aspectratio>
+            </control>
+			
+            <control type="grouplist">
+                <posx>390</posx>
+                <posy>105</posy>
+                <width>750</width>
+                <itemgap>0</itemgap>
+                <orientation>vertical</orientation>
+				
+                <control type="group">
+                    <height>42</height>
+                    <visible>!IsEmpty(ListItem.Album)</visible>
+					
+                    <control type="label">
+                        <description>Album Label</description>
+                        <include>Common_Infolist_Label</include>
+                        <label>$LOCALIZE[558]:</label>
+                    </control>
+					
+                    <control type="label">
+                        <description>Album Value</description>
+                        <include>Common_Infolist_Info3</include>
+                        <label>$INFO[ListItem.Album]</label>
+                    </control>
+					
+                </control>
+				
+                <control type="group">
+                    <height>42</height>
+                    <visible>!IsEmpty(ListItem.Artist)</visible>
+					
+                    <control type="label">
+                        <description>Artist Label</description>
+                        <include>Common_Infolist_Label</include>
+                        <label>$LOCALIZE[557]:</label>
+                    </control>
+					
+                    <control type="label">
+                        <description>Artist Value</description>
+                        <include>Common_Infolist_Info3</include>
+                        <label>$INFO[ListItem.Artist]</label>
+                    </control>
+					
+                </control>
+				
+                <control type="group">
+                    <height>42</height>
+                    <visible>!IsEmpty(ListItem.Genre)</visible>
+					
+                    <control type="label">
+                        <description>Genre Label</description>
+                        <include>Common_Infolist_Label</include>
+                        <label>$LOCALIZE[515]:</label>
+                    </control>
+					
+                    <control type="label">
+                        <description>Genre Value</description>
+                        <include>Common_Infolist_Info3</include>
+                        <label>$INFO[ListItem.Genre]</label>
+                    </control>
+					
+                </control>
+				
+                <control type="group">
+                    <height>42</height>
+                    <visible>!IsEmpty(ListItem.Year)</visible>
+					
+                    <control type="label">
+                        <description>Year Label</description>
+                        <include>Common_Infolist_Label</include>
+                        <label>$LOCALIZE[562]:</label>
+                    </control>
+					
+                    <control type="label">
+                        <description>Year Value</description>
+                        <include>Common_Infolist_Info3</include>
+                        <label>$INFO[ListItem.Year]</label>
+                    </control>
+					
+                </control>
+				
+            </control>
+			
+            <control type="grouplist">
+                <posx>795</posx>
+                <posy>360</posy>
+                <width>360</width>
+                <itemgap>18</itemgap>
+                <orientation>horizontal</orientation>
+                <align>right</align>
+				
+                <control type="button" id="7">
+                    <include>Dialog_Button</include>
+                    <texturefocus>OSD/rateFO.png</texturefocus>
+                    <texturenofocus>OSD/rateNF.png</texturenofocus>
+                </control>
+				
+            </control>
+			
+        </control>
+		
+    </controls>
+	
+</window>

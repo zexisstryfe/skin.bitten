@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window id="115">
+    <defaultcontrol always="true">901</defaultcontrol>
+    <visible>!Window.IsVisible(fullscreeninfo) + [VideoPlayer.IsFullscreen | Window.IsVisible(visualisation)] + [Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding]</visible>
+
+    <controls>
+	
+        <control type="group">
+			<animation type="WindowOpen">
+				<effect type="slide" start="0,-80" end="0,0" time="600" tween="cubic" easing="out" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="slide" start="0,0" end="0,-80" time="400" delay="200" tween="cubic" easing="in" />
+			</animation>
+            <visible>!Window.IsVisible(script-XBMC-Subtitles-main.xml)</visible>
+			
+            <control type="group">
+                <visible>!Window.IsVisible(2901)</visible>
+                <visible>!Window.IsVisible(MusicVisualisation.xml)</visible>
+				
+				<control type="image">
+					<description>backing</description>
+					<width>1920</width>
+					<height>80</height>
+					<fadetime>200</fadetime>
+					<include>Common_Color_BaseMediumHigh</include>
+				</control>
+							
+				<control type="label">
+					<description>Chapter Count Label</description>
+					<posx>20</posx>
+					<height>40</height>
+					<width>200</width>
+					<label>$LOCALIZE[21396]</label>
+					<textcolor>$VAR[Accent_100]</textcolor>
+					<align>center</align>
+					<font>font24B</font>
+					<visible>!StringCompare(Player.ChapterCount,00)</visible>
+				</control>
+				
+				<control type="label">
+					<description>Chapter Count</description>
+					<posx>20</posx>
+					<posy>40</posy>
+					<height>40</height>
+					<width>200</width>
+					<label>$INFO[Player.Chapter] / $INFO[Player.ChapterCount]</label>
+					<align>center</align>
+					<font>font24B</font>
+					<visible>!StringCompare(Player.ChapterCount,00)</visible>
+				</control>
+
+				<control type="label">
+					<description>Player Times</description>
+					<posy>20</posy>
+					<posx>340</posx>
+					<width>340</width>
+					<height>40</height>
+					<label>[B]$INFO[Player.Time][/B]</label>
+					<align>right</align>
+					<font>font24R</font>
+				</control>		
+				
+				<control type="progress">
+					<description>Progressbar</description>
+					<posx>360</posx>
+					<posy>35</posy>
+					<width>1200</width>
+					<height>10</height>
+					<texturebg colordiffuse="BaseWhite">colors/color_white.png</texturebg>
+					<midtexture colordiffuse="$VAR[Accent_100]">colors/color_white.png</midtexture>
+					<info>Player.Progress</info>
+				</control>
+				
+				<control type="slider" id="401">
+					<description>Seekbar</description>
+					<posx>360</posx>
+					<posy>24</posy>
+					<width>1200</width>
+					<height>30</height>
+					<visible>Player.Seeking</visible>
+				</control>
+
+				<control type="label">
+					<description>Player Duration</description>
+					<posx>1580</posx>
+					<posy>20</posy>
+					<height>40</height>
+					<width>300</width>
+					<label>[B]$INFO[Player.Duration][/B]</label>
+					<font>font24R</font>
+				</control>			
+
+				<control type="label">
+					<description>Current Video End Time Label</description>
+					<posx>1700</posx>
+					<height>40</height>
+					<width>200</width>
+					<label>$LOCALIZE[31181]</label>
+					<textcolor>$VAR[Accent_100]</textcolor>
+					<align>center</align>
+					<font>font24B</font>
+				</control>			
+
+				<control type="label">
+					<description>Current Video End Time</description>
+					<posx>1700</posx>
+					<posy>40</posy>
+					<height>40</height>
+					<width>200</width>
+					<label>$INFO[Player.FinishTime]</label>
+					<align>center</align>
+					<font>font24B</font>
+				</control>
+			
+            </control>
+			
+            <control type="image">
+                <description>backing</description>
+                <include>Seekbar_Image</include>
+                <texture>OSD/OSDpause.png</texture>
+                <visible>player.paused</visible>
+            </control>
+			
+            <control type="label">
+                <label>[B]$LOCALIZE[31006][/B]</label>
+                <include>Seekbar_Label</include>
+                <visible>player.paused</visible>
+            </control>
+			
+            <control type="image">
+                <description>backing</description>
+                <include>Seekbar_Image</include>
+                <texture>OSD/OSDfastforward.png</texture>
+                <visible>player.forwarding2x | player.forwarding4x | player.forwarding8x | player.forwarding16x | player.forwarding32x</visible>
+            </control>
+			
+            <control type="label">
+                <include>Seekbar_Label</include>
+                <label>[B]$LOCALIZE[31007] x2[/B]</label>
+                <visible>player.forwarding2x</visible>
+            </control>
+			
+            <control type="label">
+                <include>Seekbar_Label</include>
+                <label>[B]$LOCALIZE[31007] x4[/B]</label>
+                <visible>player.forwarding4x</visible>
+            </control>
+			
+            <control type="label">
+                <include>Seekbar_Label</include>
+                <label>[B]$LOCALIZE[31007] x8[/B]</label>
+                <visible>player.forwarding8x</visible>
+            </control>
+			
+            <control type="label">
+                <include>Seekbar_Label</include>
+                <label>[B]$LOCALIZE[31007] x16[/B]</label>
+                <visible>player.forwarding16x</visible>
+            </control>
+			
+            <control type="label">
+                <include>Seekbar_Label</include>
+                <label>[B]$LOCALIZE[31007] x32[/B]</label>
+                <visible>player.forwarding32x</visible>
+            </control>
+			
+            <control type="image">
+                <description>backing</description>
+                <include>Seekbar_Image</include>
+                <texture>OSD/OSDrewind.png</texture>
+                <visible>player.rewinding2x | player.rewinding4x | player.rewinding8x | player.rewinding16x	 | player.rewinding32x</visible>
+            </control>
+			
+            <control type="label">
+                <include>Seekbar_Label</include>
+                <label>[B]$LOCALIZE[31008] x2[/B]</label>
+                <visible>player.rewinding2x</visible>
+            </control>
+			
+            <control type="label">
+                <include>Seekbar_Label</include>
+                <label>[B]$LOCALIZE[31008] x4[/B]</label>
+                <visible>player.rewinding4x</visible>
+            </control>
+			
+            <control type="label">
+                <include>Seekbar_Label</include>
+                <label>[B]$LOCALIZE[31008] x8[/B]</label>
+                <visible>player.rewinding8x</visible>
+            </control>
+			
+            <control type="label">
+                <include>Seekbar_Label</include>
+                <label>[B]$LOCALIZE[31008] x16[/B]</label>
+                <visible>player.rewinding16x</visible>
+            </control>
+			
+            <control type="label">
+                <include>Seekbar_Label</include>
+                <label>[B]$LOCALIZE[31008] x32[/B]</label>
+                <visible>player.rewinding32x</visible>
+            </control>
+			
+        </control>
+		
+    </controls>
+	
+</window>

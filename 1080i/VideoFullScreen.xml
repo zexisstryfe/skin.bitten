@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window id="2005">
+    <defaultcontrol>-</defaultcontrol>
+	
+    <controls>
+	
+        <control type="image">
+            <width>1920</width>
+            <height>250</height>
+            <include>Common_Color_Black60</include>
+        </control>
+		
+        <control type="label" id="10">
+            <description>row 1 label</description>
+            <posx>15</posx>
+            <posy>30</posy>
+        </control>
+		
+        <control type="label" id="11">
+            <description>row 2 label</description>
+            <posx>15</posx>
+            <posy>100</posy>
+        </control>
+		
+        <control type="label" id="12">
+            <description>row 3 label</description>
+            <posx>15</posx>
+            <posy>170</posy>
+        </control>
+		
+    </controls>
+	
+</window>

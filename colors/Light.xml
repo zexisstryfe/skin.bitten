@@ -1,0 +1,34 @@
+<colors>
+	<color name="TrueWhite">FFFFFFFF</color>
+	<color name="TrueBlack">FF000000</color>
+	<color name="Black">FFFFFFFF</color>
+	<color name="Black60">77FFFFFF</color>
+	<color name="Black70">A9FFFFFF</color>
+	<color name="Black80">CCFFFFFF</color>
+	<color name="White">FF000000</color>
+	<color name="White40">44000000</color>
+	<color name="White60">77000000</color>
+	<color name="White80">CC000000</color>
+	<color name="Red">FFFF0000</color>
+	<color name="Blue">FF0000FF</color>
+	<color name="FanartDiffuse">99000000</color>
+	<color name="HomeDiffuse">99000000</color>
+	<color name="Home2Diffuse">66000000</color>
+	<color name="HomeFanart">AAAAAAAA</color>
+	<color name="ImageDiffuse">FF555555</color>
+	<color name="PanelDiffuse">88888888</color>
+	<color name="ImageDiffuse2">44666666</color>
+	<color name="WallsDiffuse">BB000000</color>
+	<color name="Diffuse3">AA000000</color>
+	<color name="Diffuse4">E3000000</color>
+	<color name="Accent">FF2e8def</color>
+	<color name="Accent40">442e8def</color>
+	<color name="Accent60">772e8def</color>
+	<color name="Accent80">CC2e8def</color>
+	<color name="Keyback1">FFF1F1F1</color>
+	<color name="Keyback1-80">CCFFFFFFF</color>
+	<color name="Keyback2">FFCBCBCB</color>
+	<color name="Nokey">FF0b0b0e</color>
+	<color name="Editback">FF9f9ead</color>
+	<color name="Icon">FF6A6A6A</color>
+</colors>

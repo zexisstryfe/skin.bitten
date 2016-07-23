@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window id="2003">
+    <defaultcontrol always="true">9221</defaultcontrol>
+	
+    <onload condition="System.HasAddon(script.extendedinfo) + Container.Content(episodes)">RunScript(script.extendedinfo,info=episodecomments,show=$INFO[ListItem.TVshowTitle],type=episode,season=$INFO[ListItem.Season],episode=$INFO[ListItem.Episode])</onload>
+    <onload condition="System.HasAddon(script.extendedinfo) + Container.Content(movies)">RunScript(script.extendedinfo,info=similarmoviestrakt,dbid=$INFO[ListItem.DBID])</onload>
+    <onload condition="System.HasAddon(script.extendedinfo) + Container.Content(tvshows)">RunScript(script.extendedinfo,info=similartvshows,dbid=$INFO[ListItem.DBID])</onload>
+    <onload condition="System.HasAddon(script.videoextras)">XBMC.RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
+    <onload condition="Skin.HasSetting(ShowTVTunesNotification) + System.HasAddon(script.tvtunes)">XBMC.RunScript(script.tvtunes,backend=True)</onload>
+
+    <controls>
+    	<include condition="System.HasAddon(script.extendedinfo)">HiddenCast</include>
+	
+        <!--Background Area-->
+        <control type="group">
+		
+            <control type="image">
+                <include>Dimensions_Fullscreen</include>
+				<texture background="true" fallback="special://skin/extras/backgrounds/movies.jpg">$INFO[ListItem.Art(fanart)]</texture>
+				<aspectratio>scale</aspectratio>
+				<include>Animation_Common_InfoWindow</include>
+            </control>
+
+			<control type="image">
+                <include>Dimensions_Fullscreen</include>
+                <include>Common_Color_BaseWhite80</include>
+				<include>Animation_Common_InfoWindow</include>
+            </control>
+
+            <control type="image">
+				<posy>110</posy>
+                <height>80</height>
+				<width>1920</width>
+                <texture colordiffuse="BaseMediumMid40">colors/color_white.png</texture>
+				<include>Animation_Common_InfoWindow</include>
+            </control>
+
+            <control type="image">
+				<posy>1000</posy>
+                <height>80</height>
+				<width>1920</width>
+                <texture colordiffuse="BaseMediumHigh60">colors/color_white.png</texture>
+				<include>Animation_Common_InfoWindow</include> 
+			</control>
+			
+            <control type="image">
+                <width>720</width>
+                <height>1080</height>
+				<aspectratio>scale</aspectratio>
+                <texture background="true">$INFO[ListItem.Art(poster)]</texture>
+				<visible>!Container.Content(Episodes)</visible>
+				<include>Animation_Common_InfoPoster</include> 
+           </control>
+
+            <control type="image">
+                <width>720</width>
+                <height>1080</height>
+				<aspectratio>scale</aspectratio>
+				<visible>Container.Content(Episodes)</visible>
+                <texture background="true">$INFO[ListItem.Art(tvshow.poster)]</texture>
+				<include>Animation_Common_InfoPoster</include>
+           </control>		   
+			
+        </control>
+		
+		<include>Common_LeftBar</include>
+		
+		<!--Top Section-->
+		<control type="group">
+			<include>Animation_Common_Window</include>
+			<posx>820</posx>
+			<posy>20</posy>
+		
+			<control type="label">
+				<width>900</width>
+				<height>40</height>
+				<font>font45R</font>
+				<textcolor>$VAR[Accent_100]</textcolor>
+				<label>$VAR[Fanart_List_Title]</label>
+			</control>
+
+			<control type="label" id="145">
+				<posy>50</posy>
+				<width>900</width>
+				<textcolor>BaseMid</textcolor>
+				<label>$VAR[Info_Subtitle]</label>
+				<include>Common_Fanart_Subtitle</include>
+			</control>
+			
+			<control type="image">
+				<posx>920</posx>
+				<width>160</width>
+				<aspectratio align="right" aligny="center">center</aspectratio>
+				<height>80</height>
+				<texture background="true" fallback="flags/studios/default-studio.png">resource://resource.images.studios.white/$INFO[ListItem.Studio,,.png]</texture>
+				<colordiffuse>BaseMediumHigh</colordiffuse>
+				<visible>!IsEmpty(ListItem.Studio)</visible>
+			</control>
+
+			<!--Control Section-->
+            <control type="grouplist" id="9221">
+				<posy>105</posy>
+				<width>1080</width>
+				<height>55</height>
+				<itemgap>20</itemgap>
+				<onup>9001</onup>
+				<ondown>9001</ondown>
+				<orientation>horizontal</orientation>
+				<align>center</align>
+				<visible allowhiddenfocus="true">!ControlGroup(9222).HasFocus</visible>
+				<animation type="Visible" reversible="false">
+					<effect type="fade" start="0" end="100" time="300" tween="sine" easing="out"  />
+					<effect type="slide" start="-50,0" end="0,0" time="350" tween="sine" easing="out" />
+				</animation>
+				<animation type="Hidden" reversible="false">
+					<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+					<effect type="slide" start="0,0" end="-50,0" time="350" tween="sine" easing="out" />
+				</animation>
+				
+				<control type="group">
+					<width>200</width>
+				
+					<control type="button" id="8">
+						<include>Common_InfoControl_Button</include>
+						<texturefocus colordiffuse="$VAR[Accent_100]">OSD/playFO.png</texturefocus>
+						<texturenofocus colordiffuse="BaseMid">OSD/playNF.png</texturenofocus>
+						<label>$VAR[Info_PlayMedia]</label>
+						<ondown>90019</ondown>
+						<onup>90016</onup>	
+						<onright>11</onright>
+						<onleft>18</onleft>
+					</control>
+				
+				</control>
+
+				<control type="group">
+					<width>200</width>
+					<visible>!IsEmpty(ListItem.Trailer)</visible>
+					
+					<control type="button" id="11">
+						<include>Common_InfoControl_Button</include>
+						<texturefocus colordiffuse="$VAR[Accent_100]">OSD/videoFO.png</texturefocus>
+						<texturenofocus colordiffuse="BaseMid">OSD/videoNF.png</texturenofocus>
+						<label>$LOCALIZE[31331]</label>
+						<ondown>90019</ondown>
+						<onup>90016</onup>	
+						<onright>18</onright>	
+						<onleft>8</onleft>
+					</control>
+				
+				</control>
+				
+				<control type="group">
+					<width>200</width>
+					
+					<control type="button" id="18">
+						<include>Common_InfoControl_Button</include>
+						<texturefocus colordiffuse="$VAR[Accent_100]">OSD/EditFO.png</texturefocus>
+						<texturenofocus colordiffuse="BaseMid">OSD/EditNF.png</texturenofocus>
+						<label>$LOCALIZE[31235]</label>
+						<onclick>SetFocus(9222)</onclick>
+						<ondown>90019</ondown>
+						<onup>90016</onup>
+						<onright>7</onright>
+						<onleft>11</onleft>
+					</control>
+				
+				</control>			
+				
+				<control type="group">
+					<width>200</width>
+					
+					<control type="button" id="7">
+						<texturefocus colordiffuse="$VAR[Accent_100]">flags\ratings\ratingbox.png</texturefocus>
+						<texturenofocus colordiffuse="BaseMid">flags\ratings\ratingbox.png</texturenofocus>
+						<label>$VAR[UserRating]</label>
+						<width>130</width>
+				        <height>50</height>
+				        <font>font24B</font>
+						<textcolor>BaseMid</textcolor>
+				        <focusedcolor>$VAR[Accent_100]</focusedcolor>
+				        <align>left</align>
+				        <textoffsetx>80</textoffsetx>
+				        <textwidth>75</textwidth>
+						<ondown>90019</ondown>
+						<onup>90016</onup>	
+						<onright>8</onright>
+						<onleft>18</onleft>
+					</control>
+				
+				</control>	
+
+				<control type="group">
+					<width>140</width>
+					
+					<control type="image">
+						<width>120</width>
+						<height>40</height>
+						<texture colordiffuse="BaseMid">flags\ratings\rating5.png</texture>
+						<aspectratio>keep</aspectratio>
+					</control>
+					
+					<control type="image">
+						<width>120</width>
+						<height>40</height>
+						<texture colordiffuse="$VAR[Accent_100]">flags\ratings\$INFO[ListItem.Rating].png</texture>
+						<aspectratio>keep</aspectratio>
+					</control>			
+
+					<control type="label">
+						<posy>30</posy>
+						<width>120</width>
+						<height>30</height>
+						<textcolor>BaseMid</textcolor>
+						<label>$INFO[ListItem.Votes] $LOCALIZE[20350]</label>
+						<font>font20R</font>
+						<align>center</align>
+					</control>
+				
+				</control>					
+				
+			</control>
+			
+            <!--Edit Section-->
+			<control type="grouplist" id="9222">
+				<posy>105</posy>
+				<width>1080</width>
+				<height>55</height>
+				<itemgap>20</itemgap>
+				<onup>1</onup>
+				<ondown>1</ondown>
+				<orientation>horizontal</orientation>
+				<align>center</align>
+				<visible allowhiddenfocus="true">ControlGroup(9222).HasFocus</visible>
+				<animation type="Visible" reversible="false">
+					<effect type="fade" start="0" end="100" time="300" tween="sine" easing="out"  />
+					<effect type="slide" start="-50,0" end="0,0" time="350" tween="sine" easing="out" />
+				</animation>
+				<animation type="Hidden" reversible="false">
+					<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+					<effect type="slide" start="0,0" end="-50,0" time="350" tween="sine" easing="out" />
+				</animation>
+				
+				<control type="group">
+					<width>175</width>
+				
+					<control type="button" id="6">
+						<include>Common_InfoControl_Button</include>
+						<texturefocus colordiffuse="$VAR[Accent_100]">OSD/repeatFO.png</texturefocus>
+						<texturenofocus colordiffuse="BaseMid">OSD/repeatNF.png</texturenofocus>
+						<label>$LOCALIZE[184]</label>
+						<ondown>9221</ondown>
+						<onup>9221</onup>	
+						<onright>10</onright>
+						<onleft>15</onleft>
+					</control>
+				
+				</control>
+
+				<control type="group">
+					<width>175</width>
+					
+					<control type="button" id="10">
+						<include>Common_InfoControl_Button</include>
+						<texturefocus colordiffuse="$VAR[Accent_100]">OSD/artFO.png</texturefocus>
+						<texturenofocus colordiffuse="BaseMid">OSD/artNF.png</texturenofocus>
+						<label>$LOCALIZE[31334]</label>
+						<ondown>9221</ondown>
+						<onup>9221</onup>	
+						<onright>17</onright>	
+						<onleft>6</onleft>
+					</control>
+				
+				</control>
+				
+				<control type="group">
+					<width>175</width>
+					
+					<control type="button" id="17">
+						<include>Common_InfoControl_Button</include>
+						<texturefocus colordiffuse="$VAR[Accent_100]">OSD/downloadFO.png</texturefocus>
+						<texturenofocus colordiffuse="BaseMid">OSD/downloadNF.png</texturenofocus>
+						<label>$LOCALIZE[31332]</label>
+						<onclick condition="[Container.Content(TVShows) | Container.Content(Seasons)]">RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,poster,fanart,landscape,clearlogo,clearart,banner,seasonbanner,seasonposter,dbid=$INFO[ListItem.DBID])</onclick>
+						<onclick condition="Container.Content(Movies)">RunScript(script.artwork.downloader,mode=custom,mediatype=movie,poster,fanart,clearlogo,discart,landscape,dbid=$INFO[ListItem.DBID])</onclick>
+						<ondown>9221</ondown>
+						<onup>9221</onup>	
+						<onright>15</onright>
+						<onleft>10</onleft>
+					</control>
+				
+				</control>	
+				
+				<control type="group">
+					<width>175</width>
+					<visible>System.HasAddon(script.tvtunes) + [Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons)]</visible>
+
+					<control type="button" id="15">
+						<include>Common_InfoControl_Button</include>
+						<texturefocus colordiffuse="$VAR[Accent_100]">OSD/musicFO.png</texturefocus>
+						<texturenofocus colordiffuse="BaseMid">OSD/musicNF.png</texturenofocus>
+						<label>$LOCALIZE[31333]</label>
+						<onclick>RunScript(script.tvtunes,mode=solo)</onclick>
+						<ondown>9221</ondown>
+						<onup>9221</onup>	
+						<onright>6</onright>
+						<onleft>17</onleft>
+					</control>
+				
+				</control>	
+				
+			</control>			
+
+			<!--Info Section- Movies/Episodes-->
+			<control type="grouplist">
+				<visible>[!Container.Content(TVShows) + !Container.Content(MusicVideos)]</visible>
+				<posy>180</posy>
+				
+				<!-- Director label -->
+				<control type="group">
+					<width>850</width>
+					<height>40</height>
+					
+					<control type="label">
+						<include>Common_Info_Label</include>
+						<label>$LOCALIZE[20339] </label>
+					</control>
+					
+					<control type="label">
+						<include>Common_Info_Video</include>
+						<label fallback="195">$INFO[ListItem.Director]</label>
+					</control>
+
+				</control>
+				
+				<!-- Writer label -->
+				<control type="group">
+					<width>850</width>
+					<height>40</height>
+
+					<control type="label">
+						<include>Common_Info_Label</include>
+						<label>$LOCALIZE[20417] </label>
+					</control>
+					
+					<control type="label">
+						<include>Common_Info_Video</include>
+						<label fallback="195">$INFO[ListItem.Writer]</label>
+					</control>
+					
+				</control>
+				
+				<!-- Playcount label -->
+				<control type="group">
+					<width>850</width>
+					<height>40</height>
+
+					<control type="label">
+						<include>Common_Info_Label</include>
+						<label>$LOCALIZE[31336] </label>
+					</control>
+					
+					<control type="label">
+						<include>Common_Info_Video</include>
+						<visible>!IsEmpty(ListItem.PlayCount)</visible>
+						<label>$INFO[ListItem.PlayCount] ($LOCALIZE[31335] $INFO[ListItem.LastPlayed])</label>
+					</control>
+					
+					<control type="label">
+						<include>Common_Info_Video</include>
+						<visible>IsEmpty(ListItem.PlayCount)</visible>
+						<label>$LOCALIZE[31342]</label>
+					</control>
+					
+				</control>
+
+				<!-- Path label -->
+				<control type="group">
+					<width>850</width>
+					<height>40</height>
+					
+					<control type="label">
+						<include>Common_Info_Label</include>
+						<label>$LOCALIZE[31240] </label>
+					</control>
+					
+					<control type="label">
+						<include>Common_Info_Video</include>
+						<label>$INFO[ListItem.FilenameAndPath]</label>
+					</control>
+					
+				</control>
+				
+				<!--Plot-->
+				<control type="group">
+					<width>850</width>
+					<height>365</height>
+					
+					<control type="image">
+						<height>2</height>
+						<width>1070</width>
+						<texture colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
+						<include>Animation_Common_Window</include>
+					</control>
+							
+					<control type="textbox" id="4">
+						<description>Plot</description>
+						<posy>10</posy>
+						<width>1070</width>
+						<height>215</height>
+						<font>font26R</font>
+						<align>justify</align>
+						<textcolor>BaseMid</textcolor>
+					</control>
+					
+				</control>
+
+			</control>
+
+			<!--Info Section- TVShows/Seasons-->
+			<control type="grouplist">
+				<visible>Container.Content(TVShows) | Container.Content(MusicVideos)</visible>
+				<posy>180</posy>
+
+				<!-- Duration label -->
+				<control type="group">
+					<width>850</width>
+					<height>40</height>
+					<visible>Container.Content(MusicVideos)</visible>
+					
+					<control type="label">
+						<include>Common_Info_Label</include>
+						<label>$LOCALIZE[180] </label>
+					</control>
+					
+					<control type="label">
+						<include>Common_Info_Video</include>
+						<label fallback="195">$INFO[ListItem.Duration] $LOCALIZE[12391]</label>
+					</control>
+
+				</control>
+				
+				<!-- Genre label -->
+				<control type="group">
+					<width>850</width>
+					<height>40</height>
+					<visible>Container.Content(MusicVideos)</visible>
+
+					<control type="label">
+						<include>Common_Info_Label</include>
+						<label>$LOCALIZE[515] </label>
+					</control>
+					
+					<control type="label">
+						<include>Common_Info_Video</include>
+						<label fallback="195">$INFO[ListItem.Genre]</label>
+					</control>
+					
+				</control>
+				
+				<!-- Status label -->
+				<control type="group">
+					<width>850</width>
+					<height>40</height>
+					<visible>!Container.Content(MusicVideos)</visible>
+					
+					<control type="label">
+						<include>Common_Info_Label</include>
+						<label>$LOCALIZE[126] </label>
+					</control>
+					
+					<control type="label">
+						<include>Common_Info_Video</include>
+						<label fallback="195">$INFO[Window(Home).Property(NextAired.Status)]</label>
+					</control>
+
+				</control>
+				
+				<!-- Episodes label -->
+				<control type="group">
+					<width>850</width>
+					<height>40</height>
+					<visible>!Container.Content(MusicVideos)</visible>
+
+					<control type="label">
+						<include>Common_Info_Label</include>
+						<label>$LOCALIZE[20360] </label>
+					</control>
+					
+					<control type="label">
+						<include>Common_Info_Video</include>
+						<label fallback="195">$INFO[ListItem.Property(TotalEpisodes)] ($INFO[ListItem.Property(WatchedEpisodes),, $LOCALIZE[16102]] - $INFO[ListItem.Property(UnWatchedEpisodes), , $LOCALIZE[16101]])</label>
+					</control>
+					
+				</control>
+				
+				<!-- Premiered label -->
+				<control type="group">
+					<width>850</width>
+					<height>40</height>
+
+					<control type="label">
+						<include>Common_Info_Label</include>
+						<label>$LOCALIZE[31175] </label>
+					</control>
+					
+					<control type="label">
+						<include>Common_Info_Video</include>
+						<label>$INFO[ListItem.Premiered]</label>
+					</control>
+					
+				</control>
+
+				<!-- Path label -->
+				<control type="group">
+					<width>850</width>
+					<height>40</height>
+					
+					<control type="label">
+						<include>Common_Info_Label</include>
+						<label>$LOCALIZE[31240] </label>
+					</control>
+					
+					<control type="label">
+						<include>Common_Info_Video</include>
+						<label>$INFO[ListItem.FilenameAndPath]</label>
+					</control>
+					
+				</control>
+				
+				<!--Plot-->
+				<control type="group">
+					<width>850</width>
+					<height>365</height>
+					
+					<control type="image">
+						<height>2</height>
+						<width>1070</width>
+						<texture colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
+						<include>Animation_Common_Window</include>
+					</control>
+							
+					<control type="textbox" id="4">
+						<description>Plot</description>
+						<posy>10</posy>
+						<width>1070</width>
+						<height>215</height>
+						<font>font26R</font>
+						<align>justify</align>
+						<textcolor>BaseMid</textcolor>
+					</control>
+					
+				</control>
+
+			</control>
+			
+			<control type="image">
+				<posy>600</posy>
+                <height>2</height>
+				<width>1070</width>
+                <texture colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
+				<include>Animation_Common_Window</include>
+            </control>
+
+			<control type="grouplist" id="9001">
+				<posy>600</posy>
+				<width>1070</width>	
+				<height>360</height>
+				<onup>9221</onup>
+				<ondown>9221</ondown>
+				<scrolltime tween="quadratic" easing="out">300</scrolltime>
+
+				<!-- Cast Section -->
+				<include condition="!System.HasAddon(script.extendedinfo)">VideoInfo_DefaultCast</include>
+				<include condition="System.HasAddon(script.extendedinfo)">VideoInfo_ExtendedCast</include>
+
+				<!-- Similar Movies Section -->
+				<include condition="System.HasAddon(script.extendedinfo)">VideoInfo_ExtendedSimilarMovies</include>
+
+				<!-- Director Movies Section -->
+				<include condition="System.HasAddon(script.extendedinfo)">VideoInfo_ExtendedDirectorMovies</include>				
+
+				<!-- Writer Movies Section -->
+				<include condition="System.HasAddon(script.extendedinfo)">VideoInfo_ExtendedWriterMovies</include>
+
+				<!-- Studio Movies Section -->
+				<include condition="System.HasAddon(script.extendedinfo)">VideoInfo_ExtendedStudioMovies</include>				
+
+				<!-- Similar TV Shows Section -->
+				<include condition="System.HasAddon(script.extendedinfo)">VideoInfo_ExtendedSimilarTVShows</include>	
+
+				<!-- TV Seasons Section -->
+				<include>VideoInfo_DefaultSeasons</include>
+
+			</control>
+
+			<!--Media Flags-->
+			<control type="group">
+				
+				<control type="grouplist">
+					<description>Media Codec Flagging Images</description>
+					<posx>50</posx>
+					<posy>1000</posy>
+					<width>1080</width>
+					<align>left</align>
+					<itemgap>50</itemgap>
+					<orientation>horizontal</orientation>
+					<include>VideoMPAAFlaggingConditions</include>
+					<include>VideoResolutionFlaggingConditions</include>
+					<include>VideoCodecFlaggingConditions</include>
+					<include>AspectCodecFlaggingConditions</include>
+					<include>AudioCodecFlaggingConditions</include>
+					<include>AudioChannelsFlaggingConditions</include>
+				</control> 
+
+			</control>
+			
+		</control>
+
+    </controls>
+	
+</window>

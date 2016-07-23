@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<window>
+    <defaultcontrol always="true">11</defaultcontrol>
+	
+    <controls>
+	
+        <control type="group">
+            <posx>1320</posx>
+            <include>Common_Animation_PVR_OSD</include>			
+            <visible>!Window.IsVisible(DialogPVRGuideInfo.xml)</visible>
+			
+            <control type="image">
+                <width>645</width>
+                <height>1080</height>
+                <include>Common_Color_BaseWhite</include>
+            </control>
+
+            <control type="image">
+                <posy>100</posy>
+				<width>645</width>
+                <height>830</height>
+                <include>Common_Color_BaseLow</include>
+            </control>
+
+            <control type="scrollbar" id="60">
+                <posy>100</posy>
+				<posx>590</posx>
+                <width>10</width>
+                <height>830</height>
+                <onright>11</onright>
+                <onleft>11</onleft>
+            </control>
+			
+			<control type="image">
+				<description>Title Backing</description>
+				<width>645</width>
+				<height>75</height>
+				<texture border="2" colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
+			</control>	
+
+            <control type="label">
+                <label>$LOCALIZE[31188]</label>
+                <posx>15</posx>
+                <height>75</height>
+                <width>615</width>
+                <font>font45R</font>
+            </control>
+			
+            <control type="label">
+                <description>header label</description>
+                <posx>45</posx>
+                <posy>100</posy>
+                <font>font50R</font>
+                <label>$VAR[PVR_OSD_Group]</label>
+				<textcolor>BaseMediumHigh</textcolor>
+            </control>
+
+            <control type="list" id="11">
+                <posy>170</posy>
+                <width>590</width>
+                <height>760</height>
+                <onleft>PreviousChannelGroup</onleft>
+                <onright>NextChannelGroup</onright>
+                <pagecontrol>60</pagecontrol>
+                <itemlayout height="90">
+
+					<control type="image">
+						<posx>10</posx>
+						<posy>10</posy>
+						<width>65</width>
+						<height>65</height>
+						<texture>backings/circle.png</texture>
+					</control>
+					
+                    <control type="label">
+                        <posx>10</posx>
+						<posy>10</posy>
+						<width>65</width>
+						<height>65</height>
+                        <align>center</align>
+                        <font>font34B</font>
+                        <label>$INFO[ListItem.ChannelNumber]</label>
+                    </control>
+
+					<control type="image">
+						<posx>10</posx>
+						<posy>10</posy>
+						<width>65</width>
+						<height>65</height>
+						<texture>watched/lg_record.png</texture>
+						<visible>ListItem.IsRecording</visible>
+					</control>
+
+                    <control type="label">
+						<posy>10</posy>
+                        <posx>85</posx>
+                        <width>500</width>
+						<height>30</height>
+                        <font>font30R</font>
+                        <label>[COLOR BaseMediumHigh][B]$INFO[ListItem.Label] - [/B][/COLOR]$INFO[ListItem.Title]</label>
+                        <textcolor>$VAR[Accent_100]</textcolor>
+                    </control>
+
+                    <control type="label">
+						<posy>45</posy>
+                        <posx>85</posx>
+                        <width>500</width>
+						<height>30</height>
+                        <font>font30</font>
+                        <label>$INFO[ListItem.StartTime] - $INFO[ListItem.EndTime]</label>
+                        <textcolor>BaseMediumHigh</textcolor>
+                    </control>
+
+                    <control type="progress">
+                        <description>Progressbar</description>
+                        <posx>0</posx>
+                        <posy>85</posy>
+                        <width>590</width>
+                        <height>5</height>
+                        <info>ListItem.Progress</info>
+                        <visible>ListItem.HasEpg</visible>
+                        <texturebg colordiffuse="BaseMediumHigh">colors/color_white.png</texturebg>
+                        <midtexture colordiffuse="BaseWhite">colors/color_white.png</midtexture>
+                    </control>
+
+                </itemlayout>
+				
+                <focusedlayout height="90">
+				
+                    <control type="image">
+                        <width>590</width>
+                        <height>85</height>
+                        <include>Common_Color_Accent</include>
+                        <animation effect="fade" start="100" end="30" time="0" condition="!Control.HasFocus(11)">conditional</animation>
+                    </control>
+					
+					<control type="image">
+						<posx>10</posx>
+						<posy>10</posy>
+						<width>65</width>
+						<height>65</height>
+						<texture>backings/circle.png</texture>
+					</control>
+					
+                    <control type="label">
+                        <posx>10</posx>
+						<posy>10</posy>
+						<width>65</width>
+						<height>65</height>
+                        <align>center</align>
+                        <font>font34B</font>
+                        <label>$INFO[ListItem.ChannelNumber]</label>
+                    </control>
+
+					<control type="image">
+						<posx>10</posx>
+						<posy>10</posy>
+						<width>65</width>
+						<height>65</height>
+						<texture>watched/lg_record.png</texture>
+						<visible>ListItem.IsRecording</visible>
+					</control>
+
+                    <control type="label">
+						<posy>10</posy>
+                        <posx>85</posx>
+                        <width>500</width>
+						<height>30</height>
+                        <font>font30R</font>
+                        <label>[COLOR BaseWhite][B]$INFO[ListItem.Label] - [/B][/COLOR]$INFO[ListItem.Title]</label>
+                        <textcolor>BaseMid</textcolor>
+                    </control>
+
+                    <control type="label">
+						<posy>45</posy>
+                        <posx>85</posx>
+                        <width>500</width>
+						<height>30</height>
+                        <font>font30</font>
+                        <label>$INFO[ListItem.StartTime] - $INFO[ListItem.EndTime]</label>
+                        <textcolor>BaseMMid</textcolor>
+                    </control>
+
+                    <control type="progress">
+                        <description>Progressbar</description>
+                        <posx>0</posx>
+                        <posy>85</posy>
+                        <width>590</width>
+                        <height>5</height>
+                        <info>ListItem.Progress</info>
+                        <visible>ListItem.HasEpg</visible>
+                        <texturebg colordiffuse="BaseMediumHigh">colors/color_white.png</texturebg>
+                        <midtexture>colors/color_white.png</midtexture>
+                    </control>					
+
+                </focusedlayout>
+				
+            </control>
+
+            <control type="group">
+				<posy>930</posy>
+
+                <control type="label">
+                    <label>$INFO[System.Time(hh:mm)]</label>
+                    <posx>458</posx>
+                    <height>150</height>
+                    <width>300</width>
+                    <font>font95</font>
+                    <align>right</align>
+					<textcolor>BaseMediumHigh</textcolor>
+                    <visible>!IsEmpty(System.Time(xx))</visible>
+                </control>
+				
+                <control type="label">
+                    <label>$INFO[System.Time(hh:mm)]</label>
+                    <posx>232</posx>
+                    <height>150</height>
+                    <width>300</width>
+                    <font>font95</font>
+					<textcolor>BaseMediumHigh</textcolor>
+                    <visible>IsEmpty(System.Time(xx))</visible>
+                </control>
+				
+                <control type="label">
+                    <label>$INFO[System.Time(xx)]</label>
+                    <posx>458</posx>
+                    <posy>22</posy>
+                    <height>150</height>
+                    <width>90</width>
+                    <font>font34R</font>
+                    <visible>!IsEmpty(System.Time(xx))</visible>
+                    <textcolor>$VAR[Accent_100]</textcolor>
+                </control>
+				
+                <control type="label">
+                    <label>$INFO[System.Date(DDD)]</label>
+                    <posx>228</posx>
+                    <posy>-20</posy>
+                    <height>150</height>
+                    <width>1125</width>
+                    <font>font34R</font>
+                    <align>right</align>
+                    <textcolor>$VAR[Accent_100]</textcolor>
+                </control>
+				
+                <control type="label">
+                    <label>$INFO[System.Date(MMM)] $INFO[System.Date(dd)]</label>
+                    <posx>228</posx>
+                    <posy>19</posy>
+                    <height>150</height>
+                    <width>1125</width>
+                    <font>font34R</font>
+                    <align>right</align>
+                    <textcolor>$VAR[Accent_100]</textcolor>
+                </control>
+				
+            </control>			
+			
+		</control>
+
+    </controls>
+	
+</window>

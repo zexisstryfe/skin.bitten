@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window>
+	
+    <coordinates>
+        <system>1</system>
+    </coordinates>
+	
+    <controls>
+	
+        <control type="group">
+            <posy>892</posy>
+            <visible>!Window.IsVisible(MusicOSD.xml)</visible>
+            <animation type="WindowOpen">
+                <effect type="slide" time="200" start="0,188" end="0,0" easing="out" tween="cubic" />
+                <effect type="fade" start="0" end="100" time="200" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="slide" time="200" start="0,0" end="0,188" easing="in" tween="cubic" />
+                <effect type="fade" start="100" end="0" time="200" />
+            </animation>
+			
+            <control type="image">
+                <width>1920</width>
+                <height>188</height>
+                <include>Common_Color_Accent</include>
+            </control>
+			
+            <control type="grouplist" id="999">
+                <posx>48</posx>
+                <posy>22</posy>
+                <width>960</width>
+                <height>188</height>
+                <itemgap>30</itemgap>
+                <orientation>horizontal</orientation>
+                <onleft>1</onleft>
+                <onright>1</onright>
+                <onup>120</onup>
+                <ondown>110</ondown>
+
+                <control type="button" id="401">
+                    <description>Skip Back</description>
+                    <include>Common_Player_Button</include>
+                    <label>$LOCALIZE[31323]</label>
+                    <texturefocus>OSD/PrevTrackFO.png</texturefocus>
+                    <texturenofocus>OSD/PrevTrackNF.png</texturenofocus>
+                    <onclick>playercontrol(previous)</onclick>
+                </control>
+				
+                <control type="button" id="402">
+                    <description>Rewind</description>
+                    <include>Common_Player_Button</include>
+                    <label>$LOCALIZE[31008]</label>
+                    <texturefocus>OSD/RewindFO.png</texturefocus>
+                    <texturenofocus>OSD/RewindNF.png</texturenofocus>
+                    <onclick>playercontrol(rewind)</onclick>
+                </control>
+				
+                <control type="togglebutton" id="403">
+                    <description>Play/Pause</description>
+                    <include>Common_Player_Button</include>
+                    <texturefocus>OSD/PauseFO.png</texturefocus>
+                    <texturenofocus>OSD/PauseNF.png</texturenofocus>
+                    <label>$LOCALIZE[31112]</label>
+                    <usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
+                    <alttexturefocus>OSD/PlayFO.png</alttexturefocus>
+                    <alttexturenofocus>OSD/PlayNF.png</alttexturenofocus>
+                    <altlabel>$LOCALIZE[208]</altlabel>
+                    <onclick>playercontrol(play)</onclick>
+                </control>
+				
+                <control type="button" id="404">
+                    <description>Stop</description>
+                    <include>Common_Player_Button</include>
+                    <label>$LOCALIZE[31113]</label>
+                    <texturefocus>OSD/StopFO.png</texturefocus>
+                    <texturenofocus>OSD/StopNF.png</texturenofocus>
+                    <onclick>playercontrol(stop)</onclick>
+                </control>
+				
+                <control type="button" id="405">
+                    <description>Forward</description>
+                    <include>Common_Player_Button</include>
+                    <label>$LOCALIZE[31114]</label>
+                    <texturefocus>OSD/ForwardFO.png</texturefocus>
+                    <texturenofocus>OSD/ForwardNF.png</texturenofocus>
+                    <onclick>playercontrol(forward)</onclick>
+                </control>
+				
+                <control type="button" id="406">
+                    <description>Skip Forward</description>
+                    <include>Common_Player_Button</include>
+                    <label>$LOCALIZE[209]</label>
+                    <texturefocus>OSD/NextTrackFO.png</texturefocus>
+                    <texturenofocus>OSD/NextTrackNF.png</texturenofocus>
+                    <onclick>playercontrol(next)</onclick>
+                </control>
+				
+                <control type="togglebutton" id="400">
+                    <description>Random</description>
+                    <include>Common_Player_Button</include>
+                    <texturefocus>OSD/RandomOffFO.png</texturefocus>
+                    <texturenofocus>OSD/RandomOffNF.png</texturenofocus>
+                    <label>$LOCALIZE[31110]</label>
+                    <usealttexture>Playlist.IsRandom</usealttexture>
+                    <alttexturefocus>OSD/RandomOnFO.png</alttexturefocus>
+                    <alttexturenofocus>OSD/RandomOnNF.png</alttexturenofocus>
+                    <altlabel>$LOCALIZE[31111]</altlabel>
+                    <onclick>playercontrol(random)</onclick>
+                </control>	
+				
+                <control type="button" id="407">
+                    <description>Repeat</description>
+                    <include>Common_Player_Button</include>
+                    <texturefocus>-</texturefocus>
+                    <texturenofocus>-</texturenofocus>
+                    <onclick>playercontrol(repeat)</onclick>
+                </control>
+				
+            </control>
+			
+            <control type="group">
+                <posx>783</posx>
+                <posy>22</posy>
+				
+                <control type="image" id="408">
+                    <include>Common_Player_Button</include>
+                    <texture>OSD/RepeatNF.png</texture>
+                    <visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
+                    <visible>!Control.HasFocus(407)</visible>
+                </control>
+				
+                <control type="image" id="409">
+                    <include>Common_Player_Button</include>
+                    <texture>OSD/RepeatFO.png</texture>
+                    <visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
+                    <visible>Control.HasFocus(407)</visible>
+                </control>
+				
+                <control type="label">
+                    <include>Common_Player_Button</include>
+                    <visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
+                    <label>$LOCALIZE[31118]</label>
+                </control>
+				
+                <control type="image" id="410">
+                    <include>Common_Player_Button</include>
+                    <texture>OSD/RepeatOneNF.png</texture>
+                    <visible>Playlist.IsRepeatOne</visible>
+                    <visible>!Control.HasFocus(407)</visible>
+                </control>
+				
+                <control type="image" id="411">
+                    <include>Common_Player_Button</include>
+                    <texture>OSD/RepeatOneFO.png</texture>
+                    <visible>Playlist.IsRepeatOne</visible>
+                    <visible>Control.HasFocus(407)</visible>
+                </control>
+				
+                <control type="label">
+                    <include>Common_Player_Button</include>
+                    <visible>Playlist.IsRepeatOne</visible>
+                    <label>$LOCALIZE[31119]</label>
+                </control>
+				
+                <control type="image" id="412">
+                    <include>Common_Player_Button</include>
+                    <texture>OSD/RepeatAllNF.png</texture>
+                    <visible>Playlist.IsRepeat</visible>
+                    <visible>!Control.HasFocus(407)</visible>
+                </control>
+				
+                <control type="image" id="413">
+                    <include>Common_Player_Button</include>
+                    <texture>OSD/RepeatAllFO.png</texture>
+                    <visible>Playlist.IsRepeat</visible>
+                    <visible>Control.HasFocus(407)</visible>
+                </control>
+				
+                <control type="label">
+                    <include>Common_Player_Button</include>
+                    <visible>Playlist.IsRepeat</visible>
+                    <label>$LOCALIZE[31120]</label>
+                </control>
+				
+            </control>
+			
+            <control type="group">
+                <posx>1023</posx>
+				
+                <control type="image">
+                    <width>960</width>
+                    <height>188</height>
+                    <include>Common_Color_BaseWhite</include>
+                </control>
+				
+                <control type="image">
+                    <width>3</width>
+                    <height>188</height>
+                    <texture>colors/color_white.png</texture>
+                </control>
+				
+                <control type="image">
+                    <posx>3</posx>
+                    <width>188</width>
+                    <height>188</height>
+                    <texture>$VAR[NowPlaying_Image]</texture>
+                    <aspectratio aligny="top">scale</aspectratio>
+                </control>
+				
+                <control type="grouplist">
+                    <posx>219</posx>
+                    <posy>15</posy>
+                    <width>735</width>
+                    <height>174</height>
+                    <itemgap>15</itemgap>
+
+                    <control type="label">
+                        <width>750</width>
+                        <height>38</height>
+                        <label>$VAR[NowPlaying_First_Label]</label>
+                        <font>font40B</font>
+                        <aligny>center</aligny>
+						<textcolor>BaseMediumHigh</textcolor>
+                    </control>
+					
+                    <control type="label">
+                        <width>750</width>
+                        <height>24</height>
+                        <label>$VAR[NowPlaying_Second_Label]</label>
+                        <font>font24R</font>
+						<textcolor>BaseMediumHigh</textcolor>
+                    </control>
+					
+                    <control type="label">
+                        <width>750</width>
+                        <height>24</height>
+                        <label>$VAR[NowPlaying_Third_Label]</label>
+                        <font>font24</font>
+						<textcolor>BaseMediumHigh</textcolor>
+                    </control>
+					
+                    <control type="label">
+                        <width>750</width>
+                        <height>24</height>
+                        <label>[B]$INFO[Player.Time] / $INFO[Player.Duration][/B]</label>
+                        <font>font24B</font>
+						<textcolor>BaseMediumHigh</textcolor>
+                    </control>
+					
+                </control>
+				
+            </control>
+			
+        </control>
+		
+        <control type="group">
+            <posy>285</posy>
+            <include>Common_Animation_Dialog</include>
+			
+            <control type="image">
+                <width>1920</width>
+                <height>510</height>
+                <include>Common_Color_Black60</include>
+            </control>
+			
+            <control type="label" id="200">
+                <description>Scraper Label</description>
+                <posx>2769</posx>
+            </control>
+			
+            <!-- ** Required ** Do not change <id> or <type> -->
+            <control type="list" id="110">
+                <posy>15</posy>
+                <width>1920</width>
+                <height>480</height>
+                <onleft>111</onleft>
+                <onright>111</onright>
+                <onup>999</onup>
+                <ondown>110</ondown>
+                <viewtype label="535">list</viewtype>
+                <pagecontrol>111</pagecontrol>
+                <scrolltime>200</scrolltime>
+                <itemlayout height="44">
+				
+                    <control type="label">
+                        <width>1920</width>
+                        <height>33</height>
+                        <info>ListItem.Label</info>
+                        <font>font30R</font>
+                        <align>center</align>
+                        <textcolor>BaseLow</textcolor>
+                    </control>
+					
+                </itemlayout>
+				
+                <focusedlayout height="44">
+				
+                    <control type="image">
+                        <width>1920</width>
+                        <height>44</height>
+                        <include>Common_Color_Accent</include>
+                        <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(110)">Conditional</animation>
+                        <visible>Control.HasFocus(110)</visible>
+                    </control>
+					
+                    <control type="label">
+                        <width>1920</width>
+                        <height>33</height>
+                        <info>ListItem.Label</info>
+                        <font>font30B</font>
+                        <align>center</align>
+                    </control>
+					
+                </focusedlayout>
+				
+            </control>
+			
+            <control type="spincontrol" id="111">
+                <description>Next page button</description>
+				<include>Common_Lyric_Spinner</include>
+                <onleft>110</onleft>
+                <onright>110</onright>
+                <onup>110</onup>
+                <visible>Control.IsVisible(110)</visible>
+            </control>
+			
+            <!-- ** Required ** Do not change <id> or <type> -->
+            <control type="list" id="120">
+                <posy>15</posy>
+                <width>1920</width>
+                <height>480</height>
+                <onleft>121</onleft>
+                <onright>121</onright>
+                <onup>999</onup>
+                <ondown>120</ondown>
+                <viewtype label="535">list</viewtype>
+                <pagecontrol>121</pagecontrol>
+                <scrolltime>200</scrolltime>				
+                <itemlayout height="44">
+				
+                    <control type="label">
+                        <width>1920</width>
+                        <height>33</height>
+                        <info>ListItem.Label</info>
+                        <font>font30R</font>
+                        <align>center</align>
+                        <textcolor>BaseLow</textcolor>
+                    </control>
+					
+                </itemlayout>
+				
+                <focusedlayout height="44">
+				
+                    <control type="image">
+                        <width>1920</width>
+                        <height>44</height>
+                        <include>Common_Color_Accent</include>
+                        <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(110)">Conditional</animation>
+                        <visible>Control.HasFocus(120)</visible>
+                    </control>
+					
+                    <control type="label">
+                        <width>1920</width>
+                        <height>33</height>
+                        <info>ListItem.Label</info>
+                        <font>font30B</font>
+                        <align>center</align>
+                    </control>
+					
+                </focusedlayout>
+                
+            </control>
+			
+            <control type="spincontrol" id="121">
+                <description>Next page button</description>
+				<include>Common_Lyric_Spinner</include>
+                <onleft>120</onleft>
+                <onright>120</onright>
+                <onup>120</onup>
+                <visible>Control.IsVisible(120)</visible>
+            </control>
+			
+        </control>
+		
+    </controls>
+	
+</window>

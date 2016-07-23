@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window id="147">
+    <defaultcontrol>61</defaultcontrol>
+	
+    <controls>	
+        <include>DialogOverlay</include>
+		
+        <control type="group">
+            <posx>360</posx>
+            <posy>165</posy>
+            <include>Animation_Dialog_Center</include>
+			
+            <control type="image">
+                <width>1200</width>
+                <height>750</height>
+                <include>Common_Color_BaseWhite</include>
+            </control>
+
+            <control type="image">
+                <width>1200</width>
+				<height>75</height>
+                <include>Common_Color_BaseMediumHigh</include>
+            </control>
+			
+            <control type="label" id="1">
+                <description>header</description>
+                <width>1350</width>
+                <posx>15</posx>
+				<height>75</height>
+				<font>font45R</font>
+            </control>
+
+            <control type="textbox" id="5">
+                <posx>30</posx>
+                <posy>95</posy>
+                <width>1125</width>
+                <height>640</height>
+                <align>justify</align>
+                <font>font36</font>
+				<textcolor>BaseMediumHigh</textcolor>
+            </control>
+			
+            <control type="scrollbar" id="61">
+                <posx>1190</posx>
+                <posy>75</posy>
+                <width>10</width>
+                <height>675</height>
+            </control>
+			
+        </control>
+		
+    </controls>
+	
+</window>

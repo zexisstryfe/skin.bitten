@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<window>
+    <defaultcontrol always="true">9221</defaultcontrol>
+
+    <coordinates>
+        <system>1</system>
+        <posx>0</posx>
+        <posy>0</posy>
+    </coordinates>
+
+    <controls>
+
+        <!--Background Area-->
+        <control type="group">
+        
+            <control type="image">
+                <include>Dimensions_Fullscreen</include>
+                <texture background="true" fallback="special://skin/extras/backgrounds/games.jpg">$INFO[ListItem.Property(gameinfoupperleft)]</texture>
+                <aspectratio>scale</aspectratio>
+                <include>Animation_Common_InfoWindow</include>
+            </control>
+
+            <control type="image">
+                <include>Dimensions_Fullscreen</include>
+                <include>Common_Color_BaseWhite80</include>
+                <include>Animation_Common_InfoWindow</include>
+            </control>
+
+            <control type="image">
+                <posy>110</posy>
+                <height>80</height>
+                <width>1920</width>
+                <texture colordiffuse="BaseMediumMid40">colors/color_white.png</texture>
+                <include>Animation_Common_InfoWindow</include>
+            </control>
+
+            <control type="image">
+                <posy>1000</posy>
+                <height>80</height>
+                <width>1920</width>
+                <texture colordiffuse="BaseMediumHigh60">colors/color_white.png</texture>
+                <include>Animation_Common_InfoWindow</include> 
+            </control>
+            
+            <control type="image">
+                <width>720</width>
+                <height>1080</height>
+                <aspectratio>scale</aspectratio>
+                <include>Common_Color_BaseMid</include>
+                <include>Animation_Common_InfoPoster</include> 
+            </control>
+
+            <control type="image">
+                <width>720</width>
+                <height>1080</height>
+                <aspectratio>keep</aspectratio>
+                <texture background="true" fallback="DefaultGame.png">$INFO[ListItem.ActualIcon]</texture>
+                <include>Animation_Common_InfoPoster</include> 
+            </control>
+            
+        </control>
+
+        <include>Common_LeftBar</include>
+
+        <!--Top Section-->
+        <control type="group">
+            <include>Animation_Common_Window</include>
+            <posx>820</posx>
+            <posy>20</posy>
+        
+            <control type="label">
+                <width>900</width>
+                <height>40</height>
+                <font>font45R</font>
+                <textcolor>$VAR[Accent_100]</textcolor>
+                <label>$VAR[Fanart_List_Title]</label>
+            </control>
+
+            <control type="label" id="145">
+                <posy>50</posy>
+                <width>900</width>
+                <textcolor>BaseMid</textcolor>
+                <label>$INFO[ListItem.Property(Genre)]</label>
+                <include>Common_Fanart_Subtitle</include>
+            </control>
+
+            <!--Control Section-->
+            <control type="grouplist" id="9221">
+                <posy>105</posy>
+                <width>1080</width>
+                <height>55</height>
+                <itemgap>20</itemgap>
+                <onup>1</onup>
+                <ondown>1</ondown>
+                <orientation>horizontal</orientation>
+                <align>center</align>
+                <visible allowhiddenfocus="true">!ControlGroup(9222).HasFocus</visible>
+                <animation type="Visible" reversible="false">
+                    <effect type="fade" start="0" end="100" time="300" tween="sine" easing="out"  />
+                    <effect type="slide" start="-50,0" end="0,0" time="350" tween="sine" easing="out" />
+                </animation>
+                <animation type="Hidden" reversible="false">
+                    <effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
+                    <effect type="slide" start="0,0" end="-50,0" time="350" tween="sine" easing="out" />
+                </animation>
+                
+                <control type="group">
+                    <width>200</width>
+                
+                    <control type="button" id="3000">
+                        <include>Common_InfoControl_Button</include>
+                        <texturefocus colordiffuse="$VAR[Accent_100]">OSD/gameFO.png</texturefocus>
+                        <texturenofocus colordiffuse="BaseMid">OSD/gameNF.png</texturenofocus>
+                        <label>$ADDON[script.games.rom.collection.browser 54006]</label>
+                        <ondown>50</ondown>
+                        <onup>50</onup> 
+                        <onright>11</onright>
+                        <onleft>18</onleft>
+                    </control>
+                
+                </control>
+
+            </control>
+
+            <!--Info Section-->
+            <control type="grouplist">
+                <posy>180</posy>
+                
+                <!-- Year label -->
+                <control type="group">
+                    <width>850</width>
+                    <height>40</height>
+                    
+                    <control type="label">
+                        <include>Common_Info_Label</include>
+                        <label>$ADDON[script.games.rom.collection.browser 50000]</label>
+                    </control>
+                    
+                    <control type="label">
+                        <include>Common_Info_Video</include>
+                        <label fallback="195">$INFO[ListItem.Property(Year)]</label>
+                    </control>
+
+                </control>
+                
+                <!-- Publisher label -->
+                <control type="group">
+                    <width>850</width>
+                    <height>40</height>
+
+                    <control type="label">
+                        <include>Common_Info_Label</include>
+                        <label>$ADDON[script.games.rom.collection.browser 50002]</label>
+                    </control>
+                    
+                    <control type="label">
+                        <include>Common_Info_Video</include>
+                        <label fallback="195">$INFO[ListItem.Property(Publisher)]</label>
+                    </control>
+                    
+                </control>
+
+                <!-- Developer label -->
+                <control type="group">
+                    <width>850</width>
+                    <height>40</height>
+
+                    <control type="label">
+                        <include>Common_Info_Label</include>
+                        <label>$ADDON[script.games.rom.collection.browser 50003]</label>
+                    </control>
+                    
+                    <control type="label">
+                        <include>Common_Info_Video</include>
+                        <label fallback="195">$INFO[ListItem.Property(Developer)]</label>
+                    </control>
+                    
+                </control>
+
+                <!-- Playcount label -->
+                <control type="group">
+                    <width>850</width>
+                    <height>40</height>
+
+                    <control type="label">
+                        <include>Common_Info_Label</include>
+                        <label>$LOCALIZE[31336] </label>
+                    </control>
+                    
+                    <control type="label">
+                        <include>Common_Info_Video</include>
+                        <label fallback="$LOCALIZE[31342]">$INFO[ListItem.Property(Playcount)]</label>
+                    </control>
+                    
+                </control>
+                
+                <!--Plot-->
+                <control type="group">
+                    <width>850</width>
+                    <height>365</height>
+                    
+                    <control type="image">
+                        <height>2</height>
+                        <width>1070</width>
+                        <texture colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
+                        <include>Animation_Common_Window</include>
+                    </control>
+                            
+                    <control type="textbox" id="8000">
+                        <description>Plot</description>
+                        <posy>10</posy>
+                        <width>1070</width>
+                        <height>515</height>
+                        <font>font26R</font>
+                        <align>justify</align>
+                        <textcolor>BaseMid</textcolor>
+                        <label fallback="31245">$INFO[ListItem.Property(Plot)]</label>
+                    </control>
+                    
+                </control>
+
+            </control>
+
+            <control type="label" id="4000">
+                <description>Messages</description>
+                <posy>990</posy>
+                <width>1080</width>
+                <height>60</height>
+                <aligny>center</aligny>
+                <scroll>true</scroll>
+            </control>
+
+        </control>
+
+        <control type="button" id="3001">
+            <posx>-1070</posx>
+            <posy>220</posy>
+            <include>Common_Control_Button</include>
+        </control>
+
+        <control type="group" id="1000">
+            <control type="wraplist" id="59">
+                <width>0</width>
+                <height>0</height>
+                <onleft>3000</onleft>
+                <onright>3000</onright>
+                <onup>3000</onup>
+                <ondown>3000</ondown>
+                <scrolltime>200</scrolltime>
+                <itemlayout height="0" width="0" />
+                <focusedlayout height="0" width="0"></focusedlayout>
+            </control>
+        </control>
+
+    </controls>
+
+</window>

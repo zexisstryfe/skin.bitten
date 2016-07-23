@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<includes>
+
+    <include name="Dimensions_Fullscreen">
+        <posx>0</posx>
+        <posy>0</posy>
+        <width>1920</width>
+        <height>1080</height>
+		<aspectratio>scale</aspectratio>
+    </include>
+
+	<include name="Dimensions_BG_Banner">
+        <posx>80</posx>
+        <posy>0</posy>
+        <width>1195</width>
+        <height>672</height>
+    </include>
+	
+	<include name="Dimensions_BG_Fanart">
+        <posx>80</posx>
+        <posy>0</posy>
+        <width>1300</width>
+        <height>731</height>
+    </include>
+	
+	<include name="Dimensions_BG_Panel">
+        <posx>80</posx>
+        <posy>0</posy>
+        <width>1145</width>
+        <height>644</height>
+    </include>
+	
+	<include name="Dimensions_BG_Showcase">
+        <posx>80</posx>
+        <posy>0</posy>
+        <width>1227</width>
+        <height>690</height>
+    </include>
+
+    <include name="HomeBackground">
+
+        <control type="multiimage">
+            <include>Multiimage_Backgrounds</include>
+            <imagepath background="true" fallback="special://skin/extras/backgrounds/default.jpg">$INFO[Skin.String(Default.Background)]</imagepath>
+        </control>
+
+        <control type="multiimage">
+            <include>Multiimage_Backgrounds</include>
+            <imagepath background="true">$VAR[HomeMenu_1_Background]</imagepath>
+            <visible>Skin.String(HomeFocus,HomeMenu1)</visible>
+        </control>
+
+        <control type="multiimage">
+            <include>Multiimage_Backgrounds</include>
+            <imagepath background="true">$VAR[HomeMenu_2_Background]</imagepath>
+            <visible>Skin.String(HomeFocus,HomeMenu2)</visible>
+		</control>
+
+        <control type="multiimage">
+            <include>Multiimage_Backgrounds</include>
+            <imagepath background="true">$VAR[HomeMenu_3_Background]</imagepath>
+            <visible>Skin.String(HomeFocus,HomeMenu3)</visible>
+        </control>
+
+        <control type="multiimage">
+            <include>Multiimage_Backgrounds</include>
+            <imagepath background="true">$VAR[HomeMenu_4_Background]</imagepath>
+            <visible>Skin.String(HomeFocus,HomeMenu4)</visible>
+        </control>
+
+        <control type="multiimage">
+            <include>Multiimage_Backgrounds</include>
+            <imagepath background="true">$VAR[HomeMenu_5_Background]</imagepath>
+            <visible>Skin.String(HomeFocus,HomeMenu5)</visible>
+        </control>
+
+        <control type="multiimage">
+            <include>Multiimage_Backgrounds</include>
+            <imagepath background="true">$VAR[HomeMenu_6_Background]</imagepath>
+            <visible>Skin.String(HomeFocus,HomeMenu6)</visible>
+        </control>
+
+        <control type="multiimage">
+            <include>Multiimage_Backgrounds</include>
+            <imagepath background="true">$VAR[HomeMenu_7_Background]</imagepath>
+            <visible>Skin.String(HomeFocus,HomeMenu7)</visible>
+        </control>
+
+        <control type="multiimage">
+            <include>Multiimage_Backgrounds</include>            
+            <imagepath background="true">$VAR[HomeMenu_8_Background]</imagepath>
+			<visible>Skin.String(HomeFocus,HomeMenu8)</visible>
+        </control>
+
+        <control type="multiimage">
+            <include>Multiimage_Backgrounds</include>
+            <imagepath background="true">$VAR[HomeMenu_9_Background]</imagepath>
+			<visible>Skin.String(HomeFocus,HomeMenu9)</visible>
+        </control>
+
+        <control type="multiimage">
+            <include>Multiimage_Backgrounds</include>
+            <imagepath background="true">$VAR[HomeMenu_10_Background]</imagepath>
+			<visible>Skin.String(HomeFocus,HomeMenu10)</visible>
+        </control>
+
+        <control type="multiimage">
+            <include>Multiimage_Backgrounds</include>
+            <imagepath background="true">$VAR[HomeMenu_11_Background]</imagepath>
+			<visible>Skin.String(HomeFocus,HomeMenu11)</visible>
+        </control>
+
+        <control type="multiimage">
+            <include>Multiimage_Backgrounds</include>
+            <imagepath background="true">$VAR[HomeMenu_12_Background]</imagepath>
+			<visible>Skin.String(HomeFocus,HomeMenu12)</visible>
+        </control>	
+
+		<control type="multiimage">
+            <include>Multiimage_Backgrounds</include>
+            <imagepath background="true">$VAR[HomeMenu_13_Background]</imagepath>
+			<visible>Skin.String(HomeFocus,HomeMenu13)</visible>
+        </control>	
+
+        <control type="image">
+            <include>Dimensions_Fullscreen</include>
+            <include>Common_Color_BaseLow80</include>
+            <visible>Skin.HasSetting(UseHomeOverlay)</visible>
+        </control>	
+
+		<control type="image">
+			<posy>390</posy>
+			<height>570</height>
+			<width>1920</width>
+			<include>Common_Color_BaseLow80</include>
+			<visible>!Skin.HasSetting(UseHomeOverlay) + Window.IsVisible(home.xml)</visible>
+		</control>
+
+		<control type="image">
+			<posy>280</posy>
+			<height>760</height>
+			<width>1920</width>
+			<include>Common_Color_BaseLow80</include>
+			<visible>!Skin.HasSetting(UseHomeOverlay) + !Window.IsVisible(home.xml)</visible>
+		</control>
+
+	</include>
+	
+    <include name="DialogOverlay">
+
+        <control type="image">
+            <animation effect="fade" time="200">WindowOpen</animation>
+            <animation effect="fade" time="200">WindowClose</animation>
+            <include>Dimensions_Fullscreen</include>
+            <texture border="2" colordiffuse="DDFFFFFF">../extras/overlays/music_fanart_diffuse.png</texture>
+        </control>
+
+    </include>
+		
+	<!-- OLD -->
+    <include name="Multiimage_Backgrounds">
+        <include>Dimensions_Fullscreen</include>
+        <randomize>true</randomize>
+        <timeperimage>8000</timeperimage>
+        <fadetime>1000</fadetime>
+        <pauseatend>0</pauseatend>
+        <loop>true</loop>
+        <aspectratio aligny="top">stretch</aspectratio>
+        <animation effect="fade" time="1000">Hidden</animation>
+    </include>
+
+    <!-- Backgrounds -->
+    <include name="GlobalBackground">
+
+        <control type="image">
+            <include>Dimensions_Fullscreen</include>
+            <texture fallback="../extras/backgrounds/default.jpg">$INFO[Skin.String(Default.Background)]</texture>
+        </control>
+
+        <control type="image">
+            <include>Dimensions_Fullscreen</include>
+            <texture colordiffuse="BaseMid">colors/color_white.png</texture>
+            <visible>Window.IsActive(25) + IsEmpty(ListItem.Art(fanart))</visible>
+        </control>
+
+        <control type="image">
+            <include>Dimensions_Fullscreen</include>
+            <texture colordiffuse="BaseMid">colors/color_white.png</texture>
+            <visible>Container.Content(movies) + IsEmpty(ListItem.Art(fanart))</visible>
+        </control>
+
+        <control type="image">
+            <include>Dimensions_Fullscreen</include>
+            <texture fallback="../extras/backgrounds/movies.jpg">$INFO[Skin.String(Movies.Background)]</texture>
+            <visible>Window.IsActive(25) + IsEmpty(ListItem.Art(fanart))</visible>
+        </control>
+
+        <control type="image">
+            <include>Dimensions_Fullscreen</include>
+            <texture fallback="../extras/backgrounds/movies.jpg">$INFO[Skin.String(Movies.Background)]</texture>
+            <visible>Container.Content(movies) + IsEmpty(ListItem.Art(fanart))</visible>
+        </control>
+
+        <control type="image">
+            <include>Dimensions_Fullscreen</include>
+            <texture fallback="../extras/backgrounds/tvshows.jpg">$INFO[Skin.String(TVShows.Background)]</texture>
+            <visible>[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + IsEmpty(ListItem.Art(fanart))</visible>
+        </control>
+
+        <control type="image">
+            <include>Dimensions_Fullscreen</include>
+            <texture fallback="../extras/backgrounds/livetv.jpg">$INFO[Skin.String(PVR.Background)]</texture>
+            <visible>[Window.IsActive(tvchannels) | Window.IsActive(tvrecordings) | Window.IsActive(tvguide) | Window.IsActive(tvtimers) | Window.IsActive(tvsearch) | Window.IsActive(radiochannels) | Window.IsActive(radiorecordings) | Window.IsActive(radioguide) | Window.IsActive(radiotimers) | Window.IsActive(radiosearch)] + IsEmpty(ListItem.Art(fanart))</visible>
+        </control>
+
+        <control type="image">
+            <include>Dimensions_Fullscreen</include>
+            <texture fallback="../extras/backgrounds/music.jpg">$INFO[Skin.String(Music.Background)]</texture>
+            <visible>[Container.Content(songs) | Container.Content(artists) | Container.Content(albums)] + IsEmpty(ListItem.Art(fanart))</visible>
+        </control>
+
+        <control type="image">
+            <include>Dimensions_Fullscreen</include>
+            <texture fallback="../extras/backgrounds/musicvid.jpg">$INFO[Skin.String(MusicVid.Background)]</texture>
+            <visible>Container.Content(musicvideos) + IsEmpty(ListItem.Art(fanart))</visible>
+        </control>
+
+        <control type="image">
+            <include>Dimensions_Fullscreen</include>
+            <texture fallback="../extras/backgrounds/pictures.jpg">$INFO[Skin.String(Pictures.Background)]</texture>
+            <visible>Window.IsActive(pictures) + IsEmpty(ListItem.Art(fanart))</visible>
+        </control>
+
+        <control type="image">
+            <include>Dimensions_Fullscreen</include>
+            <texture fallback="../extras/backgrounds/addons.jpg">$INFO[Skin.String(Addons.Background)]</texture>
+            <visible>Window.IsActive(programs) + IsEmpty(ListItem.Art(fanart))</visible>
+        </control>
+
+        <control type="image">
+            <include>Dimensions_Fullscreen</include>
+            <texture fallback="../extras/backgrounds/addons.jpg">$INFO[Skin.String(Addons.Background)]</texture>
+            <visible>Window.IsActive(addonbrowser) + IsEmpty(ListItem.Art(fanart))</visible>
+        </control>
+
+        <control type="image">
+            <include>Dimensions_Fullscreen</include>
+            <fadetime>800</fadetime>
+            <texture background="true" fallback="../extras/backgrounds/tvshows.jpg">$INFO[ListItem.Art(fanart)]</texture>
+            <visible>Container.Content(seasons) | Container.Content(episodes) | Container.Content(tvshows)</visible>
+        </control>
+
+        <control type="image">
+            <include>Dimensions_Fullscreen</include>
+            <fadetime>800</fadetime>
+            <texture background="true" fallback="../extras/backgrounds/games.jpg">$INFO[Skin.String(Games.Background)]</texture>
+            <visible>Window.IsActive(script-Rom_Collection_Browser-main.xml)</visible>
+        </control>	
+
+        <control type="group">
+            <visible>!Player.HasMedia | [Player.HasAudio + Skin.HasSetting(NoBackgroundVisualiser)] | [Player.HasVideo + Skin.HasSetting(NoBackgroundVideo)]</visible>
+
+            <control type="image">
+                <include>Dimensions_Fullscreen</include>
+                <fadetime>800</fadetime>
+                <texture background="true" fallback="../extras/backgrounds/movies.jpg">$INFO[ListItem.Art(fanart)]</texture>
+                <visible>Container.Content(Movies) | Container.Content(Genres) | Container.Content(Sets)</visible>
+            </control>
+
+            <control type="image">
+                <include>Dimensions_Fullscreen</include>
+                <fadetime>800</fadetime>
+                <texture background="true" fallback="../extras/backgrounds/tvshows.jpg">$INFO[ListItem.Art(fanart)]</texture>
+                <visible>Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
+            </control>
+
+            <control type="image">
+                <include>Dimensions_Fullscreen</include>
+                <fadetime>800</fadetime>
+                <texture background="true" fallback="../extras/backgrounds/music.jpg">$INFO[ListItem.Art(fanart)]</texture>
+                <visible>Container.Content(albums) | Container.Content(artists) | Container.Content(songs)</visible>
+            </control>
+
+        </control>
+
+        <control type="group">
+            <visible>[Player.HasAudio + !Skin.HasSetting(NoBackgroundVisualiser)] | [Player.HasVideo + !Skin.HasSetting(NoBackgroundVideo)]</visible>
+
+            <control type="visualisation">
+                <visible>!SubString(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>
+                <include>Dimensions_Fullscreen</include>
+                <visible>Player.HasAudio + !Skin.HasSetting(NoBackgroundVisualiser)</visible>
+            </control>
+
+            <control type="videowindow">
+                <include>Dimensions_Fullscreen</include>
+                <visible>Player.HasVideo + !Skin.HasSetting(NoBackgroundVideo)</visible>
+            </control>
+
+            <control type="image">
+                <include>Dimensions_Fullscreen</include>
+                <texture fallback="../extras/backgrounds/music.png">$INFO[MusicPlayer.ListItem.Art(fanart)]</texture>
+                <visible>true</visible>
+            </control>
+
+        </control>
+
+    </include>
+
+    <include name="PictureBackground">
+
+        <control type="image">
+            <posx>-21</posx>
+            <posy>-21</posy>
+            <width>1962</width>
+            <height>1122</height>
+            <texture background="true">$INFO[ListItem.FilenameAndPath]</texture>
+            <fadetime>800</fadetime>
+            <aspectratio>keep</aspectratio>
+            <visible>!Skin.HasSetting(Picture_Fullscreen)</visible>
+        </control>
+
+        <control type="image">
+            <include>Dimensions_Fullscreen</include>
+            <texture background="true">$INFO[ListItem.FilenameAndPath]</texture>
+            <fadetime>800</fadetime>
+            <aspectratio>scale</aspectratio>
+            <visible>Skin.HasSetting(Picture_Fullscreen)</visible>
+        </control>
+
+    </include>
+
+    <include name="FanartBackground">
+
+		<control type="image">
+			<fadetime>800</fadetime>
+			<texture background="true">$VAR[Fanart_Background]</texture>
+		</control>
+
+    </include>	
+	
+	<include name="FanartOverlay">
+
+	   <control type="image">
+			<include>Dimensions_Fullscreen</include>
+			<texture background="true" colordiffuse="FanartDiffuse">../extras/overlays/diffuse.png</texture>
+			<visible>Skin.HasSetting(UseFanartOverlay)</visible>
+		</control>
+
+    </include>
+
+	<include name="WhiteOverlay">
+
+	   <control type="image">
+			<include>Dimensions_Fullscreen</include>
+			<include>Common_Color_BaseWhite80</include>
+		</control>
+
+    </include>
+	
+	<include name="BG_Fanart_1080">
+	
+        <control type="group">
+			<include>Dimensions_Fullscreen</include>			
+			<include>FanartBackground</include>	
+
+			 <control type="group">
+				<visible>[Player.HasAudio + !Skin.HasSetting(NoBackgroundVisualiser)] | [Player.HasVideo + !Skin.HasSetting(NoBackgroundVideo)]</visible>
+				<include>Dimensions_Fullscreen</include>
+
+				<control type="image">
+					<texture colordiffuse="BaseBlack">colors/color_white.png</texture>
+					<visible>Player.HasVideo + !Skin.HasSetting(NoBackgroundVideo)</visible>
+				</control>
+				
+				<control type="visualisation">
+					<visible>!SubString(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>
+					<visible>Player.HasAudio + !Skin.HasSetting(NoBackgroundVisualiser)</visible>
+				</control>
+
+				<control type="videowindow">
+					<visible>Player.HasVideo + !Skin.HasSetting(NoBackgroundVideo)</visible>
+				</control>
+
+				<control type="image">					
+					<texture fallback="../extras/backgrounds/music.png">$INFO[MusicPlayer.ListItem.Art(fanart)]</texture>
+					<visible>true</visible>
+				</control>
+				
+			</control>
+			
+        </control>
+		
+    </include>
+
+	<include name="BG_Fanart_731">
+	
+        <control type="group">
+			<posx>80</posx>
+			<include>Dimensions_BG_Fanart</include>			
+			<include>FanartBackground</include>
+
+			<control type="image">
+				<posx>800</posx>
+				<width>500</width>
+				<height>100</height>
+				<texture>general/movieset.png</texture>
+				<visible>ListItem.IsFolder + Container.Content(movies)</visible>
+				<visible>Skin.HasSetting(UseMovieset)</visible>
+				<visible>!stringcompare(ListItem.Label,..)</visible>
+			</control>
+			
+			<control type="image">
+				<visible>Window.IsActive(pictures)</visible>
+				<aspectratio aligny="top">scale</aspectratio>
+				<texture background="true">$VAR[Fanart_Background]</texture>
+			</control>
+
+			<control type="image" id="100">
+				<visible>Skin.HasSetting(UseTVLogos)</visible>
+				<posy>30</posy>
+				<width>1300</width>
+				<height>150</height>
+				<texture background="true">$VAR[Common_Logo]</texture>
+				<fadetime>100</fadetime>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+			</control>
+			
+			<control type="group">
+				<posx>0</posx>
+				<visible>[Player.HasAudio + !Skin.HasSetting(NoBackgroundVisualiser)] | [Player.HasVideo + !Skin.HasSetting(NoBackgroundVideo)]</visible>
+				<include>Dimensions_BG_Fanart</include>
+
+				<control type="image">
+					<texture colordiffuse="TrueBlack">colors/color_white.png</texture>
+                    <visible>[Player.HasVideo + !Skin.HasSetting(NoBackgroundVideo)] | [Player.HasAudio + !Skin.HasSetting(NoBackgroundVisualiser)]</visible>
+				</control>
+				
+				<control type="visualisation">
+					<visible>!SubString(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>
+					<visible>Player.HasAudio + !Skin.HasSetting(NoBackgroundVisualiser)</visible>
+				</control>
+
+				<control type="videowindow">
+					<visible>Player.HasVideo + !Skin.HasSetting(NoBackgroundVideo)</visible>
+                    <width>1300</width>
+                    <height>731</height>                    
+				</control>
+
+				<control type="image">					
+					<texture fallback="../extras/backgrounds/music.png">$INFO[MusicPlayer.ListItem.Art(fanart)]</texture>
+					<visible>true</visible>
+				</control>
+				
+			</control>
+			
+        </control>
+		
+    </include>	
+
+	<include name="BG_Fanart_690">
+	
+        <control type="group">
+			<posx>80</posx>
+			<include>Dimensions_BG_Showcase</include>			
+			<include>FanartBackground</include>
+
+			<control type="image">
+				<posx>727</posx>
+				<width>500</width>
+				<height>100</height>
+				<texture>general/movieset.png</texture>
+				<visible>ListItem.IsFolder + Container.Content(movies)</visible>
+				<visible>Skin.HasSetting(UseMovieset)</visible>
+				<visible>!stringcompare(ListItem.Label,..)</visible>
+			</control>
+
+			<control type="image" id="100">
+				<visible>Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(movies)</visible>
+				<visible>Skin.HasSetting(UseTVLogos)</visible>
+				<posy>30</posy>
+				<width>1227</width>
+				<height>150</height>
+				<texture background="true">$VAR[Common_Logo]</texture>
+				<fadetime>100</fadetime>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+			</control>
+			
+			<control type="group">
+				<posx>0</posx>
+				<visible>[Player.HasAudio + !Skin.HasSetting(NoBackgroundVisualiser)] | [Player.HasVideo + !Skin.HasSetting(NoBackgroundVideo)]</visible>
+				<include>Dimensions_BG_Showcase</include>
+
+				<control type="image">
+					<texture colordiffuse="TrueBlack">colors/color_white.png</texture>
+                    <visible>[Player.HasVideo + !Skin.HasSetting(NoBackgroundVideo)] | [Player.HasAudio + !Skin.HasSetting(NoBackgroundVisualiser)]</visible>
+				</control>
+				
+				<control type="visualisation">
+					<visible>!SubString(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>
+					<visible>Player.HasAudio + !Skin.HasSetting(NoBackgroundVisualiser)</visible>
+				</control>
+
+				<control type="videowindow">
+					<visible>Player.HasVideo + !Skin.HasSetting(NoBackgroundVideo)</visible>
+                    <width>1227</width>
+                    <height>690</height>
+				</control>
+
+				<control type="image">					
+					<texture fallback="../extras/backgrounds/music.png">$INFO[MusicPlayer.ListItem.Art(fanart)]</texture>
+					<visible>true</visible>
+				</control>
+				
+			</control>
+			
+        </control>
+		
+    </include>	
+	
+	<include name="BG_Fanart_672">
+	
+        <control type="group">
+			<posx>80</posx>
+			<include>Dimensions_BG_Banner</include>			
+			<include>FanartBackground</include>
+
+			<control type="image" id="100">
+				<visible>Skin.HasSetting(UseTVLogos)</visible>
+				<posy>30</posy>
+				<width>1300</width>
+				<height>150</height>
+				<texture background="true">$VAR[Common_Logo]</texture>
+				<fadetime>100</fadetime>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+			</control>
+			
+			<control type="group">
+				<posx>0</posx>
+				<visible>[Player.HasAudio + !Skin.HasSetting(NoBackgroundVisualiser)] | [Player.HasVideo + !Skin.HasSetting(NoBackgroundVideo)]</visible>
+				<include>Dimensions_BG_Banner</include>
+
+				<control type="image">
+					<texture colordiffuse="BaseBlack">colors/color_white.png</texture>
+					<visible>[Player.HasVideo + !Skin.HasSetting(NoBackgroundVideo)] | [Player.HasAudio + !Skin.HasSetting(NoBackgroundVisualiser)]</visible>
+				</control>
+				
+				<control type="visualisation">
+					<visible>!SubString(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>
+					<visible>Player.HasAudio + !Skin.HasSetting(NoBackgroundVisualiser)</visible>
+				</control>
+
+				<control type="videowindow">
+					<visible>Player.HasVideo + !Skin.HasSetting(NoBackgroundVideo)</visible>
+                    <width>1195</width>
+                    <height>672</height>
+				</control>
+
+				<control type="image">					
+					<texture fallback="../extras/backgrounds/music.png">$INFO[MusicPlayer.ListItem.Art(fanart)]</texture>
+					<visible>true</visible>
+				</control>
+				
+			</control>
+			
+        </control>
+		
+    </include>	
+
+	<include name="BG_Fanart_644">
+	
+        <control type="group">
+			<posx>80</posx>
+			<include>Dimensions_BG_Panel</include>			
+			<include>FanartBackground</include>
+
+			<control type="image">
+				<posx>860</posx>
+				<width>375</width>
+				<height>75</height>
+				<texture>general/movieset.png</texture>
+				<visible>ListItem.IsFolder + Container.Content(movies)</visible>
+				<visible>Skin.HasSetting(UseMovieset)</visible>
+				<visible>!stringcompare(ListItem.Label,..)</visible>
+			</control>
+
+			<control type="image" id="100">
+				<visible>Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(movies)</visible>
+				<visible>Skin.HasSetting(UseTVLogos)</visible>
+				<posx>80</posx>
+				<posy>30</posy>
+				<width>1145</width>
+				<height>150</height>
+				<texture background="true">$VAR[Common_Logo]</texture>
+				<fadetime>100</fadetime>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+			</control>
+			
+			<control type="group">
+				<posx>0</posx>
+				<visible>[Player.HasAudio + !Skin.HasSetting(NoBackgroundVisualiser)] | [Player.HasVideo + !Skin.HasSetting(NoBackgroundVideo)]</visible>
+				<include>Dimensions_BG_Panel</include>
+
+				<control type="image">
+					<texture colordiffuse="BaseBlack">colors/color_white.png</texture>
+					<visible>[Player.HasVideo + !Skin.HasSetting(NoBackgroundVideo)] | [Player.HasAudio + !Skin.HasSetting(NoBackgroundVisualiser)]</visible>
+				</control>
+				
+				<control type="visualisation">
+					<visible>!SubString(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>
+					<visible>Player.HasAudio + !Skin.HasSetting(NoBackgroundVisualiser)</visible>
+				</control>
+
+				<control type="videowindow">
+					<visible>Player.HasVideo + !Skin.HasSetting(NoBackgroundVideo)</visible>
+                    <width>1145</width>
+                    <height>644</height>
+				</control>
+
+				<control type="image">					
+					<texture fallback="../extras/backgrounds/music.png">$INFO[MusicPlayer.ListItem.Art(fanart)]</texture>
+					<visible>true</visible>
+				</control>
+				
+			</control>
+			
+        </control>
+		
+    </include>	
+
+</includes>

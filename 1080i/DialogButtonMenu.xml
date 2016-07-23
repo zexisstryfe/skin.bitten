@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<window type="buttonmenu" id="111">
+    <defaultcontrol always="true">3110</defaultcontrol>
+	
+    <controls>	
+        <include>DialogOverlay</include>
+		<include>Common_LeftMenu_Backing</include>
+		<include>Common_LeftMenu_Heading</include>				
+		<include>Common_LeftBar_LeftMenu</include>
+		
+		<control type="grouplist" id="1">
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="500" delay="500" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="200" />
+			</animation>
+			<posy>100</posy>
+			<width>420</width>
+			<height>1080</height>
+			<itemgap>20</itemgap>
+			<onup>1</onup>
+			<ondown>1</ondown>
+			<onright>Dialog.Close(111)</onright>
+			<orientation>vertical</orientation>
+			
+			<control type="group">
+				<height>75</height>
+				
+				<control type="image">
+					<include>Common_Settings_Button_Backing</include>
+					<visible>Control.HasFocus(3110)</visible>
+				</control>
+
+				<control type="button" id="3110">
+					<include>Common_Settings_Button</include>
+					<texturefocus>buttonmenu/SettingsFO.png</texturefocus>
+					<texturenofocus>buttonmenu/settingsNF.png</texturenofocus>
+					<label>$LOCALIZE[5]</label>
+					<onclick>ActivateWindow(Settings)</onclick>
+					<ondown>3111</ondown>
+					<onup>3116</onup>
+					<onright>Dialog.Close(111)</onright>
+				</control>
+			
+			</control>
+			
+			<control type="group">
+				<height>75</height>
+				
+				<control type="image">
+					<include>Common_Settings_Button_Backing</include>
+					<visible>Control.HasFocus(3111)</visible>
+				</control>
+
+				<control type="button" id="3111">
+					<include>Common_Settings_Button</include>
+					<texturefocus>buttonmenu/ejectFO.png</texturefocus>
+					<texturenofocus>buttonmenu/ejectNF.png</texturenofocus>
+					<label>$LOCALIZE[13391]</label>
+					<onclick>EjectTray()</onclick>
+					<ondown>3117</ondown>
+					<onup>3110</onup>	
+					<onright>Dialog.Close(111)</onright>					
+				</control>
+			
+			</control>
+			
+			<control type="group">
+				<height>75</height>
+				
+				<control type="image">
+					<include>Common_Settings_Button_Backing</include>
+					<visible>Control.HasFocus(3117)</visible>
+				</control>
+
+				<control type="button" id="3117">
+					<include>Common_Settings_Button</include>
+					<texturefocus>buttonmenu/filesFO.png</texturefocus>
+					<texturenofocus>buttonmenu/filesNF.png</texturenofocus>
+					<label>$LOCALIZE[7]</label>
+					<onclick>ActivateWindow(filemanager)</onclick>
+					<ondown>3112</ondown>
+					<onup>3111</onup>	
+					<onright>Dialog.Close(111)</onright>					
+				</control>
+			
+			</control>
+			
+			<control type="group">
+				<height>75</height>
+				
+				<control type="image">
+					<include>Common_Settings_Button_Backing</include>
+					<visible>Control.HasFocus(3112)</visible>
+				</control>
+
+				<control type="button" id="3112">
+					<include>Common_Settings_Button</include>
+					<texturefocus>buttonmenu/logoffFO.png</texturefocus>
+					<texturenofocus>buttonmenu/logoffNF.png</texturenofocus>
+					<label>$LOCALIZE[20126]</label>
+					<onclick>ActivateWindow(LoginScreen)</onclick>
+					<ondown>3113</ondown>
+					<onup>3117</onup>	
+					<onright>Dialog.Close(111)</onright>					
+				</control>
+			
+			</control>
+				
+			<control type="group">
+				<height>75</height>
+				
+				<control type="image">
+					<include>Common_Settings_Button_Backing</include>
+					<visible>Control.HasFocus(3113)</visible>
+				</control>
+
+				<control type="button" id="3113">
+					<include>Common_Settings_Button</include>
+					<texturefocus>buttonmenu/suspendFO.png</texturefocus>
+					<texturenofocus>buttonmenu/suspendNF.png</texturenofocus>
+					<label>$LOCALIZE[13011]</label>
+					<onclick>XBMC.Suspend()</onclick>
+					<ondown>3114</ondown>
+					<onup>3112</onup>
+					<onright>Dialog.Close(111)</onright>
+				</control>
+			
+			</control>				
+
+			<control type="group">
+				<height>75</height>
+				
+				<control type="image">
+					<include>Common_Settings_Button_Backing</include>
+					<visible>Control.HasFocus(3114)</visible>
+				</control>
+
+				<control type="button" id="3114">
+					<include>Common_Settings_Button</include>
+					<texturefocus>buttonmenu/rebootFO.png</texturefocus>
+					<texturenofocus>buttonmenu/rebootNF.png</texturenofocus>
+					<label>$LOCALIZE[13313]</label>
+					<onclick>RestartApp</onclick>
+					<ondown>3115</ondown>
+					<onup>3113</onup>
+					<onright>Dialog.Close(111)</onright>
+				</control>
+			
+			</control>
+
+			<control type="group">
+				<height>75</height>
+				
+				<control type="image">
+					<include>Common_Settings_Button_Backing</include>
+					<visible>Control.HasFocus(3115)</visible>
+				</control>
+
+				<control type="button" id="3115">
+					<include>Common_Settings_Button</include>
+					<texturefocus>buttonmenu/timerFO.png</texturefocus>
+					<texturenofocus>buttonmenu/timerNF.png</texturenofocus>
+					<label>$LOCALIZE[19040]</label>
+					<onclick>AlarmClock(ShutdownTimer,Shutdown)</onclick>
+					<ondown>3116</ondown>
+					<onup>3114</onup>
+					<onright>Dialog.Close(111)</onright>
+				</control>
+			
+			</control>		
+
+			<control type="group">
+				<height>75</height>
+				
+				<control type="image">
+					<include>Common_Settings_Button_Backing</include>
+					<visible>Control.HasFocus(3116)</visible>
+				</control>
+
+				<control type="button" id="3116">
+					<include>Common_Settings_Button</include>
+					<texturefocus>buttonmenu/shutdownFO.png</texturefocus>
+					<texturenofocus>buttonmenu/shutdownNF.png</texturenofocus>
+					<label>$LOCALIZE[13005]</label>
+					<onclick>Shutdown()</onclick>
+					<ondown>3110</ondown>
+					<onup>3115</onup>
+					<onright>Dialog.Close(111)</onright>
+				</control>
+			
+			</control>				
+
+		</control>
+		
+    </controls>
+	
+</window>

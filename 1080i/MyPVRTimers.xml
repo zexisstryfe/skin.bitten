@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<window id="601">
+    <defaultcontrol>14</defaultcontrol>
+    <views>14</views>
+	
+    <!--Script Loading-->
+    <onload>SetProperty(tvlist,$LOCALIZE[19020])</onload>
+    <onload>SetProperty(radiolist,$LOCALIZE[19021])</onload>
+	
+    <!--Animation-->
+    <include condition="!Window.Previous(fullscreenvideo) + !Window.Previous(slideshow) + Skin.HasSetting(MetroAnimations)">Common_Animation_Splash_Flip</include>
+	
+    <!--Background Area-->
+    <controls>
+		<include>BG_Fanart_1080</include>
+		<include>FanartOverlay</include>
+		
+        <!--Window Animations-->
+        <control type="group">
+            <animation type="TYPE" condition="Window.IsVisible(DialogPVRGuideInfo.xml) | Window.IsVisible(DialogPVRRecordingInfo.xml) | Window.IsVisible(DialogPVRGuideSearch.xml) | Window.IsVisible(DialogPVRGroupManager.xml)" reversible="false">
+                <effect type="slide" end="-2250,0" time="200" />
+            </animation>
+            <animation type="TYPE" condition="!Window.IsVisible(DialogPVRGuideInfo.xml) + !Window.IsVisible(DialogPVRRecordingInfo.xml) + !Window.IsVisible(DialogPVRGuideSearch.xml) + !Window.IsVisible(DialogPVRGroupManager.xml)" reversible="false">
+                <effect type="slide" start="-2250,0" time="200" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="fade" time="300" />
+                <effect type="slide" end="2250,0" time="300" />
+            </animation>
+            <animation type="WindowOpen">
+                <effect type="fade" time="300" />
+                <effect type="slide" start="2250,0" time="300" />
+            </animation>
+			
+            <control type="label" id="29">
+                <description>Empty so we can pass the values up one level</description>
+                <visible>False</visible>
+            </control>
+			
+            <control type="label" id="30">
+                <description>Empty so we can pass the values up one level</description>
+                <visible>False</visible>
+            </control>
+			
+        </control>
+		
+        <!--Available Views-->
+        <control type="group" id="50">
+            <include>LiveTVTimersView</include>
+        </control>
+		
+        <!--Options Menu-->
+        <include>Common_Options</include>
+        <include>Common_Options_Clock</include>
+		
+        <!--Sort Overlays-->
+        <include>Sort_Panel</include>
+        <include>Sort_Panel_Alt</include>
+		
+        <!--Splash Screen-->
+        <include condition="!Window.Previous(fullscreenvideo) + !Window.Previous(slideshow) + Skin.HasSetting(MetroAnimations)">Common_Splash</include>
+		
+    </controls>
+	
+</window>

@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window id="1119" type="dialog">
+	<defaultcontrol always="true">9101</defaultcontrol>
+
+	<controls>
+
+		<control type="group">
+
+			<control type="image">
+				<description>White Backing</description>
+				<width>420</width>
+				<height>1080</height>
+				<texture border="2" colordiffuse="BaseWhite">colors/color_white.png</texture>
+			</control>	
+			
+			<control type="image">
+				<description>Heading Backing</description>
+				<width>420</width>
+				<height>75</height>
+				<texture border="2" colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
+			</control>	
+			
+			<control type="label">
+				<posx>20</posx>
+				<height>75</height>
+				<font>font45R</font>
+				<textcolor>BaseWhite</textcolor>
+				<label>$LOCALIZE[31016]</label>
+			</control>	
+		
+		</control>
+
+		<control type="grouplist" id="9101">
+			<posy>90</posy>
+			<width>420</width>
+			<height>1080</height>
+			<itemgap>5</itemgap>
+			<orientation>vertical</orientation>
+
+			<control type="group">
+				<height>75</height>	
+				<visible>Control.IsVisible(9199)</visible>			
+				<control type="image">
+					<include>Common_Settings_Button_Backing</include>
+					<visible>Control.HasFocus(9199)</visible>
+				</control>
+				<control type="button" id="9199">
+					<include>Options_PreviousMenu</include>
+					<include>Options_View_OnLeftRight</include>
+					<onup>9216</onup>
+					<ondown>9201</ondown>
+				</control>
+			</control>	
+
+			<control type="group">
+				<height>75</height>	
+				<visible>Control.IsVisible(9201)</visible>			
+				<control type="image">
+					<include>Common_Settings_Button_Backing</include>
+					<visible>Control.HasFocus(9201)</visible>
+				</control>
+				<control type="button" id="9201">
+					<include>Options_View_Album</include>
+					<include>Options_View_OnLeftRight</include>
+					<onup>9199</onup>
+					<ondown>9202</ondown>
+				</control>
+			</control>	
+
+			<control type="group">
+				<height>75</height>	
+				<visible>Control.IsVisible(9202)</visible>			
+				<control type="image">
+					<include>Common_Settings_Button_Backing</include>
+					<visible>Control.HasFocus(9202)</visible>
+				</control>
+				<control type="button" id="9202">
+					<include>Options_View_Banner</include>
+					<include>Options_View_OnLeftRight</include>>
+					<onup>9201</onup>
+					<ondown>9203</ondown>
+				</control>
+			</control>
+			
+			<control type="group">
+				<height>75</height>	
+				<visible>Control.IsVisible(9203)</visible>			
+				<control type="image">
+					<include>Common_Settings_Button_Backing</include>
+					<visible>Control.HasFocus(9203)</visible>
+				</control>
+				<control type="button" id="9203">
+					<include>Options_View_Dialog</include>
+					<include>Options_View_OnLeftRight</include>
+					<onup>9202</onup>
+					<ondown>9204</ondown>
+				</control>
+			</control>
+			
+			<control type="group">
+				<height>75</height>	
+				<visible>Control.IsVisible(9204)</visible>			
+				<control type="image">
+					<include>Common_Settings_Button_Backing</include>
+					<visible>Control.HasFocus(9204)</visible>
+				</control>
+				<control type="button" id="9204">
+					<include>Options_View_Fanart</include>
+					<include>Options_View_OnLeftRight</include>
+					<onup>9203</onup>
+					<ondown>9205</ondown>
+				</control>
+			</control>
+
+			<control type="group">
+				<height>75</height>	
+				<visible>Control.IsVisible(9205)</visible>			
+				<control type="image">
+					<include>Common_Settings_Button_Backing</include>
+					<visible>Control.HasFocus(9205)</visible>
+				</control>
+				<control type="button" id="9205">
+					<include>Options_View_Genre</include>
+					<include>Options_View_OnLeftRight</include>
+					<onup>9204</onup>
+					<ondown>9206</ondown>
+				</control>
+			</control>
+
+			<control type="group">
+				<height>75</height>	
+				<visible>Control.IsVisible(9206)</visible>			
+				<control type="image">
+					<include>Common_Settings_Button_Backing</include>
+					<visible>Control.HasFocus(9206)</visible>
+				</control>
+				<control type="button" id="9206">
+					<include>Options_View_List</include>
+					<include>Options_View_OnLeftRight</include>
+					<onup>9205</onup>
+					<ondown>9207</ondown>
+				</control>
+			</control>
+
+			<control type="group">
+				<height>75</height>	
+				<visible>Control.IsVisible(9207)</visible>			
+				<control type="image">
+					<include>Common_Settings_Button_Backing</include>
+					<visible>Control.HasFocus(9207)</visible>
+				</control>
+				<control type="button" id="9207">
+					<include>Options_View_Logo</include>
+					<include>Options_View_OnLeftRight</include>
+					<onup>9206</onup>
+					<ondown>9208</ondown>
+				</control>
+			</control>
+
+			<control type="group">
+				<height>75</height>	
+				<visible>Control.IsVisible(9208)</visible>			
+				<control type="image">
+					<include>Common_Settings_Button_Backing</include>
+					<visible>Control.HasFocus(9208)</visible>
+				</control>
+				<control type="button" id="9208">
+					<include>Options_View_Panel</include>
+					<include>Options_View_OnLeftRight</include>
+					<onup>9207</onup>
+					<ondown>9209</ondown>
+				</control>
+			</control>
+
+			<control type="group">
+				<height>75</height>	
+				<visible>Control.IsVisible(9209)</visible>			
+				<control type="image">
+					<include>Common_Settings_Button_Backing</include>
+					<visible>Control.HasFocus(9209)</visible>
+				</control>
+				<control type="button" id="9209">
+					<include>Options_View_Photo</include>
+					<include>Options_View_OnLeftRight</include>
+					<onup>9208</onup>
+					<ondown>9210</ondown>
+				</control>
+			</control>
+
+			<control type="group">
+				<height>75</height>	
+				<visible>Control.IsVisible(9210)</visible>			
+				<control type="image">
+					<include>Common_Settings_Button_Backing</include>
+					<visible>Control.HasFocus(9210)</visible>
+				</control>
+				<control type="button" id="9210">
+					<include>Options_View_Showcase</include>
+					<include>Options_View_OnLeftRight</include>
+					<onup>9209</onup>
+					<ondown>9211</ondown>
+				</control>
+			</control>
+
+			<control type="group">
+				<height>75</height>	
+				<visible>Control.IsVisible(9211)</visible>			
+				<control type="image">
+					<include>Common_Settings_Button_Backing</include>
+					<visible>Control.HasFocus(9211)</visible>
+				</control>
+				<control type="button" id="9211">
+					<include>Options_View_Thumbnail</include>
+					<include>Options_View_OnLeftRight</include>
+					<onup>9210</onup>
+					<ondown>9212</ondown>
+				</control>
+			</control>
+
+			<control type="group">
+				<height>75</height>	
+				<visible>Control.IsVisible(9212)</visible>			
+				<control type="image">
+					<include>Common_Settings_Button_Backing</include>
+					<visible>Control.HasFocus(9212)</visible>
+				</control>
+				<control type="button" id="9212">
+					<include>Options_View_Thumbnail_Album</include>
+					<include>Options_View_OnLeftRight</include>
+					<onup>9211</onup>
+					<ondown>9213</ondown>
+				</control>
+			</control>
+
+			<control type="group">
+				<height>75</height>	
+				<visible>Control.IsVisible(9213)</visible>			
+				<control type="image">
+					<include>Common_Settings_Button_Backing</include>
+					<visible>Control.HasFocus(9213)</visible>
+				</control>
+				<control type="button" id="9213">
+					<include>Options_View_Tile</include>
+					<include>Options_View_OnLeftRight</include>
+					<onup>9212</onup>
+					<ondown>9214</ondown>
+				</control>
+			</control>
+
+			<control type="group">
+				<height>75</height>	
+				<visible>Control.IsVisible(9214)</visible>			
+				<control type="image">
+					<include>Common_Settings_Button_Backing</include>
+					<visible>Control.HasFocus(9214)</visible>
+				</control>
+				<control type="button" id="9214">
+					<include>Options_View_RCB_Fanart</include>
+					<include>Options_View_OnLeftRight</include>
+					<onup>9213</onup>
+					<ondown>9215</ondown>
+				</control>
+			</control>
+
+			<control type="group">
+				<height>75</height>	
+				<visible>Control.IsVisible(9215)</visible>			
+				<control type="image">
+					<include>Common_Settings_Button_Backing</include>
+					<visible>Control.HasFocus(9215)</visible>
+				</control>
+				<control type="button" id="9215">
+					<include>Options_View_RCB_Showcase</include>
+					<include>Options_View_OnLeftRight</include>
+					<onup>9214</onup>
+					<ondown>9216</ondown>
+				</control>			
+			</control>
+			
+			<control type="group">
+				<height>75</height>	
+				<visible>Control.IsVisible(9216)</visible>			
+				<control type="image">
+					<include>Common_Settings_Button_Backing</include>
+					<visible>Control.HasFocus(9216)</visible>
+				</control>
+				<control type="button" id="9216">
+					<include>Options_View_RCB_Thumbnail</include>
+					<include>Options_View_OnLeftRight</include>
+					<onup>9215</onup>
+					<ondown>9199</ondown>
+				</control>
+			</control>		
+
+		</control>
+
+	</controls>
+
+</window>

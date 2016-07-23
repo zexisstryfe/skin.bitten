@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<fonts>
+
+    <fontset id="default">
+	
+		<!-- NEW FONTS -->
+        <font>
+			<name>scrawl28</name>
+            <filename>aescrawl.ttf</filename>
+            <size>28</size>
+            <linespacing>0.75</linespacing>
+        </font>
+
+        <font>
+            <name>font16R</name>
+            <filename>Roboto-Regular.ttf</filename>
+            <size>16</size>
+        </font>		
+		
+        <font>
+            <name>font18R</name>
+            <filename>Roboto-Regular.ttf</filename>
+            <size>18</size>
+        </font>
+		
+		<font>
+            <name>font20R</name>
+            <filename>Roboto-Regular.ttf</filename>
+            <size>20</size>
+        </font>
+
+		<font>
+            <name>font24</name>
+            <filename>Roboto-Light.ttf</filename>
+            <size>24</size>
+        </font>
+		
+		<font>
+            <name>font24B</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>24</size>
+        </font>
+
+		<font>
+            <name>font24R</name>
+            <filename>Roboto-Regular.ttf</filename>
+            <size>24</size>
+        </font>		
+		
+		<font>
+            <name>font26</name>
+            <filename>Roboto-Light.ttf</filename>
+            <size>26</size>
+        </font>
+		
+		<font>
+            <name>font26B</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>26</size>
+        </font>
+		
+		<font>
+            <name>font26R</name>
+            <filename>Roboto-Regular.ttf</filename>
+            <size>26</size>
+        </font>
+		
+		<font>
+            <name>font30</name>
+            <filename>Roboto-Light.ttf</filename>
+            <size>30</size>
+        </font>
+		
+		<font>
+            <name>font30B</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>30</size>
+        </font>
+
+		<font>
+            <name>font30C</name>
+            <filename>RobotoCondensed-Light.ttf</filename>
+            <size>30</size>
+        </font>
+
+		<font>
+            <name>font30CB</name>
+            <filename>RobotoCondensed-Bold.ttf</filename>
+            <size>30</size>
+        </font>
+		
+		<font>
+            <name>font30R</name>
+            <filename>Roboto-Regular.ttf</filename>
+            <size>30</size>
+        </font>
+
+		<font>
+            <name>font34B</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>34</size>
+        </font>
+		
+		<font>
+            <name>font34R</name>
+            <filename>Roboto-Regular.ttf</filename>
+            <size>34</size>
+        </font>
+		
+	    <font>
+            <name>font36C</name>
+            <filename>RobotoCondensed-Light.ttf</filename>
+            <size>36</size>
+        </font>
+		
+		<font>
+            <name>font36</name>
+            <filename>Roboto-Light.ttf</filename>
+            <size>36</size>
+        </font>
+
+		<font>
+            <name>font36B</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>36</size>
+        </font>
+		
+		<font>
+            <name>font36R</name>
+            <filename>Roboto-Regular.ttf</filename>
+            <size>36</size>
+        </font>
+		
+		<font>
+            <name>font38</name>
+            <filename>Roboto-Light.ttf</filename>
+            <size>38</size>
+        </font>
+
+        <font>
+            <name>font38B</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>38</size>
+        </font>
+
+        <font>
+            <name>font38R</name>
+            <filename>Roboto-Regular.ttf</filename>
+            <size>38</size>
+        </font>
+	
+        <font>
+            <name>font40</name>
+            <filename>Roboto-Light.ttf</filename>
+            <size>40</size>
+        </font>
+
+        <font>
+            <name>font40R</name>
+            <filename>Roboto-Regular.ttf</filename>
+            <size>40</size>
+        </font>
+		
+		<font>
+            <name>font45U</name>
+            <filename>Roboto-Light.ttf</filename>
+            <style>uppercase</style>
+			<size>45</size>
+        </font>
+		
+		<font>
+            <name>font40B</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>40</size>
+        </font>
+
+		<font>
+            <name>font42B</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>42</size>
+        </font>
+
+ 		<font>
+            <name>font45R</name>
+            <filename>Roboto-Regular.ttf</filename>
+            <size>45</size>
+        </font>
+		
+		<font>
+            <name>font45B</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>45</size>
+        </font>
+		
+		<font>
+            <name>font50</name>
+            <filename>Roboto-Light.ttf</filename>
+            <size>50</size>
+        </font>
+
+		<font>
+            <name>font50C</name>
+            <filename>RobotoCondensed-Light.ttf</filename>
+            <size>50</size>
+        </font>
+		
+		<font>
+            <name>font50R</name>
+            <filename>Roboto-Regular.ttf</filename>
+            <size>50</size>
+        </font>
+
+		<font>
+            <name>font50B</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>50</size>
+        </font>		
+		
+		<font>
+            <name>font80</name>
+            <filename>Roboto-Light.ttf</filename>
+            <size>80</size>
+        </font>
+
+        <font>
+            <name>font72UB</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>72</size>
+			<style>uppercase</style>
+        </font>
+		
+        <font>
+            <name>font95</name>
+            <filename>Roboto-Light.ttf</filename>
+            <size>95</size>
+        </font>
+
+		<font>
+            <name>font95</name>
+            <filename>Roboto-Light.ttf</filename>
+            <size>95</size>
+        </font>
+		
+		<font>
+            <name>font120</name>
+            <filename>Roboto-Light.ttf</filename>
+            <size>120</size>
+        </font>
+
+		<font>
+            <name>font120R</name>
+            <filename>Roboto-Regular.ttf</filename>
+            <size>120</size>
+        </font>
+
+		<font>
+            <name>font180</name>
+            <filename>Roboto-Light.ttf</filename>
+            <size>180</size>
+        </font>		
+		
+		<font>
+            <name>font180R</name>
+            <filename>Roboto-Regular.ttf</filename>
+            <size>180</size>
+        </font>
+		
+		<font>
+            <name>font240B</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>240</size>
+        </font>		
+
+
+		
+		
+		
+
+		<!--Scrawl font-->
+        <font>
+            <name>scrawl18</name>
+            <filename>aescrawl.ttf</filename>
+            <size>27</size>
+            <linespacing>0.75</linespacing>
+        </font>
+        <!--Roboto font-->
+        <font>
+            <name>font10</name>
+            <filename>Roboto-Light.ttf</filename>
+            <size>15</size>
+        </font>
+        <font>
+            <name>font12</name>
+            <filename>Roboto-Light.ttf</filename>
+            <size>18</size>
+        </font>
+        <font>
+            <name>font12B</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>18</size>
+        </font>
+        <font>
+            <name>font13</name>
+            <filename>Roboto-Light.ttf</filename>
+            <size>20</size>
+        </font>
+        <font>
+            <name>font14L</name>
+            <filename>Roboto-Light.ttf</filename>
+            <style>lowercase</style>
+            <size>21</size>
+        </font>
+        <font>
+            <name>font14UB</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <style>uppercase</style>
+            <size>21</size>
+        </font>
+        <font>
+            <name>font16</name>
+            <filename>Roboto-Light.ttf</filename>
+            <size>24</size>
+        </font>
+        <font>
+            <name>font16L</name>
+            <filename>Roboto-Light.ttf</filename>
+            <style>lowercase</style>
+            <size>24</size>
+        </font>
+        <font>
+            <name>font16LB</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <style>lowercase</style>
+            <size>24</size>
+        </font>
+        <font>
+            <name>font16UB</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <style>uppercase</style>
+            <size>24</size>
+        </font>
+        <font>
+            <name>font18</name>
+            <filename>Roboto-Light.ttf</filename>
+            <size>27</size>
+        </font>
+        <font>
+            <name>font18L</name>
+            <filename>Roboto-Light.ttf</filename>
+            <style>lowercase</style>
+            <size>27</size>
+        </font>
+        <font>
+            <name>font18UB</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <style>uppercase</style>
+            <size>27</size>
+        </font>
+        <font>
+            <name>font20</name>
+            <filename>Roboto-Light.ttf</filename>
+            <size>30</size>
+        </font>
+        <font>
+            <name>font20B</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>30</size>
+        </font>
+        <font>
+            <name>font20L</name>
+            <filename>Roboto-Light.ttf</filename>
+            <style>lowercase</style>
+            <size>30</size>
+        </font>
+        <font>
+            <name>font20LB</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <style>lowercase</style>
+            <size>30</size>
+        </font>
+        <font>
+            <name>font20UB</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <style>uppercase</style>
+            <size>30</size>
+        </font>
+        <font>
+            <name>font22</name>
+            <filename>Roboto-Light.ttf</filename>
+            <size>33</size>
+        </font>
+        <font>
+            <name>font22L</name>
+            <filename>Roboto-Light.ttf</filename>
+            <style>lowercase</style>
+            <size>33</size>
+        </font>
+        <font>
+            <name>font22UB</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <style>uppercase</style>
+            <size>33</size>
+        </font>
+        <!--<font>
+            <name>font24</name>
+            <filename>Roboto-Light.ttf</filename>
+            <size>36</size>
+        </font>-->
+        <font>
+            <name>font24L</name>
+            <filename>Roboto-Light.ttf</filename>
+            <style>lowercase</style>
+            <size>36</size>
+        </font>
+        <font>
+            <name>font24U</name>
+            <filename>Roboto-Light.ttf</filename>
+            <style>uppercase</style>
+            <size>36</size>
+        </font>
+        <font>
+            <name>font24UB</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <style>uppercase</style>
+            <size>36</size>
+        </font>
+        <font>
+            <name>font26L</name>
+            <filename>Roboto-Light.ttf</filename>
+            <style>lowercase</style>
+            <size>39</size>
+        </font>
+        <font>
+            <name>font26UB</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <style>uppercase</style>
+            <size>39</size>
+        </font>
+        <font>
+            <name>font32L</name>
+            <filename>Roboto-Light.ttf</filename>
+            <style>lowercase</style>
+            <size>48</size>
+        </font>
+        <font>
+            <name>font32LB</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <style>lowercase</style>
+            <size>48</size>
+        </font>
+        <font>
+            <name>font32UB</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <style>uppercase</style>
+            <size>48</size>
+        </font>
+        <!--<font>
+            <name>font40</name>
+            <filename>Roboto-Light.ttf</filename>
+            <size>50</size>
+        </font>-->
+        <font>
+            <name>font40L</name>
+            <filename>Roboto-Light.ttf</filename>
+            <style>lowercase</style>
+            <size>60</size>
+        </font>
+        <!--<font>
+            <name>font40B</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <size>60</size>
+        </font>-->
+        <font>
+            <name>font40LB</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <style>lowercase</style>
+            <size>60</size>
+        </font>
+        <font>
+            <name>font40UB</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <style>uppercase</style>
+            <size>60</size>
+        </font>
+        <font>
+            <name>font48L</name>
+            <filename>Roboto-Light.ttf</filename>
+            <style>lowercase</style>
+            <size>72</size>
+        </font>
+        <font>
+            <name>font48BUB</name>
+            <filename>Roboto-Black.ttf</filename>
+            <style>uppercase bold</style>
+            <size>72</size>
+        </font>
+        <font>
+            <name>font60L</name>
+            <filename>Roboto-Light.ttf</filename>
+            <style>lowercase</style>
+            <size>90</size>
+        </font>
+        <font>
+            <name>font65L</name>
+            <filename>Roboto-Light.ttf</filename>
+            <style>lowercase</style>
+            <size>98</size>
+        </font>
+        <font>
+            <name>font70L</name>
+            <filename>Roboto-Light.ttf</filename>
+            <style>lowercase</style>
+            <size>105</size>
+        </font>
+        <font>
+            <name>font72L</name>
+            <filename>Roboto-Light.ttf</filename>
+            <style>lowercase</style>
+            <size>108</size>
+        </font>
+        <font>
+            <name>font72UB</name>
+            <filename>Roboto-Bold.ttf</filename>
+            <style>uppercase</style>
+            <size>108</size>
+        </font>
+        <font>
+            <name>font80</name>
+            <filename>Roboto-Light.ttf</filename>
+            <size>120</size>
+        </font>
+        <font>
+            <name>font80L</name>
+            <filename>Roboto-Light.ttf</filename>
+            <style>lowercase</style>
+            <size>120</size>
+        </font>
+        <font>
+            <name>font120U</name>
+            <filename>Roboto-Light.ttf</filename>
+            <style>uppercase</style>
+            <size>180</size>
+        </font>
+        <font>
+            <name>font230L</name>
+            <filename>Roboto-Light.ttf</filename>
+            <style>lowercase</style>
+            <size>345</size>
+        </font>
+    </fontset>
+</fonts>

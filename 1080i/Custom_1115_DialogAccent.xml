@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window type="dialog" id="1115">
+    <defaultcontrol always="true">100</defaultcontrol>
+	
+    <controls>	
+        <include>DialogOverlay</include>
+		<include>Common_LeftMenu_Mid_Backing</include>			
+		<include>Common_LeftBar_Mid_LeftMenu</include>
+
+		<control type="group">
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="500" delay="700" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="200" />
+			</animation>
+			
+			<control type="image">
+                <posy>175</posy>
+                <width>690</width>
+                <height>825</height>
+                <include>Common_Color_BaseLow</include>
+            </control>
+
+		    <control type="label">
+                <posx>15</posx>
+                <width>660</width>
+                <include>InfoDialog_Heading</include> 
+                <label>$LOCALIZE[31255]</label>
+            </control>			
+
+            <control type="scrollbar" id="61">
+                <posx>680</posx>
+                <posy>175</posy>
+                <height>825</height>
+                <onleft>100</onleft>
+                <onright>100</onright>
+                <width>10</width>
+            </control>	
+			
+			<control type="group">
+				<posx>187</posx>
+				<posy>95</posy>
+				<width>400</width>
+				<height>60</height>
+				
+				<control type="label">
+					<width>320</width>
+					<height>50</height>
+					<aligny>center</aligny>
+					<font>font26</font>
+					<textcolor>BaseMediumHigh</textcolor>
+					<label>$LOCALIZE[31287]</label>
+				</control>
+				
+				<control type="image">
+					<posx>250</posx>
+					<posy>-10</posy>
+					<width>65</width>
+					<height>65</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture diffuse="masks/circle.png" colordiffuse="$VAR[Accent_100]">colors/color_white.png</texture>
+				</control> 
+				
+			</control>			
+
+			<control type="list" id="100">
+                <posy>175</posy>
+				<width>680</width>
+				<height>825</height>
+				<onleft>61</onleft>
+				<onright>61</onright>
+				<pagecontrol>61</pagecontrol>
+				<itemlayout width="680" height="85">
+
+					<control type="image">
+						<posx>10</posx>
+						<posy>10</posy>
+						<width>65</width>
+						<height>65</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture diffuse="masks/circle.png">$INFO[ListItem.Thumb]</texture>
+					</control> 
+					
+					<control type="label">
+						<posx>95</posx>
+						<width>585</width>
+						<height>85</height>
+						<aligny>center</aligny>
+						<font>font26</font>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>BaseMediumHigh</textcolor>
+					</control>					
+
+				</itemlayout>
+				
+				<focusedlayout width="680" height="85">
+
+					<control type="image">
+						<width>680</width>
+						<height>85</height>
+						<include>Common_Color_Accent</include>
+						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(100)">Conditional</animation>
+					</control>
+				
+					<control type="image">
+						<posx>10</posx>
+						<posy>10</posy>
+						<width>65</width>
+						<height>65</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture diffuse="masks/circle.png">$INFO[ListItem.Thumb]</texture>
+					</control> 
+					
+					<control type="label">
+						<posx>95</posx>
+						<width>585</width>
+						<height>85</height>
+						<aligny>center</aligny>
+						<font>font26</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>					
+
+				</focusedlayout>
+				
+				<content>
+				
+					<item id="1">
+						<onclick>Skin.SetString(accent.color,A40000)</onclick>
+						<onclick>Skin.SetString(accent.name,Red 1)</onclick>
+						<onclick>Close</onclick>
+						<label>$LOCALIZE[13343] 1</label>
+						<thumb>colors/accent/FFA40000.png</thumb>
+					</item>				
+				
+					<item id="2">
+						<onclick>Skin.SetString(accent.color,E81123)</onclick>
+						<onclick>Skin.SetString(accent.name,Red 2)</onclick>
+						<onclick>Close</onclick>
+						<label>$LOCALIZE[13343] 2</label>
+						<thumb>colors/accent/FFE81123.png</thumb>
+					</item>	
+
+					<item id="3">
+						<onclick>Skin.SetString(accent.color,D13438)</onclick>
+						<onclick>Skin.SetString(accent.name,Red 4)</onclick>
+						<onclick>Close</onclick>
+						<label>$LOCALIZE[13343] 3</label>
+						<thumb>colors/accent/FFD13438.png</thumb>
+					</item>						
+				
+					<item id="4">
+						<onclick>Skin.SetString(accent.color,DA3B01)</onclick>
+						<onclick>Skin.SetString(accent.name,Orange 1)</onclick>
+						<onclick>Close</onclick>
+						<label>$LOCALIZE[13342] 1</label>
+						<thumb>colors/accent/FFDA3B01.png</thumb>
+					</item>	
+					
+					<item id="5">
+						<onclick>Skin.SetString(accent.color,CA5010)</onclick>
+						<onclick>Skin.SetString(accent.name,Orange 2)</onclick>
+						<onclick>Close</onclick>
+						<label>$LOCALIZE[13342] 2</label>
+						<thumb>colors/accent/FFCA5010.png</thumb>
+					</item>	
+
+					<item id="6">
+						<onclick>Skin.SetString(accent.color,847545)</onclick>
+						<onclick>Skin.SetString(accent.name,Gold 1)</onclick>
+						<onclick>Close</onclick>
+						<label>$LOCALIZE[31087] 1</label>
+						<thumb>colors/accent/FF847545.png</thumb>
+					</item>						
+					
+					<item id="7">
+						<onclick>Skin.SetString(accent.color,7E735F)</onclick>
+						<onclick>Skin.SetString(accent.name,Gold 2)</onclick>
+						<onclick>Close</onclick>
+						<label>$LOCALIZE[31087] 2</label>
+						<thumb>colors/accent/FF7E735F.png</thumb>
+					</item>
+
+					<item id="8">
+						<onclick>Skin.SetString(accent.color,647C64)</onclick>
+						<onclick>Skin.SetString(accent.name,Olive 1)</onclick>
+						<onclick>Close</onclick>
+						<label>$LOCALIZE[31339] 1</label>
+						<thumb>colors/accent/FF647C64.png</thumb>
+					</item>
+
+					<item id="9">
+						<onclick>Skin.SetString(accent.color,525E54)</onclick>
+						<onclick>Skin.SetString(accent.name,Olive 2)</onclick>
+						<onclick>Close</onclick>
+						<label>$LOCALIZE[31339] 2</label>
+						<thumb>colors/accent/FF525E54.png</thumb>
+					</item>					
+
+					<item id="10">
+						<onclick>Skin.SetString(accent.color,567C73)</onclick>
+						<onclick>Skin.SetString(accent.name,Olive 3)</onclick>
+						<onclick>Close</onclick>
+						<label>$LOCALIZE[31339] 3</label>
+						<thumb>colors/accent/FF567C73.png</thumb>
+					</item>	
+					
+					<item id="11">
+						<onclick>Skin.SetString(accent.color,486860)</onclick>
+						<onclick>Skin.SetString(accent.name,Olive 4)</onclick>
+						<onclick>Close</onclick>
+						<label>$LOCALIZE[31339] 4</label>
+						<thumb>colors/accent/FF486860.png</thumb>
+					</item>
+
+					<item id="12">
+						<onclick>Skin.SetString(accent.color,107C10)</onclick>
+						<onclick>Skin.SetString(accent.name,Green 1)</onclick>
+						<onclick>Close</onclick>
+						<label>$LOCALIZE[13341] 1</label>
+						<thumb>colors/accent/FF107C10.png</thumb>
+					</item>						
+					
+					<item id="13">
+						<onclick>Skin.SetString(accent.color,498205)</onclick>
+						<onclick>Skin.SetString(accent.name,Green 2)</onclick>
+						<onclick>Close</onclick>
+						<label>$LOCALIZE[13341] 2</label>
+						<thumb>colors/accent/FF498205.png</thumb>
+					</item>							
+					
+					<item id="14">
+						<onclick>Skin.SetString(accent.color,10893E)</onclick>
+						<onclick>Skin.SetString(accent.name,Green 3)</onclick>
+						<onclick>Close</onclick>
+						<label>$LOCALIZE[13341] 3</label>
+						<thumb>colors/accent/FF10893E.png</thumb>
+					</item>							
+					
+					<item id="15">
+						<onclick>Skin.SetString(accent.color,018574)</onclick>
+						<onclick>Skin.SetString(accent.name,Teal 1)</onclick>
+						<onclick>Close</onclick>
+						<label>$LOCALIZE[31362] 1</label>
+						<thumb>colors/accent/FF018574.png</thumb>
+					</item>						
+					
+					<item id="16">
+						<onclick>Skin.SetString(accent.color,038387)</onclick>
+						<onclick>Skin.SetString(accent.name,Teal 2)</onclick>
+						<onclick>Close</onclick>
+						<label>$LOCALIZE[31362] 2</label>
+						<thumb>colors/accent/FF038387.png</thumb>
+					</item>					
+					
+					<item id="17">
+						<onclick>Skin.SetString(accent.color,2D7D9A)</onclick>
+						<onclick>Skin.SetString(accent.name,Teal 3)</onclick>
+						<onclick>Close</onclick>
+						<label>$LOCALIZE[31362] 3</label>
+						<thumb>colors/accent/FF2D7D9A.png</thumb>
+					</item>						
+					
+					<item id="18">
+						<onclick>Skin.SetString(accent.color,1B75BC)</onclick>
+						<onclick>Skin.SetString(accent.name,Blue 1)</onclick>
+						<onclick>Close</onclick>
+						<label>$LOCALIZE[762] 1 ($LOCALIZE[571])</label>
+						<thumb>colors/accent/FF1B75BC.png</thumb>
+					</item>	
+
+					<item id="19">
+						<onclick>Skin.SetString(accent.color,0063B1)</onclick>
+						<onclick>Skin.SetString(accent.name,Blue 2)</onclick>
+						<onclick>Close</onclick>
+						<label>$LOCALIZE[762] 2</label>
+						<thumb>colors/accent/FF0063B1.png</thumb>
+					</item>					
+					
+					<item id="20">
+						<onclick>Skin.SetString(accent.color,0078D7)</onclick>
+						<onclick>Skin.SetString(accent.name,Blue 3)</onclick>
+						<onclick>Close</onclick>
+						<label>$LOCALIZE[762] 3</label>
+						<thumb>colors/accent/FF0078D7.png</thumb>
+					</item>						
+					
+					<item id="21">
+						<onclick>Skin.SetString(accent.color,6B69D6)</onclick>
+						<onclick>Skin.SetString(accent.name,Lavender 1)</onclick>
+						<onclick>Close</onclick>
+						<label>$LOCALIZE[31363] 1</label>
+						<thumb>colors/accent/FF6B69D6.png</thumb>
+					</item>	
+
+					<item id="22">
+						<onclick>Skin.SetString(accent.color,744DA9)</onclick>
+						<onclick>Skin.SetString(accent.name,Purple 1)</onclick>
+						<onclick>Close</onclick>
+						<label>$LOCALIZE[31364] 1</label>
+						<thumb>colors/accent/FF744DA9.png</thumb>
+					</item>
+					
+					<item id="23">
+						<onclick>Skin.SetString(accent.color,8764B8)</onclick>
+						<onclick>Skin.SetString(accent.name,Purple 2)</onclick>
+						<onclick>Close</onclick>
+						<label>$LOCALIZE[31364] 2</label>
+						<thumb>colors/accent/FF8764B8.png</thumb>
+					</item>					
+
+					<item id="24">
+						<onclick>Skin.SetString(accent.color,881798)</onclick>
+						<onclick>Skin.SetString(accent.name,Purple 3)</onclick>
+						<onclick>Close</onclick>
+						<label>$LOCALIZE[31364] 3</label>
+						<thumb>colors/accent/FF881798.png</thumb>
+					</item>	
+
+					<item id="25">
+						<onclick>Skin.SetString(accent.color,B146C2)</onclick>
+						<onclick>Skin.SetString(accent.name,Purple 4)</onclick>
+						<onclick>Close</onclick>
+						<label>$LOCALIZE[31364] 4</label>
+						<thumb>colors/accent/FFB146C2.png</thumb>
+					</item>	
+
+					<item id="26">
+						<onclick>Skin.SetString(accent.color,9A0089)</onclick>
+						<onclick>Skin.SetString(accent.name,Purple 5)</onclick>
+						<onclick>Close</onclick>
+						<label>$LOCALIZE[31364] 5</label>
+						<thumb>colors/accent/FF9A0089.png</thumb>
+					</item>	
+
+					<item id="27">
+						<onclick>Skin.SetString(accent.color,C239B3)</onclick>
+						<onclick>Skin.SetString(accent.name,Purple 6)</onclick>
+						<onclick>Close</onclick>
+						<label>$LOCALIZE[31364] 6</label>
+						<thumb>colors/accent/FFC239B3.png</thumb>
+					</item>	
+
+					<item id="28">
+						<onclick>Skin.SetString(accent.color,BF0077)</onclick>
+						<onclick>Skin.SetString(accent.name,Pink 1)</onclick>
+						<onclick>Close</onclick>
+						<label>$LOCALIZE[31365] 1</label>
+						<thumb>colors/accent/FFBF0077.png</thumb>
+					</item>						
+
+					<item id="29">
+						<onclick>Skin.SetString(accent.color,E300BC)</onclick>
+						<onclick>Skin.SetString(accent.name,Pink 2)</onclick>
+						<onclick>Close</onclick>
+						<label>$LOCALIZE[31365] 2</label>
+						<thumb>colors/accent/FFE300BC.png</thumb>
+					</item>
+
+					<item id="30">
+						<onclick>Skin.SetString(accent.color,C30052)</onclick>
+						<onclick>Skin.SetString(accent.name,Magenta 1)</onclick>
+						<onclick>Close</onclick>
+						<label>$LOCALIZE[31366] 1</label>
+						<thumb>colors/accent/FFC30052.png</thumb>
+					</item>
+
+					<item id="31">
+						<onclick>Skin.SetString(accent.color,EA005E)</onclick>
+						<onclick>Skin.SetString(accent.name,Magenta 2)</onclick>
+						<onclick>Close</onclick>
+						<label>$LOCALIZE[31366] 2</label>
+						<thumb>colors/accent/FFEA005E.png</thumb>
+					</item>								
+
+					<item id="32">
+						<onclick>Skin.SetString(accent.color,8F013A)</onclick>
+						<onclick>Skin.SetString(accent.name,Magenta 3)</onclick>
+						<onclick>Close</onclick>
+						<label>$LOCALIZE[31366] 3</label>
+						<thumb>colors/accent/FF8F013A.png</thumb>
+					</item>
+					
+				</content>
+				
+			</control>
+	
+		</control>
+		
+    </controls>
+	
+</window>

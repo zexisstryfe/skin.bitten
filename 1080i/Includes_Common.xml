@@ -1,0 +1,2259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<includes>
+
+	<include name="Common_LeftBar">
+
+		<include>Common_NowPlaying</include> 
+
+		<control type="group">  
+
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>1080</height>
+				<width>80</width>
+				<texture colordiffuse="BaseBlack">colors/color_white.png</texture>
+			</control>
+			
+			<control type="group">
+				<animation type="WindowClose">
+					<effect type="fade" start="100" end="0" time="100" />
+				</animation>
+			
+				<control type="image">
+					<height>80</height>
+					<width>80</width>
+					<include>Common_Color_Accent</include>
+				</control>
+				
+				<control type="image">
+					<height>80</height>
+					<width>80</width>
+					<texture>$VAR[Window_Icon]</texture>
+				</control>	
+
+				<control type="button">
+					<height>80</height>
+					<width>80</width>
+					<texturefocus>-</texturefocus>
+					<onclick>ActivateWindow(home)</onclick>
+				</control>	
+
+				<control type="label">
+					<posx>40</posx>
+					<posy>100</posy>
+					<height>40</height>
+					<width>300</width>
+					<label>$VAR[TopBar_Label]</label>
+					<font>font45U</font>
+					<align>right</align>
+					<angle>90</angle>
+				</control>				
+
+				<control type="image">
+					<posx>25</posx>
+					<posy>1025</posy>
+					<height>30</height>
+					<width>30</width>
+					<texture>general/menu.png</texture>
+				</control>
+		
+			</control>
+
+		</control>
+		
+	</include>
+	
+	<include name="Common_LeftBar_LeftMenu">
+
+		<control type="group">
+			<animation type="WindowOpen">
+				<effect type="slide" start="-420,0" end="0,0" center="auto" time="400" delay="200" tween="cubic" easing="out"/>
+				<effect type="fade" start="0" end="100" time="200"/>
+			</animation>
+			<animation type="WindowClose">
+				<effect type="slide" start="0,0" end="-420,0" center="auto" time="400" delay="200" tween="cubic" easing="out"/>
+			</animation>
+			<posx>420</posx>	
+
+			<control type="image">
+				<animation type="WindowClose">
+					<effect type="fade" start="100" end="0" time="200" delay="600" />
+				</animation>
+				<height>1080</height>
+				<width>80</width>
+				<texture colordiffuse="BaseBlack">colors/color_white.png</texture>
+			</control>
+			
+			<control type="group">
+			
+				<control type="image">
+					<height>80</height>
+					<width>80</width>
+					<include>Common_Color_Accent</include>
+				</control>
+				
+				<control type="image">
+					<height>80</height>
+					<width>80</width>
+					<texture>$VAR[Window_Icon]</texture>
+				</control>	
+
+				<control type="button">
+					<height>80</height>
+					<width>80</width>
+					<texturefocus>-</texturefocus>
+					<onclick>ActivateWindow(home)</onclick>
+				</control>	
+
+				<control type="label">
+					<posx>40</posx>
+					<posy>100</posy>
+					<height>40</height>
+					<width>300</width>
+					<label>$VAR[TopBar_Label]</label>
+					<font>font45U</font>
+					<align>right</align>
+					<angle>90</angle>
+				</control>				
+
+				<control type="image">
+					<animation type="WindowOpen">
+						<effect type="rotate" start="0" end="180" center="40,1040" time="400" />
+					</animation>
+					<animation type="WindowClose">
+						<effect type="rotate" start="180" end="0" center="40,1040" time="400" />
+					</animation>
+					<posx>25</posx>
+					<posy>1025</posy>
+					<height>30</height>
+					<width>30</width>
+					<texture>general/menu.png</texture>
+				</control>
+		
+			</control>
+		
+		</control>
+		
+	</include>
+	
+	<include name="Common_LeftBar_Options">
+
+		<control type="group">
+			<animation effect="slide" start="420,0" end="0,0" time="400" tween="quadratic" easing="out" condition="IsEmpty(Window(home).Property(ShowOptions2))">Conditional</animation>
+			<animation effect="slide" start="0,0" end="-420,0" time="400" tween="quadratic" easing="out">WindowClose</animation>
+
+			<control type="image">
+				<height>1080</height>
+				<width>80</width>
+				<texture colordiffuse="BaseBlack">colors/color_white.png</texture>
+			</control>
+			
+			<control type="group">
+			
+				<control type="image">
+					<height>80</height>
+					<width>80</width>
+					<include>Common_Color_Accent</include>
+				</control>	
+
+				<control type="image">
+					<height>80</height>
+					<width>80</width>
+					<texture>$VAR[Window_Icon]</texture>
+				</control>	
+
+				<control type="button">
+					<height>80</height>
+					<width>80</width>
+					<texturefocus>-</texturefocus>
+					<onclick>ActivateWindow(home)</onclick>
+				</control>
+				
+				<control type="label">
+					<posx>40</posx>
+					<posy>100</posy>
+					<height>40</height>
+					<width>300</width>
+					<label>$VAR[TopBar_Label]</label>
+					<font>font45U</font>
+					<align>right</align>
+					<angle>90</angle>
+				</control>
+				
+				<control type="button">
+					<animation type="Conditional" condition="!IsEmpty(Window(home).Property(ShowOptions2))">
+						<effect type="rotate" start="0" end="180" center="40,1040" time="400" />
+					</animation>
+					<animation type="Conditional" condition="IsEmpty(Window(home).Property(ShowOptions2))">
+						<effect type="rotate" start="180" end="0" center="40,1040" time="400" />
+					</animation>
+					<posx>25</posx>
+					<posy>1025</posy>
+					<height>30</height>
+					<width>30</width>
+					<texturenofocus>general/menu.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[Accent_100]">general/menu.png</texturefocus>
+					<include>ShowOptions_Click</include>
+				</control>
+
+				<control type="image">
+					<description>White Backing</description>
+					<posx>-420</posx>
+					<width>420</width>
+					<height>1080</height>
+					<texture border="2" colordiffuse="BaseWhite">colors/color_white.png</texture>
+				</control>	
+				
+				<control type="image">
+					<description>Heading Backing</description>
+					<posx>-420</posx>
+					<width>420</width>
+					<height>75</height>
+					<texture border="2" colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
+				</control>	
+				
+				<control type="label">
+					<posx>-405</posx>
+					<height>75</height>
+					<font>font45R</font>
+					<textcolor>BaseWhite</textcolor>
+					<label>31281</label>
+				</control>	
+		
+			</control>
+		
+		</control>
+		
+	</include>
+	
+	<include name="Common_LeftBar_Mid_LeftMenu">
+
+		<control type="group">
+			<animation type="WindowOpen">
+				<effect type="slide" start="-690,0" end="0,0" center="auto" time="600" delay="200" tween="cubic" easing="out"/>
+				<effect type="fade" start="0" end="100" time="200"/>
+			</animation>
+			<animation type="WindowClose">
+				<effect type="slide" start="0,0" end="-690,0" center="auto" time="600" delay="200" tween="cubic" easing="out"/>
+			</animation>
+			<posx>690</posx>	
+
+			<control type="image">
+				<animation type="WindowClose">
+					<effect type="fade" start="100" end="0" time="200" delay="600" />
+				</animation>
+				<height>1080</height>
+				<width>80</width>
+				<texture colordiffuse="BaseBlack">colors/color_white.png</texture>
+			</control>
+			
+			<control type="group">
+			
+				<control type="image">
+					<height>80</height>
+					<width>80</width>
+					<include>Common_Color_Accent</include>
+				</control>
+				
+				<control type="image">
+					<height>80</height>
+					<width>80</width>
+					<texture>$VAR[Window_Icon]</texture>
+				</control>	
+
+				<control type="button">
+					<height>80</height>
+					<width>80</width>
+					<texturefocus>-</texturefocus>
+					<onclick>ActivateWindow(home)</onclick>
+				</control>	
+
+				<control type="label">
+					<posx>40</posx>
+					<posy>100</posy>
+					<height>40</height>
+					<width>300</width>
+					<label>$VAR[TopBar_Label]</label>
+					<font>font45U</font>
+					<align>right</align>
+					<angle>90</angle>
+				</control>
+
+				<control type="image">
+					<animation type="WindowOpen">
+						<effect type="rotate" start="0" end="180" center="40,1040" time="600" />
+					</animation>
+					<animation type="WindowClose">
+						<effect type="rotate" start="180" end="0" center="40,1040" time="600" />
+					</animation>
+					<posx>25</posx>
+					<posy>1025</posy>
+					<height>30</height>
+					<width>30</width>
+					<texture>general/menu.png</texture>
+				</control>
+		
+			</control>
+		
+		</control>
+		
+	</include>	
+
+	<include name="Common_LeftBar_Wide_LeftMenu">
+
+		<control type="group">
+			<animation type="WindowOpen">
+				<effect type="slide" start="-1100,0" end="0,0" center="auto" time="800" delay="200" tween="cubic" easing="out"/>
+				<effect type="fade" start="0" end="100" time="200"/>
+			</animation>
+			<animation type="WindowClose">
+				<effect type="slide" start="0,0" end="-1100,0" center="auto" time="800" delay="200" tween="cubic" easing="out"/>
+			</animation>
+			<posx>1100</posx>	
+
+			<control type="image">
+				<animation type="WindowClose">
+					<effect type="fade" start="100" end="0" time="200" delay="600" />
+				</animation>
+				<height>1080</height>
+				<width>80</width>
+				<texture colordiffuse="BaseBlack">colors/color_white.png</texture>
+			</control>
+			
+			<control type="group">
+			
+				<control type="image">
+					<height>80</height>
+					<width>80</width>
+					<include>Common_Color_Accent</include>
+				</control>
+
+				<control type="image">
+					<height>80</height>
+					<width>80</width>
+					<texture>$VAR[Window_Icon]</texture>
+				</control>	
+
+				<control type="button">
+					<height>80</height>
+					<width>80</width>
+					<texturefocus>-</texturefocus>
+					<onclick>ActivateWindow(home)</onclick>
+				</control>
+
+				<control type="label">
+					<posx>40</posx>
+					<posy>100</posy>
+					<height>40</height>
+					<width>300</width>
+					<label>$VAR[TopBar_Label]</label>
+					<font>font45U</font>
+					<align>right</align>
+					<angle>90</angle>
+				</control>				
+
+				<control type="image">
+					<animation type="WindowOpen">
+						<effect type="rotate" start="0" end="180" center="40,1040" time="800" />
+					</animation>
+					<animation type="WindowClose">
+						<effect type="rotate" start="180" end="0" center="40,1040" time="800" />
+					</animation>
+					<posx>25</posx>
+					<posy>1025</posy>
+					<height>30</height>
+					<width>30</width>
+					<texture>general/menu.png</texture>
+				</control>
+		
+			</control>
+		
+		</control>
+		
+	</include>	
+	
+	<include name="Common_Lyric_Spinner">
+		<posx>105r</posx>
+		<posy>450</posy>
+		<width>38</width>
+		<height>33</height>
+		<font>font30R</font>
+		<align>right</align>
+		<subtype>page</subtype>
+		<ondown>999</ondown>
+		<textcolor>BaseWhite</textcolor>
+		<textureup>arrows/default-scroll-up.png</textureup>
+		<texturedown>arrows/default-scroll-down.png</texturedown>
+		<textureupfocus colordiffuse="$VAR[Accent_100]">arrows/default-scroll-up.png</textureupfocus>
+		<texturedownfocus colordiffuse="$VAR[Accent_100]">arrows/default-scroll-down.png</texturedownfocus>
+		<showonepage>false</showonepage>
+	</include>
+
+    <include name="Common_Color_Accent">
+        <texture colordiffuse="$VAR[Accent_100]">colors/color_white.png</texture>
+        <aspectratio>stretch</aspectratio>
+    </include>
+
+    <include name="Common_Color_Black60">
+        <texture colordiffuse="Black60">colors/color_white.png</texture>
+        <aspectratio>stretch</aspectratio>
+    </include>
+
+    <include name="Common_Color_TrueWhite">
+        <texture colordiffuse="TrueWhite">colors/color_white.png</texture>
+        <aspectratio>stretch</aspectratio>
+    </include>
+	
+	<include name="Common_Color_BaseLow">
+        <texture colordiffuse="BaseLow">colors/color_white.png</texture>
+        <aspectratio>stretch</aspectratio>
+    </include>
+
+	<include name="Common_Color_BaseLow80">
+        <texture colordiffuse="BaseLow80">colors/color_white.png</texture>
+        <aspectratio>stretch</aspectratio>
+    </include>
+
+	<include name="Common_Color_BaseWhite">
+        <texture colordiffuse="BaseWhite">colors/color_white.png</texture>
+        <aspectratio>stretch</aspectratio>
+    </include>
+	
+	<include name="Common_Color_BaseWhite80">
+        <texture colordiffuse="BaseWhite80">colors/color_white.png</texture>
+        <aspectratio>stretch</aspectratio>
+    </include>
+
+    <include name="Common_Color_BaseMid">
+        <texture colordiffuse="BaseMid">colors/color_white.png</texture>
+        <aspectratio>stretch</aspectratio>
+    </include>
+	
+    <include name="Common_Color_BaseMediumMid">
+        <texture colordiffuse="BaseMediumMid">colors/color_white.png</texture>
+        <aspectratio>stretch</aspectratio>
+    </include>	
+	
+	<include name="Common_Color_BaseMediumHigh">
+        <texture colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
+        <aspectratio>stretch</aspectratio>
+    </include>
+	
+	<include name="Common_HomeMenu_ListFont">
+		<posx>80</posx>
+		<height>80</height>
+		<textwidth>360</textwidth>
+        <align>left</align>
+        <aligny>center</aligny>
+        <font>font50</font>
+        <focusedcolor>$VAR[Accent_100]</focusedcolor>
+        <texturefocus>-</texturefocus>
+        <textcolor>BaseBlack</textcolor>
+    </include>
+	
+	<include name="Common_Home_Time">
+
+		<control type="image">
+			<posx>80</posx>
+			<posy>1020</posy>
+			<height>60</height>
+			<width>60</width>
+			<texture>../extras/tiles/time.png</texture>
+		</control>
+		
+        <control type="label">
+            <label>$INFO[System.Time(hh:mm)] $INFO[System.Time(xx)]</label>
+            <posx>150</posx>
+            <posy>1020</posy>
+            <height>60</height>
+            <width>300</width>
+            <font>font42B</font>
+            <align>left</align>
+            <textcolor>TrueWhite</textcolor>
+            <visible>!IsEmpty(System.Time(xx))</visible>
+        </control>
+
+    </include>
+	
+	<include name="Common_Home_RSS">
+
+        <control type="group">
+            <control type="image">
+                <description>rss underlay</description>
+                <posx>500</posx>
+				<posy>1020</posy>
+                <width>1420</width>
+                <height>60</height>
+                <include>Common_Color_BaseMediumHigh</include>
+            </control>
+
+            <control type="image">
+                <description>border</description>
+                <posx>500</posx>
+				<posy>1016</posy>
+                <width>1420</width>
+                <height>4</height>
+                <texture colordiffuse="BaseMediumMid">colors/color_white.png</texture>
+            </control>
+
+            <control type="image">
+                <description>rss underlay</description>
+                <posx>500</posx>
+				<posy>1020</posy>
+                <width>60</width>
+                <height>60</height>
+                <texture colordiffuse="$VAR[Accent_100]">colors/color_white.png</texture>
+            </control>
+
+            <control type="image">
+                <description>rss underlay</description>
+                <posx>500</posx>
+				<posy>1020</posy>
+                <width>60</width>
+                <height>60</height>
+                <texture>icons/RSS.png</texture>
+            </control>
+
+			<control type="rss">
+				<description>RSS Feed</description>
+				<posx>580</posx>
+				<posy>1028</posy>
+				<width>1340</width>
+				<height>21</height>
+				<font>font30R</font>
+				<urlset>1</urlset>
+				<titlecolor>BaseLow</titlecolor>
+				<headlinecolor>White</headlinecolor>
+				<textcolor>BaseMid</textcolor>
+			</control>
+
+        </control>
+
+    </include>
+	
+	<include name="Common_Library_Label">
+
+        <control type="label">
+            <label>$VAR[$PARAM[homemenu]_TileLabel]</label>
+            <posx>585</posx>
+            <posy>395</posy>
+            <height>60</height>
+            <width>525</width>
+            <font>font45R</font>
+            <textcolor>BaseMediumHigh</textcolor>
+        </control>
+
+    </include>
+	
+	<include name="Common_HomePanel_Label">
+
+		<control type="label">
+			<label>$VAR[$PARAM[homepanel]_PanelLabel]</label>
+			<posx>1310</posx>
+			<posy>395</posy>
+			<height>60</height>
+			<width>600</width>
+			<font>font45R</font>
+			<align>left</align>
+			<textcolor>BaseMediumHigh</textcolor>
+		</control>
+
+    </include>
+	
+    <include name="Common_HomePanel">
+        <posx>1275</posx>
+        <posy>465</posy>
+        <width>645</width>
+        <height>480</height>
+        <preloaditems>2</preloaditems>
+        <orientation>horizontal</orientation>
+        <focusposition>0</focusposition>
+        <scrolltime tween="cubic" easing="out">400</scrolltime>
+    </include>	
+
+    <include name="Common_HomeTile_Image">
+        <posx>31</posx>
+        <posy>10</posy>
+        <width>170</width>
+        <height>170</height>
+        <aspectratio>keep</aspectratio>
+    </include>
+	
+    <include name="Common_HomeTile_Icon">
+        <posx>10</posx>
+		<posy>10</posy>
+        <width>212</width>
+        <height>212</height>
+        <aspectratio>scale</aspectratio>
+    </include>
+	
+	<include name="Common_HomeTile_Icon_Wide">
+		<posx>10</posx>
+		<posy>10</posy>
+		<width>452</width>
+		<height>212</height>
+		<aspectratio>scale</aspectratio>
+    </include>
+		
+    <include name="Common_HomeTile_Label">
+        <posx>22</posx>
+        <posy>180</posy>
+        <height>45</height>
+        <width>205</width>
+        <font>font24B</font>
+    </include>	
+	
+	<include name="Common_HomeTile_Label2">
+		<posx>450</posx>
+		<posy>60</posy>
+		<height>45</height>
+		<width>600</width>
+		<font>font70L</font>
+		<align>right</align>
+    </include>	
+	
+	<include name="Common_HomeTile_Single_Blackband">
+
+		<control type="image">
+			<posy>172</posy>
+			<width>232</width>
+			<height>60</height>
+			<include>Common_Color_Black60</include>
+		</control>	
+
+	</include>	
+		
+	<include name="Common_HomeTile_Double_Blackband">
+
+		<control type="image">
+			<posy>172</posy>
+			<width>472</width>
+			<height>60</height>
+			<include>Common_Color_Black60</include>
+		</control>	
+
+	</include>		
+		
+	<include name="Common_LeftMenu_Backing">
+
+		<control type="group">
+			<animation type="WindowOpen">
+				<effect type="slide" start="-420,0" end="0,0" center="auto" time="400" delay="200" tween="cubic" easing="out"/>
+			</animation>
+			<animation type="WindowClose">
+				<effect type="slide" start="0,0" end="-420,0" center="auto" time="400" delay="200" tween="cubic" easing="out"/>
+			</animation>
+				
+			<control type="image">
+				<description>White Backing</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>420</width>
+				<height>1080</height>
+				<texture border="2" colordiffuse="BaseWhite">colors/color_white.png</texture>
+			</control>	
+			
+			<control type="image">
+				<description>White Backing</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>420</width>
+				<height>75</height>
+				<texture border="2" colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
+			</control>	
+			
+		</control>	
+		
+	</include>
+	
+	<include name="Common_LeftMenu_Mid_Backing">
+
+		<control type="group">
+			<animation type="WindowOpen">
+				<effect type="slide" start="-690,0" end="0,0" center="auto" time="600" delay="200" tween="cubic" easing="out"/>
+			</animation>
+			<animation type="WindowClose">
+				<effect type="slide" start="0,0" end="-690,0" center="auto" time="600" delay="200" tween="cubic" easing="out"/>
+			</animation>
+				
+			<control type="image">
+				<description>White Backing</description>
+				<width>690</width>
+				<height>1080</height>
+				<texture border="2" colordiffuse="BaseWhite">colors/color_white.png</texture>
+			</control>	
+			
+			<control type="image">
+				<description>White Backing</description>
+				<width>690</width>
+				<height>75</height>
+				<texture border="2" colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
+			</control>	
+			
+		</control>	
+		
+	</include>
+
+	<include name="Common_LeftMenu_Wide_Backing">
+
+		<control type="group">
+			<animation type="WindowOpen">
+				<effect type="slide" start="-1100,0" end="0,0" center="auto" time="800" delay="200" tween="cubic" easing="out"/>
+			</animation>
+			<animation type="WindowClose">
+				<effect type="slide" start="0,0" end="-1100,0" center="auto" time="800" delay="200" tween="cubic" easing="out"/>
+			</animation>
+				
+			<control type="image">
+				<description>White Backing</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1100</width>
+				<height>1080</height>
+				<visible>true</visible>
+				<texture border="2" colordiffuse="BaseWhite">colors/color_white.png</texture>
+			</control>	
+			
+			<control type="image">
+				<description>White Backing</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1100</width>
+				<height>80</height>
+				<visible>true</visible>
+				<texture border="2" colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
+			</control>	
+			
+		</control>	
+		
+	</include>
+
+	<include name="Common_LeftMenu_Heading">
+	
+		<control type="label">
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="500" delay="500" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="200" />
+			</animation>
+			<posx>15</posx>
+			<height>75</height>
+			<font>font45R</font>
+			<textcolor>BaseWhite</textcolor>
+			<scroll>true</scroll>
+			<label>$VAR[LeftMenu_Heading]</label>
+		</control>
+		
+	</include>	
+	
+	<include name="Common_LeftMenu_Wide_Heading">
+	
+		<control type="label">
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="500" delay="900" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="200" />
+			</animation>
+			<posx>15</posx>
+			<height>75</height>
+			<font>font45R</font>
+			<textcolor>BaseWhite</textcolor>
+			<scroll>true</scroll>
+			<label>$VAR[LeftMenu_Heading]</label>
+		</control>
+		
+	</include>	
+
+    <include name="Common_InfoControl_Button">
+		<width>50</width>
+        <height>50</height>
+        <font>font24R</font>
+		<textcolor>BaseMid</textcolor>
+        <focusedcolor>$VAR[Accent_100]</focusedcolor>
+        <disabledcolor>BaseWhite</disabledcolor>
+        <aspectratio>keep</aspectratio>
+        <align>left</align>
+        <textoffsetx>60</textoffsetx>
+        <textwidth>420</textwidth>
+    </include>	
+	
+    <include name="Common_Settings_Button">
+		<posx>30</posx>
+		<posy>10</posy>
+		<width>55</width>
+        <height>55</height>
+        <font>font36</font>
+		<textcolor>BaseMediumHigh</textcolor>
+        <focusedcolor>BaseWhite</focusedcolor>
+        <disabledcolor>BaseMid</disabledcolor>
+        <aspectratio>scale</aspectratio>
+        <align>left</align>
+        <textoffsetx>85</textoffsetx>
+        <textwidth>420</textwidth>
+    </include>
+	
+    <include name="Common_Settings_Button2">
+		<posx>20</posx>
+		<posy>10</posy>
+		<width>55</width>
+        <height>55</height>
+        <font>font36</font>
+		<textcolor>BaseWhite</textcolor>
+        <focusedcolor>BaseWhite</focusedcolor>
+        <disabledcolor>BaseMid</disabledcolor>
+        <aspectratio>scale</aspectratio>
+        <align>left</align>
+        <textoffsetx>85</textoffsetx>
+        <textwidth>420</textwidth>
+    </include>	
+	
+	<include name="Common_Settings_Label">
+		<align>left</align>
+		<aligny>center</aligny>
+		<font>font30R</font>
+		<textcolor>BaseMediumHigh</textcolor>
+		<disabledcolor>BaseMid</disabledcolor>
+    </include>
+	
+	<include name="Common_Settings_Label_Wide">
+		<width>1050</width>
+		<align>left</align>
+		<font>font30</font>
+		<textcolor>BaseMediumHigh</textcolor>
+		<disabledcolor>BaseMid</disabledcolor>
+    </include>
+	
+	<include name="Common_Settings_Button_Backing">
+		<height>75</height>
+		<width>420</width>
+		<include>Common_Color_Accent</include>
+    </include>
+	
+    <include name="Common_Startup_Label">
+		<width>1920</width>
+		<height>60</height>
+		<align>center</align>
+		<aligny>center</aligny>
+    </include>	
+	
+    <include name="Common_Keyboard_Keys">
+        <width>85</width>
+        <height>75</height>
+        <texturenofocus border="5" colordiffuse="BaseMid">colors/color_white.png</texturenofocus>
+        <texturefocus border="5" colordiffuse="$VAR[Accent_100]">colors/color_white.png</texturefocus>
+        <textoffsetx>0</textoffsetx>
+        <textcolor>BaseWhite</textcolor>
+        <radioposx>2150</radioposx>
+        <radioposy>22</radioposy>
+		<font>font36</font>
+    </include>	
+
+	<include name="Common_HomeMenu_Icons">
+		<height>80</height>
+		<width>80</width>
+	</include>
+
+	<include name="Common_HomeMenu_Accent">
+		<include>Common_HomeMenu_Icons</include>
+		<include>Common_Color_Accent</include>
+	</include>
+	
+	<include name="Common_Charms_Icons">
+		<height>100</height>
+		<width>100</width>
+	</include>
+
+	<include name="Common_Charms_Accent">
+		<posy>10</posy>
+		<height>110</height>
+		<width>120</width>
+		<include>Common_Color_Accent</include>
+	</include>	
+
+	<include name="Common_Charms_ListFont">
+		<posx>10</posx>
+		<height>190</height>
+		<width>100</width>
+		<textwidth>100</textwidth>
+        <align>center</align>
+        <aligny>center</aligny>
+        <font>font20R</font>
+        <texturefocus>-</texturefocus>
+        <textcolor>BaseLow</textcolor>
+		<onright>Close</onright>
+		<onleft>Close</onleft>		
+    </include>
+	
+	<include name="Common_Pointer">
+		<width>45</width>
+		<height>45</height>
+		<texture>pointers/pointer.png</texture>
+	</include>
+
+    <include name="Common_Watched_Small">
+ 
+		<control type="image">
+			<posx>10</posx>
+			<posy>10</posy>
+			<width>65</width>
+			<height>65</height>
+			<texture>$VAR[Watched_Image_Small]</texture>
+        </control>
+
+	</include>
+	
+    <include name="Common_Favorite_Small">
+ 
+		<control type="image">
+			<posx>10</posx>
+			<posy>10</posy>
+			<width>65</width>
+			<height>65</height>
+			<texture>$VAR[Favorite_Image_Small]</texture>
+        </control>
+
+	</include>
+	
+    <include name="Common_Watched_LiveTV">
+ 
+		<control type="image">
+			<posx>10</posx>
+			<posy>10</posy>
+			<width>65</width>
+			<height>65</height>
+			<texture>$VAR[Watched_Image_LiveTV]</texture>
+        </control>
+
+	</include>	
+
+	<include name="Common_Fanart_Subtitle">
+		<posy>60</posy>
+		<height>30</height>
+		<font>font24B</font>
+		<textcolor>BaseMid</textcolor>
+		<label>$VAR[Fanart_Info_Subtitle]</label>
+	</include>
+
+	<include name="Common_Login_Label">
+		<posx>265</posx>
+		<width>450</width>
+		<height>30</height>
+		<font>font36B</font>
+		<label>[B]$INFO[ListItem.Label][/B]</label>
+	</include>
+
+	<include name="Common_Login_Label2">
+		<posx>265</posx>
+		<width>450</width>
+		<height>30</height>
+		<font>font30</font>
+		<label>$INFO[ListItem.Label2]</label>
+	</include>
+
+	<include name="Common_Login_Next">
+		<posx>750</posx>
+		<posy>75</posy>
+		<width>75</width>
+		<height>75</height>
+	</include>
+
+	<include name="Common_Player_Button">
+		<width>60</width>
+		<height>60</height>
+		<font>font20R</font>
+		<focusedcolor>BaseWhite</focusedcolor>
+		<disabledcolor>BaseLow</disabledcolor>
+		<aspectratio>keep</aspectratio>
+		<align>center</align>
+		<aligny>top</aligny>
+		<textoffsetx>-4</textoffsetx>
+		<textoffsety>60</textoffsety>
+		<textwidth>100</textwidth>
+		<wrapmultiline>true</wrapmultiline>
+	</include>	
+	
+	<include name="Common_Player_Divider">
+		<width>5</width>
+		<height>75</height>
+		<texture>colors/color_white.png</texture>
+	</include>	
+
+    <include name="Common_Player_Button2">
+		<posy>5</posy>
+		<width>50</width>
+        <height>50</height>
+        <font>font20R</font>
+		<textcolor>-</textcolor>
+        <focusedcolor>BaseWhite</focusedcolor>
+        <disabledcolor>BaseMid</disabledcolor>
+		<aspectratio>center</aspectratio>
+		<align>center</align>
+		<aligny>top</aligny>
+		<textoffsetx>-4</textoffsetx>
+		<textoffsety>50</textoffsety>
+		<textwidth>100</textwidth>
+		<wrapmultiline>true</wrapmultiline>
+    </include>	
+
+    <include name="Common_Logo_Backing">
+
+		<control type="image">	
+			<width>100%</width>
+			<height>100%</height>
+			<texture>backings/logo_fs_1.png</texture>	
+			<aspectratio align="right">keep</aspectratio>
+		</control>	
+		
+		<control type="image">	
+			<width>100%</width>
+			<height>100%</height>
+			<texture colordiffuse="$VAR[Accent_100]">backings/logo_fs_2.png</texture>	
+			<aspectratio align="right">keep</aspectratio>
+		</control>				
+	
+    </include>
+
+    <include name="Common_FileManager_List">
+		<posy>100</posy>
+		<width>830</width>
+		<height>580</height>
+    </include>
+
+    <include name="Common_FileManager_ItemLayout">
+	
+		<control type="image">
+			<posx>10</posx>
+			<posy>10</posy>
+			<width>65</width>
+			<height>65</height>
+			<texture>backings/circle.png</texture>
+		</control>
+
+		<control type="image">
+			<posx>15</posx>
+			<posy>15</posy>
+			<width>55</width>
+			<height>55</height>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture diffuse="masks/circle.png" fallback="DefaultFile.png">$INFO[Listitem.Icon]</texture>
+		</control> 
+
+		<control type="label">
+			<posx>85</posx>
+			<height>85</height>
+			<width>500</width>
+			<info>ListItem.Label</info>
+			<textcolor>BaseMediumHigh</textcolor>
+		</control>
+		
+		<control type="label">
+			<posx>585</posx>
+			<height>85</height>
+			<width>225</width>
+			<align>right</align>
+			<info>ListItem.Label2</info>
+			<textcolor>$VAR[Accent_100]</textcolor>
+		</control>
+						
+    </include>
+	
+    <include name="Common_FileManager_FocusedLayout">
+	
+		<control type="image">
+			<posx>10</posx>
+			<posy>10</posy>
+			<width>65</width>
+			<height>65</height>
+			<texture>backings/circle.png</texture>
+		</control>
+
+		<control type="image">
+			<posx>15</posx>
+			<posy>15</posy>
+			<width>55</width>
+			<height>55</height>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<texture diffuse="masks/circle.png" fallback="DefaultFile.png">$INFO[Listitem.Icon]</texture>
+		</control> 
+
+		<control type="label">
+			<posx>85</posx>
+			<height>85</height>
+			<width>500</width>
+			<info>ListItem.Label</info>
+		</control>
+		
+		<control type="label">
+			<posx>585</posx>
+			<height>85</height>
+			<width>225</width>
+			<align>right</align>
+			<info>ListItem.Label2</info>
+			<textcolor>BaseLow</textcolor>
+		</control>
+		
+    </include>
+
+    <include name="Common_FileManager_Objects">
+		<posx>840</posx>
+		<posy>680</posy>
+		<height>40</height>
+		<width>840</width>
+		<align>right</align>
+		<textcolor>$VAR[Accent_100]</textcolor>
+    </include>	
+
+	<include name="Common_Network_Edit">
+		<width>960</width>
+		<height>60</height>
+		<font>font30R</font>
+		<textcolor>BaseMediumHigh</textcolor>
+		<textoffsetx>30</textoffsetx>
+		<texturenofocus>-</texturenofocus>
+		<texturefocus colordiffuse="$VAR[Accent_100]">colors/color_white.png</texturefocus>
+		<pulseonselect>false</pulseonselect>
+    </include>
+
+	<include name="Common_Media_Icon">
+		<width>260</width>
+		<height>260</height>
+		<aspectratio align="center" aligny="bottom">keep</aspectratio>
+		<bordertexture border="5" colordiffuse="$VAR[Accent_100]">colors/color_white.png</bordertexture>
+		<bordersize>5</bordersize>
+    </include>
+	
+	<include name="Common_PVRSearch_Radio">
+		<width>549</width>
+		<align>left</align>
+        <focusedcolor>BaseWhite</focusedcolor>
+		<textcolor>BaseMediumHigh</textcolor>
+	</include>	
+
+	<include name="Common_PVRSearch_Edit">
+		<width>549</width>
+		<height>60</height>
+		<align>left</align>
+		<aligny>center</aligny>
+		<font>font30R</font>
+		<textoffsetx>30</textoffsetx>
+		<textoffsety>15</textoffsety>
+		<textcolor>BaseMediumHigh</textcolor>
+		<texturefocus colordiffuse="$VAR[Accent_100]">colors/color_white.png</texturefocus>
+		<texturenofocus>-</texturenofocus>
+	</include>	
+	
+	<include name="Common_Info_Label">
+		<textcolor>$VAR[Accent_100]</textcolor>
+		<font>font26B</font>
+		<width>200</width>
+		<height>40</height>
+	</include>
+	
+	<include name="Common_Info_Addon">
+		<posx>200</posx>
+		<textcolor>BaseMid</textcolor>
+		<font>font26R</font>
+		<width min="10" max="720">auto</width>
+		<height>40</height>
+	</include>
+	
+	<include name="Common_Info_Video">
+		<posx>200</posx>
+		<textcolor>BaseMid</textcolor>
+		<font>font26R</font>
+		<width min="10" max="780">auto</width>
+		<height>40</height>
+	</include>
+
+	<include name="Common_Info_Pics_Label">
+		<textcolor>$VAR[Accent_100]</textcolor>
+		<font>font26B</font>
+		<width>300</width>
+		<height>40</height>
+	</include>	
+		
+	<include name="Common_Info_Pics">
+		<posx>300</posx>
+		<textcolor>BaseMid</textcolor>
+		<font>font26R</font>
+		<width min="10" max="620">auto</width>
+		<height>40</height>
+	</include>	
+	
+	<include name="Common_Info_Pics_Label2">
+		<font>font26B</font>
+		<width>300</width>
+		<height>40</height>
+	</include>	
+		
+	<include name="Common_Info_Pics2">
+		<posx>300</posx>
+		<font>font26R</font>
+		<width min="10" max="620">auto</width>
+		<height>40</height>
+	</include>		
+
+    <include name="Common_Playlist_Label">
+        <width>120</width>
+        <height>40</height>
+        <textcolor>BaseMediumHigh</textcolor>
+        <font>font26B</font>
+    </include>
+	
+	<include name="Common_Playlist_Info">
+		<posy>30</posy>
+		<posx>20</posx>
+        <width>280</width>
+        <height>40</height>
+        <scroll>true</scroll>
+    </include>
+	
+	<!--OLD-->
+    <include name="Common_Splash">
+
+        <control type="group">
+            <include>Dimensions_Fullscreen</include>
+            <animation type="WindowOpen">
+                <effect type="fade" start="100" end="100" time="1000" />
+                <effect type="fade" start="100" end="0" time="400" delay="1000" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="fade" start="0" end="0" time="100" />
+            </animation>
+
+            <control type="image">
+                <include>Dimensions_Fullscreen</include>
+                <include>Common_Color_Accent</include>
+            </control>
+
+            <control type="image">
+                <animation type="WindowOpen">
+                    <effect type="fade" start="0" end="100" time="400" delay="200" />
+                </animation>
+                <include>Dimensions_Fullscreen</include>
+                <texture>$VAR[Splash_Image]</texture>
+            </control>
+
+        </control>
+
+    </include>
+
+    <include name="Common_Control_Button">
+        <texturefocus colordiffuse="$VAR[Accent_100]">colors/color_white.png</texturefocus>
+        <texturenofocus colordiffuse="BaseMediumHigh">colors/color_white.png</texturenofocus>
+        <width>72</width>
+        <height>72</height>
+        <textwidth>1</textwidth>
+        <textoffsetx>-1800</textoffsetx>
+    </include>
+
+	<include name="Common_Control_Circle">
+        <texturefocus colordiffuse="$VAR[Accent_100]" diffuse="masks/circle.png">colors/color_white.png</texturefocus>
+        <texturenofocus colordiffuse="BaseMediumHigh" diffuse="masks/circle.png">colors/color_white.png</texturenofocus>
+        <width>75</width>
+        <height>75</height>
+        <textwidth>1</textwidth>
+        <textoffsetx>-1800</textoffsetx>
+    </include>
+
+    <include name="Common_Control_Image">
+        <width>75</width>
+        <height>75</height>
+        <aspectratio>keep</aspectratio>
+    </include>
+
+    <include name="Common_Control_Label">
+        <posx>110</posx>
+        <width min="30" max="480">auto</width>
+        <height>75</height>
+        <wrapmultiline>true</wrapmultiline>
+        <scrollspeed>0</scrollspeed>
+        <font>font30R</font>
+		<textcolor>BaseMediumHigh</textcolor>
+    </include>
+
+    <include name="Common_Control_Label2">
+        <posx>120</posx>
+        <width>450</width>
+        <height>75</height>
+        <wrapmultiline>true</wrapmultiline>
+        <scrollspeed>0</scrollspeed>
+        <font>font18UB</font>
+    </include>
+
+    <include name="Common_TopBar">
+
+        <control type="button">
+            <description>top left bar</description>
+            <width>30</width>
+            <height>150</height>
+            <texturefocus colordiffuse="$VAR[Accent_100]">colors/color_white.png</texturefocus>
+            <texturenofocus colordiffuse="$VAR[Accent_100]">colors/color_white.png</texturenofocus>
+            <onclick>9000</onclick>
+            <include>Animation_Home_Fade</include>
+        </control>
+
+        <control type="image">
+            <description>KODI</description>
+            <posx>60</posx>
+            <posy>-15</posy>
+            <width>375</width>
+            <height>150</height>
+            <visible>true</visible>
+            <aspectratio>keep</aspectratio>
+            <texture border="2">general/kodi.png</texture>
+            <include>Animation_Home_Fade</include>
+            <visible>Window.IsActive(0)</visible>
+        </control>
+
+        <control type="button">
+            <description>invisible settings</description>
+            <posx>60</posx>
+            <posy>15</posy>
+            <width>375</width>
+            <height>150</height>
+            <texturenofocus border="2">-</texturenofocus>
+            <texturefocus border="2">-</texturefocus>
+            <include>Animation_Home_Fade</include>
+            <onclick>ActivateWindow(111)</onclick>
+            <visible>Window.IsActive(0)</visible>
+        </control>
+
+        <control type="group">
+            <visible>!System.GetBool(Input.EnableMouse)</visible>
+
+            <control type="label">
+                <label>$VAR[TopBar_Label]</label>
+                <posx>60</posx>
+                <posy>30</posy>
+                <height>45</height>
+                <width>750</width>
+                <font>font72L</font>
+                <shadowcolor>TrueBlack</shadowcolor>
+                <textcolor>TrueWhite</textcolor>
+            </control>
+
+        </control>
+
+        <control type="group">
+            <visible>System.GetBool(Input.EnableMouse)</visible>
+            <visible>!Window.IsActive(0)</visible>
+
+            <control type="button">
+                <description>back button</description>
+                <posx>60</posx>
+                <posy>38</posy>
+                <width>60</width>
+                <height>60</height>
+                <texturefocus>arrows/back.png</texturefocus>
+                <texturenofocus>arrows/back.png</texturenofocus>
+                <onclick>ActivateWindow(0)</onclick>
+            </control>
+
+            <control type="label">
+                <label>$VAR[TopBar_Label]</label>
+                <posx>135</posx>
+                <posy>30</posy>
+                <height>45</height>
+                <width>750</width>
+                <font>font72L</font>
+                <textcolor>TrueWhite</textcolor>
+                <shadowcolor>TrueBlack</shadowcolor>
+            </control>
+
+        </control>
+
+        <control type="label">
+            <posx>68</posx>
+            <posy>112</posy>
+            <width>1350</width>
+            <aligny>top</aligny>
+            <label>$VAR[Header_Lists]</label>
+            <font>font20UB</font>
+            <shadowcolor>Black</shadowcolor>
+            <textcolor>$VAR[Accent_100]</textcolor>
+            <include>Animation_Home_Fade</include>
+        </control>
+
+    </include>
+
+    <include name="Common_HomeMenu_Fonts">
+        <textwidth>360</textwidth>
+        <align>left</align>
+        <aligny>center</aligny>
+        <font>font40L</font>
+        <focusedcolor>$VAR[Accent_100]</focusedcolor>
+        <texturefocus></texturefocus>
+        <shadowcolor>ff000000</shadowcolor>
+        <textcolor>Icon</textcolor>
+    </include>
+
+    <include name="Common_Home_Label">
+
+        <control type="label">
+            <label>$LOCALIZE[10000]</label>
+            <posx>75</posx>
+            <posy>360</posy>
+            <height>45</height>
+            <width>375</width>
+            <font>font72L</font>
+            <textcolor>Icon</textcolor>
+            <shadowcolor>ff000000</shadowcolor>
+        </control>
+
+    </include>
+
+    <include name="Common_Home_DateTime">
+
+        <control type="label">
+            <label>$INFO[System.Time(hh:mm)]</label>
+            <posx>1838</posx>
+            <posy>945</posy>
+            <height>150</height>
+            <width>300</width>
+            <font>font65L</font>
+            <align>right</align>
+            <textcolor>TrueWhite</textcolor>
+            <shadowcolor>ff000000</shadowcolor>
+            <visible>!IsEmpty(System.Time(xx))</visible>
+        </control>
+
+        <control type="label">
+            <label>$INFO[System.Time(hh:mm)]</label>
+            <posx>1612</posx>
+            <posy>945</posy>
+            <height>150</height>
+            <width>300</width>
+            <font>font60L</font>
+            <textcolor>TrueWhite</textcolor>
+            <shadowcolor>ff000000</shadowcolor>
+            <visible>IsEmpty(System.Time(xx))</visible>
+        </control>
+
+        <control type="label">
+            <label>$INFO[System.Time(xx)]</label>
+            <posx>1838</posx>
+            <posy>966</posy>
+            <height>150</height>
+            <width>90</width>
+            <font>font26L</font>
+            <textcolor>$VAR[Accent_100]</textcolor>
+            <shadowcolor>ff000000</shadowcolor>
+            <visible>!IsEmpty(System.Time(xx))</visible>
+        </control>
+
+        <control type="label">
+            <label>$INFO[System.Date(DDD)]</label>
+            <posx>1608</posx>
+            <posy>921</posy>
+            <height>150</height>
+            <width>1125</width>
+            <font>font26L</font>
+            <align>right</align>
+            <textcolor>$VAR[Accent_100]</textcolor>
+            <shadowcolor>ff000000</shadowcolor>
+        </control>
+
+        <control type="label">
+            <label>$INFO[System.Date(MMM)] $INFO[System.Date(dd)]</label>
+            <posx>1608</posx>
+            <posy>966</posy>
+            <height>150</height>
+            <width>1125</width>
+            <font>font22L</font>
+            <align>right</align>
+            <textcolor>$VAR[Accent_100]</textcolor>
+            <shadowcolor>ff000000</shadowcolor>
+        </control>
+
+    </include>
+
+    <include name="Common_Options_Divider">
+        <width>420</width>
+        <height>3</height>
+        <texture colordiffuse="BaseMediumMid">colors/color_white.png</texture>
+    </include>
+
+    <include name="Common_Control_Divider">
+        <control type="image">
+            <width>90</width>
+            <height>3</height>
+            <texture>colors/color_white.png</texture>
+        </control>
+    </include>
+	
+    <include name="Common_Settings_Radio">
+        <textureradioon>contextmenu/radio-on.png</textureradioon>
+        <textureradiooff>-</textureradiooff>
+        <radiowidth>72</radiowidth>
+        <radioheight>72</radioheight>
+        <radioposx>310</radioposx>
+    </include>
+
+    <include name="Common_Settings_Edit">
+        <width>1100</width>
+        <height>60</height>
+        <texturefocus>colors/color_white.png</texturefocus>
+        <texturenofocus>-</texturenofocus>
+        <alttexturefocus>colors/color_white.png</alttexturefocus>
+        <alttexturenofocus>-</alttexturenofocus>
+        <colordiffuse>$VAR[Accent_100]</colordiffuse>
+        <font>font30R</font>
+        <textcolor>BaseMediumHigh</textcolor>
+        <focusedcolor>BaseWhite</focusedcolor>
+        <disabledcolor>BaseLow</disabledcolor>
+        <textoffsetx>48</textoffsetx>
+        <textoffsety>-15</textoffsety>
+        <align>left</align>
+        <aligny>center</aligny>
+    </include>
+
+    <include name="Common_Fanart_Overlay">
+
+        <control type="image">
+            <include>Dimensions_Fullscreen</include>
+            <texture background="true">../extras/overlays/music_fanart_diffuse.png</texture>
+            <visible>Skin.HasSetting(UseFanartOverlay)</visible>
+        </control>
+
+    </include>
+
+    <include name="Common_Color_Black">
+        <texture colordiffuse="Black">colors/color_white.png</texture>
+        <aspectratio>stretch</aspectratio>
+    </include>
+
+    <include name="Common_Color_Accent_60">
+        <texture colordiffuse="$VAR[Accent_60]">colors/color_white.png</texture>
+        <aspectratio>stretch</aspectratio>
+    </include>
+
+    <include name="Common_Color_Accent_80">
+        <texture colordiffuse="$VAR[Accent_80]">colors/color_white.png</texture>
+        <aspectratio>stretch</aspectratio>
+    </include> 
+
+    <include name="Common_Infolist_Label">
+        <width>225</width>
+        <height>30</height>
+        <textcolor>$VAR[Accent_100]</textcolor>
+        <font>font30B</font>
+    </include>
+
+    <include name="Common_Infolist_Label2">
+        <width>120</width>
+        <height>42</height>
+        <textcolor>Black</textcolor>
+        <font>font20UB</font>
+    </include>
+
+    <include name="Common_Infolist_Label3">
+        <width>255</width>
+        <posx>15</posx>
+        <height>42</height>
+        <textcolor>Black</textcolor>
+        <font>font20UB</font>
+    </include>
+
+    <include name="Common_Infolist_Info">
+        <posx>210</posx>
+        <width>450</width>
+        <height>30</height>
+		<font>font30R</font>
+        <scroll>true</scroll>
+    </include>
+
+    <include name="Common_Infolist_RDSLabel">
+        <width>470</width>
+        <height>30</height>
+        <textcolor>$VAR[Accent_100]</textcolor>
+        <font>font30B</font>
+    </include>
+
+    <include name="Common_Infolist_RDSInfo">
+		<posx>20</posx>
+		<posy>-15</posy>
+        <width>450</width>
+        <height>30</height>
+		<font>font30R</font>
+        <scroll>true</scroll>
+		<textcolor>BaseMediumHigh</textcolor>        
+    </include>
+
+    <include name="Common_Infolist_Info2">
+        <posx>120</posx>
+        <width>210</width>
+        <height>42</height>
+        <scroll>true</scroll>
+    </include>
+
+    <include name="Common_Infolist_Info3">
+        <posx>270</posx>
+        <width>570</width>
+        <height>42</height>
+        <scroll>true</scroll>
+    </include>
+
+    <include name="Common_Scroll_OutlineV">
+        <animation effect="fade" time="200">VisibleChange</animation>
+        <width>10</width>
+        <aspectratio>stretch</aspectratio>
+        <texture>colors/color_white.png</texture>
+    </include>
+
+    <include name="Common_Scroll_OutlineH">
+        <animation effect="fade" time="200">VisibleChange</animation>
+        <height>10</height>
+        <aspectratio>stretch</aspectratio>
+        <texture>colors/color_white.png</texture>
+    </include>
+
+    <include name="Common_HomePanel">
+        <posx>1215</posx>
+        <posy>465</posy>
+        <width>840</width>
+        <height>480</height>
+        <preloaditems>2</preloaditems>
+        <orientation>horizontal</orientation>
+        <pagecontrol>98</pagecontrol>
+        <focusposition>0</focusposition>
+        <scrolltime tween="cubic" easing="out">400</scrolltime>
+    </include>
+
+    <include name="Common_CurrentWeather_Label">
+        <width>750</width>
+        <height>150</height>
+        <font>font24B</font>
+        <aligny>top</aligny>
+    </include>
+	
+    <include name="Common_CurrentWeather_Data">
+        <posy>38</posy>
+        <width>750</width>
+        <height>150</height>
+        <font>font24R</font>
+        <aligny>top</aligny>
+		<textcolor>BaseLow</textcolor>
+    </include>
+
+    <include name="Common_CurrentWeather_Data_Accent">
+        <posy>38</posy>
+        <width>750</width>
+        <height>150</height>
+        <font>font24R</font>
+        <aligny>top</aligny>
+    </include>
+	
+    <include name="Common_Weather_Header">
+        <width>1050</width>
+        <font>font40L</font>
+        <shadowcolor>ff000000</shadowcolor>
+        <align>left</align>
+    </include>
+	
+    <include name="Common_Weather_SectionLabel">
+        <width min="30" max="795">auto</width>
+		<posx>20</posx>
+		<posy>20</posy>
+        <height>45</height>
+		<font>font45R</font>
+		<textcolor>BaseMediumHigh</textcolor>
+        <wrapmultiline>false</wrapmultiline>
+        <scrollspeed>0</scrollspeed>
+    </include>	
+
+    <include name="Common_Fanart_Title">
+        <height>60</height>
+        <width>660</width>
+        <font>font50R</font>
+        <textcolor>$VAR[Accent_100]</textcolor>
+        <aligny>center</aligny>
+        <scroll>false</scroll>
+    </include>
+
+    <include name="Common_Fanart_Label">
+        <height>30</height>
+        <align>center</align>
+        <font>font24B</font>
+        <textcolor>BaseMid</textcolor>
+    </include>
+
+    <include name="Common_Fanart_Data">
+        <height>30</height>
+        <align>center</align>
+        <font>font20</font>
+		<textcolor>BaseWhite</textcolor>
+    </include>
+
+    <include name="Common_Fanart_Icon">
+        <width>340</width>
+        <height>340</height>
+        <aspectratio>stretch</aspectratio>
+    </include>	
+
+    <include name="Common_Fanart_Icon2">
+        <posx>27</posx>
+        <posy>694</posy>
+        <width>220</width>
+        <height>220</height>
+        <fadetime>100</fadetime>
+        <aspectratio>keep</aspectratio>
+    </include>
+
+    <include name="Common_Fanart_Icon3">
+        <posx>27</posx>
+        <posy>694</posy>
+        <width>360</width>
+        <height>360</height>
+        <fadetime>100</fadetime>
+        <aspectratio align="center" aligny="top">scale</aspectratio>
+    </include>
+
+    <include name="Common_Fanart_Fadelabel">
+        <posx>394</posx>
+        <include>Common_Fanart_Title</include>
+    </include>
+
+    <include name="Common_List_Title">
+        <posx>15</posx>
+        <posy>15</posy>
+        <height>30</height>
+        <width>570</width>
+        <font>font24UB</font>
+        <align>center</align>
+        <scroll>true</scroll>
+        <textcolor>$VAR[Accent_100]</textcolor>
+    </include>
+
+    <include name="Common_List_Title2">
+        <posx>15</posx>
+        <posy>15</posy>
+        <height>30</height>
+        <width>382</width>
+        <font>font24UB</font>
+        <align>center</align>
+        <scroll>true</scroll>
+        <textcolor>$VAR[Accent_100]</textcolor>
+    </include>
+
+    <include name="Common_List_Plot">
+        <posx>30</posx>
+        <posy>188</posy>
+        <width>540</width>
+        <height>330</height>
+        <align>justify</align>
+        <autoscroll time="3000" delay="6000" repeat="8000"></autoscroll>
+        <font>font18</font>
+    </include>
+
+    <include name="Common_List_Plot2">
+        <posx>30</posx>
+        <posy>188</posy>
+        <width>352</width>
+        <height>330</height>
+        <align>justify</align>
+        <autoscroll time="3000" delay="6000" repeat="8000"></autoscroll>
+        <font>font18</font>
+    </include>
+
+    <include name="Common_ListPic_Title">
+        <posx>878</posx>
+        <posy>908</posy>
+        <width>825</width>
+        <font>font24UB</font>
+        <align>center</align>
+        <scroll>true</scroll>
+        <textcolor>$VAR[Accent_100]</textcolor>
+    </include>
+
+    <include name="Common_Panel_Title">
+        <width>750</width>
+        <height>75</height>
+        <font>font32UB</font>
+        <textcolor>$VAR[Accent_100]</textcolor>
+        <scroll>true</scroll>
+    </include>
+
+    <include name="Common_Panel_TitleW">
+        <width>750</width>
+        <height>75</height>
+        <font>font32UB</font>
+        <scroll>false</scroll>
+    </include>
+
+    <include name="Common_GenrePanel_Title">
+        <posx>262</posx>
+        <posy>375</posy>
+        <height>45</height>
+        <width>1350</width>
+        <font>font40UB</font>
+        <aligny>top</aligny>
+        <visible>true</visible>
+        <scroll>true</scroll>
+        <scrollout>false</scrollout>
+        <pauseatend>600</pauseatend>
+        <scrollspeed>50</scrollspeed>
+        <shadowcolor>ff000000</shadowcolor>
+    </include>
+
+    <include name="Common_Showcase_Title">
+        <posy>945</posy>
+        <height>45</height>
+        <width>1920</width>
+        <font>font40UB</font>
+        <textcolor>$VAR[Accent_100]</textcolor>
+        <align>center</align>
+        <aligny>top</aligny>
+        <scroll>true</scroll>
+        <shadowcolor>black</shadowcolor>
+    </include>
+
+    <include name="Common_Hub_Explore">
+
+        <control type="label">
+            <label>$LOCALIZE[31208]</label>
+            <posx>75</posx>
+            <posy>360</posy>
+            <height>45</height>
+            <width>375</width>
+            <font>font72L</font>
+            <shadowcolor>ff000000</shadowcolor>
+        </control>
+
+    </include>
+
+    <include name="Common_Explore_Image">
+        <width>75</width>
+        <height>75</height>
+        <aspectratio>keep</aspectratio>
+    </include>
+
+    <include name="Common_Explore_Label">
+        <posx>105</posx>
+        <width min="30" max="480">auto</width>
+        <height>75</height>
+        <wrapmultiline>true</wrapmultiline>
+        <scrollspeed>0</scrollspeed>
+        <font>font20UB</font>
+    </include>
+
+    <include name="Common_Hub_SectionLabel">
+        <posy>300</posy>
+        <width min="30" max="795">auto</width>
+        <height>45</height>
+		<font>font45R</font>
+		<textcolor>BaseMediumHigh</textcolor>
+        <wrapmultiline>false</wrapmultiline>
+        <scrollspeed>0</scrollspeed>
+    </include>
+
+    <include name="Common_Hub_Featured_Title">
+        <width>750</width>
+        <height>75</height>
+        <font>font45B</font>
+        <textcolor>$VAR[Accent_100]</textcolor>
+        <scroll>true</scroll>
+    </include>
+
+    <include name="Common_Hub_Featured_Title2">
+        <width>750</width>
+        <height>75</height>
+        <font>font45B</font>
+        <scroll>true</scroll>
+    </include>	
+	
+    <include name="Common_List_Indicator">
+        <width>30</width>
+        <height>30</height>
+        <texture colordiffuse="$VAR[Accent_100]">colors/color_white.png</texture>
+    </include>
+
+    <include name="Common_List_Back">
+        <width>30</width>
+        <height>30</height>
+        <texture colordiffuse="TrueWhite">colors/color_white.png</texture>
+    </include>
+
+    <include name="Common_TraktTV_ClearProperties">
+        <onclick>ClearProperty(Title,1118)</onclick>
+        <onclick>ClearProperty(MPAA,1118)</onclick>
+        <onclick>ClearProperty(Plot,1118)</onclick>
+        <onclick>ClearProperty(Tagline,1118)</onclick>
+        <onclick>ClearProperty(Year,1118)</onclick>
+        <onclick>ClearProperty(Genre,1118)</onclick>
+        <onclick>ClearProperty(Runtime,1118)</onclick>
+        <onclick>ClearProperty(Rating,1118)</onclick>
+        <onclick>ClearProperty(Poster,1118)</onclick>
+        <onclick>ClearProperty(Fanart,1118)</onclick>
+        <onclick>ClearProperty(Trailer,1118)</onclick>
+        <onclick>ClearProperty(ID,1118)</onclick>
+        <onclick>ClearProperty(Type,1118)</onclick>
+        <onclick>ClearProperty(Country,1118)</onclick>
+        <onclick>ClearProperty(NextTime,1118)</onclick>
+        <onclick>ClearProperty(Premiered,1118)</onclick>
+    </include>
+
+    <include name="Common_TraktTV_HeaderButton">
+        <height>75</height>
+        <texturefocus>-</texturefocus>
+        <texturenofocus>-</texturenofocus>
+        <font>font36R</font>
+        <align>left</align>
+		<aligny>center</aligny>
+        <textoffsetx>0</textoffsetx>
+		<textcolor>BaseMid</textcolor>
+        <focusedcolor>$VAR[Accent_100]</focusedcolor>
+    </include>
+
+    <include name="Common_TraktTV_Hub_Panel">
+        <posx>102</posx>
+        <posy>120</posy>
+        <width>1740</width>
+        <height>780</height>
+        <onup>10000</onup>
+        <pagecontrol>81</pagecontrol>
+        <viewtype label="535">list</viewtype>
+        <scrolltime tween="cubic" easing="out">600</scrolltime>
+        <preloaditems>2</preloaditems>
+        <orientation>horizontal</orientation>
+        <include>Animation_Common_ShowListing</include>
+    </include>
+	
+    <include name="Common_InfoDialog_Detail_Header">
+        <width>510</width>
+        <height>24</height>
+        <font>font20UB</font>
+        <textcolor>$VAR[Accent_100]</textcolor>
+    </include>
+
+    <include name="Common_InfoDialog_Detail_Label">
+        <width>510</width>
+        <height>75</height>
+        <font>font18</font>
+        <wrapmultiline>true</wrapmultiline>
+    </include>
+
+    <include name="Common_InfoDialog_Label_Small">
+        <width>540</width>
+        <height>45</height>
+        <font>font20</font>
+        <aligny>center</aligny>
+    </include>
+
+    <include name="Common_InfoDialog_Header_Small">
+        <width>540</width>
+        <height>45</height>
+        <font>font20UB</font>
+        <aligny>center</aligny>
+    </include>
+
+    <include name="Common_TVGuide_Notification">
+
+        <control type="group">
+            <posx>900</posx>
+            <posy>45</posy>
+            <include>Animation_NextAired_Stretch</include>
+            <visible>!IsEmpty(Window(Home).Property(NextAired.Label)) + !stringcompare(ListItem.Label,..) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(episodes)] + !IsEmpty(ListItem.TVShowTitle) + !IsEmpty(Window(Home).Property(NextAired.NextDate))</visible>
+            <visible>Skin.HasSetting(UseNextAiredScript)</visible>
+
+            <control type="image">
+                <description>Underlay</description>
+                <width>120</width>
+                <height>120</height>
+                <include>Common_Color_Accent</include>
+            </control>
+
+        </control>
+
+        <control type="group">
+            <posx>900</posx>
+            <posy>45</posy>
+            <include>Animation_NextAired</include>
+            <visible>!IsEmpty(Window(Home).Property(NextAired.Label)) + !stringcompare(ListItem.Label,..) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(episodes)] + !IsEmpty(ListItem.TVShowTitle) + !IsEmpty(Window(Home).Property(NextAired.NextDate))</visible>
+            <visible>Skin.HasSetting(UseNextAiredScript)</visible>
+
+            <control type="image">
+                <description>Underlay</description>
+                <width>120</width>
+                <height>120</height>
+                <include>Common_Color_Accent</include>
+            </control>
+
+            <control type="image">
+                <description>TV icon</description>
+                <posx>15</posx>
+                <posy>15</posy>
+                <width>90</width>
+                <height>90</height>
+                <texture>tiles/tv.png</texture>
+            </control>
+
+        </control>
+
+        <control type="group">
+            <posx>795</posx>
+            <posy>45</posy>
+            <include>Animation_NextAired_Fade</include>
+            <visible>!IsEmpty(Window(Home).Property(NextAired.Label)) + !stringcompare(ListItem.Label,..) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(episodes)] + !IsEmpty(ListItem.TVShowTitle) + !IsEmpty(Window(Home).Property(NextAired.NextDate))</visible>
+            <visible>Skin.HasSetting(UseNextAiredScript)</visible>
+
+            <control type="label">
+                <posx>15</posx>
+                <posy>-8</posy>
+                <width>420</width>
+                <height>60</height>
+                <align>center</align>
+                <font>font20UB</font>
+                <label>[B]$LOCALIZE[31173][/B]</label>
+            </control>
+
+            <control type="label">
+                <posx>15</posx>
+                <posy>30</posy>
+                <width>420</width>
+                <height>60</height>
+                <align>center</align>
+                <font>font16</font>
+                <scroll>true</scroll>
+                <label>[B]"$INFO[Window(Home).Property(NextAired.NextTitle)]"[/B]</label>
+            </control>
+
+            <control type="label">
+                <posx>8</posx>
+                <posy>68</posy>
+                <width>435</width>
+                <height>60</height>
+                <align>center</align>
+                <font>font16</font>
+                <scroll>true</scroll>
+                <label>$LOCALIZE[31177] $INFO[Window(Home).Property(NextAired.NextDate)] - $INFO[Window(Home).Property(NextAired.AirTime)]</label>
+            </control>
+
+        </control>
+
+    </include>
+
+    <include name="Common_Infolist_Info">
+        <posx>240</posx>
+        <width>450</width>
+        <height>42</height>
+        <scroll>true</scroll>
+    </include>
+
+    <include name="Common_Watched">
+
+        <control type="image">
+            <posx>8</posx>
+            <posy>18</posy>
+            <height>38</height>
+            <width>38</width>
+            <texture background="true" colordiffuse="Watched">$VAR[Watched_Image]</texture>
+            <aspectratio aligny="top">keep</aspectratio>
+            <visible>Container.Content(songs) | ListItem.IsPlaying | IntegerGreaterThan(ListItem.PercentPlayed,99) | !IntegerGreaterThan(ListItem.PercentPlayed,1)</visible>
+        </control>
+
+        <control type="image">
+            <posx>8</posx>
+            <posy>18</posy>
+            <width>38</width>
+            <height>38</height>
+            <aspectratio aligny="top">keep</aspectratio>
+            <texture colordiffuse="Watched" diffuse="watched/circle/mask.png">$INFO[ListItem.PercentPlayed,watched/circle/,.png]</texture>
+            <visible>!ListItem.IsPlaying + !IntegerGreaterThan(ListItem.PercentPlayed,99) + IntegerGreaterThan(ListItem.PercentPlayed,1)</visible>
+        </control>
+
+    </include>
+
+    <include name="Common_Watched_Medium">
+
+        <control type="image">
+            <posx>8</posx>
+            <posy>3</posy>
+            <height>45</height>
+            <width>45</width>
+            <texture background="true" colordiffuse="Watched">$VAR[Watched_Image]</texture>
+            <aspectratio aligny="top">keep</aspectratio>
+            <visible>Container.Content(songs) | ListItem.IsPlaying | IntegerGreaterThan(ListItem.PercentPlayed,99) | !IntegerGreaterThan(ListItem.PercentPlayed,1)</visible>
+        </control>
+
+        <control type="image">
+            <posx>8</posx>
+            <posy>3</posy>
+            <width>45</width>
+            <height>45</height>
+            <aspectratio aligny="top">keep</aspectratio>
+            <texture colordiffuse="Watched" diffuse="watched/circle/mask.png">$INFO[ListItem.PercentPlayed,watched/circle/,.png]</texture>
+            <visible>!ListItem.IsPlaying + !IntegerGreaterThan(ListItem.PercentPlayed,99) + IntegerGreaterThan(ListItem.PercentPlayed,1)</visible>
+        </control>
+        
+    </include>
+
+    <include name="Common_NowPlaying">
+
+        <control type="group">
+            <include>Animation_Notification_Left</include>
+            <visible>Player.HasMedia</visible>
+            <visible>!SubString(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>         
+            
+            <control type="group">
+            	<posx>80</posx>
+                <visible>!Window.IsActive(visualisation) + !VideoPlayer.IsFullscreen  + !Window.IsVisible(screencalibration)</visible>
+                
+                <control type="image">
+                    <width>600</width>
+                    <height>150</height>
+                    <include>Common_Color_Accent</include>
+                </control>
+                
+                <control type="button">
+                    <posx>22</posx>
+                    <posy>40</posy>
+                    <width>75</width>
+                    <height>75</height>
+                    <texturefocus>OSD/Play.png</texturefocus>
+                    <texturenofocus>OSD/Play.png</texturenofocus>
+                    <onclick condition="Player.HasVideo">ActivateWindow(fullscreenvideo)</onclick>
+                    <onclick condition="Player.HasAudio">ActivateWindow(visualisation)</onclick>
+                </control>
+                
+                <control type="image">
+                    <posx>445</posx>
+                    <width>5</width>
+                    <height>150</height>
+                    <texture>colors/color_white.png</texture>
+                </control>
+                
+                <control type="image">
+                    <posx>450</posx>
+                    <width>150</width>
+                    <height>150</height>
+                    <texture>$VAR[NowPlaying_Image]</texture>
+                    <aspectratio aligny="center">scale</aspectratio>
+                </control>
+                
+                <control type="label">
+                    <posx>112</posx>
+                    <posy>10</posy>
+                    <width>300</width>
+                    <height>48</height>
+                    <label>$VAR[NowPlaying_Title]</label>
+                    <font>font34B</font>
+                </control>
+                
+                <control type="label">
+                    <posx>112</posx>
+                    <posy>55</posy>
+                    <width>300</width>
+                    <label>$INFO[MusicPlayer.Title]</label>
+                    <height>24</height>
+                    <font>font30R</font>
+                    <visible>Player.HasAudio</visible>
+                </control>
+                
+                <control type="label">
+                    <posx>112</posx>
+                    <posy>105</posy>
+                    <width>300</width>
+                    <label>$INFO[VideoPlayer.Time] / $INFO[VideoPlayer.Duration]</label>
+                    <height>24</height>
+                    <font>font30R</font>
+                </control>              
+
+            </control>
+            
+        </control>
+        
+    </include>
+
+	<include name="ShowOptions_Left">
+		<onleft>Dialog.Close(1119)</onleft>
+		<onleft>SetFocus(9050)</onleft>
+    </include>    
+
+	<include name="ShowOptions_Right">
+		<onright>Dialog.Close(1119)</onright>
+		<onright>SetFocus(9050)</onright>
+    </include>  
+
+	<include name="ShowOptions_Up">
+		<onup>Dialog.Close(1119)</onup>
+		<onup>SetFocus(9050)</onup>
+    </include>  
+
+	<include name="ShowOptions_Down">
+		<ondown>Dialog.Close(1119)</ondown>
+		<ondown>SetFocus(9050)</ondown>
+    </include> 
+
+	<include name="ShowOptions_Click">
+		<onclick condition="IsEmpty(Window(Home).Property(ShowOptions2))">Dialog.Close(1119)</onclick>
+		<onclick condition="IsEmpty(Window(Home).Property(ShowOptions2))">SetFocus(9050)</onclick>
+		<onclick condition="!IsEmpty(Window(Home).Property(ShowOptions2))">ClearProperty(ShowOptions2,home)</onclick>
+		<onright condition="!Window.IsVisible(MyPVRGuide.xml) + !Window.IsVisible(MyPVRChannels.xml) + !Window.IsVisible(MyPVRRecordings.xml) + !Window.IsVisible(MyPVRSearch.xml) + !Window.IsVisible(MyPVRTimers.xml) + !IsEmpty(Window(Home).Property(ShowOptions2))">50</onright>
+		<onright condition="Window.IsVisible(MyPVRGuide.xml) + !IsEmpty(Window(Home).Property(ShowOptions2))">10</onright>
+		<onright condition="Window.IsVisible(MyPVRChannels.xml) + !IsEmpty(Window(Home).Property(ShowOptions2))">11</onright>
+		<onright condition="Window.IsVisible(MyPVRRecordings.xml) + !IsEmpty(Window(Home).Property(ShowOptions2))">13</onright>
+		<onright condition="Window.IsVisible(MyPVRSearch.xml) + !IsEmpty(Window(Home).Property(ShowOptions2))">17</onright>
+		<onright condition="Window.IsVisible(MyPVRTimers.xml) + !IsEmpty(Window(Home).Property(ShowOptions2))">14</onright>
+    </include> 
+
+	<include name="OnLoadDialogsClose">
+		<onload condition="Window.IsActive(subtitlesearch)">Dialog.Close(subtitlesearch)</onload>
+		<onload condition="Window.IsActive(contextmenu)">Dialog.Close(contextmenu)</onload>
+		<onload condition="Window.IsActive(movieinformation)">Dialog.Close(movieinformation)</onload>
+		<onload condition="Window.IsActive(musicinformation)">Dialog.Close(musicinformation)</onload>
+		<onload condition="Window.IsActive(songinformation)">Dialog.Close(songinformation)</onload>
+		<onload condition="Window.IsActive(addoninformation)">Dialog.Close(addoninformation)</onload>
+		<onload condition="Window.IsActive(locksettings)">Dialog.Close(locksettings)</onload>
+		<onload condition="Window.IsActive(profilesettings)">Dialog.Close(profilesettings)</onload>
+		<onload condition="Window.IsActive(yesnodialog)">Dialog.Close(yesnodialog)</onload>
+		<onload condition="Window.IsActive(visualisationpresetlist)">Dialog.Close(visualisationpresetlist)</onload>
+		<onload condition="Window.IsActive(osdvideosettings)">Dialog.Close(osdvideosettings)</onload>
+		<onload condition="Window.IsActive(osdaudiosettings)">Dialog.Close(osdaudiosettings)</onload>
+		<onload condition="Window.IsActive(videobookmarks)">Dialog.Close(videobookmarks)</onload>
+		<onload condition="Window.IsActive(filebrowser)">Dialog.Close(filebrowser)</onload>
+		<onload condition="Window.IsActive(networksetup)">Dialog.Close(networksetup)</onload>
+		<onload condition="Window.IsActive(mediasource)">Dialog.Close(mediasource)</onload>
+		<onload condition="Window.IsActive(contentsettings)">Dialog.Close(contentsettings)</onload>
+		<onload condition="Window.IsActive(peripheralsettings)">Dialog.Close(peripheralsettings)</onload>
+		<onload condition="Window.IsActive(peripherals)">Dialog.Close(peripherals)</onload>
+		<onload condition="Window.IsActive(smartplaylisteditor)">Dialog.Close(smartplaylisteditor)</onload>
+		<onload condition="Window.IsActive(smartplaylistrule)">Dialog.Close(smartplaylistrule)</onload>
+		<onload condition="Window.IsActive(busydialog)">Dialog.Close(busydialog)</onload>
+		<onload condition="Window.IsActive(pictureinfo)">Dialog.Close(pictureinfo)</onload>
+		<onload condition="Window.IsActive(addonsettings)">Dialog.Close(addonsettings)</onload>
+		<onload condition="Window.IsActive(accesspoints)">Dialog.Close(accesspoints)</onload>
+		<onload condition="Window.IsActive(fullscreeninfo)">Dialog.Close(fullscreeninfo)</onload>
+		<onload condition="Window.IsActive(karaokeselector)">Dialog.Close(karaokeselector)</onload>
+		<onload condition="Window.IsActive(karaokelargeselector)">Dialog.Close(karaokelargeselector)</onload>
+		<onload condition="Window.IsActive(karaoke)">Dialog.Close(karaoke)</onload>
+		<onload condition="Window.IsActive(sliderdialog)">Dialog.Close(sliderdialog)</onload>
+		<onload condition="Window.IsActive(selectdialog)">Dialog.Close(selectdialog)</onload>
+		<onload condition="Window.IsActive(okdialog)">Dialog.Close(okdialog)</onload>
+		<onload condition="Window.IsActive(filestackingdialog)">Dialog.Close(filestackingdialog)</onload>
+		<onload condition="Window.IsActive(textviewer)">Dialog.Close(textviewer)</onload>
+		<onload condition="Window.IsActive(mediafilter)">Dialog.Close(mediafilter)</onload>
+		<onload condition="Window.IsActive(PVROSDChannels)">Dialog.Close(PVROSDChannels)</onload>
+		<onload condition="Window.IsActive(PVROSDGuide)">Dialog.Close(PVROSDGuide)</onload>
+	    <onload condition="Window.IsActive(PVRGuideInfo)">Dialog.Close(PVRGuideInfo)</onload>
+	    <onload condition="Window.IsActive(PVRRecordingInfo)">Dialog.Close(PVRRecordingInfo)</onload>
+	    <onload condition="Window.IsActive(PVRTimerSetting)">Dialog.Close(PVRTimerSetting)</onload>
+	    <onload condition="Window.IsActive(PVRGroupManager)">Dialog.Close(PVRGroupManager)</onload>
+	    <onload condition="Window.IsActive(PVRChannelManager)">Dialog.Close(PVRChannelManager)</onload>
+	    <onload condition="Window.IsActive(PVRGuideSearch)">Dialog.Close(PVRGuideSearch)</onload>
+		<onload condition="Window.IsActive(1111)">Dialog.Close(1111)</onload>
+	    <onload condition="Window.IsActive(1112)">Dialog.Close(1112)</onload>
+	    <onload condition="Window.IsActive(1113)">Dialog.Close(1113)</onload>
+	    <onload condition="Window.IsActive(1114)">Dialog.Close(1114)</onload>
+	    <onload condition="Window.IsActive(1115)">Dialog.Close(1115)</onload>
+	    <onload condition="Window.IsActive(1116)">Dialog.Close(1126)</onload>
+	    <onload condition="Window.IsActive(1117)">Dialog.Close(1117)</onload>
+	    <onload condition="Window.IsActive(1118)">Dialog.Close(1118)</onload>
+		<onload>Dialog.Close(DialogSelect.xml)</onload>
+	</include>
+
+</includes>

@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window id="146">
+    <defaultcontrol>9221</defaultcontrol>
+	
+    <controls>
+        <!--Background Area-->
+        <control type="group">
+		
+            <control type="image">
+                <include>Dimensions_Fullscreen</include>
+				<texture background="true" fallback="special://skin/extras/backgrounds/addons.jpg">$INFO[ListItem.Art(fanart)]</texture>
+				<aspectratio>scale</aspectratio>
+				<include>Animation_Common_InfoWindow</include>
+            </control>
+
+			<control type="image">
+                <include>Dimensions_Fullscreen</include>
+                <include>Common_Color_BaseWhite80</include>
+				<include>Animation_Common_InfoWindow</include>
+            </control>
+
+            <control type="image">
+				<posy>110</posy>
+                <height>80</height>
+				<width>1920</width>
+                <texture colordiffuse="BaseMediumMid40">colors/color_white.png</texture>
+				<include>Animation_Common_InfoWindow</include>
+            </control>
+
+            <control type="image">
+				<posy>1000</posy>
+                <height>80</height>
+				<width>1920</width>
+                <texture colordiffuse="BaseMediumHigh60">colors/color_white.png</texture>
+				<include>Animation_Common_InfoWindow</include> 
+			</control>
+			
+            <control type="image">
+                <height>1080</height>
+				<width>880</width>
+                <texture colordiffuse="BaseMediumMid">colors/color_white.png</texture>
+				<include>Animation_Common_InfoIcon</include>
+			</control>
+
+            <control type="image">
+				<posy>100</posy>
+                <width>880</width>
+                <height>880</height>
+				<aspectratio>scale</aspectratio>
+                <texture background="true" fallback="DefaultAddon.png">$INFO[ListItem.Icon]</texture>
+				<include>Animation_Common_InfoIcon</include> 
+            </control>
+
+			<!--Broken Addon Info-->
+			<control type="group">
+				<posy>980</posy>
+				<visible>!IsEmpty(ListItem.Property(Addon.Broken))</visible>
+				<include>Animation_Common_InfoPoster</include>
+								
+				<control type="image">
+					<width>880</width>
+					<height>100</height>
+					<texture>colors/color_maroon.png</texture>
+				</control>
+				
+				<control type="image">
+					<posx>10</posx>
+					<posy>10</posy>
+					<width>80</width>
+					<height>80</height>
+					<texture>kai/dialog-warning.png</texture>
+				</control>
+				
+				<control type="textbox">
+					<posx>100</posx>
+					<posy>10</posy>
+					<width>760</width>
+					<height>80</height>
+					<label>$INFO[ListItem.Property(Addon.Broken)]</label>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>font26B</font>
+				</control>
+				
+			</control>
+		   
+        </control>
+		
+		<include>Common_LeftBar</include>
+		
+        <!--Top Section-->
+		<control type="group">
+			<include>Animation_Common_Window</include>
+			<posx>980</posx>
+			<posy>20</posy>
+			
+			<control type="label">
+				<width>900</width>
+				<height>40</height>
+				<font>font45R</font>
+				<textcolor>$VAR[Accent_100]</textcolor>
+				<label>$VAR[Fanart_List_Title]</label>
+			</control>
+
+			<control type="label" id="145">
+				<posy>50</posy>
+				<width>900</width>
+				<textcolor>BaseMid</textcolor>
+				<label>$INFO[ListItem.Property(Addon.Status),,  •  ]$INFO[ListItem.Property(Addon.Version),$LOCALIZE[19114] ,]</label>
+				<include>Common_Fanart_Subtitle</include>
+			</control>
+
+			<!--Control Section-->
+            <control type="grouplist" id="9221">
+				<posy>105</posy>
+				<width>920</width>
+				<height>55</height>
+				<itemgap>20</itemgap>
+				<onup>1</onup> 
+				<ondown>1</ondown>
+				<orientation>horizontal</orientation>
+				<align>center</align>
+				
+				<control type="group">
+					<width>150</width>
+					<visible>Control.IsEnabled(9)</visible>
+				
+					<control type="button" id="9">
+						<include>Common_InfoControl_Button</include>
+						<texturefocus colordiffuse="$VAR[Accent_100]">OSD/presetsettingsFO.png</texturefocus>
+						<texturenofocus colordiffuse="BaseMid">OSD/presetsettingsNF.png</texturenofocus>
+						<label>$LOCALIZE[24020]</label>
+						<ondown>13</ondown>
+						<onup>13</onup>	
+						<onright>8</onright>
+						<onleft>10</onleft>
+					</control>
+				
+				</control>
+
+				<control type="group">
+					<width>150</width>
+					<visible>Control.IsEnabled(8)</visible>
+					
+					<control type="button" id="8">
+						<include>Common_InfoControl_Button</include>
+						<texturefocus colordiffuse="$VAR[Accent_100]">OSD/repeatFO.png</texturefocus>
+						<texturenofocus colordiffuse="BaseMid">OSD/repeatNF.png</texturenofocus>
+						<label>$LOCALIZE[24069]</label>
+						<ondown>13</ondown>
+						<onup>13</onup>	
+						<onright>6</onright>	
+						<onleft>9</onleft>
+					</control>
+				
+				</control>
+				
+				<control type="group">
+					<width>150</width>
+					<visible>Control.IsEnabled(6)</visible>
+					
+					<control type="button" id="6">
+						<include>Common_InfoControl_Button</include>
+						<texturefocus colordiffuse="$VAR[Accent_100]">OSD/InstallFO.png</texturefocus>
+						<texturenofocus colordiffuse="BaseMid">OSD/InstallNF.png</texturenofocus>
+						<label>$LOCALIZE[24038]</label>
+						<ondown>13</ondown>
+						<onup>13</onup>	
+						<onright>7</onright>
+						<onleft>8</onleft>
+					</control>
+				
+				</control>			
+				
+				<control type="group">
+					<width>150</width>
+					<visible>Control.IsEnabled(7)</visible>
+					
+					<control type="button" id="7">
+						<include>Common_InfoControl_Button</include>
+						<texturefocus colordiffuse="$VAR[Accent_100]">OSD/DisableFO.png</texturefocus>
+						<texturenofocus colordiffuse="BaseMid">OSD/DisableNF.png</texturenofocus>					
+						<label>$LOCALIZE[24022]</label>
+						<ondown>13</ondown>
+						<onup>13</onup>	
+						<onright>10</onright>
+						<onleft>6</onleft>
+					</control>
+				
+				</control>					
+				
+				<control type="group">
+					<width>150</width>
+					<visible>Control.IsEnabled(10)</visible>
+					
+					<control type="button" id="10">
+						<include>Common_InfoControl_Button</include>
+						<texturefocus colordiffuse="$VAR[Accent_100]">OSD/ChangelogFO.png</texturefocus>
+						<texturenofocus colordiffuse="BaseMid">OSD/ChangelogNF.png</texturenofocus>
+						<label>$LOCALIZE[24036]</label>
+						<ondown>13</ondown>
+						<onup>13</onup>	
+						<onright>9</onright>
+						<onleft>7</onleft>
+					</control>
+				
+				</control>						
+				
+			</control>			
+			
+			<!--Info Section-->
+			<control type="grouplist">
+				<posy>180</posy>
+				
+				<!-- Addon ID label -->
+				<control type="group">
+					<width>850</width>
+					<height>40</height>
+					
+					<control type="label">
+						<include>Common_Info_Label</include>
+						<label>$LOCALIZE[24000] $LOCALIZE[560] </label>
+					</control>
+					
+					<control type="label">
+						<include>Common_Info_Addon</include>
+						<label fallback="195">$INFO[ListItem.Property(Addon.ID)]</label>
+					</control>
+
+				</control>
+				
+				<!-- Author label -->
+				<control type="group">
+					<width>850</width>
+					<height>40</height>
+
+					<control type="label">
+						<include>Common_Info_Label</include>
+						<label>$LOCALIZE[21863] </label>
+					</control>
+					
+					<control type="label">
+						<include>Common_Info_Addon</include>
+						<label fallback="195">$INFO[ListItem.Property(Addon.Creator)]</label>
+					</control>
+					
+				</control>
+				
+				<!-- Disclaimer label -->
+				<control type="group">
+					<width>850</width>
+					<height>40</height>
+
+					<control type="label">
+						<include>Common_Info_Label</include>
+						<label>$LOCALIZE[24052] </label>
+					</control>
+					
+					<control type="label">
+						<include>Common_Info_Addon</include>
+						<label fallback="195">$INFO[ListItem.Property(Addon.Disclaimer)]</label>
+					</control>
+					
+				</control>
+
+				<!-- Path label -->
+				<control type="group">
+					<width>850</width>
+					<height>40</height>
+					
+					<control type="label">
+						<include>Common_Info_Label</include>
+						<label>$LOCALIZE[31240] </label>
+					</control>
+					
+					<control type="label">
+						<include>Common_Info_Addon</include>
+						<label>$INFO[ListItem.Property(Addon.Path)]</label>
+					</control>
+					
+				</control>
+				
+				<!--Plot-->
+				<control type="group">
+					<width>850</width>
+					<height>365</height>
+					
+					<control type="image">
+						<height>2</height>
+						<width>920</width>
+						<texture colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
+						<include>Animation_Common_Window</include>
+					</control>
+							
+					<control type="textbox">
+						<description>Plot</description>
+						<posy>10</posy>
+						<width>920</width>
+						<height>600</height>
+						<font>font26R</font>
+						<align>justify</align>
+						<label>$INFO[ListItem.Property(Addon.Description)]</label>
+						<textcolor>BaseMid</textcolor>
+					</control>
+					
+				</control>
+
+			</control>			
+
+			<control type="grouplist">
+				<description>Audo Update</description>
+				<posx>50</posx>
+				<posy>990</posy>
+				<width>850</width>
+				<align>right</align>
+				<itemgap>50</itemgap>
+				<orientation>horizontal</orientation>
+
+				<control type="radiobutton" id="13">
+					<onup>9221</onup>
+					<ondown>9221</ondown>
+					<width>300</width>
+					<textwidth>340</textwidth>
+					<font>font30R</font>
+					<textoffsetx>10</textoffsetx>
+					<align>left</align>
+					<textureradiooffnofocus colordiffuse="BaseWhite">controls/RadiobuttonOFF.png</textureradiooffnofocus>
+					<textureradioonnofocus colordiffuse="BaseWhite">controls/RadiobuttonON.png</textureradioonnofocus>
+					<label>$LOCALIZE[21340]</label>
+				</control>
+
+			</control>
+			
+        </control>
+
+	</controls>
+	
+</window>

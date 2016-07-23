@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<window id="29">
+    <defaultcontrol always="true">52</defaultcontrol>
+	
+    <controls>
+	
+        <control type="image">
+            <include>Dimensions_Fullscreen</include>
+            <include>Common_Color_Accent</include>
+        </control>
+		
+        <control type="image">
+            <width>450</width>
+			<height>1080</height>
+            <texture colordiffuse="Black20">colors/color_white.png</texture>
+        </control>	
+		
+		<control type="image">
+			<posx>1470</posx>
+            <width>450</width>
+			<height>1080</height>
+            <texture colordiffuse="Black20">colors/color_white.png</texture>
+        </control>	
+
+		<control type="label">
+			<posy>100</posy>
+			<width>1920</width>
+			<height>60</height>
+			<font>font80</font>
+			<align>center</align>
+			<label>$LOCALIZE[31187]</label>
+		</control>		
+		
+        <control type="group">
+            <posy>427</posy>
+            <posx>550</posx>
+			
+			<control type="fixedlist" id="52">
+                <width>820</width>
+                <height>718</height>
+                <onleft>20</onleft>
+                <onright>20</onright>
+                <onup>52</onup>
+                <ondown>52</ondown>
+                <focusposition>0</focusposition>
+                <itemlayout height="156" width="870">
+				
+					<control type="image">
+						<posx>125</posx>
+						<width>100</width>
+						<height>100</height>
+						<texture colordiffuse="BaseMediumHigh" diffuse="masks/lg_circle.png">colors/color_white.png</texture>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+					</control>
+					
+					<control type="image">
+						<posx>125</posx>
+						<width>100</width>
+						<height>100</height>
+						<texture fallback="DefaultArtist.png" diffuse="masks/lg_circle.png">$INFO[ListItem.Icon]</texture>
+						<aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
+					</control>
+
+					<control type="label">
+						<posy>20</posy>
+                        <include>Common_Login_Label</include>
+                    </control>
+					
+                    <control type="label">
+                        <posy>50</posy>
+                        <include>Common_Login_Label2</include>
+                    </control>
+					
+                </itemlayout>
+				
+                <focusedlayout height="250" width="870">
+					
+					<control type="image">
+						<width>225</width>
+						<height>225</height>
+						<texture colordiffuse="BaseMediumHigh" diffuse="masks/lg_circle.png">colors/color_white.png</texture>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+					</control>
+					
+					<control type="image">
+						<width>225</width>
+						<height>225</height>
+						<texture fallback="DefaultArtist.png" diffuse="masks/lg_circle.png">$INFO[ListItem.Icon]</texture>
+						<aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
+					</control>
+
+					<control type="label">
+						<posy>70</posy>
+                        <include>Common_Login_Label</include>
+                    </control>
+					
+                    <control type="label">
+                        <posy>120</posy>
+                        <include>Common_Login_Label2</include>
+                    </control>
+				
+                </focusedlayout>
+				
+            </control>
+
+            <control type="image">
+                <include>Common_Login_Next</include>
+                <texture>buttonmenu/nextNF.png</texture>
+            </control>
+			
+            <control type="image">
+                <include>Common_Login_Next</include>
+                <texture>buttonmenu/nextFO.png</texture>
+                <visible>Control.HasFocus(52)</visible>
+            </control>
+
+        </control>
+		
+        <control type="button" id="20">
+            <posx>1815</posx>
+            <posy>975</posy>
+            <width>75</width>
+            <height>75</height>
+            <onclick>Shutdown()</onclick>
+            <texturefocus>buttons/powerFO.png</texturefocus>
+            <texturenofocus>buttons/powerNF.png</texturenofocus>
+            <onleft>52</onleft>
+            <onright>52</onright>
+            <onup>52</onup>
+            <ondown>52</ondown>
+        </control>
+		
+    </controls>
+	
+</window>

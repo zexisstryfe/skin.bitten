@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window>
+	<defaultcontrol always="true">10</defaultcontrol>
+
+    <controls>
+        <include>DialogOverlay</include>
+		<include>Common_LeftMenu_Wide_Backing</include>			
+		<include>Common_LeftBar_Wide_LeftMenu</include>			
+
+        <control type="group">
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="500" delay="900" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="200" />
+			</animation>
+
+            <control type="label" id="0">
+				<posx>15</posx>
+				<height>75</height>
+                <font>font45R</font>
+                <label>$LOCALIZE[29900]</label>
+            </control>
+
+			<control type="image">
+				<posx>549</posx>
+				<posy>110</posy>
+				<width>2</width>
+				<height>680</height>
+				<include>Common_Color_BaseMediumHigh</include>
+			</control>
+
+			<control type="image">
+				<posx>30</posx>
+				<posy>800</posy>
+				<width>1040</width>
+				<height>2</height>
+				<include>Common_Color_BaseMediumHigh</include>
+			</control>
+
+			<!-- Info Section- Left -->
+            <control type="grouplist">
+                <posx>20</posx>
+                <posy>120</posy>
+                <width>510</width>
+                <height>900</height>
+                <itemgap>15</itemgap>
+                <usecontrolcoords>true</usecontrolcoords>		
+
+				<!-- Composer -->
+				<control type="label">
+					<include>Common_Infolist_Label</include>
+					<label>$LOCALIZE[29903]</label>
+					<visible>!IsEmpty(RDS.Composer)</visible>
+				</control>
+				
+				<control type="label">
+					<include>Common_Infolist_RDSInfo</include>
+					<label fallback="195">$INFO[RDS.Composer]</label>
+					<visible>!IsEmpty(RDS.Composer)</visible>
+				</control>
+
+				<!-- Artist -->
+				<control type="label">
+					<include>Common_Infolist_Label</include>
+					<label>$LOCALIZE[557]</label>
+					<visible>IsEmpty(RDS.Band) + !IsEmpty(RDS.Artist)</visible>
+				</control>
+				
+				<control type="label">
+					<include>Common_Infolist_RDSInfo</include>
+					<label fallback="195">$INFO[RDS.Artist]</label>
+					<visible>IsEmpty(RDS.Band) + !IsEmpty(RDS.Artist)</visible>
+				</control>
+
+				<!-- Band -->
+                <control type="label">
+                    <include>Common_Infolist_Label</include>
+                    <label>$LOCALIZE[29901]</label>
+                    <visible>!IsEmpty(RDS.Band)</visible>
+                </control>
+				
+                <control type="label">
+					<include>Common_Infolist_RDSInfo</include>
+                    <label fallback="195">$INFO[RDS.Band]</label>
+					<visible>!IsEmpty(RDS.Band)</visible>
+                </control>
+
+				<!-- Title -->
+				<control type="label">
+					<include>Common_Infolist_Label</include>
+					<label>$LOCALIZE[556]</label>
+				</control>
+				
+				<control type="label">
+					<include>Common_Infolist_RDSInfo</include>
+					<label fallback="195">$INFO[RDS.Title]</label>
+				</control>	
+
+				<!-- Album -->
+                <control type="label">
+                    <include>Common_Infolist_Label</include>
+                    <label>$LOCALIZE[558]</label>
+                    <visible>!IsEmpty(RDS.Album)</visible>
+                </control>
+				
+                <control type="label">
+					<include>Common_Infolist_RDSInfo</include>
+                    <label fallback="195">$INFO[RDS.Album]</label>
+					<visible>!IsEmpty(RDS.Album)</visible>
+                </control>
+
+				<!-- Conductor -->
+                <control type="label">
+                    <include>Common_Infolist_Label</include>
+                    <label>$LOCALIZE[29905]</label>
+                    <visible>!IsEmpty(RDS.Conductor)</visible>
+                </control>
+				
+                <control type="label">
+					<include>Common_Infolist_RDSInfo</include>
+                    <label fallback="195">$INFO[RDS.Conductor]</label>
+					<visible>!IsEmpty(RDS.Conductor)</visible>
+                </control>				
+
+				<!-- Program Style -->
+                <control type="label">
+                    <include>Common_Infolist_Label</include>
+                    <label>$LOCALIZE[29902]</label>
+                    <visible>!IsEmpty(RDS.ProgStyle)</visible>
+                </control>
+				
+                <control type="label">
+					<include>Common_Infolist_RDSInfo</include>
+                    <label fallback="195">$INFO[RDS.ProgStyle]</label>
+					<visible>!IsEmpty(RDS.ProgStyle)</visible>
+                </control>
+
+				<!-- Station -->
+                <control type="label">
+                    <include>Common_Infolist_RDSInfo</include>
+                    <label>-</label>
+                </control>
+				
+                <control type="label">
+                	<align>center</align>
+					<include>Common_Infolist_RDSLabel</include>
+                    <label fallback="$LOCALIZE[31367]">$INFO[RDS.ProgStation]</label>
+                    <visible>!IsEmpty(RDS.ProgNow) | !IsEmpty(RDS.ProgNext)</visible>
+                </control>
+
+				<!-- Now -->
+                <control type="label">
+                    <include>Common_Infolist_Label</include>
+                    <label>$LOCALIZE[19030]</label>
+                    <visible>!IsEmpty(RDS.ProgNow)</visible>
+                </control>
+				
+                <control type="label">
+					<include>Common_Infolist_RDSInfo</include>
+                    <label fallback="195">$INFO[RDS.ProgNow]</label>
+					<visible>!IsEmpty(RDS.ProgNow)</visible>
+                </control>				
+
+				<!-- Next -->
+                <control type="label">
+                    <include>Common_Infolist_Label</include>
+                    <label>$LOCALIZE[19031]</label>
+                    <visible>!IsEmpty(RDS.ProgNext)</visible>
+                </control>
+				
+                <control type="label">
+					<include>Common_Infolist_RDSInfo</include>
+                    <label fallback="195">$INFO[RDS.ProgNext]</label>
+					<visible>!IsEmpty(RDS.ProgNext)</visible>
+                </control>
+
+            </control>
+
+			<!-- Info Section- Right -->
+            <control type="grouplist">
+                <posx>570</posx>
+                <posy>120</posy>
+                <width>510</width>
+                <height>900</height>
+                <itemgap>15</itemgap>
+                <usecontrolcoords>true</usecontrolcoords>		
+
+				<!-- Host -->
+				<control type="label">
+					<include>Common_Infolist_Label</include>
+					<label>$LOCALIZE[29906]</label>
+					<visible>!IsEmpty(RDS.ProgHost)</visible>
+				</control>
+				
+				<control type="label">
+					<include>Common_Infolist_RDSInfo</include>
+					<label fallback="195">$INFO[RDS.ProgHost]</label>
+					<visible>!IsEmpty(RDS.ProgHost)</visible>
+				</control>
+
+				<!-- Comment -->
+				<control type="label">
+					<include>Common_Infolist_Label</include>
+					<label>$LOCALIZE[569]</label>
+					<visible>!IsEmpty(RDS.Comment)</visible>
+				</control>
+				
+				<control type="label">
+					<include>Common_Infolist_RDSInfo</include>
+					<label fallback="195">$INFO[RDS.Comment]</label>
+					<visible>!IsEmpty(RDS.Comment)</visible>
+				</control>
+
+				<!-- Editorial Staff -->
+                <control type="label">
+                    <include>Common_Infolist_Label</include>
+                    <label>$LOCALIZE[29907]</label>
+                    <visible>!IsEmpty(RDS.ProgEditStaff)</visible>
+                </control>
+				
+                <control type="label">
+					<include>Common_Infolist_RDSInfo</include>
+                    <label fallback="195">$INFO[RDS.ProgEditStaff]</label>
+					<visible>!IsEmpty(RDS.ProgEditStaff)</visible>
+                </control>
+
+				<!-- Phone (Studio) -->
+				<control type="label">
+					<include>Common_Infolist_Label</include>
+					<label>$LOCALIZE[29910] ($LOCALIZE[29909])</label>
+					<visible>!IsEmpty(RDS.PhoneStudio)</visible>
+				</control>
+				
+				<control type="label">
+					<include>Common_Infolist_RDSInfo</include>
+					<label fallback="195">$INFO[RDS.PhoneStudio]</label>
+					<visible>!IsEmpty(RDS.PhoneStudio)</visible>
+				</control>	
+
+				<!-- Email (Studio) -->
+                <control type="label">
+                    <include>Common_Infolist_Label</include>
+                    <label>$LOCALIZE[29911] ($LOCALIZE[29909])</label>
+                    <visible>!IsEmpty(RDS.EmailStudio)</visible>
+                </control>
+				
+                <control type="label">
+					<include>Common_Infolist_RDSInfo</include>
+                    <label fallback="195">$INFO[RDS.EmailStudio]</label>
+					<visible>!IsEmpty(RDS.EmailStudio)</visible>
+                </control>
+
+				<!-- SMS (Studio) -->
+                <control type="label">
+                    <include>Common_Infolist_Label</include>
+                    <label>$LOCALIZE[29912] ($LOCALIZE[29909])</label>
+                    <visible>!IsEmpty(RDS.SMSStudio)</visible>
+                </control>
+				
+                <control type="label">
+					<include>Common_Infolist_RDSInfo</include>
+                    <label fallback="195">$INFO[RDS.SMSStudio]</label>
+					<visible>!IsEmpty(RDS.SMSStudio)</visible>
+                </control>				
+
+				<!-- Phone (Hotline) -->
+                <control type="label">
+                    <include>Common_Infolist_Label</include>
+                    <label>$LOCALIZE[29910] ($LOCALIZE[29913])</label>
+                    <visible>!IsEmpty(RDS.PhoneHotline)</visible>
+                </control>
+				
+                <control type="label">
+					<include>Common_Infolist_RDSInfo</include>
+                    <label fallback="195">$INFO[RDS.PhoneHotline]</label>
+					<visible>!IsEmpty(RDS.PhoneHotline)</visible>
+                </control>
+
+				<!-- Email (Hotline) -->
+                <control type="label">
+                    <include>Common_Infolist_Label</include>
+                    <label>$LOCALIZE[29911] ($LOCALIZE[29913])</label>
+                    <visible>!IsEmpty(RDS.EmailHotline)</visible>
+                </control>
+				
+                <control type="label">
+					<include>Common_Infolist_RDSInfo</include>
+                    <label fallback="195">$INFO[RDS.EmailHotline]</label>
+					<visible>!IsEmpty(RDS.EmailHotline)</visible>
+                </control>				
+
+				<!-- Website -->
+                <control type="label">
+                    <include>Common_Infolist_Label</include>
+                    <label>$LOCALIZE[29914]</label>
+                    <visible>!IsEmpty(RDS.ProgHomepage)</visible>
+                </control>
+				
+                <control type="label">
+					<include>Common_Infolist_RDSInfo</include>
+                    <label fallback="195">$INFO[RDS.ProgHomepage]</label>
+					<visible>!IsEmpty(RDS.ProgHomepage)</visible>
+                </control>
+
+            </control>
+			
+			<!-- Info Section- Plot -->
+            <control type="grouplist">
+                <posx>20</posx>
+                <posy>820</posy>
+                <width>1060</width>
+                <height>220</height>
+                <itemgap>15</itemgap>
+                <usecontrolcoords>true</usecontrolcoords>		
+
+				<!-- Plot -->
+				<control type="label">
+					<include>Common_Infolist_Label</include>
+					<label>$LOCALIZE[29915]</label>
+				</control>
+				
+				<control type="textbox" id="22">
+					<posx>20</posx>
+					<posy>-15</posy>
+			        <width>1020</width>
+			        <height>145</height>
+					<font>font30R</font>
+					<textcolor>BaseMediumHigh</textcolor> 
+					<pagecontrol>60</pagecontrol> 
+					<label fallback="195">-</label>
+				</control>
+
+            </control> 
+
+			<!-- Button Section -->
+			<control type="grouplist" id="9000">
+				<posy>1005</posy>
+				<width>1040</width>
+				<align>center</align>
+				<itemgap>0</itemgap>
+				<orientation>horizontal</orientation>
+				<onleft>60</onleft>
+				<onright>60</onright>
+
+				<control type="button" id="10">
+					<description>Yes</description>
+					<label>$LOCALIZE[186]</label>
+					<include>InfoDialog_Button</include>
+				</control>
+
+			</control>
+			
+			<control type="spincontrol" id="60">
+				<description>Next Page</description>
+				<posx>900</posx>
+				<posy>1015</posy>
+				<onleft>10</onleft>
+				<onright>10</onright>
+				<font>-</font>
+		        <height>40</height>
+		        <width>40</width>
+		        <textureup colordiffuse="BaseMediumHigh">controls/ArrowUpNF.png</textureup>
+		        <texturedown colordiffuse="BaseMediumHigh">controls/ArrowDownNF.png</texturedown>
+		        <textureupfocus colordiffuse="$VAR[Accent_100]">controls/ArrowUpFO.png</textureupfocus>
+		        <texturedownfocus colordiffuse="$VAR[Accent_100]">controls/ArrowDownFO.png</texturedownfocus>
+				<visible>IntegerGreaterThan(Container(22).NumPages,1)</visible>			
+			</control>
+
+		</control>
+
+	</controls>
+
+</window>

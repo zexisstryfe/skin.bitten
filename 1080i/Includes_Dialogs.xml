@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<includes>
+	<!-- NEW INCLUDES-->
+	<include name="InfoDialog_Base">
+	
+		<include>Common_Animation_Dialog</include>
+
+		<control type="image">			
+			<width>1920</width>
+			<height>450</height>
+			<texture colordiffuse="BaseWhite">colors/color_white.png</texture>			
+		</control>
+		
+		<control type="image">			
+			<width>1920</width>
+			<include>InfoDialog_Header</include>		
+		</control>		
+		
+		<control type="label" id="1">			
+			<description>Heading</description>
+			<posx>300</posx>
+			<width>885</width>
+			<height>75</height>
+			<font>font45R</font>			
+		</control>
+	
+		<control type="group">			
+			<posx>450</posx>
+			<posy>100</posy>
+			
+			<control type="textbox" id="9">
+				
+				<description>Line 1</description>
+				<width>1020</width>
+				<height>240</height>
+				<font>font36</font>
+				<align>center</align>
+				<textcolor>BaseMediumHigh</textcolor>
+				
+			</control>
+			
+		</control>
+			
+	</include>
+
+	<include name="InfoDialog_Button">	
+        <posy>285</posy>
+		<width>320</width>
+		<texturefocus colordiffuse="$VAR[Accent_100]">colors/color_white.png</texturefocus>
+		<texturenofocus colordiffuse="BaseMediumMid">colors/color_white.png</texturenofocus>
+		<font>font36</font>
+		<textcolor>BaseWhite</textcolor>
+		<focusedcolor>BaseWhite</focusedcolor>
+		<disabledcolor>BaseMid</disabledcolor>
+		<textoffsety>6</textoffsety>
+		<align>center</align>
+		<aligny>top</aligny>	
+	</include>
+	
+	<include name="InfoDialog_Header">
+        <height>75</height>
+		<texture colordiffuse="BaseMediumHigh">colors/color_white.png</texture>		
+    </include>
+
+    <include name="InfoDialog_Heading">
+		<height>75</height>
+		<font>font45R</font>
+        <textcolor>BaseWhite</textcolor>
+        <scroll>true</scroll>
+    </include>
+
+    <include name="InfoDialog_Volume_Icon">
+		<width>75</width>
+		<height>75</height>
+		<aspectratio>keep</aspectratio>
+		<texture>volume/VolumeIcon.png</texture>
+    </include>
+
+    <include name="InfoDialog_Volume_Label">
+		<posy>10</posy>
+		<height>24</height>
+		<aligny>center</aligny>
+		<font>font24B</font>
+		<textcolor>BaseMediumHigh</textcolor>
+    </include>
+
+	<include name="InfoDialog_Label">
+		<textcolor>BaseMediumHigh</textcolor>
+		<focusedcolor>BaseWhite</focusedcolor>
+		<align>left</align>
+		<aligny>center</aligny>
+		<font>font30R</font>
+		<disabledcolor>BaseLow</disabledcolor>
+		<radioposx>590</radioposx>
+    </include>	
+	
+	<include name="FirstRun_Labels">
+        <font>font30</font>
+        <wrapmultiline>true</wrapmultiline>
+        <width>1350</width>
+        <height>60</height>
+		<textcolor>BaseMediumHigh</textcolor>
+    </include>
+
+    <include name="SelectDialog_Labels">
+		<posx>180</posx>
+		<width>400</width>
+		<height>50</height>
+		<font>font30R</font>
+		<textcolor>BaseMediumHigh</textcolor>
+    </include>
+
+	<!-- OLD INCLUDES-->
+    <include name="TileCreator_Buttons1">
+        <width>870</width>
+        <height>50</height>
+        <align>left</align>
+        <textoffsetx>15</textoffsetx>		
+		<label>$LOCALIZE[467]</label>
+		<label2>$INFO[Skin.String(HomeTileEdit.TypeName)]</label2>
+	</include>
+	
+    <include name="TileCreator_Buttons2">
+		<posx>450</posx>
+        <width>960</width>
+        <height>50</height>
+        <align>left</align>
+        <textoffsetx>15</textoffsetx>
+		<textcolor>BaseMediumHigh</textcolor>
+		<focusedcolor>BaseWhite</focusedcolor>
+    </include>
+
+    <include name="KaiToast_Icon">
+        <posx>10</posx>
+        <posy>10</posy>
+        <width>130</width>
+        <height>130</height>
+        <aspectratio>keep</aspectratio>
+    </include>
+
+    <include name="Seekbar_Label">
+        <posy>375</posy>
+        <width>1920</width>
+        <textcolor>$VAR[Accent_60]</textcolor>
+        <align>center</align>
+        <font>font72UB</font>
+    </include>
+
+    <include name="RateDialog_Button">
+        <width>54</width>
+        <height>54</height>
+        <texturefocus colordiffuse="$VAR[Accent_100]">flags/ratings/star.png</texturefocus>
+        <texturenofocus colordiffuse="BaseMediumMid">flags/ratings/star.png</texturenofocus>
+        <align>center</align>
+        <aligny>center</aligny>
+		<ondown>11010</ondown>
+		<onup>11010</onup>
+        <animation effect="zoom" end="115,115" center="auto" time="100">focus</animation>
+    </include>
+
+    <include name="RateDialog_NoStar">
+        <width>52</width>
+        <height>52</height>
+        <texture colordiffuse="BaseMediumHigh">flags/ratings/star.png</texture>
+    </include>
+
+    <include name="Seekbar_Image">
+        <posy>466</posy>
+        <width>1920</width>
+        <height>192</height>
+        <fadetime>200</fadetime>
+        <aspectratio>keep</aspectratio>
+        <colordiffuse>White60</colordiffuse>
+    </include>
+
+    <include name="Dialog_Button">
+        <width>72</width>
+        <height>72</height>
+        <textoffsetx>3000</textoffsetx>
+    </include>
+
+    <include name="Dialog_OkButton">
+        <include>Dialog_Button</include>
+        <texturefocus>buttons/okFO.png</texturefocus>
+        <texturenofocus>buttons/okNF.png</texturenofocus>
+    </include>
+
+    <include name="Dialog_CancelButton">
+        <include>Dialog_Button</include>
+        <texturefocus>buttons/cancelFO.png</texturefocus>
+        <texturenofocus>buttons/cancelNF.png</texturenofocus>
+    </include>
+
+    <include name="Dialog_Header">
+        <posy>15</posy>
+        <align>right</align>
+        <font>font40LB</font>
+        <textcolor>$VAR[Accent_100]</textcolor>
+        <scroll>true</scroll>
+    </include>
+
+    <include name="Dialog_Line">
+        <height>6</height>
+        <include>Common_Color_Accent</include>
+        <posx>0</posx>
+        <posy>90</posy>
+    </include>
+    
+</includes>

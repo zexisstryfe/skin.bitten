@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<window id="5100">
+    <defaultcontrol>5110</defaultcontrol>
+
+    <coordinates>
+        <system>1</system>
+    </coordinates>
+	
+    <controls>
+        <include>DialogOverlay</include>
+		
+        <control type="group">
+            <posx>698</posx>
+            <posy>52</posy>
+            <include>Animation_Dialog_Center</include>
+			
+            <control type="image">
+                <description>background top image</description>
+                <width>525</width>
+                <height>975</height>
+                <include>Common_Color_BaseWhite</include>
+            </control>
+			
+            <control type="image">
+                <description>header</description>
+                <width>525</width>
+                <include>InfoDialog_Header</include>
+            </control>
+			
+            <control type="label">
+                <description>menu</description>
+                <posx>15</posx>
+                <width>495</width>
+                <include>InfoDialog_Heading</include>
+                <label>$LOCALIZE[33061]</label>
+            </control>
+			
+            <control type="grouplist" id="5109">
+                <posy>105</posy>
+                <width>525</width>
+                <height>840</height>
+				<itemgap>0</itemgap>
+				
+                <control type="button" id="5110">
+                    <description>button import games</description>
+                    <include>RCB_Context_Button</include>
+                    <label>$ADDON[script.games.rom.collection.browser 51000]</label>
+                </control>
+				
+                <control type="button" id="5121">
+                    <description>button rescrape game</description>
+                    <include>RCB_Context_Button</include>
+                    <label>$ADDON[script.games.rom.collection.browser 51001]</label>
+                </control>
+				
+                <control type="button" id="5122">
+                    <description>button rescrape selection</description>
+                    <include>RCB_Context_Button</include>
+                    <label>$ADDON[script.games.rom.collection.browser 51002]</label>
+                </control>
+				
+                <control type="button" id="5111">
+                    <description>button add rom collection</description>
+                    <include>RCB_Context_Button</include>
+                    <label>$ADDON[script.games.rom.collection.browser 51003]</label>
+                </control>
+				
+                <control type="button" id="5112">
+                    <description>button edit rom collection</description>
+                    <include>RCB_Context_Button</include>
+                    <label>$ADDON[script.games.rom.collection.browser 51004]</label>
+                </control>
+				
+                <control type="button" id="5117">
+                    <description>button edit offline scraper</description>
+                    <include>RCB_Context_Button</include>
+                    <label>$ADDON[script.games.rom.collection.browser 51005]</label>
+                </control>
+				
+                <control type="button" id="5113">
+                    <description>button edit command</description>
+                    <include>RCB_Context_Button</include>
+                    <label>$ADDON[script.games.rom.collection.browser 51006]</label>
+                </control>
+				
+                <control type="button" id="5118">
+                    <description>button game as favorite</description>
+                    <include>RCB_Context_Button</include>
+                    <label>$ADDON[script.games.rom.collection.browser 51007]</label>
+                </control>
+				
+                <control type="button" id="5119">
+                    <description>button selection as favorite</description>
+                    <include>RCB_Context_Button</include>
+                    <label>$ADDON[script.games.rom.collection.browser 51008]</label>
+                </control>
+				
+                <control type="button" id="5120">
+                    <description>button export nfo files</description>
+                    <include>RCB_Context_Button</include>
+                    <label>$ADDON[script.games.rom.collection.browser 51009]</label>
+                </control>
+				
+                <control type="button" id="5114">
+                    <description>button delete rom</description>
+                    <include>RCB_Context_Button</include>
+                    <label>$ADDON[script.games.rom.collection.browser 51010]</label>
+                </control>
+				
+                <control type="button" id="5115">
+                    <description>button delete rom collection</description>
+                    <include>RCB_Context_Button</include>
+                    <label>$ADDON[script.games.rom.collection.browser 51011]</label>
+                </control>
+				
+                <control type="button" id="5116">
+                    <description>button clean database</description>
+                    <include>RCB_Context_Button</include>
+                    <label>$ADDON[script.games.rom.collection.browser 51012]</label>
+                </control>
+				
+                <control type="button" id="5223">
+                    <description>button open settings</description>
+                    <include>RCB_Context_Button</include>
+                    <label>$ADDON[script.games.rom.collection.browser 51013]</label>
+                </control>
+				
+            </control>
+			
+        </control>
+		
+    </controls>
+	
+</window>

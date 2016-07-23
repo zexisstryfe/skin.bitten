@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="139">
+    <defaultcontrol always="true">5</defaultcontrol>
+	
+    <controls>
+        <!--Background Area-->
+        <control type="group">
+		
+            <control type="image">
+                <include>Dimensions_Fullscreen</include>
+				<texture background="true" fallback="special://skin/extras/backgrounds/pictures.jpg">$INFO[ListItem.Art(fanart)]</texture>
+				<aspectratio>scale</aspectratio>
+				<include>Animation_Common_InfoWindow</include>
+            </control>
+
+			<control type="image">
+                <include>Dimensions_Fullscreen</include>
+                <include>Common_Color_BaseWhite80</include>
+				<include>Animation_Common_InfoWindow</include>
+            </control>
+
+            <control type="image">
+				<posy>110</posy>
+                <height>80</height>
+				<width>1920</width>
+                <texture colordiffuse="BaseMediumMid40">colors/color_white.png</texture>
+				<include>Animation_Common_InfoWindow</include>
+            </control>
+
+            <control type="image">
+				<posy>1000</posy>
+                <height>80</height>
+				<width>1920</width>
+                <texture colordiffuse="BaseMediumHigh60">colors/color_white.png</texture>
+				<include>Animation_Common_InfoWindow</include> 
+			</control>
+			
+            <control type="image">
+                <height>1080</height>
+				<width>880</width>
+                <texture colordiffuse="BaseMediumMid">colors/color_white.png</texture>
+				<include>Animation_Common_InfoIcon</include>
+			</control>	
+
+            <control type="image">
+                <width>880</width>
+                <height>1080</height>
+				<aspectratio>scale</aspectratio>
+                <texture background="true" fallback="DefaultAddon.png">$INFO[ListItem.Thumb]</texture>
+				<include>Animation_Common_InfoIcon</include> 
+            </control>
+			
+		</control>
+	
+		<include>Common_LeftBar</include>	
+	
+        <!--Top Section-->
+		<control type="group">
+			<include>Animation_Common_Window</include>
+			<posx>980</posx>
+			<posy>20</posy>
+			
+			<control type="label">
+				<width>900</width>
+				<height>40</height>
+				<font>font45R</font>
+				<textcolor>$VAR[Accent_100]</textcolor>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+	
+			<!--Attribute List-->
+			<control type="list" id="5">
+				<posy>180</posy>
+				<width>920</width>
+                <height>714</height>
+                <onup>5</onup>
+                <ondown>5</ondown>
+                <itemlayout height="40">
+
+					<control type="label">
+						<include>Common_Info_Pics_Label</include>
+						<label>$INFO[ListItem.Label]</label>
+					</control>				
+
+					<control type="label">
+						<include>Common_Info_Pics</include>
+						<label>$INFO[ListItem.Label2]</label>
+					</control>					
+
+                </itemlayout>
+				
+                <focusedlayout height="40">
+				
+                    <control type="image">
+                        <posx>-20</posx>
+						<width>960</width>
+                        <height>40</height>
+                        <include>Common_Color_Accent</include>
+                    </control>
+					
+					<control type="label">
+						<include>Common_Info_Pics_Label2</include>
+						<label>$INFO[ListItem.Label]</label>
+					</control>				
+
+					<control type="label">
+						<include>Common_Info_Pics2</include>
+						<label>$INFO[ListItem.Label2]</label>
+					</control>	
+					
+                </focusedlayout>
+				
+            </control>	
+
+		</control>
+
+    </controls>
+	
+</window>

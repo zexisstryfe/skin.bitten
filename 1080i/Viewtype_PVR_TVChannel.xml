@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<includes>
+
+    <include name="LiveTVChannelView">
+
+        <control type="group">
+            <description>TV Channels group</description>
+            <visible>Control.IsVisible(11)</visible>
+			
+			<control type="image">
+				<include>Common_Animation_CenterMenu_Stage2</include>
+				<posy>315</posy>
+				<width>1920</width>
+				<height>675</height>
+                <texture colordiffuse="BaseMid">colors/color_white.png</texture>
+            </control>
+			
+            <control type="group">
+				<include>Common_Animation_PVR</include>
+				<posy>320</posy>
+
+                <control type="label"> 
+					<posx>114</posx>
+                    <width>900</width>
+                    <height>50</height>
+                    <font>font50B</font>
+                    <label>$INFO[Control.GetLabel(29),[COLOR White]$LOCALIZE[31084] [/COLOR]]</label>
+                    <textcolor>$VAR[Accent_100]</textcolor>
+                </control>
+
+				<control type="image">	
+					<include>Common_Animation_CenterMenu_Stage3</include>
+					<posy>65</posy>
+					<width>1920</width>
+					<height>596</height>
+					<texture colordiffuse="BaseMediumHigh">colors/color_white.png</texture>			
+				</control>
+				
+				<control type="image">	
+					<posy>65</posy>
+					<width>1000</width>
+					<height>596</height>
+					<texture colordiffuse="BaseWhite">colors/color_white.png</texture>	
+					<include>Common_Animation_CenterMenu_Stage2</include>
+				</control>
+
+                <control type="scrollbar" id="70">
+					<include>Common_Animation_CenterMenu_Stage2</include>
+					<posy>65</posy>
+					<posx>1000</posx>
+                    <height>596</height>
+                    <width>10</width>
+                    <onright condition="Player.HasMedia">111</onright>
+					<onright condition="!Player.HasMedia">Dialog.Close(1119)</onright>
+					<onright condition="!Player.HasMedia">SetFocus(9050)</onright>
+                    <onleft>11</onleft>
+                </control>
+				
+                <control type="group">
+                    <posy>65</posy>			
+					
+					<control type="list" id="11">
+						<include>Common_Animation_CenterMenu_Stage2</include>
+						<posx>80</posx>
+						<width>920</width>
+						<height>596</height>
+						<onleft condition="Player.HasMedia">111</onleft>
+						<onleft condition="!Player.HasMedia">Dialog.Close(1119)</onleft>
+						<onleft condition="!Player.HasMedia">SetFocus(9050)</onleft>
+						<onright>70</onright>
+						<onup>11</onup>
+						<ondown>11</ondown>
+						<pagecontrol>70</pagecontrol>
+						<itemlayout height="85">
+
+							<control type="image">
+								<posx>10</posx>
+								<posy>10</posy>
+								<width>65</width>
+								<height>65</height>
+								<texture>backings/circle.png</texture>
+							</control>
+
+							<control type="label">
+								<posx>10</posx>
+								<posy>10</posy>
+								<width>65</width>
+								<height>65</height>
+								<align>center</align>
+								<font>font26B</font>
+								<label>$INFO[ListItem.ChannelNumber]</label>
+							</control>
+							
+							<include>Common_Watched_LiveTV</include>
+
+							<control type="label">
+								<posx>85</posx>
+								<width>280</width>
+								<height>85</height>
+								<font>font30B</font>
+								<textcolor>BaseMediumHigh</textcolor>
+								<label>$INFO[ListItem.Label]</label>
+							</control>
+
+							<control type="textbox">
+								<posx>380</posx>
+								<width>520</width>
+								<font>font26R</font>
+								<textcolor>BaseMediumHigh</textcolor>
+								<aligny>center</aligny>
+								<label>$INFO[ListItem.Title]</label>
+							</control>
+							
+						</itemlayout>
+						
+						<focusedlayout height="85">
+						
+							<control type="image">
+								<width>920</width>
+								<include>Common_Color_Accent</include>
+							</control>
+							
+							<control type="image">
+								<posx>10</posx>
+								<posy>10</posy>
+								<width>65</width>
+								<height>65</height>
+								<texture diffuse="masks/circle.png">colors/color_white.png</texture>
+							</control>
+
+							<control type="label">
+								<posx>10</posx>
+								<posy>10</posy>
+								<width>65</width>
+								<height>65</height>
+								<align>center</align>
+								<font>font26B</font>
+								<textcolor>BaseMediumHigh</textcolor>
+								<label>$INFO[ListItem.ChannelNumber]</label>
+							</control>
+							
+							<include>Common_Watched_LiveTV</include>
+
+							<control type="label">
+								<posx>85</posx>
+								<width>280</width>
+								<height>85</height>
+								<font>font30B</font>
+								<label>$INFO[ListItem.Label]</label>
+							</control>
+
+							<control type="textbox">
+								<posx>380</posx>
+								<width>520</width>
+								<font>font26R</font>
+								<textcolor>BaseLow</textcolor>
+								<aligny>center</aligny>
+								<label>$INFO[ListItem.Title]</label>
+							</control>
+							
+						</focusedlayout>
+						
+					</control>
+
+					<control type="group">
+						<include>Common_Animation_CenterMenu_Fade2</include>
+						<posx>1010</posx>
+						
+						<control type="fadelabel">
+							<posx>25</posx>
+							<posy>8</posy>
+							<width>860</width>
+							<height>45</height>
+							<font>font50R</font>
+							<label>$INFO[Container(11).ListItem.Title]</label>
+							<textcolor>$VAR[Accent_100]</textcolor>
+						</control>
+
+						<control type="label">
+							<posx>25</posx>
+							<posy>55</posy>
+							<width>860</width>
+							<height>45</height>
+							<font>font24B</font>
+							<label>$INFO[Container(11).ListItem.Genre] • $INFO[Container(11).ListItem.StartTime] - $INFO[Container(11).ListItem.EndTime]</label>
+						</control>
+						
+						<control type="image">
+							<posx>35</posx>
+							<posy>100</posy>
+							<width>840</width>
+							<height>2</height>
+							<include>Common_Color_BaseWhite</include>
+						</control>
+						
+						<control type="textbox">
+							<posx>35</posx>
+							<posy>120</posy>
+							<width>840</width>
+							<height>380</height>
+							<align>justify</align>
+							<autoscroll time="3000" delay="6000" repeat="8000"></autoscroll>
+							<font>font30</font>
+							<label>$INFO[Container(11).ListItem.Plot]</label>
+						</control>
+
+						<control type="image">
+							<posx>35</posx>
+							<posy>530</posy>
+							<width>840</width>
+							<height>2</height>
+							<include>Common_Color_BaseWhite</include>
+						</control>
+						
+						<control type="fadelabel">
+							<posx>25</posx>
+							<posy>543</posy>
+							<width>100</width>
+							<height>30</height>
+							<font>font34B</font>
+							<label>$LOCALIZE[19031]:</label>
+						</control>
+						
+						<control type="fadelabel">
+							<posx>135</posx>
+							<posy>543</posy>
+							<width>755</width>
+							<height>30</height>
+							<font>font34B</font>
+							<textcolor>$VAR[Accent_100]</textcolor>
+							<label>$INFO[Container(11).ListItem.NextTitle]</label>
+						</control>
+						
+					</control>
+					
+                </control>
+				
+            </control>
+			
+        </control>
+		
+    </include>
+	
+</includes>

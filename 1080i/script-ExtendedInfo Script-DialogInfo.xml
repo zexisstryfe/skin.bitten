@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<window>
+    <defaultcontrol always="true">9001</defaultcontrol>
+
+    <controls>
+
+        <control type="group">
+            <control type="panel" id="750"></control>
+        </control>
+
+        <!--Background Area-->
+        <control type="group">
+
+            <control type="image">
+                <include>Dimensions_Fullscreen</include>
+                <aspectratio align="center">scale</aspectratio>
+                <texture fallback="../extras/backgrounds/tvshows.jpg" background="true">$INFO[Window.Property(ImageFilter)]</texture>
+            </control>
+
+            <control type="image">
+                <include>Dimensions_Fullscreen</include>
+                <include>Common_Color_BaseWhite80</include>
+                <include>Animation_Common_InfoWindow</include>
+            </control>
+
+            <control type="image">
+                <posy>110</posy>
+                <height>80</height>
+                <width>1920</width>
+                <texture colordiffuse="BaseMediumMid40">colors/color_white.png</texture>
+                <include>Animation_Common_InfoWindow</include>
+            </control>
+
+            <control type="image">
+                <posy>1000</posy>
+                <height>80</height>
+                <width>1920</width>
+                <texture colordiffuse="BaseMediumHigh60">colors/color_white.png</texture>
+                <include>Animation_Common_InfoWindow</include> 
+            </control>
+
+            <control type="image">
+                <width>720</width>
+                <height>1080</height>
+                <texture background="true" colordiffuse="$VAR[Accent_100]">colors/color_white.png</texture>
+                <include>Animation_Common_InfoPoster</include> 
+           </control>
+
+            <control type="image">
+                <width>720</width>
+                <height>1080</height>
+                <aspectratio>scale</aspectratio>
+                <texture background="true" fallback="DefaultActor.png">$INFO[Window.Property(thumb)]</texture>
+                <include>Animation_Common_InfoPoster</include> 
+           </control>
+
+        </control>
+   
+        <include>Common_LeftBar</include>
+
+        <!--Top Section-->
+        <control type="group">
+            <include>Animation_Common_Window</include>
+            <posx>820</posx>
+            <posy>20</posy>
+        
+            <control type="label">
+                <width>900</width>
+                <height>40</height>
+                <font>font45R</font>
+                <textcolor>$VAR[Accent_100]</textcolor>
+                <label>$INFO[Window.Property(title)]</label>
+            </control>
+
+            <control type="label">
+                <posy>50</posy>
+                <width>900</width>
+                <textcolor>BaseMid</textcolor>
+                <label>$INFO[Window.Property(Homepage)]</label>
+                <include>Common_Fanart_Subtitle</include>
+            </control>
+
+            <!--Info Section-->
+            <control type="grouplist">
+                <posy>180</posy>
+                
+                <!-- Born label -->
+                <control type="group">
+                    <width>850</width>
+                    <height>40</height>
+                    
+                    <control type="label">
+                        <include>Common_Info_Label</include>
+                        <label>$LOCALIZE[21893] </label>
+                    </control>
+                    
+                    <control type="label">
+                        <include>Common_Info_Video</include>
+                        <label fallback="195">$INFO[Window.Property(Birthday)] $INFO[Window.Property(PlaceOfBirth),in ,]</label>
+                    </control>
+
+                </control>
+                
+                <!-- Died label -->
+                <control type="group">
+                    <width>850</width>
+                    <height>40</height>
+                    <visible>!IsEmpty(Window.Property(Deathday))</visible>
+
+                    <control type="label">
+                        <include>Common_Info_Label</include>
+                        <label>$LOCALIZE[21897] </label>
+                    </control>
+                    
+                    <control type="label">
+                        <include>Common_Info_Video</include>
+                        <label>$INFO[Window.Property(Deathday)]</label>
+                    </control>
+                    
+                </control>
+                
+                <!-- Also Known As label -->
+                <control type="group">
+                    <width>850</width>
+                    <height>40</height>
+
+                    <control type="label">
+                        <include>Common_Info_Label</include>
+                        <label>$ADDON[script.extendedinfo 32016] </label>
+                    </control>
+                    
+                    <control type="label">
+                        <include>Common_Info_Video</include>
+                        <label fallback="31361">$INFO[Window.Property(AlsoKnownAs)]</label>
+                    </control>
+
+                </control>
+
+                <!-- In Database label -->
+                <control type="group">
+                    <width>850</width>
+                    <height>40</height>
+                    
+                    <control type="label">
+                        <include>Common_Info_Label</include>
+                        <label>$ADDON[script.extendedinfo 32021] </label>
+                    </control>
+                    
+                    <control type="label">
+                        <include>Common_Info_Video</include>
+                        <label fallback="195">$INFO[Window.Property(DBMovies)]</label>
+                    </control>
+                    
+                </control>
+                
+                <!--Biography label-->
+                <control type="group">
+                    <width>850</width>
+                    <height>365</height>
+                    
+                    <control type="image">
+                        <height>2</height>
+                        <width>1070</width>
+                        <texture colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
+                        <include>Animation_Common_Window</include>
+                    </control>
+                            
+                    <control type="textbox" id="800">
+                        <posy>10</posy>
+                        <width>1070</width>
+                        <height>215</height>
+                        <font>font26R</font>
+                        <align>justify</align>
+                        <textcolor>BaseMid</textcolor>
+                        <label fallback="19055">$INFO[Window.Property(Biography)]</label>
+                    </control>
+                    
+                </control>
+
+            </control>
+
+            <control type="image">
+                <posy>600</posy>
+                <height>2</height>
+                <width>1070</width>
+                <texture colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
+                <include>Animation_Common_Window</include>
+            </control>
+
+            <control type="grouplist" id="9001">
+                <posy>600</posy>
+                <width>1070</width> 
+                <height>360</height>
+                <onup>9221</onup>
+                <ondown>9221</ondown>
+                <scrolltime tween="quadratic" easing="out">300</scrolltime>
+
+                <!-- Movie Roles Section -->
+                <include>ActorInfo_MovieRoles</include>
+
+                <!-- Movie Crew Section -->
+                <include>ActorInfo_MovieCrew</include>
+
+                <!-- TV Roles Section -->
+                <include>ActorInfo_TVRoles</include>                
+
+                <!-- TV Crew Section -->
+                <include>ActorInfo_TVCrew</include>
+
+                <!-- YouTube Section -->
+                <include>ActorInfo_YouTube</include>              
+
+                <!-- Headshots Section -->
+                <include>ActorInfo_Headshots</include>    
+
+            </control>
+
+        </control>
+
+    </controls>
+
+</window>

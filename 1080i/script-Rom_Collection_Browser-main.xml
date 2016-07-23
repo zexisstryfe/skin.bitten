@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<window>
+    <defaultcontrol always="false">50</defaultcontrol>
+	<views>50,52,58</views>
+    <coordinates>
+        <system>1</system>
+    </coordinates>
+	
+    <!--Animation-->
+    <include condition="!Window.Previous(fullscreenvideo) + !Window.Previous(slideshow) + Skin.HasSetting(MetroAnimations)">Common_Animation_Splash_Flip</include>
+    
+    <controls>
+	
+		<!--Background Area-->
+        <control type="image">
+            <include>Dimensions_Fullscreen</include>
+            <texture colordiffuse="BaseMid">colors/color_white.png</texture>
+        </control>
+
+        <!--Available Views-->
+        <control type="group">
+            <!-- ID 50 -->
+            <include>Viewtype_RCB_Thumbnail</include>
+            <!-- ID 52 -->
+            <include>Viewtype_RCB_Fanart</include>
+            <!-- ID 58 -->
+            <include>Viewtype_RCB_Showcase</include>
+        </control>
+
+        <!--Options Menu-->
+        <include>Common_Options</include>
+        <include>Common_Options_Clock</include>
+
+        <!--Sort Overlays-->
+        <include>Sort_Panel</include>
+        <include>Sort_Panel_Alt</include>
+
+        <!--Splash Screen-->
+        <include condition="!Window.Previous(fullscreenvideo) + !Window.Previous(slideshow) + Skin.HasSetting(MetroAnimations)">Common_Splash</include>
+
+        <!-- filter controls -->
+		<include>RCB_TopBlade</include>
+
+        <!-- Busy Modal -->
+        <include>RCB_Busy</include>
+		
+    </controls>
+	
+</window>

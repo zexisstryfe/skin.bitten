@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<window id="4">
+    <defaultcontrol always="false">50</defaultcontrol>
+    <include condition="!Window.Previous(fullscreenvideo) + !Window.Previous(slideshow) + Skin.HasSetting(MetroAnimations)">Common_Animation_Splash_Flip</include>
+
+    <controls>
+        <include>BG_Fanart_1080</include>
+		<include>FanartOverlay</include>
+
+		<control type="image">	
+			<include>Common_Animation_CenterMenu_Stage1</include>
+			<width>1920</width>
+			<height>760</height>
+			<posy>250</posy>
+			<texture colordiffuse="BaseMid">colors/color_white.png</texture>			
+		</control>
+
+		<control type="group">	
+			<posy>260</posy>
+		
+			<control type="image">	
+				<include>Common_Animation_CenterMenu_Stage4</include>
+				<width>1920</width>
+				<height>740</height>
+				<texture colordiffuse="BaseMediumHigh">colors/color_white.png</texture>			
+			</control>
+
+			<control type="image">	
+				<include>Common_Animation_CenterMenu_Stage3</include>
+				<width>1520</width>
+				<height>740</height>
+				<posx>-200</posx>
+				<texture colordiffuse="BaseWhite">colors/color_white.png</texture>			
+			</control>
+
+			<control type="group" id="378">
+				<include>Common_Animation_CenterMenu_Stage3</include>
+				<posy>10</posy>
+				
+				<control type="image">
+					<posx>745</posx>
+					<posy>20</posy>
+					<width>2</width>
+					<height>680</height>					
+					<include>Common_Color_BaseMediumHigh</include>
+				</control>
+				
+				<control type="image">
+					<posx>170</posx>
+					<posy>20</posy>
+					<width>2</width>
+					<height>680</height>					
+					<include>Common_Color_BaseMediumHigh</include>
+				</control>
+
+				<control type="panel" id="50">
+					<posx>172</posx>
+					<width>1500</width>
+					<height>720</height>
+					<orientation>horizontal</orientation>
+					<itemlayout width="575" height="120">
+					
+						<control type="label">
+							<posx>140</posx>
+							<height>120</height>
+							<font>font36B</font>
+							<textcolor>BaseMediumHigh</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						
+						<control type="image">
+							<width>120</width>
+							<height>120</height>
+							<texture colordiffuse="BaseMediumHigh">$INFO[ListItem.Thumb]</texture>
+						</control>
+					
+					</itemlayout>
+					
+					<focusedlayout width="575" height="120">
+					
+						<control type="image">
+							<width>573</width>
+							<texture colordiffuse="$VAR[Accent_100]">colors/color_white.png</texture>
+						</control>
+						
+						<control type="label">
+							<posx>140</posx>
+							<height>120</height>
+							<font>font36B</font>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						
+						<control type="image">
+							<width>120</width>
+							<height>120</height>
+							<texture colordiffuse="BaseWhite">$INFO[ListItem.Thumb]</texture>
+						</control>
+						
+					</focusedlayout>
+					
+					<content>
+					
+						<item id="1">
+							<description>Appearance</description>
+							<label>480</label>
+							<label2>31303</label2>
+							<thumb>../extras/tiles/appearance.png</thumb>
+							<onclick>activatewindow(AppearanceSettings)</onclick>
+						</item>
+						
+						<item id="2">
+							<description>Skin</description>
+							<label>31132</label>
+							<label2>31313</label2>
+							<thumb>../extras/tiles/skin.png</thumb>
+							<onclick>activatewindow(skinsettings,return)</onclick>
+						</item>
+						
+						<item id="3">
+							<description>Videos</description>
+							<label>3</label>
+							<label2>31304</label2>
+							<thumb>../extras/tiles/videos.png</thumb>
+							<onclick>activatewindow(VideosSettings)</onclick>
+						</item>
+						
+						<item id="4">
+							<description>Music</description>
+							<label>2</label>
+							<label2>31305</label2>
+							<thumb>../extras/tiles/audio.png</thumb>
+							<onclick>activatewindow(MusicSettings,return)</onclick>
+						</item>
+						
+						<item id="5">
+							<description>Live TV</description>
+							<label>31012</label>
+							<label2>31310</label2>
+							<thumb>../extras/tiles/livetv.png</thumb>
+							<onclick>activatewindow(TVSettings,return)</onclick>
+						</item>
+						
+						<item id="6">
+							<description>Addons</description>
+							<label>24001</label>
+							<label2>31309</label2>
+							<thumb>../extras/tiles/addons.png</thumb>
+							<onclick>ActivateWindow(addonbrowser)</onclick>
+						</item>
+										
+						<item id="7">
+							<description>Pictures</description>
+							<label>1</label>
+							<label2>31306</label2>
+							<thumb>../extras/tiles/pictures.png</thumb>
+							<onclick>activatewindow(PicturesSettings,return)</onclick>
+						</item>
+						
+						<item id="8">
+							<description>Weather</description>
+							<label>8</label>
+							<label2>31307</label2>
+							<thumb>../extras/tiles/weather.png</thumb>
+							<onclick>activatewindow(WeatherSettings,return)</onclick>
+						</item>
+						
+						<item id="9">
+							<description>Services</description>
+							<label>14036</label>
+							<label2>31311</label2>
+							<thumb>../extras/tiles/services.png</thumb>
+							<onclick>activatewindow(ServiceSettings,return)</onclick>
+						</item>
+						
+						<item id="10">
+							<description>System</description>
+							<label>13000</label>
+							<label2>31308</label2>
+							<thumb>../extras/tiles/system.png</thumb>
+							<onclick>activatewindow(SystemSettings,return)</onclick>
+						</item>
+						
+						<item id="11">
+							<description>Profiles</description>
+							<label>13200</label>
+							<label2>31312</label2>
+							<thumb>../extras/tiles/profile.png</thumb>
+							<onclick>activatewindow(Profiles,return)</onclick>
+						</item>
+						
+						<item id="12">
+							<description>System Info</description>
+							<label>130</label>
+							<label2>31314</label2>
+							<thumb>../extras/tiles/info.png</thumb>
+							<onclick>activatewindow(7,return)</onclick>
+						</item>
+										
+					</content>
+					
+				</control>
+				
+				<control type="group">	
+					<posx>1320</posx>
+					<include>Common_Animation_CenterMenu_Fade2</include>
+					
+					<control type="image">
+						<posx>20</posx>
+						<posy>80</posy>
+						<width>560</width>
+						<height>2</height>					
+						<include>Common_Color_BaseWhite</include>
+					</control>
+				
+					<control type="label">
+						<posx>20</posx>
+						<width>360</width>
+						<height>75</height>
+						<font>font45R</font>
+						<label>$INFO[Container(50).ListItem.Label]</label>
+						<textcolor>BaseLow</textcolor>
+					</control>
+					
+					<control type="textbox">
+						<description>description area</description>
+						<posx>30</posx>
+						<posy>100</posy>
+						<width>520</width>
+						<height>660</height>
+						<font>font30</font>
+						<label>$INFO[Container(50).ListItem.Label2]</label>
+					</control>
+				
+				</control>	
+
+			</control>
+			
+		</control>	
+			
+		<include>Common_LeftBar</include>		
+        <include condition="!Window.Previous(fullscreenvideo) + !Window.Previous(slideshow) + Skin.HasSetting(MetroAnimations)">Common_Splash</include>
+ 
+	</controls>
+	
+</window>

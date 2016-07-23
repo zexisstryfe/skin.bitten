@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<includes>
+
+    <include name="LiveTVRecordingsView">
+	
+        <control type="group">
+            <description>Recordings group</description>
+            <visible>Control.IsVisible(13)</visible>
+
+            <control type="image">
+				<include>Common_Animation_CenterMenu_Stage1</include>
+				<posy>315</posy>
+				<width>1920</width>
+				<height>675</height>
+                <texture colordiffuse="BaseMid">colors/color_white.png</texture>
+            </control>
+			
+            <control type="group">
+				<include>Common_Animation_PVR</include>
+				<posy>320</posy>
+
+                <control type="label">
+					<posx>114</posx>
+                    <width>900</width> 
+                    <height>50</height>
+                    <font>font50B</font>
+                    <label>$INFO[Control.GetLabel(34),[COLOR White]$LOCALIZE[31084] [/COLOR]]</label>
+                    <textcolor>$VAR[Accent_100]</textcolor>
+                </control>
+
+				<control type="image">	
+					<include>Common_Animation_CenterMenu_Stage3</include>
+					<posy>65</posy>
+					<width>1920</width>
+					<height>596</height>
+					<texture colordiffuse="BaseMediumHigh">colors/color_white.png</texture>			
+				</control>
+				
+				<control type="image">	
+					<posy>65</posy>
+					<width>1000</width>
+					<height>596</height>
+					<texture colordiffuse="BaseWhite">colors/color_white.png</texture>	
+					<include>Common_Animation_CenterMenu_Stage2</include>
+				</control>
+
+                <control type="scrollbar" id="72">
+					<include>Common_Animation_CenterMenu_Stage2</include>
+					<posy>65</posy>
+					<posx>1000</posx>
+                    <height>596</height>
+                    <width>10</width>
+                    <include>ShowOptions_Rightt</include>
+                    <onleft>13</onleft>
+                </control>				
+				
+                <control type="group">
+                    <posy>65</posy>
+					
+					<control type="list" id="13">
+						<include>Common_Animation_CenterMenu_Stage2</include>
+						<posx>80</posx>
+						<width>920</width>
+						<height>596</height>
+						<include>ShowOptions_Left</include>
+						<onright>72</onright>
+						<pagecontrol>72</pagecontrol>
+						<itemlayout height="85">
+
+							<control type="image">
+								<posx>10</posx>
+								<posy>10</posy>
+								<width>65</width>
+								<height>65</height>
+								<texture>backings/circle.png</texture>
+							</control>
+
+							<control type="image">
+								<posx>15</posx>
+								<posy>15</posy>
+								<width>55</width>
+								<height>55</height>
+								<aspectratio scalediffuse="false">scale</aspectratio>
+								<texture diffuse="masks/circle.png">DefaultTVShows.png</texture>
+							</control> 
+
+							<include>Common_Watched_LiveTV</include>
+							
+							<control type="label">
+								<posx>85</posx>
+								<posy>10</posy>
+								<width>820</width>
+								<height>40</height>
+								<aligny>center</aligny>
+								<font>font26R</font>
+								<info>ListItem.Label</info>
+								<wrapmultiline>true</wrapmultiline>
+								<textcolor>BaseMediumHigh</textcolor>
+							</control>
+							
+							<control type="label">
+								<posx>85</posx>
+								<posy>35</posy>
+								<height>40</height>
+								<width>820</width>
+								<font>font20R</font>
+								<label>$INFO[ListItem.Date]</label>
+								<textcolor>BaseMid</textcolor>
+							</control>
+							
+						</itemlayout>
+						
+						<focusedlayout height="85">
+						
+							<control type="image">
+								<width>920</width>
+								<include>Common_Color_Accent</include>
+							</control>
+							
+							<control type="image">
+								<posx>10</posx>
+								<posy>10</posy>
+								<width>65</width>
+								<height>65</height>
+								<texture>backings/circle.png</texture>
+							</control>
+
+							<control type="image">
+								<posx>15</posx>
+								<posy>15</posy>
+								<width>55</width>
+								<height>55</height>
+								<aspectratio scalediffuse="false">scale</aspectratio>
+								<texture diffuse="masks/circle.png">DefaultTVShows.png</texture>
+							</control> 
+
+							<include>Common_Watched_LiveTV</include>
+							
+							<control type="label">
+								<posx>85</posx>
+								<posy>10</posy>
+								<width>820</width>
+								<height>40</height>
+								<aligny>center</aligny>
+								<font>font26R</font>
+								<info>ListItem.Label</info>
+								<wrapmultiline>true</wrapmultiline>
+							</control>
+							
+							<control type="label">
+								<posx>85</posx>
+								<posy>35</posy>
+								<height>40</height>
+								<width>820</width>
+								<font>font20R</font>
+								<label>$INFO[ListItem.Date]</label>
+								<textcolor>BaseLow</textcolor>
+							</control>
+							
+						</focusedlayout>
+						
+					</control>
+						
+					<control type="group">
+						<include>Common_Animation_CenterMenu_Fade2</include>
+						<posx>1010</posx>
+						
+						<control type="fadelabel">
+							<posx>25</posx>
+							<posy>8</posy>
+							<width>860</width>
+							<height>45</height>
+							<font>font50R</font>
+							<label>$INFO[Container(13).ListItem.Label]</label>
+							<textcolor>$VAR[Accent_100]</textcolor>
+						</control>
+						
+						<control type="label">
+							<posx>25</posx>
+							<posy>55</posy>
+							<width>860</width>
+							<height>45</height>
+							<font>font24B</font>
+							<label>$INFO[Container(13).ListItem.Date]</label>
+						</control>
+						
+						<control type="image">
+							<posx>35</posx>
+							<posy>100</posy>
+							<width>840</width>
+							<height>2</height>
+							<include>Common_Color_BaseWhite</include>
+						</control>
+												
+						<control type="textbox">
+							<posx>35</posx>
+							<posy>120</posy>
+							<width>840</width>
+							<height>400</height>
+							<align>justify</align>
+							<autoscroll time="3000" delay="6000" repeat="8000"></autoscroll>
+							<font>font30</font>
+							<label>$INFO[Container(13).ListItem.Plot]</label>
+						</control>
+						
+					</control>
+					
+                </control>
+
+            </control>
+			
+        </control>
+		
+    </include>
+	
+</includes>

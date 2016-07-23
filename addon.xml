@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<addon id="skin.bit(ten)" version="0.1" name="bit(ten)" provider-name="ZexisStryfe">
+
+	<requires>
+		<import addon="xbmc.gui" version="5.10.0"/>
+		<import addon="resource.uisounds.bit(ten)" version="1.0.0"/>
+		<import addon="script.globalsearch" version="6.0.6"/>
+		<import addon="service.skin.widgets" version="0.0.32"/>
+		<import addon="service.rom.collection.browser" version="1.0.0"/>
+		<import addon="script.games.rom.collection.browser" version="2.1.2"/>
+		<import addon="resource.images.studios.white" version="1.0.0"/>		
+		<import addon="resource.images.weathericons.white" version="1.0.0"/>
+		<import addon="resource.images.weatherfanart.single" version="1.0.0"/>
+		<import addon="resource.images.recordlabels.white" version="1.0.0"/>						
+	</requires>
+	
+	<extension  
+		point="xbmc.gui.skin" 
+		defaultthemename="Textures.xbt"  
+		effectslowdown="1.00" debugging="false">
+		
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="1080i" />
+		
+	</extension>
+		
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<summary>Created by ZexisStryfe</summary>
+		<description>Bit(ten) inspired by Windows 10 "Modern" UI with strong clear icons and typography.</description>
+	</extension>
+	
+</addon>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<includes>
+
+    <include name="Viewtype_Showcase_Album">
+	
+        <control type="group">
+            <description>Showcase View (id=57)</description>
+			<visible>Control.IsVisible(57)</visible>
+
+			<!--Scrollbar-->
+			<control type="scrollbar" id="68">
+				<posy>690</posy>
+				<height>10</height>
+				<width>1920</width>
+				<include>ShowOptions_Up</include>
+				<ondown>51</ondown>
+				<orientation>horizontal</orientation>
+			</control>
+			
+			<control type="image">
+				<posy>700</posy>
+				<width>1920</width>
+				<height>380</height>
+				<include>Common_Color_BaseWhite</include>
+			</control>	
+			
+			<control type="image">
+				<posx>1317</posx>
+				<width>603</width> 
+				<height>690</height>
+				<include>Common_Color_BaseLow</include>
+			</control>	
+			
+			<!--List Area-->
+			<control type="group">
+				<include>Animation_Slide_Right</include>	
+			
+				<control type="wraplist" id="57">
+					<posy>700</posy>
+					<height>380</height>
+					<width>1920</width>
+					<onup>68</onup>
+					<include>ShowOptions_Down</include>
+					<viewtype label="showcase">showcase</viewtype>
+					<orientation>horizontal</orientation>
+					<focusposition>2</focusposition>
+					<preloaditems>2</preloaditems>
+					<pagecontrol>68</pagecontrol>
+					<visible>[Container.Content(Albums) | Container.Content(Artists)] + !Container.Content(genres)</visible>
+					<itemlayout width="343" height="380">
+					
+						<control type="image">
+							<width>340</width>
+							<height>340</height>
+							<include>Common_Color_BaseMediumHigh</include>
+						</control>
+						
+						<control type="image">
+							<width>340</width>
+							<height>340</height>
+							<texture background="true" fallback="$VAR[Common_Fallback]">$INFO[ListItem.Icon]</texture>
+							<aspectratio scalediffuse="false">keep</aspectratio>
+						</control>
+						
+						<control type="label">
+							<posx>10</posx>
+							<posy>340</posy>
+							<width>320</width>
+							<height>40</height>
+							<aligny>center</aligny>
+							<font>font20R</font>
+							<label>$VAR[Fanart_List_Title]</label>
+							<textcolor>BaseMediumHigh</textcolor>
+						</control>
+
+					</itemlayout>
+					
+					<focusedlayout width="343" height="380">
+					
+						<control type="image">
+							<width>340</width>
+							<height>380</height>
+							<include>Common_Color_Accent</include>
+						</control>	
+						
+						<control type="image">
+							<width>340</width>
+							<height>340</height>
+							<include>Common_Color_BaseMid</include>
+						</control>
+						
+						<control type="image">
+							<width>340</width>
+							<height>340</height>
+							<texture background="true" fallback="$VAR[Common_Fallback]">$INFO[ListItem.Icon]</texture>
+							<aspectratio scalediffuse="false">keep</aspectratio>
+						</control>
+						
+						<control type="label">
+							<posx>10</posx>
+							<posy>340</posy>
+							<width>320</width>
+							<height>40</height>
+							<aligny>center</aligny>
+							<font>font20R</font>
+							<label>$VAR[Fanart_List_Title]</label>
+						</control>
+						
+					</focusedlayout>
+					
+				</control>
+	 
+			</control>
+
+			<!--Details Area-->
+			<control type="group">
+				<posx>1337</posx>
+
+				<control type="label" id="145">
+					<width>560</width>
+					<include>Common_Fanart_Title</include>
+					<label>$VAR[Fanart_Info_Title]</label>
+				</control>
+				
+				<control type="label">
+					<width>560</width>
+					<include>Common_Fanart_Subtitle</include>
+				</control>
+				
+				<control type="image">
+					<posx>10</posx>
+					<posy>100</posy>
+					<width>540</width>
+					<height>2</height>
+					
+				</control>
+
+				<control type="textbox">
+					<posx>10</posx>
+					<posy>110</posy>
+					<width>540</width>
+					<height>560</height>
+					<font>font26</font>
+					<textcolor>BaseMediumHigh</textcolor>
+					<align>justify</align>
+					<label>$VAR[Common_Plot]</label>
+					<autoscroll time="3000" delay="6000" repeat="8000"></autoscroll>
+				</control>
+
+            </control>
+			
+			<!--Fanart Background Area-->
+			<include>BG_Fanart_690</include>
+			
+        </control>
+
+    </include>
+	
+</includes>

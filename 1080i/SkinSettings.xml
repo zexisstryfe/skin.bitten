@@ -1,0 +1,2229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window id="56">
+    <defaultcontrol always="true">100</defaultcontrol>
+	
+    <controls>
+        <include>BG_Fanart_1080</include>
+		<include>FanartOverlay</include>
+
+        <control type="group">
+            <posy>200</posy>
+
+			<include>Settings_GrayBand</include>				
+			
+			<control type="group">	
+				<posy>10</posy>
+			
+				<include>Settings_Backing</include>
+				
+				<!--Category List-->
+				<control type="group">	
+					<posx>80</posx>
+					<include>Common_Animation_CenterMenu_Fade1</include>
+					
+					<control type="image">
+						<posx>20</posx>
+						<posy>80</posy>
+						<width>340</width>
+						<height>2</height>
+						<include>Common_Color_BaseMediumHigh</include>
+					</control>
+				
+					<control type="label">
+						<posx>20</posx>
+						<width>340</width>
+						<height>75</height>
+						<font>font45R</font>
+						<textcolor>$VAR[Accent_100]</textcolor>
+						<label>$LOCALIZE[31132]</label>
+					</control>
+
+					<control type="list" id="100">
+						<description>List</description>
+						<posy>100</posy>
+						<width>380</width>
+						<height>720</height>
+						<onleft>99</onleft>
+						<onright>99</onright>
+						<itemlayout height="69" width="380">
+						
+							<control type="label">
+								<posx>30</posx>
+								<width>380</width>
+								<label>$INFO[ListItem.Label]</label>
+								<textcolor>BaseMediumHigh</textcolor>
+								<font>font30</font>
+							</control>
+							
+						</itemlayout>
+						
+						<focusedlayout height="69" width="380">
+						
+							<control type="image">
+								<width>380</width>
+								<height>60</height>
+								<include>Common_Color_Accent</include>
+								<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(100)">Conditional</animation>
+							</control>
+							
+							<control type="label">
+								<posx>30</posx>
+								<width>380</width>
+								<label>$INFO[ListItem.Label]</label>
+								<font>font30</font>
+							</control>
+							
+						</focusedlayout>						
+						
+						<content>
+							<item id="1">
+								<description>Visuals</description>
+								<label>128</label>
+								<onclick>noop</onclick>
+							</item>
+							<item id="2">
+								<description>Scripts</description>
+								<label>24001</label>
+								<onclick>noop</onclick>
+							</item>
+							<item id="3">
+								<description>Homescreen</description>
+								<label>31135</label>
+								<onclick>noop</onclick>
+							</item>
+							<item id="4">
+								<description>Hubs</description>
+								<label>31216</label>
+								<onclick>noop</onclick>
+							</item>
+							<item id="5">
+								<description>Backgrounds</description>
+								<label>33069</label>
+								<onclick>noop</onclick>
+							</item>
+							<item id="6">
+								<description>Debug</description>
+								<label>31059</label>
+								<onclick>noop</onclick>
+							</item>
+						</content>						
+						
+					</control>
+
+				</control>	
+
+				<!--Control Area-->
+				<control type="group" id="99">	
+					<posx>460</posx>
+					<include>Common_Animation_CenterMenu_Fade2</include>		
+
+					<!--GENERAL Control Area-->
+					<control type="group">
+						<visible>Container(100).Hasfocus(1)</visible>
+							
+						<control type="grouplist" id="200">
+							<description>Control Area- GENERAL</description>
+							<posy>50</posy>
+							<width>1050</width>
+							<height>660</height>
+							<onleft>100</onleft>
+							<onright>100</onright>
+							<itemgap>0</itemgap>
+							<pagecontrol>299</pagecontrol>
+							
+							<control type="button" id="201">
+								<include>Common_Settings_Label_Wide</include>
+								<description>accent selector</description>
+								<label>$LOCALIZE[31255]</label>
+								<label2>$INFO[Skin.String(accent.name)]</label2>
+								<onclick>ActivateWindow(1115)</onclick>
+							</control>
+							
+							<control type="label" id="202">
+								<description>Visualisations</description>
+								<width>1050</width>
+								<font>font36</font>
+								<textcolor>$VAR[Accent_100]</textcolor>
+								<label> $LOCALIZE[31248]</label>
+							</control>
+							
+							<control type="radiobutton" id="204">
+								<description>Background Visualiser</description>
+								<include>Common_Settings_Label_Wide</include>
+								<label>$LOCALIZE[31049]</label>
+								<onclick>Skin.ToggleSetting(NoBackgroundVisualiser)</onclick>
+								<selected>Skin.HasSetting(NoBackgroundVisualiser)</selected>
+							</control>
+							
+							<control type="radiobutton" id="205">
+								<description>Background Video</description>
+								<include>Common_Settings_Label_Wide</include>
+								<label>$LOCALIZE[31050]</label>
+								<onclick>Skin.ToggleSetting(NoBackgroundVideo)</onclick>
+								<selected>Skin.HasSetting(NoBackgroundVideo)</selected>
+							</control>
+							
+							<control type="label" id="206">
+								<description>Overlays</description>
+								<width>1050</width>
+								<font>font36</font>
+								<textcolor>$VAR[Accent_100]</textcolor>
+								<label> $LOCALIZE[31249]</label>
+							</control>
+							
+							<control type="radiobutton" id="207">
+								<description>Home Screen Overlay</description>
+								<include>Common_Settings_Label_Wide</include>
+								<label>$LOCALIZE[31140]- $LOCALIZE[31135]</label>
+								<onclick>Skin.ToggleSetting(UseHomeOverlay)</onclick>
+								<selected>Skin.HasSetting(UseHomeOverlay)</selected>
+							</control>
+							
+							<control type="radiobutton" id="208">
+								<description>Fanart Overlay</description>
+								<include>Common_Settings_Label_Wide</include>
+								<label>$LOCALIZE[31140]- $LOCALIZE[31136]</label>
+								<onclick>Skin.ToggleSetting(UseFanartOverlay)</onclick>
+								<selected>Skin.HasSetting(UseFanartOverlay)</selected>
+							</control>
+							
+							<control type="label" id="211">
+								<description>Transitions</description>
+								<width>1050</width>
+								<font>font36</font>
+								<textcolor>$VAR[Accent_100]</textcolor>
+								<label> $LOCALIZE[31250]</label>
+							</control>
+							
+							<control type="radiobutton" id="212">
+								<description>Tile Backgrounds</description>
+								<include>Common_Settings_Label_Wide</include>
+								<label>$LOCALIZE[31139]</label>
+								<onclick>Skin.ToggleSetting(MetroAnimations)</onclick>
+								<selected>Skin.HasSetting(MetroAnimations)</selected>
+							</control>
+							
+							<control type="label" id="213">
+								<description>Views</description>
+								<width>1050</width>
+								<font>font36</font>
+								<textcolor>$VAR[Accent_100]</textcolor>
+								<label> $LOCALIZE[31016]</label>
+							</control>							
+
+							<control type="radiobutton" id="214">
+								<description>Sort Letter</description>
+								<include>Common_Settings_Label_Wide</include>
+								<posx>30</posx>
+								<label>$LOCALIZE[31247]</label>
+								<onclick>Skin.ToggleSetting(DisableSortLetter)</onclick>
+								<selected>!Skin.HasSetting(DisableSortLetter)</selected>
+							</control>
+							
+							<control type="radiobutton" id="215">
+								<description>TV Logos</description>
+								<include>Common_Settings_Label_Wide</include>
+								<label>$LOCALIZE[31163]</label>
+								<onclick>Skin.ToggleSetting(UseTVLogos)</onclick>
+								<selected>Skin.HasSetting(UseTVLogos)</selected>
+							</control>
+							
+							<control type="radiobutton" id="216">
+								<description>MOVIEsets</description>
+								<include>Common_Settings_Label_Wide</include>
+								<label>$LOCALIZE[31164]</label>
+								<onclick>Skin.ToggleSetting(UseMovieset)</onclick>
+								<selected>Skin.HasSetting(UseMovieset)</selected>
+							</control>							
+							
+						</control>		
+											
+					</control>		
+							
+					<!--SCRIPTS Control Area-->		
+					<control type="group">	
+						<visible>Container(100).Hasfocus(2)</visible>
+					
+						<control type="grouplist" id="300">
+							<description>Control Area- SCRIPTS 1</description>
+							<posy>50</posy>
+							<width>1050</width>
+							<height>660</height>
+							<onleft>100</onleft>
+							<onright>100</onright>
+							<itemgap>0</itemgap>
+							<pagecontrol>399</pagecontrol>						
+							
+							<control type="button" id="301">
+								<description>Default lyrics Button</description>
+								<include>Common_Settings_Label_Wide</include>
+								<label>$LOCALIZE[31040]</label>
+								<label2 fallback="231">$INFO[Skin.String(LyricPath)]</label2>
+								<onclick>Skin.SetAddon(LyricPath,xbmc.python.lyrics)</onclick>
+							</control>
+							
+							<control type="radiobutton" id="303">
+								<description>Favourites</description>
+								<include>Common_Settings_Label_Wide</include>
+								<label>$LOCALIZE[31141]</label>
+								<onclick>Skin.ToggleSetting(UseFavouritesScript)</onclick>
+								<selected>Skin.HasSetting(UseFavouritesScript)</selected>
+								<enable>System.HasAddon(script.favourites)</enable>
+							</control>
+							
+							<control type="radiobutton" id="304">
+								<description>Next Aired</description>
+								<include>Common_Settings_Label_Wide</include>
+								<label>$LOCALIZE[31142]</label>
+								<onclick>Skin.ToggleSetting(UseNextAiredScript)</onclick>
+								<selected>Skin.HasSetting(UseNextAiredScript)</selected>
+								<enable>System.HasAddon(script.tv.show.next.aired)</enable>
+							</control>
+							
+							<control type="radiobutton" id="305">
+								<description>TVTunes</description>
+								<include>Common_Settings_Label_Wide</include>
+								<label>$LOCALIZE[31143]</label>
+								<onclick>Skin.ToggleSetting(UseTVTunes)</onclick>
+								<selected>Skin.HasSetting(UseTVTunes)</selected>
+								<enable>System.HasAddon(script.tvtunes)</enable>
+							</control>
+							
+							<control type="radiobutton" id="306">
+								<description>Trakt.TV</description>
+								<include>Common_Settings_Label_Wide</include>
+								<label>$LOCALIZE[31251]</label>
+								<onclick>Skin.ToggleSetting(UseTraktTV)</onclick>
+								<selected>Skin.HasSetting(UseTraktTV)</selected>
+								<enable>System.HasAddon(script.trakt)</enable>
+							</control>
+							
+							<control type="radiobutton" id="307">
+								<description>Artwork Downloader</description>
+								<include>Common_Settings_Label_Wide</include>
+								<label>$LOCALIZE[31254]</label>
+								<onclick>Skin.ToggleSetting(UseArtDownloader)</onclick>
+								<selected>Skin.HasSetting(UseArtDownloader)</selected>
+								<enable>System.HasAddon(script.artwork.downloader)</enable>
+							</control>
+							
+							<control type="radiobutton" id="308">
+								<include>Common_Settings_Label_Wide</include>
+								<selected>Skin.HasSetting(UpdateArt.Enabled)</selected>
+								<onclick>Skin.ToggleSetting(UpdateArt.Enabled)</onclick>
+								<label>$LOCALIZE[31253]</label>
+								<enable>System.HasAddon(script.artwork.downloader) + Skin.HasSetting(UseArtDownloader)</enable>
+							</control>
+							
+						</control>
+
+					</control>
+					
+					<!--HOME SCREEN Control Area-->		
+					<control type="group">	
+						<visible>Container(100).Hasfocus(3)</visible>
+
+						<control type="grouplist" id="400">
+							<description>Control Area- HOMESCREEN Sections</description>
+							<posy>20</posy>
+							<width>350</width>
+							<height>740</height>
+							<onleft>100</onleft>
+							<onright>1000</onright>
+							<itemgap>0</itemgap>
+							<pagecontrol>499</pagecontrol>
+														
+							<control type="button" id="401">
+								<description>movies</description>
+								<include>Common_Settings_Label</include>
+								<onfocus>Skin.SetString(HomeMenu.SubMenu,1)</onfocus>
+								<label>$LOCALIZE[31300] 1 ($VAR[HomeMenu_1_Label])</label>
+							</control>
+							
+							<control type="button" id="402">
+								<description>tvshows</description>
+								<include>Common_Settings_Label</include>
+								<onfocus>Skin.SetString(HomeMenu.SubMenu,2)</onfocus>
+								<label>$LOCALIZE[31300] 2 ($VAR[HomeMenu_2_Label])</label>
+							</control>
+							
+							<control type="button" id="403">
+								<description>live tv</description>
+								<include>Common_Settings_Label</include>
+								<onfocus>Skin.SetString(HomeMenu.SubMenu,3)</onfocus>
+								<label>$LOCALIZE[31300] 3 ($VAR[HomeMenu_3_Label])</label>
+							</control>
+							
+							<control type="button" id="404">
+								<description>music</description>
+								<include>Common_Settings_Label</include>
+								<onfocus>Skin.SetString(HomeMenu.SubMenu,4)</onfocus>
+								<label>$LOCALIZE[31300] 4 ($VAR[HomeMenu_4_Label])</label>
+							</control>
+							
+							<control type="button" id="405">
+								<description>music videos</description>
+								<include>Common_Settings_Label</include>
+								<onfocus>Skin.SetString(HomeMenu.SubMenu,5)</onfocus>
+								<label>$LOCALIZE[31300] 5 ($VAR[HomeMenu_5_Label])</label>
+							</control>
+							
+							<control type="button" id="406">
+								<description>pictures</description>
+								<include>Common_Settings_Label</include>
+								<onfocus>Skin.SetString(HomeMenu.SubMenu,6)</onfocus>
+								<label>$LOCALIZE[31300] 6 ($VAR[HomeMenu_6_Label])</label>
+							</control>
+							
+							<control type="button" id="407">
+								<description>games</description>
+								<include>Common_Settings_Label</include>
+								<onfocus>Skin.SetString(HomeMenu.SubMenu,7)</onfocus>
+								<label>$LOCALIZE[31300] 7 ($VAR[HomeMenu_7_Label])</label>
+							</control>
+							
+							<control type="button" id="408">
+								<description>weather</description>
+								<include>Common_Settings_Label</include>
+								<onfocus>Skin.SetString(HomeMenu.SubMenu,8)</onfocus>
+								<label>$LOCALIZE[31300] 8 ($VAR[HomeMenu_8_Label])</label>
+							</control>
+							
+							<control type="button" id="409">
+								<description>addons</description>
+								<include>Common_Settings_Label</include>
+								<onfocus>Skin.SetString(HomeMenu.SubMenu,9)</onfocus>
+								<label>$LOCALIZE[31300] 9 ($VAR[HomeMenu_9_Label])</label>
+							</control>
+							
+							<control type="button" id="410">
+								<description>custom</description>
+								<include>Common_Settings_Label</include>
+								<onfocus>Skin.SetString(HomeMenu.SubMenu,10)</onfocus>
+								<label>$LOCALIZE[31300] 10 ($VAR[HomeMenu_10_Label])</label>
+							</control>
+							
+							<control type="button" id="411">
+								<description>profiles</description>
+								<include>Common_Settings_Label</include>
+								<onfocus>Skin.SetString(HomeMenu.SubMenu,11)</onfocus>
+								<label>$LOCALIZE[13200]</label>
+							</control>
+
+							<control type="button" id="412">
+								<description>search</description>
+								<include>Common_Settings_Label</include>
+								<onfocus>Skin.SetString(HomeMenu.SubMenu,12)</onfocus>
+								<label>$LOCALIZE[137]</label>
+							</control>
+
+							<control type="button" id="413">
+								<description>settings</description>
+								<include>Common_Settings_Label</include>
+								<onfocus>Skin.SetString(HomeMenu.SubMenu,13)</onfocus>
+								<label>$LOCALIZE[5]</label>
+							</control>						
+							
+						</control>
+
+						<control type="image">
+							<posx>350</posx>
+							<posy>50</posy>
+							<width>2</width>
+							<height>660</height>
+							<include>Common_Color_BaseMediumHigh</include>
+						</control>
+					
+						<control type="grouplist" id="1000">
+							<description>Control Area- HOMESCREEN Tiles</description>
+							<animation effect="fade" time="200" tween="quadratic" easing="out">VisibleChange</animation>
+							<posx>352</posx>
+							<posy>20</posy>
+							<width>698</width>
+							<height>740</height>
+							<itemgap>0</itemgap>
+							<onright>200</onright>
+							<pagecontrol>1099</pagecontrol>
+
+							<!-- HOMEMENU 1-->
+							<control type="button" id="8001">
+								<textcolor>$VAR[Accent_100]</textcolor>
+								<include>Settings_MovieMenu</include>
+								<label>$LOCALIZE[31301]</label>
+								<onclick>Skin.SetString(HomeMenu.1.Label,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.1.Icon,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.1.Action,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.1.Background,)</onclick>
+							</control>
+
+							<control type="group" id="8002">
+							
+								<control type="image">
+									<include>Settings_HomeMenu_HorizBar</include>
+									<include>Settings_MovieMenu</include>
+								</control>	
+							
+							</control>
+
+							<control type="radiobutton" id="8003">
+								<include>Settings_MovieMenu</include>
+
+								<label>$LOCALIZE[305]</label>
+								<onclick>Skin.ToggleSetting(HomeMenu1.Hide)</onclick>
+								<selected>!Skin.HasSetting(HomeMenu1.Hide)</selected>
+							</control>
+							
+							<control type="button" id="8004">
+								<include>Settings_MovieMenu</include>
+
+								<label>$LOCALIZE[369]</label>
+								<label2>$VAR[HomeMenu_1_Label]</label2>
+								<onclick>Skin.SetString(HomeMenu.1.Label)</onclick>
+							</control>
+							
+							<control type="button" id="8005">
+								<include>Settings_MovieMenu</include>
+
+								<label>$LOCALIZE[31205]</label>
+								<label2>$VAR[HomeMenu_1_Icon]</label2>
+								<onclick>Skin.SetImage(HomeMenu.1.Icon)</onclick>
+							</control>
+							
+							<control type="button" id="8006">
+								<include>Settings_MovieMenu</include>
+
+								<label>$LOCALIZE[31198]</label>
+								<label2>$VAR[HomeMenu_1_Action]</label2>
+								<onclick>Skin.SetString(HomeMenu.1.Action)</onclick>
+							</control>
+							
+							<control type="button" id="8007">
+								<include>Settings_MovieMenu</include>
+
+								<label>$LOCALIZE[33068]</label>
+								<label2>$VAR[HomeMenu_1_Background]</label2>
+								<onclick>Skin.SetString(BGSelector_Temp,HomeMenu1)</onclick>
+								<onclick>Skin.SetString(BGSelector_Temp_STR,HomeMenu.1.Background)</onclick>
+								<onclick>ActivateWindow(1116)</onclick>
+							</control>
+							
+							<control type="group" id="8008">
+							
+								<control type="image">
+									<include>Settings_HomeMenu_HorizBar</include>
+									<include>Settings_MovieMenu</include>
+								</control>	
+							
+							</control>
+							
+							<control type="button" id="8009">
+								<include>Settings_MovieMenu</include>
+								<label>$LOCALIZE[31074] 1</label>
+								<label2>$INFO[Skin.String(Home1Tile1.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home1Tile1)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>
+							
+							<control type="button" id="8010">
+								<enable>!Skin.String(Home1Tile1,WeatherConditions)</enable>
+								<include>Settings_MovieMenu</include>
+								<label>$LOCALIZE[31074] 2</label>
+								<label2>$INFO[Skin.String(Home1Tile2.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home1Tile2)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>
+
+							<control type="button" id="8011">
+								<enable>!Skin.String(Home1Tile1,WeatherConditions)</enable>
+								<include>Settings_MovieMenu</include>
+								<label>$LOCALIZE[31074] 3</label>
+								<label2>$INFO[Skin.String(Home1Tile3.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home1Tile3)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>							
+
+							<control type="button" id="8012">
+								<enable>!Skin.String(Home1Tile1,WeatherConditions)</enable>
+								<include>Settings_MovieMenu</include>
+								<label>$LOCALIZE[31074] 4</label>
+								<label2>$INFO[Skin.String(Home1Tile4.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home1Tile4)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>							
+
+							<control type="button" id="8013">
+								<enable>!Skin.String(Home1Tile1,WeatherConditions)</enable>
+								<include>Settings_MovieMenu</include>
+								<label>$LOCALIZE[31074] 5</label>
+								<label2>$INFO[Skin.String(Home1Tile5.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home1Tile5)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>	
+
+							<control type="group" id="8014">
+							
+								<control type="image">
+									<include>Settings_HomeMenu_HorizBar</include>
+									<include>Settings_MovieMenu</include>
+								</control>	
+							
+							</control>	
+
+							<control type="button" id="8015">
+								<include>Settings_MovieMenu</include>
+								<label>$LOCALIZE[31073]</label>
+								<label2>$INFO[Skin.String(Home1Panel.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Panel)</onclick>
+								<onclick>Skin.SetString(PanelSelector_Temp,Home1Panel)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>	
+							
+							<!-- HOMEMENU 2-->
+							<control type="button" id="8021">
+								<textcolor>$VAR[Accent_100]</textcolor>
+								<include>Settings_TVShowMenu</include>
+								<label>$LOCALIZE[31301]</label>
+								<onclick>Skin.SetString(HomeMenu.2.Label,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.2.Icon,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.2.Action,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.2.Background,)</onclick>
+							</control>
+
+							<control type="group" id="8022">
+							
+								<control type="image">
+									<include>Settings_HomeMenu_HorizBar</include>
+									<include>Settings_TVShowMenu</include>
+								</control>	
+							
+							</control>
+
+							<control type="radiobutton" id="8023">
+								<include>Settings_TVShowMenu</include>
+								<label>$LOCALIZE[305]</label>
+								<onclick>Skin.ToggleSetting(HomeMenu2.Hide)</onclick>
+								<selected>!Skin.HasSetting(HomeMenu2.Hide)</selected>
+							</control>
+							
+							<control type="button" id="8024">
+								<include>Settings_TVShowMenu</include>
+								<label>$LOCALIZE[369]</label>
+								<label2>$VAR[HomeMenu_2_Label]</label2>
+								<onclick>Skin.SetString(HomeMenu.2.Label)</onclick>
+							</control>
+							
+							<control type="button" id="8025">
+								<include>Settings_TVShowMenu</include>
+								<label>$LOCALIZE[31205]</label>
+								<label2>$VAR[HomeMenu_2_Icon]</label2>
+								<onclick>Skin.SetImage(HomeMenu.2.Icon)</onclick>
+							</control>
+							
+							<control type="button" id="8026">
+								<include>Settings_TVShowMenu</include>
+								<label>$LOCALIZE[31198]</label>
+								<label2>$VAR[HomeMenu_2_Action]</label2>
+								<onclick>Skin.SetString(HomeMenu.2.Action)</onclick>
+							</control>
+							
+							<control type="button" id="8027">
+								<include>Settings_TVShowMenu</include>
+								<label>$LOCALIZE[33068]</label>
+								<label2>$VAR[HomeMenu_2_Background]</label2>
+								<onclick>Skin.SetString(BGSelector_Temp,HomeMenu2)</onclick>		
+								<onclick>Skin.SetString(BGSelector_Temp_STR,HomeMenu.2.Background)</onclick>
+								<onclick>ActivateWindow(1116)</onclick>
+							</control>
+							
+							<control type="group" id="8028">
+							
+								<control type="image">
+									<include>Settings_HomeMenu_HorizBar</include>
+									<include>Settings_TVShowMenu</include>
+								</control>	
+							
+							</control>
+							
+							<control type="button" id="8029">
+								<enable>!Skin.String(Home2Tile1,WeatherConditions)</enable>
+								<include>Settings_TVShowMenu</include>
+								<label>$LOCALIZE[31074] 1</label>
+								<label2>$INFO[Skin.String(Home2Tile1.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home2Tile1)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>
+							
+							<control type="button" id="8030">
+								<enable>!Skin.String(Home2Tile1,WeatherConditions)</enable>
+								<include>Settings_TVShowMenu</include>
+								<label>$LOCALIZE[31074] 2</label>
+								<label2>$INFO[Skin.String(Home2Tile2.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home2Tile2)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>
+
+							<control type="button" id="8031">
+								<enable>!Skin.String(Home2Tile1,WeatherConditions)</enable>
+								<include>Settings_TVShowMenu</include>
+								<label>$LOCALIZE[31074] 3</label>
+								<label2>$INFO[Skin.String(Home2Tile3.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home2Tile3)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>							
+
+							<control type="button" id="8032">
+								<enable>!Skin.String(Home2Tile1,WeatherConditions)</enable>
+								<include>Settings_TVShowMenu</include>
+								<label>$LOCALIZE[31074] 4</label>
+								<label2>$INFO[Skin.String(Home2Tile4.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home2Tile4)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>							
+
+							<control type="button" id="8033">
+								<enable>!Skin.String(Home2Tile1,WeatherConditions)</enable>
+								<include>Settings_TVShowMenu</include>
+								<label>$LOCALIZE[31074] 5</label>
+								<label2>$INFO[Skin.String(Home2Tile5.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home2Tile5)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>	
+
+							<control type="group" id="8034">
+							
+								<control type="image">
+									<include>Settings_HomeMenu_HorizBar</include>
+									<include>Settings_TVShowMenu</include>
+								</control>	
+							
+							</control>	
+
+							<control type="button" id="8035">
+								<include>Settings_TVShowMenu</include>
+								<label>$LOCALIZE[31073]</label>
+								<label2>$INFO[Skin.String(Home2Panel.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Panel)</onclick>
+								<onclick>Skin.SetString(PanelSelector_Temp,Home2Panel)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>		
+							
+							<!-- HOMEMENU 3-->
+							<control type="button" id="8041">
+								<textcolor>$VAR[Accent_100]</textcolor>
+								<include>Settings_LiveTVMenu</include>
+								<label>$LOCALIZE[31301]</label>
+								<onclick>Skin.SetString(HomeMenu.3.Label,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.3.Icon,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.3.Action,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.3.Background,)</onclick>
+							</control>
+
+							<control type="group" id="8042">
+							
+								<control type="image">
+									<include>Settings_HomeMenu_HorizBar</include>
+									<include>Settings_LiveTVMenu</include>
+								</control>	
+							
+							</control>
+
+							<control type="radiobutton" id="8043">
+								<include>Settings_LiveTVMenu</include>
+								<label>$LOCALIZE[305]</label>
+								<onclick>Skin.ToggleSetting(HomeMenu3.Hide)</onclick>
+								<selected>!Skin.HasSetting(HomeMenu3.Hide)</selected>
+							</control>
+							
+							<control type="button" id="8044">
+								<include>Settings_LiveTVMenu</include>
+								<label>$LOCALIZE[369]</label>
+								<label2>$VAR[HomeMenu_3_Label]</label2>
+								<onclick>Skin.SetString(HomeMenu.3.Label)</onclick>
+							</control>
+							
+							<control type="button" id="8045">
+								<include>Settings_LiveTVMenu</include>
+								<label>$LOCALIZE[31205]</label>
+								<label2>$VAR[HomeMenu_3_Icon]</label2>
+								<onclick>Skin.SetImage(HomeMenu.3.Icon)</onclick>
+							</control>
+							
+							<control type="button" id="8046">
+								<include>Settings_LiveTVMenu</include>
+								<label>$LOCALIZE[31198]</label>
+								<label2>$VAR[HomeMenu_3_Action]</label2>
+								<onclick>Skin.SetString(HomeMenu.3.Action)</onclick>
+							</control>
+							
+							<control type="button" id="8047">
+								<include>Settings_LiveTVMenu</include>
+								<label>$LOCALIZE[33068]</label>
+								<label2>$VAR[HomeMenu_3_Background]</label2>
+								<onclick>Skin.SetString(BGSelector_Temp,HomeMenu3)</onclick>		
+								<onclick>Skin.SetString(BGSelector_Temp_STR,HomeMenu.3.Background)</onclick>
+								<onclick>ActivateWindow(1116)</onclick>
+							</control>
+							
+							<control type="group" id="8048">
+							
+								<control type="image">
+									<include>Settings_HomeMenu_HorizBar</include>
+									<include>Settings_LiveTVMenu</include>
+								</control>	
+							
+							</control>
+							
+							<control type="button" id="8049">
+								<include>Settings_LiveTVMenu</include>
+								<label>$LOCALIZE[31074] 1</label>
+								<label2>$INFO[Skin.String(Home3Tile1.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home3Tile1)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>
+							
+							<control type="button" id="8050">
+								<enable>!Skin.String(Home3Tile1,WeatherConditions)</enable>
+								<include>Settings_LiveTVMenu</include>
+								<label>$LOCALIZE[31074] 2</label>
+								<label2>$INFO[Skin.String(Home3Tile2.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home3Tile2)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>
+
+							<control type="button" id="8051">
+								<enable>!Skin.String(Home3Tile1,WeatherConditions)</enable>
+								<include>Settings_LiveTVMenu</include>
+								<label>$LOCALIZE[31074] 3</label>
+								<label2>$INFO[Skin.String(Home3Tile3.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home3Tile3)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>							
+
+							<control type="button" id="8052">
+								<enable>!Skin.String(Home3Tile1,WeatherConditions)</enable>
+								<include>Settings_LiveTVMenu</include>
+								<label>$LOCALIZE[31074] 4</label>
+								<label2>$INFO[Skin.String(Home3Tile4.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home3Tile4)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>							
+
+							<control type="button" id="8053">
+								<enable>!Skin.String(Home3Tile1,WeatherConditions)</enable>
+								<include>Settings_LiveTVMenu</include>
+								<label>$LOCALIZE[31074] 5</label>
+								<label2>$INFO[Skin.String(Home3Tile5.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home3Tile5)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>	
+
+							<control type="group" id="8054">
+							
+								<control type="image">
+									<include>Settings_HomeMenu_HorizBar</include>
+									<include>Settings_LiveTVMenu</include>
+								</control>	
+							
+							</control>		
+
+							<control type="button" id="8055">
+								<include>Settings_LiveTVMenu</include>
+								<label>$LOCALIZE[31073]</label>
+								<label2>$INFO[Skin.String(Home3Panel.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Panel)</onclick>
+								<onclick>Skin.SetString(PanelSelector_Temp,Home3Panel)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>	
+							
+							<!-- HOMEMENU 4-->
+							<control type="button" id="8061">
+								<textcolor>$VAR[Accent_100]</textcolor>
+								<include>Settings_MusicMenu</include>
+								<label>$LOCALIZE[31301]</label>
+								<onclick>Skin.SetString(HomeMenu.4.Label,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.4.Icon,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.4.Action,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.4.Background,)</onclick>
+							</control>
+
+							<control type="group" id="8062">
+							
+								<control type="image">
+									<include>Settings_HomeMenu_HorizBar</include>
+									<include>Settings_MusicMenu</include>
+								</control>	
+							
+							</control>
+
+							<control type="radiobutton" id="8063">
+								<include>Settings_MusicMenu</include>
+								<label>$LOCALIZE[305]</label>
+								<onclick>Skin.ToggleSetting(HomeMenu4.Hide)</onclick>
+								<selected>!Skin.HasSetting(HomeMenu4.Hide)</selected>
+							</control>
+							
+							<control type="button" id="8064">
+								<include>Settings_MusicMenu</include>
+								<label>$LOCALIZE[369]</label>
+								<label2>$VAR[HomeMenu_4_Label]</label2>
+								<onclick>Skin.SetString(HomeMenu.4.Label)</onclick>
+							</control>
+							
+							<control type="button" id="8065">
+								<include>Settings_MusicMenu</include>
+								<label>$LOCALIZE[31205]</label>
+								<label2>$VAR[HomeMenu_4_Icon]</label2>
+								<onclick>Skin.SetImage(HomeMenu.4.Icon)</onclick>
+							</control>
+							
+							<control type="button" id="8066">
+								<include>Settings_MusicMenu</include>
+								<label>$LOCALIZE[31198]</label>
+								<label2>$VAR[HomeMenu_4_Action]</label2>
+								<onclick>Skin.SetString(HomeMenu.4.Action)</onclick>
+							</control>
+							
+							<control type="button" id="8067">
+								<include>Settings_MusicMenu</include>
+								<label>$LOCALIZE[33068]</label>
+								<label2>$VAR[HomeMenu_4_Background]</label2>
+								<onclick>Skin.SetString(BGSelector_Temp,HomeMenu4)</onclick>		
+								<onclick>Skin.SetString(BGSelector_Temp_STR,HomeMenu.4.Background)</onclick>
+								<onclick>ActivateWindow(1116)</onclick>
+							</control>
+							
+							<control type="group" id="8068">
+							
+								<control type="image">
+									<include>Settings_HomeMenu_HorizBar</include>
+									<include>Settings_MusicMenu</include>
+								</control>	
+							
+							</control>
+							
+							<control type="button" id="8069">
+								<include>Settings_MusicMenu</include>
+								<label>$LOCALIZE[31074] 1</label>
+								<label2>$INFO[Skin.String(Home4Tile1.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home4Tile1)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>
+							
+							<control type="button" id="8070">
+								<enable>!Skin.String(Home4Tile1,WeatherConditions)</enable>
+								<include>Settings_MusicMenu</include>
+								<label>$LOCALIZE[31074] 2</label>
+								<label2>$INFO[Skin.String(Home4Tile2.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home4Tile2)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>
+
+							<control type="button" id="8071">
+								<enable>!Skin.String(Home4Tile1,WeatherConditions)</enable>
+								<include>Settings_MusicMenu</include>
+								<label>$LOCALIZE[31074] 3</label>
+								<label2>$INFO[Skin.String(Home4Tile3.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home4Tile3)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>							
+
+							<control type="button" id="8072">
+								<enable>!Skin.String(Home4Tile1,WeatherConditions)</enable>
+								<include>Settings_MusicMenu</include>
+								<label>$LOCALIZE[31074] 4</label>
+								<label2>$INFO[Skin.String(Home4Tile4.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home4Tile4)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>							
+
+							<control type="button" id="8073">
+								<enable>!Skin.String(Home4Tile1,WeatherConditions)</enable>
+								<include>Settings_MusicMenu</include>
+								<label>$LOCALIZE[31074] 5</label>
+								<label2>$INFO[Skin.String(Home4Tile5.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home4Tile5)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>	
+
+							<control type="group" id="8074">
+							
+								<control type="image">
+									<include>Settings_HomeMenu_HorizBar</include>
+									<include>Settings_MusicMenu</include>
+								</control>	
+							
+							</control>		
+
+							<control type="button" id="8075">
+								<include>Settings_MusicMenu</include>
+								<label>$LOCALIZE[31073]</label>
+								<label2>$INFO[Skin.String(Home4Panel.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Panel)</onclick>
+								<onclick>Skin.SetString(PanelSelector_Temp,Home4Panel)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>	
+	
+							<!-- HOMEMENU 5-->
+							<control type="button" id="8081">
+								<textcolor>$VAR[Accent_100]</textcolor>
+								<include>Settings_MusicVidMenu</include>
+								<label>$LOCALIZE[31301]</label>
+								<onclick>Skin.SetString(HomeMenu.5.Label,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.5.Icon,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.5.Action,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.5.Background,)</onclick>
+							</control>
+
+							<control type="group" id="8082">
+							
+								<control type="image">
+									<include>Settings_HomeMenu_HorizBar</include>
+									<include>Settings_MusicVidMenu</include>
+								</control>	
+							
+							</control>
+
+							<control type="radiobutton" id="8083">
+								<include>Settings_MusicVidMenu</include>
+								<label>$LOCALIZE[305]</label>
+								<onclick>Skin.ToggleSetting(HomeMenu5.Hide)</onclick>
+								<selected>!Skin.HasSetting(HomeMenu5.Hide)</selected>
+							</control>
+							
+							<control type="button" id="8084">
+								<include>Settings_MusicVidMenu</include>
+								<label>$LOCALIZE[369]</label>
+								<label2>$VAR[HomeMenu_5_Label]</label2>
+								<onclick>Skin.SetString(HomeMenu.5.Label)</onclick>
+							</control>
+							
+							<control type="button" id="8085">
+								<include>Settings_MusicVidMenu</include>
+								<label>$LOCALIZE[31205]</label>
+								<label2>$VAR[HomeMenu_5_Icon]</label2>
+								<onclick>Skin.SetImage(HomeMenu.5.Icon)</onclick>
+							</control>
+							
+							<control type="button" id="8086">
+								<include>Settings_MusicVidMenu</include>
+								<label>$LOCALIZE[31198]</label>
+								<label2>$VAR[HomeMenu_5_Action]</label2>
+								<onclick>Skin.SetString(HomeMenu.5.Action)</onclick>
+							</control>
+							
+							<control type="button" id="8087">
+								<include>Settings_MusicVidMenu</include>
+								<label>$LOCALIZE[33068]</label>
+								<label2>$VAR[HomeMenu_5_Background]</label2>
+								<onclick>Skin.SetString(BGSelector_Temp,HomeMenu5)</onclick>		
+								<onclick>Skin.SetString(BGSelector_Temp_STR,HomeMenu.5.Background)</onclick>
+								<onclick>ActivateWindow(1116)</onclick>
+							</control>
+							
+							<control type="group" id="8088">
+							
+								<control type="image">
+									<include>Settings_HomeMenu_HorizBar</include>
+									<include>Settings_MusicVidMenu</include>
+								</control>	
+							
+							</control>
+							
+							<control type="button" id="8089">
+								<include>Settings_MusicVidMenu</include>
+								<label>$LOCALIZE[31074] 1</label>
+								<label2>$INFO[Skin.String(Home5Tile1.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home5Tile1)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>
+							
+							<control type="button" id="8090">
+								<enable>!Skin.String(Home5Tile1,WeatherConditions)</enable>
+								<include>Settings_MusicVidMenu</include>
+								<label>$LOCALIZE[31074] 2</label>
+								<label2>$INFO[Skin.String(Home5Tile2.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home5Tile2)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>
+
+							<control type="button" id="8091">
+								<enable>!Skin.String(Home5Tile1,WeatherConditions)</enable>
+								<include>Settings_MusicVidMenu</include>
+								<label>$LOCALIZE[31074] 3</label>
+								<label2>$INFO[Skin.String(Home5Tile3.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home5Tile3)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>							
+
+							<control type="button" id="8092">
+								<enable>!Skin.String(Home5Tile1,WeatherConditions)</enable>
+								<include>Settings_MusicVidMenu</include>
+								<label>$LOCALIZE[31074] 4</label>
+								<label2>$INFO[Skin.String(Home5Tile4.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home5Tile4)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>							
+
+							<control type="button" id="8093">
+								<enable>!Skin.String(Home5Tile1,WeatherConditions)</enable>
+								<include>Settings_MusicVidMenu</include>
+								<label>$LOCALIZE[31074] 5</label>
+								<label2>$INFO[Skin.String(Home5Tile5.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home5Tile5)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>	
+
+							<control type="group" id="8094">
+							
+								<control type="image">
+									<include>Settings_HomeMenu_HorizBar</include>
+									<include>Settings_MusicVidMenu</include>
+								</control>	
+							
+							</control>		
+
+							<control type="button" id="8095">
+								<include>Settings_MusicVidMenu</include>
+								<label>$LOCALIZE[31073]</label>
+								<label2>$INFO[Skin.String(Home5Panel.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Panel)</onclick>
+								<onclick>Skin.SetString(PanelSelector_Temp,Home5Panel)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>	
+
+							<!-- HOMEMENU 6-->
+							<control type="button" id="8101">
+								<textcolor>$VAR[Accent_100]</textcolor>
+								<include>Settings_PictureMenu</include>
+								<label>$LOCALIZE[31301]</label>
+								<onclick>Skin.SetString(HomeMenu.6.Label,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.6.Icon,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.6.Action,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.6.Background,)</onclick>
+							</control>
+
+							<control type="group" id="8102">
+							
+								<control type="image">
+									<include>Settings_HomeMenu_HorizBar</include>
+									<include>Settings_PictureMenu</include>
+								</control>	
+							
+							</control>
+
+							<control type="radiobutton" id="8103">
+								<include>Settings_PictureMenu</include>
+								<label>$LOCALIZE[305]</label>
+								<onclick>Skin.ToggleSetting(HomeMenu6.Hide)</onclick>
+								<selected>!Skin.HasSetting(HomeMenu6.Hide)</selected>
+							</control>
+							
+							<control type="button" id="8104">
+								<include>Settings_PictureMenu</include>
+								<label>$LOCALIZE[369]</label>
+								<label2>$VAR[HomeMenu_6_Label]</label2>
+								<onclick>Skin.SetString(HomeMenu.6.Label)</onclick>
+							</control>
+							
+							<control type="button" id="8105">
+								<include>Settings_PictureMenu</include>
+								<label>$LOCALIZE[31205]</label>
+								<label2>$VAR[HomeMenu_6_Icon]</label2>
+								<onclick>Skin.SetImage(HomeMenu.6.Icon)</onclick>
+							</control>
+							
+							<control type="button" id="8106">
+								<include>Settings_PictureMenu</include>
+								<label>$LOCALIZE[31198]</label>
+								<label2>$VAR[HomeMenu_6_Action]</label2>
+								<onclick>Skin.SetString(HomeMenu.6.Action)</onclick>
+							</control>
+							
+							<control type="button" id="8107">
+								<include>Settings_PictureMenu</include>
+								<label>$LOCALIZE[33068]</label>
+								<label2>$VAR[HomeMenu_6_Background]</label2>
+								<onclick>Skin.SetString(BGSelector_Temp,HomeMenu6)</onclick>		
+								<onclick>Skin.SetString(BGSelector_Temp_STR,HomeMenu.6.Background)</onclick>
+								<onclick>ActivateWindow(1116)</onclick>
+							</control>
+							
+							<control type="group" id="8108">
+							
+								<control type="image">
+									<include>Settings_HomeMenu_HorizBar</include>
+									<include>Settings_PictureMenu</include>
+								</control>	
+							
+							</control>
+							
+							<control type="button" id="8109">
+								<include>Settings_PictureMenu</include>
+								<label>$LOCALIZE[31074] 1</label>
+								<label2>$INFO[Skin.String(Home6Tile1.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home6Tile1)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>
+							
+							<control type="button" id="8110">
+								<enable>!Skin.String(Home6Tile1,WeatherConditions)</enable>
+								<include>Settings_PictureMenu</include>
+								<label>$LOCALIZE[31074] 2</label>
+								<label2>$INFO[Skin.String(Home6Tile2.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home6Tile2)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>
+
+							<control type="button" id="8111">
+								<enable>!Skin.String(Home6Tile1,WeatherConditions)</enable>
+								<include>Settings_PictureMenu</include>
+								<label>$LOCALIZE[31074] 3</label>
+								<label2>$INFO[Skin.String(Home6Tile3.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home6Tile3)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>							
+
+							<control type="button" id="8112">
+								<enable>!Skin.String(Home6Tile1,WeatherConditions)</enable>
+								<include>Settings_PictureMenu</include>
+								<label>$LOCALIZE[31074] 4</label>
+								<label2>$INFO[Skin.String(Home6Tile4.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home6Tile4)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>							
+
+							<control type="button" id="8113">
+								<enable>!Skin.String(Home6Tile1,WeatherConditions)</enable>
+								<include>Settings_PictureMenu</include>
+								<label>$LOCALIZE[31074] 5</label>
+								<label2>$INFO[Skin.String(Home6Tile5.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home6Tile5)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>	
+
+							<control type="group" id="8114">
+							
+								<control type="image">
+									<include>Settings_HomeMenu_HorizBar</include>
+									<include>Settings_PictureMenu</include>
+								</control>	
+							
+							</control>		
+
+							<control type="button" id="8115">
+								<include>Settings_PictureMenu</include>
+								<label>$LOCALIZE[31073]</label>
+								<label2>$INFO[Skin.String(Home6Panel.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Panel)</onclick>
+								<onclick>Skin.SetString(PanelSelector_Temp,Home6Panel)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>	
+
+							<!-- HOMEMENU 7-->
+							<control type="button" id="8121">
+								<textcolor>$VAR[Accent_100]</textcolor>
+								<include>Settings_GameMenu</include>
+								<label>$LOCALIZE[31301]</label>
+								<onclick>Skin.SetString(HomeMenu.7.Label,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.7.Icon,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.7.Action,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.7.Background,)</onclick>
+							</control>
+
+							<control type="group" id="8122">
+							
+								<control type="image">
+									<include>Settings_HomeMenu_HorizBar</include>
+									<include>Settings_GameMenu</include>
+								</control>	
+							
+							</control>
+
+							<control type="radiobutton" id="8123">
+								<include>Settings_GameMenu</include>
+								<label>$LOCALIZE[305]</label>
+								<onclick>Skin.ToggleSetting(HomeMenu7.Hide)</onclick>
+								<selected>!Skin.HasSetting(HomeMenu7.Hide)</selected>
+							</control>
+							
+							<control type="button" id="8124">
+								<include>Settings_GameMenu</include>
+								<label>$LOCALIZE[369]</label>
+								<label2>$VAR[HomeMenu_7_Label]</label2>
+								<onclick>Skin.SetString(HomeMenu.7.Label)</onclick>
+							</control>
+							
+							<control type="button" id="8125">
+								<include>Settings_GameMenu</include>
+								<label>$LOCALIZE[31205]</label>
+								<label2>$VAR[HomeMenu_7_Icon]</label2>
+								<onclick>Skin.SetImage(HomeMenu.7.Icon)</onclick>
+							</control>
+							
+							<control type="button" id="8126">
+								<include>Settings_GameMenu</include>
+								<label>$LOCALIZE[31198]</label>
+								<label2>$VAR[HomeMenu_7_Action]</label2>
+								<onclick>Skin.SetString(HomeMenu.7.Action)</onclick>
+							</control>
+							
+							<control type="button" id="8127">
+								<include>Settings_GameMenu</include>
+								<label>$LOCALIZE[33068]</label>
+								<label2>$VAR[HomeMenu_7_Background]</label2>
+								<onclick>Skin.SetString(BGSelector_Temp,HomeMenu7)</onclick>		
+								<onclick>Skin.SetString(BGSelector_Temp_STR,HomeMenu.7.Background)</onclick>
+								<onclick>ActivateWindow(1116)</onclick>
+							</control>
+							
+							<control type="group" id="8128">
+							
+								<control type="image">
+									<include>Settings_HomeMenu_HorizBar</include>
+									<include>Settings_GameMenu</include>
+								</control>	
+							
+							</control>
+							
+							<control type="button" id="8129">
+								<include>Settings_GameMenu</include>
+								<label>$LOCALIZE[31074] 1</label>
+								<label2>$INFO[Skin.String(Home7Tile1.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home7Tile1)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>
+							
+							<control type="button" id="8130">
+								<enable>!Skin.String(Home7Tile1,WeatherConditions)</enable>
+								<include>Settings_GameMenu</include>
+								<label>$LOCALIZE[31074] 2</label>
+								<label2>$INFO[Skin.String(Home7Tile2.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home7Tile2)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>
+
+							<control type="button" id="8131">
+								<enable>!Skin.String(Home7Tile1,WeatherConditions)</enable>
+								<include>Settings_GameMenu</include>
+								<label>$LOCALIZE[31074] 3</label>
+								<label2>$INFO[Skin.String(Home7Tile3.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home7Tile3)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>							
+
+							<control type="button" id="8132">
+								<enable>!Skin.String(Home7Tile1,WeatherConditions)</enable>
+								<include>Settings_GameMenu</include>
+								<label>$LOCALIZE[31074] 4</label>
+								<label2>$INFO[Skin.String(Home7Tile4.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home7Tile4)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>							
+
+							<control type="button" id="8133">
+								<enable>!Skin.String(Home7Tile1,WeatherConditions)</enable>
+								<include>Settings_GameMenu</include>
+								<label>$LOCALIZE[31074] 5</label>
+								<label2>$INFO[Skin.String(Home7Tile5.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home7Tile5)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>	
+
+							<control type="group" id="8134">
+							
+								<control type="image">
+									<include>Settings_HomeMenu_HorizBar</include>
+									<include>Settings_GameMenu</include>
+								</control>	
+							
+							</control>		
+
+							<control type="button" id="8135">
+								<include>Settings_GameMenu</include>
+								<label>$LOCALIZE[31073]</label>
+								<label2>$INFO[Skin.String(Home7Panel.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Panel)</onclick>
+								<onclick>Skin.SetString(PanelSelector_Temp,Home7Panel)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>	
+
+							<!-- HOMEMENU 8-->
+							<control type="button" id="8141">
+								<textcolor>$VAR[Accent_100]</textcolor>
+								<include>Settings_WeatherMenu</include>
+								<label>$LOCALIZE[31301]</label>
+								<onclick>Skin.SetString(HomeMenu.8.Label,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.8.Icon,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.8.Action,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.8.Background,)</onclick>
+							</control>
+
+							<control type="group" id="8142">
+							
+								<control type="image">
+									<include>Settings_HomeMenu_HorizBar</include>
+									<include>Settings_WeatherMenu</include>
+								</control>	
+							
+							</control>
+
+							<control type="radiobutton" id="8143">
+								<include>Settings_WeatherMenu</include>
+								<label>$LOCALIZE[305]</label>
+								<onclick>Skin.ToggleSetting(HomeMenu8.Hide)</onclick>
+								<selected>!Skin.HasSetting(HomeMenu8.Hide)</selected>
+							</control>
+							
+							<control type="button" id="8144">
+								<include>Settings_WeatherMenu</include>
+								<label>$LOCALIZE[369]</label>
+								<label2>$VAR[HomeMenu_8_Label]</label2>
+								<onclick>Skin.SetString(HomeMenu.8.Label)</onclick>
+							</control>
+							
+							<control type="button" id="8145">
+								<include>Settings_WeatherMenu</include>
+								<label>$LOCALIZE[31205]</label>
+								<label2>$VAR[HomeMenu_8_Icon]</label2>
+								<onclick>Skin.SetImage(HomeMenu.8.Icon)</onclick>
+							</control>
+							
+							<control type="button" id="8146">
+								<include>Settings_WeatherMenu</include>
+								<label>$LOCALIZE[31198]</label>
+								<label2>$VAR[HomeMenu_8_Action]</label2>
+								<onclick>Skin.SetString(HomeMenu.8.Action)</onclick>
+							</control>
+							
+							<control type="button" id="8147">
+								<include>Settings_WeatherMenu</include>
+								<label>$LOCALIZE[33068]</label>
+								<label2>$VAR[HomeMenu_8_Background]</label2>
+								<onclick>Skin.SetString(BGSelector_Temp,HomeMenu8)</onclick>		
+								<onclick>Skin.SetString(BGSelector_Temp_STR,HomeMenu.8.Background)</onclick>
+								<onclick>ActivateWindow(1116)</onclick>
+							</control>
+							
+							<control type="group" id="8148">
+							
+								<control type="image">
+									<include>Settings_HomeMenu_HorizBar</include>
+									<include>Settings_WeatherMenu</include>
+								</control>	
+							
+							</control>
+							
+							<control type="button" id="8149">
+								<include>Settings_WeatherMenu</include>
+								<label>$LOCALIZE[31074] 1</label>
+								<label2>$INFO[Skin.String(Home8Tile1.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home8Tile1)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>
+							
+							<control type="button" id="8150">
+								<enable>!Skin.String(Home8Tile1,WeatherConditions)</enable>
+								<include>Settings_WeatherMenu</include>
+								<label>$LOCALIZE[31074] 2</label>
+								<label2>$INFO[Skin.String(Home8Tile2.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home8Tile2)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>
+
+							<control type="button" id="8151">
+								<enable>!Skin.String(Home8Tile1,WeatherConditions)</enable>
+								<include>Settings_WeatherMenu</include>
+								<label>$LOCALIZE[31074] 3</label>
+								<label2>$INFO[Skin.String(Home8Tile3.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home8Tile3)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>							
+
+							<control type="button" id="8152">
+								<enable>!Skin.String(Home8Tile1,WeatherConditions)</enable>
+								<include>Settings_WeatherMenu</include>
+								<label>$LOCALIZE[31074] 4</label>
+								<label2>$INFO[Skin.String(Home8Tile4.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home8Tile4)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>							
+
+							<control type="button" id="8153">
+								<enable>!Skin.String(Home8Tile1,WeatherConditions)</enable>
+								<include>Settings_WeatherMenu</include>
+								<label>$LOCALIZE[31074] 5</label>
+								<label2>$INFO[Skin.String(Home8Tile5.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home8Tile5)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>	
+
+							<control type="group" id="8154">
+							
+								<control type="image">
+									<include>Settings_HomeMenu_HorizBar</include>
+									<include>Settings_WeatherMenu</include>
+								</control>	
+							
+							</control>		
+
+							<control type="button" id="8155">
+								<include>Settings_WeatherMenu</include>
+								<label>$LOCALIZE[31073]</label>
+								<label2>$INFO[Skin.String(Home8Panel.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Panel)</onclick>
+								<onclick>Skin.SetString(PanelSelector_Temp,Home8Panel)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>	
+
+							<!-- HOMEMENU 9-->
+							<control type="button" id="8161">
+								<textcolor>$VAR[Accent_100]</textcolor>
+								<include>Settings_AddonMenu</include>
+								<label>$LOCALIZE[31301]</label>
+								<onclick>Skin.SetString(HomeMenu.9.Label,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.9.Icon,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.9.Action,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.9.Background,)</onclick>
+							</control>
+
+							<control type="group" id="8162">
+							
+								<control type="image">
+									<include>Settings_HomeMenu_HorizBar</include>
+									<include>Settings_AddonMenu</include>
+								</control>	
+							
+							</control>
+
+							<control type="radiobutton" id="8163">
+								<include>Settings_AddonMenu</include>
+								<label>$LOCALIZE[305]</label>
+								<onclick>Skin.ToggleSetting(HomeMenu9.Hide)</onclick>
+								<selected>!Skin.HasSetting(HomeMenu9.Hide)</selected>
+							</control>
+							
+							<control type="button" id="8164">
+								<include>Settings_AddonMenu</include>
+								<label>$LOCALIZE[369]</label>
+								<label2>$VAR[HomeMenu_9_Label]</label2>
+								<onclick>Skin.SetString(HomeMenu.9.Label)</onclick>
+							</control>
+							
+							<control type="button" id="8165">
+								<include>Settings_AddonMenu</include>
+								<label>$LOCALIZE[31205]</label>
+								<label2>$VAR[HomeMenu_9_Icon]</label2>
+								<onclick>Skin.SetImage(HomeMenu.9.Icon)</onclick>
+							</control>
+							
+							<control type="button" id="8166">
+								<include>Settings_AddonMenu</include>
+								<label>$LOCALIZE[31198]</label>
+								<label2>$VAR[HomeMenu_9_Action]</label2>
+								<onclick>Skin.SetString(HomeMenu.9.Action)</onclick>
+							</control>
+							
+							<control type="button" id="8167">
+								<include>Settings_AddonMenu</include>
+								<label>$LOCALIZE[33068]</label>
+								<label2>$VAR[HomeMenu_9_Background]</label2>
+								<onclick>Skin.SetString(BGSelector_Temp,HomeMenu9)</onclick>		
+								<onclick>Skin.SetString(BGSelector_Temp_STR,HomeMenu.9.Background)</onclick>
+								<onclick>ActivateWindow(1116)</onclick>
+							</control>
+							
+							<control type="group" id="8168">
+							
+								<control type="image">
+									<include>Settings_HomeMenu_HorizBar</include>
+									<include>Settings_AddonMenu</include>
+								</control>	
+							
+							</control>
+							
+							<control type="button" id="8169">
+								<include>Settings_AddonMenu</include>
+								<label>$LOCALIZE[31074] 1</label>
+								<label2>$INFO[Skin.String(Home9Tile1.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home9Tile1)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>
+							
+							<control type="button" id="8170">
+								<enable>!Skin.String(Home9Tile1,WeatherConditions)</enable>
+								<include>Settings_AddonMenu</include>
+								<label>$LOCALIZE[31074] 2</label>
+								<label2>$INFO[Skin.String(Home9Tile2.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home9Tile2)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>
+
+							<control type="button" id="8171">
+								<enable>!Skin.String(Home9Tile1,WeatherConditions)</enable>
+								<include>Settings_AddonMenu</include>
+								<label>$LOCALIZE[31074] 3</label>
+								<label2>$INFO[Skin.String(Home9Tile3.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home9Tile3)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>							
+
+							<control type="button" id="8172">
+								<enable>!Skin.String(Home9Tile1,WeatherConditions)</enable>
+								<include>Settings_AddonMenu</include>
+								<label>$LOCALIZE[31074] 4</label>
+								<label2>$INFO[Skin.String(Home9Tile4.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home9Tile4)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>							
+
+							<control type="button" id="8173">
+								<enable>!Skin.String(Home9Tile1,WeatherConditions)</enable>
+								<include>Settings_AddonMenu</include>
+								<label>$LOCALIZE[31074] 5</label>
+								<label2>$INFO[Skin.String(Home9Tile5.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home9Tile5)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>	
+
+							<control type="group" id="8174">
+							
+								<control type="image">
+									<include>Settings_HomeMenu_HorizBar</include>
+									<include>Settings_AddonMenu</include>
+								</control>	
+							
+							</control>		
+
+							<control type="button" id="8175">
+								<include>Settings_AddonMenu</include>
+								<label>$LOCALIZE[31073]</label>
+								<label2>$INFO[Skin.String(Home9Panel.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Panel)</onclick>
+								<onclick>Skin.SetString(PanelSelector_Temp,Home9Panel)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>	
+
+							<!-- HOMEMENU 10-->
+							<control type="button" id="8181">
+								<textcolor>$VAR[Accent_100]</textcolor>
+								<include>Settings_CustomMenu</include>
+								<label>$LOCALIZE[31301]</label>
+								<onclick>Skin.SetString(HomeMenu.10.Label,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.10.Icon,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.10.Action,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.10.Background,)</onclick>
+							</control>
+
+							<control type="group" id="8182">
+							
+								<control type="image">
+									<include>Settings_HomeMenu_HorizBar</include>
+									<include>Settings_CustomMenu</include>
+								</control>	
+							
+							</control>
+
+							<control type="radiobutton" id="8183">
+								<include>Settings_CustomMenu</include>
+								<label>$LOCALIZE[305]</label>
+								<onclick>Skin.ToggleSetting(HomeMenu10.Hide)</onclick>
+								<selected>!Skin.HasSetting(HomeMenu10.Hide)</selected>
+							</control>
+							
+							<control type="button" id="8184">
+								<include>Settings_CustomMenu</include>
+								<label>$LOCALIZE[369]</label>
+								<label2>$VAR[HomeMenu_10_Label]</label2>
+								<onclick>Skin.SetString(HomeMenu.10.Label)</onclick>
+							</control>
+							
+							<control type="button" id="8185">
+								<include>Settings_CustomMenu</include>
+								<label>$LOCALIZE[31205]</label>
+								<label2>$VAR[HomeMenu_10_Icon]</label2>
+								<onclick>Skin.SetImage(HomeMenu.10.Icon)</onclick>
+							</control>
+							
+							<control type="button" id="8186">
+								<include>Settings_CustomMenu</include>
+								<label>$LOCALIZE[31198]</label>
+								<label2>$VAR[HomeMenu_10_Action]</label2>
+								<onclick>Skin.SetString(HomeMenu.10.Action)</onclick>
+							</control>
+							
+							<control type="button" id="8187">
+								<include>Settings_CustomMenu</include>
+								<label>$LOCALIZE[33068]</label>
+								<label2>$VAR[HomeMenu_10_Background]</label2>
+								<onclick>Skin.SetString(BGSelector_Temp,HomeMenu10)</onclick>		
+								<onclick>Skin.SetString(BGSelector_Temp_STR,HomeMenu.10.Background)</onclick>
+								<onclick>ActivateWindow(1116)</onclick>
+							</control>
+							
+							<control type="group" id="8188">
+							
+								<control type="image">
+									<include>Settings_HomeMenu_HorizBar</include>
+									<include>Settings_CustomMenu</include>
+								</control>	
+							
+							</control>
+							
+							<control type="button" id="8189">
+								<include>Settings_CustomMenu</include>
+								<label>$LOCALIZE[31074] 1</label>
+								<label2>$INFO[Skin.String(Home10Tile1.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home10Tile1)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>
+							
+							<control type="button" id="8190">
+								<enable>!Skin.String(Home10Tile1,WeatherConditions)</enable>
+								<include>Settings_CustomMenu</include>
+								<label>$LOCALIZE[31074] 2</label>
+								<label2>$INFO[Skin.String(Home10Tile2.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home10Tile2)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>
+
+							<control type="button" id="8191">
+								<enable>!Skin.String(Home10Tile1,WeatherConditions)</enable>
+								<include>Settings_CustomMenu</include>
+								<label>$LOCALIZE[31074] 3</label>
+								<label2>$INFO[Skin.String(Home10Tile3.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home10Tile3)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>							
+
+							<control type="button" id="8192">
+								<enable>!Skin.String(Home10Tile1,WeatherConditions)</enable>
+								<include>Settings_CustomMenu</include>
+								<label>$LOCALIZE[31074] 4</label>
+								<label2>$INFO[Skin.String(Home10Tile4.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home10Tile4)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>							
+
+							<control type="button" id="8193">
+								<enable>!Skin.String(Home10Tile1,WeatherConditions)</enable>
+								<include>Settings_CustomMenu</include>
+								<label>$LOCALIZE[31074] 5</label>
+								<label2>$INFO[Skin.String(Home10Tile5.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Tile)</onclick>
+								<onclick>Skin.SetString(TileSelector_Temp,Home10Tile5)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>	
+
+							<control type="group" id="8194">
+							
+								<control type="image">
+									<include>Settings_HomeMenu_HorizBar</include>
+									<include>Settings_CustomMenu</include>
+								</control>	
+							
+							</control>		
+
+							<control type="button" id="8195">
+								<include>Settings_CustomMenu</include>
+								<label>$LOCALIZE[31073]</label>
+								<label2>$INFO[Skin.String(Home10Panel.Label)]</label2>
+								<onclick>Skin.SetString(SelectorType,Panel)</onclick>
+								<onclick>Skin.SetString(PanelSelector_Temp,Home10Panel)</onclick>
+								<onclick>ActivateWindow(1113)</onclick>
+							</control>	
+
+							<!-- PROFILES -->
+							<control type="button" id="8201">
+								<textcolor>$VAR[Accent_100]</textcolor>
+								<include>Settings_ProfileMenu</include>
+								<label>$LOCALIZE[31301]</label>
+								<onclick>Skin.SetString(HomeMenu.11.Background,)</onclick>
+							</control>
+
+							<control type="group" id="8202">
+							
+								<control type="image">
+									<include>Settings_HomeMenu_HorizBar</include>
+									<include>Settings_ProfileMenu</include>
+								</control>	
+							
+							</control>
+
+							<control type="radiobutton" id="8203">
+								<include>Settings_ProfileMenu</include>
+								<label>$LOCALIZE[305]</label>
+								<onclick>Skin.ToggleSetting(HomeMenu11.Hide)</onclick>
+								<selected>!Skin.HasSetting(HomeMenu11.Hide)</selected>
+							</control>
+							
+							<control type="button" id="8204">
+								<include>Settings_ProfileMenu</include>
+								<label>$LOCALIZE[33068]</label>
+								<label2>$VAR[HomeMenu_11_Background]</label2>
+								<onclick>Skin.SetString(BGSelector_Temp,HomeMenu11)</onclick>		
+								<onclick>Skin.SetString(BGSelector_Temp_STR,HomeMenu.11.Background)</onclick>
+								<onclick>ActivateWindow(1116)</onclick>
+							</control>
+	
+							<!-- SEARCH -->
+							<control type="button" id="8211">
+								<textcolor>$VAR[Accent_100]</textcolor>
+								<include>Settings_SearchMenu</include>
+								<label>$LOCALIZE[31301]</label>
+								<onclick>Skin.SetString(HomeMenu.12.Icon,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.12.Action,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.12.Background,)</onclick>
+							</control>
+
+							<control type="group" id="8212">
+							
+								<control type="image">
+									<include>Settings_HomeMenu_HorizBar</include>
+									<include>Settings_SearchMenu</include>
+								</control>	
+							
+							</control>
+
+							<control type="radiobutton" id="8213">
+								<include>Settings_SearchMenu</include>
+								<label>$LOCALIZE[305]</label>
+								<onclick>Skin.ToggleSetting(HomeMenu12.Hide)</onclick>
+								<selected>!Skin.HasSetting(HomeMenu12.Hide)</selected>
+							</control>
+							
+							<control type="button" id="8214">
+								<include>Settings_SearchMenu</include>
+								<label>$LOCALIZE[33068]</label>
+								<label2>$VAR[HomeMenu_12_Background]</label2>
+								<onclick>Skin.SetString(BGSelector_Temp,HomeMenu12)</onclick>		
+								<onclick>Skin.SetString(BGSelector_Temp_STR,HomeMenu.12.Background)</onclick>
+								<onclick>ActivateWindow(1116)</onclick>
+							</control>							
+
+							<!-- SETTINGS -->
+							<control type="button" id="8221">
+								<textcolor>$VAR[Accent_100]</textcolor>
+								<include>Settings_SettingsMenu</include>
+								<label>$LOCALIZE[31301]</label>
+								<onclick>Skin.SetString(HomeMenu.13.Icon,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.13.Action,)</onclick>
+								<onclick>Skin.SetString(HomeMenu.13.Background,)</onclick>
+							</control>
+
+							<control type="group" id="8222">
+							
+								<control type="image">
+									<include>Settings_HomeMenu_HorizBar</include>
+									<include>Settings_SettingsMenu</include>
+								</control>	
+							
+							</control>
+
+							<control type="radiobutton" id="8223">
+								<include>Settings_SettingsMenu</include>
+								<label>$LOCALIZE[305]</label>
+								<onclick>Skin.ToggleSetting(HomeMenu13.Hide)</onclick>
+								<selected>!Skin.HasSetting(HomeMenu13.Hide)</selected>
+							</control>
+							
+							<control type="button" id="8224">
+								<include>Settings_SettingsMenu</include>
+								<label>$LOCALIZE[33068]</label>
+								<label2>$VAR[HomeMenu_13_Background]</label2>
+								<onclick>Skin.SetString(BGSelector_Temp,HomeMenu13)</onclick>		
+								<onclick>Skin.SetString(BGSelector_Temp_STR,HomeMenu.13.Background)</onclick>
+								<onclick>ActivateWindow(1116)</onclick>
+							</control>													
+
+						</control>					
+					
+					</control>
+					
+					<!--HUBS Control Area-->
+					<control type="group">
+						<visible>Container(100).Hasfocus(4)</visible>
+						
+						<control type="grouplist" id="600">
+							<description>Control Area- HUBS</description>
+							<posy>50</posy>
+							<width>1050</width>
+							<height>660</height>
+							<onleft>100</onleft>
+							<onright>100</onright>
+							<itemgap>0</itemgap>
+							<pagecontrol>699</pagecontrol>	
+							
+							<control type="label" id="601">
+								<description>Tile Details</description>
+								<width>1050</width>
+								<font>font36</font>
+								<textcolor>$VAR[Accent_100]</textcolor>
+								<label> $LOCALIZE[31217]</label>
+							</control>
+							
+							<control type="radiobutton" id="602">
+								<description>Movie/TV featured</description>
+								<include>Common_Settings_Label_Wide</include>
+								<label>$LOCALIZE[31154] ($LOCALIZE[31220])</label>
+								<onclick>Skin.ToggleSetting(ShowFeaturedSection_Video)</onclick>
+								<selected>Skin.HasSetting(ShowFeaturedSection_Video)</selected>
+							</control>
+							
+							<control type="radiobutton" id="603">
+								<description>Movie/TV recent</description>
+								<include>Common_Settings_Label_Wide</include>
+								<label>$LOCALIZE[31009] ($LOCALIZE[31220])</label>
+								<onclick>Skin.ToggleSetting(ShowRecentlyAddedSection_Video)</onclick>
+								<selected>Skin.HasSetting(ShowRecentlyAddedSection_Video)</selected>
+							</control>
+							
+							<control type="radiobutton" id="604">
+								<description>Movie/TV airing today</description>
+								<include>Common_Settings_Label_Wide</include>
+								<label>$LOCALIZE[31031] ($LOCALIZE[31222])</label>
+								<onclick>Skin.ToggleSetting(ShowAiringTodaySection_Video)</onclick>
+								<selected>Skin.HasSetting(ShowAiringTodaySection_Video)</selected>
+								<enable>Skin.HasSetting(UseNextAiredScript)</enable>
+							</control>
+							
+							<control type="radiobutton" id="605">
+								<description>Movie/TV in cinemas</description>
+								<include>Common_Settings_Label_Wide</include>
+								<label>$LOCALIZE[31212] ($LOCALIZE[31221])</label>
+								<onclick>Skin.ToggleSetting(ShowInCinemasSection_Video)</onclick>
+								<selected>Skin.HasSetting(ShowInCinemasSection_Video)</selected>
+								<enable>System.HasAddon(script.extendedinfo)</enable>
+							</control>
+							
+							<control type="radiobutton" id="606">
+								<description>Movie/TV history</description>
+								<include>Common_Settings_Label_Wide</include>
+								<label>$LOCALIZE[31213] ($LOCALIZE[31220])</label>
+								<onclick>Skin.ToggleSetting(ShowHistorySection_Video)</onclick>
+								<selected>Skin.HasSetting(ShowHistorySection_Video)</selected>
+								<enable>System.HasAddon(script.randomandlastitems)</enable>
+							</control>
+							
+							<control type="radiobutton" id="607">
+								<description>Movie/TV trending</description>
+								<include>Common_Settings_Label_Wide</include>
+								<label>$LOCALIZE[31223] ($LOCALIZE[31220])</label>
+								<onclick>Skin.ToggleSetting(ShowTrendingSection_Video)</onclick>
+								<selected>Skin.HasSetting(ShowTrendingSection_Video)</selected>
+								<enable>System.HasAddon(script.extendedinfo)</enable>
+							</control>
+							
+							<control type="label" id="608">
+								<description>Tile Details</description>
+								<width>1050</width>
+								<font>font36</font>
+								<textcolor>$VAR[Accent_100]</textcolor>
+								<label> $LOCALIZE[31218]</label>
+							</control>
+							
+							<control type="radiobutton" id="609">
+								<description>Music featured</description>
+								<include>Common_Settings_Label_Wide</include>
+								<label>$LOCALIZE[31154]</label>
+								<onclick>Skin.ToggleSetting(ShowFeaturedSection_Music)</onclick>
+								<selected>Skin.HasSetting(ShowFeaturedSection_Music)</selected>
+							</control>
+							
+							<control type="radiobutton" id="610">
+								<description>Music recent</description>
+								<include>Common_Settings_Label_Wide</include>
+								<label>$LOCALIZE[31009]</label>
+								<onclick>Skin.ToggleSetting(ShowRecentlyAddedSection_Music)</onclick>
+								<selected>Skin.HasSetting(ShowRecentlyAddedSection_Music)</selected>
+							</control>
+							
+							<control type="radiobutton" id="612">
+								<description>Music history</description>
+								<include>Common_Settings_Label_Wide</include>
+								<label>$LOCALIZE[31213]</label>
+								<onclick>Skin.ToggleSetting(ShowHistorySection_Music)</onclick>
+								<selected>Skin.HasSetting(ShowHistorySection_Music)</selected>
+								<enable>System.HasAddon(script.randomandlastitems)</enable>
+							</control>
+							
+							<control type="label" id="613">
+								<description>Tile Details</description>
+								<width>1050</width>
+								<font>font36</font>
+								<textcolor>$VAR[Accent_100]</textcolor>
+								<label> $LOCALIZE[31219]</label>
+							</control>
+							
+							<control type="radiobutton" id="614">
+								<description>MusicVid featured</description>
+								<include>Common_Settings_Label_Wide</include>
+								<label>$LOCALIZE[31154]</label>
+								<onclick>Skin.ToggleSetting(ShowFeaturedSection_MusicVideo)</onclick>
+								<selected>Skin.HasSetting(ShowFeaturedSection_MusicVideo)</selected>
+							</control>
+							
+							<control type="radiobutton" id="615">
+								<description>MusicVid recent</description>
+								<include>Common_Settings_Label_Wide</include>
+								<label>$LOCALIZE[31009]</label>
+								<onclick>Skin.ToggleSetting(ShowRecentlyAddedSection_MusicVideo)</onclick>
+								<selected>Skin.HasSetting(ShowRecentlyAddedSection_MusicVideo)</selected>
+							</control>
+							
+						</control>
+
+					</control>
+				
+					<!--BACKGROUNDS Control Area-->
+					<control type="group">
+						<visible>Container(100).Hasfocus(5)</visible>
+
+						<control type="grouplist" id="500">
+							<description>Control Area- HOMESCREEN Sections</description>
+							<posy>50</posy>
+							<height>660</height>
+							<width>350</width>
+							<onleft>100</onleft>
+							<onright>1000</onright>
+							<itemgap>0</itemgap>
+							<pagecontrol>499</pagecontrol> 
+
+							<control type="button" id="501">
+								<description>default</description>
+								<include>Common_Settings_Label</include>
+								<label>$LOCALIZE[571]</label>
+								<onfocus>Skin.SetString(SkinSettings.BG,$VAR[Default_Background])</onfocus>
+								<onclick>Skin.SetString(BGSelector_Temp,Default)</onclick>
+								<onclick>Skin.SetString(BGSelector_Temp_STR,Default.Background)</onclick>
+								<onclick>ActivateWindow(1116)</onclick>
+							</control>	
+							
+							<control type="button" id="502">
+								<description>movies</description>
+								<include>Common_Settings_Label</include>
+								<label>$LOCALIZE[20342]</label>
+								<onfocus>Skin.SetString(SkinSettings.BG,$VAR[Movies_Background])</onfocus>
+								<onclick>Skin.SetString(BGSelector_Temp,Movies)</onclick>
+								<onclick>Skin.SetString(BGSelector_Temp_STR,Movies.Background)</onclick>
+								<onclick>ActivateWindow(1116)</onclick>
+							</control>
+							
+							<control type="button" id="503">
+								<description>tvshows</description>
+								<include>Common_Settings_Label</include>
+								<label>$LOCALIZE[20343]</label>
+								<onfocus>Skin.SetString(SkinSettings.BG,$VAR[TVShows_Background])</onfocus>
+								<onclick>Skin.SetString(BGSelector_Temp,TVShows)</onclick>
+								<onclick>Skin.SetString(BGSelector_Temp_STR,TVShows.Background)</onclick>
+								<onclick>ActivateWindow(1116)</onclick>
+							</control>
+							
+							<control type="button" id="504">
+								<description>live tv</description>
+								<include>Common_Settings_Label</include>
+								<label>$LOCALIZE[31012]</label>
+								<onfocus>Skin.SetString(SkinSettings.BG,$VAR[PVR_Background])</onfocus>
+								<onclick>Skin.SetString(BGSelector_Temp,PVR)</onclick>
+								<onclick>Skin.SetString(BGSelector_Temp_STR,PVR.Background)</onclick>
+								<onclick>ActivateWindow(1116)</onclick>
+							</control>
+							
+							<control type="button" id="505">
+								<description>music</description>
+								<include>Common_Settings_Label</include>
+								<label>$LOCALIZE[2]</label>
+								<onfocus>Skin.SetString(SkinSettings.BG,$VAR[Music_Background])</onfocus>
+								<onclick>Skin.SetString(BGSelector_Temp,Music)</onclick>
+								<onclick>Skin.SetString(BGSelector_Temp_STR,Music.Background)</onclick>
+								<onclick>ActivateWindow(1116)</onclick>
+							</control>
+							
+							<control type="button" id="506">
+								<description>music videos</description>
+								<include>Common_Settings_Label</include>
+								<label>$LOCALIZE[20389]</label>
+								<onfocus>Skin.SetString(SkinSettings.BG,$VAR[MusicVid_Background])</onfocus>
+								<onclick>Skin.SetString(BGSelector_Temp,MusicVid)</onclick>
+								<onclick>Skin.SetString(BGSelector_Temp_STR,MusicVid.Background)</onclick>
+								<onclick>ActivateWindow(1116)</onclick>
+							</control>
+							
+							<control type="button" id="507">
+								<description>pictures</description>
+								<include>Common_Settings_Label</include>
+								<label>$LOCALIZE[1]</label>
+								<onfocus>Skin.SetString(SkinSettings.BG,$VAR[Pictures_Background])</onfocus>
+								<onclick>Skin.SetString(BGSelector_Temp,Pictures)</onclick>
+								<onclick>Skin.SetString(BGSelector_Temp_STR,Pictures.Background)</onclick>
+								<onclick>ActivateWindow(1116)</onclick>
+							</control>
+							
+							<control type="button" id="508">
+								<description>programs</description>
+								<include>Common_Settings_Label</include>
+								<label>$LOCALIZE[0]</label>
+								<onfocus>Skin.SetString(SkinSettings.BG,$VAR[Programs_Background])</onfocus>
+								<onclick>Skin.SetString(BGSelector_Temp,Programs)</onclick>
+								<onclick>Skin.SetString(BGSelector_Temp_STR,Programs.Background)</onclick>
+								<onclick>ActivateWindow(1116)</onclick>
+							</control>
+
+							<control type="button" id="509">
+								<description>addons</description>
+								<include>Common_Settings_Label</include>
+								<label>$LOCALIZE[15016]</label>
+								<onfocus>Skin.SetString(SkinSettings.BG,$VAR[Games_Background])</onfocus>
+								<onclick>Skin.SetString(BGSelector_Temp,Games)</onclick>
+								<onclick>Skin.SetString(BGSelector_Temp_STR,Games.Background)</onclick>
+								<onclick>ActivateWindow(1116)</onclick>
+							</control>
+							
+							<control type="button" id="510">
+								<description>addons</description>
+								<include>Common_Settings_Label</include>
+								<label>$LOCALIZE[24001]</label>
+								<onfocus>Skin.SetString(SkinSettings.BG,$VAR[Addons_Background])</onfocus>
+								<onclick>Skin.SetString(BGSelector_Temp,Addons)</onclick>
+								<onclick>Skin.SetString(BGSelector_Temp_STR,Addons.Background)</onclick>
+								<onclick>ActivateWindow(1116)</onclick>
+							</control>
+							
+							<control type="button" id="511">
+								<description>Settings</description>
+								<include>Common_Settings_Label</include>
+								<label>$LOCALIZE[5]</label>
+								<onfocus>Skin.SetString(SkinSettings.BG,$VAR[Settings_Background])</onfocus>
+								<onclick>Skin.SetString(BGSelector_Temp,Settings)</onclick>
+								<onclick>Skin.SetString(BGSelector_Temp_STR,Settings.Background)</onclick>
+								<onclick>ActivateWindow(1116)</onclick>
+							</control>
+
+						</control>
+
+						<control type="image">
+							<posx>350</posx>
+							<posy>50</posy>
+							<width>2</width>
+							<height>660</height>
+							<include>Common_Color_BaseMediumHigh</include>
+						</control>
+						
+						<control type="multiimage">
+							<posx>370</posx>
+							<posy>190</posy>
+							<width>670</width>
+							<height>377</height>
+							<imagepath background="true">$INFO[Skin.String(SkinSettings.BG)]</imagepath>
+							<timeperimage>6000</timeperimage>
+							<randomize>true</randomize>
+							<fadetime>500</fadetime>
+							<aspectratio>keep</aspectratio>
+						</control>
+						
+						<control type="label">
+							<posx>370</posx>
+							<posy>150</posy>
+							<width>670</width>
+							<height>30</height>
+							<align>center</align>
+							<textcolor>BaseMediumHigh</textcolor>
+							<label fallback="571">$INFO[Skin.String(SkinSettings.BG)]</label>
+						</control>
+						
+					</control>
+					
+					<!--DEBUG Control Areas-->
+					<control type="group">
+						<visible>Container(100).Hasfocus(6)</visible>
+
+						<control type="grouplist" id="700">
+							<description>Control Area- DEBUG</description>
+							<posy>50</posy>
+							<width>1050</width>
+							<height>660</height>
+							<onleft>100</onleft>
+							<onright>100</onright>
+							<itemgap>0</itemgap>
+							<pagecontrol>799</pagecontrol>	
+							
+							<control type="radiobutton" id="701">
+								<description>Enable Debug Grid</description>
+								<include>Common_Settings_Label_Wide</include>
+								<label>$LOCALIZE[31060]</label>
+								<onclick>Skin.ToggleSetting(DebugGrid)</onclick>
+								<selected>Skin.HasSetting(DebugGrid)</selected>
+							</control>
+							
+							<control type="radiobutton" id="702">
+								<description>Disable Debug Info</description>
+								<include>Common_Settings_Label_Wide</include>
+								<label>$LOCALIZE[31061]</label>
+								<onclick>Skin.ToggleSetting(HideDebugInfo)</onclick>
+								<selected>Skin.HasSetting(HideDebugInfo)</selected>
+							</control>
+							
+						</control>						
+
+					</control>
+					
+				</control>
+				
+			</control>
+
+        </control>
+				
+		<include>Common_LeftBar</include>
+		
+    </controls>
+	
+</window>

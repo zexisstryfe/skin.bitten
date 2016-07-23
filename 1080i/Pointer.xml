@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window id="105">
+
+    <controls>
+	
+        <control type="image" id="1">
+            <description>Pointer</description>
+            <include>Common_Pointer</include>
+        </control>
+		
+        <control type="image" id="2">
+            <description>Pointer Focus</description>
+            <include>Common_Pointer</include>
+			<colordiffuse>$VAR[Accent_100]</colordiffuse>
+        </control>
+		
+        <control type="image" id="3">
+            <description>Pointer Drag</description>
+            <include>Common_Pointer</include>
+			<colordiffuse>$VAR[Accent_100]</colordiffuse>
+        </control>
+		
+        <control type="image" id="4">
+            <description>Pointer Click</description>
+            <include>Common_Pointer</include>
+        </control>
+		
+    </controls>
+	
+</window>

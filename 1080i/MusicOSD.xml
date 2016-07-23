@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window id="120">
+    <defaultcontrol always="true">4</defaultcontrol>
+	
+    <controls>
+	
+        <control type="group">
+            <animation type="WindowOpen">
+                <effect type="zoom" start="108" end="100" time="400" center="960,540" tween="cubic" easing="out" />
+                <effect type="fade" start="0" end="100" time="400" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="zoom" start="100" end="108" time="400" center="960,540" tween="cubic" easing="out" />
+                <effect type="fade" start="100" end="0" time="400" />
+            </animation>
+			
+            <control type="group">
+                <posy>912</posy>
+				
+                <control type="image">
+                    <width>1920</width>
+                    <height>188</height>
+                    <fadetime>200</fadetime>
+                    <align>right</align>
+                    <include>Common_Color_Black60</include>
+                </control>
+				
+                <control type="grouplist" id="100">
+                    <posy>22</posy>
+					<posx>287</posx>
+                    <width>1350</width>
+                    <height>188</height>
+                    <itemgap>20</itemgap>
+                    <orientation>horizontal</orientation>
+                    <align>left</align>
+
+                <control type="group" id="25">
+					<width>75</width>
+					
+                    <control type="image" id="408">
+                        <include>Common_Player_Button</include>
+                        <texture>OSD/RepeatNF.png</texture>
+                        <visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
+                        <visible>!Control.HasFocus(8)</visible>
+                    </control>
+                    <control type="image" id="409">
+                        <include>Common_Player_Button</include>
+                        <texture>OSD/RepeatFO.png</texture>
+                        <visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
+                        <visible>Control.HasFocus(8)</visible>
+                    </control>
+                    <control type="label">
+                        <include>Common_Player_Button</include>
+                        <visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne + Control.HasFocus(8)</visible>
+                        <label>$LOCALIZE[31118]</label>
+                    </control>
+                    <control type="image" id="410">
+                        <include>Common_Player_Button</include>
+                        <texture>OSD/RepeatOneNF.png</texture>
+                        <visible>Playlist.IsRepeatOne</visible>
+                        <visible>!Control.HasFocus(8)</visible>
+                    </control>
+                    <control type="image" id="411">
+                        <include>Common_Player_Button</include>
+                        <texture>OSD/RepeatOneFO.png</texture>
+                        <visible>Playlist.IsRepeatOne</visible>
+                        <visible>Control.HasFocus(8)</visible>
+                    </control>
+                    <control type="label">
+                        <include>Common_Player_Button</include>
+                        <visible>Playlist.IsRepeatOne + Control.HasFocus(8)</visible>
+                        <label>$LOCALIZE[31119]</label>
+                    </control>
+                    <control type="image" id="412">
+                        <include>Common_Player_Button</include>
+                        <texture>OSD/RepeatAllNF.png</texture>
+                        <visible>Playlist.IsRepeat</visible>
+                        <visible>!Control.HasFocus(8)</visible>
+                    </control>
+                    <control type="image" id="413">
+                        <include>Common_Player_Button</include>
+                        <texture>OSD/RepeatAllFO.png</texture>
+                        <visible>Playlist.IsRepeat</visible>
+                        <visible>Control.HasFocus(8)</visible>
+                    </control>
+                    <control type="label">
+                        <include>Common_Player_Button</include>
+                        <visible>Playlist.IsRepeat + Control.HasFocus(8)</visible>
+                        <label>$LOCALIZE[31120]</label>
+                    </control>
+
+                    <control type="button" id="8">
+                        <description>Repeat</description>
+                        <include>Common_Player_Button</include>
+                        <texturefocus>-</texturefocus>
+                        <texturenofocus>-</texturenofocus>
+                        <onclick>playercontrol(repeat)</onclick>
+						<textcolor>-</textcolor>
+						<onleft>20</onleft>
+						<onright>1</onright>
+					</control>					
+
+				</control>					
+
+                    <control type="togglebutton" id="1">
+                        <posx>48</posx>
+                        <description>Random</description>
+                        <include>Common_Player_Button</include>
+                        <texturefocus>OSD/RandomOffFO.png</texturefocus>
+                        <texturenofocus>OSD/RandomOffNF.png</texturenofocus>
+                        <label>$LOCALIZE[31110]</label>
+                        <usealttexture>Playlist.IsRandom</usealttexture>
+                        <alttexturefocus>OSD/RandomOnFO.png</alttexturefocus>
+                        <alttexturenofocus>OSD/RandomOnNF.png</alttexturenofocus>
+                        <altlabel>$LOCALIZE[31111]</altlabel>
+                        <onclick>playercontrol(random)</onclick>
+						<textcolor>-</textcolor>
+						<onleft>25</onleft>
+					</control>
+
+                    <control type="button" id="11">
+                        <description>Lyrics</description>
+                        <include>Common_Player_Button</include>
+                        <label>$LOCALIZE[24013]</label>
+                        <texturefocus>OSD/LyricsFO.png</texturefocus>
+                        <texturenofocus>OSD/LyricsNF.png</texturenofocus>
+                        <onclick>Close</onclick>
+                        <onclick>XBMC.RunScript($INFO[Skin.String(LyricPath)])</onclick>
+                        <visible>!IsEmpty(Skin.String(LyricPath))</visible>
+						<textcolor>-</textcolor>
+						<onright>26</onright>
+                    </control>					
+
+                    <control type="group"  id="15">
+						<width>105</width>
+					
+						<control type="image">
+							<posx>50</posx>
+							<include>Common_Player_Divider</include>
+						</control>
+					
+					</control>
+
+
+                    <control type="group" id="26">
+						<width>55</width>
+						
+						<control type="button" id="16">
+							<description>Playlist</description>
+							<include>Common_Player_Button2</include>
+							<label>$LOCALIZE[136]</label>
+							<texturefocus>OSD/PlaylistFO.png</texturefocus>
+							<texturenofocus>OSD/PlaylistNF.png</texturenofocus>
+							<onclick>playercontrol(previous)</onclick>
+							<onleft>11</onleft>
+							<onright>27</onright>
+						</control>
+						
+					</control>
+					
+                    <control type="group" id="27">
+						<width>55</width>
+						
+						<control type="button" id="2">
+							<description>Skip Back</description>
+							<include>Common_Player_Button2</include>
+							<label>$LOCALIZE[31323]</label>
+							<texturefocus>OSD/PrevTrackFO.png</texturefocus>
+							<texturenofocus>OSD/PrevTrackNF.png</texturenofocus>
+							<onclick>playercontrol(previous)</onclick>
+							<onleft>26</onleft>
+							<onright>28</onright>
+						</control>
+						
+					</control>
+
+                    <control type="group" id="28">
+						<width>55</width>
+					
+						<control type="button" id="3">
+							<description>Rewind</description>
+							<include>Common_Player_Button2</include>
+							<label>$LOCALIZE[31008]</label>
+							<texturefocus aspectratio="keep">OSD/RewindFO.png</texturefocus>
+							<texturenofocus>OSD/RewindNF.png</texturenofocus>
+							<onclick>playercontrol(rewind)</onclick>
+							<onleft>27</onleft>
+							<onright>4</onright>
+						</control>
+					
+					</control>
+					
+                    <control type="togglebutton" id="4">
+                        <description>Play/Pause</description>
+						<textcolor>-</textcolor>
+                        <include>Common_Player_Button</include>
+                        <texturefocus>OSD/PauseFO.png</texturefocus>
+                        <texturenofocus>OSD/PauseNF.png</texturenofocus>
+                        <label>$LOCALIZE[31112]</label>
+                        <usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
+                        <alttexturefocus>OSD/PlayFO.png</alttexturefocus>
+                        <alttexturenofocus>OSD/PlayNF.png</alttexturenofocus>
+                        <altlabel>$LOCALIZE[208]</altlabel>
+                        <onclick>playercontrol(play)</onclick>
+						<onleft>28</onleft>
+						<onright>29</onright>
+					</control>
+
+                    <control type="group" id="29">
+						<width>55</width>
+					
+						<control type="button" id="5">
+							<description>Stop</description>
+							<include>Common_Player_Button2</include>
+							<label>$LOCALIZE[31113]</label>
+							<texturefocus>OSD/StopFO.png</texturefocus>
+							<texturenofocus>OSD/StopNF.png</texturenofocus>
+							<onclick>playercontrol(stop)</onclick>
+							<onleft>4</onleft>
+							<onright>30</onright>							
+						</control>
+					
+					</control>
+
+                    <control type="group" id="30">
+						<width>55</width>
+					
+						<control type="button" id="6">
+							<description>Forward</description>
+							<include>Common_Player_Button2</include>
+							<label>$LOCALIZE[31114]</label>
+							<texturefocus>OSD/ForwardFO.png</texturefocus>
+							<texturenofocus>OSD/ForwardNF.png</texturenofocus>
+							<onclick>playercontrol(forward)</onclick>
+							<onleft>29</onleft>
+							<onright>31</onright>
+						</control>
+						
+					</control>
+
+                    <control type="group" id="31">
+						<width>55</width>
+					
+						<control type="button" id="7">
+							<description>Skip Forward</description>
+							<include>Common_Player_Button2</include>
+							<label>$LOCALIZE[209]</label>
+							<texturefocus>OSD/NextTrackFO.png</texturefocus>
+							<texturenofocus>OSD/NextTrackNF.png</texturenofocus>
+							<onclick>playercontrol(next)</onclick>
+							<onleft>30</onleft>
+							<onright>500</onright>
+						</control>
+
+					</control>
+					
+                    <control type="group" id="9">
+						<width>105</width>
+					
+						<control type="image">
+							<posx>50</posx>
+							<include>Common_Player_Divider</include>
+						</control>
+					
+					</control>
+
+                    <control type="button" id="500">
+                        <description>Visualisation</description>
+                        <include>Common_Player_Button</include>
+                        <label>$LOCALIZE[31115]</label>
+                        <texturefocus>OSD/VizFO.png</texturefocus>
+                        <texturenofocus>OSD/VizNF.png</texturenofocus>
+						<textcolor>-</textcolor>
+ 						<onleft>31</onleft>
+					</control>
+					
+                    <control type="button" id="19">
+                        <description>Visualisation settings</description>
+                        <include>Common_Player_Button</include>
+                        <label>$LOCALIZE[31116]</label>
+                        <texturefocus>OSD/PresetSettingsFO.png</texturefocus>
+                        <texturenofocus>OSD/PresetSettingsNF.png</texturenofocus>
+                        <onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
+						<textcolor>-</textcolor>
+                    </control>
+					
+                    <control type="button" id="20">
+                        <description>Visualisation Presets</description>
+                        <include>Common_Player_Button</include>
+                        <label>$LOCALIZE[31117]</label>
+                        <texturefocus>OSD/PreFO.png</texturefocus>
+                        <texturenofocus>OSD/PreNF.png</texturenofocus>
+                        <onclick>ActivateWindow(122)</onclick>
+						<textcolor>-</textcolor>
+						<onright>25</onright>
+                    </control>
+					
+                </control>
+
+            </control>
+			
+        </control>
+		
+    </controls>
+	
+</window>

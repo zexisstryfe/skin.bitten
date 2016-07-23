@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<includes>
+
+    <include name="Viewtype_Thumbnail_Album">
+        <control type="group">
+            <visible>Control.IsVisible(592)</visible>
+			
+            <include>BG_Fanart_1080</include>
+			<include>FanartOverlay</include>
+			
+			<control type="group">
+				<posy>400</posy>
+
+				<control type="image">	
+					<include>Common_Animation_CenterMenu_Stage2</include>
+					<width>1920</width>
+					<height>620</height>
+					<texture colordiffuse="BaseMid">colors/color_white.png</texture>			
+				</control>					
+				
+				<control type="fixedlist" id="592">
+					<include>Common_Animation_CenterMenu_Stage3</include>
+					<posx>-200</posx>
+					<posy>10</posy>
+					<width>2250</width>
+					<height>600</height> 
+					<include>ShowOptions_Up</include>
+					<ondown>68</ondown>
+					<viewtype label="Thumbnail">wrap</viewtype>
+					<orientation>horizontal</orientation>
+					<pagecontrol>68</pagecontrol>
+					<focusposition>1</focusposition>
+					<preloaditems>2</preloaditems>
+					<itemlayout width="410" height="600">
+					
+						<control type="group">
+							<width>400</width>
+							<height>600</height>
+							
+							<control type="image">
+								<include>Common_Color_BaseWhite</include>
+							</control>
+							
+							<control type="image">
+								<height>400</height>
+								<include>Common_Color_BaseMediumHigh</include>
+							</control>
+							
+							<control type="image">
+								<height>400</height>
+								<texture background="true" fallback="$VAR[Common_Fallback]">$INFO[ListItem.Icon]</texture>
+								<aspectratio aligny="top">scale</aspectratio>
+							</control>
+							
+							<control type="label">
+								<posx>20</posx>
+								<posy>410</posy>
+								<width>360</width>
+								<height>30</height>
+								<label>$VAR[Fanart_Info_Title]</label>
+								<font>font36B</font>
+								<align>center</align>
+								<textcolor>BaseMediumHigh</textcolor>
+							</control>
+							
+							<control type="label">
+								<posx>20</posx>
+								<posy>440</posy>
+								<width>360</width>
+								<height>35</height>
+								<label>$VAR[Common_SubHeader]</label>
+								<font>font26B</font>
+								<align>center</align>
+								<textcolor>BaseMid</textcolor>
+							</control>
+							
+							<control type="textbox">
+								<posx>20</posx>
+								<posy>475</posy>
+								<width>360</width>
+								<height>115</height>
+								<label>$VAR[Common_Plot]</label>
+								<font>font24</font>
+								<align>justify</align>
+								<autoscroll>false</autoscroll>
+								<textcolor>BaseMid</textcolor>
+								<visible>!stringcompare(ListItem.Label,..)</visible>
+							</control>
+							
+						</control>
+						
+					</itemlayout>
+					
+					<focusedlayout width="410" height="600">
+					
+						<control type="group">
+							<width>400</width>
+							<height>600</height>
+							
+							<control type="image">
+								<include>Common_Color_Accent</include>
+							</control>
+							
+							<control type="image">
+								<height>400</height>
+								<include>Common_Color_BaseMediumHigh</include>
+							</control>
+							
+							<control type="image">
+								<height>400</height>
+								<texture background="true" fallback="$VAR[Common_Fallback]">$INFO[ListItem.Icon]</texture>
+								<aspectratio aligny="top">scale</aspectratio>
+							</control>
+							
+							<control type="label">
+								<posx>20</posx>
+								<posy>410</posy>
+								<width>360</width>
+								<height>30</height>
+								<label>$VAR[Fanart_Info_Title]</label>
+								<font>font36B</font>
+								<align>center</align>
+							</control>
+							
+							<control type="label">
+								<posx>20</posx>
+								<posy>440</posy>
+								<width>360</width>
+								<height>35</height>
+								<label>$VAR[Common_SubHeader]</label>
+								<font>font26B</font>
+								<align>center</align>
+								<textcolor>BaseLow</textcolor>
+							</control>
+							
+							<control type="textbox">
+								<posx>20</posx>
+								<posy>475</posy>
+								<width>360</width>
+								<height>115</height>
+								<label>$VAR[Common_Plot]</label>
+								<font>font24</font>
+								<align>justify</align>
+								<autoscroll>false</autoscroll>
+								<visible>!stringcompare(ListItem.Label,..)</visible>
+							</control>
+							
+						</control>
+						
+					</focusedlayout>
+					
+				</control>
+				
+				<!--Scrollbar-->
+				<control type="scrollbar" id="68">
+					<posx>80</posx>
+					<posy>610</posy>
+					<width>1830</width>
+					<height>10</height>
+					<onup>591</onup>
+					<include>ShowOptions_Down</include>
+					<showonepage>false</showonepage>
+					<orientation>horizontal</orientation>
+				</control>
+				
+			</control>
+		
+		</control>
+		
+    </include>
+	
+</includes>

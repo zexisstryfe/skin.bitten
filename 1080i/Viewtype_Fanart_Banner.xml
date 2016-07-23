@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<includes>
+
+    <include name="Viewtype_Fanart_Banner">
+	
+        <control type="group">
+            <description>Fanart View (id=590)</description>
+            <visible>Control.IsVisible(590)</visible>
+
+			<!--Scrollbar-->
+			<control type="scrollbar" id="581">
+				<posx>1275</posx>
+				<height>1080</height>
+				<width>10</width>
+				<include>ShowOptions_Left</include> 
+				<onright>54</onright>
+			</control>
+
+			<!--List Area-->
+            <control type="group">
+                <include>Animation_Slide_Right</include>
+				<posx>1285</posx>
+
+				<control type="image">
+					<width>635</width>
+					<height>1080</height>
+					<include>Common_Color_BaseWhite</include>
+				</control>
+
+                <control type="list" id="590">
+                    <width>635</width>
+                    <height>1080</height>
+                    <onleft>581</onleft>
+                    <include>ShowOptions_Right</include>
+                    <pagecontrol>581</pagecontrol>
+                    <viewtype label="fanart- banners">fanart</viewtype>
+                    <visible>Container.Content(tvshows)</visible>
+                    <itemlayout width="635" height="177">
+					
+                        <control type="image">
+                            <width>635</width>
+                            <height>127</height>
+                            <include>Common_Color_BaseMediumHigh</include>
+                            <visible>IsEmpty(ListItem.Art(banner))</visible>
+                        </control>
+						
+                        <control type="label">
+                            <width>635</width>
+                            <height>127</height>
+                            <font>font36B</font>
+                            <label>$VAR[Fanart_List_Title]</label>
+							<align>center</align>
+                            <textcolor>$VAR[Accent_100]</textcolor>
+                            <visible>IsEmpty(ListItem.Art(banner))</visible>
+                        </control>
+						
+                        <control type="image">
+                            <width>635</width>
+                            <height>127</height>
+                            <texture>$INFO[ListItem.Art(banner)]</texture>
+                            <visible>!IsEmpty(ListItem.Art(banner))</visible>
+                        </control>
+						
+                        <control type="image">
+                            <posx>580</posx>
+                            <posy>10</posy>
+                            <height>45</height>
+                            <width>45</width>
+                            <texture>watched/lg_check.png</texture>
+                            <visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+                        </control>
+						
+						<control type="label">
+                            <posx>10</posx>
+							<posy>127</posy>
+                            <width>400</width>
+                            <height>50</height>
+                            <font>font20R</font>
+                            <label>$VAR[Fanart_List_Title]</label>
+                            <textcolor>BaseMediumHigh</textcolor>
+                        </control>
+						
+						<control type="image">
+							<posx>525</posx>
+							<posy>137</posy>
+							<width>100</width>
+							<height>30</height>
+							<texture colordiffuse="BaseMid">flags\ratings\rating5.png</texture>
+							<aspectratio>keep</aspectratio>
+							<visible>!stringcompare(ListItem.Label,..)</visible>
+						</control>
+						
+						<control type="image">
+							<posx>525</posx>
+							<posy>137</posy>
+							<width>100</width>
+							<height>30</height>
+							<texture colordiffuse="$VAR[Accent_100]">flags\ratings\$INFO[ListItem.Rating].png</texture>
+							<aspectratio>keep</aspectratio>
+						</control>
+						
+                    </itemlayout>
+					
+                    <focusedlayout width="635" height="177">
+					
+                        <control type="image">
+                            <width>635</width>
+                            <height>177</height>
+                            <include>Common_Color_Accent</include>
+                        </control>
+
+						<control type="image">
+                            <width>635</width>
+                            <height>127</height>
+                            <include>Common_Color_BaseMediumHigh</include>
+                            <visible>IsEmpty(ListItem.Art(banner))</visible>
+                        </control>
+						
+                        <control type="label">
+                            <width>635</width>
+                            <height>127</height>
+                            <font>font36B</font>
+                            <label>$VAR[Fanart_List_Title]</label>
+							<align>center</align>
+                            <textcolor>$VAR[Accent_100]</textcolor>
+                            <visible>IsEmpty(ListItem.Art(banner))</visible>
+                        </control>
+						
+                        <control type="image">
+                            <width>635</width>
+                            <height>127</height>
+                            <texture>$INFO[ListItem.Art(banner)]</texture>
+                            <visible>!IsEmpty(ListItem.Art(banner))</visible>
+                        </control>
+						
+                        <control type="image">
+                            <posx>580</posx>
+                            <posy>10</posy>
+                            <height>45</height>
+                            <width>45</width>
+                            <texture>watched/lg_check.png</texture>
+                            <visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+                        </control>
+						
+						<control type="label">
+                            <posx>10</posx>
+							<posy>127</posy>
+                            <width>400</width>
+                            <height>50</height>
+                            <font>font20R</font>
+                            <label>$VAR[Fanart_List_Title]</label>
+                        </control>
+						
+						<control type="image">
+							<posx>525</posx>
+							<posy>137</posy>
+							<width>100</width>
+							<height>30</height>
+							<texture colordiffuse="BaseMid">flags\ratings\rating5.png</texture>
+							<aspectratio>keep</aspectratio>
+							<visible>!stringcompare(ListItem.Label,..)</visible>
+						</control>
+						
+						<control type="image">
+							<posx>525</posx>
+							<posy>137</posy>
+							<width>100</width>
+							<height>30</height>
+							<texture colordiffuse="BaseLow">flags\ratings\$INFO[ListItem.Rating].png</texture>
+							<aspectratio>keep</aspectratio>
+						</control>
+                    </focusedlayout>
+ 
+					</control>
+ 
+				</control>
+				
+            <!--Details Area-->
+            <control type="group">
+				<posy>682</posy>
+				<posx>80</posx>				
+
+				<control type="image">
+					<width>1195</width>
+					<height>398</height>
+					<include>Common_Color_BaseLow</include>
+				</control>
+
+				<control type="image">
+					<posy>338</posy>
+					<width>1195</width>
+					<height>60</height>
+					<include>Common_Color_BaseMediumHigh</include>
+				</control>	
+				
+				<control type="image">
+					<width>265</width>
+					<height>398</height>
+					<include>Common_Color_BaseMid</include>
+				</control>
+
+				<control type="image" id="130">
+					<width>265</width>
+					<height>398</height>
+					<aspectratio align="left" aligny="center">stretch</aspectratio>
+					<texture fallback="$VAR[Common_Fallback]">$VAR[Fanart_Info_Icon]</texture>
+				</control>
+				
+				<control type="label" id="145">
+					<posx>285</posx>
+					<width>540</width>					
+					<include>Common_Fanart_Title</include>
+					<label>$VAR[Fanart_Info_Title]</label>
+				</control>
+				
+				<control type="label">
+					<posx>285</posx>
+					<width>540</width>
+					<include>Common_Fanart_Subtitle</include>
+				</control>
+				
+				<control type="image">
+					<posx>295</posx>
+					<posy>100</posy>
+					<width>870</width>
+					<height>2</height>
+					<include>Common_Color_BaseMediumHigh</include>
+				</control>
+				
+				<control type="grouplist">
+					<posx>755</posx>
+					<posy>20</posy>
+					<width>420</width>
+					<height>60</height>
+					<itemgap>0</itemgap>
+					<align>right</align>
+					<orientation>horizontal</orientation>	
+					<visible>!stringcompare(ListItem.Label,..)</visible>
+					
+					<control type="group">
+						<width>85</width>
+						
+						<control type="label">
+							<width>85</width>
+							<include>Common_Fanart_Label</include>
+							<label>$LOCALIZE[345]</label>
+						</control>
+						
+						<control type="label">
+							<posy>30</posy>
+							<width>85</width>
+							<include>Common_Fanart_Data</include>
+							<label>$INFO[ListItem.Year]</label>
+						</control>
+						
+					</control>
+
+					<control type="group">
+						<width>120</width>
+						<visible>Container.Content(tvshows)</visible>
+
+						<control type="label">
+							<width>120</width>
+							<include>Common_Fanart_Label</include>
+							<label>$LOCALIZE[33054]</label>
+						</control>
+						
+						<control type="label">
+							<posy>30</posy>
+							<width>120</width>
+							<include>Common_Fanart_Data</include>
+							<label>$INFO[ListItem.Property(TotalSeasons)]</label>
+						</control>
+					
+					</control>
+					
+					<control type="group">
+						<width>140</width>
+
+						<control type="label">
+							<width>140</width>
+							<include>Common_Fanart_Label</include>
+							<label>$LOCALIZE[31193]</label>
+						</control>
+						
+						<control type="image">
+							<posy>30</posy>
+							<width>140</width>
+							<height>30</height>
+							<texture colordiffuse="BaseMid">flags\ratings\rating5.png</texture>
+							<align>center</align>
+							<aspectratio>keep</aspectratio>
+						</control>
+						
+						<control type="image">
+							<posy>30</posy>
+							<width>140</width>
+							<height>30</height>
+							<texture colordiffuse="BaseWhite">flags\ratings\$INFO[ListItem.Rating].png</texture>
+							<align>center</align>
+							<aspectratio>keep</aspectratio>
+						</control>
+					
+					</control>
+					
+				</control>
+			
+				<control type="grouplist">
+					<posx>295</posx>
+					<posy>348</posy>
+					<width>870</width>
+					<height>125</height>
+					<itemgap>40</itemgap>
+					<align>center</align>
+					<orientation>horizontal</orientation>								
+
+					<control type="group">						
+						<width>100</width>
+						<include>VideoMPAAFlaggingConditions</include>
+					</control>
+					
+					<control type="group">
+						<visible>!IsEmpty(ListItem.VideoResolution)</visible>
+						<width>100</width>
+						<include>VideoResolutionFlaggingConditions</include>
+					</control>
+					
+					<control type="group">
+						<visible>!IsEmpty(ListItem.VideoCodec)</visible>
+						<width>100</width>
+						<include>VideoCodecFlaggingConditions</include>
+					</control>
+
+					<control type="group">
+						<visible>!IsEmpty(ListItem.VideoAspect)</visible>
+						<width>100</width>
+						<include>AspectCodecFlaggingConditions</include>
+					</control>
+					
+					<control type="group">
+						<visible>!IsEmpty(ListItem.AudioCodec)</visible>
+						<width>100</width>
+						<include>AudioCodecFlaggingConditions</include>
+					</control>
+
+					<control type="group">
+						<visible>!IsEmpty(ListItem.AudioChannels)</visible>
+						<width>100</width>
+						<include>AudioChannelsFlaggingConditions</include>
+					</control>
+					
+				</control>
+
+				<control type="textbox">
+					<posx>295</posx>
+					<posy>110</posy>
+					<width>870</width>
+					<height>215</height>
+					<font>font26</font>
+					<textcolor>BaseMediumHigh</textcolor>
+					<align>justify</align>
+					<label>$VAR[Common_Plot]</label>
+					<autoscroll time="3000" delay="6000" repeat="8000"></autoscroll>
+				</control>			
+
+            </control>
+
+			<!--Fanart Background Area-->
+			<include>BG_Fanart_672</include>
+			
+        </control>
+		
+    </include>
+	
+</includes>

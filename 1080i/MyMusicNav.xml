@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window id="502">
+    <defaultcontrol always="true">50</defaultcontrol>
+    <views>50,51,52,53,54,55,56,57,58,591,592</views>
+	
+    <!--Animation-->
+    <include condition="!Window.Previous(fullscreenvideo) + !Window.Previous(slideshow) + Skin.HasSetting(MetroAnimations)">Common_Animation_Splash_Flip</include>
+
+    <!--Background Area-->
+    <controls>
+ 
+		<control type="image">
+            <include>Dimensions_Fullscreen</include>
+            <texture colordiffuse="BaseMid">colors/color_white.png</texture>
+        </control>
+		
+        <!--Available Views-->
+        <control type="group">
+            <include>Viewtype_List</include>
+            <!-- ID 50 -->
+            <include>Viewtype_Album</include>
+            <!-- ID 58 -->
+            <include>Viewtype_Tiles</include>
+            <!-- ID 55 -->
+            <include>Viewtype_Dialog</include>
+            <!-- ID 53 -->
+            <include>Viewtype_Fanart</include>
+            <!-- ID 51 -->
+            <include>Viewtype_Panel_Album</include>
+            <!-- ID 54 -->
+            <include>Viewtype_Panel_Genre</include>
+            <!-- ID 56 -->
+            <include>Viewtype_Showcase_Album</include>
+            <!-- ID 57 -->
+            <include>Viewtype_Thumbnail</include>
+            <!-- ID 591 -->
+            <include>Viewtype_Thumbnail_Album</include>
+            <!-- ID 592 -->
+        </control>
+
+        <!--Options Menu-->
+        <include>Common_Options</include>
+        <include>Common_Options_Clock</include>
+
+        <!--Sort Overlays-->
+        <include>Sort_Panel</include>
+        <include>Sort_Panel_Alt</include>
+
+        <!--Splash Screen-->
+        <include condition="!Window.Previous(fullscreenvideo) + !Window.Previous(slideshow) + Skin.HasSetting(MetroAnimations)">Common_Splash</include>
+
+	</controls>
+	
+</window>

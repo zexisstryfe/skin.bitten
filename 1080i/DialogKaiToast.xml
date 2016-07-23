@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window id="107">
+	
+    <controls>
+	
+        <control type="group">
+            <posy>20</posy>
+			<posx>600r</posx>
+            <include>Animation_Notification_Right</include>
+			
+            <control type="image">
+                <description>background image</description>
+                <width>600</width>
+                <height>150</height>
+                <include>Common_Color_BaseWhite</include>
+            </control>
+			
+            <control type="image">
+                <description>Image</description>
+                <width>150</width>
+                <height>150</height>
+                <include>Common_Color_BaseMediumHigh</include>
+            </control>
+			
+            <control type="image" id="400">
+                <description>Image</description>
+                <include>KaiToast_Icon</include>
+            </control>
+			
+            <control type="label" id="402">
+                <description>heading</description>
+                <posy>15</posy>
+                <posx>180</posx>
+                <width>405</width>
+                <height>30</height>
+                <align>left</align>
+                <font>font30CB</font>
+				<textcolor>BaseMediumHigh</textcolor>
+                <wrapmultiline>true</wrapmultiline>
+            </control>
+			
+            <control type="label" id="401">
+                <description>message</description>
+                <posx>180</posx>
+                <posy>60</posy>
+                <width>405</width>
+                <height>68</height>
+                <align>left</align>
+				<font>font24</font>
+				<textcolor>BaseMediumHigh</textcolor>
+                <wrapmultiline>true</wrapmultiline>
+            </control>
+			
+        </control>
+		
+    </controls>
+	
+</window>

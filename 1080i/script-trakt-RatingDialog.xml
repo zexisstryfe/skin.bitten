@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<window>
+    <coordinates>
+        <system>1</system>
+    </coordinates>
+
+    <controls>
+        <include>DialogOverlay</include>
+		
+		<control type="group">
+			<posx>0</posx>
+			<posy>315</posy>			
+			<include>Common_Animation_Dialog</include>
+
+			<control type="image">			
+				<width>1920</width>
+				<height>450</height>
+				<texture colordiffuse="BaseWhite">colors/color_white.png</texture>			
+			</control>
+			
+			<control type="image">			
+				<width>1920</width>
+				<include>InfoDialog_Header</include>		
+			</control>		
+
+			<control type="group">	
+				<posy>75</posy>
+				<width>1920</width>
+				<height>375</height>
+
+				<include>Common_Logo_Backing</include>
+				
+			</control>	
+			
+			<control type="label" id="10011">			
+				<description>Heading</description>
+				<posx>300</posx>
+				<width>885</width>
+				<height>75</height>
+				<font>font45R</font>
+				<label>$ADDON[script.trakt 32026]</label>
+			</control>
+		
+			<control type="group">			
+				<posx>450</posx>
+				<posy>130</posy>
+				
+				<control type="label" id="10012">
+					<description>Item to Rate Title</description>
+					<width>1020</width>
+					<height>30</height>
+					<aligny>center</aligny>
+					<align>center</align>
+					<font>font36</font>
+					<textcolor>BaseMediumHigh</textcolor>
+				</control>
+				
+				<control type="group" id="10015">
+					<posy>70</posy>
+					<posx>180</posx>
+					
+					<control type="button" id="11030">
+						<description>1 Button</description>
+						<posx>-1</posx>
+						<posy>-1</posy>
+						<include>RateDialog_Button</include>
+						<onleft>11039</onleft>
+						<onright>11031</onright>
+					</control>
+					
+					<control type="image">
+						<description>2 Button Placeholder</description>
+						<posx>68</posx>
+						<include>RateDialog_NoStar</include>
+					</control>
+					
+					<control type="button" id="11031">
+						<description>2 Button</description>
+						<posx>67</posx>
+						<posy>-1</posy>
+						<include>RateDialog_Button</include>
+						<onleft>11030</onleft>
+						<onright>11032</onright>
+						<visible allowhiddenfocus="true">Control.HasFocus(11031)| Control.HasFocus(11032) | Control.HasFocus(11033) | Control.HasFocus(11034) | Control.HasFocus(11035) | Control.HasFocus(11036) | Control.HasFocus(11037) | Control.HasFocus(11038) | Control.HasFocus(11039)</visible>
+					</control>
+					
+					<control type="image">
+						<description>3 Button Placeholder</description>
+						<posx>135</posx>
+						<include>RateDialog_NoStar</include>
+					</control>
+					
+					<control type="button" id="11032">
+						<description>3 Button</description>
+						<posx>134</posx>
+						<posy>-1</posy>
+						<include>RateDialog_Button</include>
+						<onleft>11031</onleft>
+						<onright>11033</onright>
+						<visible allowhiddenfocus="true">Control.HasFocus(11032) | Control.HasFocus(11033) | Control.HasFocus(11034) | Control.HasFocus(11035) | Control.HasFocus(11036) | Control.HasFocus(11037) | Control.HasFocus(11038) | Control.HasFocus(11039)</visible>
+					</control>
+					
+					<control type="image">
+						<description>4 Button Placeholder</description>
+						<posx>202</posx>
+						<include>RateDialog_NoStar</include>
+					</control>
+					
+					<control type="button" id="11033">
+						<description>4 Button</description>
+						<posx>201</posx>
+						<posy>-1</posy>
+						<include>RateDialog_Button</include>
+						<onleft>11032</onleft>
+						<onright>11034</onright>
+						<visible allowhiddenfocus="true">Control.HasFocus(11033) | Control.HasFocus(11034) | Control.HasFocus(11035) | Control.HasFocus(11036) | Control.HasFocus(11037) | Control.HasFocus(11038) | Control.HasFocus(11039)</visible>
+					</control>
+					
+					<control type="image">
+						<description>5 Button Placeholder</description>
+						<posx>270</posx>
+						<include>RateDialog_NoStar</include>
+					</control>
+					
+					<control type="button" id="11034">
+						<description>5 Button</description>
+						<posx>269</posx>
+						<posy>-1</posy>
+						<include>RateDialog_Button</include>
+						<onleft>11033</onleft>
+						<onright>11035</onright>
+						<visible allowhiddenfocus="true">Control.HasFocus(11034) | Control.HasFocus(11035) | Control.HasFocus(11036) | Control.HasFocus(11037) | Control.HasFocus(11038) | Control.HasFocus(11039)</visible>
+					</control>
+					
+					<control type="image">
+						<description>6 Button Placeholder</description>
+						<posx>338</posx>
+						<include>RateDialog_NoStar</include>
+					</control>
+					
+					<control type="button" id="11035">
+						<description>6 Button</description>
+						<posx>337</posx>
+						<posy>-1</posy>
+						<include>RateDialog_Button</include>
+						<onleft>11034</onleft>
+						<onright>11036</onright>
+						<visible allowhiddenfocus="true">Control.HasFocus(11035) | Control.HasFocus(11036) | Control.HasFocus(11037) | Control.HasFocus(11038) | Control.HasFocus(11039)</visible>
+					</control>
+					
+					<control type="image">
+						<description>7 Button Placeholder</description>
+						<posx>405</posx>
+						<include>RateDialog_NoStar</include>
+					</control>
+					
+					<control type="button" id="11036">
+						<description>7 Button</description>
+						<posx>404</posx>
+						<posy>-1</posy>
+						<include>RateDialog_Button</include>
+						<onleft>11035</onleft>
+						<onright>11037</onright>
+						<visible allowhiddenfocus="true">Control.HasFocus(11036) | Control.HasFocus(11037) | Control.HasFocus(11038) | Control.HasFocus(11039)</visible>
+					</control>
+					
+					<control type="image">
+						<description>8 Button Placeholder</description>
+						<posx>472</posx>
+						<include>RateDialog_NoStar</include>
+					</control>
+					
+					<control type="button" id="11037">
+						<description>8 Button</description>
+						<posx>471</posx>
+						<posy>-1</posy>
+						<include>RateDialog_Button</include>
+						<onleft>11036</onleft>
+						<onright>11038</onright>
+						<visible allowhiddenfocus="true">Control.HasFocus(11037) | Control.HasFocus(11038) | Control.HasFocus(11039)</visible>
+					</control>
+					
+					<control type="image">
+						<description>9 Button Placeholder</description>
+						<posx>540</posx>
+						<include>RateDialog_NoStar</include>
+					</control>
+					
+					<control type="button" id="11038">
+						<description>9 Button</description>
+						<posx>539</posx>
+						<posy>-1</posy>
+						<include>RateDialog_Button</include>
+						<onleft>11037</onleft>
+						<onright>11039</onright>
+						<visible allowhiddenfocus="true">Control.HasFocus(11038) | Control.HasFocus(11039)</visible>
+					</control>
+					
+					<control type="image">
+						<description>10 Button Placeholder</description>
+						<posx>608</posx>
+						<include>RateDialog_NoStar</include>
+					</control>
+					
+					<control type="button" id="11039">
+						<description>10 Button</description>
+						<posx>607</posx>
+						<posy>-1</posy>
+						<include>RateDialog_Button</include>
+						<onleft>11038</onleft>
+						<onright>11030</onright>
+						<visible allowhiddenfocus="true">Control.HasFocus(11039)</visible>
+					</control>
+					
+				</control>
+
+				<control type="label" id="10013">
+					<description>Item to Rate Title</description>
+					<posy>155</posy>
+					<width>1020</width>
+					<height>30</height>
+					<aligny>center</aligny>
+					<align>center</align>
+					<font>font36</font>
+					<textcolor>BaseMediumHigh</textcolor>
+				</control>
+				
+			</control>
+					
+ 			<control type="grouplist">			
+				<posx>580</posx>
+				<posy>360</posy>
+				<width>760</width>
+				<itemgap>20</itemgap>
+				<orientation>horizontal</orientation>
+				<align>center</align>
+				
+				<control type="button" id="11010">
+					<description>OK</description>
+					<label>222</label>
+					<onclick>PreviousMenu</onclick>
+					<include>InfoDialog_Button</include>
+					<onup>11035</onup>
+					<ondown>11035</ondown>
+				</control>
+				
+			</control>	
+			
+        </control>
+
+    </controls>
+	
+</window>

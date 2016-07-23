@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window id="2002">
+    <defaultcontrol always="true">10</defaultcontrol>
+	
+    <controls>
+        <include>DialogOverlay</include>
+		
+		<control type="group">
+			<posx>0</posx>
+			<posy>315</posy>			
+			<include>InfoDialog_Base</include>
+
+			<control type="group">	
+				<posy>75</posy>
+				<width>1920</width>
+				<height>375</height>
+
+				<include>Common_Logo_Backing</include>
+				
+			</control>
+
+ 			<control type="grouplist">			
+				<posx>580</posx>
+				<posy>360</posy>
+				<width>760</width>
+				<itemgap>20</itemgap>
+				<orientation>horizontal</orientation>
+				<align>center</align>
+				
+				<control type="button" id="10">
+					<description>OK</description>
+					<label>106</label>
+					<include>InfoDialog_Button</include>
+				</control>
+				
+			</control>	
+
+        </control>
+		
+    </controls>
+	
+</window>

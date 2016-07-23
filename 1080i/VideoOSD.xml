@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window id="2901">
+    <defaultcontrol always="true">14</defaultcontrol>
+	
+    <controls>
+	
+        <control type="group">
+			<animation type="WindowOpen">
+				<effect type="slide" start="0,115" end="0,0" time="600" tween="cubic" easing="out" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="slide" start="0,0" end="0,115" time="400" delay="200" tween="cubic" easing="in" />
+			</animation>
+			
+            <control type="group"> 
+                <visible>!Window.IsVisible(sliderdialog)</visible>
+                <posy>965</posy>
+				
+                <control type="image">
+                    <width>1920</width>
+                    <height>115</height>
+                    <fadetime>200</fadetime>
+                    <align>right</align>
+                    <include>Common_Color_BaseMediumHigh</include>
+                </control>
+				
+                <control type="grouplist" id="100">
+                    <posy>22</posy>
+                    <width>1920</width>
+                    <height>188</height>
+                    <itemgap>20</itemgap>
+					<align>center</align>
+                    <orientation>horizontal</orientation>	 	
+					
+                    <control type="button" id="2">
+                        <description>Audio Settings</description>
+                        <include>Common_Player_Button</include>
+                        <label>$LOCALIZE[292]</label>
+						<textcolor>-</textcolor>
+                        <texturefocus>OSD/AudioFO.png</texturefocus>
+                        <texturenofocus>OSD/AudioNF.png</texturenofocus>
+                        <onclick>ActivateWindow(124)</onclick>
+                    </control>
+					
+                    <control type="button" id="3">
+                        <description>Video Settings</description>
+                        <include>Common_Player_Button</include>
+						<textcolor>-</textcolor>
+                        <label>$LOCALIZE[291]</label>
+                        <texturefocus>OSD/VideoFO.png</texturefocus>
+                        <texturenofocus>OSD/VideoNF.png</texturenofocus>
+                        <onclick>ActivateWindow(123)</onclick>
+                    </control>
+
+                    <control type="button" id="4">
+                        <description>Subtitles</description>
+                        <include>Common_Player_Button</include>
+                        <label>$LOCALIZE[287]</label>
+                        <texturefocus>OSD/SubtitlesFO.png</texturefocus>
+                        <texturenofocus>OSD/SubtitlesNF.png</texturenofocus>
+						<textcolor>-</textcolor>
+                        <onclick>Close</onclick>
+                        <onclick>ActivateWindow(153)</onclick>
+                        <visible>IsEmpty(Skin.String(SubtitlesPath))</visible>
+                        <visible>!VideoPlayer.Content(LiveTV)</visible>
+                    </control>
+					
+                    <control type="button" id="5">
+                        <description>Subtitles</description>
+                        <include>Common_Player_Button</include>
+                        <label>$LOCALIZE[287]</label>
+                        <texturefocus>OSD/SubtitlesFO.png</texturefocus>
+                        <texturenofocus>OSD/SubtitlesNF.png</texturenofocus>
+						<textcolor>-</textcolor>
+                        <onclick>Close</onclick>
+                        <onclick>XBMC.RunScript($INFO[Skin.String(SubtitlesPath)])</onclick>
+                        <visible>!IsEmpty(Skin.String(SubtitlesPath))</visible>
+                        <visible>!VideoPlayer.Content(LiveTV)</visible>
+						<onright>26</onright>
+                    </control>						
+
+                    <control type="group"  id="25">
+						<width>105</width>
+					
+						<control type="image">
+							<posx>50</posx>
+							<include>Common_Player_Divider</include>
+						</control>
+					
+					</control>
+
+                    <control type="group" id="26">
+						<width>55</width>
+						<visible>!VideoPlayer.Content(LiveTV)</visible>
+						
+						<control type="button" id="11">
+							<description>Playlist</description>
+							<include>Common_Player_Button2</include>
+							<label>$LOCALIZE[136]</label>
+							<texturefocus>OSD/PlaylistFO.png</texturefocus>
+							<texturenofocus>OSD/PlaylistNF.png</texturenofocus>
+							<onclick>ActivateWindow(videoplaylist)</onclick>
+							<onleft>5</onleft>
+							<onright>27</onright>
+						</control>
+						
+					</control>
+					
+                    <control type="group" id="27">
+						<width>55</width>
+						
+						<control type="button" id="12">
+							<description>Skip Back</description>
+							<include>Common_Player_Button2</include>
+							<label>$LOCALIZE[31323]</label>
+							<texturefocus>OSD/PrevTrackFO.png</texturefocus>
+							<texturenofocus>OSD/PrevTrackNF.png</texturenofocus>
+							<onclick>playercontrol(previous)</onclick>
+							<onleft>26</onleft>
+							<onright>28</onright>
+						</control>
+						
+					</control>
+					
+                    <control type="group" id="28">
+						<width>55</width>
+					
+						<control type="button" id="13">
+							<description>Rewind</description>
+							<include>Common_Player_Button2</include>
+							<label>$LOCALIZE[31008]</label>
+							<texturefocus>OSD/RewindFO.png</texturefocus>
+							<texturenofocus>OSD/RewindNF.png</texturenofocus>
+							<onclick>playercontrol(rewind)</onclick>
+							<onleft>27</onleft>
+							<onright>14</onright>
+						</control>
+					
+					</control>
+					
+                    <control type="togglebutton" id="14">
+                        <description>Play/Pause</description>
+						<textcolor>-</textcolor>
+                        <include>Common_Player_Button</include>
+                        <texturefocus>OSD/PauseFO.png</texturefocus>
+                        <texturenofocus>OSD/PauseNF.png</texturenofocus>
+                        <label>$LOCALIZE[31112]</label>
+                        <usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
+                        <alttexturefocus>OSD/PlayFO.png</alttexturefocus>
+                        <alttexturenofocus>OSD/PlayNF.png</alttexturenofocus>
+                        <altlabel>$LOCALIZE[208]</altlabel>
+                        <onclick>playercontrol(play)</onclick>
+						<onleft>28</onleft>
+						<onright>29</onright>
+					</control>
+					
+                    <control type="group" id="29">
+						<width>55</width>
+					
+						<control type="button" id="15">
+							<description>Stop</description>
+							<include>Common_Player_Button2</include>
+							<label>$LOCALIZE[31113]</label>
+							<texturefocus>OSD/StopFO.png</texturefocus>
+							<texturenofocus>OSD/StopNF.png</texturenofocus>
+							<onclick>playercontrol(stop)</onclick>
+							<onleft>14</onleft>
+							<onright>30</onright>							
+						</control>
+					
+					</control>
+
+                    <control type="group" id="30">
+						<width>55</width>
+						<visible>VideoPlayer.Content(LiveTV)</visible>
+					
+						<control type="togglebutton" id="353">
+							<description>Recording</description>
+							<include>Common_Player_Button2</include>
+							<label>$LOCALIZE[264]</label>
+							<altlabel>$LOCALIZE[31191]</altlabel>
+							<texturefocus>OSD/RecordFO.png</texturefocus>
+							<texturenofocus>OSD/RecordNF.png</texturenofocus>
+							<usealttexture>Player.Recording</usealttexture>
+							<alttexturefocus>OSD/RecordingFO.png</alttexturefocus>
+							<alttexturenofocus>OSD/RecordingNF.png</alttexturenofocus>
+							<onclick>PlayerControl(Record)</onclick>							
+							<onleft>29</onleft>
+							<onright>31</onright>
+						</control>
+					
+					</control>					
+					
+                    <control type="group" id="31">
+						<width>55</width>
+						<visible>!VideoPlayer.Content(LiveTV)</visible>
+					
+						<control type="button" id="16">
+							<description>Forward</description>
+							<include>Common_Player_Button2</include>
+							<label>$LOCALIZE[31114]</label>
+							<texturefocus>OSD/ForwardFO.png</texturefocus>
+							<texturenofocus>OSD/ForwardNF.png</texturenofocus>
+							<onclick>playercontrol(forward)</onclick>
+							<onleft>30</onleft>
+							<onright>32</onright>
+						</control>
+						
+					</control>
+
+                    <control type="group" id="32">
+						<width>55</width>
+						<visible>!VideoPlayer.Content(LiveTV)</visible>
+					
+						<control type="button" id="17">
+							<description>Skip Forward</description>
+							<include>Common_Player_Button2</include>
+							<label>$LOCALIZE[209]</label>
+							<texturefocus>OSD/NextTrackFO.png</texturefocus>
+							<texturenofocus>OSD/NextTrackNF.png</texturenofocus>
+							<onclick>playercontrol(next)</onclick>
+							<onleft>31</onleft>
+							<onright>1</onright>
+						</control>
+
+					</control>					
+
+					
+                    <control type="group"  id="33">
+						<width>105</width>
+					
+						<control type="image">
+							<posx>50</posx>
+							<include>Common_Player_Divider</include>
+						</control>
+					
+					</control>
+					
+                    <control type="button" id="1">
+                        <description>Bookmarks</description>
+						<font>font20R</font>
+                        <include>Common_Player_Button</include>
+                        <label>$LOCALIZE[298]</label>
+						<textcolor>-</textcolor>
+                        <texturefocus>OSD/BookMarksFO.png</texturefocus>
+                        <texturenofocus>OSD/BookMarksNF.png</texturenofocus>
+                        <onclick>ActivateWindow(125)</onclick>
+                        <visible>!VideoPlayer.Content(LiveTV)</visible>
+						<onleft>32</onleft>
+                    </control>
+
+                    <control type="button" id="308">
+                        <description>3D mode</description>
+						<font>font20R</font>
+                        <include>Common_Player_Button</include>
+                        <label>$VAR[3Dmode_Label]</label>
+						<textcolor>-</textcolor>
+                        <texturefocus>OSD/3dFO.png</texturefocus>
+                        <texturenofocus colordiffuse="$VAR[3Dmode_Disabled]">OSD/3dNF.png</texturenofocus>
+                        <onclick>StereoMode</onclick>
+                        <enable>VideoPlayer.IsStereoscopic</enable>
+                        <visible>!VideoPlayer.Content(LiveTV)</visible>
+                    </control>					
+					
+                    <control type="button" id="6">
+                        <description>DVD menu</description>
+						<font>font20R</font>
+                        <include>Common_Player_Button</include>
+                        <label>$VAR[DVDmenu_Label]</label>
+						<textcolor>-</textcolor>
+                        <texturefocus>OSD/DvdFO.png</texturefocus>
+                        <texturenofocus colordiffuse="$VAR[DVDmenu_Disabled]">OSD/DvdNF.png</texturenofocus>
+                        <onclick>PlayerControl(ShowVideoMenu)</onclick>
+                        <enable>VideoPlayer.HasMenu</enable>
+                        <visible>!VideoPlayer.Content(LiveTV)</visible>
+                    </control>
+
+                    <control type="button" id="350">
+                        <description>Teletext</description>
+						<font>font20R</font>
+                        <include>Common_Player_Button</include>
+                        <label>$LOCALIZE[31189]</label>
+						<textcolor>-</textcolor>
+                        <texturefocus>OSD/TeletextFO.png</texturefocus>
+                        <texturenofocus>OSD/TeletextNF.png</texturenofocus>
+                        <onclick>ActivateWindow(Teletext)</onclick>
+                        <visible>VideoPlayer.Content(LiveTV)</visible>
+						<onleft>32</onleft>
+                    </control>
+					
+                    <control type="button" id="306">
+                        <description>Channel list</description>
+						<font>font20R</font>
+                        <include>Common_Player_Button</include>
+                        <label>$LOCALIZE[31190]</label>
+						<textcolor>-</textcolor>
+                        <texturefocus>OSD/ChannelsFO.png</texturefocus>
+                        <texturenofocus>OSD/ChannelsNF.png</texturenofocus>
+                        <onclick>ActivateWindow(PVROSDChannels)</onclick>
+                        <onclick>Dialog.Close(VideoOSD)</onclick>
+                        <visible>VideoPlayer.Content(LiveTV)</visible>
+                    </control>
+					
+                    <control type="button" id="307">
+                        <description>PVR Guide</description>
+						<font>font20R</font>
+                        <include>Common_Player_Button</include>
+                        <label>$LOCALIZE[22020]</label>
+						<textcolor>-</textcolor>
+                        <texturefocus>OSD/GuideFO.png</texturefocus>
+                        <texturenofocus>OSD/GuideNF.png</texturenofocus>
+                        <onclick>ActivateWindow(PVROSDGuide)</onclick>
+                        <onclick>Dialog.Close(VideoOSD)</onclick>
+                        <visible>VideoPlayer.Content(LiveTV)</visible>
+                    </control>
+					
+                </control>
+				
+            </control>
+
+        </control>
+			
+		<control type="group">
+                <animation type="WindowOpen">
+                    <effect type="slide" start="0,-80" end="0,0" time="600" tween="cubic" easing="out" />
+                </animation>
+                <animation type="WindowClose">
+                    <effect type="slide" start="0,0" end="0,-80" time="400" delay="200" tween="cubic" easing="in" />
+                </animation>
+			
+			<control type="image">
+				<description>backing</description>
+				<width>1920</width>
+				<height>80</height>
+				<fadetime>200</fadetime>
+				<align>right</align>
+				<include>Common_Color_BaseMediumHigh</include>
+			</control>
+			
+			<control type="label">
+				<description>Chapter Count Label</description>
+				<posx>20</posx>
+				<height>40</height>
+				<width>200</width>
+				<label>$LOCALIZE[21396]</label>
+				<textcolor>$VAR[Accent_100]</textcolor>
+				<align>center</align>
+				<font>font24B</font>
+				<visible>!StringCompare(Player.ChapterCount,00)</visible>
+			</control>
+			
+			<control type="label">
+				<description>Chapter Count</description>
+				<posx>20</posx>
+				<posy>40</posy>
+				<height>40</height>
+				<width>200</width>
+				<label>$INFO[Player.Chapter] / $INFO[Player.ChapterCount]</label>
+				<align>center</align>
+				<font>font24B</font>
+				<visible>!StringCompare(Player.ChapterCount,00)</visible>
+			</control>
+
+			<control type="label">
+				<description>Player Times</description>
+				<posy>20</posy>
+				<posx>340</posx>
+				<width>340</width>
+				<height>40</height>
+				<label>[B]$INFO[Player.Time][/B]</label>
+				<align>right</align>
+				<font>font24R</font>
+			</control>			
+			
+			<control type="progress">
+				<description>Progressbar</description>
+				<posx>360</posx>
+				<posy>35</posy>
+				<width>1200</width>
+				<height>10</height>
+				<texturebg colordiffuse="BaseWhite">colors/color_white.png</texturebg>
+				<midtexture colordiffuse="$VAR[Accent_100]">colors/color_white.png</midtexture>
+				<info>Player.Progress</info>
+			</control>
+
+			<control type="label">
+				<description>Player Duration</description>
+				<posx>1580</posx>
+				<posy>20</posy>
+				<height>40</height>
+				<width>300</width>
+				<label>[B]$INFO[Player.Duration][/B]</label>
+				<font>font24R</font>
+			</control>			
+
+			<control type="label">
+				<description>Current Video End Time Label</description>
+				<posx>1700</posx>
+				<height>40</height>
+				<width>200</width>
+				<label>$LOCALIZE[31181]</label>
+				<textcolor>$VAR[Accent_100]</textcolor>
+				<align>center</align>
+				<font>font24B</font>
+			</control>			
+
+			<control type="label">
+				<description>Current Video End Time</description>
+				<posx>1700</posx>
+				<posy>40</posy>
+				<height>40</height>
+				<width>200</width>
+				<label>$INFO[Player.FinishTime]</label>
+				<align>center</align>
+				<font>font24B</font>
+			</control>
+			
+		</control>
+
+    </controls>
+	
+</window>

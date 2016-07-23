@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<includes>
+
+	<include name="Viewtype_RCB_Showcase">
+
+        <control type="group">
+			<description>Showcase View (id=58)</description>
+            <visible>Control.IsVisible(58)</visible>
+				
+			<!--Scrollbar-->
+			<control type="scrollbar" id="62">
+				<posx>80</posx>
+				<posy>690</posy>
+				<height>10</height>
+				<width>1840</width>
+				<onup>100</onup>
+				<ondown>58</ondown>
+				<orientation>horizontal</orientation>
+			</control>	
+
+			<control type="image">
+				<posy>700</posy>
+				<width>1920</width>
+				<height>380</height>
+				<include>Common_Color_BaseWhite</include>
+			</control>	
+			
+			<control type="image"> 
+				<posx>1317</posx>
+				<width>603</width>
+				<height>690</height>
+				<include>Common_Color_BaseLow</include>
+			</control>	
+			
+			<control type="image">
+				<posx>1317</posx>
+				<posy>580</posy>
+				<width>603</width>
+				<height>110</height>
+				<include>Common_Color_BaseMediumHigh</include>
+			</control>			
+	
+			<!--List Area-->
+			<control type="group">
+				<include>Animation_Slide_Right</include>	
+				
+				<control type="wraplist" id="58">
+					<posy>700</posy>
+					<height>380</height>
+					<width>1920</width>
+					<onup>62</onup>
+					<include>ShowOptions_Down</include>
+					<viewtype label="showcase">showcase</viewtype>
+					<orientation>horizontal</orientation>
+					<focusposition>4</focusposition>
+					<preloaditems>2</preloaditems>
+					<pagecontrol>62</pagecontrol>
+					<itemlayout width="229" height="380">
+						
+						<control type="image">
+							<width>227</width>
+							<height>340</height>
+							<include>Common_Color_BaseMediumHigh</include>
+						</control>
+						
+						<control type="image">
+							<width>227</width>
+							<height>340</height>
+							<texture background="true" fallback="DefaultGame.png">$INFO[ListItem.ActualIcon]</texture>
+							<aspectratio scalediffuse="false">keep</aspectratio>
+							<visible>!stringcompare(ListItem.Label,..)</visible>
+						</control>
+						
+						<control type="image">
+							<posy>56</posy>
+							<width>227</width>
+							<height>227</height>
+							<texture background="true">DefaultFolderBack.png</texture>
+							<aspectratio scalediffuse="false">stretch</aspectratio>
+							<visible>stringcompare(ListItem.Label,..)</visible>
+						</control>
+						
+						<control type="image">
+							<posx>172</posx>
+							<posy>10</posy>
+							<height>45</height>
+							<width>45</width>
+							<texture>watched/lg_fav.png</texture>
+							<visible>!IsEmpty(ListItem.Property(isfavorite))</visible>
+						</control>
+						
+						<control type="label">
+							<posx>10</posx>
+							<posy>340</posy>
+							<width>215</width>
+							<height>40</height>
+							<aligny>center</aligny>
+							<font>font20R</font>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>BaseMediumHigh</textcolor>
+						</control>
+						
+					</itemlayout>
+					
+					<focusedlayout width="229" height="380">
+					
+						<control type="image">
+							<width>227</width>
+							<height>390</height>
+							<include>Common_Color_Accent</include>
+						</control>
+
+						<control type="image">
+							<width>227</width>
+							<height>340</height>
+							<include>Common_Color_BaseMediumHigh</include>
+						</control>
+						
+						<control type="image">
+							<posy>56</posy>
+							<width>227</width>
+							<height>227</height>
+							<texture background="true">DefaultFolderBack.png</texture>
+							<aspectratio scalediffuse="false">stretch</aspectratio>
+							<visible>stringcompare(ListItem.Label,..)</visible>
+						</control>
+					
+						<control type="image">
+							<width>227</width>
+							<height>340</height>
+							<texture background="true" fallback="DefaultGame.png">$INFO[ListItem.ActualIcon]</texture>
+							<aspectratio scalediffuse="false">keep</aspectratio>
+							<visible>!stringcompare(ListItem.Label,..)</visible>
+						</control>
+
+						<control type="image">
+							<posx>68</posx>
+							<posy>116</posy>
+							<width>112</width>
+							<height>112</height>
+							<texture>general/play_large.png</texture>
+							<visible>!Container.Content(Genres)</visible>
+							<aspectratio>scale</aspectratio>
+							<colordiffuse>$VAR[Accent_80]</colordiffuse>
+							<visible>!ListItem.IsFolder</visible>
+						</control>
+						
+						<control type="image">
+							<posx>172</posx>
+							<posy>10</posy>
+							<height>45</height>
+							<width>45</width>
+							<texture>watched/lg_fav.png</texture>
+							<visible>!IsEmpty(ListItem.Property(isfavorite))</visible>
+						</control>
+						
+						<control type="label">
+							<posx>10</posx>
+							<posy>340</posy>
+							<width>215</width>
+							<height>40</height>
+							<aligny>center</aligny>
+							<font>font20R</font>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>BaseWhite</textcolor>
+						</control>
+						
+					</focusedlayout>
+						
+				</control>
+				
+			</control>
+				
+			<!--Details Area-->
+			<control type="group">
+				<posx>1337</posx>
+
+				<control type="label" id="145">
+					<width>560</width>
+					<include>Common_Fanart_Title</include>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				
+				<control type="label">
+					<width>560</width>
+					<label>$INFO[ListItem.Property(Genre)]</label>
+					<include>Common_Fanart_Subtitle</include>
+				</control>
+				
+				<control type="image">
+					<posx>10</posx>
+					<posy>100</posy>
+					<width>540</width>
+					<height>2</height>
+					<include>Common_Color_BaseMediumHigh</include>
+				</control>
+				
+				<control type="grouplist">
+					<posy>110</posy>
+					<width>540</width>
+					<height>60</height>
+					<itemgap>0</itemgap>
+					<align>center</align>
+					<orientation>horizontal</orientation>								
+					
+						<control type="group">
+							<width>85</width>
+							<visible>!IsEmpty(ListItem.Property(Year))</visible>
+							
+							<control type="label">
+								<width>85</width>
+								<include>Common_Fanart_Label</include>
+								<label>$LOCALIZE[345]</label>
+							</control>
+							
+							<control type="label">
+								<posy>30</posy>
+								<width>85</width>
+								<include>Common_Fanart_Data</include>
+								<label>$INFO[ListItem.Property(Year)]</label>
+							</control>
+							
+						</control>
+
+						<control type="group">
+							<width>140</width>
+							<visible>!IsEmpty(ListItem.Property(Console))</visible>
+							
+							<control type="label">
+								<width>140</width>
+								<include>Common_Fanart_Label</include>
+								<label>$ADDON[script.games.rom.collection.browser 50006]</label>
+							</control>
+							
+							<control type="label">
+								<posy>30</posy>
+								<width>140</width>
+								<include>Common_Fanart_Data</include>
+								<label>$INFO[ListItem.Property(Console)]</label>
+							</control>
+						
+						</control>
+
+						<control type="group">
+							<width>120</width>
+
+							<control type="label">
+								<width>120</width>
+								<include>Common_Fanart_Label</include>
+								<label>$LOCALIZE[567]</label>
+							</control>
+							
+							<control type="label">
+								<posy>30</posy>
+								<width>120</width>
+								<include>Common_Fanart_Data</include>
+								<label>$INFO[ListItem.Property(Playcount)]</label>
+							</control>
+						
+						</control>
+						
+				</control>
+
+				<control type="image">
+					<posx>10</posx>
+					<posy>180</posy>
+					<width>540</width>
+					<height>2</height>
+					<include>Common_Color_BaseMediumHigh</include>
+				</control>
+
+				<control type="textbox">
+					<posx>10</posx>
+					<posy>190</posy>
+					<width>540</width>
+					<height>360</height>
+					<font>font26</font>
+					<textcolor>BaseMediumHigh</textcolor>
+					<align>justify</align>
+					<label fallback="31245">$INFO[ListItem.Property(Plot)]</label>
+					<autoscroll time="3000" delay="6000" repeat="8000"></autoscroll>
+				</control>
+
+				<control type="group">
+					<posx>10</posx>
+					<posy>590</posy>
+					
+					<control type="label">
+						<description>Type Label</description>
+						<width>180</width>
+						<height>30</height>
+						<font>font24B</font>
+						<label>$ADDON[script.games.rom.collection.browser 50002]</label>
+					</control>
+					
+					<control type="label">
+						<description>Type Value</description>
+						<posx>150</posx>
+						<width>370</width>
+						<height>30</height>
+						<font>font24R</font>
+						<textcolor>BaseLow</textcolor>
+						<label fallback="1446">$INFO[ListItem.Property(Publisher)]</label>
+					</control>
+					
+				</control>
+
+				<control type="group">
+					<posx>10</posx>
+					<posy>640</posy>
+					
+					<control type="label">
+						<width>180</width>
+						<height>30</height>
+						<font>font24B</font>
+						<label>$ADDON[script.games.rom.collection.browser 50003]</label>
+					</control>
+					
+					<control type="label">
+						<description>Type Value</description>
+						<posx>150</posx>
+						<width>370</width>
+						<height>30</height>
+						<textcolor>BaseLow</textcolor>
+						<font>font24R</font>
+						<label fallback="1446">$INFO[ListItem.Property(Developer)]</label>
+					</control>
+					
+				</control>
+
+			</control>	
+	
+			<!--Fanart Background Area-->		
+			<control type="image">
+				<description>background image</description>
+				<posx>80</posx>
+				<include>Dimensions_BG_Showcase</include>
+				<texture fallback="special://skin/extras/backgrounds/games.jpg">$INFO[ListItem.Property(background)]</texture>
+			</control>	
+	
+		</control>
+	
+    </include>
+	
+</includes>	

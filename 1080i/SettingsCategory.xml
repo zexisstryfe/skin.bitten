@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window id="12">
+    <defaultcontrol always="true">3</defaultcontrol>
+	
+    <controls>
+        <include>BG_Fanart_1080</include>
+		<include>FanartOverlay</include>
+
+		<control type="group">	
+			<posy>200</posy>
+				
+			<include>Settings_GrayBand</include>
+
+			<control type="group">	
+				<posy>10</posy>
+			
+				<include>Settings_Backing</include>	
+				
+				<control type="group">	
+					<posx>80</posx>
+					<include>Common_Animation_CenterMenu_Fade1</include>
+					
+					<control type="image">
+						<posx>20</posx>
+						<posy>80</posy>
+						<width>340</width>
+						<height>2</height>
+						<include>Common_Color_BaseMediumHigh</include>
+					</control>
+				
+					<control type="label" id="2">
+						<posx>20</posx>
+						<width>340</width>
+						<height>75</height>
+						<font>font45R</font>
+						<textcolor>$VAR[Accent_100]</textcolor>
+					</control>
+
+					<control type="grouplist" id="3">
+						<description>Button Area</description>
+						<posy>100</posy>
+						<width>380</width>
+						<height>720</height>
+						<onleft>5</onleft>
+						<onright>5</onright>
+						<onup>3</onup>
+						<ondown>3</ondown>
+					</control>
+					
+					<control type="button" id="10">
+						<description>Default Category Button</description>
+						<width>380</width>
+						<include>Common_Settings_Label</include>
+					</control>
+				
+				</control>				
+
+				<control type="group">	
+					<posx>460</posx>
+					<include>Common_Animation_CenterMenu_Fade2</include>				
+
+					<control type="button" id="20">
+						<description>Setting level button</description>
+						<height>75</height>
+						<width>1060</width>
+						<textcolor>$VAR[Accent_100]</textcolor>
+						<focusedcolor>BaseLow</focusedcolor>
+						<align>right</align>
+						<font>font30R</font>
+						<onleft>2</onleft>
+						<onright>2</onright>
+						<onup>3</onup>
+						<ondown>3</ondown>
+						<onclick>SettingsLevelChange</onclick>
+					</control>
+					
+					<control type="label">
+						<posx>860</posx>
+						<height>75</height>
+						<width>1200</width>
+						<align>right</align>
+						<label>31204</label>
+						<font>font30R</font>
+					</control>
+					
+					<control type="image">
+						<posx>20</posx>
+						<posy>80</posy>
+						<width>1020</width>
+						<height>2</height>
+						<include>Common_Color_BaseMediumHigh</include>
+					</control>
+
+					<control type="grouplist" id="5">
+						<description>Control Area</description>
+						<posy>100</posy>
+						<width>1060</width>
+						<height>660</height>
+						<onleft>3</onleft>
+						<onright>66</onright>
+						<onup>20</onup>
+						<ondown>20</ondown>
+						<pagecontrol>66</pagecontrol>
+						<orientation>vertical</orientation>
+					</control>
+					
+					<control type="button" id="7">
+						<description>Default Button</description>
+						<include>Common_Settings_Label</include>
+					</control>
+					
+					<control type="radiobutton" id="8">
+						<description>Default Radio Button</description>
+						<radioposx>960</radioposx>
+						<include>Common_Settings_Label</include>
+					</control>
+					
+					<control type="spincontrolex" id="9">
+						<description>Default Spin Control</description>
+						<include>Common_Settings_Label</include>
+					</control>
+
+					<control type="sliderex" id="13">
+						<description>Default Sliderex Button</description>
+						<width>300</width>
+						<include>Common_Settings_Label</include>
+					</control>
+					
+					<!--Scrollbar-->
+					<control type="scrollbar" id="66">
+						<posx>1050</posx>
+						<height>780</height>
+						<width>10</width>
+						<onleft>5</onleft>
+						<onright>3</onright>
+					</control>
+										
+				</control>
+
+				<control type="group">	
+					<posx>1520</posx>
+					<include>Common_Animation_CenterMenu_Fade3</include>
+					
+					<control type="image">
+						<posx>20</posx>
+						<posy>80</posy>
+						<width>360</width>
+						<height>2</height>					
+						<include>Common_Color_BaseWhite</include>
+					</control>
+				
+					<control type="label">
+						<posx>20</posx>
+						<width>360</width>
+						<height>75</height>
+						<font>font45R</font>
+						<label>21821</label>
+						<textcolor>BaseLow</textcolor>
+					</control>
+					
+					<control type="textbox" id="6">
+						<description>description area</description>
+						<posx>40</posx>
+						<posy>100</posy>
+						<width>320</width>
+						<height>660</height>
+						<font>font30</font>
+						<textcolor>BaseWhite</textcolor>
+						<autoscroll time="1000" delay="2000" repeat="3000">true</autoscroll>
+					</control>
+				
+				</control>				
+				
+			</control>	
+		
+		</control>
+		
+		<include>Common_LeftBar</include>
+		
+    </controls>
+	
+</window>
