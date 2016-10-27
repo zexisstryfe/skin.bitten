@@ -9,10 +9,10 @@
 		<import addon="service.skin.widgets" version="0.0.32"/>
 		<import addon="service.rom.collection.browser" version="1.0.0"/>
 		<import addon="script.games.rom.collection.browser" version="2.1.2"/>
-		<import addon="resource.images.studios.white" version="1.0.0"/>		
-		<import addon="resource.images.weathericons.white" version="1.0.0"/>
-		<import addon="resource.images.weatherfanart.single" version="1.0.0"/>
-		<import addon="resource.images.recordlabels.white" version="1.0.0"/>						
+		<import addon="resource.images.studios.white" version="0.0.6"/>		
+		<import addon="resource.images.weathericons.white" version="0.0.6"/>
+		<import addon="resource.images.weatherfanart.single" version="0.0.6"/>
+		<import addon="resource.images.recordlabels.white" version="0.0.6"/>						
 	</requires>
 	
 	<extension  
