@@ -3,7 +3,7 @@
 <addon id="skin.bit(ten)" version="0.1" name="bit(ten)" provider-name="ZexisStryfe">
 
 	<requires>
-		<import addon="xbmc.gui" version="5.10.0"/>
+		<import addon="xbmc.gui" version="5.12.0"/>
 		<import addon="resource.uisounds.bit(ten)" version="1.0.0"/>
 		<import addon="script.globalsearch" version="6.0.6"/>
 		<import addon="service.skin.widgets" version="0.0.32"/>

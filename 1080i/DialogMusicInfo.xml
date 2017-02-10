@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<window id="2001">
+<window>
     <defaultcontrol always="true">9221</defaultcontrol>
     <onload condition="Container.Content(artists)">RunScript(script.extendedinfo,info=artistdetails,artistname='$ESCINFO[ListItem.Artist]',silent=False)</onload>
     <onload condition="Container.Content(albums)">RunScript(script.extendedinfo,info=artistdetails,info=albuminfo,artistname='$ESCINFO[ListItem.Artist]',albumname='$ESCINFO[ListItem.Album]',silent=False)</onload>&gt;
@@ -115,7 +115,7 @@
 
 				<control type="group">
 					<width>200</width>
-					<visible>[System.HasAddon(script.playalbum) + Container.Content(Albums)]</visible>
+					<visible>[System.HasAddon(script.playalbum) + Container.Content(Albums)] | [System.HasAddon(script.playalbum) + Container.Content(Songs)]</visible>
 					
 					<control type="button" id="15">
 						<include>Common_InfoControl_Button</include>
@@ -126,14 +126,14 @@
 						<ondown>50</ondown>
 						<onup>50</onup>	
 						<onright>6</onright>	
-						<onleft>9</onleft>
+						<onleft>16</onleft>
 					</control>
 				
 				</control>
 				
 				<control type="group">
 					<width>200</width>
-					<visible>Control.IsEnabled(6)</visible>
+					<visible>Control.IsEnabled(6) + !Container.Content(Songs)</visible>
 					
 					<control type="button" id="6">
 						<include>Common_InfoControl_Button</include>
@@ -143,10 +143,27 @@
 						<ondown>50</ondown>
 						<onup>50</onup>	
 						<onright>7</onright>
-						<onleft>8</onleft>
+						<onleft>15</onleft>
 					</control>
 				
 				</control>			
+
+				<control type="group">
+					<width>200</width>
+					<visible>Container.Content(Songs) | Container.Content(Albums)</visible>
+					
+					<control type="button" id="7">
+						<include>Common_InfoControl_Button</include>
+						<texturefocus colordiffuse="$VAR[Accent_100]">OSD/rateFO.png</texturefocus>
+						<texturenofocus colordiffuse="BaseMid">OSD/rateNF.png</texturenofocus>
+						<label>$LOCALIZE[31374]</label>
+						<ondown>50</ondown>
+						<onup>50</onup>	
+						<onright>10</onright>
+						<onleft>6</onleft>
+					</control>
+				
+				</control>
 				
 				<control type="group">
 					<width>200</width>
@@ -158,15 +175,15 @@
 						<label>$LOCALIZE[31343]</label>
 						<ondown>50</ondown>
 						<onup>50</onup>	
-						<onright>10</onright>
-						<onleft>6</onleft>
+						<onright>12</onright>
+						<onleft>7</onleft>
 					</control>
 				
 				</control>					
 				
 				<control type="group">
 					<width>200</width>
-					<visible>Control.IsEnabled(12)</visible>
+					<visible>Control.IsEnabled(12) + Container.Content(artists)</visible>
 					
 					<control type="button" id="12">
 						<include>Common_InfoControl_Button</include>
@@ -175,11 +192,28 @@
 						<label>$LOCALIZE[31344]</label>
 						<ondown>50</ondown>
 						<onup>50</onup>	
-						<onright>9</onright>
-						<onleft>7</onleft>
+						<onright>16</onright>
+						<onleft>10</onleft>
 					</control>
 				
-				</control>						
+				</control>					
+
+				<control type="group">
+					<width>200</width>
+					<visible>Control.IsEnabled(12) + Container.Content(songs)</visible>
+					
+					<control type="button" id="12">
+						<include>Common_InfoControl_Button</include>
+						<texturefocus colordiffuse="$VAR[Accent_100]">OSD/infoFO.png</texturefocus>
+						<texturenofocus colordiffuse="BaseMid">OSD/infoNF.png</texturenofocus>
+						<label>$LOCALIZE[10523]</label>
+						<ondown>50</ondown>
+						<onup>50</onup>	
+						<onright>16</onright>
+						<onleft>10</onleft>
+					</control>
+				
+				</control>	
 
 				<control type="group">
 					<width>200</width>
@@ -192,8 +226,8 @@
 						<label>$LOCALIZE[31262]</label>
 						<ondown>50</ondown>
 						<onup>50</onup>	
-						<onright>8</onright>
-						<onleft>10</onleft>
+						<onright>15</onright>
+						<onleft>12</onleft>
 					</control>
 				
 				</control>
@@ -294,7 +328,7 @@
 						<height>215</height>
 						<font>font26R</font>
 						<align>justify</align>
-						<label>$INFO[ListItem.Property(Addon.Description)]</label>
+						<label>$INFO[ListItem.Property(Artist_Description)]</label>
 						<textcolor>BaseMid</textcolor>
 					</control>
 					
@@ -395,7 +429,108 @@
 						<height>215</height>
 						<font>font26R</font>
 						<align>justify</align>
-						<label>$INFO[ListItem.Property(Addon.Description)]</label>
+						<label fallback="31375">$INFO[ListItem.Property(Album_Description)]</label>
+						<textcolor>BaseMid</textcolor>
+					</control>
+					
+				</control>
+
+			</control>	
+
+			<!--Info Section- Songs-->
+			<control type="grouplist">
+				<posy>180</posy>
+				<visible>Container.Content(Songs)</visible>
+				
+				<!-- Genre label -->
+				<control type="group">
+					<width>850</width>
+					<height>40</height>
+					
+					<control type="label">
+						<include>Common_Info_Label</include>
+						<label>$LOCALIZE[515] </label>
+					</control>
+					
+					<control type="label">
+						<include>Common_Info_Addon</include>
+						<label fallback="195">$INFO[ListItem.Genre]</label>
+					</control>
+
+				</control>
+				
+				<!-- Year label -->
+				<control type="group">
+					<width>850</width>
+					<height>40</height>
+
+					<control type="label">
+						<include>Common_Info_Label</include>
+						<label>$LOCALIZE[345] </label>
+					</control>
+					
+					<control type="label">
+						<include>Common_Info_Addon</include>
+						<label fallback="195">$INFO[ListItem.Year]</label>
+					</control>
+					
+				</control>
+				
+				<!-- Music Label label -->
+				<control type="group">
+					<width>850</width>
+					<height>40</height>
+
+					<control type="label">
+						<include>Common_Info_Label</include>
+						<label>$LOCALIZE[21899] </label>
+					</control>
+					
+					<control type="label">
+						<include>Common_Info_Addon</include>
+						<label fallback="195">$INFO[ListItem.Property(Album_Label)]</label>
+					</control>
+					
+				</control>
+
+				<!-- Path label -->
+				<control type="group">
+					<width>850</width>
+					<height>40</height>
+					
+					<control type="label">
+						<include>Common_Info_Label</include>
+						<label>$LOCALIZE[31240] </label>
+					</control>
+					
+					<control type="label">
+						<include>Common_Info_Addon</include>
+						<label>$INFO[ListItem.FilenameAndPath]</label>
+					</control>
+					
+				</control>
+
+				
+				<!--Plot-->
+				<control type="group">
+					<width>850</width>
+					<height>365</height>
+					
+					<control type="image">
+						<height>2</height>
+						<width>920</width>
+						<texture colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
+						<include>Animation_Common_Window</include>
+					</control>
+							
+					<control type="textbox" id="4">
+						<description>Plot</description>
+						<posy>10</posy>
+						<width>920</width>
+						<height>215</height>
+						<font>font26R</font>
+						<align>justify</align>
+						<label fallback="31375">$INFO[ListItem.Property(Album_Description)]</label>
 						<textcolor>BaseMid</textcolor>
 					</control>
 					

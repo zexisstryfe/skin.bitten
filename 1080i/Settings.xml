@@ -57,7 +57,7 @@
 				<control type="panel" id="50">
 					<posx>172</posx>
 					<width>1500</width>
-					<height>720</height>
+					<height>600</height>
 					<orientation>horizontal</orientation>
 					<itemlayout width="575" height="120">
 					
@@ -102,11 +102,11 @@
 					<content>
 					
 						<item id="1">
-							<description>Appearance</description>
-							<label>480</label>
+							<description>Interface</description>
+							<label>$LOCALIZE[31372]</label>
 							<label2>31303</label2>
 							<thumb>../extras/tiles/appearance.png</thumb>
-							<onclick>activatewindow(AppearanceSettings)</onclick>
+							<onclick>activatewindow(InterfaceSettings)</onclick>
 						</item>
 						
 						<item id="2">
@@ -118,46 +118,30 @@
 						</item>
 						
 						<item id="3">
-							<description>Videos</description>
-							<label>3</label>
+							<description>Media</description>
+							<label>$LOCALIZE[31373]</label>
 							<label2>31304</label2>
 							<thumb>../extras/tiles/videos.png</thumb>
-							<onclick>activatewindow(VideosSettings)</onclick>
+							<onclick>activatewindow(MediaSettings)</onclick>
 						</item>
 						
 						<item id="4">
-							<description>Music</description>
-							<label>2</label>
-							<label2>31305</label2>
-							<thumb>../extras/tiles/audio.png</thumb>
-							<onclick>activatewindow(MusicSettings,return)</onclick>
-						</item>
-						
-						<item id="5">
 							<description>Live TV</description>
 							<label>31012</label>
 							<label2>31310</label2>
 							<thumb>../extras/tiles/livetv.png</thumb>
-							<onclick>activatewindow(TVSettings,return)</onclick>
+							<onclick>activatewindow(PVRSettings,return)</onclick>
 						</item>
 						
-						<item id="6">
+						<item id="5">
 							<description>Addons</description>
 							<label>24001</label>
 							<label2>31309</label2>
 							<thumb>../extras/tiles/addons.png</thumb>
 							<onclick>ActivateWindow(addonbrowser)</onclick>
 						</item>
-										
-						<item id="7">
-							<description>Pictures</description>
-							<label>1</label>
-							<label2>31306</label2>
-							<thumb>../extras/tiles/pictures.png</thumb>
-							<onclick>activatewindow(PicturesSettings,return)</onclick>
-						</item>
 						
-						<item id="8">
+						<item id="6">
 							<description>Weather</description>
 							<label>8</label>
 							<label2>31307</label2>
@@ -165,7 +149,7 @@
 							<onclick>activatewindow(WeatherSettings,return)</onclick>
 						</item>
 						
-						<item id="9">
+						<item id="7">
 							<description>Services</description>
 							<label>14036</label>
 							<label2>31311</label2>
@@ -173,7 +157,7 @@
 							<onclick>activatewindow(ServiceSettings,return)</onclick>
 						</item>
 						
-						<item id="10">
+						<item id="8">
 							<description>System</description>
 							<label>13000</label>
 							<label2>31308</label2>
@@ -181,7 +165,7 @@
 							<onclick>activatewindow(SystemSettings,return)</onclick>
 						</item>
 						
-						<item id="11">
+						<item id="9">
 							<description>Profiles</description>
 							<label>13200</label>
 							<label2>31312</label2>
@@ -189,7 +173,7 @@
 							<onclick>activatewindow(Profiles,return)</onclick>
 						</item>
 						
-						<item id="12">
+						<item id="10">
 							<description>System Info</description>
 							<label>130</label>
 							<label2>31314</label2>

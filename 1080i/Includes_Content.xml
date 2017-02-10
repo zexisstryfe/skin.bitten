@@ -104,7 +104,7 @@
             <label>$LOCALIZE[744] - $LOCALIZE[31101]</label>
             <onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)],MusicFiles)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Label,$LOCALIZE[31101])</onclick>
-			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(Music))</onclick>
+			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(Music,Files,return))</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Type,99)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Image,DefaultMusicPlugins.png)</onclick> 
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Icon,)</onclick>
@@ -183,7 +183,7 @@
             <label>$LOCALIZE[342] - $LOCALIZE[31010]</label>
             <onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)],AllMovies)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Label,$LOCALIZE[31010])</onclick>
-			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(VideoLibrary,movietitles,return))</onclick>
+			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(videos,videodb://movies/titles/,return))</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Type,98)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Image,../extras/tiles/movies.png)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Icon,)</onclick>
@@ -205,7 +205,7 @@
             <label>$LOCALIZE[342] - $LOCALIZE[135]</label>
             <onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)],MovieGenres)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Label,$LOCALIZE[31291])</onclick>
-			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(Videos,MovieGenres,return))</onclick>
+			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(videos,videodb://movies/genres/,return))</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Type,99)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Image,../extras/tiles/genres.png)</onclick> 
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Icon,)</onclick>
@@ -227,7 +227,7 @@
             <label>$LOCALIZE[342] - $LOCALIZE[31009]</label>
             <onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)],MovieRecentlyAdded)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Label,$LOCALIZE[31295])</onclick>
-			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(Videos,RecentlyAddedMovies,return))</onclick>
+			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(videos,videodb://recentlyaddedmovies/,return))</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Type,99)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Image,../extras/tiles/recent.png)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Icon,)</onclick>
@@ -238,7 +238,7 @@
             <label>$LOCALIZE[342] - $LOCALIZE[20434]</label>
             <onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)],MovieSets)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Label,$LOCALIZE[31107])</onclick>
-			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(Videos,MovieSets,return))</onclick>
+			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(videos,videodb://movies/sets/,return))</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Type,99)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Image,../extras/tiles/collection.png)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Icon,)</onclick>
@@ -249,7 +249,7 @@
             <label>$LOCALIZE[342] - $LOCALIZE[20459]</label>
             <onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)],Tags)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Label,$LOCALIZE[31298])</onclick>
-			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(Video,MovieTags,return))</onclick>
+			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(videos,videodb://movies/tags/,return))</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Type,99)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Image,../extras/tiles/tags.png)</onclick> 
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Icon,)</onclick>
@@ -262,7 +262,7 @@
             <visible>Skin.String(TileSelector_Temp,MusicTile1)</visible>
             <onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)],Albums)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Label,$LOCALIZE[358])</onclick>
-			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(MusicLibrary,Albums,return))</onclick>
+			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(Music,Albums,return))</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Type,98)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Image,../extras/tiles/albums.png)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Icon,)</onclick>
@@ -273,7 +273,7 @@
             <label>$LOCALIZE[2] - $LOCALIZE[133]</label>
             <onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)],Artists)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Label,$LOCALIZE[31017])</onclick>
-			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(MusicLibrary,Artists,return))</onclick>
+			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(Music,Artists,return))</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Type,98)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Image,../extras/tiles/artists.png)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Icon,)</onclick>
@@ -306,7 +306,7 @@
             <label>$LOCALIZE[2] - $LOCALIZE[136]</label>
             <onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)],MusicPlaylists)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Label,$LOCALIZE[20011])</onclick>
-			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(MusicLibrary,Playlists,return))</onclick>
+			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(Music,Playlists,return))</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Type,99)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Image,../extras/tiles/playlist.png)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Icon,)</onclick>
@@ -317,7 +317,7 @@
             <label>$LOCALIZE[2] - $LOCALIZE[31009]</label>
             <onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)],MusicRecentlyAdded)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Label,$LOCALIZE[31297])</onclick>
-			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(MusicLibrary,RecentlyAddedAlbums,return))</onclick>
+			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(Music,RecentlyAddedAlbums,return))</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Type,99)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Image,../extras/tiles/recent.png)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Icon,)</onclick>
@@ -328,7 +328,7 @@
             <label>$LOCALIZE[2] - $LOCALIZE[134]</label>
             <onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)],Songs)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Label,$LOCALIZE[31169])</onclick>
-			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(MusicLibrary,Songs,return))</onclick>
+			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(Music,Songs,return))</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Type,98)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Image,../extras/tiles/songs.png)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Icon,)</onclick>
@@ -339,7 +339,7 @@
             <label>$LOCALIZE[2] - $LOCALIZE[271]</label>
             <onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)],Top100)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Label,$LOCALIZE[271])</onclick>
-			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(MusicLibrary,Top100,return))</onclick>
+			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(Music,Top100,return))</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Type,99)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Image,../extras/tiles/top100.png)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Icon,)</onclick>
@@ -362,7 +362,7 @@
             <label>$LOCALIZE[20389] - $LOCALIZE[31024]</label>
             <onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)],AllMusicVids)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Label,$LOCALIZE[31024])</onclick>
-			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(VideoLibrary,MusicVideoTitles,return))</onclick>
+			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(videos,videodb://musicvideos/titles/,return))</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Type,98)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Image,../extras/tiles/musicvideos.png)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Icon,)</onclick>
@@ -373,18 +373,18 @@
             <label>$LOCALIZE[20389] - $LOCALIZE[135]</label>
             <onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)],MusicVidGenres)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Label,$LOCALIZE[31294])</onclick>
-			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(Videos,MusicVideoGenres,return))</onclick>
+			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(videos,videodb://musicvideos/genres/,return))</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Type,99)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Image,../extras/tiles/genres.png)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Icon,)</onclick>
             <onclick>Dialog.Close(1113)</onclick>
-            <icon>../extras/tiles/genres.png</icon>
+            <icon>../extras/tiles/genres.png</icon> 
         </item>
 		<item id="935">
             <label>$LOCALIZE[20389] - $LOCALIZE[31009]</label>
             <onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)],MusicVidRecentlyAdded)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Label,$LOCALIZE[31299])</onclick>
-			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(Videos,RecentlyAddedMusicVideos,return))</onclick>
+			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(videos,videodb://recentlyaddedmusicvideos/,return))</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Type,99)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Image,../extras/tiles/recent.png)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Icon,)</onclick>
@@ -454,7 +454,7 @@
             <label>$LOCALIZE[20343] - $LOCALIZE[31015]</label>
             <onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)],AllTVshows)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Label,$LOCALIZE[31015])</onclick>
-			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(VideoLibrary,tvshowtitles,return))</onclick>
+			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(Videos,videodb://tvshows/titles/,return))</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Type,98)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Image,../extras/tiles/tv.png)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Icon,)</onclick>
@@ -465,7 +465,7 @@
             <label>$LOCALIZE[20343] - $LOCALIZE[135]</label>
             <onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)],TVGenres)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Label,$LOCALIZE[31292])</onclick>
-			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(VideoLibrary,tvshowgenres,return))</onclick>
+			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(Videos,videodb://tvshows/genres/,return))</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Type,99)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Image,../extras/tiles/genres.png)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Icon,)</onclick>
@@ -487,7 +487,7 @@
             <label>$LOCALIZE[20343] - $LOCALIZE[31009]</label>
             <onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)],TVRecentlyAdded)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Label,$LOCALIZE[31296])</onclick>
-			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(VideoLibrary,RecentlyAddedEpisodes,return))</onclick>
+			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(Videos,videodb://recentlyaddedepisodes/,return))</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Type,99)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Image,../extras/tiles/recent.png)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Icon,)</onclick>
@@ -511,7 +511,7 @@
             <label>$LOCALIZE[3] - $LOCALIZE[136]</label>
             <onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)],VideoPlaylists)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Label,$LOCALIZE[20012])</onclick>
-			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(VideoLibrary,playlists,return))</onclick>
+			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(Videos,playlists,return))</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Type,99)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Image,../extras/tiles/playlist.png)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Icon,)</onclick>
@@ -636,14 +636,7 @@
             <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[20389] - $LOCALIZE[31009])</onclick>
             <onclick>Dialog.Close(1113)</onclick>
             <icon>../extras/tiles/recent.png</icon>
-        </item>
-        <item id="814">
-            <label>$LOCALIZE[20389] - $LOCALIZE[31038]</label>
-            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],MusicVidRecommended)</onclick>
-            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[20389] - $LOCALIZE[31038])</onclick>
-            <onclick>Dialog.Close(1113)</onclick>
-            <icon>../extras/tiles/recommend.png</icon>
-        </item>		
+        </item>	
         <item id="815">
             <label>$LOCALIZE[20389] - $LOCALIZE[31154]</label>
             <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],MusicVidRandom)</onclick>

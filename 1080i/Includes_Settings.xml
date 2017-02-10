@@ -116,14 +116,6 @@
         <onleft>413</onleft>
     </include>
 	
-	<include name="Settings_DefaultMenu">
-        <animation effect="fade" start="0" end="100" time="400" easing="Out" tween="square" condition="Skin.String(HomeMenu.SubMenu,14)">Conditional</animation>
-		<visible>Skin.String(HomeMenu.SubMenu,14)</visible>        
-		<include>Settings_HomeMenu_Labels</include>
-        <align>left</align>
-        <onleft>414</onleft>
-    </include>
-	
 	<include name="Settings_HomeMenu_HorizBar">
 		<posx>20</posx>
 		<width>658</width>

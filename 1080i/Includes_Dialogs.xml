@@ -179,32 +179,5 @@
         <height>72</height>
         <textoffsetx>3000</textoffsetx>
     </include>
-
-    <include name="Dialog_OkButton">
-        <include>Dialog_Button</include>
-        <texturefocus>buttons/okFO.png</texturefocus>
-        <texturenofocus>buttons/okNF.png</texturenofocus>
-    </include>
-
-    <include name="Dialog_CancelButton">
-        <include>Dialog_Button</include>
-        <texturefocus>buttons/cancelFO.png</texturefocus>
-        <texturenofocus>buttons/cancelNF.png</texturenofocus>
-    </include>
-
-    <include name="Dialog_Header">
-        <posy>15</posy>
-        <align>right</align>
-        <font>font40LB</font>
-        <textcolor>$VAR[Accent_100]</textcolor>
-        <scroll>true</scroll>
-    </include>
-
-    <include name="Dialog_Line">
-        <height>6</height>
-        <include>Common_Color_Accent</include>
-        <posx>0</posx>
-        <posy>90</posy>
-    </include>
     
 </includes>

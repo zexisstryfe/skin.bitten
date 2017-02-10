@@ -1,3 +1,0 @@
-﻿[B]bit(ten) 0.1b[/B]
-
-Initial BETA release!

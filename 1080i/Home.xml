@@ -31,88 +31,68 @@
 			<!-- TILE GROUPS -->
 			<control type="group" id="600">	
 
-				<include name="HomeMenu_Tiles">
-					 <param name="homemenu" value="HomeMenu1"/>
-				</include> 
-				
-				<include name="HomeMenu_Tiles"> 
-					 <param name="homemenu" value="HomeMenu2"/>
-				</include>
+				<include>HomeMenu1_Tiles</include>
 
-				<include name="HomeMenu_Tiles">
-					 <param name="homemenu" value="HomeMenu3"/>
-				</include>
+				<include>HomeMenu2_Tiles</include>
 
-				<include name="HomeMenu_Tiles">
-					 <param name="homemenu" value="HomeMenu4"/>
-				</include>
+				<include>HomeMenu3_Tiles</include>
 
-				<include name="HomeMenu_Tiles">
-					 <param name="homemenu" value="HomeMenu5"/>
-				</include>
+				<include>HomeMenu4_Tiles</include>
 
-				<include name="HomeMenu_Tiles">
-					 <param name="homemenu" value="HomeMenu6"/>
-				</include>
+				<include>HomeMenu5_Tiles</include>
 
-				<include name="HomeMenu_Tiles">
-					 <param name="homemenu" value="HomeMenu7"/>
-				</include>
-				
-				<include name="HomeMenu_Tiles">
-					 <param name="homemenu" value="HomeMenu8"/>
-				</include>				
-				
-				<include name="HomeMenu_Tiles">
-					 <param name="homemenu" value="HomeMenu9"/>
-				</include>
+				<include>HomeMenu6_Tiles</include>
 
-				<include name="HomeMenu_Tiles">
-					 <param name="homemenu" value="HomeMenu10"/>
-				</include>
-				
+				<include>HomeMenu7_Tiles</include>
+
+				<include>HomeMenu8_Tiles</include>
+
+				<include>HomeMenu9_Tiles</include>
+
+				<include>HomeMenu10_Tiles</include>
+
 			</control>	
 			
 			<!-- PANELS -->
 			<control type="group" id="700">	
 
-				<include name="HomeMenu_Panel">
+				<include content="HomeMenu_Panel">
 					 <param name="homemenu" value="HomeMenu1"/>
 				</include>
 				
-				<include name="HomeMenu_Panel">
+				<include content="HomeMenu_Panel">
 					 <param name="homemenu" value="HomeMenu2"/>
 				</include>
 
-				<include name="HomeMenu_Panel">
+				<include content="HomeMenu_Panel">
 					 <param name="homemenu" value="HomeMenu3"/>
 				</include>
 
-				<include name="HomeMenu_Panel">
+				<include content="HomeMenu_Panel">
 					 <param name="homemenu" value="HomeMenu4"/>
 				</include>
 
-				<include name="HomeMenu_Panel">
+				<include content="HomeMenu_Panel">
 					 <param name="homemenu" value="HomeMenu5"/>
 				</include>
 
-				<include name="HomeMenu_Panel">
+				<include content="HomeMenu_Panel">
 					 <param name="homemenu" value="HomeMenu6"/>
 				</include>
 
-				<include name="HomeMenu_Panel">
+				<include content="HomeMenu_Panel">
 					 <param name="homemenu" value="HomeMenu7"/>
 				</include>
 
-				<include name="HomeMenu_Panel">
+				<include content="HomeMenu_Panel">
 					 <param name="homemenu" value="HomeMenu8"/>
 				</include>
 
-				<include name="HomeMenu_Panel">
+				<include content="HomeMenu_Panel">
 					 <param name="homemenu" value="HomeMenu9"/>
 				</include>				
 				
-				<include name="HomeMenu_Panel">
+				<include content="HomeMenu_Panel">
 					 <param name="homemenu" value="HomeMenu10"/>
 				</include>				
 

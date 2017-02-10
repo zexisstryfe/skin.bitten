@@ -1,5 +1,17 @@
 <includes>
 
+	<variable name="Hub_Featured_Label2">
+		<value condition="Window.IsVisible(Custom_1102_Hub_TV.xml)">$INFO[Container(9001).ListItem.TVShowTitle]</value>
+		<value condition="Window.IsVisible(Custom_1103_Hub_Music.xml)">$INFO[Container(9001).ListItem.Artist]</value>
+		<value condition="Window.IsVisible(Custom_1104_Hub_MusicVid.xml)">$INFO[Container(9001).ListItem.Artist]</value>
+	</variable>	
+
+	<variable name="Hub_Featured_Description">
+		<value condition="Window.IsVisible(Custom_1102_Hub_TV.xml)">$INFO[Container(9001).ListItem.Plot]</value>
+		<value condition="Window.IsVisible(Custom_1103_Hub_Music.xml)">$INFO[Container(9001).ListItem.Description]</value>
+		<value condition="Window.IsVisible(Custom_1104_Hub_MusicVid.xml)">$INFO[Container(9001).ListItem.Description]</value>
+	</variable>	
+
 	<!-- NEW VARIABLES -->	
 	<variable name="Options_Close">
 		<value condition="Window.IsVisible(MyPVRGuide.xml)">10</value>
@@ -8,7 +20,6 @@
 		<value condition="Window.IsVisible(MyPVRSearch.xml)">17</value>
 		<value condition="Window.IsVisible(MyPVRTimers.xml)">14</value>
 		<value>50</value>
-
 	</variable>
 
 	<variable name="NowPlaying_Title">
@@ -914,6 +925,7 @@
 	<variable name="LeftMenu_Heading">
 		<value condition="Window.IsVisible(dialogbuttonmenu.xml)">$LOCALIZE[10004]</value>
 		<value condition="Window.IsVisible(dialogcontentsettings.xml)">$LOCALIZE[20333]</value>
+		<value condition="Window.IsVisible(Custom_1120_DialogSearch.xml)">$LOCALIZE[137]</value>
 	</variable>	
 	
 	<variable name="Fanart_List_Title">
@@ -1149,451 +1161,451 @@
 	<variable name="Home1Tile1_Path">
 		<value condition="Skin.String(Home1Tile1.Type,0) | Skin.String(Home1Tile1.Type,1) | Skin.String(Home1Tile1.Type,2) | Skin.String(Home1Tile1.Type,3)">RunAddon($INFO[Skin.String(Home1Tile1.Path)])</value>
 		<value condition="Skin.String(Home1Tile1.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home1Tile1.Path)],return)</value>
-		<value condition="Skin.String(Home1Tile1.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home1Tile1.Path)],return)</value>
+		<value condition="Skin.String(Home1Tile1.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home1Tile1.Path)],return)</value>
 		<value>$INFO[Skin.String(Home1Tile1.Path)]</value>		
 	</variable>
 	
 	<variable name="Home1Tile2_Path">
 		<value condition="Skin.String(Home1Tile2.Type,0) | Skin.String(Home1Tile2.Type,1) | Skin.String(Home1Tile2.Type,2) | Skin.String(Home1Tile2.Type,3)">RunAddon($INFO[Skin.String(Home1Tile2.Path)])</value>
 		<value condition="Skin.String(Home1Tile2.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home1Tile2.Path)],return)</value>
-		<value condition="Skin.String(Home1Tile2.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home1Tile2.Path)],return)</value>
+		<value condition="Skin.String(Home1Tile2.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home1Tile2.Path)],return)</value>
 		<value>$INFO[Skin.String(Home1Tile2.Path)]</value>		
 	</variable>
 
 	<variable name="Home1Tile3_Path">
 		<value condition="Skin.String(Home1Tile3.Type,0) | Skin.String(Home1Tile3.Type,1) | Skin.String(Home1Tile3.Type,2) | Skin.String(Home1Tile3.Type,3)">RunAddon($INFO[Skin.String(Home1Tile3.Path)])</value>
 		<value condition="Skin.String(Home1Tile3.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home1Tile3.Path)],return)</value>
-		<value condition="Skin.String(Home1Tile3.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home1Tile3.Path)],return)</value>
+		<value condition="Skin.String(Home1Tile3.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home1Tile3.Path)],return)</value>
 		<value>$INFO[Skin.String(Home1Tile3.Path)]</value>		
 	</variable>
 
 	<variable name="Home1Tile4_Path">
 		<value condition="Skin.String(Home1Tile4.Type,0) | Skin.String(Home1Tile4.Type,1) | Skin.String(Home1Tile4.Type,2) | Skin.String(Home1Tile4.Type,3)">RunAddon($INFO[Skin.String(Home1Tile4.Path)])</value>
 		<value condition="Skin.String(Home1Tile4.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home1Tile4.Path)],return)</value>
-		<value condition="Skin.String(Home1Tile4.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home1Tile4.Path)],return)</value>
+		<value condition="Skin.String(Home1Tile4.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home1Tile4.Path)],return)</value>
 		<value>$INFO[Skin.String(Home1Tile4.Path)]</value>		
 	</variable>
 
 	<variable name="Home1Tile5_Path">
 		<value condition="Skin.String(Home1Tile5.Type,0) | Skin.String(Home1Tile5.Type,1) | Skin.String(Home1Tile5.Type,2) | Skin.String(Home1Tile5.Type,3)">RunAddon($INFO[Skin.String(Home1Tile5.Path)])</value>
 		<value condition="Skin.String(Home1Tile5.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home1Tile5.Path)],return)</value>
-		<value condition="Skin.String(Home1Tile5.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home1Tile5.Path)],return)</value>
+		<value condition="Skin.String(Home1Tile5.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home1Tile5.Path)],return)</value>
 		<value>$INFO[Skin.String(Home1Tile5.Path)]</value>		
 	</variable>
 
 	<variable name="Home2Tile1_Path">
 		<value condition="Skin.String(Home2Tile1.Type,0) | Skin.String(Home2Tile1.Type,1) | Skin.String(Home2Tile1.Type,2) | Skin.String(Home2Tile1.Type,3)">RunAddon($INFO[Skin.String(Home2Tile1.Path)])</value>
 		<value condition="Skin.String(Home2Tile1.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home2Tile1.Path)],return)</value>
-		<value condition="Skin.String(Home2Tile1.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home2Tile1.Path)],return)</value>
+		<value condition="Skin.String(Home2Tile1.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home2Tile1.Path)],return)</value>
 		<value>$INFO[Skin.String(Home2Tile1.Path)]</value>		
 	</variable>
 	
 	<variable name="Home2Tile2_Path">
 		<value condition="Skin.String(Home2Tile2.Type,0) | Skin.String(Home2Tile2.Type,1) | Skin.String(Home2Tile2.Type,2) | Skin.String(Home2Tile2.Type,3)">RunAddon($INFO[Skin.String(Home2Tile2.Path)])</value>
 		<value condition="Skin.String(Home2Tile2.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home2Tile2.Path)],return)</value>
-		<value condition="Skin.String(Home2Tile2.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home2Tile2.Path)],return)</value>
+		<value condition="Skin.String(Home2Tile2.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home2Tile2.Path)],return)</value>
 		<value>$INFO[Skin.String(Home2Tile2.Path)]</value>		
 	</variable>
 
 	<variable name="Home2Tile3_Path">
 		<value condition="Skin.String(Home2Tile3.Type,0) | Skin.String(Home2Tile3.Type,1) | Skin.String(Home2Tile3.Type,2) | Skin.String(Home2Tile3.Type,3)">RunAddon($INFO[Skin.String(Home2Tile3.Path)])</value>
 		<value condition="Skin.String(Home2Tile3.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home2Tile3.Path)],return)</value>
-		<value condition="Skin.String(Home2Tile3.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home2Tile3.Path)],return)</value>
+		<value condition="Skin.String(Home2Tile3.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home2Tile3.Path)],return)</value>
 		<value>$INFO[Skin.String(Home2Tile3.Path)]</value>		
 	</variable>
 
 	<variable name="Home2Tile4_Path">
 		<value condition="Skin.String(Home2Tile4.Type,0) | Skin.String(Home2Tile4.Type,1) | Skin.String(Home2Tile4.Type,2) | Skin.String(Home2Tile4.Type,3)">RunAddon($INFO[Skin.String(Home2Tile4.Path)])</value>
 		<value condition="Skin.String(Home2Tile4.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home2Tile4.Path)],return)</value>
-		<value condition="Skin.String(Home2Tile4.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home2Tile4.Path)],return)</value>
+		<value condition="Skin.String(Home2Tile4.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home2Tile4.Path)],return)</value>
 		<value>$INFO[Skin.String(Home2Tile4.Path)]</value>		
 	</variable>
 
 	<variable name="Home2Tile5_Path">
 		<value condition="Skin.String(Home2Tile5.Type,0) | Skin.String(Home2Tile5.Type,1) | Skin.String(Home2Tile5.Type,2) | Skin.String(Home2Tile5.Type,3)">RunAddon($INFO[Skin.String(Home2Tile5.Path)])</value>
 		<value condition="Skin.String(Home2Tile5.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home2Tile5.Path)],return)</value>
-		<value condition="Skin.String(Home2Tile5.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home2Tile5.Path)],return)</value>
+		<value condition="Skin.String(Home2Tile5.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home2Tile5.Path)],return)</value>
 		<value>$INFO[Skin.String(Home2Tile5.Path)]</value>		
 	</variable>
 
 	<variable name="Home3Tile1_Path">
 		<value condition="Skin.String(Home3Tile1.Type,0) | Skin.String(Home3Tile1.Type,1) | Skin.String(Home3Tile1.Type,2) | Skin.String(Home3Tile1.Type,3)">RunAddon($INFO[Skin.String(Home3Tile1.Path)])</value>
 		<value condition="Skin.String(Home3Tile1.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home3Tile1.Path)],return)</value>
-		<value condition="Skin.String(Home3Tile1.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home3Tile1.Path)],return)</value>
+		<value condition="Skin.String(Home3Tile1.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home3Tile1.Path)],return)</value>
 		<value>$INFO[Skin.String(Home3Tile1.Path)]</value>		
 	</variable>
 	
 	<variable name="Home3Tile2_Path">
 		<value condition="Skin.String(Home3Tile2.Type,0) | Skin.String(Home3Tile2.Type,1) | Skin.String(Home3Tile2.Type,2) | Skin.String(Home3Tile2.Type,3)">RunAddon($INFO[Skin.String(Home3Tile2.Path)])</value>
 		<value condition="Skin.String(Home3Tile2.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home3Tile2.Path)],return)</value>
-		<value condition="Skin.String(Home3Tile2.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home3Tile2.Path)],return)</value>
+		<value condition="Skin.String(Home3Tile2.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home3Tile2.Path)],return)</value>
 		<value>$INFO[Skin.String(Home3Tile2.Path)]</value>		
 	</variable>
 
 	<variable name="Home3Tile3_Path">
 		<value condition="Skin.String(Home3Tile3.Type,0) | Skin.String(Home3Tile3.Type,1) | Skin.String(Home3Tile3.Type,2) | Skin.String(Home3Tile3.Type,3)">RunAddon($INFO[Skin.String(Home3Tile3.Path)])</value>
 		<value condition="Skin.String(Home3Tile3.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home3Tile3.Path)],return)</value>
-		<value condition="Skin.String(Home3Tile3.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home3Tile3.Path)],return)</value>
+		<value condition="Skin.String(Home3Tile3.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home3Tile3.Path)],return)</value>
 		<value>$INFO[Skin.String(Home3Tile3.Path)]</value>		
 	</variable>
 
 	<variable name="Home3Tile4_Path">
 		<value condition="Skin.String(Home3Tile4.Type,0) | Skin.String(Home3Tile4.Type,1) | Skin.String(Home3Tile4.Type,2) | Skin.String(Home3Tile4.Type,3)">RunAddon($INFO[Skin.String(Home3Tile4.Path)])</value>
 		<value condition="Skin.String(Home3Tile4.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home3Tile4.Path)],return)</value>
-		<value condition="Skin.String(Home3Tile4.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home3Tile4.Path)],return)</value>
+		<value condition="Skin.String(Home3Tile4.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home3Tile4.Path)],return)</value>
 		<value>$INFO[Skin.String(Home3Tile4.Path)]</value>		
 	</variable>
 
 	<variable name="Home3Tile5_Path">
 		<value condition="Skin.String(Home3Tile5.Type,0) | Skin.String(Home3Tile5.Type,1) | Skin.String(Home3Tile5.Type,2) | Skin.String(Home3Tile5.Type,3)">RunAddon($INFO[Skin.String(Home3Tile5.Path)])</value>
 		<value condition="Skin.String(Home3Tile5.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home3Tile5.Path)],return)</value>
-		<value condition="Skin.String(Home3Tile5.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home3Tile5.Path)],return)</value>
+		<value condition="Skin.String(Home3Tile5.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home3Tile5.Path)],return)</value>
 		<value>$INFO[Skin.String(Home3Tile5.Path)]</value>		
 	</variable>
 
 	<variable name="Home4Tile1_Path">
 		<value condition="Skin.String(Home4Tile1.Type,0) | Skin.String(Home4Tile1.Type,1) | Skin.String(Home4Tile1.Type,2) | Skin.String(Home4Tile1.Type,3)">RunAddon($INFO[Skin.String(Home4Tile1.Path)])</value>
 		<value condition="Skin.String(Home4Tile1.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home4Tile1.Path)],return)</value>
-		<value condition="Skin.String(Home4Tile1.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home4Tile1.Path)],return)</value>
+		<value condition="Skin.String(Home4Tile1.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home4Tile1.Path)],return)</value>
 		<value>$INFO[Skin.String(Home4Tile1.Path)]</value>		
 	</variable>
 	
 	<variable name="Home4Tile2_Path">
 		<value condition="Skin.String(Home4Tile2.Type,0) | Skin.String(Home4Tile2.Type,1) | Skin.String(Home4Tile2.Type,2) | Skin.String(Home4Tile2.Type,3)">RunAddon($INFO[Skin.String(Home4Tile2.Path)])</value>
 		<value condition="Skin.String(Home4Tile2.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home4Tile2.Path)],return)</value>
-		<value condition="Skin.String(Home4Tile2.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home4Tile2.Path)],return)</value>
+		<value condition="Skin.String(Home4Tile2.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home4Tile2.Path)],return)</value>
 		<value>$INFO[Skin.String(Home4Tile2.Path)]</value>		
 	</variable>
 
 	<variable name="Home4Tile3_Path">
 		<value condition="Skin.String(Home4Tile3.Type,0) | Skin.String(Home4Tile3.Type,1) | Skin.String(Home4Tile3.Type,2) | Skin.String(Home4Tile3.Type,3)">RunAddon($INFO[Skin.String(Home4Tile3.Path)])</value>
 		<value condition="Skin.String(Home4Tile3.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home4Tile3.Path)],return)</value>
-		<value condition="Skin.String(Home4Tile3.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home4Tile3.Path)],return)</value>
+		<value condition="Skin.String(Home4Tile3.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home4Tile3.Path)],return)</value>
 		<value>$INFO[Skin.String(Home4Tile3.Path)]</value>		
 	</variable>
 
 	<variable name="Home4Tile4_Path">
 		<value condition="Skin.String(Home4Tile4.Type,0) | Skin.String(Home4Tile4.Type,1) | Skin.String(Home4Tile4.Type,2) | Skin.String(Home4Tile4.Type,3)">RunAddon($INFO[Skin.String(Home4Tile4.Path)])</value>
 		<value condition="Skin.String(Home4Tile4.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home4Tile4.Path)],return)</value>
-		<value condition="Skin.String(Home4Tile4.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home4Tile4.Path)],return)</value>
+		<value condition="Skin.String(Home4Tile4.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home4Tile4.Path)],return)</value>
 		<value>$INFO[Skin.String(Home4Tile4.Path)]</value>		
 	</variable>
 
 	<variable name="Home4Tile5_Path">
 		<value condition="Skin.String(Home4Tile5.Type,0) | Skin.String(Home4Tile5.Type,1) | Skin.String(Home4Tile5.Type,2) | Skin.String(Home4Tile5.Type,3)">RunAddon($INFO[Skin.String(Home4Tile5.Path)])</value>
 		<value condition="Skin.String(Home4Tile5.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home4Tile5.Path)],return)</value>
-		<value condition="Skin.String(Home4Tile5.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home4Tile5.Path)],return)</value>
+		<value condition="Skin.String(Home4Tile5.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home4Tile5.Path)],return)</value>
 		<value>$INFO[Skin.String(Home4Tile5.Path)]</value>		
 	</variable>
 
 	<variable name="Home5Tile1_Path">
 		<value condition="Skin.String(Home5Tile1.Type,0) | Skin.String(Home5Tile1.Type,1) | Skin.String(Home5Tile1.Type,2) | Skin.String(Home5Tile1.Type,3)">RunAddon($INFO[Skin.String(Home5Tile1.Path)])</value>
 		<value condition="Skin.String(Home5Tile1.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home5Tile1.Path)],return)</value>
-		<value condition="Skin.String(Home5Tile1.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home5Tile1.Path)],return)</value>
+		<value condition="Skin.String(Home5Tile1.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home5Tile1.Path)],return)</value>
 		<value>$INFO[Skin.String(Home5Tile1.Path)]</value>		
 	</variable>
 	
 	<variable name="Home5Tile2_Path">
 		<value condition="Skin.String(Home5Tile2.Type,0) | Skin.String(Home5Tile2.Type,1) | Skin.String(Home5Tile2.Type,2) | Skin.String(Home5Tile2.Type,3)">RunAddon($INFO[Skin.String(Home5Tile2.Path)])</value>
 		<value condition="Skin.String(Home5Tile2.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home5Tile2.Path)],return)</value>
-		<value condition="Skin.String(Home5Tile2.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home5Tile2.Path)],return)</value>
+		<value condition="Skin.String(Home5Tile2.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home5Tile2.Path)],return)</value>
 		<value>$INFO[Skin.String(Home5Tile2.Path)]</value>		
 	</variable>
 
 	<variable name="Home5Tile3_Path">
 		<value condition="Skin.String(Home5Tile3.Type,0) | Skin.String(Home5Tile3.Type,1) | Skin.String(Home5Tile3.Type,2) | Skin.String(Home5Tile3.Type,3)">RunAddon($INFO[Skin.String(Home5Tile3.Path)])</value>
 		<value condition="Skin.String(Home5Tile3.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home5Tile3.Path)],return)</value>
-		<value condition="Skin.String(Home5Tile3.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home5Tile3.Path)],return)</value>
+		<value condition="Skin.String(Home5Tile3.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home5Tile3.Path)],return)</value>
 		<value>$INFO[Skin.String(Home5Tile3.Path)]</value>		
 	</variable>
 
 	<variable name="Home5Tile4_Path">
 		<value condition="Skin.String(Home5Tile4.Type,0) | Skin.String(Home5Tile4.Type,1) | Skin.String(Home5Tile4.Type,2) | Skin.String(Home5Tile4.Type,3)">RunAddon($INFO[Skin.String(Home5Tile4.Path)])</value>
 		<value condition="Skin.String(Home5Tile4.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home5Tile4.Path)],return)</value>
-		<value condition="Skin.String(Home5Tile4.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home5Tile4.Path)],return)</value>
+		<value condition="Skin.String(Home5Tile4.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home5Tile4.Path)],return)</value>
 		<value>$INFO[Skin.String(Home5Tile4.Path)]</value>		
 	</variable>
 
 	<variable name="Home5Tile5_Path">
 		<value condition="Skin.String(Home5Tile5.Type,0) | Skin.String(Home5Tile5.Type,1) | Skin.String(Home5Tile5.Type,2) | Skin.String(Home5Tile5.Type,3)">RunAddon($INFO[Skin.String(Home5Tile5.Path)])</value>
 		<value condition="Skin.String(Home5Tile5.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home5Tile5.Path)],return)</value>
-		<value condition="Skin.String(Home5Tile5.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home5Tile5.Path)],return)</value>
+		<value condition="Skin.String(Home5Tile5.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home5Tile5.Path)],return)</value>
 		<value>$INFO[Skin.String(Home5Tile5.Path)]</value>		
 	</variable>
 
 	<variable name="Home6Tile1_Path">
 		<value condition="Skin.String(Home6Tile1.Type,0) | Skin.String(Home6Tile1.Type,1) | Skin.String(Home6Tile1.Type,2) | Skin.String(Home6Tile1.Type,3)">RunAddon($INFO[Skin.String(Home6Tile1.Path)])</value>
 		<value condition="Skin.String(Home6Tile1.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home6Tile1.Path)],return)</value>
-		<value condition="Skin.String(Home6Tile1.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home6Tile1.Path)],return)</value>
+		<value condition="Skin.String(Home6Tile1.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home6Tile1.Path)],return)</value>
 		<value>$INFO[Skin.String(Home6Tile1.Path)]</value>		
 	</variable>
 	
 	<variable name="Home6Tile2_Path">
 		<value condition="Skin.String(Home6Tile2.Type,0) | Skin.String(Home6Tile2.Type,1) | Skin.String(Home6Tile2.Type,2) | Skin.String(Home6Tile2.Type,3)">RunAddon($INFO[Skin.String(Home6Tile2.Path)])</value>
 		<value condition="Skin.String(Home6Tile2.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home6Tile2.Path)],return)</value>
-		<value condition="Skin.String(Home6Tile2.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home6Tile2.Path)],return)</value>
+		<value condition="Skin.String(Home6Tile2.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home6Tile2.Path)],return)</value>
 		<value>$INFO[Skin.String(Home6Tile2.Path)]</value>		
 	</variable>
 
 	<variable name="Home6Tile3_Path">
 		<value condition="Skin.String(Home6Tile3.Type,0) | Skin.String(Home6Tile3.Type,1) | Skin.String(Home6Tile3.Type,2) | Skin.String(Home6Tile3.Type,3)">RunAddon($INFO[Skin.String(Home6Tile3.Path)])</value>
 		<value condition="Skin.String(Home6Tile3.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home6Tile3.Path)],return)</value>
-		<value condition="Skin.String(Home6Tile3.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home6Tile3.Path)],return)</value>
+		<value condition="Skin.String(Home6Tile3.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home6Tile3.Path)],return)</value>
 		<value>$INFO[Skin.String(Home6Tile3.Path)]</value>		
 	</variable>
 
 	<variable name="Home6Tile4_Path">
 		<value condition="Skin.String(Home6Tile4.Type,0) | Skin.String(Home6Tile4.Type,1) | Skin.String(Home6Tile4.Type,2) | Skin.String(Home6Tile4.Type,3)">RunAddon($INFO[Skin.String(Home6Tile4.Path)])</value>
 		<value condition="Skin.String(Home6Tile4.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home6Tile4.Path)],return)</value>
-		<value condition="Skin.String(Home6Tile4.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home6Tile4.Path)],return)</value>
+		<value condition="Skin.String(Home6Tile4.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home6Tile4.Path)],return)</value>
 		<value>$INFO[Skin.String(Home6Tile4.Path)]</value>		
 	</variable>
 
 	<variable name="Home6Tile5_Path">
 		<value condition="Skin.String(Home6Tile5.Type,0) | Skin.String(Home6Tile5.Type,1) | Skin.String(Home6Tile5.Type,2) | Skin.String(Home6Tile5.Type,3)">RunAddon($INFO[Skin.String(Home6Tile5.Path)])</value>
 		<value condition="Skin.String(Home6Tile5.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home6Tile5.Path)],return)</value>
-		<value condition="Skin.String(Home6Tile5.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home6Tile5.Path)],return)</value>
+		<value condition="Skin.String(Home6Tile5.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home6Tile5.Path)],return)</value>
 		<value>$INFO[Skin.String(Home6Tile5.Path)]</value>		
 	</variable>
 
 	<variable name="Home7Tile1_Path">
 		<value condition="Skin.String(Home7Tile1.Type,0) | Skin.String(Home7Tile1.Type,1) | Skin.String(Home7Tile1.Type,2) | Skin.String(Home7Tile1.Type,3)">RunAddon($INFO[Skin.String(Home7Tile1.Path)])</value>
 		<value condition="Skin.String(Home7Tile1.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home7Tile1.Path)],return)</value>
-		<value condition="Skin.String(Home7Tile1.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home7Tile1.Path)],return)</value>
+		<value condition="Skin.String(Home7Tile1.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home7Tile1.Path)],return)</value>
 		<value>$INFO[Skin.String(Home7Tile1.Path)]</value>		
 	</variable>
 	
 	<variable name="Home7Tile2_Path">
 		<value condition="Skin.String(Home7Tile2.Type,0) | Skin.String(Home7Tile2.Type,1) | Skin.String(Home7Tile2.Type,2) | Skin.String(Home7Tile2.Type,3)">RunAddon($INFO[Skin.String(Home7Tile2.Path)])</value>
 		<value condition="Skin.String(Home7Tile2.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home7Tile2.Path)],return)</value>
-		<value condition="Skin.String(Home7Tile2.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home7Tile2.Path)],return)</value>
+		<value condition="Skin.String(Home7Tile2.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home7Tile2.Path)],return)</value>
 		<value>$INFO[Skin.String(Home7Tile2.Path)]</value>		
 	</variable>
 
 	<variable name="Home7Tile3_Path">
 		<value condition="Skin.String(Home7Tile3.Type,0) | Skin.String(Home7Tile3.Type,1) | Skin.String(Home7Tile3.Type,2) | Skin.String(Home7Tile3.Type,3)">RunAddon($INFO[Skin.String(Home7Tile3.Path)])</value>
 		<value condition="Skin.String(Home7Tile3.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home7Tile3.Path)],return)</value>
-		<value condition="Skin.String(Home7Tile3.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home7Tile3.Path)],return)</value>
+		<value condition="Skin.String(Home7Tile3.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home7Tile3.Path)],return)</value>
 		<value>$INFO[Skin.String(Home7Tile3.Path)]</value>		
 	</variable>
 
 	<variable name="Home7Tile4_Path">
 		<value condition="Skin.String(Home7Tile4.Type,0) | Skin.String(Home7Tile4.Type,1) | Skin.String(Home7Tile4.Type,2) | Skin.String(Home7Tile4.Type,3)">RunAddon($INFO[Skin.String(Home7Tile4.Path)])</value>
 		<value condition="Skin.String(Home7Tile4.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home7Tile4.Path)],return)</value>
-		<value condition="Skin.String(Home7Tile4.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home7Tile4.Path)],return)</value>
+		<value condition="Skin.String(Home7Tile4.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home7Tile4.Path)],return)</value>
 		<value>$INFO[Skin.String(Home7Tile4.Path)]</value>		
 	</variable>
 
 	<variable name="Home7Tile5_Path">
 		<value condition="Skin.String(Home7Tile5.Type,0) | Skin.String(Home7Tile5.Type,1) | Skin.String(Home7Tile5.Type,2) | Skin.String(Home7Tile5.Type,3)">RunAddon($INFO[Skin.String(Home7Tile5.Path)])</value>
 		<value condition="Skin.String(Home7Tile5.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home7Tile5.Path)],return)</value>
-		<value condition="Skin.String(Home7Tile5.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home7Tile5.Path)],return)</value>
+		<value condition="Skin.String(Home7Tile5.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home7Tile5.Path)],return)</value>
 		<value>$INFO[Skin.String(Home7Tile5.Path)]</value>		
 	</variable>
 
 	<variable name="Home8Tile1_Path">
 		<value condition="Skin.String(Home8Tile1.Type,0) | Skin.String(Home8Tile1.Type,1) | Skin.String(Home8Tile1.Type,2) | Skin.String(Home8Tile1.Type,3)">RunAddon($INFO[Skin.String(Home8Tile1.Path)])</value>
 		<value condition="Skin.String(Home8Tile1.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home8Tile1.Path)],return)</value>
-		<value condition="Skin.String(Home8Tile1.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home8Tile1.Path)],return)</value>
+		<value condition="Skin.String(Home8Tile1.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home8Tile1.Path)],return)</value>
 		<value>$INFO[Skin.String(Home8Tile1.Path)]</value>		
 	</variable>
 	
 	<variable name="Home8Tile2_Path">
 		<value condition="Skin.String(Home8Tile2.Type,0) | Skin.String(Home8Tile2.Type,1) | Skin.String(Home8Tile2.Type,2) | Skin.String(Home8Tile2.Type,3)">RunAddon($INFO[Skin.String(Home8Tile2.Path)])</value>
 		<value condition="Skin.String(Home8Tile2.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home8Tile2.Path)],return)</value>
-		<value condition="Skin.String(Home8Tile2.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home8Tile2.Path)],return)</value>
+		<value condition="Skin.String(Home8Tile2.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home8Tile2.Path)],return)</value>
 		<value>$INFO[Skin.String(Home8Tile2.Path)]</value>		
 	</variable>
 
 	<variable name="Home8Tile3_Path">
 		<value condition="Skin.String(Home8Tile3.Type,0) | Skin.String(Home8Tile3.Type,1) | Skin.String(Home8Tile3.Type,2) | Skin.String(Home8Tile3.Type,3)">RunAddon($INFO[Skin.String(Home8Tile3.Path)])</value>
 		<value condition="Skin.String(Home8Tile3.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home8Tile3.Path)],return)</value>
-		<value condition="Skin.String(Home8Tile3.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home8Tile3.Path)],return)</value>
+		<value condition="Skin.String(Home8Tile3.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home8Tile3.Path)],return)</value>
 		<value>$INFO[Skin.String(Home8Tile3.Path)]</value>		
 	</variable>
 
 	<variable name="Home8Tile4_Path">
 		<value condition="Skin.String(Home8Tile4.Type,0) | Skin.String(Home8Tile4.Type,1) | Skin.String(Home8Tile4.Type,2) | Skin.String(Home8Tile4.Type,3)">RunAddon($INFO[Skin.String(Home8Tile4.Path)])</value>
 		<value condition="Skin.String(Home8Tile4.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home8Tile4.Path)],return)</value>
-		<value condition="Skin.String(Home8Tile4.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home8Tile4.Path)],return)</value>
+		<value condition="Skin.String(Home8Tile4.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home8Tile4.Path)],return)</value>
 		<value>$INFO[Skin.String(Home8Tile4.Path)]</value>		
 	</variable>
 
 	<variable name="Home8Tile5_Path">
 		<value condition="Skin.String(Home8Tile5.Type,0) | Skin.String(Home8Tile5.Type,1) | Skin.String(Home8Tile5.Type,2) | Skin.String(Home8Tile5.Type,3)">RunAddon($INFO[Skin.String(Home8Tile5.Path)])</value>
 		<value condition="Skin.String(Home8Tile5.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home8Tile5.Path)],return)</value>
-		<value condition="Skin.String(Home8Tile5.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home8Tile5.Path)],return)</value>
+		<value condition="Skin.String(Home8Tile5.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home8Tile5.Path)],return)</value>
 		<value>$INFO[Skin.String(Home8Tile5.Path)]</value>		
 	</variable>
 
 	<variable name="Home9Tile1_Path">
 		<value condition="Skin.String(Home9Tile1.Type,0) | Skin.String(Home9Tile1.Type,1) | Skin.String(Home9Tile1.Type,2) | Skin.String(Home9Tile1.Type,3)">RunAddon($INFO[Skin.String(Home9Tile1.Path)])</value>
 		<value condition="Skin.String(Home9Tile1.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home9Tile1.Path)],return)</value>
-		<value condition="Skin.String(Home9Tile1.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home9Tile1.Path)],return)</value>
+		<value condition="Skin.String(Home9Tile1.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home9Tile1.Path)],return)</value>
 		<value>$INFO[Skin.String(Home9Tile1.Path)]</value>		
 	</variable>
 	
 	<variable name="Home9Tile2_Path">
 		<value condition="Skin.String(Home9Tile2.Type,0) | Skin.String(Home9Tile2.Type,1) | Skin.String(Home9Tile2.Type,2) | Skin.String(Home9Tile2.Type,3)">RunAddon($INFO[Skin.String(Home9Tile2.Path)])</value>
 		<value condition="Skin.String(Home9Tile2.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home9Tile2.Path)],return)</value>
-		<value condition="Skin.String(Home9Tile2.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home9Tile2.Path)],return)</value>
+		<value condition="Skin.String(Home9Tile2.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home9Tile2.Path)],return)</value>
 		<value>$INFO[Skin.String(Home9Tile2.Path)]</value>		
 	</variable>
 
 	<variable name="Home9Tile3_Path">
 		<value condition="Skin.String(Home9Tile3.Type,0) | Skin.String(Home9Tile3.Type,1) | Skin.String(Home9Tile3.Type,2) | Skin.String(Home9Tile3.Type,3)">RunAddon($INFO[Skin.String(Home9Tile3.Path)])</value>
 		<value condition="Skin.String(Home9Tile3.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home9Tile3.Path)],return)</value>
-		<value condition="Skin.String(Home9Tile3.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home9Tile3.Path)],return)</value>
+		<value condition="Skin.String(Home9Tile3.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home9Tile3.Path)],return)</value>
 		<value>$INFO[Skin.String(Home9Tile3.Path)]</value>		
 	</variable>
 
 	<variable name="Home9Tile4_Path">
 		<value condition="Skin.String(Home9Tile4.Type,0) | Skin.String(Home9Tile4.Type,1) | Skin.String(Home9Tile4.Type,2) | Skin.String(Home9Tile4.Type,3)">RunAddon($INFO[Skin.String(Home9Tile4.Path)])</value>
 		<value condition="Skin.String(Home9Tile4.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home9Tile4.Path)],return)</value>
-		<value condition="Skin.String(Home9Tile4.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home9Tile4.Path)],return)</value>
+		<value condition="Skin.String(Home9Tile4.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home9Tile4.Path)],return)</value>
 		<value>$INFO[Skin.String(Home9Tile4.Path)]</value>		
 	</variable>
 
 	<variable name="Home9Tile5_Path">
 		<value condition="Skin.String(Home9Tile5.Type,0) | Skin.String(Home9Tile5.Type,1) | Skin.String(Home9Tile5.Type,2) | Skin.String(Home9Tile5.Type,3)">RunAddon($INFO[Skin.String(Home9Tile5.Path)])</value>
 		<value condition="Skin.String(Home9Tile5.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home9Tile5.Path)],return)</value>
-		<value condition="Skin.String(Home9Tile5.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home9Tile5.Path)],return)</value>
+		<value condition="Skin.String(Home9Tile5.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home9Tile5.Path)],return)</value>
 		<value>$INFO[Skin.String(Home9Tile5.Path)]</value>		
 	</variable>
 
 	<variable name="Home10Tile1_Path">
 		<value condition="Skin.String(Home10Tile1.Type,0) | Skin.String(Home10Tile1.Type,1) | Skin.String(Home10Tile1.Type,2) | Skin.String(Home10Tile1.Type,3)">RunAddon($INFO[Skin.String(Home10Tile1.Path)])</value>
 		<value condition="Skin.String(Home10Tile1.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home10Tile1.Path)],return)</value>
-		<value condition="Skin.String(Home10Tile1.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home10Tile1.Path)],return)</value>
+		<value condition="Skin.String(Home10Tile1.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home10Tile1.Path)],return)</value>
 		<value>$INFO[Skin.String(Home10Tile1.Path)]</value>		
 	</variable>
 	
 	<variable name="Home10Tile2_Path">
 		<value condition="Skin.String(Home10Tile2.Type,0) | Skin.String(Home10Tile2.Type,1) | Skin.String(Home10Tile2.Type,2) | Skin.String(Home10Tile2.Type,3)">RunAddon($INFO[Skin.String(Home10Tile2.Path)])</value>
 		<value condition="Skin.String(Home10Tile2.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home10Tile2.Path)],return)</value>
-		<value condition="Skin.String(Home10Tile2.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home10Tile2.Path)],return)</value>
+		<value condition="Skin.String(Home10Tile2.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home10Tile2.Path)],return)</value>
 		<value>$INFO[Skin.String(Home10Tile2.Path)]</value>
 	</variable>
 
 	<variable name="Home10Tile3_Path">
 		<value condition="Skin.String(Home10Tile3.Type,0) | Skin.String(Home10Tile3.Type,1) | Skin.String(Home10Tile3.Type,2) | Skin.String(Home10Tile3.Type,3)">RunAddon($INFO[Skin.String(Home10Tile3.Path)])</value>
 		<value condition="Skin.String(Home10Tile3.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home10Tile3.Path)],return)</value>
-		<value condition="Skin.String(Home10Tile3.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home10Tile3.Path)],return)</value>	
+		<value condition="Skin.String(Home10Tile3.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home10Tile3.Path)],return)</value>	
 		<value>$INFO[Skin.String(Home10Tile3.Path)]</value>
 	</variable>
 
 	<variable name="Home10Tile4_Path">
 		<value condition="Skin.String(Home10Tile4.Type,0) | Skin.String(Home10Tile4.Type,1) | Skin.String(Home10Tile4.Type,2) | Skin.String(Home10Tile4.Type,3)">RunAddon($INFO[Skin.String(Home10Tile4.Path)])</value>
 		<value condition="Skin.String(Home10Tile4.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home10Tile4.Path)],return)</value>
-		<value condition="Skin.String(Home10Tile4.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home10Tile4.Path)],return)</value>
+		<value condition="Skin.String(Home10Tile4.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home10Tile4.Path)],return)</value>
 		<value>$INFO[Skin.String(Home10Tile4.Path)]</value>
 	</variable>
 
 	<variable name="Home10Tile5_Path">
 		<value condition="Skin.String(Home10Tile5.Type,0) | Skin.String(Home10Tile5.Type,1) | Skin.String(Home10Tile5.Type,2) | Skin.String(Home10Tile5.Type,3)">RunAddon($INFO[Skin.String(Home10Tile5.Path)])</value>
 		<value condition="Skin.String(Home10Tile5.Type,4)">ActivateWindow(Videos,$INFO[Skin.String(Home10Tile5.Path)],return)</value>
-		<value condition="Skin.String(Home10Tile5.Type,5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(Home10Tile5.Path)],return)</value>	
+		<value condition="Skin.String(Home10Tile5.Type,5)">ActivateWindow(Music,$INFO[Skin.String(Home10Tile5.Path)],return)</value>	
 		<value>$INFO[Skin.String(Home10Tile5.Path)]</value>
 	</variable>
 
 	<variable name="Home1Tile1_Label2">
-		<value condition="Skin.String(Home1Tile1.Path,ActivateWindow(VideoLibrary,movietitles,return))">$INFO[Window.Property(Movies.Count)]</value>
-		<value condition="Skin.String(Home1Tile1.Path,ActivateWindow(VideoLibrary,tvshowtitles,return))">$INFO[Window.Property(TVShows.Count)]</value>
+		<value condition="Skin.String(Home1Tile1.Path,ActivateWindow(Videos,videodb://movies/titles/,return))">$INFO[Window.Property(Movies.Count)]</value>
+		<value condition="Skin.String(Home1Tile1.Path,ActivateWindow(Videos,videodb://tvshows/titles/,return))">$INFO[Window.Property(TVShows.Count)]</value>
 		<value condition="Skin.String(Home1Tile1.Path,ActivateWindow(TVGuide))">$INFO[PVR.BackendChannels]</value>
-		<value condition="Skin.String(Home1Tile1.Path,ActivateWindow(MusicLibrary,Albums,return))">$INFO[Window.Property(Music.AlbumsCount)]</value>
-		<value condition="Skin.String(Home1Tile1.Path,ActivateWindow(MusicLibrary,Artists,return))">$INFO[Window.Property(Music.ArtistsCount)]</value>
-		<value condition="Skin.String(Home1Tile1.Path,ActivateWindow(MusicLibrary,Songs,return))">$INFO[Window.Property(Music.SongsCount)]</value>
-		<value condition="Skin.String(Home1Tile1.Path,ActivateWindow(VideoLibrary,MusicVideoTitles,return))">$INFO[Window.Property(MusicVideos.Count)]</value>		
+		<value condition="Skin.String(Home1Tile1.Path,ActivateWindow(Music,Albums,return))">$INFO[Window.Property(Music.AlbumsCount)]</value>
+		<value condition="Skin.String(Home1Tile1.Path,ActivateWindow(Music,Artists,return))">$INFO[Window.Property(Music.ArtistsCount)]</value>
+		<value condition="Skin.String(Home1Tile1.Path,ActivateWindow(Music,Songs,return))">$INFO[Window.Property(Music.SongsCount)]</value>
+		<value condition="Skin.String(Home1Tile1.Path,ActivateWindow(Videos,videodb://musicvideos/titles/,return))">$INFO[Window.Property(MusicVideos.Count)]</value>		
 	</variable>
 
 	<variable name="Home2Tile1_Label2">
-		<value condition="Skin.String(Home2Tile1.Path,ActivateWindow(VideoLibrary,movietitles,return))">$INFO[Window.Property(Movies.Count)]</value>
-		<value condition="Skin.String(Home2Tile1.Path,ActivateWindow(VideoLibrary,tvshowtitles,return))">$INFO[Window.Property(TVShows.Count)]</value>
+		<value condition="Skin.String(Home2Tile1.Path,ActivateWindow(Videos,videodb://movies/titles/,return))">$INFO[Window.Property(Movies.Count)]</value>
+		<value condition="Skin.String(Home2Tile1.Path,ActivateWindow(Videos,videodb://tvshows/titles/,return))">$INFO[Window.Property(TVShows.Count)]</value>
 		<value condition="Skin.String(Home2Tile1.Path,ActivateWindow(TVGuide))">$INFO[PVR.BackendChannels]</value>
-		<value condition="Skin.String(Home2Tile1.Path,ActivateWindow(MusicLibrary,Albums,return))">$INFO[Window.Property(Music.AlbumsCount)]</value>
-		<value condition="Skin.String(Home2Tile1.Path,ActivateWindow(MusicLibrary,Artists,return))">$INFO[Window.Property(Music.ArtistsCount)]</value>
-		<value condition="Skin.String(Home2Tile1.Path,ActivateWindow(MusicLibrary,Songs,return))">$INFO[Window.Property(Music.SongsCount)]</value>
-		<value condition="Skin.String(Home2Tile1.Path,ActivateWindow(VideoLibrary,MusicVideoTitles,return))">$INFO[Window.Property(MusicVideos.Count)]</value>		
+		<value condition="Skin.String(Home2Tile1.Path,ActivateWindow(Music,Albums,return))">$INFO[Window.Property(Music.AlbumsCount)]</value>
+		<value condition="Skin.String(Home2Tile1.Path,ActivateWindow(Music,Artists,return))">$INFO[Window.Property(Music.ArtistsCount)]</value>
+		<value condition="Skin.String(Home2Tile1.Path,ActivateWindow(Music,Songs,return))">$INFO[Window.Property(Music.SongsCount)]</value>
+		<value condition="Skin.String(Home2Tile1.Path,ActivateWindow(Videos,videodb://musicvideos/titles/,return))">$INFO[Window.Property(MusicVideos.Count)]</value>		
 	</variable>
 
 	<variable name="Home3Tile1_Label2">
-		<value condition="Skin.String(Home3Tile1.Path,ActivateWindow(VideoLibrary,movietitles,return))">$INFO[Window.Property(Movies.Count)]</value>
-		<value condition="Skin.String(Home3Tile1.Path,ActivateWindow(VideoLibrary,tvshowtitles,return))">$INFO[Window.Property(TVShows.Count)]</value>
+		<value condition="Skin.String(Home3Tile1.Path,ActivateWindow(Videos,videodb://movies/titles/,return))">$INFO[Window.Property(Movies.Count)]</value>
+		<value condition="Skin.String(Home3Tile1.Path,ActivateWindow(Videos,videodb://tvshows/titles/,return))">$INFO[Window.Property(TVShows.Count)]</value>
 		<value condition="Skin.String(Home3Tile1.Path,ActivateWindow(TVGuide))">$INFO[PVR.BackendChannels]</value>
-		<value condition="Skin.String(Home3Tile1.Path,ActivateWindow(MusicLibrary,Albums,return))">$INFO[Window.Property(Music.AlbumsCount)]</value>
-		<value condition="Skin.String(Home3Tile1.Path,ActivateWindow(MusicLibrary,Artists,return))">$INFO[Window.Property(Music.ArtistsCount)]</value>
-		<value condition="Skin.String(Home3Tile1.Path,ActivateWindow(MusicLibrary,Songs,return))">$INFO[Window.Property(Music.SongsCount)]</value>
-		<value condition="Skin.String(Home3Tile1.Path,ActivateWindow(VideoLibrary,MusicVideoTitles,return))">$INFO[Window.Property(MusicVideos.Count)]</value>		
+		<value condition="Skin.String(Home3Tile1.Path,ActivateWindow(Music,Albums,return))">$INFO[Window.Property(Music.AlbumsCount)]</value>
+		<value condition="Skin.String(Home3Tile1.Path,ActivateWindow(Music,Artists,return))">$INFO[Window.Property(Music.ArtistsCount)]</value>
+		<value condition="Skin.String(Home3Tile1.Path,ActivateWindow(Music,Songs,return))">$INFO[Window.Property(Music.SongsCount)]</value>
+		<value condition="Skin.String(Home3Tile1.Path,ActivateWindow(Videos,videodb://musicvideos/titles/,return))">$INFO[Window.Property(MusicVideos.Count)]</value>		
 	</variable>
 
 	<variable name="Home4Tile1_Label2">
-		<value condition="Skin.String(Home4Tile1.Path,ActivateWindow(VideoLibrary,movietitles,return))">$INFO[Window.Property(Movies.Count)]</value>
-		<value condition="Skin.String(Home4Tile1.Path,ActivateWindow(VideoLibrary,tvshowtitles,return))">$INFO[Window.Property(TVShows.Count)]</value>
+		<value condition="Skin.String(Home4Tile1.Path,ActivateWindow(Videos,videodb://movies/titles/,return))">$INFO[Window.Property(Movies.Count)]</value>
+		<value condition="Skin.String(Home4Tile1.Path,ActivateWindow(Videos,videodb://tvshows/titles/,return))">$INFO[Window.Property(TVShows.Count)]</value>
 		<value condition="Skin.String(Home4Tile1.Path,ActivateWindow(TVGuide))">$INFO[PVR.BackendChannels]</value>
-		<value condition="Skin.String(Home4Tile1.Path,ActivateWindow(MusicLibrary,Albums,return))">$INFO[Window.Property(Music.AlbumsCount)]</value>
-		<value condition="Skin.String(Home4Tile1.Path,ActivateWindow(MusicLibrary,Artists,return))">$INFO[Window.Property(Music.ArtistsCount)]</value>
-		<value condition="Skin.String(Home4Tile1.Path,ActivateWindow(MusicLibrary,Songs,return))">$INFO[Window.Property(Music.SongsCount)]</value>
-		<value condition="Skin.String(Home4Tile1.Path,ActivateWindow(VideoLibrary,MusicVideoTitles,return))">$INFO[Window.Property(MusicVideos.Count)]</value>		
+		<value condition="Skin.String(Home4Tile1.Path,ActivateWindow(Music,Albums,return))">$INFO[Window.Property(Music.AlbumsCount)]</value>
+		<value condition="Skin.String(Home4Tile1.Path,ActivateWindow(Music,Artists,return))">$INFO[Window.Property(Music.ArtistsCount)]</value>
+		<value condition="Skin.String(Home4Tile1.Path,ActivateWindow(Music,Songs,return))">$INFO[Window.Property(Music.SongsCount)]</value>
+		<value condition="Skin.String(Home4Tile1.Path,ActivateWindow(Videos,videodb://musicvideos/titles/,return))">$INFO[Window.Property(MusicVideos.Count)]</value>		
 	</variable>
 	
 	<variable name="Home5Tile1_Label2">
-		<value condition="Skin.String(Home5Tile1.Path,ActivateWindow(VideoLibrary,movietitles,return))">$INFO[Window.Property(Movies.Count)]</value>
-		<value condition="Skin.String(Home5Tile1.Path,ActivateWindow(VideoLibrary,tvshowtitles,return))">$INFO[Window.Property(TVShows.Count)]</value>
+		<value condition="Skin.String(Home5Tile1.Path,ActivateWindow(Videos,videodb://movies/titles/,return))">$INFO[Window.Property(Movies.Count)]</value>
+		<value condition="Skin.String(Home5Tile1.Path,ActivateWindow(Videos,videodb://tvshows/titles/,return))">$INFO[Window.Property(TVShows.Count)]</value>
 		<value condition="Skin.String(Home5Tile1.Path,ActivateWindow(TVGuide))">$INFO[PVR.BackendChannels]</value>
-		<value condition="Skin.String(Home5Tile1.Path,ActivateWindow(MusicLibrary,Albums,return))">$INFO[Window.Property(Music.AlbumsCount)]</value>
-		<value condition="Skin.String(Home5Tile1.Path,ActivateWindow(MusicLibrary,Artists,return))">$INFO[Window.Property(Music.ArtistsCount)]</value>
-		<value condition="Skin.String(Home5Tile1.Path,ActivateWindow(MusicLibrary,Songs,return))">$INFO[Window.Property(Music.SongsCount)]</value>
-		<value condition="Skin.String(Home5Tile1.Path,ActivateWindow(VideoLibrary,MusicVideoTitles,return))">$INFO[Window.Property(MusicVideos.Count)]</value>		
+		<value condition="Skin.String(Home5Tile1.Path,ActivateWindow(Music,Albums,return))">$INFO[Window.Property(Music.AlbumsCount)]</value>
+		<value condition="Skin.String(Home5Tile1.Path,ActivateWindow(Music,Artists,return))">$INFO[Window.Property(Music.ArtistsCount)]</value>
+		<value condition="Skin.String(Home5Tile1.Path,ActivateWindow(Music,Songs,return))">$INFO[Window.Property(Music.SongsCount)]</value>
+		<value condition="Skin.String(Home5Tile1.Path,ActivateWindow(Videos,videodb://musicvideos/titles/,return))">$INFO[Window.Property(MusicVideos.Count)]</value>		
 	</variable>	
 
 	<variable name="Home6Tile1_Label2">
-		<value condition="Skin.String(Home6Tile1.Path,ActivateWindow(VideoLibrary,movietitles,return))">$INFO[Window.Property(Movies.Count)]</value>
-		<value condition="Skin.String(Home6Tile1.Path,ActivateWindow(VideoLibrary,tvshowtitles,return))">$INFO[Window.Property(TVShows.Count)]</value>
+		<value condition="Skin.String(Home6Tile1.Path,ActivateWindow(Videos,videodb://movies/titles/,return))">$INFO[Window.Property(Movies.Count)]</value>
+		<value condition="Skin.String(Home6Tile1.Path,ActivateWindow(Videos,videodb://tvshows/titles/,return))">$INFO[Window.Property(TVShows.Count)]</value>
 		<value condition="Skin.String(Home6Tile1.Path,ActivateWindow(TVGuide))">$INFO[PVR.BackendChannels]</value>
-		<value condition="Skin.String(Home6Tile1.Path,ActivateWindow(MusicLibrary,Albums,return))">$INFO[Window.Property(Music.AlbumsCount)]</value>
-		<value condition="Skin.String(Home6Tile1.Path,ActivateWindow(MusicLibrary,Artists,return))">$INFO[Window.Property(Music.ArtistsCount)]</value>
-		<value condition="Skin.String(Home6Tile1.Path,ActivateWindow(MusicLibrary,Songs,return))">$INFO[Window.Property(Music.SongsCount)]</value>
-		<value condition="Skin.String(Home6Tile1.Path,ActivateWindow(VideoLibrary,MusicVideoTitles,return))">$INFO[Window.Property(MusicVideos.Count)]</value>		
+		<value condition="Skin.String(Home6Tile1.Path,ActivateWindow(Music,Albums,return))">$INFO[Window.Property(Music.AlbumsCount)]</value>
+		<value condition="Skin.String(Home6Tile1.Path,ActivateWindow(Music,Artists,return))">$INFO[Window.Property(Music.ArtistsCount)]</value>
+		<value condition="Skin.String(Home6Tile1.Path,ActivateWindow(Music,Songs,return))">$INFO[Window.Property(Music.SongsCount)]</value>
+		<value condition="Skin.String(Home6Tile1.Path,ActivateWindow(Videos,videodb://musicvideos/titles/,return))">$INFO[Window.Property(MusicVideos.Count)]</value>		
 	</variable>
 
 	<variable name="Home7Tile1_Label2">
-		<value condition="Skin.String(Home7Tile1.Path,ActivateWindow(VideoLibrary,movietitles,return))">$INFO[Window.Property(Movies.Count)]</value>
-		<value condition="Skin.String(Home7Tile1.Path,ActivateWindow(VideoLibrary,tvshowtitles,return))">$INFO[Window.Property(TVShows.Count)]</value>
+		<value condition="Skin.String(Home7Tile1.Path,ActivateWindow(Videos,videodb://movies/titles/,return))">$INFO[Window.Property(Movies.Count)]</value>
+		<value condition="Skin.String(Home7Tile1.Path,ActivateWindow(Videos,videodb://tvshows/titles/,return))">$INFO[Window.Property(TVShows.Count)]</value>
 		<value condition="Skin.String(Home7Tile1.Path,ActivateWindow(TVGuide))">$INFO[PVR.BackendChannels]</value>
-		<value condition="Skin.String(Home7Tile1.Path,ActivateWindow(MusicLibrary,Albums,return))">$INFO[Window.Property(Music.AlbumsCount)]</value>
-		<value condition="Skin.String(Home7Tile1.Path,ActivateWindow(MusicLibrary,Artists,return))">$INFO[Window.Property(Music.ArtistsCount)]</value>
-		<value condition="Skin.String(Home7Tile1.Path,ActivateWindow(MusicLibrary,Songs,return))">$INFO[Window.Property(Music.SongsCount)]</value>
-		<value condition="Skin.String(Home7Tile1.Path,ActivateWindow(VideoLibrary,MusicVideoTitles,return))">$INFO[Window.Property(MusicVideos.Count)]</value>		
+		<value condition="Skin.String(Home7Tile1.Path,ActivateWindow(Music,Albums,return))">$INFO[Window.Property(Music.AlbumsCount)]</value>
+		<value condition="Skin.String(Home7Tile1.Path,ActivateWindow(Music,Artists,return))">$INFO[Window.Property(Music.ArtistsCount)]</value>
+		<value condition="Skin.String(Home7Tile1.Path,ActivateWindow(Music,Songs,return))">$INFO[Window.Property(Music.SongsCount)]</value>
+		<value condition="Skin.String(Home7Tile1.Path,ActivateWindow(Videos,videodb://musicvideos/titles/,return))">$INFO[Window.Property(MusicVideos.Count)]</value>		
 	</variable>
 
 	<variable name="Home8Tile1_Label2">
-		<value condition="Skin.String(Home8Tile1.Path,ActivateWindow(VideoLibrary,movietitles,return))">$INFO[Window.Property(Movies.Count)]</value>
-		<value condition="Skin.String(Home8Tile1.Path,ActivateWindow(VideoLibrary,tvshowtitles,return))">$INFO[Window.Property(TVShows.Count)]</value>
+		<value condition="Skin.String(Home8Tile1.Path,ActivateWindow(Videos,videodb://movies/titles/,return))">$INFO[Window.Property(Movies.Count)]</value>
+		<value condition="Skin.String(Home8Tile1.Path,ActivateWindow(Videos,videodb://tvshows/titles/,return))">$INFO[Window.Property(TVShows.Count)]</value>
 		<value condition="Skin.String(Home8Tile1.Path,ActivateWindow(TVGuide))">$INFO[PVR.BackendChannels]</value>
-		<value condition="Skin.String(Home8Tile1.Path,ActivateWindow(MusicLibrary,Albums,return))">$INFO[Window.Property(Music.AlbumsCount)]</value>
-		<value condition="Skin.String(Home8Tile1.Path,ActivateWindow(MusicLibrary,Artists,return))">$INFO[Window.Property(Music.ArtistsCount)]</value>
-		<value condition="Skin.String(Home8Tile1.Path,ActivateWindow(MusicLibrary,Songs,return))">$INFO[Window.Property(Music.SongsCount)]</value>
-		<value condition="Skin.String(Home8Tile1.Path,ActivateWindow(VideoLibrary,MusicVideoTitles,return))">$INFO[Window.Property(MusicVideos.Count)]</value>		
+		<value condition="Skin.String(Home8Tile1.Path,ActivateWindow(Music,Albums,return))">$INFO[Window.Property(Music.AlbumsCount)]</value>
+		<value condition="Skin.String(Home8Tile1.Path,ActivateWindow(Music,Artists,return))">$INFO[Window.Property(Music.ArtistsCount)]</value>
+		<value condition="Skin.String(Home8Tile1.Path,ActivateWindow(Music,Songs,return))">$INFO[Window.Property(Music.SongsCount)]</value>
+		<value condition="Skin.String(Home8Tile1.Path,ActivateWindow(Videos,videodb://musicvideos/titles/,return))">$INFO[Window.Property(MusicVideos.Count)]</value>		
 	</variable>
 
 	<variable name="Home9Tile1_Label2">
-		<value condition="Skin.String(Home9Tile1.Path,ActivateWindow(VideoLibrary,movietitles,return))">$INFO[Window.Property(Movies.Count)]</value>
-		<value condition="Skin.String(Home9Tile1.Path,ActivateWindow(VideoLibrary,tvshowtitles,return))">$INFO[Window.Property(TVShows.Count)]</value>
+		<value condition="Skin.String(Home9Tile1.Path,ActivateWindow(Videos,videodb://movies/titles/,return))">$INFO[Window.Property(Movies.Count)]</value>
+		<value condition="Skin.String(Home9Tile1.Path,ActivateWindow(Videos,videodb://tvshows/titles/,return))">$INFO[Window.Property(TVShows.Count)]</value>
 		<value condition="Skin.String(Home9Tile1.Path,ActivateWindow(TVGuide))">$INFO[PVR.BackendChannels]</value>
-		<value condition="Skin.String(Home9Tile1.Path,ActivateWindow(MusicLibrary,Albums,return))">$INFO[Window.Property(Music.AlbumsCount)]</value>
-		<value condition="Skin.String(Home9Tile1.Path,ActivateWindow(MusicLibrary,Artists,return))">$INFO[Window.Property(Music.ArtistsCount)]</value>
-		<value condition="Skin.String(Home9Tile1.Path,ActivateWindow(MusicLibrary,Songs,return))">$INFO[Window.Property(Music.SongsCount)]</value>
-		<value condition="Skin.String(Home9Tile1.Path,ActivateWindow(VideoLibrary,MusicVideoTitles,return))">$INFO[Window.Property(MusicVideos.Count)]</value>		
+		<value condition="Skin.String(Home9Tile1.Path,ActivateWindow(Music,Albums,return))">$INFO[Window.Property(Music.AlbumsCount)]</value>
+		<value condition="Skin.String(Home9Tile1.Path,ActivateWindow(Music,Artists,return))">$INFO[Window.Property(Music.ArtistsCount)]</value>
+		<value condition="Skin.String(Home9Tile1.Path,ActivateWindow(Music,Songs,return))">$INFO[Window.Property(Music.SongsCount)]</value>
+		<value condition="Skin.String(Home9Tile1.Path,ActivateWindow(Videos,videodb://musicvideos/titles/,return))">$INFO[Window.Property(MusicVideos.Count)]</value>		
 	</variable>
 
 	<variable name="Home10Tile1_Label2">
-		<value condition="Skin.String(Home10Tile1.Path,ActivateWindow(VideoLibrary,movietitles,return))">$INFO[Window.Property(Movies.Count)]</value>
-		<value condition="Skin.String(Home10Tile1.Path,ActivateWindow(VideoLibrary,tvshowtitles,return))">$INFO[Window.Property(TVShows.Count)]</value>
+		<value condition="Skin.String(Home10Tile1.Path,ActivateWindow(Videos,videodb://movies/titles/,return))">$INFO[Window.Property(Movies.Count)]</value>
+		<value condition="Skin.String(Home10Tile1.Path,ActivateWindow(Videos,videodb://tvshows/titles/,return))">$INFO[Window.Property(TVShows.Count)]</value>
 		<value condition="Skin.String(Home10Tile1.Path,ActivateWindow(TVGuide))">$INFO[PVR.BackendChannels]</value>
-		<value condition="Skin.String(Home10Tile1.Path,ActivateWindow(MusicLibrary,Albums,return))">$INFO[Window.Property(Music.AlbumsCount)]</value>
-		<value condition="Skin.String(Home10Tile1.Path,ActivateWindow(MusicLibrary,Artists,return))">$INFO[Window.Property(Music.ArtistsCount)]</value>
-		<value condition="Skin.String(Home10Tile1.Path,ActivateWindow(MusicLibrary,Songs,return))">$INFO[Window.Property(Music.SongsCount)]</value>
-		<value condition="Skin.String(Home10Tile1.Path,ActivateWindow(VideoLibrary,MusicVideoTitles,return))">$INFO[Window.Property(MusicVideos.Count)]</value>		
+		<value condition="Skin.String(Home10Tile1.Path,ActivateWindow(Music,Albums,return))">$INFO[Window.Property(Music.AlbumsCount)]</value>
+		<value condition="Skin.String(Home10Tile1.Path,ActivateWindow(Music,Artists,return))">$INFO[Window.Property(Music.ArtistsCount)]</value>
+		<value condition="Skin.String(Home10Tile1.Path,ActivateWindow(Music,Songs,return))">$INFO[Window.Property(Music.SongsCount)]</value>
+		<value condition="Skin.String(Home10Tile1.Path,ActivateWindow(Videos,videodb://musicvideos/titles/,return))">$INFO[Window.Property(MusicVideos.Count)]</value>		
 	</variable>
 
     <variable name="PVRInfoStatus">

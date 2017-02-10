@@ -105,61 +105,61 @@
 						<description>Artists</description>
 						<label>$LOCALIZE[133]</label>
 						<thumb>hubmenu/actors.png</thumb>
-						<onclick>ActivateWindow(MusicLibrary,Artists,return)</onclick>
+						<onclick>ActivateWindow(Music,Artists,return)</onclick>
 					</item>
 					<item>
 						<description>Albums</description>
 						<label>$LOCALIZE[132]</label>
 						<thumb>hubmenu/albums.png</thumb>
-						<onclick>ActivateWindow(MusicLibrary,Albums,return)</onclick>
+						<onclick>ActivateWindow(Music,Albums,return)</onclick>
 					</item>
 					<item>
 						<description>Songs</description>
 						<label>$LOCALIZE[134]</label>
 						<thumb>hubmenu/songs.png</thumb>
-						<onclick>ActivateWindow(MusicLibrary,Songs,return)</onclick>
+						<onclick>ActivateWindow(Music,Songs,return)</onclick>
 					</item>
 					<item>
 						<description>Recently Added</description>
 						<label>$LOCALIZE[31009]</label>
 						<thumb>hubmenu/recent.png</thumb>
-						<onclick>ActivateWindow(MusicLibrary,RecentlyAddedAlbums,return)</onclick>
+						<onclick>ActivateWindow(Music,RecentlyAddedAlbums,return)</onclick>
 					</item>
 					<item>
 						<description>Recently Played</description>
 						<label>$LOCALIZE[31351]</label>
 						<thumb>hubmenu/recent_play.png</thumb>
-						<onclick>ActivateWindow(MusicLibrary,RecentlyPlayedAlbums,return)</onclick>
+						<onclick>ActivateWindow(Music,RecentlyPlayedAlbums,return)</onclick>
 					</item>										
 					<item>
 						<description>Genres</description>
 						<label>$LOCALIZE[135]</label>
 						<thumb>hubmenu/genres.png</thumb>
-						<onclick>ActivateWindow(MusicLibrary,Genres,return)</onclick>
+						<onclick>ActivateWindow(Music,Genres,return)</onclick>
 					</item>
 					<item>
 						<description>Years</description>
 						<label>$LOCALIZE[652]</label>
 						<thumb>hubmenu/years.png</thumb>
-						<onclick>ActivateWindow(MusicLibrary,Years,return)</onclick>
+						<onclick>ActivateWindow(Music,Years,return)</onclick>
 					</item>
 					<item>
 						<description>Top100</description>
 						<label>$LOCALIZE[271]</label>
 						<thumb>hubmenu/top100.png</thumb>
-						<onclick>ActivateWindow(MusicLibrary,Top100,return)</onclick>
+						<onclick>ActivateWindow(Music,Top100,return)</onclick>
 					</item>														
 					<item>
 						<description>Playlists</description>
 						<label>$LOCALIZE[136]</label>
 						<thumb>hubmenu/playlists.png</thumb>
-						<onclick>ActivateWindow(MusicLibrary,special://musicplaylists/,return)</onclick>
+						<onclick>ActivateWindow(Music,special://musicplaylists/,return)</onclick>
 					</item>
 					<item>
 						<description>Addons</description>
 						<label>$LOCALIZE[24001]</label>
 						<thumb>hubmenu/addons.png</thumb>
-						<onclick>ActivateWindow(MusicLibrary,addons://sources/audio/,return)</onclick>
+						<onclick>ActivateWindow(Music,addons://sources/audio/,return)</onclick>
 					</item>
 				</content>
 				
@@ -177,13 +177,41 @@
             <orientation>horizontal</orientation>
             <include>Homescreen_Animation</include>
 			
-            <include>Hub_Featured</include>
-            <include>Hub_RecentlyAdded</include>
+			<include content="Hub_Featured">
+				<param name="image" value="$INFO[ListItem.Art(fanart)]"/>
+				<param name="fallback_image" value="DefaultAlbums.png"/>
+				<param name="first_label" value="$INFO[Container(9001).ListItem.Label]"/>
+				<param name="second_label" value="$INFO[Container(9001).ListItem.Artist]"/>
+				<param name="content_target" value="music"/>
+				<param name="content_path" value="special://skin/playlists/random_albums.xsp"/>
+			</include>
+
+			<include content="Hub_RecentlyAdded">
+				<param name="image" value="$INFO[ListItem.Icon]"/>
+				<param name="fallback_image" value="DefaultAlbums.png"/>
+				<param name="first_label" value="$INFO[ListItem.Label]"/>
+				<param name="second_label" value="$INFO[ListItem.Artist]"/>
+				<param name="content_target" value="music"/>
+				<param name="content_path" value="musicdb://recentlyaddedalbums/"/>
+			</include>
+
             <include>Hub_AiringToday</include>
+
             <include>Hub_InCinemas</include>
+
             <include>Hub_NearbyEvents</include>
-            <include>Hub_History</include>
+
+			<include content="Hub_History">
+				<param name="image" value="$INFO[ListItem.Icon]"/>
+				<param name="fallback_image" value="DefaultAlbums.png"/>
+				<param name="first_label" value="$INFO[ListItem.Label]"/>
+				<param name="second_label" value="$INFO[ListItem.Artist]"/>
+				<param name="content_target" value="music"/>
+				<param name="content_path" value="special://skin/playlists/History (Music).xsp"/>
+			</include>
+
             <include>Hub_Trakt</include>
+
         </control>
 		
     </controls>

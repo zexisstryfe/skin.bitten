@@ -9,7 +9,7 @@
     <controls>
 
 		<control type="group">
-            <visible>!VideoPlayer.IsFullscreen + !Window.IsVisible(screencalibration) + !Window.IsVisible(settings) + !Window.IsVisible(SettingsCategory.xml) + !Window.IsVisible(volumebar) + !Window.IsVisible(mutebug) + !Window.IsVisible(infodialog) + !ControlGroup(9000).HasFocus</visible>
+            <visible>!VideoPlayer.IsFullscreen + !Window.IsVisible(screencalibration) + !Window.IsVisible(settings) + !Window.IsVisible(SettingsCategory.xml) + !Window.IsVisible(volumebar)+ !ControlGroup(9000).HasFocus</visible>
             <include>Animation_Notification_Left</include>
             
 			<control type="image">

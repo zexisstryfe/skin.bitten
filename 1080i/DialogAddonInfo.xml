@@ -77,7 +77,7 @@
 					<posy>10</posy>
 					<width>760</width>
 					<height>80</height>
-					<label>$INFO[ListItem.Property(Addon.Broken)]</label>
+					<label>$INFO[ListItem.AddonBroken]</label>
 					<align>left</align>
 					<aligny>center</aligny>
 					<font>font26B</font>
@@ -107,7 +107,7 @@
 				<posy>50</posy>
 				<width>900</width>
 				<textcolor>BaseMid</textcolor>
-				<label>$INFO[ListItem.Property(Addon.Status),,  •  ]$INFO[ListItem.Property(Addon.Version),$LOCALIZE[19114] ,]</label>
+				<label>$INFO[ListItem.Property(Addon.Status),,  •  ]$INFO[ListItem.AddonVersion,$LOCALIZE[19114] ,]</label>
 				<include>Common_Fanart_Subtitle</include>
 			</control>
 
@@ -131,7 +131,7 @@
 						<texturefocus colordiffuse="$VAR[Accent_100]">OSD/presetsettingsFO.png</texturefocus>
 						<texturenofocus colordiffuse="BaseMid">OSD/presetsettingsNF.png</texturenofocus>
 						<label>$LOCALIZE[24020]</label>
-						<ondown>13</ondown>
+						<ondown>50</ondown>
 						<onup>13</onup>	
 						<onright>8</onright>
 						<onleft>10</onleft>
@@ -148,7 +148,7 @@
 						<texturefocus colordiffuse="$VAR[Accent_100]">OSD/repeatFO.png</texturefocus>
 						<texturenofocus colordiffuse="BaseMid">OSD/repeatNF.png</texturenofocus>
 						<label>$LOCALIZE[24069]</label>
-						<ondown>13</ondown>
+						<ondown>50</ondown>
 						<onup>13</onup>	
 						<onright>6</onright>	
 						<onleft>9</onleft>
@@ -165,7 +165,7 @@
 						<texturefocus colordiffuse="$VAR[Accent_100]">OSD/InstallFO.png</texturefocus>
 						<texturenofocus colordiffuse="BaseMid">OSD/InstallNF.png</texturenofocus>
 						<label>$LOCALIZE[24038]</label>
-						<ondown>13</ondown>
+						<ondown>50</ondown>
 						<onup>13</onup>	
 						<onright>7</onright>
 						<onleft>8</onleft>
@@ -182,7 +182,7 @@
 						<texturefocus colordiffuse="$VAR[Accent_100]">OSD/DisableFO.png</texturefocus>
 						<texturenofocus colordiffuse="BaseMid">OSD/DisableNF.png</texturenofocus>					
 						<label>$LOCALIZE[24022]</label>
-						<ondown>13</ondown>
+						<ondown>50</ondown>
 						<onup>13</onup>	
 						<onright>10</onright>
 						<onleft>6</onleft>
@@ -199,7 +199,7 @@
 						<texturefocus colordiffuse="$VAR[Accent_100]">OSD/ChangelogFO.png</texturefocus>
 						<texturenofocus colordiffuse="BaseMid">OSD/ChangelogNF.png</texturenofocus>
 						<label>$LOCALIZE[24036]</label>
-						<ondown>13</ondown>
+						<ondown>50</ondown>
 						<onup>13</onup>	
 						<onright>9</onright>
 						<onleft>7</onleft>
@@ -242,7 +242,7 @@
 					
 					<control type="label">
 						<include>Common_Info_Addon</include>
-						<label fallback="195">$INFO[ListItem.Property(Addon.Creator)]</label>
+						<label fallback="195">$INFO[ListItem.AddonCreator]</label>
 					</control>
 					
 				</control>
@@ -259,7 +259,7 @@
 					
 					<control type="label">
 						<include>Common_Info_Addon</include>
-						<label fallback="195">$INFO[ListItem.Property(Addon.Disclaimer)]</label>
+						<label fallback="195">$INFO[ListItem.AddonDisclaimer]</label>
 					</control>
 					
 				</control>
@@ -276,7 +276,7 @@
 					
 					<control type="label">
 						<include>Common_Info_Addon</include>
-						<label>$INFO[ListItem.Property(Addon.Path)]</label>
+						<label>$INFO[ListItem.Path]</label>
 					</control>
 					
 				</control>
@@ -297,16 +297,114 @@
 						<description>Plot</description>
 						<posy>10</posy>
 						<width>920</width>
-						<height>600</height>
+						<height>215</height>
 						<font>font26R</font>
 						<align>justify</align>
-						<label>$INFO[ListItem.Property(Addon.Description)]</label>
+						<label>$INFO[ListItem.AddonDescription]</label>
 						<textcolor>BaseMid</textcolor>
 					</control>
 					
 				</control>
 
 			</control>			
+
+			<control type="image">
+				<posy>600</posy>
+                <height>2</height>
+				<width>1070</width>
+                <texture colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
+				<include>Animation_Common_Window</include>
+            </control>
+
+			<!--Screenshot Section-->
+			<control type="group">
+				<posy>600</posy>
+				<width>1070</width>	
+				<height>320</height>
+				<!-- <visible>!StringCompare(Container(50).NumItems,0)</visible>	 -->
+
+				<control type="label">
+					<textcolor>$VAR[Accent_100]</textcolor>
+					<font>font26B</font>
+					<width>200</width>
+					<height>40</height>
+					<label>$LOCALIZE[20008]</label>
+				</control>
+
+				<control type="fixedlist" id="50">
+					<description>Screenshots</description>
+					<posy>40</posy>
+					<width>1070</width>
+					<height>765</height>
+					<onup>9221</onup>
+					<ondown>13</ondown>
+					<orientation>horizontal</orientation>
+					<pagecontrol>79</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<itemlayout height="320" width="558">
+					
+						<control type="image">
+							<width>548</width>
+							<height>317</height>
+							<include>Common_Color_TrueWhite</include>
+						</control>
+						
+						<control type="image">
+							<top>10</top>
+							<left>10</left>
+							<width>528</width>
+							<height>297</height>
+							<texture border="2" colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
+						</control>
+						
+						<control type="image">
+							<top>10</top>
+							<left>10</left>
+							<width>528</width>
+							<height>297</height>
+							<texture fallback="DefaultScreenshot.png">$INFO[ListItem.Icon]</texture>
+							<aspectratio align="center" aligny="center">scale</aspectratio>
+						</control>	
+						
+					</itemlayout>
+					
+					<focusedlayout height="320" width="558">
+					
+						<control type="image">
+							<width>548</width>
+							<height>317</height>
+							<include>Common_Color_TrueWhite</include>
+						</control>
+						
+						<control type="image">
+							<width>548</width>
+							<height>317</height>
+							<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(50)">Conditional</animation>
+							<include>Common_Color_Accent</include>
+						</control>
+						
+						<control type="image">
+							<top>10</top>
+							<left>10</left>
+							<width>528</width>
+							<height>297</height>
+							<texture border="2" colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
+						</control>
+						
+						<control type="image">
+							<top>10</top>
+							<left>10</left>
+							<width>528</width>
+							<height>297</height>
+							<texture fallback="DefaultScreenshot.png">$INFO[ListItem.Icon]</texture>
+							<aspectratio align="center" aligny="center">scale</aspectratio>
+						</control>
+						
+					</focusedlayout>
+					
+				</control>
+				
+			</control>
 
 			<control type="grouplist">
 				<description>Audo Update</description>
@@ -318,7 +416,7 @@
 				<orientation>horizontal</orientation>
 
 				<control type="radiobutton" id="13">
-					<onup>9221</onup>
+					<onup>50</onup>
 					<ondown>9221</ondown>
 					<width>300</width>
 					<textwidth>340</textwidth>

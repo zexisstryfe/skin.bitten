@@ -1107,17 +1107,6 @@
 		<textcolor>$VAR[Accent_100]</textcolor>
     </include>	
 
-	<include name="Common_Network_Edit">
-		<width>960</width>
-		<height>60</height>
-		<font>font30R</font>
-		<textcolor>BaseMediumHigh</textcolor>
-		<textoffsetx>30</textoffsetx>
-		<texturenofocus>-</texturenofocus>
-		<texturefocus colordiffuse="$VAR[Accent_100]">colors/color_white.png</texturefocus>
-		<pulseonselect>false</pulseonselect>
-    </include>
-
 	<include name="Common_Media_Icon">
 		<width>260</width>
 		<height>260</height>
@@ -1283,102 +1272,6 @@
         <wrapmultiline>true</wrapmultiline>
         <scrollspeed>0</scrollspeed>
         <font>font18UB</font>
-    </include>
-
-    <include name="Common_TopBar">
-
-        <control type="button">
-            <description>top left bar</description>
-            <width>30</width>
-            <height>150</height>
-            <texturefocus colordiffuse="$VAR[Accent_100]">colors/color_white.png</texturefocus>
-            <texturenofocus colordiffuse="$VAR[Accent_100]">colors/color_white.png</texturenofocus>
-            <onclick>9000</onclick>
-            <include>Animation_Home_Fade</include>
-        </control>
-
-        <control type="image">
-            <description>KODI</description>
-            <posx>60</posx>
-            <posy>-15</posy>
-            <width>375</width>
-            <height>150</height>
-            <visible>true</visible>
-            <aspectratio>keep</aspectratio>
-            <texture border="2">general/kodi.png</texture>
-            <include>Animation_Home_Fade</include>
-            <visible>Window.IsActive(0)</visible>
-        </control>
-
-        <control type="button">
-            <description>invisible settings</description>
-            <posx>60</posx>
-            <posy>15</posy>
-            <width>375</width>
-            <height>150</height>
-            <texturenofocus border="2">-</texturenofocus>
-            <texturefocus border="2">-</texturefocus>
-            <include>Animation_Home_Fade</include>
-            <onclick>ActivateWindow(111)</onclick>
-            <visible>Window.IsActive(0)</visible>
-        </control>
-
-        <control type="group">
-            <visible>!System.GetBool(Input.EnableMouse)</visible>
-
-            <control type="label">
-                <label>$VAR[TopBar_Label]</label>
-                <posx>60</posx>
-                <posy>30</posy>
-                <height>45</height>
-                <width>750</width>
-                <font>font72L</font>
-                <shadowcolor>TrueBlack</shadowcolor>
-                <textcolor>TrueWhite</textcolor>
-            </control>
-
-        </control>
-
-        <control type="group">
-            <visible>System.GetBool(Input.EnableMouse)</visible>
-            <visible>!Window.IsActive(0)</visible>
-
-            <control type="button">
-                <description>back button</description>
-                <posx>60</posx>
-                <posy>38</posy>
-                <width>60</width>
-                <height>60</height>
-                <texturefocus>arrows/back.png</texturefocus>
-                <texturenofocus>arrows/back.png</texturenofocus>
-                <onclick>ActivateWindow(0)</onclick>
-            </control>
-
-            <control type="label">
-                <label>$VAR[TopBar_Label]</label>
-                <posx>135</posx>
-                <posy>30</posy>
-                <height>45</height>
-                <width>750</width>
-                <font>font72L</font>
-                <textcolor>TrueWhite</textcolor>
-                <shadowcolor>TrueBlack</shadowcolor>
-            </control>
-
-        </control>
-
-        <control type="label">
-            <posx>68</posx>
-            <posy>112</posy>
-            <width>1350</width>
-            <aligny>top</aligny>
-            <label>$VAR[Header_Lists]</label>
-            <font>font20UB</font>
-            <shadowcolor>Black</shadowcolor>
-            <textcolor>$VAR[Accent_100]</textcolor>
-            <include>Animation_Home_Fade</include>
-        </control>
-
     </include>
 
     <include name="Common_HomeMenu_Fonts">
@@ -1826,21 +1719,6 @@
 
     </include>
 
-    <include name="Common_Explore_Image">
-        <width>75</width>
-        <height>75</height>
-        <aspectratio>keep</aspectratio>
-    </include>
-
-    <include name="Common_Explore_Label">
-        <posx>105</posx>
-        <width min="30" max="480">auto</width>
-        <height>75</height>
-        <wrapmultiline>true</wrapmultiline>
-        <scrollspeed>0</scrollspeed>
-        <font>font20UB</font>
-    </include>
-
     <include name="Common_Hub_SectionLabel">
         <posy>300</posy>
         <width min="30" max="795">auto</width>
@@ -1921,34 +1799,6 @@
         <preloaditems>2</preloaditems>
         <orientation>horizontal</orientation>
         <include>Animation_Common_ShowListing</include>
-    </include>
-	
-    <include name="Common_InfoDialog_Detail_Header">
-        <width>510</width>
-        <height>24</height>
-        <font>font20UB</font>
-        <textcolor>$VAR[Accent_100]</textcolor>
-    </include>
-
-    <include name="Common_InfoDialog_Detail_Label">
-        <width>510</width>
-        <height>75</height>
-        <font>font18</font>
-        <wrapmultiline>true</wrapmultiline>
-    </include>
-
-    <include name="Common_InfoDialog_Label_Small">
-        <width>540</width>
-        <height>45</height>
-        <font>font20</font>
-        <aligny>center</aligny>
-    </include>
-
-    <include name="Common_InfoDialog_Header_Small">
-        <width>540</width>
-        <height>45</height>
-        <font>font20UB</font>
-        <aligny>center</aligny>
     </include>
 
     <include name="Common_TVGuide_Notification">
@@ -2097,7 +1947,7 @@
         <control type="group">
             <include>Animation_Notification_Left</include>
             <visible>Player.HasMedia</visible>
-            <visible>!SubString(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>         
+            <visible>!SubString(Window(Videos).Property(TvTunesIsAlive),True)</visible>         
             
             <control type="group">
             	<posx>80</posx>

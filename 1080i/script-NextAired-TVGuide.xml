@@ -161,7 +161,7 @@
 					
                     <control type="fixedlist" id="200">
                         <onright>201</onright>
-                        <include name="TVGuide_FixedList">
+                        <include content="TVGuide_FixedList">
 							<param name="control" value="200"/>
 						</include>
                     </control>
@@ -176,7 +176,7 @@
 					
                     <control type="fixedlist" id="201">
                         <onright>201</onright>
-                        <include name="TVGuide_FixedList">
+                        <include content="TVGuide_FixedList">
 							<param name="control" value="201"/>
 						</include>
                     </control>
@@ -191,7 +191,7 @@
 					
                     <control type="fixedlist" id="202">
                         <onright>202</onright>
-                        <include name="TVGuide_FixedList">
+                        <include content="TVGuide_FixedList">
 							<param name="control" value="202"/>
 						</include>
                     </control>
@@ -206,7 +206,7 @@
 					
                     <control type="fixedlist" id="203">
                         <onright>203</onright>
-                        <include name="TVGuide_FixedList">
+                        <include content="TVGuide_FixedList">
 							<param name="control" value="203"/>
 						</include>
                     </control>
@@ -221,7 +221,7 @@
 					
                     <control type="fixedlist" id="204">
                         <onright>204</onright>
-                        <include name="TVGuide_FixedList">
+                        <include content="TVGuide_FixedList">
 							<param name="control" value="204"/>
 						</include>
                     </control>
@@ -237,7 +237,7 @@
                     <control type="fixedlist" id="205">
                         <onright>205</onright>
 						<onfocus>SetFocus(Container(50).Position(5))</onfocus>
-                        <include name="TVGuide_FixedList">
+                        <include content="TVGuide_FixedList">
 							<param name="control" value="205"/>
 						</include>
                     </control>
@@ -252,7 +252,7 @@
 					
                     <control type="fixedlist" id="206">
                         <onright>206</onright>
-                        <include name="TVGuide_FixedList">
+                        <include content="TVGuide_FixedList">
 							<param name="control" value="206"/>
 						</include>
                     </control>

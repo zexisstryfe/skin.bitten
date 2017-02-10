@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window type="dialog" id="1120">
+	<defaultcontrol always="true">5001</defaultcontrol>
+
+	<controls>
+
+        <include>DialogOverlay</include>
+		<include>Common_LeftMenu_Backing</include>
+		<include>Common_LeftMenu_Heading</include>				
+		<include>Common_LeftBar_LeftMenu</include>
+
+		<control type="grouplist" id="5000">
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="500" delay="500" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="200" />
+			</animation>
+			<posy>100</posy>
+			<width>420</width>
+			<height>1080</height>
+			<itemgap>20</itemgap>
+			<onup>1</onup>
+			<ondown>1</ondown>
+			<onright>Dialog.Close(1120)</onright>
+			<orientation>vertical</orientation>
+
+			<control type="group">
+				<height>75</height>
+				
+				<control type="image">
+					<include>Common_Settings_Button_Backing</include>
+					<visible>Control.HasFocus(5001)</visible>
+				</control>
+
+				<control type="button" id="5001">
+					<include>Common_Settings_Button</include>
+					<texturefocus>buttonmenu/searchdataFO.png</texturefocus>
+					<texturenofocus>buttonmenu/searchdataNF.png</texturenofocus>
+					<label>$LOCALIZE[31376]</label>
+					<onclick>Dialog.Close(all)</onclick>
+					<onclick condition="System.hasAddon(script.globalsearch)">RunScript(script.globalsearch)</onclick>
+					<onclick condition="!System.hasAddon(script.globalsearch)">InstallAddon(script.globalsearch)</onclick>
+					<ondown>5002</ondown>
+					<onup>5003</onup>
+					<onright>Dialog.Close(1120)</onright>
+				</control>
+			
+			</control>
+			
+			<control type="group">
+				<height>75</height>
+				
+				<control type="image">
+					<include>Common_Settings_Button_Backing</include>
+					<visible>Control.HasFocus(5002)</visible>
+				</control>
+
+				<control type="button" id="5002">
+					<include>Common_Settings_Button</include>
+					<texturefocus>buttonmenu/youtubeFO.png</texturefocus>
+					<texturenofocus>buttonmenu/youtubeNF.png</texturenofocus>
+					<label>$LOCALIZE[31377]</label>
+					<onclick>Dialog.Close(all)</onclick>
+					<onclick condition="System.hasAddon(plugin.video.youtube)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/input/,return)</onclick>
+					<onclick condition="!System.hasAddon(plugin.video.youtube)">InstallAddon(plugin.video.youtube)</onclick>
+					<ondown>5003</ondown>
+					<onup>5001</onup>	
+					<onright>Dialog.Close(1120)</onright>					
+				</control>
+			
+			</control>
+			
+			<control type="group">
+				<height>75</height>
+				
+				<control type="image">
+					<include>Common_Settings_Button_Backing</include>
+					<visible>Control.HasFocus(5003)</visible>
+				</control>
+
+				<control type="button" id="5003">
+					<include>Common_Settings_Button</include>
+					<texturefocus>buttonmenu/searchworldFO.png</texturefocus>
+					<texturenofocus>buttonmenu/searchworldNF.png</texturenofocus>
+					<label>$LOCALIZE[31378]</label>
+					<onclick>Dialog.Close(all)</onclick>
+					<onclick condition="System.hasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=moviedbbrowser,search=True)</onclick>
+					<onclick condition="!System.hasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
+					<ondown>5001</ondown>
+					<onup>5002</onup>	
+					<onright>Dialog.Close(1120)</onright>					
+				</control>
+			
+			</control>
+
+		</control>
+
+	</controls>
+
+</window>

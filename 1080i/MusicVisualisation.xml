@@ -6,12 +6,12 @@
     <controls>
 	
         <control type="visualisation" id="2">
-            <visible>!SubString(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>
+            <visible>!SubString(Window(Videos).Property(TvTunesIsAlive),True)</visible>
             <include>Dimensions_Fullscreen</include>
         </control>
 		
         <control type="group">
-            <visible>!SubString(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>
+            <visible>!SubString(Window(Videos).Property(TvTunesIsAlive),True)</visible>
             <visible>Player.ShowInfo + ![Window.IsVisible(VisualisationSettings) | Window.IsVisible(VisualisationPresetList)]</visible>
             <animation type="WindowOpen">
                 <effect type="zoom" start="108" end="100" time="400" center="960,540" tween="cubic" easing="out" />

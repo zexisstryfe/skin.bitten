@@ -177,13 +177,34 @@
             <orientation>horizontal</orientation>
             <include>Homescreen_Animation</include>
 
-            <include>Hub_Featured</include>
-            <include>Hub_RecentlyAdded</include>
+			<include content="Hub_Featured">
+				<param name="image" value="$INFO[ListItem.Art(fanart)]"/>
+				<param name="fallback_image" value="DefaultMusicVideos.png"/>
+				<param name="first_label" value="$INFO[Container(9001).ListItem.Label]"/>
+				<param name="second_label" value="$INFO[Container(9001).ListItem.Artist]"/>
+				<param name="content_target" value="videos"/>
+				<param name="content_path" value="special://skin/playlists/random_musicvideos.xsp"/>
+			</include>
+
+			<include content="Hub_RecentlyAdded">
+				<param name="image" value="$INFO[ListItem.Icon]"/>
+				<param name="fallback_image" value="DefaultMusicVideos.png"/>
+				<param name="first_label" value="$INFO[ListItem.Label]"/>
+				<param name="second_label" value="$INFO[ListItem.Artist]"/>
+				<param name="content_target" value="videos"/>
+				<param name="content_path" value="videodb://recentlyaddedmusicvideos/"/>
+			</include>
+
             <include>Hub_AiringToday</include>
+
             <include>Hub_InCinemas</include>
+
             <include>Hub_NearbyEvents</include>
+
             <include>Hub_History</include>
+
             <include>Hub_Trakt</include>
+            
         </control>
 		
     </controls>

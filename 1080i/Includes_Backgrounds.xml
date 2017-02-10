@@ -288,7 +288,7 @@
             <visible>[Player.HasAudio + !Skin.HasSetting(NoBackgroundVisualiser)] | [Player.HasVideo + !Skin.HasSetting(NoBackgroundVideo)]</visible>
 
             <control type="visualisation">
-                <visible>!SubString(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>
+                <visible>!SubString(Window(Videos).Property(TvTunesIsAlive),True)</visible>
                 <include>Dimensions_Fullscreen</include>
                 <visible>Player.HasAudio + !Skin.HasSetting(NoBackgroundVisualiser)</visible>
             </control>
@@ -375,7 +375,7 @@
 				</control>
 				
 				<control type="visualisation">
-					<visible>!SubString(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>
+					<visible>!SubString(Window(Videos).Property(TvTunesIsAlive),True)</visible>
 					<visible>Player.HasAudio + !Skin.HasSetting(NoBackgroundVisualiser)</visible>
 				</control>
 
@@ -438,7 +438,7 @@
 				</control>
 				
 				<control type="visualisation">
-					<visible>!SubString(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>
+					<visible>!SubString(Window(Videos).Property(TvTunesIsAlive),True)</visible>
 					<visible>Player.HasAudio + !Skin.HasSetting(NoBackgroundVisualiser)</visible>
 				</control>
 
@@ -498,7 +498,7 @@
 				</control>
 				
 				<control type="visualisation">
-					<visible>!SubString(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>
+					<visible>!SubString(Window(Videos).Property(TvTunesIsAlive),True)</visible>
 					<visible>Player.HasAudio + !Skin.HasSetting(NoBackgroundVisualiser)</visible>
 				</control>
 
@@ -547,7 +547,7 @@
 				</control>
 				
 				<control type="visualisation">
-					<visible>!SubString(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>
+					<visible>!SubString(Window(Videos).Property(TvTunesIsAlive),True)</visible>
 					<visible>Player.HasAudio + !Skin.HasSetting(NoBackgroundVisualiser)</visible>
 				</control>
 
@@ -608,7 +608,7 @@
 				</control>
 				
 				<control type="visualisation">
-					<visible>!SubString(Window(videolibrary).Property(TvTunesIsAlive),True)</visible>
+					<visible>!SubString(Window(Videos).Property(TvTunesIsAlive),True)</visible>
 					<visible>Player.HasAudio + !Skin.HasSetting(NoBackgroundVisualiser)</visible>
 				</control>
 

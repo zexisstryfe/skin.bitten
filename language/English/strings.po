@@ -121,7 +121,7 @@ msgid "All Pictures"
 msgstr ""
 
 msgctxt "#31026"
-msgid "On Deck"
+msgid "In Progress"
 msgstr ""
 
 msgctxt "#31027"
@@ -1126,19 +1126,19 @@ msgid "Similar Artists"
 msgstr ""
 
 msgctxt "#31277"
-msgid "New Movies"
+msgid "Recently Added Movies"
 msgstr ""
 
 msgctxt "#31278"
-msgid "New Episodes"
+msgid "Recently Added Episodes"
 msgstr ""
 
 msgctxt "#31279"
-msgid "New Albums"
+msgid "Recently Added Albums"
 msgstr ""
 
 msgctxt "#31280"
-msgid "New Videos"
+msgid "Recently Added Videos"
 msgstr ""
 
 msgctxt "#31281"
@@ -1230,11 +1230,11 @@ msgid "Add Panel"
 msgstr ""
 
 msgctxt "#31303"
-msgid "[B]Configure Appearance Settings[/B][CR][CR] .     Change the skin[CR] .     Set language and region[CR] .     Change file listing options[CR] .     Set up a screensaver"
+msgid "[B]Configure Interface Settings[/B][CR][CR] .     Change the skin[CR] .     Set language and region[CR] .     Change file listing options[CR] .     Set up a screensaver"
 msgstr ""
 
 msgctxt "#31304"
-msgid "[B]Configure Video Settings[/B][CR][CR] .     Manage your video library[CR] .     Set video playback options[CR] .     Change video listing options[CR] .     Set subtitle fonts"
+msgid "[B]Configure Media Settings[/B][CR][CR] .     Manage your media libraries[CR] .     Set playback options[CR] .     Change media listing options[CR] .     Set subtitle fonts[CR] .     Setup song submission"
 msgstr ""
 
 msgctxt "#31305"
@@ -1514,4 +1514,39 @@ msgstr ""
 #: /1080i/DialogAudioDSPManager.xml
 msgctxt "#31371"
 msgid "Audio DSP Manager"
+msgstr ""
+
+#: /1080i/Settings.xml
+msgctxt "#31372"
+msgid "Interface"
+msgstr ""
+
+#: /1080i/Settings.xml
+msgctxt "#31373"
+msgid "Media"
+msgstr ""
+
+#: /1080i/DialogMusicInfo.xml
+msgctxt "#31374"
+msgid "Rate Song"
+msgstr ""
+
+#: /1080i/DialogMusicInfo.xml
+msgctxt "#31375"
+msgid "No review is currently available"
+msgstr ""
+
+#: /1080i/Custom_1120_DialogSearch.xml
+msgctxt "#31376"
+msgid "Search Library"
+msgstr ""
+
+#: /1080i/Custom_1120_DialogSearch.xml
+msgctxt "#31377"
+msgid "Search YouTube"
+msgstr ""
+
+#: /1080i/Custom_1120_DialogSearch.xml
+msgctxt "#31378"
+msgid "Search MovieDB"
 msgstr ""
