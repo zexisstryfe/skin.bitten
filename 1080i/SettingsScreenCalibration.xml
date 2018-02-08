@@ -19,8 +19,8 @@
 		
         <control type="mover" id="9">
             <description>right bottom mover</description>
-            <posx>1050</posx>
-            <posy>750</posy>
+            <left>1050</left>
+            <top>750</top>
             <width>192</width>
             <height>192</height>
             <texturefocus colordiffuse="$VAR[Accent_100]">calibration/CalibrateBottomRight.png</texturefocus>
@@ -28,8 +28,8 @@
 		
         <control type="mover" id="10">
             <description>subtitle position mover</description>
-            <posx>300</posx>
-            <posy>750</posy>
+            <left>300</left>
+            <top>750</top>
             <width>768</width>
             <height>192</height>
             <texturefocus colordiffuse="$VAR[Accent_100]">calibration/CalibrateSubTitles.png</texturefocus>
@@ -37,7 +37,7 @@
 		
         <control type="resize" id="11">
             <description>pixel aspect ratio box</description>
-            <posy>348</posy>
+            <top>348</top>
             <width>384</width>
             <height>384</height>
             <texturefocus colordiffuse="$VAR[Accent_100]">calibration/CalibratePixelRatio.png</texturefocus>
@@ -45,16 +45,16 @@
 		
         <control type="label" id="2">
             <description>coordinates label</description>
-            <posx>30</posx>
-            <posy>60</posy>
+            <left>30</left>
+            <top>60</top>
             <width>1860</width>
             <align>center</align>
         </control>
 		
         <control type="label" id="3">
             <description>help information</description>
-            <posx>30</posx>
-            <posy>105</posy>
+            <left>30</left>
+            <top>105</top>
             <width>1860</width>
             <align>center</align>
         </control>

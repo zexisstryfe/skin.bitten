@@ -5,8 +5,12 @@
 	
     <controls>
         <include>DialogOverlay</include>
-		<include>Common_LeftMenu_Wide_Backing</include>			
-		<include>Common_LeftBar_Wide_LeftMenu</include>			
+
+        <include content="Common_LeftMenu">
+            <param name="width" value="1100"/>   
+            <param name="time" value="800"/>
+            <param name="header" value="$INFO[ListItem.Title]"/>
+        </include> 	
 		
         <control type="group">
 			<animation type="WindowOpen">
@@ -16,241 +20,216 @@
 				<effect type="fade" start="100" end="0" time="200" />
 			</animation>
 			
-            <control type="label" id="0">
-				<posx>15</posx>
-				<height>75</height>
-                <font>font45R</font>
-                <label>$INFO[ListItem.Title]</label>
-            </control>
-
-			<control type="image">
-				<posx>300</posx>
-				<posy>105</posy>
-				<width>2</width>
-				<height>945</height>
-				<include>Common_Color_BaseMediumHigh</include>
-			</control>
+            <include content="Common_Separator_Vertical">
+                <param name="top" value="80"/>  
+                <param name="left" value="300"/>  
+                <param name="height" value="1000"/>
+            </include>	
 
             <control type="grouplist" id="9000">
-                <posx>30</posx>
-                <posy>120</posy>
-				<width>270</width>
+				<top>100</top>
+				<width>300</width>
 				<height>525</height>
-				<itemgap>15</itemgap>
+				<itemgap>0</itemgap>
 
 				<control type="group">
-					<width>270</width>
-					<height>75</height>
-					
-					<control type="button" id="9001">
-						<description>Info</description>
-						<include>Common_Control_Circle</include>
-						<onclick>RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[ListItem.Label])</onclick>
-						<onclick>Close</onclick>
-						<onup>7</onup>
-						<ondown>5</ondown>
-					</control>
-					
-					<control type="image">
-						<width>75</width>
-						<height>75</height>
-						<include>Common_Control_Button</include>
-						<texture>icons/info.png</texture>
-					</control>
-					
-					<control type="label">
-						<include>Common_Control_Label</include>
-						<label>31325</label>
-					</control>
-					
+					<width>300</width>
+					<height>80</height>
+
+					<include content="Common_Settings_Button_Backing">
+						<param name="visible" value="9001"/>			
+					</include>
+
+					<include content="Dialog_Control_Button">
+						<param name="button_id" value="9001"/>
+						<param name="texture" value="../extras/tiles/info.png"/>
+						<param name="label" value="$LOCALIZE[31325]"/>
+						<param name="onup" value="7"/>
+						<param name="ondown" value="5"/>
+						<param name="onclick" value="RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[ListItem.Label])"/>		
+					</include>
+
+				</control>			
+
+				<control type="group">
+					<width>300</width>
+					<height>80</height>
+
+					<include content="Common_Settings_Button_Backing">
+						<param name="visible" value="5"/>			
+					</include>
+
+					<include content="Dialog_Control_Button">
+						<param name="button_id" value="5"/>
+						<param name="texture" value="../extras/tiles/play.png"/>
+						<param name="label" value="$LOCALIZE[208]"/>
+						<param name="onup" value="9001"/>
+						<param name="ondown" value="6"/>	
+					</include>
+
 				</control>				
 
-                <control type="group">
-					<width>270</width>
-					<height>75</height>
-					
-                    <control type="button" id="5">
-                        <description>switch</description>
-                        <include>Common_Control_Circle</include>
-                        <onup>9001</onup>
-                        <ondown>6</ondown>
-                    </control>
-					
-                    <control type="image">
-						<width>75</width>
-						<height>75</height>
-						<include>Common_Control_Button</include>
-                        <texture>icons/refresh.png</texture>
-                    </control>
-					
-                    <control type="label">
-                        <include>Common_Control_Label</include>
-                        <label>19165</label>
-                    </control>
-					
-                </control>				
+				<control type="group">
+					<width>300</width>
+					<height>80</height>
 
-                <control type="group">
-					<width>270</width>
-					<height>75</height>
-					
-                    <control type="button" id="6">
-                        <description>record</description>
-                        <include>Common_Control_Circle</include>
-                        <onup>5</onup>
-                        <ondown>7</ondown>
-                    </control>
-					
-                    <control type="image">
-						<width>75</width>
-						<height>75</height>
-						<include>Common_Control_Button</include>
-                        <texture>icons/record.png</texture>
-                    </control>
-					
-                    <control type="label">
-                        <include>Common_Control_Label</include>
-                        <label>$LOCALIZE[264]</label>
-                    </control>
-					
-                </control>
-				
-                <control type="group">
-					<width>270</width>
-					<height>75</height>
-					
-                    <control type="button" id="7">
-                        <description>OK</description>
-                        <include>Common_Control_Circle</include>
-                        <onup>6</onup>
-                        <ondown>9001</ondown>
-                    </control>
-					
-                    <control type="image">
-						<width>75</width>
-						<height>75</height>
-						<include>Common_Control_Button</include>
-                        <texture>icons/ok.png</texture>
-                    </control>
-					
-                    <control type="label">
-                        <include>Common_Control_Label</include>
-                        <label>12321</label>
-                    </control>
-					
-                </control>
+					<include content="Common_Settings_Button_Backing">
+						<param name="visible" value="6"/>			
+					</include>
+
+					<include content="Dialog_Control_Button">
+						<param name="button_id" value="6"/>
+						<param name="texture" value="../extras/tiles/recordings.png"/>
+						<param name="label" value="$LOCALIZE[264]"/>
+						<param name="onup" value="5"/>
+						<param name="ondown" value="7"/>	
+					</include>
+
+				</control>	
+
+				<control type="group">
+					<width>300</width>
+					<height>80</height>
+
+					<include content="Common_Settings_Button_Backing">
+						<param name="visible" value="7"/>			
+					</include>
+
+					<include content="Dialog_Control_Button">
+						<param name="button_id" value="7"/>
+						<param name="texture" value="../extras/tiles/check.png"/>
+						<param name="label" value="$LOCALIZE[12321]"/>
+						<param name="onup" value="6"/>
+						<param name="ondown" value="9001"/>	
+					</include>
+
+				</control>
 
             </control>			
 			
             <control type="grouplist">
-                <posx>322</posx>
-                <posy>120</posy>
+                <left>322</left>
+                <top>120</top>
                 <width>760</width>
                 <height>900</height>
                 <itemgap>15</itemgap>
                 <usecontrolcoords>true</usecontrolcoords>		
 
 				<!-- Channel Name -->
-				<control type="label">
-					<include>Common_Infolist_Label</include>
-					<label>$LOCALIZE[19029]</label>
-				</control>
-				
-				<control type="label">
-					<posx>0</posx>
-					<posy>-15</posy>
-					<include>Common_Infolist_Info</include>
-					<label>$INFO[ListItem.ChannelName]</label>
-					<textcolor>BaseMediumHigh</textcolor>
+				<control type="group">
+					<width>850</width>
+					<height>30</height>
+					
+					<control type="label">
+						<include>Common_Info_Label</include>
+						<label>$LOCALIZE[19029] </label>
+					</control>
+					
+					<control type="label">
+						<include>Common_Info_Video</include>
+						<label fallback="195">$INFO[ListItem.ChannelName]</label>
+					</control>
+
 				</control>
 
 				<!-- Runtime -->
-                <control type="label">
-                    <include>Common_Infolist_Label</include>
-                    <label>$LOCALIZE[2050]</label>
-                </control>
-				
-                <control type="label">
-					<posx>0</posx>
-					<posy>-15</posy>
-                    <include>Common_Infolist_Info</include>
-                    <label>$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
-					<textcolor>BaseMediumHigh</textcolor>
-                </control>
+				<control type="group">
+					<width>850</width>
+					<height>30</height>
+					
+					<control type="label">
+						<include>Common_Info_Label</include>
+						<label>$LOCALIZE[2050] </label>
+					</control>
+					
+					<control type="label">
+						<include>Common_Info_Video</include>
+						<label>$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
+					</control>
+
+				</control>
 
 				<!-- Start / End Time -->
-				<control type="label">
-					<include>Common_Infolist_Label</include>
-					<label>$LOCALIZE[555]</label>
-				</control>
-				
-				<control type="label">
-					<posx>0</posx>
-					<posy>-15</posy>
-					<width>700</width>
-					<include>Common_Infolist_Info</include>
-					<label>$INFO[ListItem.StartDate] $INFO[ListItem.StartTime] - $INFO[ListItem.EndTime]</label>
-					<textcolor>BaseMediumHigh</textcolor>
+				<control type="group">
+					<width>850</width>
+					<height>30</height>
+					
+					<control type="label">
+						<include>Common_Info_Label</include>
+						<label>$LOCALIZE[555] </label>
+					</control>
+					
+					<control type="label">
+						<include>Common_Info_Video</include>
+						<label>$INFO[ListItem.StartDate] $INFO[ListItem.StartTime] - $INFO[ListItem.EndTime]</label>
+					</control>
+
 				</control>
 
 				<!-- Status -->
-				<control type="label">
-					<include>Common_Infolist_Label</include>
-					<label>$LOCALIZE[126]</label>
-				</control>
-				
-				<control type="label">
-					<posx>0</posx>
-					<posy>-15</posy>
-					<width>700</width>
-					<include>Common_Infolist_Info</include>
-					<label>$VAR[PVRInfoStatus]</label>
-					<textcolor>BaseMediumHigh</textcolor>
+				<control type="group">
+					<width>850</width>
+					<height>30</height>
+					
+					<control type="label">
+						<include>Common_Info_Label</include>
+						<label>$LOCALIZE[126] </label>
+					</control>
+					
+					<control type="label">
+						<include>Common_Info_Video</include>
+						<label>$VAR[PVRInfoStatus]</label>
+					</control>
+
 				</control>	
 
 				<!-- Genre -->
-				<control type="label">
-					<include>Common_Infolist_Label</include>
-					<label>$LOCALIZE[515]</label>
+				<control type="group">
+					<width>850</width>
+					<height>30</height>
+					
+					<control type="label">
+						<include>Common_Info_Label</include>
+						<label>$LOCALIZE[515] </label>
+					</control>
+					
+					<control type="label">
+						<include>Common_Info_Video</include>
+						<label>$INFO[ListItem.Genre]</label>
+					</control>
+
 				</control>
-				
-				<control type="label">
-					<posx>0</posx>
-					<posy>-15</posy>
-					<width>700</width>
-					<include>Common_Infolist_Info</include>
-					<label>$INFO[ListItem.Genre]</label>
-					<textcolor>BaseMediumHigh</textcolor>
-				</control>	
 
 				<!-- Path -->
-				<control type="label">
-					<include>Common_Infolist_Label</include>
-					<label>$LOCALIZE[573]</label>
-				</control>
-				
-				<control type="label">
-					<posx>0</posx>
-					<posy>-15</posy>
-					<width>700</width>
-					<include>Common_Infolist_Info</include>
-					<label>$INFO[ListItem.FileNameAndPath]</label>
-					<textcolor>BaseMediumHigh</textcolor>
-				</control>					
+				<control type="group">
+					<width>850</width>
+					<height>30</height>
+					
+					<control type="label">
+						<include>Common_Info_Label</include>
+						<label>$LOCALIZE[573] </label>
+					</control>
+					
+					<control type="label">
+						<include>Common_Info_Video</include>
+						<label>$INFO[ListItem.FileNameAndPath]</label>
+					</control>
+
+				</control>				
 
 				<!-- Plot -->
 				<control type="label">
-					<include>Common_Infolist_Label</include>
-					<label>$LOCALIZE[31001]</label>
+					<include>Common_Info_Label</include>
+					<label>$LOCALIZE[31001] </label>
 				</control>
 
 				<control type="textbox">
-					<posx>0</posx>
-					<posy>-15</posy>
+					<left>0</left>
+					<top>-15</top>
 					<width>760</width>
 					<height>400</height>
-					<font>font30R</font>
-					<textcolor>BaseMediumHigh</textcolor>
+					<font>font26R</font>
+					<textcolor>BaseMid</textcolor>
 					<label fallback="161">$INFO[ListItem.Plot]</label>
 				</control>
 				

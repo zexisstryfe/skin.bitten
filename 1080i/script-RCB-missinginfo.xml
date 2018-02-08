@@ -2,30 +2,15 @@
 
 <window id="5600">
     <defaultcontrol>5201</defaultcontrol>
-    <coordinates>
-        <system>1</system>
-    </coordinates>
 
     <controls>
         <include>DialogOverlay</include>
-        <include>Common_LeftMenu_Wide_Backing</include>         
-        <include>Common_LeftBar_Wide_LeftMenu</include>     
-
-        <control type="image">
-            <description>Light Backing</description>
-            <posx>0</posx>
-            <posy>100</posy>
-            <width>1100</width>
-            <height>900</height>
-            <visible>true</visible>
-            <texture border="2" colordiffuse="BaseLow">colors/color_white.png</texture>
-            <animation type="WindowOpen">
-                <effect type="slide" start="-1100,0" end="0,0" center="auto" time="800" delay="200" tween="cubic" easing="out"/>
-            </animation>
-            <animation type="WindowClose">
-                <effect type="slide" start="0,0" end="-1100,0" center="auto" time="800" delay="200" tween="cubic" easing="out"/>
-            </animation>
-        </control>  
+        
+        <include content="Common_LeftMenu">
+            <param name="width" value="1100"/>   
+            <param name="time" value="800"/>
+            <param name="header" value="$ADDON[script.games.rom.collection.browser 56000]"/>
+        </include>      
 
         <control type="group">
             <animation type="WindowOpen">
@@ -35,19 +20,10 @@
                 <effect type="fade" start="100" end="0" time="200" />
             </animation>
 
-            <control type="label">
-                <posx>20</posx>
-                <height>80</height>
-                <font>font45R</font>
-                <label>$ADDON[script.games.rom.collection.browser 56000]</label>
-            </control>
-
             <control type="list" id="5200">
-                <posy>100</posy>
+                <top>100</top>
                 <width>1100</width>
                 <height>60</height>
-                <onleft>5200</onleft>
-                <onright>5200</onright>
                 <onup>5200</onup>
                 <ondown>5200</ondown>
                 <pagecontrol>-</pagecontrol>
@@ -64,7 +40,7 @@
                     </control>
 
                     <control type="label">
-                        <posx>20</posx>
+                        <left>20</left>
                         <width>450</width>
                         <height>60</height>
                         <label>$ADDON[script.games.rom.collection.browser 56001]</label>
@@ -73,7 +49,7 @@
                     </control>
 
                     <control type="label">
-                        <posx>20</posx>
+                        <left>20</left>
                         <width>450</width>
                         <height>60</height>
                         <label>$ADDON[script.games.rom.collection.browser 56001]</label>
@@ -81,7 +57,7 @@
                     </control>
 
                     <control type="label">
-                        <posx>470</posx>
+                        <left>470</left>
                         <width>610</width>
                         <height>60</height>
                         <textcolor>BaseMid</textcolor>
@@ -91,7 +67,7 @@
                     </control>
 
                     <control type="label">
-                        <posx>470</posx>
+                        <left>470</left>
                         <width>610</width>
                         <height>60</height>
                         <align>right</align>
@@ -106,8 +82,8 @@
            <!-- Show/Hide missing info list -->
             <control type="button" id="5201">
                 <description>Menu Item Next Button</description>
-                <posx>945</posx>
-                <posy>104</posy>
+                <left>945</left>
+                <top>104</top>
                 <width>30</width>
                 <height>52</height>
                 <texturefocus>-</texturefocus>
@@ -123,10 +99,10 @@
 
             <!-- Artwork -->
             <control type="group">
-                <posy>160</posy>
+                <top>160</top>
 
                 <control type="label">
-                    <posx>20</posx>
+                    <left>20</left>
                     <width>1060</width>
                     <height>60</height>
                     <align>center</align>
@@ -135,8 +111,8 @@
                 </control>
 
                 <control type="group">
-                    <posx>40</posx>
-                    <posy>60</posy>
+                    <left>40</left>
+                    <top>60</top>
 
                     <control type="label">
                         <width>550</width>
@@ -146,7 +122,7 @@
                     </control>
 
                     <control type="label" id="5220">
-                        <posx>1020</posx>
+                        <left>1020</left>
                         <width>510</width>
                         <height>60</height>
                         <align>right</align>
@@ -156,8 +132,8 @@
 
                     <control type="button" id="5230">
                         <description>Add item</description>
-                        <posy>60</posy>
-                        <posx>-40</posx>
+                        <top>60</top>
+                        <left>-40</left>
                         <include>RCB_MissingInfo_GrayButton</include>
                         <label>- $ADDON[script.games.rom.collection.browser 56005]</label>
                         <onup>5201</onup>
@@ -166,8 +142,8 @@
 
                     <control type="button" id="5240">
                         <description>Remove item</description>
-                        <posy>120</posy>
-                        <posx>-40</posx>                        
+                        <top>120</top>
+                        <left>-40</left>                        
                         <include>RCB_MissingInfo_GrayButton</include>
                         <label>- $ADDON[script.games.rom.collection.browser 56006]</label>
                         <onup>5230</onup>
@@ -177,8 +153,8 @@
                 </control>
 
                 <control type="group">
-                    <posx>40</posx>
-                    <posy>240</posy>
+                    <left>40</left>
+                    <top>240</top>
 
                     <control type="label">
                         <width>550</width>
@@ -188,7 +164,7 @@
                     </control>
 
                     <control type="label" id="5250">
-                        <posx>1020</posx>
+                        <left>1020</left>
                         <width>510</width>
                         <height>60</height>
                         <align>right</align>
@@ -198,8 +174,8 @@
 
                     <control type="button" id="5260">
                         <description>Add item</description>
-                        <posy>60</posy>
-                        <posx>-40</posx>
+                        <top>60</top>
+                        <left>-40</left>
                         <include>RCB_MissingInfo_GrayButton</include>
                         <label>- $ADDON[script.games.rom.collection.browser 56005]</label>
                         <onup>5240</onup>
@@ -208,8 +184,8 @@
 
                     <control type="button" id="5270">
                         <description>Remove item</description>
-                        <posy>120</posy>
-                        <posx>-40</posx>
+                        <top>120</top>
+                        <left>-40</left>
                         <include>RCB_MissingInfo_GrayButton</include>
                         <label>- $ADDON[script.games.rom.collection.browser 56006]</label>
                         <onup>5260</onup>
@@ -222,10 +198,10 @@
 
             <!-- Info -->
             <control type="group">
-                <posy>580</posy>
+                <top>580</top>
 
                 <control type="label">
-                    <posx>20</posx>
+                    <left>20</left>
                     <width>1060</width>
                     <height>60</height>
                     <align>center</align>
@@ -234,8 +210,8 @@
                 </control>
 
                 <control type="group">
-                    <posx>40</posx>
-                    <posy>60</posy>
+                    <left>40</left>
+                    <top>60</top>
 
                     <control type="label">
                         <width>550</width>
@@ -245,7 +221,7 @@
                     </control>
 
                     <control type="label" id="5280">
-                        <posx>1020</posx>
+                        <left>1020</left>
                         <width>510</width>
                         <height>60</height>
                         <align>right</align>
@@ -255,8 +231,8 @@
 
                     <control type="button" id="5290">
                         <description>Add item</description>
-                        <posy>60</posy>
-                        <posx>-40</posx>
+                        <top>60</top>
+                        <left>-40</left>
                         <include>RCB_MissingInfo_GrayButton</include>
                         <label>- $ADDON[script.games.rom.collection.browser 56005]</label>
                         <onup>5270</onup>
@@ -265,8 +241,8 @@
 
                     <control type="button" id="5300">
                         <description>Remove item</description>
-                        <posy>120</posy>
-                        <posx>-40</posx>                        
+                        <top>120</top>
+                        <left>-40</left>                        
                         <include>RCB_MissingInfo_GrayButton</include>
                         <label>- $ADDON[script.games.rom.collection.browser 56006]</label>
                         <onup>5290</onup>
@@ -276,8 +252,8 @@
                 </control>
 
                 <control type="group">
-                    <posx>40</posx>
-                    <posy>240</posy>
+                    <left>40</left>
+                    <top>240</top>
 
                     <control type="label">
                         <width>550</width>
@@ -287,7 +263,7 @@
                     </control>
 
                     <control type="label" id="5310">
-                        <posx>1020</posx>
+                        <left>1020</left>
                         <width>510</width>
                         <height>60</height>
                         <align>right</align>
@@ -297,8 +273,8 @@
 
                     <control type="button" id="5320">
                         <description>Add item</description>
-                        <posy>60</posy>
-                        <posx>-40</posx>
+                        <top>60</top>
+                        <left>-40</left>
                         <include>RCB_MissingInfo_GrayButton</include>
                         <label>- $ADDON[script.games.rom.collection.browser 56005]</label>
                         <onup>5300</onup>
@@ -307,8 +283,8 @@
 
                     <control type="button" id="5330">
                         <description>Remove item</description>
-                        <posy>120</posy>
-                        <posx>-40</posx>
+                        <top>120</top>
+                        <left>-40</left>
                         <include>RCB_MissingInfo_GrayButton</include>
                         <label>- $ADDON[script.games.rom.collection.browser 56006]</label>
                         <onup>5320</onup>
@@ -318,31 +294,29 @@
                 </control>
 
             </control>            
-            
-            <control type="grouplist">          
-                <posy>1010</posy>
+ 
+            <control type="grouplist" id="8000">            
+                <top>1020</top>
                 <width>1100</width>
-                <itemgap>20</itemgap>
+                <itemgap>0</itemgap>
+                <orientation>horizontal</orientation>
                 <onup>5330</onup>
                 <ondown>5201</ondown>
-                <orientation>horizontal</orientation>
                 <align>center</align>
-            
-                <control type="button" id="6000">
-                    <description>Save</description>
-                    <label>$LOCALIZE[190]</label>
-                    <include>InfoDialog_Button</include>
 
-                </control>
+                <include content="InfoDialog_Button">
+                    <param name="button_id" value="6000"/>  
+                    <param name="width" value="550"/>
+                    <param name="label" value="190"/>    
+                </include>
 
-                <control type="button" id="6010">
-                    <description>Cancel</description>
-                    <label>$LOCALIZE[222]</label>
-                    <include>InfoDialog_Button</include>
-
-                </control>
-
-            </control>
+                <include content="InfoDialog_Button">
+                    <param name="button_id" value="6010"/>  
+                    <param name="width" value="550"/>
+                    <param name="label" value="222"/>          
+                </include>
+                
+            </control>  
                 
         </control>
         

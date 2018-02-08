@@ -7,115 +7,93 @@
         <control type="group">
             <visible>Control.IsVisible(55)</visible>
 			
-            <include>BG_Fanart_1080</include>
-			<include>FanartOverlay</include>
+	        <include>Background_Global</include>
+	        <include>Background_Picture</include>
+	        <include>FanartOverlay</include>
+
+			<!--Scrollbar-->
+			<control type="scrollbar" id="62">
+				<left>80</left>
+				<top>1070</top>
+				<width>1840</width>
+				<height>10</height>
+				<onup>55</onup>
+				<include>ShowOptions_Down</include>
+				<showonepage>false</showonepage>
+				<orientation>horizontal</orientation>
+			</control>
 			
 			<control type="group">			
-					<posy>310</posy>
-					
-				<control type="image">	
-					<include>Common_Animation_CenterMenu_Stage2</include>
-					<width>1920</width>
-					<height>690</height>
-					<texture colordiffuse="BaseMid">colors/color_white.png</texture>			
-				</control>	
+				<top>85</top>
+				<include>Animation_Slide_Right</include>
 
-				<control type="panel" id="55">
-					<include>Common_Animation_CenterMenu_Stage3</include>
-					<viewtype label="polaroids">tiles</viewtype>
-					<posx>225</posx>
-					<posy>10</posy> 
-					<width>1800</width>
-					<height>720</height>
+				<control type="panel" id="55">					
+					<viewtype label="31071">icon</viewtype>
+					<left>200</left>
+					<width>1584</width>
+					<height>930</height>
 					<orientation>horizontal</orientation>
 					<include>ShowOptions_Up</include>
 					<ondown>62</ondown>
 					<pagecontrol>62</pagecontrol>
-					<preloaditems>2</preloaditems>
 					<visible>Window.IsActive(pictures)</visible>
-					<itemlayout width="288" height="340">
+					<itemlayout width="264" height="310">
 					
-						<control type="image">
-							<posx>14</posx>
-							<width>278</width>
-							<height>330</height>
-							<texture background="true" border="2">backings/polaroid.png</texture>
-							<aspectratio scalediffuse="false">stretch</aspectratio>
-						</control>
-						
-						<control type="image">
-							<posx>28</posx>
-							<posy>15</posy>
-							<width>248</width>
-							<height>232</height>
-							<aspectratio align="left" aligny="center">scale</aspectratio>
-							<texture fallback="$VAR[Common_Fallback]">$INFO[ListItem.Icon]</texture>
-						</control>
-						
-						<control type="textbox">
-							<label>$VAR[Fanart_Info_Title]</label>
-							<posx>38</posx>
-							<posy>255</posy>
-							<height>75</height>
-							<width>225</width>
-							<font>scrawl28</font>
-							<textcolor>BaseMediumHigh</textcolor>
-							<align>center</align>
-						</control>
+						<include>Common_View_Polaroid_Layout</include>
 
 					</itemlayout>
 					
-					<focusedlayout width="288" height="340">
+					<focusedlayout width="264" height="310">
 					
 						<control type="group">
 							<animation type="Focus" reversible="false">
 								<effect type="zoom" center="auto" start="100" end="105" time="300" tween="back" easing="out" />
 							</animation>
 							
-							<control type="image">
-								<posx>21</posx>
-								<width>278</width>
-								<height>330</height>
-								<texture>backings/polaroid.png</texture>
-								<aspectratio scalediffuse="false">stretch</aspectratio>
-							</control>
-
-							<control type="image">
-								<posx>36</posx>
-								<posy>15</posy>
-								<width>248</width>
-								<height>232</height>
-								<aspectratio align="left" aligny="center">scale</aspectratio>
-								<texture fallback="$VAR[Common_Fallback]">$INFO[ListItem.Icon]</texture>
-							</control>
-							
-							<control type="textbox">
-								<label>$VAR[Fanart_Info_Title]</label>
-								<posx>38</posx>
-								<posy>255</posy>
-								<height>75</height>
-								<width>225</width>
-								<font>scrawl28</font>
-								<textcolor>BaseMediumHigh</textcolor>
-								<align>center</align>
-							</control>
+							<include>Common_View_Polaroid_Layout</include>
 
 						</control>
 						
 					</focusedlayout>
 					
 				</control>
-				
-				<!--Scrollbar-->
-				<control type="scrollbar" id="62">
-					<posx>80</posx>
-					<posy>680</posy>
-					<width>1840</width>
-					<height>10</height>
-					<onup>591</onup>
-					<include>ShowOptions_Down</include>
-					<showonepage>false</showonepage>
-					<orientation>horizontal</orientation>
+
+				<control type="image">
+					<left>170</left>
+					<top>451</top>
+					<width>28</width>
+					<height>28</height>
+					<texture flipx="true">arrows/arrow_right.png</texture>
+					<include>Animation_Arrow_Appear</include>
+					<visible>Control.IsVisible(55) + Container(55).HasPrevious</visible>
+				</control>
+
+				<control type="image">
+					<left>1794</left>
+					<top>451</top>
+					<width>28</width>
+					<height>28</height>
+					<texture>arrows/arrow_right.png</texture>
+					<include>Animation_Arrow_Appear</include>
+					<visible>Control.IsVisible(55) + Container(55).HasNext</visible>
+				</control>
+
+				<control type="button" id="1500">
+					<left>170</left>
+					<top>451</top>
+					<width>28</width>
+					<height>28</height>
+					<onclick>Control.Move(55,-1)</onclick>
+					<visible allowhiddenfocus="true">Container(55).HasPrevious + Control.HasFocus(55)</visible>
+				</control>
+
+				<control type="button" id="1501">
+					<left>1794</left>
+					<top>451</top>
+					<width>28</width>
+					<height>28</height>
+					<onclick>Control.Move(55,1)</onclick>
+					<visible allowhiddenfocus="true">Container(55).HasNext + Control.HasFocus(55)</visible>
 				</control>
 				
 			</control>	

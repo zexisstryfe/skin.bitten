@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<window>
+	<defaultcontrol always="true">4000</defaultcontrol>
+
+	<controls>
+
+        <!--Background Area-->
+        <control type="group">
+		
+            <control type="image">
+                <include>Dimensions_Fullscreen</include>
+				<texture background="true" fallback="special://skin/extras/backgrounds/movies.jpg">$INFO[Window.Property(fanart)]</texture>
+				<aspectratio>scale</aspectratio>
+				<include>Animation_Common_InfoWindow</include>
+            </control>
+
+			<control type="image">
+                <include>Dimensions_Fullscreen</include>
+                <include>Common_Color_BaseWhite80</include>
+				<include>Animation_Common_InfoWindow</include>
+            </control>
+
+            <control type="image">
+				<top>108</top>
+                <height>2</height>
+				<width>1920</width>
+                <texture colordiffuse="BaseMediumMid">colors/color_white.png</texture>
+				<include>Animation_Common_InfoWindow</include>
+            </control>
+
+            <control type="image">
+				<top>170</top>
+                <height>2</height>
+				<width>1920</width>
+                <texture colordiffuse="BaseMediumMid">colors/color_white.png</texture>
+				<include>Animation_Common_InfoWindow</include>
+            </control>
+
+            <control type="image">
+				<top>1000</top>
+                <height>80</height>
+				<width>1920</width>
+                <texture colordiffuse="BaseMediumHigh60">colors/color_white.png</texture>
+				<include>Animation_Common_InfoWindow</include> 
+			</control>		   
+			
+        </control>
+
+        <!--Poster Area-->
+		<control type="group">
+			<include>Animation_Common_InfoPoster</include> 
+
+			<control type="image">
+				<left>-10</left>
+				<top>-10</top>
+				<width>730</width>
+				<height>1100</height>
+				<aspectratio aligny="top">scale</aspectratio>
+				<texture background="true" colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
+			</control>
+
+			<control type="image">
+				<width>720</width>
+				<height>1080</height>
+				<aspectratio aligny="top">scale</aspectratio>
+				<texture>$INFO[Window.Property(thumb)]</texture>
+			</control>
+
+		</control>
+
+		<include>Common_LeftBar</include>
+
+		<!--Details Area-->
+		<control type="group">
+			<include>Animation_Common_Window</include>
+
+			<control type="button" id="20000">
+				<height>0</height>
+				<width>0</width>
+				<texturefocus>-</texturefocus>
+				<left>-5000</left>
+				<onfocus>SetFocus(132)</onfocus>
+				<onclick>noop</onclick>
+				<visible allowhiddenfocus="true">Control.HasFocus(20000)</visible>
+			</control>
+
+			<control type="button" id="20001">
+				<height>0</height>
+				<width>0</width>
+				<texturefocus>-</texturefocus>
+				<left>-5000</left>
+				<onclick>noop</onclick>
+				<visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>
+			</control>
+
+			<control type="group">
+				<left>820</left>
+				<top>20</top>
+
+				<control type="label">
+					<width>900</width>
+					<height>40</height>
+					<font>font45R</font>
+					<textcolor>$VAR[Accent_100]</textcolor>
+					<label>$INFO[Window.Property(Label)]</label>
+				</control>
+
+				<control type="label" id="145">
+					<top>50</top>
+					<height>20</height>
+					<width>900</width>
+					<textcolor>BaseMid</textcolor>
+					<label>$INFO[Window.Property(Homepage)]</label>
+					<include>Common_Fanart_Subtitle</include>
+				</control>
+
+				<control type="image">
+					<left>920</left>
+					<width>160</width>
+					<aspectratio align="right" aligny="center">keep</aspectratio>
+					<height>80</height>
+					<texture colordiffuse="BaseMediumHigh">general/moviedb.png</texture>
+				</control>
+				
+				<!--Info Section-->
+				<control type="grouplist">
+					<top>160</top>	
+
+					<!-- Also Known As label -->
+					<control type="group">
+						<width>850</width>
+						<height>30</height>
+						<visible>!String.isEmpty(Window.Property(AlsoKnownAs))</visible>
+						
+						<control type="label">
+							<include>Common_Info_Label</include>
+							<label>$ADDON[script.extendedinfo 32016]</label>
+						</control>
+						
+						<control type="label">
+							<include>Common_Info_Video</include>
+							<label fallback="195">$INFO[Window.Property(AlsoKnownAs)]</label>
+						</control>
+
+					</control>
+
+					<!-- Birthday/Age label -->
+					<control type="group">
+						<width>850</width>
+						<height>30</height>
+						<visible>!String.isEmpty(Window.Property(Birthday))</visible>
+						
+						<control type="label">
+							<include>Common_Info_Label</include>
+							<label>$ADDON[script.extendedinfo 32012]</label>
+							<label>Birthday</label>
+						</control>
+						
+						<control type="label">
+							<include>Common_Info_Video</include>
+							<label fallback="195">$INFO[Window.Property(Birthday)]</label>
+						</control>
+
+						<control type="label">
+							<left>500</left>
+							<include>Common_Info_Label</include>
+							<label>$ADDON[script.extendedinfo 32020]</label>
+						</control>
+						
+						<control type="label">
+							<left>600</left>
+							<include>Common_Info_Video</include>
+							<label fallback="195">$INFO[Window.Property(Age)]</label>
+						</control>
+
+					</control>
+
+					<!-- Place of Birth label -->
+					<control type="group">
+						<width>850</width>
+						<height>30</height>
+						<visible>!String.isEmpty(Window.Property(PlaceOfBirth))</visible>
+						
+						<control type="label">
+							<include>Common_Info_Label</include>
+							<label>$ADDON[script.extendedinfo 32014]</label>
+						</control>
+						
+						<control type="label">
+							<include>Common_Info_Video</include>
+							<label fallback="195">$INFO[Window.Property(PlaceOfBirth)]</label>
+						</control>
+
+					</control>
+
+					<!-- Deathday label -->
+					<control type="group">
+						<width>850</width>
+						<height>30</height>
+						<visible>!String.isEmpty(Window.Property(Deathday))</visible>
+						
+						<control type="label">
+							<include>Common_Info_Label</include>
+							<label>$ADDON[script.extendedinfo 32013]</label>
+						</control>
+						
+						<control type="label">
+							<include>Common_Info_Video</include>
+							<label fallback="195">$INFO[Window.Property(Deathday)]</label>
+						</control>
+
+					</control>
+
+					<!-- In Database label -->
+					<control type="group">
+						<width>850</width>
+						<height>30</height>
+						
+						<control type="label">
+							<include>Common_Info_Label</include>
+							<label>$ADDON[script.extendedinfo 32021]</label>
+						</control>
+						
+						<control type="label">
+							<include>Common_Info_Video</include>
+							<label fallback="195">$INFO[Window.Property(DBMovies)]</label>
+						</control>
+
+					</control>
+
+					<!-- Movies label -->
+					<control type="group">
+						<width>850</width>
+						<height>30</height>
+						<visible>!String.isEmpty(Window.Property(TotalMovies))</visible>
+						
+						<control type="label">
+							<include>Common_Info_Label</include>
+							<label>$ADDON[script.extendedinfo 32011]</label>
+						</control>
+						
+						<control type="label">
+							<include>Common_Info_Video</include>
+							<label fallback="195">$INFO[Window.Property(TotalMovies)]</label>
+						</control>
+
+					</control>
+
+					<!--Biography-->
+					<control type="group">
+						<width>850</width>
+						<height>400</height>
+
+			            <include content="Common_Separator_Horizontal"> 
+			            	<param name="top" value="10"/> 
+			                <param name="width" value="1070"/>
+			            </include>	
+
+						<control type="button" id="132">
+							<top>12</top>
+							<left>0</left>
+							<width>1070</width>
+							<height>218</height>
+							<ondown>4000</ondown>
+							<onup>5000</onup>
+							<texturefocus colordiffuse="$VAR[Accent_80]">colors/color_white.png</texturefocus>
+							<label>-</label>
+						</control>
+								
+						<control type="textbox" id="800">
+							<description>Plot</description>
+							<top>15</top>
+							<left>10</left>
+							<width>1050</width>
+							<height>210</height>
+							<font>font26R</font>
+							<align>justify</align>
+							<label fallback="19055">$INFO[Window.Property(Biography)]</label>
+							<visible>Control.HasFocus(132)</visible>
+						</control>
+
+						<control type="textbox" id="800">
+							<description>Plot</description>
+							<top>15</top>
+							<left>10</left>
+							<width>1050</width>
+							<height>210</height>
+							<font>font26R</font>
+							<align>justify</align>
+							<textcolor>BaseMid</textcolor>
+							<label fallback="19055">$INFO[Window.Property(Biography)]</label>
+							<visible>!Control.HasFocus(132)</visible>
+							<autoscroll>false</autoscroll>
+						</control>
+						
+					</control>
+
+				</control>
+
+	            <include content="Common_Separator_Horizontal"> 
+	            	<param name="top" value="600"/> 
+	                <param name="width" value="1070"/>
+	            </include>
+
+	            <!--Panels Section-->
+				<control type="grouplist" id="4000">
+					<orientation>vertical</orientation>
+					<top>600</top>
+					<width>1070</width>	
+					<height>365</height>
+					<scrolltime tween="sine">300</scrolltime>
+					<ondown>noop</ondown>
+					<animation type="Conditional" condition="!String.IsEmpty(Window.Property(Bounce.Down))" reversible="false">
+						<effect type="slide" end="0,20" time="60" tween="sine" />
+						<effect type="slide" end="0,-20" time="180" tween="sine" delay="80" />
+					</animation>
+					<animation type="Conditional" condition="!String.IsEmpty(Window.Property(Bounce.Up))" reversible="false">
+						<effect type="slide" end="0,-20" time="60" tween="sine" />
+						<effect type="slide" end="0,20" time="180" tween="sine" delay="80" />
+					</animation>
+	
+					<!--Movie Roles Section-->
+					<include content="Extended_Poster_Details">
+						<param name="group_id" value="1500" />
+						<param name="visible" value="Integer.IsGreater(Container(150).NumItems,0)" />
+						<param name="header" value="$ADDON[script.extendedinfo 32120]$INFO[Container(150).NumItems, (,)]" />
+						<param name="panel_id" value="150" />
+						<param name="on_up" value="132" />
+						<param name="on_down" value="550" />
+						<param name="label_1" value="$INFO[ListItem.Label]" />
+						<param name="label_2" value="$INFO[ListItem.Property(character)]" />
+					</include>
+
+					<!--Movie Crew Section-->
+					<include content="Extended_Poster_Details">
+						<param name="group_id" value="5500" />
+						<param name="visible" value="Integer.IsGreater(Container(550).NumItems,0)" />
+						<param name="header" value="$ADDON[script.extendedinfo 32122]$INFO[Container(550).NumItems, (,)]" />
+						<param name="panel_id" value="550" />
+						<param name="on_up" value="150" />
+						<param name="on_down" value="250" />
+						<param name="label_1" value="$INFO[ListItem.Label]" />
+						<param name="label_2" value="$INFO[ListItem.Property(job)]" />
+					</include>
+					
+					<!--TV Roles Section-->
+					<include content="Extended_Poster_Details">
+						<param name="group_id" value="2500" />
+						<param name="visible" value="Integer.IsGreater(Container(250).NumItems,0)" />
+						<param name="header" value="$ADDON[script.extendedinfo 32121]$INFO[Container(250).NumItems, (,)]" />
+						<param name="panel_id" value="250" />
+						<param name="on_up" value="550" />
+						<param name="on_down" value="650" />
+						<param name="label_1" value="$INFO[ListItem.Label]" />
+						<param name="label_2" value="$INFO[ListItem.Property(character)]" />
+					</include>
+					
+					<!--TV Crew Section-->
+					<include content="Extended_Poster_Details">
+						<param name="group_id" value="6500" />
+						<param name="visible" value="Integer.IsGreater(Container(650).NumItems,0)" />
+						<param name="header" value="$ADDON[script.extendedinfo 32123]$INFO[Container(650).NumItems, (,)]" />
+						<param name="panel_id" value="650" />
+						<param name="on_up" value="250" />
+						<param name="on_down" value="350" />
+						<param name="label_1" value="$INFO[ListItem.Label]" />
+						<param name="label_2" value="$INFO[ListItem.Property(job)]" />
+					</include>
+
+					<!--YouTube Section-->
+					<include content="Extended_Video">
+						<param name="group_id" value="" />
+						<param name="visible" value="Integer.IsGreater(Container(350).NumItems,0)" />
+						<param name="header" value="$ADDON[script.extendedinfo 32118]$INFO[Container(350).NumItems, (,)]" />
+						<param name="panel_id" value="350" />
+						<param name="on_up" value="650" />
+						<param name="on_down" value="450" />
+						<param name="label" value="$INFO[ListItem.Label]" />
+					</include>
+
+					<!--Headshot Section-->
+					<include content="Extended_Poster">
+						<param name="group_id" value="4500" />
+						<param name="visible" value="Integer.IsGreater(Container(450).NumItems,0)" />
+						<param name="header" value="$LOCALIZE[31274]$INFO[Container(450).NumItems, (,)]" />
+						<param name="panel_id" value="450" />
+						<param name="on_up" value="350" />
+						<param name="on_down" value="750" />
+					</include>			
+
+					<!--Fanart Section-->
+					<include content="Extended_Fanart">
+						<param name="group_id" value="7500" />
+						<param name="visible" value="Integer.IsGreater(Container(750).NumItems,0)" />
+						<param name="header" value="$LOCALIZE[20445]$INFO[Container(750).NumItems, (,)]" />
+						<param name="panel_id" value="750" />
+						<param name="on_up" value="450" />
+						<param name="on_down" value="132" />
+					</include>	
+
+				</control>
+
+			</control>
+
+		</control>
+	
+	</controls>
+	
+</window>

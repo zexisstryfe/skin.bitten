@@ -2,6 +2,164 @@
 
 <includes>
 
+    <include name="Animation_Submenu_Fade">
+
+        <animation type="Conditional" condition="IsEmpty(Window(Home).Property(ShowSubMenu))">
+            <effect type="fade" start="0" end="100" time="400" delay="500" reversible="false"/>
+        </animation>
+
+    </include>
+ 
+    <include name="Animation_Arrow_Appear">
+
+        <animation effect="zoom" start="0,100" end="100,100" center="auto" time="200">VisibleChange</animation>
+
+        <animation effect="zoom" start="0,100" end="100,100" delay="500" center="auto" time="200">WindowOpen</animation>
+
+        <animation effect="zoom" start="100,100" end="0,100" center="auto" time="200">WindowClose</animation>
+
+    </include>
+
+    <include name="Animation_SlideUp">
+
+        <animation type="Visible">
+            <effect type="slide" start="0,400" end="0" center="auto" tween="back" easing="out" time="500" delay="0"/>
+        </animation>
+
+        <animation type="WindowOpen">
+            <effect type="slide" start="0,400" end="0" center="auto" tween="back" easing="out" time="500" delay="0"/>
+        </animation>
+
+        <animation type="Hidden">
+            <effect type="slide" start="0" end="0,400" center="auto" tween="back" easing="out" time="500" delay="0"/>
+        </animation>
+
+        <animation type="WindowClose">
+            <effect type="slide" start="0" end="0,400" center="auto" tween="back" easing="out" time="500" delay="0"/>
+        </animation>
+
+    </include>
+
+    <include name="Animation_SlideDown">
+        <animation type="Visible">
+            <effect type="slide" start="0,-400" end="0" center="auto" tween="back" easing="out" time="500" delay="0"/>
+        </animation>
+        <animation type="WindowOpen">
+            <effect type="slide" start="0,-400" end="0" center="auto" tween="back" easing="out" time="500" delay="0"/>
+        </animation>
+        <animation type="Hidden">
+            <effect type="slide" start="0" end="0,-400" center="auto" tween="back" easing="out" time="500" delay="0"/>
+        </animation>
+        <animation type="WindowClose">
+            <effect type="slide" start="0" end="0,-400" center="auto" tween="back" easing="out" time="500" delay="0"/>
+        </animation>
+    </include>
+
+    <include name="Animation_FadeOut">
+        <animation effect="fade" end="0" start="100" time="150">Hidden</animation>
+        <animation effect="fade" end="0" start="100" time="150">WindowClose</animation>
+    </include>
+
+    <include name="Animation_FadeIn_Delay">
+        <animation type="Visible">
+            <effect type="fade" start="0" end="100" time="350" delay="300" tween="cubic" easing="inout"/>
+            <effect type="zoom" start="75" end="100" center="auto" tween="back" time="500" delay="300"/>
+        </animation>
+        <animation effect="fade" start="0" end="100" time="350" tween="cubic" easing="inout">WindowOpen</animation>
+    </include>
+
+    <include name="Animation_Popup">
+        <!-- <visible>!Window.IsVisible(script-script.extendedinfo-VideoList.xml) + !Window.IsVisible(script-globalsearch-main.xml) + !Window.IsVisible(script-globalsearch-infodialog.xml) + !Window.IsVisible(DialogAddonInfo.xml) + !Window.IsVisible(DialogPVRInfo.xml) + !Window.IsVisible(DialogPVRGuideInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml)</visible> -->
+        <animation type="WindowOpen" reversible="false">
+            <effect type="fade" start="0" end="100" time="300" tween="sine" easing="in" />
+            <effect type="zoom" start="50" end="100" time="300" center="auto" tween="quadratic" easing="out" />
+        </animation>
+        <animation type="WindowClose" reversible="false">
+            <effect type="fade" end="0" start="100" time="200" tween="sine" easing="out" />
+            <effect type="zoom" end="75" start="100" time="200" center="auto" tween="quadratic" easing="in" />
+        </animation>
+        <animation type="Visible" reversible="false">
+            <effect type="fade" start="0" end="100" time="300" delay="300" tween="sine" easing="in" />
+            <effect type="zoom" start="115" end="100" time="300" delay="300" center="auto" tween="sine" easing="out" />
+        </animation>
+        <animation type="Hidden" reversible="false" condition="![!Window.IsVisible(script-script.extendedinfo-VideoList.xml) + !Window.IsVisible(script-globalsearch-main.xml) + !Window.IsVisible(script-globalsearch-infodialog.xml) + !Window.IsVisible(DialogAddonInfo.xml) + !Window.IsVisible(DialogPVRInfo.xml) + !Window.IsVisible(DialogPVRGuideInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml)]">
+            <effect type="zoom" start="100" end="85" center="auto" tween="sine" delay="0" easing="out" time="300" />
+            <effect type="fade" start="100" end="0" tween="cubic" easing="out" delay="0" time="300" />
+        </animation>
+        <animation type="Conditional" reversible="true" condition="Window.IsVisible(script-skinshortcuts.xml) | Window.IsVisible(DialogSongInfo.xml) | Window.IsVisible(DialogPictureInfo.xml) | Window.IsVisible(FileBrowser.xml) | Window.IsVisible(DialogConfirm.xml) | Window.IsVisible(DialogSelect.xml) | Window.IsVisible(DialogContextMenu.xml) | Window.IsVisible(DialogButtonMenu.xml) | ControlGroup(9100).HasFocus()">
+            <effect type="zoom" end="95" start="100" time="200" center="auto" tween="quadratic" easing="in" />
+        </animation>
+    </include>    
+
+    <include name="Animation_Popup_1">
+        <visible>!Window.IsVisible(script-script.extendedinfo-VideoList.xml) + !Window.IsVisible(script-globalsearch-main.xml) + !Window.IsVisible(script-globalsearch-infodialog.xml) + !Window.IsVisible(DialogAddonInfo.xml) + !Window.IsVisible(DialogPVRInfo.xml) + !Window.IsVisible(DialogPVRGuideInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml)</visible>
+        <animation type="WindowOpen" reversible="false">
+            <effect type="fade" start="0" end="100" time="200" tween="sine" easing="in" />
+            <effect type="zoom" start="50" end="100" time="200" center="auto" tween="quadratic" easing="out" />
+        </animation>
+        <animation type="WindowClose" reversible="false">
+            <effect type="fade" end="0" start="100" time="200" delay="600" tween="sine" easing="out" />
+            <effect type="zoom" end="75" start="100" time="200" delay="600" center="auto" tween="quadratic" easing="in" />
+        </animation>
+        <animation type="Visible" reversible="false">
+            <effect type="fade" start="0" end="100" time="300" delay="300" tween="sine" easing="in" />
+            <effect type="zoom" start="115" end="100" time="300" delay="300" center="auto" tween="sine" easing="out" />
+        </animation>
+        <animation type="Hidden" reversible="false" condition="![!Window.IsVisible(script-script.extendedinfo-VideoList.xml) + !Window.IsVisible(script-globalsearch-main.xml) + !Window.IsVisible(script-globalsearch-infodialog.xml) + !Window.IsVisible(DialogAddonInfo.xml) + !Window.IsVisible(DialogPVRInfo.xml) + !Window.IsVisible(DialogPVRGuideInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml)]">
+            <effect type="zoom" start="100" end="85" center="auto" tween="sine" delay="0" easing="out" time="300" />
+            <effect type="fade" start="100" end="0" tween="cubic" easing="out" delay="0" time="300" />
+        </animation>
+        <animation type="Conditional" reversible="true" condition="Window.IsVisible(script-skinshortcuts.xml) | Window.IsVisible(DialogSongInfo.xml) | Window.IsVisible(DialogPictureInfo.xml) | Window.IsVisible(FileBrowser.xml) | Window.IsVisible(DialogConfirm.xml) | Window.IsVisible(DialogSelect.xml) | Window.IsVisible(DialogContextMenu.xml) | Window.IsVisible(DialogButtonMenu.xml) | ControlGroup(9000).HasFocus()">
+            <effect type="zoom" end="95" start="100" time="200" center="auto" tween="quadratic" easing="in" />
+        </animation>
+    </include> 
+
+    <include name="Animation_Popup_2">
+        <visible>!Window.IsVisible(script-script.extendedinfo-VideoList.xml) + !Window.IsVisible(script-globalsearch-main.xml) + !Window.IsVisible(script-globalsearch-infodialog.xml) + !Window.IsVisible(DialogAddonInfo.xml) + !Window.IsVisible(DialogPVRInfo.xml) + !Window.IsVisible(DialogPVRGuideInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml)</visible>
+        <animation type="WindowOpen" reversible="false">
+            <effect type="fade" start="0" end="100" time="200" delay="300" tween="sine" easing="in"/>
+            <effect type="zoom" start="50" end="100" time="200" delay="300" center="auto" tween="quadratic" easing="out" />
+        </animation>
+        <animation type="WindowClose" reversible="false">
+            <effect type="fade" end="0" start="100" time="200"  delay="300" tween="sine" easing="out" />
+            <effect type="zoom" end="75" start="100" time="200"  delay="300" center="auto" tween="quadratic" easing="in" />
+        </animation>
+        <animation type="Visible" reversible="false">
+            <effect type="fade" start="0" end="100" time="300" delay="300" tween="sine" easing="in" />
+            <effect type="zoom" start="115" end="100" time="300" delay="300" center="auto" tween="sine" easing="out" />
+        </animation>
+        <animation type="Hidden" reversible="false" condition="![!Window.IsVisible(script-script.extendedinfo-VideoList.xml) + !Window.IsVisible(script-globalsearch-main.xml) + !Window.IsVisible(script-globalsearch-infodialog.xml) + !Window.IsVisible(DialogAddonInfo.xml) + !Window.IsVisible(DialogPVRInfo.xml) + !Window.IsVisible(DialogPVRGuideInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml)]">
+            <effect type="zoom" start="100" end="85" center="auto" tween="sine" delay="0" easing="out" time="300" />
+            <effect type="fade" start="100" end="0" tween="cubic" easing="out" delay="0" time="300" />
+        </animation>
+        <animation type="Conditional" reversible="true" condition="Window.IsVisible(script-skinshortcuts.xml) | Window.IsVisible(DialogSongInfo.xml) | Window.IsVisible(DialogPictureInfo.xml) | Window.IsVisible(FileBrowser.xml) | Window.IsVisible(DialogConfirm.xml) | Window.IsVisible(DialogSelect.xml) | Window.IsVisible(DialogContextMenu.xml) | Window.IsVisible(DialogButtonMenu.xml) | ControlGroup(9000).HasFocus()">
+            <effect type="zoom" end="95" start="100" time="200" center="auto" tween="quadratic" easing="in" />
+        </animation>
+    </include> 
+
+    <include name="Animation_Popup_3">
+        <visible>!Window.IsVisible(script-script.extendedinfo-VideoList.xml) + !Window.IsVisible(script-globalsearch-main.xml) + !Window.IsVisible(script-globalsearch-infodialog.xml) + !Window.IsVisible(DialogAddonInfo.xml) + !Window.IsVisible(DialogPVRInfo.xml) + !Window.IsVisible(DialogPVRGuideInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml)</visible>
+        <animation type="WindowOpen" reversible="false">
+            <effect type="fade" start="0" end="100" time="200" delay="600" tween="sine" easing="in" />
+            <effect type="zoom" start="50" end="100" time="200" delay="600" center="auto" tween="quadratic" easing="out" />
+        </animation>
+        <animation type="WindowClose" reversible="false">
+            <effect type="fade" end="0" start="100" time="200" tween="sine" easing="out" />
+            <effect type="zoom" end="75" start="100" time="200" center="auto" tween="quadratic" easing="in" />
+        </animation>
+        <animation type="Visible" reversible="false">
+            <effect type="fade" start="0" end="100" time="300" delay="300" tween="sine" easing="in" />
+            <effect type="zoom" start="115" end="100" time="300" delay="300" center="auto" tween="sine" easing="out" />
+        </animation>
+        <animation type="Hidden" reversible="false" condition="![!Window.IsVisible(script-script.extendedinfo-VideoList.xml) + !Window.IsVisible(script-globalsearch-main.xml) + !Window.IsVisible(script-globalsearch-infodialog.xml) + !Window.IsVisible(DialogAddonInfo.xml) + !Window.IsVisible(DialogPVRInfo.xml) + !Window.IsVisible(DialogPVRGuideInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) + !Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml)]">
+            <effect type="zoom" start="100" end="85" center="auto" tween="sine" delay="0" easing="out" time="300" />
+            <effect type="fade" start="100" end="0" tween="cubic" easing="out" delay="0" time="300" />
+        </animation>
+        <animation type="Conditional" reversible="true" condition="Window.IsVisible(script-skinshortcuts.xml) | Window.IsVisible(DialogSongInfo.xml) | Window.IsVisible(DialogPictureInfo.xml) | Window.IsVisible(FileBrowser.xml) | Window.IsVisible(DialogConfirm.xml) | Window.IsVisible(DialogSelect.xml) | Window.IsVisible(DialogContextMenu.xml) | Window.IsVisible(DialogButtonMenu.xml) | ControlGroup(9000).HasFocus()">
+            <effect type="zoom" end="95" start="100" time="200" center="auto" tween="quadratic" easing="in" />
+        </animation>
+    </include> 
+
     <include name="Common_Animation_Dialog">
         <animation type="WindowOpen">
             <effect type="fade" start="0" end="100" time="400" />
@@ -107,24 +265,6 @@
         </animation>
     </include>
 
-    <include name="Animation_Common_Content">
-        <animation type="WindowOpen" reversible="false">
-            <effect type="fade" start="0" end="100" time="400" />
-            <effect type="slide" start="1920,0" end="0,0" center="auto" time="600" delay="1000" tween="cubic" easing="out" />
-        </animation>
-        <animation type="WindowClose" reversible="false">
-            <effect type="fade" start="100" end="0" time="400" />
-            <effect type="slide" start="0,0" end="-1920,0" time="400" tween="cubic" easing="in" />
-        </animation>
-    </include>
-
-    <include name="Animation_Common_View">
-        <animation type="Visible">
-            <effect type="fade" start="0" end="100" time="400" />
-            <effect type="slide" start="1920,0" end="0,0" time="600" tween="cubic" easing="out" />
-        </animation>
-    </include>
-
     <include name="Animation_Common_Window">
         <animation type="WindowOpen">
             <effect type="fade" start="0" end="100" time="400" />
@@ -151,33 +291,6 @@
 			<effect type="slide" start="80,0" end="-690,0" center="auto" time="600" tween="cubic" easing="out" />
 		</animation> 
     </include>
-
-    <include name="Animation_Common_Playlist_Left">
-		<animation type="WindowOpen">
-			<effect type="slide" start="-720,0" end="80,0" center="auto" time="600" delay="100" tween="cubic" easing="out" />
-		</animation>				
-		<animation type="WindowClose">
-			<effect type="slide" start="80,0" end="-720,0" center="auto" time="600" delay="400" tween="cubic" easing="out" />
-		</animation> 
-    </include>	
-	
-    <include name="Animation_Common_Playlist_Right">
-		<animation type="WindowOpen">
-			<effect type="slide" start="800,0" end="0,0" center="auto" time="600" delay="100" tween="cubic" easing="out" />
-		</animation>				
-		<animation type="WindowClose">
-			<effect type="slide" start="0,0" end="800,0" center="auto" time="600" delay="400" tween="cubic" easing="out" />
-		</animation> 
-    </include>	
-	
-    <include name="Animation_Common_Playlist_Content">
-        <animation type="WindowOpen">
-            <effect type="fade" start="0" end="100" time="400" delay="700"/>
-        </animation>
-        <animation type="WindowClose">
-            <effect type="fade" start="100" end="0" time="400" />
-        </animation>
-    </include>	
 	
     <include name="Animation_Common_InfoIcon">
 		<animation type="WindowOpen">
@@ -187,50 +300,19 @@
 			<effect type="slide" start="80,0" end="-880,0" center="auto" time="600" tween="cubic" easing="out" />
 		</animation> 
     </include>	
-	
-    <include name="Animation_Common_ShowListing">
-        <animation type="Visible" reversible="false">
-            <effect type="fade" start="0" end="100" time="400" />
-            <effect type="slide" start="1920,0" end="0,0" center="auto" time="400" delay="200" tween="cubic" easing="out" />
-        </animation>
-        <animation type="Hidden">
-            <effect type="fade" start="100" end="0" time="400" />
-        </animation>
-    </include>
-	
-    <include name="Animation_Trakt_Background">
-		<fadetime>600</fadetime>
-		<animation effect="fade" time="600">Visible</animation>
-		<animation effect="fade" time="600">Hidden</animation>
-    </include>	
-	
-    <include name="VisibleFadeEffect">
-        <animation effect="fade" time="200">Visible</animation>
-        <animation effect="fade" time="200">Hidden</animation>
-    </include>
-
-    <include name="Common_Animation_Splash_Flip">
-        <animation type="WindowOpen" condition="!Window.Previous(visualisation) + !Window.Previous(fullscreenvideo) + !Window.Previous(slideshow)">
-            <effect type="rotatey" start="180" end="0" center="960,0" time="400" />
-        </animation>
-        <animation type="WindowClose">
-            <effect type="fade" start="100" end="0" time="400" />
-        </animation>
-    </include>
 
     <include name="Homescreen_Animation">
-        <animation type="WindowOpen" condition="!Window.Previous(fullscreenvideo) + !Window.Previous(slideshow)">
+
+        <animation type="WindowOpen">
             <effect type="fade" start="0" end="100" time="400" />
             <effect type="slide" start="1920,0" end="0,0" center="auto" time="600" delay="500" tween="cubic" easing="out" />
         </animation>
-        <animation type="WindowOpen" condition="Window.Previous(fullscreenvideo) | Window.Previous(slideshow)">
-            <effect type="fade" start="0" end="100" time="400" />
-            <effect type="slide" start="1920,0" end="0,0" center="auto" time="600" delay="500" tween="cubic" easing="out" />
-        </animation>
+
         <animation type="WindowClose">
             <effect type="fade" start="100" end="0" time="400" delay="700" />
             <effect type="slide" start="0,0" end="1920,0" center="auto" time="400" delay="700" />
         </animation>
+
     </include>
 
     <include name="Animation_Notification_Left">
@@ -263,16 +345,6 @@
         </animation>
     </include>
 
-    <include name="Animation_Dialog_Center">
-        <animation effect="zoom" delay="200" start="0" end="100" center="960,540" time="200" tween="back" easing="out">WindowOpen</animation>
-        <animation effect="zoom" start="100" end="0" center="960,540" time="100" tween="back" easing="in">WindowClose</animation>
-    </include>
-
-    <include name="Animation_Home_Fade">
-        <animation effect="fade" time="400">WindowOpen</animation>
-        <animation effect="fade" time="400">WindowClose</animation>
-    </include>
-
     <include name="Animation_NextAired">
         <animation type="Visible">
             <effect type="zoom" delay="200" start="0" end="100" center="960,105" time="200" tween="back" easing="out" />
@@ -302,13 +374,13 @@
 
     <include name="Animation_Slide_Right">
         <animation type="WindowOpen" reversible="false">
-            <effect type="slide" start="1920,0" end="0,0" center="auto" time="600" delay="1000" tween="cubic" easing="out" />
+            <effect type="slide" start="1920,0" end="0,0" center="auto" time="600" delay="100" tween="cubic" easing="out" />
         </animation>
         <animation type="WindowClose" reversible="false">
             <effect type="slide" start="0,0" end="1920,0" time="400" tween="cubic" easing="in" />
         </animation>
         <animation type="Visible">
-            <effect type="slide" start="1920,0" end="0,0" center="auto" time="600" delay="1000" tween="cubic" easing="out" />
+            <effect type="slide" start="1920,0" end="0,0" center="auto" time="600" delay="100" tween="cubic" easing="out" />
         </animation>
         <animation type="Hidden">
             <effect type="slide" start="0,0" end="1920,0" time="400" tween="cubic" easing="in" />

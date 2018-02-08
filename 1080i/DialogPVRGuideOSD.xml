@@ -6,8 +6,9 @@
     <controls>
 	
         <control type="group">
-            <posx>1320</posx>
+            <left>1320</left>
             <include>Common_Animation_PVR_OSD</include>
+            <visible>!Window.IsVisible(DialogPVRGuideInfo.xml)</visible>
 			
             <control type="image">
                 <width>645</width>
@@ -16,20 +17,22 @@
             </control>
 
             <control type="image">
-                <posy>100</posy>
-				<width>645</width>
-                <height>830</height>
-                <include>Common_Color_BaseLow</include>
-            </control>			
-
-            <control type="scrollbar" id="60">
-                <posy>100</posy>
-				<posx>590</posx>
-                <width>10</width>
-                <height>830</height>
-                <onright>11</onright>
-                <onleft>11</onleft>
+                <width>5</width>
+                <height>1080</height>
+                <include>Common_Color_BaseMediumHigh</include>
             </control>
+
+            <include content="Common_Separator_Horizontal">
+                <param name="top" value="135"/> 
+                <param name="left" value="5"/>   
+                <param name="width" value="645"/>
+            </include>
+
+            <include content="Common_Separator_Horizontal">
+                <param name="top" value="967"/> 
+                <param name="left" value="5"/>   
+                <param name="width" value="645"/>
+            </include>		
 			
 			<control type="image">
 				<description>Title Backing</description>
@@ -40,140 +43,157 @@
 
             <control type="label">
                 <label>$LOCALIZE[31188]</label>
-                <posx>15</posx>
+                <left>15</left>
                 <height>75</height>
                 <width>615</width>
                 <font>font45R</font>
             </control>
 
-            <control type="list" id="11">
-                <posy>100</posy>
-                <width>590</width>
-                <height>830</height>
-                <onleft>60</onleft>
-                <onright>60</onright>
-                <viewtype label="535">list</viewtype>
-                <pagecontrol>60</pagecontrol>
-                <itemlayout height="60" width="590">
+            <control type="group">
+                <top>137</top>
+                <left>5</left>
 
-					<control type="image">
-						<posx>10</posx>
-						<posy>10</posy>
-						<width>40</width>
-						<height>40</height>
-						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture diffuse="masks/circle.png">$VAR[Record_Image]</texture>
-					</control> 
-					
-                    <control type="label">
-                        <posx>60</posx>
-                        <width>135</width>
-                        <height>60</height>
-                        <font>font30B</font>
-                        <label>$INFO[ListItem.StartTime]</label>
-						<textcolor>BaseMediumHigh</textcolor>
-                    </control>
+                <control type="scrollbar" id="60">
+                    <left>585</left>
+                    <width>10</width>
+                    <height>830</height>
+                    <onright>11</onright>
+                    <onleft>11</onleft>
+                </control>
 
-                    <control type="label">
-                        <posx>210</posx>
-                        <width>360</width>
-                        <height>60</height>
-                        <font>font30R</font>
-                        <label>$INFO[ListItem.Label]</label>
-						<textcolor>BaseMediumHigh</textcolor>
-                    </control>
-					
-                </itemlayout>
-				
-                <focusedlayout height="60" width="590">
-				
-                    <control type="image">
-                        <width>590</width>
-                        <height>60</height>
-                        <include>Common_Color_Accent</include>
-                    </control>
-					
-					<control type="image">
-						<posx>10</posx>
-						<posy>10</posy>
-						<width>40</width>
-						<height>40</height>
-						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture diffuse="masks/circle.png">$VAR[Record_Image]</texture>
-					</control> 
-					
-                    <control type="label">
-                        <posx>60</posx>
-                        <width>135</width>
-                        <height>60</height>
-                        <font>font30B</font>
-                        <label>$INFO[ListItem.StartTime]</label>
-                    </control>
+                <control type="list" id="11">
+                    <width>585</width>
+                    <height>830</height>
+                    <onleft>60</onleft>
+                    <onright>60</onright>
+                    <pagecontrol>60</pagecontrol>
+                    <itemlayout height="60" width="585">
 
-                    <control type="label">
-                        <posx>210</posx>
-                        <width>360</width>
-                        <height>60</height>
-                        <font>font30R</font>
-						<label>$INFO[ListItem.Label]</label>
-                    </control>
-					
-                </focusedlayout>
-				
+                        <control type="label">
+                            <left>10</left>
+                            <width>135</width>
+                            <height>60</height>
+                            <font>font30B</font>
+                            <label>$INFO[ListItem.StartTime]</label>
+    						<textcolor>BaseMediumHigh</textcolor>
+                        </control>
+
+                        <control type="label">
+                            <left>170</left>
+                            <width>360</width>
+                            <height>60</height>
+                            <font>font30R</font>
+                            <label>$INFO[ListItem.Label]</label>
+    						<textcolor>BaseMediumHigh</textcolor>
+                        </control>
+
+                        <control type="image">
+                            <left>535</left>
+                            <top>10</top>
+                            <width>40</width>
+                            <height>40</height>
+                            <texture colordiffuse="$VAR[Accent_100]">watched/lg_record.png</texture>
+                            <visible>ListItem.IsRecording</visible>
+                        </control>
+    					
+                    </itemlayout>
+    				
+                    <focusedlayout height="60" width="585">
+    				
+                        <control type="image">
+                            <width>590</width>
+                            <height>60</height>
+                            <include>Common_Color_BaseLowest</include>
+                        </control>
+
+                        <control type="image">
+                            <width>155</width>
+                            <height>60</height>
+                            <include>Common_Color_Accent</include>
+                        </control> 
+
+                        <control type="label">
+                            <left>10</left>
+                            <width>135</width>
+                            <height>60</height>
+                            <font>font30B</font>
+                            <label>$INFO[ListItem.StartTime]</label>
+                        </control>
+
+                        <control type="label">
+                            <left>170</left>
+                            <width>360</width>
+                            <height>60</height>
+                            <font>font30R</font>
+                            <label>$INFO[ListItem.Label]</label>
+                            <textcolor>$VAR[Accent_100]</textcolor>
+                        </control>
+
+                        <control type="image">
+                            <left>535</left>
+                            <top>10</top>
+                            <width>40</width>
+                            <height>40</height>
+                            <texture colordiffuse="$VAR[Accent_100]">watched/lg_record.png</texture>
+                            <visible>ListItem.IsRecording</visible>
+                        </control>
+    					
+                    </focusedlayout>
+    				
+                </control>
+
             </control>
 			
             <control type="group">
-				<posy>930</posy>
+                <top>970</top>
 
                 <control type="label">
                     <label>$INFO[System.Time(hh:mm)]</label>
-                    <posx>458</posx>
-                    <height>150</height>
-                    <width>300</width>
+                    <left>10</left>
+                    <height>100</height>
+                    <width>250</width>
                     <font>font95</font>
                     <align>right</align>
-					<textcolor>BaseMediumHigh</textcolor>
+                    <textcolor>BaseMediumHigh</textcolor>
                     <visible>!IsEmpty(System.Time(xx))</visible>
                 </control>
-				
+                
                 <control type="label">
                     <label>$INFO[System.Time(hh:mm)]</label>
-                    <posx>232</posx>
-                    <height>150</height>
-                    <width>300</width>
+                    <left>10</left>
+                    <height>100</height>
+                    <width>250</width>
                     <font>font95</font>
-					<textcolor>BaseMediumHigh</textcolor>
+                    <textcolor>BaseMediumHigh</textcolor>
                     <visible>IsEmpty(System.Time(xx))</visible>
                 </control>
-				
+                
                 <control type="label">
                     <label>$INFO[System.Time(xx)]</label>
-                    <posx>458</posx>
-                    <posy>22</posy>
-                    <height>150</height>
+                    <left>260</left>
+                    <top>22</top>
+                    <height>100</height>
                     <width>90</width>
                     <font>font34R</font>
                     <visible>!IsEmpty(System.Time(xx))</visible>
                     <textcolor>$VAR[Accent_100]</textcolor>
                 </control>
-				
+                
                 <control type="label">
                     <label>$INFO[System.Date(DDD)]</label>
-                    <posx>228</posx>
-                    <posy>-20</posy>
-                    <height>150</height>
-                    <width>1125</width>
+                    <top>-20</top>
+                    <height>100</height>
+                    <width>580</width>
                     <font>font34R</font>
                     <align>right</align>
                     <textcolor>$VAR[Accent_100]</textcolor>
                 </control>
-				
+                
                 <control type="label">
                     <label>$INFO[System.Date(MMM)] $INFO[System.Date(dd)]</label>
-                    <posx>228</posx>
-                    <posy>19</posy>
-                    <height>150</height>
-                    <width>1125</width>
+                    <top>19</top>
+                    <height>100</height>
+                    <width>580</width>
                     <font>font34R</font>
                     <align>right</align>
                     <textcolor>$VAR[Accent_100]</textcolor>

@@ -2,87 +2,148 @@
 
 <includes>
 	<!-- NEW INCLUDES-->
-	<include name="InfoDialog_Base">
-	
-		<include>Common_Animation_Dialog</include>
+    <include name="Dialog_Notify_Icon">
+        <left>10</left>
+        <top>10</top>
+        <width>60</width>
+        <height>60</height>
+        <aspectratio>keep</aspectratio>
+    </include>
 
-		<control type="image">			
-			<width>1920</width>
-			<height>450</height>
-			<texture colordiffuse="BaseWhite">colors/color_white.png</texture>			
+    <include name="Dialog_Control_Button">
+
+		<control type="button" id="$PARAM[button_id]">
+	        <top>10</top>
+			<left>10</left>
+			<width>60</width>
+	        <height>60</height>
+	        <font>font40</font>
+			<textcolor>BaseMediumHigh</textcolor>
+	        <focusedcolor>$VAR[Accent_100]</focusedcolor>
+	        <disabledcolor>BaseLow</disabledcolor>
+	        <align>left</align>
+	        <textoffsetx>110</textoffsetx>
+	        <textwidth>360</textwidth>
+	        <texturefocus>$PARAM[texture]</texturefocus>
+	        <texturenofocus colordiffuse="BaseMediumHigh">$PARAM[texture]</texturenofocus>
+        	<label>$PARAM[label]</label>
+			<onup>$PARAM[onup]</onup>
+			<ondown>$PARAM[ondown]</ondown>
+			<onleft>$PARAM[onleft]</onleft>
+			<onright>$PARAM[onright]</onright>
+	        <onclick>$PARAM[onclick]</onclick>
+	        <visible>$PARAM[visible]</visible>
 		</control>
-		
-		<control type="image">			
-			<width>1920</width>
-			<include>InfoDialog_Header</include>		
-		</control>		
-		
-		<control type="label" id="1">			
-			<description>Heading</description>
-			<posx>300</posx>
-			<width>885</width>
-			<height>75</height>
-			<font>font45R</font>			
+
+		<control type="image">
+	        <top>10</top>
+			<left>10</left>
+			<width>60</width>
+	        <height>60</height>
+	        <texture colordiffuse="BaseLow">$PARAM[texture]</texture>
+	        <visible>!Control.IsEnabled($PARAM[button_id])</visible>
 		</control>
-	
-		<control type="group">			
-			<posx>450</posx>
-			<posy>100</posy>
-			
-			<control type="textbox" id="9">
-				
-				<description>Line 1</description>
-				<width>1020</width>
-				<height>240</height>
-				<font>font36</font>
-				<align>center</align>
-				<textcolor>BaseMediumHigh</textcolor>
-				
+
+    </include>
+
+    <include name="Dialog_Control_Backing">
+
+		<control type="group">
+			<visible>Control.HasFocus($PARAM[visible])</visible>
+
+			<control type="image">
+				<height>80</height>
+				<width>420</width>
+				<include>Common_Color_BaseLowest</include>
 			</control>
-			
+
+			<control type="image">
+				<height>80</height>
+				<width>80</width>
+				<include>Common_Color_Accent</include>
+			</control>
+
 		</control>
-			
-	</include>
+
+    </include>
 
 	<include name="InfoDialog_Button">	
-        <posy>285</posy>
-		<width>320</width>
-		<texturefocus colordiffuse="$VAR[Accent_100]">colors/color_white.png</texturefocus>
-		<texturenofocus colordiffuse="BaseMediumMid">colors/color_white.png</texturenofocus>
-		<font>font36</font>
-		<textcolor>BaseWhite</textcolor>
-		<focusedcolor>BaseWhite</focusedcolor>
-		<disabledcolor>BaseMid</disabledcolor>
-		<textoffsety>6</textoffsety>
-		<align>center</align>
-		<aligny>top</aligny>	
+		<param name="width">320</param>
+		<param name="font">font36</param>
+
+		<definition>
+
+			<control type="button" id="$PARAM[button_id]">
+				<width>$PARAM[width]</width>
+				<texturefocus colordiffuse="$VAR[Accent_100]">colors/color_white.png</texturefocus>
+				<texturenofocus colordiffuse="BaseMediumMid">colors/color_white.png</texturenofocus>
+				<font>$PARAM[font]</font>
+				<textcolor>BaseWhite</textcolor>
+				<label>$PARAM[label]</label>
+				<focusedcolor>BaseWhite</focusedcolor>
+				<disabledcolor>BaseMid</disabledcolor>
+				<textoffsety>6</textoffsety>
+				<align>center</align>
+				<aligny>top</aligny>
+				<onclick>$PARAM[onclick]</onclick>
+				<onclick>$PARAM[onclick2]</onclick>
+			</control>	
+
+		</definition>
+
+	</include>
+
+	<include name="InfoDialog_RadioButton">	
+		<param name="width">320</param>
+
+		<definition>
+
+			<control type="radiobutton" id="$PARAM[button_id]">
+				<width>$PARAM[width]</width>
+				<texturefocus colordiffuse="$VAR[Accent_100]">colors/color_white.png</texturefocus>
+				<texturenofocus colordiffuse="BaseMediumMid">colors/color_white.png</texturenofocus>
+			    <textureradioonfocus colordiffuse="BaseWhite">controls/RadiobuttonON.png</textureradioonfocus>
+			    <textureradioonnofocus colordiffuse="BaseWhite">controls/RadiobuttonON.png</textureradioonnofocus>
+			    <textureradioofffocus colordiffuse="BaseWhite">controls/RadiobuttonOFF.png</textureradioofffocus>
+			    <textureradiooffnofocus colordiffuse="BaseWhite">controls/RadiobuttonOFF.png</textureradiooffnofocus>
+				<font>font36</font>
+				<textcolor>BaseWhite</textcolor>
+				<label>$PARAM[label]</label>
+				<focusedcolor>BaseWhite</focusedcolor>
+				<disabledcolor>BaseMid</disabledcolor>
+				<textoffsetx>20</textoffsetx>
+				<textoffsety>6</textoffsety>
+				<textwidth>$PARAM[textwidth]</textwidth>
+		        <radiowidth>50</radiowidth>
+		        <radioheight>40</radioheight>
+				<align>left</align>
+				<aligny>top</aligny>
+				<onclick>$PARAM[onclick]</onclick>
+				<onclick>$PARAM[onclick2]</onclick>
+			</control>	
+
+		</definition>
+
 	</include>
 	
 	<include name="InfoDialog_Header">
-        <height>75</height>
+        <height>5</height>
 		<texture colordiffuse="BaseMediumHigh">colors/color_white.png</texture>		
     </include>
 
     <include name="InfoDialog_Heading">
 		<height>75</height>
 		<font>font45R</font>
-        <textcolor>BaseWhite</textcolor>
         <scroll>true</scroll>
     </include>
 
     <include name="InfoDialog_Volume_Icon">
-		<width>75</width>
-		<height>75</height>
+		<width>60</width>
+		<height>60</height>
+		<top>10</top>
+		<left>10</left>
 		<aspectratio>keep</aspectratio>
 		<texture>volume/VolumeIcon.png</texture>
-    </include>
-
-    <include name="InfoDialog_Volume_Label">
-		<posy>10</posy>
-		<height>24</height>
-		<aligny>center</aligny>
-		<font>font24B</font>
-		<textcolor>BaseMediumHigh</textcolor>
     </include>
 
 	<include name="InfoDialog_Label">
@@ -94,55 +155,307 @@
 		<disabledcolor>BaseLow</disabledcolor>
 		<radioposx>590</radioposx>
     </include>	
-	
-	<include name="FirstRun_Labels">
+
+	<include name="Dialog_FirstRun_Label">
         <font>font30</font>
         <wrapmultiline>true</wrapmultiline>
-        <width>1350</width>
+        <width>936</width>
         <height>60</height>
 		<textcolor>BaseMediumHigh</textcolor>
-    </include>
+    </include>	
 
     <include name="SelectDialog_Labels">
-		<posx>180</posx>
+		<left>180</left>
 		<width>400</width>
 		<height>50</height>
 		<font>font30R</font>
 		<textcolor>BaseMediumHigh</textcolor>
     </include>
 
-	<!-- OLD INCLUDES-->
-    <include name="TileCreator_Buttons1">
-        <width>870</width>
-        <height>50</height>
-        <align>left</align>
-        <textoffsetx>15</textoffsetx>		
-		<label>$LOCALIZE[467]</label>
-		<label2>$INFO[Skin.String(HomeTileEdit.TypeName)]</label2>
+    <include name="Dialog_TileCreator_Button">
+    	<param name="top">0</param>
+    	<param name="width">900</param>
+		<param name="textcolor">BaseMediumHigh</param>
+		<param name="visible">true</param>
+
+    	<definition>
+ 
+	        <control type="button" id="$PARAM[button_id]">
+	        	<top>$PARAM[top]</top>
+		        <width>$PARAM[width]</width>
+		        <height>60</height>
+		        <align>left</align>
+		        <textoffsetx>15</textoffsetx>		
+				<label>$PARAM[label]</label>
+				<label2>$PARAM[label2]</label2>
+	            <visible>$PARAM[visible]</visible>
+				<textcolor>$PARAM[textcolor]</textcolor>
+				<focusedcolor>BaseWhite</focusedcolor>
+				<onup>$PARAM[onup]</onup>
+				<ondown>$PARAM[ondown]</ondown>
+				<onclick>$PARAM[onclick]</onclick>
+	        </control>  
+
+    	</definition>
+
 	</include>
-	
-    <include name="TileCreator_Buttons2">
-		<posx>450</posx>
-        <width>960</width>
-        <height>50</height>
-        <align>left</align>
-        <textoffsetx>15</textoffsetx>
-		<textcolor>BaseMediumHigh</textcolor>
-		<focusedcolor>BaseWhite</focusedcolor>
-    </include>
 
-    <include name="KaiToast_Icon">
-        <posx>10</posx>
-        <posy>10</posy>
-        <width>130</width>
-        <height>130</height>
-        <aspectratio>keep</aspectratio>
-    </include>
+    <include name="Dialog_HomeCreator_Button">
+    	<param name="top">0</param>
+    	<param name="width">900</param>
+		<param name="textcolor">BaseMediumHigh</param>
+		<param name="visible">true</param>
 
-    <include name="Seekbar_Label">
-        <posy>375</posy>
+    	<definition>
+ 
+	        <control type="button" id="$PARAM[button_id]">
+	        	<top>$PARAM[top]</top>
+		        <width>$PARAM[width]</width>
+		        <height>60</height>
+		        <align>left</align>
+		        <textoffsetx>15</textoffsetx>		
+				<label>$PARAM[label]</label>
+				<label2>$PARAM[label2]</label2>
+	            <visible>$PARAM[visible]</visible>
+				<textcolor>$PARAM[textcolor]</textcolor>
+				<focusedcolor>BaseWhite</focusedcolor>
+				<onup>$PARAM[onup]</onup>
+				<ondown>$PARAM[ondown]</ondown>
+				<onclick>$PARAM[onclick]</onclick>
+				<onclick>$PARAM[onclick2]</onclick>
+				<onclick>$PARAM[onclick3]</onclick>								
+	        </control>  
+
+    	</definition>
+
+	</include>
+
+    <include name="Dialog_HomeCreator_RadioButton">
+    	<param name="top">0</param>
+    	<param name="width">900</param>
+		<param name="textcolor">BaseMediumHigh</param>
+		<param name="visible">true</param>
+
+    	<definition>
+ 
+	        <control type="radiobutton" id="$PARAM[button_id]">
+	        	<top>$PARAM[top]</top>
+		        <width>$PARAM[width]</width>
+		        <height>60</height>
+		        <align>left</align>
+		        <textoffsetx>15</textoffsetx>		
+				<label>$PARAM[label]</label>
+	            <visible>Skin.String(HomeFocus,HomeMenu1)</visible>
+				<textcolor>$PARAM[textcolor]</textcolor>
+				<focusedcolor>BaseWhite</focusedcolor>
+				<selected>!Skin.HasSetting(HomeMenu1.Hide)</selected>
+				<onup>$PARAM[onup]</onup>
+				<ondown>$PARAM[ondown]</ondown>
+				<onclick>$PARAM[onclick]</onclick>
+	        </control>  
+
+	        <control type="radiobutton" id="$PARAM[button_id]">
+	        	<top>$PARAM[top]</top>
+		        <width>$PARAM[width]</width>
+		        <height>60</height>
+		        <align>left</align>
+		        <textoffsetx>15</textoffsetx>		
+				<label>$PARAM[label]</label>
+	            <visible>Skin.String(HomeFocus,HomeMenu2)</visible>
+				<textcolor>$PARAM[textcolor]</textcolor>
+				<focusedcolor>BaseWhite</focusedcolor>
+				<selected>!Skin.HasSetting(HomeMenu2.Hide)</selected>
+				<onup>$PARAM[onup]</onup>
+				<ondown>$PARAM[ondown]</ondown>
+				<onclick>$PARAM[onclick]</onclick>
+	        </control>  
+
+	        <control type="radiobutton" id="$PARAM[button_id]">
+	        	<top>$PARAM[top]</top>
+		        <width>$PARAM[width]</width>
+		        <height>60</height>
+		        <align>left</align>
+		        <textoffsetx>15</textoffsetx>		
+				<label>$PARAM[label]</label>
+	            <visible>Skin.String(HomeFocus,HomeMenu3)</visible>
+				<textcolor>$PARAM[textcolor]</textcolor>
+				<focusedcolor>BaseWhite</focusedcolor>
+				<selected>!Skin.HasSetting(HomeMenu3.Hide)</selected>
+				<onup>$PARAM[onup]</onup>
+				<ondown>$PARAM[ondown]</ondown>
+				<onclick>$PARAM[onclick]</onclick>
+	        </control> 
+
+	        <control type="radiobutton" id="$PARAM[button_id]">
+	        	<top>$PARAM[top]</top>
+		        <width>$PARAM[width]</width>
+		        <height>60</height>
+		        <align>left</align>
+		        <textoffsetx>15</textoffsetx>		
+				<label>$PARAM[label]</label>
+	            <visible>Skin.String(HomeFocus,HomeMenu4)</visible>
+				<textcolor>$PARAM[textcolor]</textcolor>
+				<focusedcolor>BaseWhite</focusedcolor>
+				<selected>!Skin.HasSetting(HomeMenu4.Hide)</selected>
+				<onup>$PARAM[onup]</onup>
+				<ondown>$PARAM[ondown]</ondown>
+				<onclick>$PARAM[onclick]</onclick>
+	        </control> 
+
+	        <control type="radiobutton" id="$PARAM[button_id]">
+	        	<top>$PARAM[top]</top>
+		        <width>$PARAM[width]</width>
+		        <height>60</height>
+		        <align>left</align>
+		        <textoffsetx>15</textoffsetx>		
+				<label>$PARAM[label]</label>
+	            <visible>Skin.String(HomeFocus,HomeMenu5)</visible>
+				<textcolor>$PARAM[textcolor]</textcolor>
+				<focusedcolor>BaseWhite</focusedcolor>
+				<selected>!Skin.HasSetting(HomeMenu5.Hide)</selected>
+				<onup>$PARAM[onup]</onup>
+				<ondown>$PARAM[ondown]</ondown>
+				<onclick>$PARAM[onclick]</onclick>
+	        </control> 
+
+	        <control type="radiobutton" id="$PARAM[button_id]">
+	        	<top>$PARAM[top]</top>
+		        <width>$PARAM[width]</width>
+		        <height>60</height>
+		        <align>left</align>
+		        <textoffsetx>15</textoffsetx>		
+				<label>$PARAM[label]</label>
+	            <visible>Skin.String(HomeFocus,HomeMenu6)</visible>
+				<textcolor>$PARAM[textcolor]</textcolor>
+				<focusedcolor>BaseWhite</focusedcolor>
+				<selected>!Skin.HasSetting(HomeMenu6.Hide)</selected>
+				<onup>$PARAM[onup]</onup>
+				<ondown>$PARAM[ondown]</ondown>
+				<onclick>$PARAM[onclick]</onclick>
+	        </control> 
+
+	        <control type="radiobutton" id="$PARAM[button_id]">
+	        	<top>$PARAM[top]</top>
+		        <width>$PARAM[width]</width>
+		        <height>60</height>
+		        <align>left</align>
+		        <textoffsetx>15</textoffsetx>		
+				<label>$PARAM[label]</label>
+	            <visible>Skin.String(HomeFocus,HomeMenu7)</visible>
+				<textcolor>$PARAM[textcolor]</textcolor>
+				<focusedcolor>BaseWhite</focusedcolor>
+				<selected>!Skin.HasSetting(HomeMenu7.Hide)</selected>
+				<onup>$PARAM[onup]</onup>
+				<ondown>$PARAM[ondown]</ondown>
+				<onclick>$PARAM[onclick]</onclick>
+	        </control> 
+
+	        <control type="radiobutton" id="$PARAM[button_id]">
+	        	<top>$PARAM[top]</top>
+		        <width>$PARAM[width]</width>
+		        <height>60</height>
+		        <align>left</align>
+		        <textoffsetx>15</textoffsetx>		
+				<label>$PARAM[label]</label>
+	            <visible>Skin.String(HomeFocus,HomeMenu8)</visible>
+				<textcolor>$PARAM[textcolor]</textcolor>
+				<focusedcolor>BaseWhite</focusedcolor>
+				<selected>!Skin.HasSetting(HomeMenu8.Hide)</selected>
+				<onup>$PARAM[onup]</onup>
+				<ondown>$PARAM[ondown]</ondown>
+				<onclick>$PARAM[onclick]</onclick>
+	        </control> 
+
+	        <control type="radiobutton" id="$PARAM[button_id]">
+	        	<top>$PARAM[top]</top>
+		        <width>$PARAM[width]</width>
+		        <height>60</height>
+		        <align>left</align>
+		        <textoffsetx>15</textoffsetx>		
+				<label>$PARAM[label]</label>
+	            <visible>Skin.String(HomeFocus,HomeMenu9)</visible>
+				<textcolor>$PARAM[textcolor]</textcolor>
+				<focusedcolor>BaseWhite</focusedcolor>
+				<selected>!Skin.HasSetting(HomeMenu9.Hide)</selected>
+				<onup>$PARAM[onup]</onup>
+				<ondown>$PARAM[ondown]</ondown>
+				<onclick>$PARAM[onclick]</onclick>
+	        </control> 
+
+	        <control type="radiobutton" id="$PARAM[button_id]">
+	        	<top>$PARAM[top]</top>
+		        <width>$PARAM[width]</width>
+		        <height>60</height>
+		        <align>left</align>
+		        <textoffsetx>15</textoffsetx>		
+				<label>$PARAM[label]</label>
+	            <visible>Skin.String(HomeFocus,HomeMenu11)</visible>
+				<textcolor>$PARAM[textcolor]</textcolor>
+				<focusedcolor>BaseWhite</focusedcolor>
+				<selected>!Skin.HasSetting(HomeMenu11.Hide)</selected>
+				<onup>$PARAM[onup]</onup>
+				<ondown>$PARAM[ondown]</ondown>
+				<onclick>$PARAM[onclick]</onclick>
+	        </control> 
+
+	        <control type="radiobutton" id="$PARAM[button_id]">
+	        	<top>$PARAM[top]</top>
+		        <width>$PARAM[width]</width>
+		        <height>60</height>
+		        <align>left</align>
+		        <textoffsetx>15</textoffsetx>		
+				<label>$PARAM[label]</label>
+	            <visible>Skin.String(HomeFocus,HomeMenu12)</visible>
+				<textcolor>$PARAM[textcolor]</textcolor>
+				<focusedcolor>BaseWhite</focusedcolor>
+				<selected>!Skin.HasSetting(HomeMenu12.Hide)</selected>
+				<onup>$PARAM[onup]</onup>
+				<ondown>$PARAM[ondown]</ondown>
+				<onclick>$PARAM[onclick]</onclick>
+	        </control> 
+
+	        <control type="radiobutton" id="$PARAM[button_id]">
+	        	<top>$PARAM[top]</top>
+		        <width>$PARAM[width]</width>
+		        <height>60</height>
+		        <align>left</align>
+		        <textoffsetx>15</textoffsetx>		
+				<label>$PARAM[label]</label>
+	            <visible>Skin.String(HomeFocus,HomeMenu13)</visible>
+				<textcolor>$PARAM[textcolor]</textcolor>
+				<focusedcolor>BaseWhite</focusedcolor>
+				<selected>!Skin.HasSetting(HomeMenu13.Hide)</selected>
+				<onup>$PARAM[onup]</onup>
+				<ondown>$PARAM[ondown]</ondown>
+				<onclick>$PARAM[onclick]</onclick>
+	        </control> 
+
+	        <control type="radiobutton" id="$PARAM[button_id]">
+	        	<top>$PARAM[top]</top>
+		        <width>$PARAM[width]</width>
+		        <height>60</height>
+		        <align>left</align>
+		        <textoffsetx>15</textoffsetx>		
+				<label>$PARAM[label]</label>
+	            <visible>Skin.String(HomeFocus,HomeMenu14)</visible>
+				<textcolor>$PARAM[textcolor]</textcolor>
+				<focusedcolor>BaseWhite</focusedcolor>
+				<selected>!Skin.HasSetting(HomeMenu14.Hide)</selected>
+				<onup>$PARAM[onup]</onup>
+				<ondown>$PARAM[ondown]</ondown>
+				<onclick>$PARAM[onclick]</onclick>
+	        </control> 
+
+    	</definition>
+
+	</include>
+
+	<!-- OLD INCLUDES-->
+
+    <include name="Dialog_Seekbar_Label">
+        <top>375</top>
         <width>1920</width>
-        <textcolor>$VAR[Accent_60]</textcolor>
+        <textcolor>$VAR[Accent_80]</textcolor>
         <align>center</align>
         <font>font72UB</font>
     </include>
@@ -165,19 +478,11 @@
         <texture colordiffuse="BaseMediumHigh">flags/ratings/star.png</texture>
     </include>
 
-    <include name="Seekbar_Image">
-        <posy>466</posy>
+    <include name="Dialog_Seekbar_Image">
+        <top>466</top>
         <width>1920</width>
         <height>192</height>
-        <fadetime>200</fadetime>
         <aspectratio>keep</aspectratio>
-        <colordiffuse>White60</colordiffuse>
-    </include>
-
-    <include name="Dialog_Button">
-        <width>72</width>
-        <height>72</height>
-        <textoffsetx>3000</textoffsetx>
     </include>
     
 </includes>

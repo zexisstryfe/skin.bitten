@@ -7,180 +7,600 @@
         <height>42</height>
         <aspectratio>keep</aspectratio>
     </include>
+
+    <include name="Dimensions_CodecFlags_Small">
+        <width>90</width>
+        <height>31</height>
+        <aspectratio>keep</aspectratio>
+    </include>
 	
     <include name="VideoMPAAFlaggingConditions">
-	
+        <param name="colordiffuse">BaseWhite</param>        
+
+        <definition>
+    	
+            <control type="image">
+                <description>Rated G</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/mpaa_g.png</texture>
+                <visible>substring(listitem.mpaa,Rated G)</visible>
+            </control>
+            
+            <control type="image">
+                <description>Rated PG</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/mpaa_pg.png</texture>
+                <visible>substring(listitem.mpaa,Rated PG) + !substring(listitem.mpaa,Rated PG-13)</visible>
+            </control>
+            
+            <control type="image">
+                <description>Rated PG-13</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/mpaa_pg-13.png</texture>
+                <visible>substring(listitem.mpaa,Rated PG-13)</visible>
+            </control>
+            
+            <control type="image">
+                <description>Rated R</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/mpaa_r.png</texture>
+                <visible>substring(Listitem.mpaa,Rated R)</visible>
+            </control>
+            
+            <control type="image">
+                <description>Rated NC-17</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/mpaa_nc-17.png</texture>
+                <visible>substring(Listitem.mpaa,Rated NC)</visible>
+            </control>
+            
+            <control type="image">
+                <description>Rated TV-G</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/tv-g.png</texture>
+                <visible>substring(listitem.mpaa,TV-G)</visible>
+            </control>
+            
+            <control type="image">
+                <description>Rated TV-PG</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/tv-pg.png</texture>
+                <visible>substring(listitem.mpaa,TV-PG)</visible>
+            </control>
+            
+            <control type="image">
+                <description>Rated TV-14</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/tv-14.png</texture>
+                <visible>substring(listitem.mpaa,TV-14)</visible>
+            </control>
+            
+            <control type="image">
+                <description>Rated TV-MA</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/tv-ma.png</texture>
+                <visible>substring(listitem.mpaa,TV-MA)</visible>
+            </control>
+            
+            <control type="image">
+                <description>Rated bbfc_u</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/bbfc_u.png</texture>
+                <visible>substring(listitem.mpaa,UK:U)</visible>
+            </control>
+            
+            <control type="image">
+                <description>Rated bbfc_pg</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/bbfc_pg.png</texture>
+                <visible>substring(listitem.mpaa,UK:PG)</visible>
+            </control>
+            
+            <control type="image">
+                <description>Rated bbfc_12</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/bbfc_12.png</texture>
+                <visible>substring(listitem.mpaa,UK:12)</visible>
+            </control>
+            
+            <control type="image">
+                <description>Rated bbfc_12a</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/bbfc_12A.png</texture>
+                <visible>substring(listitem.mpaa,UK:12A)</visible>
+            </control>
+            
+            <control type="image">
+                <description>Rated bbfc_15</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/bbfc_15.png</texture>
+                <visible>substring(listitem.mpaa,UK:15)</visible>
+            </control>
+            
+            <control type="image">
+                <description>Rated bbfc_18</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/bbfc_18.png</texture>
+                <visible>substring(listitem.mpaa,UK:18)</visible>
+            </control>
+            
+            <control type="image">
+                <description>Rated bbfc_18</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/bbfc_18.png</texture>
+                <visible>substring(listitem.mpaa,UK:R18)</visible>
+            </control>
+            
+            <control type="image">
+                <description>Rated NR</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/mpaa_nr.png</texture>
+                <visible>IsEmpty(listitem.mpaa) | substring(listitem.mpaa,nr)</visible>
+            </control>
+
+        </definition>
+    		
+    </include>
+
+    <include name="VideoMPAAFlaggingConditions_Small">
+    
         <control type="image">
             <description>Rated G</description>
-            <include>Dimensions_CodecFlags</include>
-            <texture colordiffuse="White">flags/mpaa/mpaa_g.png</texture>
-            <visible>substring(listitem.mpaa,Rated G)</visible>
+            <include>Dimensions_CodecFlags_Small</include>
+            <texture colordiffuse="BaseMediumHigh">flags/mpaa/mpaa_g.png</texture>
+            <visible>substring(VideoPlayer.mpaa,Rated G)</visible>
         </control>
-		
+        
         <control type="image">
             <description>Rated PG</description>
-            <include>Dimensions_CodecFlags</include>
-            <texture colordiffuse="White">flags/mpaa/mpaa_pg.png</texture>
-            <visible>substring(listitem.mpaa,Rated PG) + !substring(listitem.mpaa,Rated PG-13)</visible>
+            <include>Dimensions_CodecFlags_Small</include>
+            <texture colordiffuse="BaseMediumHigh">flags/mpaa/mpaa_pg.png</texture>
+            <visible>substring(VideoPlayer.mpaa,Rated PG) + !substring(VideoPlayer.mpaa,Rated PG-13)</visible>
         </control>
-		
+        
         <control type="image">
             <description>Rated PG-13</description>
-            <include>Dimensions_CodecFlags</include>
-            <texture colordiffuse="White">flags/mpaa/mpaa_pg-13.png</texture>
-            <visible>substring(listitem.mpaa,Rated PG-13)</visible>
+            <include>Dimensions_CodecFlags_Small</include>
+            <texture colordiffuse="BaseMediumHigh">flags/mpaa/mpaa_pg-13.png</texture>
+            <visible>substring(VideoPlayer.mpaa,Rated PG-13)</visible>
         </control>
-		
+        
         <control type="image">
             <description>Rated R</description>
-            <include>Dimensions_CodecFlags</include>
-            <texture colordiffuse="White">flags/mpaa/mpaa_r.png</texture>
-            <visible>substring(Listitem.mpaa,Rated R)</visible>
+            <include>Dimensions_CodecFlags_Small</include>
+            <texture colordiffuse="BaseMediumHigh">flags/mpaa/mpaa_r.png</texture>
+            <visible>substring(VideoPlayer.mpaa,Rated R)</visible>
         </control>
-		
+        
         <control type="image">
             <description>Rated NC-17</description>
-            <include>Dimensions_CodecFlags</include>
-            <texture colordiffuse="White">flags/mpaa/mpaa_nc-17.png</texture>
-            <visible>substring(Listitem.mpaa,Rated NC)</visible>
+            <include>Dimensions_CodecFlags_Small</include>
+            <texture colordiffuse="BaseMediumHigh">flags/mpaa/mpaa_nc-17.png</texture>
+            <visible>substring(VideoPlayer.mpaa,Rated NC)</visible>
         </control>
-		
+        
         <control type="image">
             <description>Rated TV-G</description>
-            <include>Dimensions_CodecFlags</include>
-            <texture colordiffuse="White">flags/mpaa/tv-g.png</texture>
-            <visible>substring(listitem.mpaa,TV-G)</visible>
+            <include>Dimensions_CodecFlags_Small</include>
+            <texture colordiffuse="BaseMediumHigh">flags/mpaa/tv-g.png</texture>
+            <visible>substring(VideoPlayer.mpaa,TV-G)</visible>
         </control>
-		
+        
         <control type="image">
             <description>Rated TV-PG</description>
-            <include>Dimensions_CodecFlags</include>
-            <texture colordiffuse="White">flags/mpaa/tv-pg.png</texture>
-            <visible>substring(listitem.mpaa,TV-PG)</visible>
+            <include>Dimensions_CodecFlags_Small</include>
+            <texture colordiffuse="BaseMediumHigh">flags/mpaa/tv-pg.png</texture>
+            <visible>substring(VideoPlayer.mpaa,TV-PG)</visible>
         </control>
-		
+        
         <control type="image">
             <description>Rated TV-14</description>
-            <include>Dimensions_CodecFlags</include>
-            <texture colordiffuse="White">flags/mpaa/tv-14.png</texture>
-            <visible>substring(listitem.mpaa,TV-14)</visible>
+            <include>Dimensions_CodecFlags_Small</include>
+            <texture colordiffuse="BaseMediumHigh">flags/mpaa/tv-14.png</texture>
+            <visible>substring(VideoPlayer.mpaa,TV-14)</visible>
         </control>
-		
+        
         <control type="image">
             <description>Rated TV-MA</description>
-            <include>Dimensions_CodecFlags</include>
-            <texture colordiffuse="White">flags/mpaa/tv-ma.png</texture>
-            <visible>substring(listitem.mpaa,TV-MA)</visible>
+            <include>Dimensions_CodecFlags_Small</include>
+            <texture colordiffuse="BaseMediumHigh">flags/mpaa/tv-ma.png</texture>
+            <visible>substring(VideoPlayer.mpaa,TV-MA)</visible>
         </control>
-		
+        
         <control type="image">
             <description>Rated bbfc_u</description>
-            <include>Dimensions_CodecFlags</include>
-            <texture colordiffuse="White">flags/mpaa/bbfc_u.png</texture>
-            <visible>substring(listitem.mpaa,UK:U)</visible>
+            <include>Dimensions_CodecFlags_Small</include>
+            <texture colordiffuse="BaseMediumHigh">flags/mpaa/bbfc_u.png</texture>
+            <visible>substring(VideoPlayer.mpaa,UK:U)</visible>
         </control>
-		
+        
         <control type="image">
             <description>Rated bbfc_pg</description>
-            <include>Dimensions_CodecFlags</include>
-            <texture colordiffuse="White">flags/mpaa/bbfc_pg.png</texture>
-            <visible>substring(listitem.mpaa,UK:PG)</visible>
+            <include>Dimensions_CodecFlags_Small</include>
+            <texture colordiffuse="BaseMediumHigh">flags/mpaa/bbfc_pg.png</texture>
+            <visible>substring(VideoPlayer.mpaa,UK:PG)</visible>
         </control>
-		
+        
         <control type="image">
             <description>Rated bbfc_12</description>
-            <include>Dimensions_CodecFlags</include>
-            <texture colordiffuse="White">flags/mpaa/bbfc_12.png</texture>
-            <visible>substring(listitem.mpaa,UK:12)</visible>
+            <include>Dimensions_CodecFlags_Small</include>
+            <texture colordiffuse="BaseMediumHigh">flags/mpaa/bbfc_12.png</texture>
+            <visible>substring(VideoPlayer.mpaa,UK:12)</visible>
         </control>
-		
+        
         <control type="image">
             <description>Rated bbfc_12a</description>
-            <include>Dimensions_CodecFlags</include>
-            <texture colordiffuse="White">flags/mpaa/bbfc_12A.png</texture>
-            <visible>substring(listitem.mpaa,UK:12A)</visible>
+            <include>Dimensions_CodecFlags_Small</include>
+            <texture colordiffuse="BaseMediumHigh">flags/mpaa/bbfc_12A.png</texture>
+            <visible>substring(VideoPlayer.mpaa,UK:12A)</visible>
         </control>
-		
+        
         <control type="image">
             <description>Rated bbfc_15</description>
-            <include>Dimensions_CodecFlags</include>
-            <texture colordiffuse="White">flags/mpaa/bbfc_15.png</texture>
-            <visible>substring(listitem.mpaa,UK:15)</visible>
+            <include>Dimensions_CodecFlags_Small</include>
+            <texture colordiffuse="BaseMediumHigh">flags/mpaa/bbfc_15.png</texture>
+            <visible>substring(VideoPlayer.mpaa,UK:15)</visible>
         </control>
-		
+        
         <control type="image">
             <description>Rated bbfc_18</description>
-            <include>Dimensions_CodecFlags</include>
-            <texture colordiffuse="White">flags/mpaa/bbfc_18.png</texture>
-            <visible>substring(listitem.mpaa,UK:18)</visible>
+            <include>Dimensions_CodecFlags_Small</include>
+            <texture colordiffuse="BaseMediumHigh">flags/mpaa/bbfc_18.png</texture>
+            <visible>substring(VideoPlayer.mpaa,UK:18)</visible>
         </control>
-		
+        
         <control type="image">
             <description>Rated bbfc_18</description>
-            <include>Dimensions_CodecFlags</include>
-            <texture colordiffuse="White">flags/mpaa/bbfc_18.png</texture>
-            <visible>substring(listitem.mpaa,UK:R18)</visible>
+            <include>Dimensions_CodecFlags_Small</include>
+            <texture colordiffuse="BaseMediumHigh">flags/mpaa/bbfc_18.png</texture>
+            <visible>substring(VideoPlayer.mpaa,UK:R18)</visible>
         </control>
-		
-		<control type="image">
+        
+        <control type="image">
             <description>Rated NR</description>
-            <include>Dimensions_CodecFlags</include>
-            <texture colordiffuse="White">flags/mpaa/mpaa_nr.png</texture>
-            <visible>IsEmpty(listitem.mpaa)</visible>
+            <include>Dimensions_CodecFlags_Small</include>
+            <texture colordiffuse="BaseMediumHigh">flags/mpaa/mpaa_nr.png</texture>
+            <visible>IsEmpty(VideoPlayer.mpaa) | substring(VideoPlayer.mpaa,nr)</visible>
         </control>
-		
+        
     </include>
 	
     <include name="VideoCodecFlaggingConditions">
+        <param name="colordiffuse">BaseWhite</param>        
+
+        <definition>
 	
-        <control type="image">
-            <description>Video Codec Image</description>
-            <include>Dimensions_CodecFlags</include>
-            <texture colordiffuse="White">$INFO[ListItem.VideoCodec,flags/videocodec/,.png]</texture>
-        </control>
+            <control type="image">
+                <description>Video Codec Image</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]" fallback="flags/videocodec/unknown.png">$INFO[ListItem.VideoCodec,flags/videocodec/,.png]</texture>
+            </control>
+
+        </definition>
 		
     </include>
 	
     <include name="AudioCodecFlaggingConditions">
-	
-        <control type="image">
-            <description>Audio Codec Image</description>
-            <include>Dimensions_CodecFlags</include>
-            <texture colordiffuse="White">$INFO[ListItem.AudioCodec,flags/audiocodec/,.png]</texture>
-        </control>
-		
+        <param name="colordiffuse">BaseWhite</param>        
+
+        <definition>
+    	
+            <control type="image">
+                <description>Audio Codec Image</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]" fallback="flags/audiocodec/unknown.png">$INFO[ListItem.AudioCodec,flags/audiocodec/,.png]</texture>
+            </control>
+
+        </definition>
+
     </include>
 	
     <include name="AudioChannelsFlaggingConditions">
-	
-        <control type="image">
-            <description>Audio Codec Image</description>
-            <include>Dimensions_CodecFlags</include>
-            <texture colordiffuse="White">$INFO[ListItem.AudioChannels,flags/audiochannels/,ch.png]</texture>
-        </control>
-		
+        <param name="colordiffuse">BaseWhite</param>        
+
+        <definition>
+    	
+            <control type="image">
+                <description>Audio Codec Image</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]" fallback="flags/audiochannels/unknown.png">$INFO[ListItem.AudioChannels,flags/audiochannels/,ch.png]</texture>
+            </control>
+
+        </definition>
+                		
     </include>
 	
     <include name="AspectCodecFlaggingConditions">
-	
-        <control type="image">
-            <description>Aspectratio Image</description>
-            <include>Dimensions_CodecFlags</include>
-            <texture colordiffuse="White">$INFO[ListItem.VideoAspect,flags/aspectratio/,.png]</texture>
-        </control>
-		
+        <param name="colordiffuse">BaseWhite</param>        
+
+        <definition>
+    	
+            <control type="image">
+                <description>Aspectratio Image</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]" fallback="flags/aspectratio/unknown.png">$INFO[ListItem.VideoAspect,flags/aspectratio/,.png]</texture>
+            </control>
+
+        </definition>
+                		
     </include>
 	
     <include name="VideoResolutionFlaggingConditions">
-	
-        <control type="image">
-            <description>Video rez Image</description>
-            <width>120</width>
-            <height>42</height>
-            <aspectratio>keep</aspectratio>
-            <texture colordiffuse="White">$INFO[ListItem.VideoResolution,flags/resolution/,.png]</texture>
-        </control>
-		
+        <param name="colordiffuse">BaseWhite</param>        
+
+        <definition>
+    	
+            <control type="image">
+                <description>Video rez Image</description>
+                <width>120</width>
+                <height>42</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="$PARAM[colordiffuse]" fallback="flags/resolution/unknown.png">$INFO[ListItem.VideoResolution,flags/resolution/,.png]</texture>
+            </control>
+
+        </definition>
+                		
+    </include>
+
+    <include name="UserRatingFlaggingConditions">
+        <param name="colordiffuse">BaseWhite</param>        
+
+        <definition>
+        
+            <control type="image">
+                <description>Rating Image</description>
+                <width>120</width>
+                <height>42</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/rating2.png</texture>
+            </control>
+
+            <control type="label">
+                <description>Rating</description>
+                <left>34</left>
+                <width>86</width>
+                <height>40</height>
+                <align>center</align> 
+                <font>font34B</font>
+                <textcolor>$PARAM[colordiffuse]</textcolor>
+                <label fallback="12310">$INFO[ListItem.UserRating]</label>
+            </control>
+
+        </definition>
+                        
+    </include>
+
+    <include name="Extended_VideoMPAAFlaggingConditions">
+        <param name="colordiffuse">BaseWhite</param>        
+
+        <definition>
+        
+            <control type="image">
+                <description>Rated G</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/mpaa_g.png</texture>
+                <visible>substring(Window.Property(mpaa),Rated G)</visible>
+            </control>
+            
+            <control type="image">
+                <description>Rated PG</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/mpaa_pg.png</texture>
+                <visible>substring(Window.Property(mpaa),Rated PG) + !substring(Window.Property(mpaa),Rated PG-13)</visible>
+            </control>
+            
+            <control type="image">
+                <description>Rated PG-13</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/mpaa_pg-13.png</texture>
+                <visible>substring(Window.Property(mpaa),Rated PG-13)</visible>
+            </control>
+            
+            <control type="image">
+                <description>Rated R</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/mpaa_r.png</texture>
+                <visible>substring(Window.Property(mpaa),Rated R)</visible>
+            </control>
+            
+            <control type="image">
+                <description>Rated NC-17</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/mpaa_nc-17.png</texture>
+                <visible>substring(Window.Property(mpaa),Rated NC)</visible>
+            </control>
+            
+            <control type="image">
+                <description>Rated TV-G</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/tv-g.png</texture>
+                <visible>substring(Window.Property(mpaa),TV-G)</visible>
+            </control>
+            
+            <control type="image">
+                <description>Rated TV-PG</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/tv-pg.png</texture>
+                <visible>substring(Window.Property(mpaa),TV-PG)</visible>
+            </control>
+            
+            <control type="image">
+                <description>Rated TV-14</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/tv-14.png</texture>
+                <visible>substring(Window.Property(mpaa),TV-14)</visible>
+            </control>
+            
+            <control type="image">
+                <description>Rated TV-MA</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/tv-ma.png</texture>
+                <visible>substring(Window.Property(mpaa),TV-MA)</visible>
+            </control>
+            
+            <control type="image">
+                <description>Rated bbfc_u</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/bbfc_u.png</texture>
+                <visible>substring(Window.Property(mpaa).mpaa,UK:U)</visible>
+            </control>
+            
+            <control type="image">
+                <description>Rated bbfc_pg</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/bbfc_pg.png</texture>
+                <visible>substring(Window.Property(mpaa),UK:PG)</visible>
+            </control>
+            
+            <control type="image">
+                <description>Rated bbfc_12</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/bbfc_12.png</texture>
+                <visible>substring(Window.Property(mpaa),UK:12)</visible>
+            </control>
+            
+            <control type="image">
+                <description>Rated bbfc_12a</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/bbfc_12A.png</texture>
+                <visible>substring(Window.Property(mpaa),UK:12A)</visible>
+            </control>
+            
+            <control type="image">
+                <description>Rated bbfc_15</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/bbfc_15.png</texture>
+                <visible>substring(Window.Property(mpaa),UK:15)</visible>
+            </control>
+            
+            <control type="image">
+                <description>Rated bbfc_18</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/bbfc_18.png</texture>
+                <visible>substring(Window.Property(mpaa),UK:18)</visible>
+            </control>
+            
+            <control type="image">
+                <description>Rated bbfc_18</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/bbfc_18.png</texture>
+                <visible>substring(Window.Property(mpaa),UK:R18)</visible>
+            </control>
+            
+            <control type="image">
+                <description>Rated NR</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/mpaa/mpaa_nr.png</texture>
+                <visible>IsEmpty(Window.Property(mpaa)) | substring(Window.Property(mpaa),nr)</visible>
+            </control>
+
+        </definition>
+            
+    </include>
+    
+    <include name="Extended_VideoCodecFlaggingConditions">
+        <param name="colordiffuse">BaseWhite</param>        
+
+        <definition>
+    
+            <control type="image">
+                <description>Video Codec Image</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]" fallback="flags/videocodec/unknown.png">$INFO[Window.Property(VideoCodec),flags/videocodec/,.png]</texture>
+            </control>
+
+        </definition>
+        
+    </include>
+    
+    <include name="Extended_AudioCodecFlaggingConditions">
+        <param name="colordiffuse">BaseWhite</param>        
+
+        <definition>
+        
+            <control type="image">
+                <description>Audio Codec Image</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]" fallback="flags/audiocodec/unknown.png">$INFO[Window.Property(AudioCodec),flags/audiocodec/,.png]</texture>
+            </control>
+
+        </definition>
+
+    </include>
+    
+    <include name="Extended_AudioChannelsFlaggingConditions">
+        <param name="colordiffuse">BaseWhite</param>        
+
+        <definition>
+        
+            <control type="image">
+                <description>Audio Codec Image</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]" fallback="flags/audiochannels/unknown.png">$INFO[Window.Property(AudioChannels),flags/audiochannels/,ch.png]</texture>
+            </control>
+
+        </definition>
+                        
+    </include>
+    
+    <include name="Extended_AspectCodecFlaggingConditions">
+        <param name="colordiffuse">BaseWhite</param>        
+
+        <definition>
+        
+            <control type="image">
+                <description>Aspectratio Image</description>
+                <include>Dimensions_CodecFlags</include>
+                <texture colordiffuse="$PARAM[colordiffuse]" fallback="flags/aspectratio/unknown.png">$INFO[Window.Property(VideoAspect),flags/aspectratio/,.png]</texture>
+            </control>
+
+        </definition>
+                        
+    </include>
+    
+    <include name="Extended_VideoResolutionFlaggingConditions">
+        <param name="colordiffuse">BaseWhite</param>        
+
+        <definition>
+        
+            <control type="image">
+                <description>Video rez Image</description>
+                <width>120</width>
+                <height>42</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="$PARAM[colordiffuse]" fallback="flags/resolution/unknown.png">$INFO[Window.Property(VideoResolution),flags/resolution/,.png]</texture>
+            </control>
+
+        </definition>
+                        
+    </include>
+
+    <include name="Extended_UserRatingFlaggingConditions">
+        <param name="colordiffuse">BaseWhite</param>        
+
+        <definition>
+        
+            <control type="image">
+                <description>Rating Image</description>
+                <width>120</width>
+                <height>42</height>
+                <aspectratio>keep</aspectratio>
+                <texture colordiffuse="$PARAM[colordiffuse]">flags/rating2.png</texture>
+            </control>
+
+            <control type="label">
+                <description>User Rating</description>
+                <left>34</left>
+                <width>86</width>
+                <height>40</height>
+                <align>center</align> 
+                <font>font34B</font>
+                <textcolor>$PARAM[colordiffuse]</textcolor>
+                <label fallback="12310">$INFO[Window.Property(UserRating)]</label>
+            </control>
+
+        </definition>
+                        
     </include>
 	
 </includes>

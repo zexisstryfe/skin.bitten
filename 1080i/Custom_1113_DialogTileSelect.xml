@@ -5,8 +5,12 @@
 	
     <controls>
         <include>DialogOverlay</include>
-		<include>Common_LeftMenu_Mid_Backing</include>			
-		<include>Common_LeftBar_Mid_LeftMenu</include>
+
+        <include content="Common_LeftMenu">
+            <param name="width" value="690"/>   
+            <param name="time" value="600"/>
+            <param name="header" value="$LOCALIZE[31000]"/>
+        </include>  
 
 		<control type="group">
 			<animation type="WindowOpen">
@@ -15,81 +19,83 @@
 			<animation type="WindowClose">
 				<effect type="fade" start="100" end="0" time="200" />
 			</animation>
-			
-			<control type="image">
-                <posy>175</posy>
-                <width>690</width>
-                <height>825</height>
-                <include>Common_Color_BaseLow</include>
-            </control>
 
-            <control type="label" id="1">
-                <description>header label</description>
-                <posx>15</posx>
-                <width>660</width>
-                <include>InfoDialog_Heading</include>
-				<label>$LOCALIZE[31000]</label>
-            </control>
+            <include content="Common_Separator_Horizontal">
+                <param name="top" value="113"/>   
+                <param name="width" value="690"/>
+            </include>
+
+            <include content="Common_Separator_Horizontal">
+                <param name="top" value="940"/>    
+                <param name="width" value="690"/>
+            </include>
 
             <control type="scrollbar" id="7">
-                <posx>680</posx>
-                <posy>175</posy>
-				<width>10</width>
+                <left>680</left>
+                <top>115</top>
                 <height>825</height>
                 <onleft>6</onleft>
                 <onright>6</onright>
-            </control>			
+                <width>10</width>
+            </control>  		
 
             <control type="list" id="6">
-                <posy>175</posy>
+                <top>115</top> 
                 <width>680</width>
                 <height>825</height>
                 <onleft>7</onleft>
                 <onright>7</onright>
                 <pagecontrol>7</pagecontrol>
-                <itemlayout height="138">
+                <itemlayout height="140">
 					
                     <control type="image">
-                        <posx>8</posx>
-                        <posy>8</posy>
+                        <left>10</left>
+                        <top>10</top>
                         <width>120</width>
                         <height>120</height>
                         <texture fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
 						<bordertexture colordiffuse="BaseMediumHigh">colors/color_white.png</bordertexture>
-						<bordersize>5</bordersize>
+						<bordersize>10</bordersize>
                     </control>
 					
                     <control type="label">
-                        <posx>150</posx>
+                        <left>150</left>
                         <width>600</width>
                         <height>135</height>
                         <font>font30R</font>
                         <info>ListItem.Label</info>
 						<textcolor>BaseMediumHigh</textcolor>
                     </control>
+
+                    <control type="image">
+                        <top>138</top>
+                        <width>680</width>
+                        <height>2</height>
+                        <include>Common_Color_BaseLowest</include>
+                    </control>
 					
                 </itemlayout>
 				
-                <focusedlayout height="138">
+                <focusedlayout height="140">
 				
                     <control type="image">
                         <width>680</width>
-                        <height>138</height>
+                        <height>140</height>
                         <include>Common_Color_Accent</include>
                     </control>
 					
                     <control type="image">
-                        <posx>8</posx>
-                        <posy>8</posy>
+                        <left>10</left>
+                        <top>10</top>
                         <width>120</width>
                         <height>120</height>
                         <texture fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
 						<bordertexture colordiffuse="BaseMediumHigh">colors/color_white.png</bordertexture>
-						<bordersize>5</bordersize>
+						<bordersize>10</bordersize>
 					</control>
 					
                     <control type="label">
-                        <posx>150</posx>
+                        <left>150</left>
                         <width>600</width>
                         <height>135</height>
                         <font>font30R</font>
@@ -100,8 +106,9 @@
 				
 				<content>
 				
-                    <include condition="Skin.String(SelectorType,Tile)">Tile_Content</include>
-					<include condition="Skin.String(SelectorType,Panel)">Panel_Content</include>
+                    <include condition="Skin.String(SelectorType,Tile)">Content_Tiles</include>
+					<include condition="Skin.String(SelectorType,Panel)">Content_Widgets</include>
+                    <include condition="Skin.String(SelectorType,SubMenu)">Content_SubMenus</include>
 					
                 </content>
 				

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<window>
+
+    <coordinates>
+        <origin x="0" y="0" />
+    </coordinates> 
+ 
+    <controls>
+        <include>DialogOverlay</include>
+
+        <control type="group">
+            <left>748</left>
+            <top>355</top>
+
+            <include content="Common_Window_Backing">
+                <param name="width" value="425"/>
+                <param name="height" value="370"/>  
+                <param name="logo_visible" value="false"/> 
+                <param name="header" value="$LOCALIZE[31215]"/> 
+                <param name="header_width" value="400"/> 
+                <param name="header_height" value="75"/>                
+            </include>  
+
+            <control type="list" id="111">
+                <top>105</top>
+                <width>425</width>
+                <height>240</height>
+                <scrolltime>200</scrolltime>
+                <itemlayout height="60" width="425">
+
+                    <control type="label">
+                        <width>425</width>
+                        <height>60</height>
+                        <font>font30R</font>
+                        <textcolor>BaseMediumHigh</textcolor>
+                        <selectedcolor>$VAR[Accent_100]</selectedcolor>
+                        <align>center</align>
+                        <info>ListItem.Label</info>
+                    </control>
+
+                </itemlayout>
+
+                <focusedlayout height="60" width="425">
+
+                    <control type="image">
+                        <width>425</width>
+                        <height>60</height>
+                        <include>Common_Color_Accent</include>
+                    </control>
+
+                    <control type="label">
+                        <width>425</width>
+                        <height>60</height>
+                        <font>font30R</font>
+                        <selectedcolor>Black</selectedcolor>
+                        <align>center</align>
+                        <info>ListItem.Label</info>
+                    </control>
+
+                </focusedlayout>
+
+            </control>
+
+        </control>
+
+    </controls>
+    
+</window>

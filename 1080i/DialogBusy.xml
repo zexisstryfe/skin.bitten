@@ -7,36 +7,59 @@
         <include>DialogOverlay</include>
 		
         <control type="group">
-            <posx>735</posx>
-            <posy>486</posy>
-            <include>Animation_Dialog_Center</include>
-			
+            <left>760</left>
+            <top>480</top>
+            <include>Animation_Popup</include>
+
             <control type="image">
                 <description>background image</description>
-                <width>450</width>
-                <height>117</height>
-                <include>Common_Color_Accent</include>
+                <top>-5</top>
+                <width>400</width>
+                <height>5</height>
+                <include>Common_Color_BaseMediumHigh</include>
+            </control>
+
+            <control type="image">
+                <width>400</width>
+                <height>125</height>
+                <texture background="true" colordiffuse="Shadow">colors/color_white.png</texture>
             </control>
 			
             <control type="image">
-                <description>Busy animation</description>
-                <posx>30</posx>
-                <posy>30</posy>
-                <width>48</width>
-                <height>48</height>
-                <texture>busy/busy.png</texture>
-                <aspectratio>scale</aspectratio>
-                <animation effect="rotate" start="0" end="360" center="54,54" time="1200" loop="true" condition="true">conditional</animation>
+                <description>background image</description>
+                <width>400</width>
+                <height>120</height>
+                <include>Common_Color_BaseWhite</include>
+            </control>
+
+            <control type="image">
+                <left>20</left>
+                <top>20</top>
+                <width>80</width>
+                <height>80</height>
+                <aspectratio>keep</aspectratio>
+                <animation effect="rotate" end="-45" center="auto" time="200" delay="600" loop="true" reversible="false" condition="true">Conditional</animation>
+                <texture colordiffuse="$VAR[Accent_100]">busy/spinner.png</texture>
+            </control>
+
+            <control type="image">
+                <left>35</left>
+                <top>35</top>
+                <width>50</width>
+                <height>50</height>
+                <aspectratio>keep</aspectratio>
+                <animation effect="rotate" end="45" center="auto" time="200" delay="600" loop="true" reversible="false" condition="true">Conditional</animation>
+                <texture flipx="true" colordiffuse="BaseMediumHigh">busy/spinner.png</texture>
             </control>
 			
             <control type="label">
                 <description>Busy label</description>
-                <posx>105</posx>
-                <posy>30</posy>
-                <width>420</width>
-                <height>48</height>
-                <font>font30</font>
-                <label>$LOCALIZE[20186]</label>
+                <left>125</left>
+                <width>255</width>
+                <height>120</height>
+                <font>font30R</font>
+                <textcolor>BaseMediumHigh</textcolor>
+                <label>$LOCALIZE[20186]...</label>
             </control>
 			
         </control>

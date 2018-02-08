@@ -5,8 +5,12 @@
 	
     <controls>
         <include>DialogOverlay</include>
-		<include>Common_LeftMenu_Mid_Backing</include>			
-		<include>Common_LeftBar_Mid_LeftMenu</include>
+
+        <include content="Common_LeftMenu">
+            <param name="width" value="690"/>   
+            <param name="time" value="600"/>
+            <param name="header" value="$LOCALIZE[31317]"/>
+        </include>  
 
 		<control type="group">
 			<animation type="WindowOpen">
@@ -17,20 +21,20 @@
 			</animation>
 
 			<control type="label">
-				<posy>140</posy>
+				<top>130</top>
 				<width>650</width>
-				<height>35</height>
+				<height>40</height>
 				<align>center</align>
 				<font>font30R</font>
 				<label>$LOCALIZE[31318]</label>				
 				<textcolor>BaseMediumHigh</textcolor>
 			</control>
 			
-			<include>BG_Content</include>
+			<include>Content_Backgrounds</include>
 			
 			<control type="multiimage">
-                <posy>175</posy>
-				<posx>20</posx>
+                <top>175</top>
+				<left>20</left>
                 <width>650</width>
                 <height>366</height>
 				<imagepath background="true">$INFO[Skin.String($INFO[Skin.String(BGSelector_Temp_STR)])]</imagepath>
@@ -39,17 +43,9 @@
 				<fadetime>500</fadetime>				
             </control>
 
-            <control type="label" id="1">
-                <description>header label</description>
-                <posx>15</posx>
-                <width>660</width>
-                <include>InfoDialog_Heading</include>
-				<label>$LOCALIZE[31317]</label>
-            </control>
-
 			<control type="grouplist">			
-				<posy>500</posy>
-				<posx>125</posx>
+				<top>600</top>
+				<left>125</left>
                 <width>500</width>
                 <height>366</height>
 				<itemgap>20</itemgap>
@@ -57,54 +53,37 @@
 				<align>center</align>
 				<ondown>13</ondown>
 				<onup>13</onup>
-			
-				<control type="button" id="10">
-					<description>Single</description>
-					<label>31159</label>
-					<texturenofocus colordiffuse="BaseMid">colors/color_white.png</texturenofocus>
-					<width>420</width>
-					<include>InfoDialog_Button</include>
-					<onclick>Skin.SetImage($INFO[Skin.String(BGSelector_Temp_STR)])</onclick>
-				</control>
-				
-				<control type="button" id="11">
-					<description>Multi</description>
-					<label>31160</label>
-					<texturenofocus colordiffuse="BaseMid">colors/color_white.png</texturenofocus>
-					<width>420</width>
-					<include>InfoDialog_Button</include>
-					<onclick>Skin.SetPath($INFO[Skin.String(BGSelector_Temp_STR)])</onclick>
-					<onclick>Skin.SetPath($INFO[Skin.String(SkinSettings.BG)])</onclick>
-				</control>
-				
-				<control type="button" id="12">
-					<description>Default</description>
-					<label>31161</label>
-					<texturenofocus colordiffuse="BaseMid">colors/color_white.png</texturenofocus>
-					<width>420</width>
-					<include>InfoDialog_Button</include>
-					<onclick>Skin.Reset($INFO[Skin.String(BGSelector_Temp_STR)])</onclick>
-					<onclick>Skin.Reset($INFO[Skin.String(SkinSettings.BG)])</onclick>
-				</control>
-				
-			</control>		
 
-			<control type="grouplist">	
-				<posx>175</posx>
-				<posy>960</posy>
-				<width>660</width>
-				<itemgap>20</itemgap>
-				<orientation>horizontal</orientation>
-				<ondown>10</ondown>
-				<onup>12</onup>
-			
-				<control type="button" id="13">
-					<description>Yes</description>
-					<label>186</label>
-					<include>InfoDialog_Button</include>
-					<onclick>Skin.Reset(BG_Temp)</onclick>
-					<onclick>Dialog.Close(1116)</onclick>
-				</control>
+                <include content="InfoDialog_Button">
+                    <param name="button_id" value="10"/>  
+                    <param name="width" value="420"/>
+                    <param name="label" value="31159"/>  
+                    <param name="onclick" value="Skin.SetImage($INFO[Skin.String(BGSelector_Temp_STR)])"/>        
+                </include>
+
+                <include content="InfoDialog_Button">
+                    <param name="button_id" value="11"/>  
+                    <param name="width" value="420"/>
+                    <param name="label" value="31160"/>  
+                    <param name="onclick" value="Skin.SetPath($INFO[Skin.String(BGSelector_Temp_STR)])"/>     
+                    <param name="onclick2" value="Skin.SetPath($INFO[Skin.String(SkinSettings.BG)])"/>    
+                </include>
+
+                <include content="InfoDialog_Button">
+                    <param name="button_id" value="12"/>  
+                    <param name="width" value="420"/>        
+                    <param name="label" value="31161"/>  
+                    <param name="onclick" value="Skin.Reset($INFO[Skin.String(BGSelector_Temp_STR)])"/>     
+                    <param name="onclick2" value="Skin.Reset($INFO[Skin.String(SkinSettings.BG)])"/> 
+               </include>
+
+                <include content="InfoDialog_Button">
+                    <param name="button_id" value="13"/>  
+                    <param name="width" value="420"/>        
+                    <param name="label" value="186"/>  
+                    <param name="onclick" value="Skin.Reset(BG_Temp)"/>     
+                    <param name="onclick2" value="Dialog.Close(1116)"/> 
+               </include>
 				
 			</control>				
 									

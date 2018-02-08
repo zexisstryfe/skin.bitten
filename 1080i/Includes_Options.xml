@@ -12,22 +12,107 @@
 		<onright condition="Window.IsVisible(MyPVRTimers.xml)">14</onright>
     </include>
 
-	<include name="Options_View_OnLeftRight">
-		<onleft>Dialog.Close(1119)</onleft>
-		<onleft>SetFocus(9050)</onleft>
-		<onright>Dialog.Close(1119)</onright>
-		<onright>SetFocus(9050)</onright>
+	<include name="Options_Button">
+
+		<control type="button" id="$PARAM[button_id]">
+	        <include>Common_Settings_Button_Basics</include>
+	        <texturefocus>$PARAM[texture]</texturefocus>
+	        <texturenofocus colordiffuse="BaseMediumHigh">$PARAM[texture]</texturenofocus>
+	        <label>$PARAM[label]</label>
+			<onup>$PARAM[onup]</onup>
+			<ondown>$PARAM[ondown]</ondown>
+			<onright>ClearProperty(ShowOptions2,Home)</onright>
+			<onright condition="!Window.IsVisible(MyPVRGuide.xml) + !Window.IsVisible(MyPVRChannels.xml) + !Window.IsVisible(MyPVRRecordings.xml) + !Window.IsVisible(MyPVRSearch.xml) + !Window.IsVisible(MyPVRTimers.xml)">50</onright>
+			<onright condition="Window.IsVisible(MyPVRGuide.xml)">10</onright>
+			<onright condition="Window.IsVisible(MyPVRChannels.xml)">11</onright>
+			<onright condition="Window.IsVisible(MyPVRRecordings.xml)">13</onright>
+			<onright condition="Window.IsVisible(MyPVRSearch.xml)">17</onright>
+			<onright condition="Window.IsVisible(MyPVRTimers.xml)">14</onright>
+	        <onclick>$PARAM[onclick]</onclick>
+	        <onclick>$PARAM[onclick2]</onclick>
+	        <onclick>$PARAM[onclick3]</onclick>
+	        <visible>$PARAM[visible]</visible>
+		</control>
+
     </include>
-	
-	<include name="Options_OnLeft_9200">
-		<onleft>Skin.SetString(Options.ViewMenu,0)</onleft>
-		<onleft>SetFocus(9100)</onleft>
+
+	<include name="Options_ToggleButton">
+
+		<control type="togglebutton" id="$PARAM[button_id]">
+	        <include>Common_Settings_Button_Basics</include>
+	        <texturefocus>$PARAM[texture]</texturefocus>
+	        <texturenofocus colordiffuse="BaseMediumHigh">$PARAM[texture]</texturenofocus>
+	        <alttexturefocus>$PARAM[alttexture]</alttexturefocus>
+	        <alttexturenofocus colordiffuse="BaseMediumHigh">$PARAM[alttexture]</alttexturenofocus>
+	        <label>$PARAM[label]</label>
+	        <altlabel>$PARAM[altlabel]</altlabel>
+			<onup>$PARAM[onup]</onup>
+			<ondown>$PARAM[ondown]</ondown>
+			<onright>ClearProperty(ShowOptions2,Home)</onright>
+			<onright condition="!Window.IsVisible(MyPVRGuide.xml) + !Window.IsVisible(MyPVRChannels.xml) + !Window.IsVisible(MyPVRRecordings.xml) + !Window.IsVisible(MyPVRSearch.xml) + !Window.IsVisible(MyPVRTimers.xml)">50</onright>
+			<onright condition="Window.IsVisible(MyPVRGuide.xml)">10</onright>
+			<onright condition="Window.IsVisible(MyPVRChannels.xml)">11</onright>
+			<onright condition="Window.IsVisible(MyPVRRecordings.xml)">13</onright>
+			<onright condition="Window.IsVisible(MyPVRSearch.xml)">17</onright>
+			<onright condition="Window.IsVisible(MyPVRTimers.xml)">14</onright>
+	        <onclick>$PARAM[onclick]</onclick>
+	        <visible>$PARAM[visible]</visible>
+		</control>
+
+    </include>
+
+	<include name="Options_RadioButton">
+
+		<control type="radiobutton" id="$PARAM[button_id]">
+	        <include>Common_Settings_Button_Basics</include>
+	        <texturefocus>$PARAM[texture]</texturefocus>
+	        <texturenofocus colordiffuse="BaseMediumHigh">$PARAM[texture]</texturenofocus>
+	        <textureradioon>contextmenu/radio-on.png</textureradioon>
+	        <textureradiooff>-</textureradiooff>
+	        <radiowidth>72</radiowidth>
+	        <radioheight>72</radioheight>
+	        <radioposx>330</radioposx>
+	        <label>$PARAM[label]</label>
+			<onup>$PARAM[onup]</onup>
+			<ondown>$PARAM[ondown]</ondown>
+			<onright>ClearProperty(ShowOptions2,Home)</onright>
+			<onright condition="!Window.IsVisible(MyPVRGuide.xml) + !Window.IsVisible(MyPVRChannels.xml) + !Window.IsVisible(MyPVRRecordings.xml) + !Window.IsVisible(MyPVRSearch.xml) + !Window.IsVisible(MyPVRTimers.xml)">50</onright>
+			<onright condition="Window.IsVisible(MyPVRGuide.xml)">10</onright>
+			<onright condition="Window.IsVisible(MyPVRChannels.xml)">11</onright>
+			<onright condition="Window.IsVisible(MyPVRRecordings.xml)">13</onright>
+			<onright condition="Window.IsVisible(MyPVRSearch.xml)">17</onright>
+			<onright condition="Window.IsVisible(MyPVRTimers.xml)">14</onright>
+	        <onclick>$PARAM[onclick]</onclick>
+	        <visible>$PARAM[visible]</visible>
+		</control>
+
+    </include>
+
+	<include name="Options_View_Button">
+
+		<control type="button" id="$PARAM[button_id]">
+	        <include>Common_Settings_Button_Basics</include>
+	        <texturefocus>$PARAM[texture]</texturefocus>
+	        <texturenofocus colordiffuse="BaseMediumHigh">$PARAM[texture]</texturenofocus>
+	        <label>$PARAM[label]</label>
+			<onup>$PARAM[onup]</onup>
+			<ondown>$PARAM[ondown]</ondown>
+			<onleft>Dialog.Close(1119)</onleft>
+			<onleft>SetFocus(9050)</onleft>
+			<onright>Dialog.Close(1119)</onright>
+			<onright>SetFocus(9050)</onright>
+	        <onclick>$PARAM[onclick]</onclick>
+	        <onclick>$PARAM[onclick2]</onclick>
+	        <onclick>$PARAM[onclick3]</onclick>
+	        <visible>$PARAM[visible]</visible>
+		</control>
+
     </include>
 
     <include name="Common_Options">
 
 		<control type="button" id="9050">
-			<include>HiddenObject</include>
+			<include>Common_HiddenObject</include>
 			<onfocus condition="IsEmpty(Window(Home).Property(ShowOptions2))">SetProperty(ShowOptions2,True,home)</onfocus>
 			<onfocus condition="IsEmpty(Window(Home).Property(ShowOptions2))">SetFocus(9100)</onfocus>
 			<onfocus condition="!IsEmpty(Window(Home).Property(ShowOptions2))">ClearProperty(ShowOptions2,home)</onfocus>
@@ -40,8 +125,8 @@
 			<animation effect="slide" start="420,0" end="0,0" time="400" tween="quadratic" easing="out" condition="IsEmpty(Window(home).Property(ShowOptions2))">Conditional</animation>
 			<animation effect="slide" start="0,0" end="-420,0" time="400" tween="quadratic" easing="out">WindowClose</animation>
 			<animation effect="fade" start="100,0" end="00,0" time="100" delay="500">Hidden</animation>
-			<posx>-420</posx>
-			<posy>90</posy>
+			<left>-420</left>
+			<top>90</top>
 			<width>420</width>
 			<height>1080</height>
 			<itemgap>5</itemgap>
@@ -59,8 +144,7 @@
 			<include condition="Window.IsVisible(MyPrograms.xml)">Options_MyPrograms</include>
 			<include condition="Window.IsVisible(MyWeather.xml)">Options_MyWeather</include>
 			<include condition="Window.IsVisible(AddonBrowser.xml)">Options_AddonBrowser</include>
-			<include condition="Window.IsVisible(MyVideoPlaylist.xml)">Options_MyVideoPlaylist</include>
-			<include condition="Window.IsVisible(MyMusicPlaylist.xml)">Options_MyMusicPlaylist</include>
+			<include condition="Window.IsVisible(MyPlaylist.xml)">Options_MyPlaylist</include>
 			<include condition="Window.IsVisible(script-NextAired-TVGuide.xml)">Options_NextAired</include>
 			<include condition="Window.IsVisible(script-Rom_Collection_Browser-main.xml)">Options_RCB</include>	
 			<include condition="Window.IsVisible(EventLog.xml)">Options_EventLog</include>	
@@ -72,7 +156,7 @@
         <control type="group">
             <posx>1988</posx>
             <posy>30</posy>
-            <animation type="Conditional" condition="!ControlGroup(9000).HasFocus()">
+            <animation type="Conditional" condition="!ControlGroup(9100).HasFocus()">
                 <effect type="slide" start="-608,0" end="0,0" time="300" easing="out" tween="cubic" />
             </animation>
             <control type="image">
@@ -84,10 +168,10 @@
 			
 			<control type="image">
                 <description>background image</description>
-                <posx>-10</posx>
-				<width>10</width>
+                <posx>-5</posx>
+				<width>5</width>
                 <height>150</height>
-                <include>Common_Color_Accent</include>
+                <include>Common_Color_BaseMediumHigh</include>
             </control>
 			
             <control type="label">
@@ -151,16 +235,22 @@
 		<control type="group">
 			<height>75</height>
 			<visible>Control.IsVisible(9110)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(9110)</visible>
-			</control>
-			<control type="button" id="9110">
-				<include>Options_ChangeView</include>
-				<include>Options_OnRight</include>
-				<onup>8</onup>
-				<ondown>9122</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="9110"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="9110"/>
+				<param name="texture" value="../extras/tiles/changeview.png"/>
+				<param name="label" value="$LOCALIZE[31315]"/>
+				<param name="onup" value="8"/>
+				<param name="ondown" value="9122"/>
+				<param name="onclick" value="ActivateWindow(1119)"/>
+				<param name="onclick2" value="SetFocus(9101)"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 
         <!--Divider-->
@@ -172,46 +262,43 @@
 		<control type="group">
 			<height>75</height>			
 			<visible>Control.IsVisible(9122)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(9122)</visible>
-			</control>
-			<control type="button" id="9122">
-				<include>Options_SortBy</include>
-				<include>Options_OnRight</include>
-				<onup>9110</onup>
-				<ondown>4</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="9122"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="9122"/>
+				<param name="texture" value="../extras/tiles/sort.png"/>
+				<param name="label" value="$LOCALIZE[31076] $INFO[Container.SortMethod]"/>
+				<param name="onup" value="9110"/>
+				<param name="ondown" value="4"/>
+				<param name="onclick" value="Container.NextSortMethod"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 
 		<control type="group">
 			<height>75</height>			
 			<visible>Control.IsVisible(4)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(4)</visible>
-			</control>
-			<control type="togglebutton" id="4">
-				<include>Options_SortDirection</include>
-				<include>Options_OnRight</include>
-				<onup>9122</onup>
-				<ondown>5</ondown>
-			</control>
-		</control>
-		
-		<control type="group">
-			<height>75</height>			
-			<visible>Control.IsVisible(5)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(5)</visible>
-			</control>
-			<control type="button" id="5">
-				<include>Options_Files</include>
-				<include>Options_OnRight</include>
-				<onup>4</onup>
-				<ondown>14</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="4"/>			
+			</include>
+
+			<include content="Options_ToggleButton">
+				<param name="button_id" value="4"/>
+				<param name="texture" value="../extras/tiles/ascending.png"/>
+				<param name="alttexture" value="../extras/tiles/descending.png"/>
+				<param name="label" value="$LOCALIZE[584]"/>
+				<param name="altlabel" value="$LOCALIZE[585]"/>
+				<param name="onup" value="9122"/>
+				<param name="ondown" value="14"/>
+				<param name="onclick" value=""/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 		
         <!--Divider-->
@@ -223,46 +310,58 @@
 		<control type="group">
 			<height>75</height>			
 			<visible>Control.IsVisible(14)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(14)</visible>
-			</control>
-			<control type="button" id="14">
-				<include>Options_Watched</include>
-				<include>Options_OnRight</include>
-				<onup>5</onup>
-				<ondown>16</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="14"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="14"/>
+				<param name="texture" value="../extras/tiles/watched.png"/>
+				<param name="label" value="$LOCALIZE[31078]"/>
+				<param name="onup" value="4"/>
+				<param name="ondown" value="16"/>
+				<param name="onclick" value=""/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control> 
 
 		<control type="group">
 			<height>75</height>			
 			<visible>Control.IsVisible(16)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(16)</visible>
-			</control>
-			<control type="button" id="16">
-				<include>Options_PartyMode</include>
-				<include>Options_OnRight</include>
-				<onup>14</onup>
-				<ondown>9124</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="16"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="16"/>
+				<param name="texture" value="../extras/tiles/party.png"/>
+				<param name="label" value="$LOCALIZE[31080]"/>
+				<param name="onup" value="14"/>
+				<param name="ondown" value="9124"/>
+				<param name="onclick" value=""/>
+				<param name="visible" value="Container.Content(musicvideos)"/>			
+			</include>
+
 		</control>
 		
 		<control type="group">
 			<height>75</height>			
 			<visible>Control.IsVisible(9124)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(9124)</visible>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="9124"/>			
+			</include>
+
 			<control type="radiobutton" id="9124">
 				<include>Options_Filter</include>
 				<include>Options_OnRight</include>
 				<onup>16</onup>
 				<ondown>8</ondown>
 			</control>
+
 		</control>
 
         <!--Divider-->
@@ -274,51 +373,66 @@
 		<control type="group">
 			<height>75</height>			
 			<visible>Control.IsVisible(8)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(8)</visible>
-			</control>
-			<control type="button" id="8">
-				<include>Options_Search</include>
-				<include>Options_OnRight</include>
-				<onup>9124</onup>
-				<ondown>9110</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="8"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="8"/>
+				<param name="texture" value="../extras/tiles/search.png"/>
+				<param name="label" value="$LOCALIZE[137]"/>
+				<param name="onup" value="9124"/>
+				<param name="ondown" value="9110"/>
+				<param name="onclick" value=""/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 		
     </include>
 	
-    <!--Options for MyVideoPlaylist-->
-    <include name="Options_MyVideoPlaylist">
+    <!--Options for MyPlaylist-->
+    <include name="Options_MyPlaylist">
 
 		<control type="group">
 			<height>75</height>
 			<visible>Control.IsVisible(21)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(21)</visible>
-			</control>
-			<control type="button" id="21">
-				<include>Options_SavePlaylist</include>
-				<include>Options_OnRight</include>
-				<onup>407</onup>
-				<ondown>22</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="21"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="21"/>
+				<param name="texture" value="../extras/tiles/save.png"/>
+				<param name="label" value="$LOCALIZE[31046]"/>
+				<param name="onup" value="407"/>
+				<param name="ondown" value="22"/>
+				<param name="onclick" value=""/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 
 		<control type="group">
 			<height>75</height>
 			<visible>Control.IsVisible(22)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(22)</visible>
-			</control>
-			<control type="button" id="22">
-				<include>Options_ClearPlaylist</include>
-				<include>Options_OnRight</include>
-				<onup>21</onup>
-				<ondown>400</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="22"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="22"/>
+				<param name="texture" value="../extras/tiles/clear.png"/>
+				<param name="label" value="$LOCALIZE[31088]"/>
+				<param name="onup" value="21"/>
+				<param name="ondown" value="400"/>
+				<param name="onclick" value=""/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 		
         <!--Divider-->
@@ -330,76 +444,103 @@
  		<control type="group">
 			<height>75</height>
 			<visible>Control.IsVisible(400)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(400)</visible>
-			</control>
-			<control type="radiobutton" id="400">
-				<include>Options_ShufflePlaylist</include>
-				<include>Options_OnRight</include>
-				<onup>22</onup>
-				<ondown>401</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="400"/>			
+			</include>
+
+			<include content="Options_RadioButton">
+				<param name="button_id" value="400"/>
+				<param name="texture" value="../extras/tiles/random.png"/>
+				<param name="label" value="$LOCALIZE[31089]"/>
+				<param name="onup" value="22"/>
+				<param name="ondown" value="401"/>
+				<param name="onclick" value=""/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 
 		<control type="group">
 			<height>75</height>
 			<visible>Control.IsVisible(401)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(401)</visible>
-			</control>
-			<control type="button" id="401">
-				<include>Options_Previous</include>
-				<include>Options_OnRight</include>
-				<onup>400</onup>
-				<ondown>403</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="401"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="401"/>
+				<param name="texture" value="../extras/tiles/previous.png"/>
+				<param name="label" value="$LOCALIZE[210]"/>
+				<param name="onup" value="400"/>
+				<param name="ondown" value="403"/>
+				<param name="onclick" value="playercontrol(previous)"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 		
 		<control type="group">
 			<height>75</height>
 			<visible>Control.IsVisible(403)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(403)</visible>
-			</control>
-			<control type="togglebutton" id="403">
-				<include>Options_Play</include>
-				<include>Options_OnRight</include>
-				<onup>401</onup>
-				<ondown>406</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="403"/>			
+			</include>
+
+			<include content="Options_ToggleButton">
+				<param name="button_id" value="403"/>
+				<param name="texture" value="../extras/tiles/pause.png"/>
+				<param name="alttexture" value="../extras/tiles/play.png"/>
+				<param name="label" value="$LOCALIZE[31090]"/>
+				<param name="altlabel" value="$LOCALIZE[31091]"/>
+				<param name="onup" value="401"/>
+				<param name="ondown" value="406"/>
+				<param name="onclick" value="playercontrol(play)"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 		
 		<control type="group">
 			<height>75</height>
 			<visible>Control.IsVisible(406)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(406)</visible>
-			</control>
-			<control type="button" id="406">
-				<include>Options_Next</include>
-				<include>Options_OnRight</include>
-				<onup>403</onup>
-				<ondown>407</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="406"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="406"/>
+				<param name="texture" value="../extras/tiles/next.png"/>
+				<param name="label" value="$LOCALIZE[209]"/>
+				<param name="onup" value="403"/>
+				<param name="ondown" value="407"/>
+				<param name="onclick" value="playercontrol(next)"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 		
 		<control type="group">
 			<height>75</height>
 			<visible>Control.IsVisible(407)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(407)</visible>
-			</control>
-			<control type="button" id="407">
-				<include>Options_Repeat</include>
-				<include>Options_OnRight</include>
-				<onup>406</onup>
-				<ondown>21</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="407"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="407"/>
+				<param name="texture" value="../extras/tiles/random.png"/>
+				<param name="label" value="$LOCALIZE[31092]"/>
+				<param name="onup" value="406"/>
+				<param name="ondown" value="21"/>
+				<param name="onclick" value="playercontrol(repeat)"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 
     </include>
@@ -411,16 +552,22 @@
 		<control type="group">
 			<height>75</height>
 			<visible>Control.IsVisible(9110)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(9110)</visible>
-			</control>
-			<control type="button" id="9110">
-				<include>Options_ChangeView</include>
-				<include>Options_OnRight</include>
-				<onup>8</onup>
-				<ondown>9122</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="9110"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="9110"/>
+				<param name="texture" value="../extras/tiles/changeview.png"/>
+				<param name="label" value="$LOCALIZE[31315]"/>
+				<param name="onup" value="8"/>
+				<param name="ondown" value="9122"/>
+				<param name="onclick" value="ActivateWindow(1119)"/>
+				<param name="onclick2" value="SetFocus(9101)"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 
         <!--Divider-->
@@ -432,31 +579,41 @@
         <control type="group">
 			<height>75</height>			
 			<visible>Control.IsVisible(9122)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(9122)</visible>
-			</control>
-			<control type="button" id="9122">
-				<include>Options_SortBy</include>
-				<include>Options_OnRight</include>
-				<onup>9110</onup>
-				<ondown>4</ondown>
-			</control>
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="9122"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="9122"/>
+				<param name="texture" value="../extras/tiles/sort.png"/>
+				<param name="label" value="$LOCALIZE[31076] $INFO[Container.SortMethod]"/>
+				<param name="onup" value="9110"/>
+				<param name="ondown" value="4"/>
+				<param name="onclick" value="Container.NextSortMethod"/>
+				<param name="visible" value=""/>			
+			</include>
 		</control>
 
 		<control type="group">
 			<height>75</height>			
 			<visible>Control.IsVisible(4)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(4)</visible>
-			</control>
-			<control type="togglebutton" id="4">
-				<include>Options_SortDirection</include>
-				<include>Options_OnRight</include>
-				<onup>9122</onup>
-				<ondown>16</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="4"/>			
+			</include>
+
+			<include content="Options_ToggleButton">
+				<param name="button_id" value="4"/>
+				<param name="texture" value="../extras/tiles/ascending.png"/>
+				<param name="alttexture" value="../extras/tiles/descending.png"/>
+				<param name="label" value="$LOCALIZE[584]"/>
+				<param name="altlabel" value="$LOCALIZE[585]"/>
+				<param name="onup" value="9122"/>
+				<param name="ondown" value="16"/>
+				<param name="onclick" value=""/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 
         <!--Divider-->
@@ -467,32 +624,39 @@
         <!--Filters-->
 		<control type="group">
 			<height>75</height>			
-			<visible>Control.IsVisible(16)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(16)</visible>
-			</control>
-			<control type="button" id="16">
-				<include>Options_PartyMode</include>
-				<include>Options_OnRight</include>
-				<onup>4</onup>
-				<ondown>9124</ondown>
-			</control>
+			<visible>Control.IsVisible(16)</visible>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="16"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="16"/>
+				<param name="texture" value="../extras/tiles/party.png"/>
+				<param name="label" value="$LOCALIZE[31080]"/>
+				<param name="onup" value="4"/>
+				<param name="ondown" value="9124"/>
+				<param name="onclick" value=""/>
+				<param name="visible" value="Container.Content(musicvideos)"/>			
+			</include>
+
 		</control>
 		
 		<control type="group">
 			<height>75</height>			
 			<visible>Control.IsVisible(9124)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(9124)</visible>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="9124"/>			
+			</include>
+
 			<control type="radiobutton" id="9124">
 				<include>Options_Filter</include>
 				<include>Options_OnRight</include>
 				<onup>16</onup>
 				<ondown>8</ondown>
 			</control>
+
 		</control>
 
         <!--Divider-->
@@ -504,275 +668,21 @@
 		<control type="group">
 			<height>75</height>			
 			<visible>Control.IsVisible(8)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(8)</visible>
-			</control>
-			<control type="button" id="8">
-				<include>Options_Search</include>
-				<include>Options_OnRight</include>
-				<onup>9124</onup>
-				<ondown>9110</ondown>
-			</control>
-		</control>
 
-    </include>
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="8"/>			
+			</include>
 
-    <!--Options for MyMusicSongs-->
-    <include name="Options_MyMusicSongs">
+			<include content="Options_Button">
+				<param name="button_id" value="8"/>
+				<param name="texture" value="../extras/tiles/search.png"/>
+				<param name="label" value="$LOCALIZE[137]"/>
+				<param name="onup" value="9124"/>
+				<param name="ondown" value="9110"/>
+				<param name="onclick" value=""/>
+				<param name="visible" value=""/>			
+			</include>
 
-        <!--Views-->
-		<control type="group">
-			<height>75</height>
-			<visible>Control.IsVisible(9110)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(9110)</visible>
-			</control>
-			<control type="button" id="9110">
-				<include>Options_ChangeView</include>
-				<include>Options_OnRight</include>
-				<onup>8</onup>
-				<ondown>9122</ondown>
-			</control>
-		</control>
-
-        <!--Divider-->
-        <control type="image" id="9150">
-            <include>Common_Options_Divider</include>
-        </control>
-		
-        <!--Sort-->
-        <control type="group">
-			<height>75</height>			
-			<visible>Control.IsVisible(9122)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(9122)</visible>
-			</control>
-			<control type="button" id="9122">
-				<include>Options_SortBy</include>
-				<include>Options_OnRight</include>
-				<onup>9110</onup>
-				<ondown>4</ondown>
-			</control>
-		</control>
-
-		<control type="group">
-			<height>75</height>			
-			<visible>Control.IsVisible(4)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(4)</visible>
-			</control>
-			<control type="togglebutton" id="4">
-				<include>Options_SortDirection</include>
-				<include>Options_OnRight</include>
-				<onup>9122</onup>
-				<ondown>5</ondown>
-			</control>
-		</control>
-		
-        <!--Divider-->
-        <control type="image" id="9151">
-            <include>Common_Options_Divider</include>
-        </control>
-		
-        <!--Other-->
-		<control type="group">
-			<height>75</height>			
-			<visible>Control.IsVisible(11)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(11)</visible>
-			</control>
-			<control type="button" id="11">
-				<include>Options_RipCD</include>
-				<include>Options_OnRight</include>
-				<onup>4</onup>
-				<ondown>10</ondown>
-			</control>
-		</control>
-		
-		<control type="group">
-			<height>75</height>			
-			<visible>Control.IsVisible(10)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(10)</visible>
-			</control>
-			<control type="button" id="10">
-				<include>Options_Record</include>
-				<include>Options_OnRight</include>
-				<onup>11</onup>
-				<ondown>9</ondown>
-			</control>
-		</control>
-		
-		<control type="group">
-			<height>75</height>			
-			<visible>Control.IsVisible(9)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(9)</visible>
-			</control>
-			<control type="button" id="9">
-				<include>Options_ScantoLibrary</include>
-				<include>Options_OnRight</include>
-				<onup>10</onup>
-				<ondown>9124</ondown>
-			</control>
-		</control>
-
-        <!--Divider-->
-        <control type="image" id="9152">
-            <include>Common_Options_Divider</include>
-        </control>
-		
-        <!--Filters / Search-->
-		<control type="group">
-			<height>75</height>			
-			<visible>Control.IsVisible(9124)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(9124)</visible>
-			</control>
-			<control type="radiobutton" id="9124">
-				<include>Options_Filter</include>
-				<include>Options_OnRight</include>
-				<onup>9</onup>
-				<ondown>8</ondown>
-			</control>
-		</control>
-		
-		<control type="group">
-			<height>75</height>			
-			<visible>Control.IsVisible(8)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(8)</visible>
-			</control>
-			<control type="button" id="8">
-				<include>Options_Search</include>
-				<include>Options_OnRight</include>
-				<onup>9124</onup>
-				<ondown>9110</ondown>
-			</control>
-		</control>
-		
-    </include>
-	
-    <!--Options for MyMusicPlaylist-->
-    <include name="Options_MyMusicPlaylist">
-		<control type="group">
-			<height>75</height>
-			<visible>Control.IsVisible(21)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(21)</visible>
-			</control>
-			<control type="button" id="21">
-				<include>Options_SavePlaylist</include>
-				<include>Options_OnRight</include>
-				<onup>407</onup>
-				<ondown>22</ondown>
-			</control>
-		</control>
-
-		<control type="group">
-			<height>75</height>
-			<visible>Control.IsVisible(22)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(22)</visible>
-			</control>
-			<control type="button" id="22">
-				<include>Options_ClearPlaylist</include>
-				<include>Options_OnRight</include>
-				<onup>21</onup>
-				<ondown>400</ondown>
-			</control>
-		</control>
-		
-        <!--Divider-->
-        <control type="image" id="9150">
-            <include>Common_Options_Divider</include>
-        </control>
-		
-        <!--Controls-->
- 		<control type="group">
-			<height>75</height>
-			<visible>Control.IsVisible(400)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(400)</visible>
-			</control>
-			<control type="radiobutton" id="400">
-				<include>Options_ShufflePlaylist</include>
-				<include>Options_OnRight</include>
-				<onup>22</onup>
-				<ondown>401</ondown>
-			</control>
-		</control>
-
-		<control type="group">
-			<height>75</height>
-			<visible>Control.IsVisible(401)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(401)</visible>
-			</control>
-			<control type="button" id="401">
-				<include>Options_Previous</include>
-				<include>Options_OnRight</include>
-				<onup>400</onup>
-				<ondown>403</ondown>
-			</control>
-		</control>
-		
-		<control type="group">
-			<height>75</height>
-			<visible>Control.IsVisible(403)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(403)</visible>
-			</control>
-			<control type="togglebutton" id="403">
-				<include>Options_Play</include>
-				<include>Options_OnRight</include>
-				<onup>401</onup>
-				<ondown>406</ondown>
-			</control>
-		</control>
-		
-		<control type="group">
-			<height>75</height>
-			<visible>Control.IsVisible(406)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(406)</visible>
-			</control>
-			<control type="button" id="406">
-				<include>Options_Next</include>
-				<include>Options_OnRight</include>
-				<onup>403</onup>
-				<ondown>407</ondown>
-			</control>
-		</control>
-		
-		<control type="group">
-			<height>75</height>
-			<visible>Control.IsVisible(407)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(407)</visible>
-			</control>
-			<control type="button" id="407">
-				<include>Options_Repeat</include>
-				<include>Options_OnRight</include>
-				<onup>406</onup>
-				<ondown>21</ondown>
-			</control>
 		</control>
 
     </include>
@@ -783,88 +693,137 @@
         <!--Views-->
 		<control type="group">
 			<height>75</height>
-			<visible>Control.IsVisible(9110)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(9110)</visible>
-			</control>
-			<control type="button" id="9110">
-				<include>Options_ChangeView</include>
-				<include>Options_OnRight</include>
-				<onup>8</onup>
-				<ondown>9122</ondown>
-			</control>
+			<visible>Control.IsVisible(9110)</visible>		
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="9110"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="9110"/>
+				<param name="texture" value="../extras/tiles/changeview.png"/>
+				<param name="label" value="$LOCALIZE[31315]"/>
+				<param name="onup" value="9"/>
+				<param name="ondown" value="9111"/>
+				<param name="onclick" value="ActivateWindow(1119)"/>
+				<param name="onclick2" value="SetFocus(9101)"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 
         <!--Divider-->
         <control type="image" id="9150">
             <include>Common_Options_Divider</include>
         </control>
+
+		<control type="group">
+			<height>75</height>
+			<visible>Control.IsVisible(9111)</visible>		
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="9111"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="9111"/>
+				<param name="texture" value="../extras/tiles/fullscreen.png"/>
+				<param name="label" value="Toggle Backing"/>
+				<param name="onup" value="9"/>
+				<param name="ondown" value="9122"/>
+				<param name="onclick" value="Skin.ToggleSetting(Picture_Fullscreen)"/>
+				<param name="visible" value=""/>			
+			</include>
+
+		</control>
 		
         <!--Sort-->
 		<control type="group">
 			<height>75</height>			
 			<visible>Control.IsVisible(9122)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(9122)</visible>
-			</control>
-			<control type="button" id="9122">
-				<include>Options_SortBy</include>
-				<include>Options_OnRight</include>
-				<onup>9110</onup>
-				<ondown>4</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="9122"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="9122"/>
+				<param name="texture" value="../extras/tiles/sort.png"/>
+				<param name="label" value="$LOCALIZE[31076] $INFO[Container.SortMethod]"/>
+				<param name="onup" value="9111"/>
+				<param name="ondown" value="4"/>
+				<param name="onclick" value="Container.NextSortMethod"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 
 		<control type="group">
 			<height>75</height>			
 			<visible>Control.IsVisible(4)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(4)</visible>
-			</control>
-			<control type="togglebutton" id="4">
-				<include>Options_SortDirection</include>
-				<include>Options_OnRight</include>
-				<onup>9122</onup>
-				<ondown>6</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="4"/>			
+			</include>
+
+			<include content="Options_ToggleButton">
+				<param name="button_id" value="4"/>
+				<param name="texture" value="../extras/tiles/ascending.png"/>
+				<param name="alttexture" value="../extras/tiles/descending.png"/>
+				<param name="label" value="$LOCALIZE[584]"/>
+				<param name="altlabel" value="$LOCALIZE[585]"/>
+				<param name="onup" value="9122"/>
+				<param name="ondown" value="6"/>
+				<param name="onclick" value=""/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 		
         <!--Divider-->
         <control type="image" id="9123">
             <include>Common_Options_Divider</include>
         </control>
+
         <!--Slideshow-->
 		<control type="group">
 			<height>75</height>			
 			<visible>Control.IsVisible(6)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(6)</visible>
-			</control>
-			<control type="button" id="6">
-				<include>Options_Slideshow</include>
-				<include>Options_OnRight</include>
-				<onup>4</onup>
-				<ondown>9</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="6"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="6"/>
+				<param name="texture" value="../extras/tiles/slideshow.png"/>
+				<param name="label" value="$LOCALIZE[31081]"/>
+				<param name="onup" value="4"/>
+				<param name="ondown" value="9"/>
+				<param name="onclick" value=""/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 
 		<control type="group">
 			<height>75</height>			
 			<visible>Control.IsVisible(9)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(9)</visible>
-			</control>
-			<control type="radiobutton" id="9">
-				<include>Options_Random</include>
-				<include>Options_OnRight</include>
-				<onup>6</onup>
-				<ondown>9110</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="9"/>			
+			</include>
+
+			<include content="Options_RadioButton">
+				<param name="button_id" value="9"/>
+				<param name="texture" value="../extras/tiles/random.png"/>
+				<param name="label" value="$LOCALIZE[31082]"/>
+				<param name="onup" value="6"/>
+				<param name="ondown" value="9110"/>
+				<param name="onclick" value=""/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 
     </include>
@@ -875,46 +834,61 @@
 		<control type="group">
 			<height>75</height>
 			<visible>Control.IsVisible(31)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(31)</visible>
-			</control>
-			<control type="button" id="31">
-				<include>Options_View_EPG</include>
-				<include>Options_OnRight</include>
-				<onup>36</onup>
-				<ondown>32</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="31"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="31"/>
+				<param name="texture" value="../extras/tiles/view_epg.png"/>
+				<param name="label" value="$LOCALIZE[31084] $LOCALIZE[31263]"/>
+				<param name="onup" value="36"/>
+				<param name="ondown" value="32"/>
+				<param name="onclick" value="Container.SetViewMode(10)"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>	
 		
 		<control type="group">
 			<height>75</height>
 			<visible>Control.IsVisible(32)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(32)</visible>
-			</control>
-			<control type="button" id="32">
-				<include>Options_View_TVGuideNow</include>
-				<include>Options_OnRight</include>
-				<onup>31</onup>
-				<ondown>33</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="32"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="32"/>
+				<param name="texture" value="../extras/tiles/view_now.png"/>
+				<param name="label" value="$LOCALIZE[31084] $LOCALIZE[31264]"/>
+				<param name="onup" value="31"/>
+				<param name="ondown" value="33"/>
+				<param name="onclick" value="Container.SetViewMode(11)"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>	
 		
 		<control type="group">
 			<height>75</height>
 			<visible>Control.IsVisible(33)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(33)</visible>
-			</control>
-			<control type="button" id="33">
-				<include>Options_View_TVGuideNext</include>
-				<include>Options_OnRight</include>
-				<onup>32</onup>
-				<ondown>28</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="33"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="33"/>
+				<param name="texture" value="../extras/tiles/view_next.png"/>
+				<param name="label" value="$LOCALIZE[31084] $LOCALIZE[31265]"/>
+				<param name="onup" value="32"/>
+				<param name="ondown" value="28"/>
+				<param name="onclick" value="Container.SetViewMode(12)"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>	
 
         <!--Divider-->
@@ -924,17 +898,22 @@
 		
 		<control type="group">
 			<height>75</height>
-			<visible>Control.IsVisible(28)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(28)</visible>
-			</control>
-			<control type="button" id="28">
-				<include>Options_PVR_ChannelGroup</include>
-				<include>Options_OnRight</include>
-				<onup>33</onup>
-				<ondown>37</ondown>
-			</control>
+			<visible>Control.IsVisible(28)</visible>	
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="28"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="28"/>
+				<param name="texture" value="../extras/tiles/channelgroup.png"/>
+				<param name="label" value=""/>
+				<param name="onup" value="33"/>
+				<param name="ondown" value="38"/>
+				<param name="onclick" value=""/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>	
 
         <!--Divider-->
@@ -945,98 +924,108 @@
         <!--Other Options-->
 		<control type="group">
 			<height>75</height>
-			<visible>Control.IsVisible(37)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(37)</visible>
-			</control>
-			<control type="button" id="37">
-				<include>Options_PVR_Guide</include>
-				<include>Options_OnRight</include>
-				<onup>28</onup>
-				<ondown>38</ondown>
-			</control>
-		</control>	
-
-		<control type="group">
-			<height>75</height>
 			<visible>Control.IsVisible(38)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(38)</visible>
-			</control>
-			<control type="button" id="38">
-				<include>Options_PVR_Channels</include>
-				<include>Options_OnRight</include>
-				<onup>37</onup>
-				<ondown>34</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="38"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="38"/>
+				<param name="texture" value="../extras/tiles/TVchannels.png"/>
+				<param name="label" value="$LOCALIZE[19019]"/>
+				<param name="onup" value="28"/>
+				<param name="ondown" value="34"/>
+				<param name="onclick" value="ActivateWindow(tvchannels)"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>	
 		
 		<control type="group">
 			<height>75</height>
 			<visible>Control.IsVisible(34)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(34)</visible>
-			</control>
-			<control type="button" id="34">
-				<include>Options_PVR_Recordings</include>
-				<include>Options_OnRight</include>
-				<onup>38</onup>
-				<ondown>35</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="34"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="34"/>
+				<param name="texture" value="../extras/tiles/recordings.png"/>
+				<param name="label" value="$LOCALIZE[19163]"/>
+				<param name="onup" value="38"/>
+				<param name="ondown" value="35"/>
+				<param name="onclick" value="ActivateWindow(tvrecordings)"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>	
 		
 		<control type="group">
 			<height>75</height>
 			<visible>Control.IsVisible(35)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(35)</visible>
-			</control>
-			<control type="button" id="35">
-				<include>Options_PVR_Timers</include>
-				<include>Options_OnRight</include>
-				<onup>34</onup>
-				<ondown>36</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="35"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="35"/>
+				<param name="texture" value="../extras/tiles/timer.png"/>
+				<param name="label" value="$LOCALIZE[19040]"/>
+				<param name="onup" value="34"/>
+				<param name="ondown" value="36"/>
+				<param name="onclick" value="ActivateWindow(tvtimers)"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>	
 		
 		<control type="group">
 			<height>75</height>
 			<visible>Control.IsVisible(36)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(36)</visible>
-			</control>
-			<control type="togglebutton" id="36">
-				<include>Options_PVR_Search</include>
-				<include>Options_OnRight</include>
-				<onup>35</onup>
-				<ondown>31</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="36"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="36"/>
+				<param name="texture" value="../extras/tiles/search.png"/>
+				<param name="label" value="$LOCALIZE[137]"/>
+				<param name="onup" value="35"/>
+				<param name="ondown" value="31"/>
+				<param name="onclick" value="ActivateWindow(tvsearch)"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>	
 
     </include>
 	
-    <!--Options for MyPVRChannels-->
+    <!--NOT DONE Options for MyPVRChannels-->
     <include name="Options_MyPVRChannels">
 
 		<control type="group">
 			<height>75</height>
-			<visible>Control.IsVisible(28)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(28)</visible>
-			</control>
-			<control type="button" id="28">
-				<include>Options_PVR_ChannelGroup</include>
-				<include>Options_OnRight</include>
-				<onup>36</onup>
-				<ondown>37</ondown>
-			</control>
-		</control>
+			<visible>Control.IsVisible(28)</visible>	
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="28"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="28"/>
+				<param name="texture" value="../extras/tiles/channelgroup.png"/>
+				<param name="label" value=""/>
+				<param name="onup" value="36"/>
+				<param name="ondown" value="37"/>
+				<param name="onclick" value=""/>
+				<param name="visible" value=""/>			
+			</include>
+
+		</control>	
 
         <!--Divider-->
         <control type="image" id="9151">
@@ -1047,158 +1036,190 @@
 		<control type="group">
 			<height>75</height>
 			<visible>Control.IsVisible(37)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(37)</visible>
-			</control>
-			<control type="button" id="37">
-				<include>Options_PVR_Guide</include>
-				<include>Options_OnRight</include>
-				<onup>28</onup>
-				<ondown>38</ondown>
-			</control>
-		</control>	
 
-		<control type="group">
-			<height>75</height>
-			<visible>Control.IsVisible(38)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(38)</visible>
-			</control>
-			<control type="button" id="38">
-				<include>Options_PVR_Channels</include>
-				<include>Options_OnRight</include>
-				<onup>37</onup>
-				<ondown>34</ondown>
-			</control>
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="37"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="37"/>
+				<param name="texture" value="../extras/tiles/TVguide.png"/>
+				<param name="label" value="$LOCALIZE[22020]"/>
+				<param name="onup" value="28"/>
+				<param name="ondown" value="34"/>
+				<param name="onclick" value="ActivateWindow(tvguide)"/>
+				<param name="onclick2" value="SetFocus(10)"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>	
 		
 		<control type="group">
 			<height>75</height>
 			<visible>Control.IsVisible(34)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(34)</visible>
-			</control>
-			<control type="button" id="34">
-				<include>Options_PVR_Recordings</include>
-				<include>Options_OnRight</include>
-				<onup>38</onup>
-				<ondown>35</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="34"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="34"/>
+				<param name="texture" value="../extras/tiles/recordings.png"/>
+				<param name="label" value="$LOCALIZE[19163]"/>
+				<param name="onup" value="37"/>
+				<param name="ondown" value="35"/>
+				<param name="onclick" value="ActivateWindow(tvrecordings)"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>	
 		
 		<control type="group">
 			<height>75</height>
 			<visible>Control.IsVisible(35)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(35)</visible>
-			</control>
-			<control type="button" id="35">
-				<include>Options_PVR_Timers</include>
-				<include>Options_OnRight</include>
-				<onup>34</onup>
-				<ondown>36</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="35"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="35"/>
+				<param name="texture" value="../extras/tiles/timer.png"/>
+				<param name="label" value="$LOCALIZE[19040]"/>
+				<param name="onup" value="34"/>
+				<param name="ondown" value="36"/>
+				<param name="onclick" value="ActivateWindow(tvtimers)"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>	
 		
 		<control type="group">
 			<height>75</height>
 			<visible>Control.IsVisible(36)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(36)</visible>
-			</control>
-			<control type="togglebutton" id="36">
-				<include>Options_PVR_Search</include>
-				<include>Options_OnRight</include>
-				<onup>35</onup>
-				<ondown>28</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="36"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="36"/>
+				<param name="texture" value="../extras/tiles/search.png"/>
+				<param name="label" value="$LOCALIZE[137]"/>
+				<param name="onup" value="35"/>
+				<param name="ondown" value="28"/>
+				<param name="onclick" value="ActivateWindow(tvsearch)"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>	
 		
     </include>
 	
-    <!--Options for MyPVROther-->
+    <!--NOT DONE Options for MyPVROther-->
     <include name="Options_MyPVROther">
 
 		<!--Other Options-->
 		<control type="group">
 			<height>75</height>
 			<visible>Control.IsVisible(37)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(37)</visible>
-			</control>
-			<control type="button" id="37">
-				<include>Options_PVR_Guide</include>
-				<include>Options_OnRight</include>
-				<onup>36</onup>
-				<ondown>38</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="37"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="37"/>
+				<param name="texture" value="../extras/tiles/TVguide.png"/>
+				<param name="label" value="$LOCALIZE[22020]"/>
+				<param name="onup" value="36"/>
+				<param name="ondown" value="38"/>
+				<param name="onclick" value="ActivateWindow(tvguide)"/>
+				<param name="onclick2" value="SetFocus(10)"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>	
 
 		<control type="group">
 			<height>75</height>
 			<visible>Control.IsVisible(38)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(38)</visible>
-			</control>
-			<control type="button" id="38">
-				<include>Options_PVR_Channels</include>
-				<include>Options_OnRight</include>
-				<onup>37</onup>
-				<ondown>34</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="38"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="38"/>
+				<param name="texture" value="../extras/tiles/TVchannels.png"/>
+				<param name="label" value="$LOCALIZE[19019]"/>
+				<param name="onup" value="37"/>
+				<param name="ondown" value="34"/>
+				<param name="onclick" value="ActivateWindow(tvchannels)"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>	
 		
 		<control type="group">
 			<height>75</height>
-			<visible>Control.IsVisible(34)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(34)</visible>
-			</control>
-			<control type="button" id="34">
-				<include>Options_PVR_Recordings</include>
-				<include>Options_OnRight</include>
-				<onup>38</onup>
-				<ondown>35</ondown>
-			</control>
+			<visible>Control.IsVisible(34) + !Window.IsVisible(MyPVRRecordings.xml)</visible>			
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="34"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="34"/>
+				<param name="texture" value="../extras/tiles/recordings.png"/>
+				<param name="label" value="$LOCALIZE[19163]"/>
+				<param name="onup" value="38"/>
+				<param name="ondown" value="35"/>
+				<param name="onclick" value="ActivateWindow(tvrecordings)"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>	
 		
 		<control type="group">
 			<height>75</height>
-			<visible>Control.IsVisible(35)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(35)</visible>
-			</control>
-			<control type="button" id="35">
-				<include>Options_PVR_Timers</include>
-				<include>Options_OnRight</include>
-				<onup>34</onup>
-				<ondown>36</ondown>
-			</control>
+			<visible>Control.IsVisible(35) + !Window.IsVisible(MyPVRTimers.xml)</visible>			
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="35"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="35"/>
+				<param name="texture" value="../extras/tiles/timer.png"/>
+				<param name="label" value="$LOCALIZE[19040]"/>
+				<param name="onup" value="34"/>
+				<param name="ondown" value="36"/>
+				<param name="onclick" value="ActivateWindow(tvtimers)"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>	
 		
 		<control type="group">
 			<height>75</height>
-			<visible>Control.IsVisible(36)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(36)</visible>
-			</control>
-			<control type="togglebutton" id="36">
-				<include>Options_PVR_Search</include>
-				<include>Options_OnRight</include>
-				<onup>35</onup>
-				<ondown>37</ondown>
-			</control>
-		</control>
+			<visible>Control.IsVisible(36) + !Window.IsVisible(MyPVRSearch.xml)</visible>			
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="36"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="36"/>
+				<param name="texture" value="../extras/tiles/search.png"/>
+				<param name="label" value="$LOCALIZE[137]"/>
+				<param name="onup" value="35"/>
+				<param name="ondown" value="37"/>
+				<param name="onclick" value="ActivateWindow(tvsearch)"/>
+				<param name="visible" value=""/>			
+			</include>
+
+		</control>	
 
     </include>
 	
@@ -1208,17 +1229,23 @@
         <!--Views-->
 		<control type="group">
 			<height>75</height>
-			<visible>Control.IsVisible(9110)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(9110)</visible>
-			</control>
-			<control type="button" id="9110">
-				<include>Options_ChangeView</include>
-				<include>Options_OnRight</include>
-				<onup>7</onup>
-				<ondown>9122</ondown>
-			</control>
+			<visible>Control.IsVisible(9110)</visible>	
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="9110"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="9110"/>
+				<param name="texture" value="../extras/tiles/changeview.png"/>
+				<param name="label" value="$LOCALIZE[31315]"/>
+				<param name="onup" value="7"/>
+				<param name="ondown" value="9122"/>
+				<param name="onclick" value="ActivateWindow(1119)"/>
+				<param name="onclick2" value="SetFocus(9101)"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 		
         <!--Divider-->
@@ -1230,31 +1257,43 @@
 		<control type="group">
 			<height>75</height>			
 			<visible>Control.IsVisible(9122)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(9122)</visible>
-			</control>
-			<control type="button" id="9122">
-				<include>Options_SortBy</include>
-				<include>Options_OnRight</include>
-				<onup>9110</onup>
-				<ondown>4</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="9122"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="9122"/>
+				<param name="texture" value="../extras/tiles/sort.png"/>
+				<param name="label" value="$LOCALIZE[31076] $INFO[Container.SortMethod]"/>
+				<param name="onup" value="9110"/>
+				<param name="ondown" value="4"/>
+				<param name="onclick" value="Container.NextSortMethod"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 
 		<control type="group">
 			<height>75</height>			
 			<visible>Control.IsVisible(4)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(4)</visible>
-			</control>
-			<control type="togglebutton" id="4">
-				<include>Options_SortDirection</include>
-				<include>Options_OnRight</include>
-				<onup>9122</onup>
-				<ondown>9124</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="4"/>			
+			</include>
+
+			<include content="Options_ToggleButton">
+				<param name="button_id" value="4"/>
+				<param name="texture" value="../extras/tiles/ascending.png"/>
+				<param name="alttexture" value="../extras/tiles/descending.png"/>
+				<param name="label" value="$LOCALIZE[584]"/>
+				<param name="altlabel" value="$LOCALIZE[585]"/>
+				<param name="onup" value="9122"/>
+				<param name="ondown" value="9124"/>
+				<param name="onclick" value=""/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 
         <!--Divider-->
@@ -1262,65 +1301,83 @@
             <include>Common_Options_Divider</include>
         </control>
 		
-        <!--Slideshow-->
+        <!--Others-->
+
 		<control type="group">
 			<height>75</height>			
 			<visible>Control.IsVisible(9124)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(9124)</visible>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="9124"/>			
+			</include>
+
 			<control type="radiobutton" id="9124">
 				<include>Options_Filter</include>
 				<include>Options_OnRight</include>
 				<onup>4</onup>
 				<ondown>5</ondown>
 			</control>
+
 		</control>
-		
-		<control type="group">
-			<height>75</height>			
-			<visible>Control.IsVisible(5)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(5)</visible>
-			</control>
-			<control type="radiobutton" id="5">
-				<include>Options_AutoUpdate</include>
-				<include>Options_OnRight</include>
-				<onup>9124</onup>
-				<ondown>6</ondown>
-			</control>
+
+ 		<control type="group">
+			<height>75</height>
+			<visible>Control.IsVisible(5)</visible>			
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="5"/>			
+			</include>
+
+			<include content="Options_RadioButton">
+				<param name="button_id" value="5"/>
+				<param name="texture" value="../extras/tiles/autoupdate.png"/>
+				<param name="label" value="$LOCALIZE[31083]"/>
+				<param name="onup" value="9124"/>
+				<param name="ondown" value="6"/>
+				<param name="onclick" value=""/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
-		
-		<control type="group">
-			<height>75</height>			
-			<visible>Control.IsVisible(6)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(6)</visible>
-			</control>
-			<control type="radiobutton" id="6">
-				<include>Options_Notifications</include>
-				<include>Options_OnRight</include>
-				<onup>5</onup>
-				<ondown>7</ondown>
-			</control>
+
+ 		<control type="group">
+			<height>75</height>
+			<visible>Control.IsVisible(6)</visible>			
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="6"/>			
+			</include>
+
+			<include content="Options_RadioButton">
+				<param name="button_id" value="6"/>
+				<param name="texture" value="../extras/tiles/notify.png"/>
+				<param name="label" value="$LOCALIZE[31085]"/>
+				<param name="onup" value="5"/>
+				<param name="ondown" value="7"/>
+				<param name="onclick" value=""/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
-		
-		<control type="group">
-			<height>75</height>			
-			<visible>Control.IsVisible(7)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(7)</visible>
-			</control>
-			<control type="radiobutton" id="7">
-				<include>Options_Language</include>
-				<include>Options_OnRight</include>
-				<onup>6</onup>
-				<ondown>9110</ondown>
-			</control>
+
+ 		<control type="group">
+			<height>75</height>
+			<visible>Control.IsVisible(7)</visible>			
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="7"/>			
+			</include>
+
+			<include content="Options_RadioButton">
+				<param name="button_id" value="7"/>
+				<param name="texture" value="../extras/tiles/language.png"/>
+				<param name="label" value="$LOCALIZE[31086]"/>
+				<param name="onup" value="6"/>
+				<param name="ondown" value="9110"/>
+				<param name="onclick" value=""/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 		
     </include>
@@ -1331,17 +1388,23 @@
 		<!--Views-->
 		<control type="group">
 			<height>75</height>
-			<visible>Control.IsVisible(9110)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(9110)</visible>
-			</control>
-			<control type="button" id="9110">
-				<include>Options_ChangeView</include>
-				<include>Options_OnRight</include>
-				<onup>9123</onup>
-				<ondown>9122</ondown>
-			</control>
+			<visible>Control.IsVisible(9110)</visible>	
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="9110"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="9110"/>
+				<param name="texture" value="../extras/tiles/changeview.png"/>
+				<param name="label" value="$LOCALIZE[31315]"/>
+				<param name="onup" value="9123"/>
+				<param name="ondown" value="9122"/>
+				<param name="onclick" value="ActivateWindow(1119)"/>
+				<param name="onclick2" value="SetFocus(9101)"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 
         <!--Divider-->
@@ -1353,31 +1416,43 @@
 		<control type="group">
 			<height>75</height>			
 			<visible>Control.IsVisible(9122)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(9122)</visible>
-			</control>
-			<control type="button" id="9122">
-				<include>Options_SortBy</include>
-				<include>Options_OnRight</include>
-				<onup>9110</onup>
-				<ondown>4</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="9122"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="9122"/>
+				<param name="texture" value="../extras/tiles/sort.png"/>
+				<param name="label" value="$LOCALIZE[31076] $INFO[Container.SortMethod]"/>
+				<param name="onup" value="9110"/>
+				<param name="ondown" value="4"/>
+				<param name="onclick" value="Container.NextSortMethod"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 
 		<control type="group">
 			<height>75</height>			
 			<visible>Control.IsVisible(4)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(4)</visible>
-			</control>
-			<control type="togglebutton" id="4">
-				<include>Options_SortDirection</include>
-				<include>Options_OnRight</include>
-				<onup>9122</onup>
-				<ondown>9123</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="4"/>			
+			</include>
+
+			<include content="Options_ToggleButton">
+				<param name="button_id" value="4"/>
+				<param name="texture" value="../extras/tiles/ascending.png"/>
+				<param name="alttexture" value="../extras/tiles/descending.png"/>
+				<param name="label" value="$LOCALIZE[584]"/>
+				<param name="altlabel" value="$LOCALIZE[585]"/>
+				<param name="onup" value="9122"/>
+				<param name="ondown" value="9123"/>
+				<param name="onclick" value=""/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 
         <!--Divider-->
@@ -1385,20 +1460,22 @@
             <include>Common_Options_Divider</include>
         </control>
 		
-        <!--Slideshow-->
+        <!--Filter-->
 		<control type="group">
 			<height>75</height>			
 			<visible>Control.IsVisible(9123)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(9123)</visible>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="9123"/>			
+			</include>
+
 			<control type="radiobutton" id="9123">
 				<include>Options_Filter</include>
 				<include>Options_OnRight</include>
 				<onup>4</onup>
 				<ondown>9110</ondown>
 			</control>
+
 		</control>
 
     </include>
@@ -1410,16 +1487,21 @@
 		<control type="group">
 			<height>75</height>			
 			<visible>Control.IsVisible(300)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(300)</visible>
-			</control>
-			<control type="button" id="300">
-				<include>Options_Location</include>
-				<include>Options_OnRight</include>
-				<onup>4</onup>
-				<ondown>2</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="300"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="300"/>
+				<param name="texture" value="../extras/tiles/location.png"/>
+				<param name="label" value="$LOCALIZE[31093]"/>
+				<param name="onup" value="4"/>
+				<param name="ondown" value="2"/>
+				<param name="onclick" value="Weather.LocationNext"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 
         <!--Divider-->
@@ -1431,31 +1513,41 @@
 		<control type="group">
 			<height>75</height>			
 			<visible>Control.IsVisible(2)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(2)</visible>
-			</control>
-			<control type="button" id="2">
-				<include>Options_Refresh</include>
-				<include>Options_OnRight</include>
-				<onup>300</onup>
-				<ondown>4</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="2"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="2"/>
+				<param name="texture" value="../extras/tiles/refresh.png"/>
+				<param name="label" value="$LOCALIZE[31094]"/>
+				<param name="onup" value="300"/>
+				<param name="ondown" value="4"/>
+				<param name="onclick" value=""/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 
 		<control type="group">
 			<height>75</height>			
 			<visible>Control.IsVisible(4)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(4)</visible>
-			</control>
-			<control type="button" id="4">
-				<include>Options_Settings</include>
-				<include>Options_OnRight</include>
-				<onup>2</onup>
-				<ondown>300</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="4"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="4"/>
+				<param name="texture" value="../extras/tiles/settings.png"/>
+				<param name="label" value="$LOCALIZE[5]"/>
+				<param name="onup" value="2"/>
+				<param name="ondown" value="300"/>
+				<param name="onclick" value="ActivateWindow(WeatherSettings,return)"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 
     </include>
@@ -1463,47 +1555,51 @@
     <!--Options for NextAired-->
     <include name="Options_NextAired">
 
-		<!--Views-->
+		<!--Settings-->
 		<control type="group">
 			<height>75</height>			
 			<visible>Control.IsVisible(8)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(8)</visible>
-			</control>
-			<control type="button" id="8">
-				<include>Common_Settings_Button</include>
-				<texturefocus>contextmenu/settingsFO.png</texturefocus>
-				<texturenofocus>contextmenu/settingsNF.png</texturenofocus>
-				<include>Options_OnRight</include>
-				<label>5</label>
-				<onup>9</onup>
-				<ondown>9</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="8"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="8"/>
+				<param name="texture" value="../extras/tiles/settings.png"/>
+				<param name="label" value="$LOCALIZE[5]"/>
+				<param name="onup" value="9"/>
+				<param name="ondown" value="9"/>
+				<param name="onclick" value=""/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 		
         <!--Divider-->
-        <control type="image" id="9150">
+        <control type="image">
             <include>Common_Options_Divider</include>
         </control>
-		
-        <!--Sort-->
+
+        <!--Refresh-->
 		<control type="group">
 			<height>75</height>			
 			<visible>Control.IsVisible(9)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(9)</visible>
-			</control>
-			<control type="button" id="9">
-				<include>Common_Settings_Button</include>
-				<texturefocus>contextmenu/refreshFO.png</texturefocus>
-				<texturenofocus>contextmenu/refreshNF.png</texturenofocus>
-				<include>Options_OnRight</include>
-				<label>31282</label>
-				<onup>8</onup>
-				<ondown>8</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="9"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="9"/>
+				<param name="texture" value="../extras/tiles/refresh.png"/>
+				<param name="label" value="$LOCALIZE[31282]"/>
+				<param name="onup" value="8"/>
+				<param name="ondown" value="8"/>
+				<param name="onclick" value="RunScript(script.tv.show.next.aired,force=True)"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 		
     </include>
@@ -1514,61 +1610,75 @@
         <!--Views-->
 		<control type="group">
 			<height>75</height>
-			<visible>Control.IsVisible(9110)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(9110)</visible>
-			</control>
-			<control type="button" id="9110">
-				<include>Options_ChangeView</include>
-				<include>Options_OnRight</include>
-				<onup>4001</onup>
-				<ondown>4001</ondown>
-			</control>
+			<visible>Control.IsVisible(9110)</visible>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="9110"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="9110"/>
+				<param name="texture" value="../extras/tiles/changeview.png"/>
+				<param name="label" value="$LOCALIZE[31315]"/>
+				<param name="onup" value="4001"/>
+				<param name="ondown" value="4001"/>
+				<param name="onclick" value="ActivateWindow(1119)"/>
+				<param name="onclick2" value="SetFocus(9101)"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 
         <!--Divider-->
         <control type="image" id="9150">
             <include>Common_Options_Divider</include>
         </control>
-        <!--Sort-->
+
+        <!--Filter-->
 		<control type="group">
 			<height>75</height>			
 			<visible>Control.IsVisible(4001)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(4001)</visible>
-			</control>
-			<control type="button" id="4001">
-				<include>Common_Settings_Button</include>
-				<texturefocus>contextmenu/filterFO.png</texturefocus>
-				<texturenofocus>contextmenu/filterNF.png</texturenofocus>
-				<include>Options_OnRight</include>
-				<label>587</label>
-				<onup>9110</onup>
-				<ondown>9110</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="4001"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="4001"/>
+				<param name="texture" value="../extras/tiles/filter.png"/>
+				<param name="label" value="$LOCALIZE[587]"/>
+				<param name="onup" value="9110"/>
+				<param name="ondown" value="9110"/>
+				<param name="onclick" value=""/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 
     </include>
 
-	    <!--Options for EventLog-->
+	<!--Options for EventLog-->
     <include name="Options_EventLog">
 	
-         <!--Views-->
 		<control type="group">
 			<height>75</height>
 			<visible>Control.IsVisible(9110)</visible>			
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(9110)</visible>
-			</control>
-			<control type="button" id="9110">
-				<include>Options_ChangeView</include>
-				<include>Options_OnRight</include>
-				<onup>8</onup>
-				<ondown>9122</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="9110"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="9110"/>
+				<param name="texture" value="../extras/tiles/changeview.png"/>
+				<param name="label" value="$LOCALIZE[31315]"/>
+				<param name="onup" value="8"/>
+				<param name="ondown" value="9122"/>
+				<param name="onclick" value="ActivateWindow(1119)"/>
+				<param name="onclick2" value="SetFocus(9101)"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 
         <!--Divider-->
@@ -1580,31 +1690,43 @@
 		<control type="group">
 			<height>75</height>			
 			<visible>Control.IsVisible(9122)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(9122)</visible>
-			</control>
-			<control type="button" id="9122">
-				<include>Options_SortBy</include>
-				<include>Options_OnRight</include>
-				<onup>9110</onup>
-				<ondown>4</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="9122"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="9122"/>
+				<param name="texture" value="../extras/tiles/sort.png"/>
+				<param name="label" value="$LOCALIZE[31076] $INFO[Container.SortMethod]"/>
+				<param name="onup" value="9110"/>
+				<param name="ondown" value="4"/>
+				<param name="onclick" value="Container.NextSortMethod"/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 
 		<control type="group">
 			<height>75</height>			
 			<visible>Control.IsVisible(4)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(4)</visible>
-			</control>
-			<control type="togglebutton" id="4">
-				<include>Options_SortDirection</include>
-				<include>Options_OnRight</include>
-				<onup>9122</onup>
-				<ondown>21</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="4"/>			
+			</include>
+
+			<include content="Options_ToggleButton">
+				<param name="button_id" value="4"/>
+				<param name="texture" value="../extras/tiles/ascending.png"/>
+				<param name="alttexture" value="../extras/tiles/descending.png"/>
+				<param name="label" value="$LOCALIZE[584]"/>
+				<param name="altlabel" value="$LOCALIZE[585]"/>
+				<param name="onup" value="9122"/>
+				<param name="ondown" value="21"/>
+				<param name="onclick" value=""/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 		
         <!--Divider-->
@@ -1616,484 +1738,66 @@
 		<control type="group">
 			<height>75</height>			
 			<visible>Control.IsVisible(21)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(21)</visible>
-			</control>
-			<control type="button" id="21">
-				<include>Options_LogLevel</include>
-				<include>Options_OnRight</include>
-				<onup>4</onup>
-				<ondown>22</ondown>
-			</control>
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="21"/>			
+			</include>
+
+			<include content="Options_Button">
+				<param name="button_id" value="21"/>
+				<param name="texture" value="../extras/tiles/loglevel.png"/>
+				<param name="label" value=""/>
+				<param name="onup" value="4"/>
+				<param name="ondown" value="22"/>
+				<param name="onclick" value=""/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 
 		<!-- Current Level -->
-		<control type="group">
-			<height>75</height>			
-			<visible>Control.IsVisible(22)</visible>	
-			<control type="image">
-				<include>Common_Settings_Button_Backing</include>
-				<visible>Control.HasFocus(22)</visible>
-			</control>
-			<control type="radiobutton" id="22">
-				<include>Options_CurrentLevel</include>
-				<include>Options_OnRight</include>
-				<onup>21</onup>
-				<ondown>9110</ondown>
-			</control>
+ 		<control type="group">
+			<height>75</height>
+			<visible>Control.IsVisible(22)</visible>			
+
+			<include content="Common_Settings_Button_Backing">
+				<param name="visible" value="22"/>			
+			</include>
+
+			<include content="Options_RadioButton">
+				<param name="button_id" value="22"/>
+				<param name="texture" value="../extras/tiles/higher.png"/>
+				<param name="label" value="$LOCALIZE[31089]"/>
+				<param name="onup" value="21"/>
+				<param name="ondown" value="9110"/>
+				<param name="onclick" value=""/>
+				<param name="visible" value=""/>			
+			</include>
+
 		</control>
 
     </include>
-	
 
-    <!--Options Buttons- Views-->
-    <include name="Options_View_Album">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/view_album_FO.png</texturefocus>
-        <texturenofocus>buttonmenu/view_album_NF.png</texturenofocus>
-        <label>$LOCALIZE[31084] $LOCALIZE[558]</label>
-        <onclick>Container.SetViewMode(58)</onclick>
-        <visible>Container.Content(songs)</visible>
-    </include>
-    <include name="Options_View_Banner">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/view_banner_FO.png</texturefocus>
-        <texturenofocus>buttonmenu/view_banner_NF.png</texturenofocus>
-        <label>$LOCALIZE[31084] $LOCALIZE[31069]</label>
-        <onclick>Container.SetViewMode(590)</onclick>
-        <visible>Container.Content(tvshows)</visible>
-    </include>
-    <include name="Options_View_Dialog">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/view_dialog_FO.png</texturefocus>
-        <texturenofocus>buttonmenu/view_dialog_NF.png</texturenofocus>
-        <label>$LOCALIZE[31084] $LOCALIZE[31070]</label>
-        <onclick>Container.SetViewMode(53)</onclick>
-        <visible>Container.Content(songs) | Container.Content(episodes)</visible>
-    </include>
-    <include name="Options_View_Fanart">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/view_fanart_FO.png</texturefocus>
-        <texturenofocus>buttonmenu/view_fanart_NF.png</texturenofocus>
-        <label>$LOCALIZE[31084] $LOCALIZE[20445]</label>
-        <onclick>Container.SetViewMode(51)</onclick>
-        <onclick>Dialog.Close(1119)</onclick>
-        <visible>!Container.Content(addons)</visible>
-		<visible>!Window.IsActive(script-Rom_Collection_Browser-main.xml)</visible>
-		<visible>!Window.IsActive(EventLog.xml)</visible>
-    </include>
-    <include name="Options_View_Genre">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/view_panel_FO.png</texturefocus>
-        <texturenofocus>buttonmenu/view_panel_NF.png</texturenofocus>
-        <label>$LOCALIZE[31084] $LOCALIZE[31073]</label>
-        <onclick>Container.SetViewMode(56)</onclick>
-        <visible>Container.Content(genres)</visible>
-    </include>
-    <include name="Options_View_List">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/view_list_FO.png</texturefocus>
-        <texturenofocus>buttonmenu/view_list_NF.png</texturenofocus>
-        <label>$LOCALIZE[31084] $LOCALIZE[535]</label>
-        <onclick>Container.SetViewMode(50)</onclick>
-		<visible>!Window.IsActive(script-Rom_Collection_Browser-main.xml)</visible>
-    </include>
-    <include name="Options_View_Logo">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/view_logo_FO.png</texturefocus>
-        <texturenofocus>buttonmenu/view_logo_NF.png</texturenofocus>
-        <label>$LOCALIZE[31084] $LOCALIZE[31068]</label>
-        <onclick>Container.SetViewMode(58)</onclick>
-        <visible>Container.Content(tvshows)</visible>
-    </include>
-    <include name="Options_View_Panel">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/view_panel_FO.png</texturefocus>
-        <texturenofocus>buttonmenu/view_panel_NF.png</texturenofocus>
-        <label>$LOCALIZE[31084] $LOCALIZE[31073]</label>
-        <onclick>Container.SetViewMode(54)</onclick>
-        <visible>Container.Content(tvshows) | Container.Content(seasons) | Container.Content(movies) | Container.Content(albums) | Container.Content(artists)</visible>
-    </include>
-    <include name="Options_View_Photo">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/view_photo_FO.png</texturefocus>
-        <texturenofocus>buttonmenu/view_photo_NF.png</texturenofocus>
-        <label>$LOCALIZE[31084] $LOCALIZE[31071]</label>
-        <onclick>Container.SetViewMode(55)</onclick>
-		<visible>Window.IsActive(pictures)</visible>
-    </include>
-    <include name="Options_View_Showcase">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/view_showcase_FO.png</texturefocus>
-        <texturenofocus>buttonmenu/view_showcase_NF.png</texturenofocus>
-        <label>$LOCALIZE[31084] $LOCALIZE[31072]</label>
-        <onclick>Container.SetViewMode(57)</onclick>
-        <visible>Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists) | Container.Content(albums)</visible>
-    </include>
-    <include name="Options_View_Thumbnail">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/view_thumb_FO.png</texturefocus>
-        <texturenofocus>buttonmenu/view_thumb_NF.png</texturenofocus>
-        <label>$LOCALIZE[31084] $LOCALIZE[31244]</label>
-        <onclick>Container.SetViewMode(591)</onclick>
-        <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(artists)</visible>
-    </include>
-    <include name="Options_View_Thumbnail_Album">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/view_thumb_FO.png</texturefocus>
-        <texturenofocus>buttonmenu/view_thumb_NF.png</texturenofocus>
-        <label>$LOCALIZE[31084] $LOCALIZE[31244]</label>
-        <onclick>Container.SetViewMode(592)</onclick>
-        <visible>Container.Content(albums) | Container.Content(files) | Container.Content(addons) | StringCompare(Window.Property(xmlfile),MyPrograms.xml)</visible>
-    </include>
-    <include name="Options_View_Tile">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/view_tile_FO.png</texturefocus>
-        <texturenofocus>buttonmenu/view_tile_NF.png</texturenofocus>
-        <label>$LOCALIZE[31084] $LOCALIZE[31074]</label>
-        <onclick>Container.SetViewMode(55)</onclick>
-        <visible>Container.Content(musicvideos) | Container.Content(files) | Container.Content(artists) | Container.Content(albums) | Container.Content(addons) | StringCompare(Window.Property(xmlfile),MyPrograms.xml)</visible>
-    </include>
-    <include name="Options_View_RCB_Thumbnail">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/view_thumb_FO.png</texturefocus>
-        <texturenofocus>buttonmenu/view_thumb_NF.png</texturenofocus>
-        <label>$LOCALIZE[31084] $LOCALIZE[31244]</label>
-        <onclick>Container.SetViewMode(50)</onclick>
-		<visible>Window.IsActive(script-Rom_Collection_Browser-main.xml)</visible>
-    </include>
-    <include name="Options_View_RCB_Fanart">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/view_fanart_FO.png</texturefocus>
-        <texturenofocus>buttonmenu/view_fanart_NF.png</texturenofocus>
-        <label>$LOCALIZE[31084] $LOCALIZE[20445]</label>
-        <onclick>Container.SetViewMode(52)</onclick>
-		<visible>Window.IsActive(script-Rom_Collection_Browser-main.xml)</visible>
-    </include>
-    <include name="Options_View_RCB_Showcase">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/view_showcase_FO.png</texturefocus>
-        <texturenofocus>buttonmenu/view_showcase_NF.png</texturenofocus>
-        <label>$LOCALIZE[31084] $LOCALIZE[31072]</label>
-        <onclick>Container.SetViewMode(58)</onclick>
-		<visible>Window.IsActive(script-Rom_Collection_Browser-main.xml)</visible>
-    </include>
-    <!--Options Buttons- Sorting-->
-    <include name="Options_SortBy">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/sortFO.png</texturefocus>
-        <texturenofocus>buttonmenu/sortNF.png</texturenofocus>
-        <label>$LOCALIZE[31076] $INFO[Container.SortMethod]</label>
-        <onclick>Container.NextSortMethod</onclick>
-    </include>
-    <include name="Options_SortDirection">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/ascendingFO.png</texturefocus>
-        <texturenofocus>buttonmenu/ascendingNF.png</texturenofocus>
-        <alttexturefocus>buttonmenu/descendingFO.png</alttexturefocus>
-        <alttexturenofocus>buttonmenu/descendingNF.png</alttexturenofocus>
-        <label>$LOCALIZE[31077] $LOCALIZE[21430]</label>
-        <altlabel>$LOCALIZE[31077] $LOCALIZE[21431]</altlabel>
-    </include>
     <!--Options Buttons- Other-->
-    <include name="Options_Files">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/filesFO.png</texturefocus>
-        <texturenofocus>buttonmenu/filesNF.png</texturenofocus>
-        <label>$LOCALIZE[561] $LOCALIZE[456]</label>
-    </include>
-    <include name="Options_Watched">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/watchedFO.png</texturefocus>
-        <texturenofocus>buttonmenu/watchedNF.png</texturenofocus>
-        <label>$LOCALIZE[31078]</label>
-    </include>
     <include name="Options_Filter">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/filterFO.png</texturefocus>
-        <texturenofocus>buttonmenu/filterNF.png</texturenofocus>
+		<top>10</top>
+		<left>10</left>
+		<width>60</width>
+        <height>60</height>
+        <font>font40</font>
+		<textcolor>BaseMediumHigh</textcolor>
+        <focusedcolor>$VAR[Accent_100]</focusedcolor>
+        <disabledcolor>BaseMid</disabledcolor>
+        <aspectratio>scale</aspectratio>
+        <align>left</align>
+        <textoffsetx>110</textoffsetx>
+        <textwidth>360</textwidth>
+        <texturefocus>../extras/tiles/filter.png</texturefocus>
+        <texturenofocus colordiffuse="BaseMediumHigh">../extras/tiles/filter.png</texturenofocus>
         <include>Common_Settings_Radio</include>
         <label>$LOCALIZE[31079]</label>
         <onclick>SetFocus(50)</onclick>
         <onclick>Filter</onclick>
-    </include>
-    <include name="Options_PartyMode">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/partyFO.png</texturefocus>
-        <texturenofocus>buttonmenu/partyNF.png</texturenofocus>
-        <label>$LOCALIZE[31080]</label>
-        <visible>Container.Content(musicvideos) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs)</visible>
-    </include>
-    <include name="Options_Search">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/searchFO.png</texturefocus>
-        <texturenofocus>buttonmenu/searchNF.png</texturenofocus>
-        <label>$LOCALIZE[137]</label>
-    </include>
-    <include name="Options_Slideshow">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/slideshowFO.png</texturefocus>
-        <texturenofocus>buttonmenu/slideshowNF.png</texturenofocus>
-        <label>$LOCALIZE[31081]</label>
-    </include>
-    <include name="Options_Random">
-        <include>Common_Settings_Button</include>
-        <texturefocus>OSD/RandomOnFO.png</texturefocus>
-        <texturenofocus>OSD/RandomOnNF.png</texturenofocus>
-        <include>Common_Settings_Radio</include>
-        <label>$LOCALIZE[31082]</label>
-    </include>
-    <include name="Options_AutoUpdate">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/autoupdateFO.png</texturefocus>
-        <texturenofocus>buttonmenu/autoupdateNF.png</texturenofocus>
-		<include>Common_Settings_Radio</include>
-        <label>$LOCALIZE[31083]</label>
-    </include>
-    <include name="Options_Notifications">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/notifyFO.png</texturefocus>
-        <texturenofocus>buttonmenu/notifyNF.png</texturenofocus>
-        <include>Common_Settings_Radio</include>
-        <label>$LOCALIZE[31085]</label>
-    </include>
-    <include name="Options_Language">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/languageFO.png</texturefocus>
-        <texturenofocus>buttonmenu/languageNF.png</texturenofocus>
-        <include>Common_Settings_Radio</include>
-        <label>$LOCALIZE[31086]</label>
-    </include>
-    <include name="Options_SavePlaylist">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/saveFO.png</texturefocus>
-        <texturenofocus>buttonmenu/saveNF.png</texturenofocus>
-        <label>$LOCALIZE[31046]</label>
-    </include>
-    <include name="Options_ClearPlaylist">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/clearFO.png</texturefocus>
-        <texturenofocus>buttonmenu/clearNF.png</texturenofocus>
-        <label>$LOCALIZE[31088]</label>
-    </include>
-    <include name="Options_ShufflePlaylist">
-        <include>Common_Settings_Button</include>
-        <texturefocus>OSD/RandomOnFO.png</texturefocus>
-        <texturenofocus>OSD/RandomOnNF.png</texturenofocus>
-        <include>Common_Settings_Radio</include>
-        <label>$LOCALIZE[31089]</label>
-    </include>
-    <include name="Options_Previous">
-        <include>Common_Settings_Button</include>
-        <texturefocus>OSD/PrevTrackFO.png</texturefocus>
-        <texturenofocus>OSD/PrevTrackNF.png</texturenofocus>
-        <label>$LOCALIZE[210]</label>
-        <onclick>playercontrol(previous)</onclick>
-    </include>
-    <include name="Options_Next">
-        <include>Common_Settings_Button</include>
-        <texturefocus>OSD/NextTrackFO.png</texturefocus>
-        <texturenofocus>OSD/NextTrackNF.png</texturenofocus>
-        <label>$LOCALIZE[209]</label>
-        <onclick>playercontrol(next)</onclick>
-    </include>
-    <include name="Options_Play">
-        <include>Common_Settings_Button</include>
-        <texturefocus>OSD/pauseFO.png</texturefocus>
-        <texturenofocus>OSD/pauseNF.png</texturenofocus>
-        <alttexturefocus>OSD/playFO.png</alttexturefocus>
-        <alttexturenofocus>OSD/playNF.png</alttexturenofocus>
-        <label>$LOCALIZE[31090]</label>
-        <altlabel>$LOCALIZE[31091]</altlabel>
-        <onclick>playercontrol(play)</onclick>
-    </include>
-    <include name="Options_Repeat">
-        <include>Common_Settings_Button</include>
-        <texturefocus>OSD/RepeatFO.png</texturefocus>
-        <texturenofocus>OSD/RepeatNF.png</texturenofocus>
-        <label>$LOCALIZE[31092]</label>
-        <onclick>playercontrol(repeat)</onclick>
-    </include>
-    <include name="Options_Location">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/locationFO.png</texturefocus>
-        <texturenofocus>buttonmenu/locationNF.png</texturenofocus>
-        <label>$LOCALIZE[31093]</label>
-        <onclick>Weather.LocationNext</onclick>
-    </include>
-    <include name="Options_Refresh">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/refreshFO.png</texturefocus>
-        <texturenofocus>buttonmenu/refreshNF.png</texturenofocus>
-        <label>$LOCALIZE[31094]</label>
-    </include>
-    <include name="Options_Settings">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/settingsFO.png</texturefocus>
-        <texturenofocus>buttonmenu/settingsNF.png</texturenofocus>
-        <onclick>ActivateWindow(weathersettings)</onclick>
-        <label>$LOCALIZE[5]</label>
-    </include>
-    <include name="Options_RipCD">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/ripcdFO.png</texturefocus>
-        <texturenofocus>buttonmenu/ripcdNF.png</texturenofocus>
-        <label>$LOCALIZE[31095]</label>
-        <visible>Control.IsEnabled(11)</visible>
-    </include>
-    <include name="Options_Record">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/recordFO.png</texturefocus>
-        <texturenofocus>buttonmenu/recordNF.png</texturenofocus>
-        <label>$LOCALIZE[264]</label>
-        <visible>Control.IsEnabled(10)</visible>
-    </include>
-    <include name="Options_ScantoLibrary">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/scantolibraryFO.png</texturefocus>
-        <texturenofocus>buttonmenu/scantolibraryNF.png</texturenofocus>
-        <label>$LOCALIZE[31096]</label>
-    </include>
-    <include name="Options_LogLevel">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/loglevelFO.png</texturefocus>
-        <texturenofocus>buttonmenu/loglevelNF.png</texturenofocus>
-    </include>
-    <include name="Options_CurrentLevel">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/higherFO.png</texturefocus>
-        <texturenofocus>buttonmenu/higherNF.png</texturenofocus>
-        <include>Common_Settings_Radio</include>
-    </include>
-
-
-    <!--PVR-->
-    <!--PVR Views-->
-    <include name="Options_View_TVChannels">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/TVchannelsFO.png</texturefocus>
-        <texturenofocus>buttonmenu/TVchannelsNF.png</texturenofocus>
-        <label>$INFO[Window.Property(tvlist)]</label>
-        <onunfocus>SetProperty(tvlist,$LOCALIZE[19020])</onunfocus>
-    </include>
-    <include name="Options_View_RadioChannels">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/radiochannelsFO.png</texturefocus>
-        <texturenofocus>buttonmenu/radiochannelsNF.png</texturenofocus>
-        <label>$INFO[Window.Property(radiolist)]</label>
-        <onunfocus>SetProperty(radiolist,$LOCALIZE[19021])</onunfocus>
-    </include>
-    <include name="Options_View_EPG">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/view_epg_FO.png</texturefocus>
-        <texturenofocus>buttonmenu/view_epg_NF.png</texturenofocus>
-        <onclick>Container.SetViewMode(10)</onclick>
-        <onclick>SetFocus(10)</onclick>
-        <label>$LOCALIZE[31084] $LOCALIZE[31263]</label>
-    </include>
-    <include name="Options_View_TVGuideNow">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/view_now_FO.png</texturefocus>
-        <texturenofocus>buttonmenu/view_now_NF.png</texturenofocus>
-        <onclick>Container.SetViewMode(11)</onclick>
-        <onclick>SetFocus(11)</onclick>
-        <label>$LOCALIZE[31084] $LOCALIZE[31264]</label>
-    </include>
-    <include name="Options_View_TVGuideNext">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/view_next_FO.png</texturefocus>
-        <texturenofocus>buttonmenu/view_next_NF.png</texturenofocus>
-        <onclick>Container.SetViewMode(12)</onclick>
-        <onclick>SetFocus(12)</onclick>
-        <label>$LOCALIZE[31084] $LOCALIZE[31265]</label>
-    </include>
-    <include name="Options_View_TVChannel">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/TVchannelsFO.png</texturefocus>
-        <texturenofocus>buttonmenu/TVchannelsNF.png</texturenofocus>
-        <onclick>Container.SetViewMode(13)</onclick>
-        <onclick>SetFocus(13)</onclick>
-        <label>31266</label>
-    </include>
-    <!--PVR Screens-->
-    <include name="Options_PVR_Guide">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/TVguideFO.png</texturefocus>
-        <texturenofocus>buttonmenu/TVguideNF.png</texturenofocus>
-        <label>22020</label>
-        <onclick>ActivateWindow(tvguide)</onclick>
-        <onclick>up</onclick>
-    </include>
-    <include name="Options_PVR_Channels">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/TVchannelsFO.png</texturefocus>
-        <texturenofocus>buttonmenu/TVchannelsNF.png</texturenofocus>
-        <label>19019</label>
-        <onclick>ActivateWindow(tvchannels)</onclick>
-        <onclick>up</onclick>
-    </include>
-    <include name="Options_PVR_Recordings">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/recordFO.png</texturefocus>
-        <texturenofocus>buttonmenu/recordNF.png</texturenofocus>
-        <label>19163</label>
-        <onclick>ActivateWindow(tvrecordings)</onclick>
-        <onclick>up</onclick>
-    </include>
-    <include name="Options_PVR_Timers">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/timerFO.png</texturefocus>
-        <texturenofocus>buttonmenu/timerNF.png</texturenofocus>
-        <label>19040</label>
-        <onclick>ActivateWindow(tvtimers)</onclick>
-        <onclick>SetFocus(17)</onclick>
-    </include>
-    <include name="Options_PVR_Search">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/searchFO.png</texturefocus>
-        <texturenofocus>buttonmenu/searchNF.png</texturenofocus>
-        <label>137</label>
-        <onclick>ActivateWindow(tvsearch)</onclick>
-        <onclick>SetFocus(17)</onclick>
-    </include>
-    <include name="Options_PVR_ChannelGroup">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/channelgroupFO.png</texturefocus>
-        <texturenofocus>buttonmenu/channelgroupNF.png</texturenofocus>
-    </include>
-    <include name="Options_PVR_SortBy">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/sortFO.png</texturefocus>
-        <texturenofocus>buttonmenu/sortNF.png</texturenofocus>
-        <label>[COLOR White][LOWERCASE]$LOCALIZE[31076] $INFO[Container.SortMethod][/LOWERCASE][/COLOR]</label>
-        <onclick>Container.NextSortMethod</onclick>
-    </include>
-    <include name="Options_PVR_SortDirection">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/ascendingFO.png</texturefocus>
-        <texturenofocus>buttonmenu/ascendingNF.png</texturenofocus>
-        <alttexturefocus>buttonmenu/descendingFO.png</alttexturefocus>
-        <alttexturenofocus>buttonmenu/descendingNF.png</alttexturenofocus>
-        <label>[COLOR White]$LOCALIZE[31077] $LOCALIZE[21430][/COLOR]</label>
-        <altlabel>$LOCALIZE[31077] $LOCALIZE[21431]</altlabel>
-    </include>
-	<include name="Options_ChangeView">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/changeviewFO.png</texturefocus>
-        <texturenofocus>buttonmenu/changeviewNF.png</texturenofocus>
-        <label>31315</label>
-		<onclick>ActivateWindow(1119)</onclick>
-        <onclick>SetFocus(9101)</onclick>
-    </include>
-	<include name="Options_PreviousMenu">
-        <include>Common_Settings_Button</include>
-        <texturefocus>buttonmenu/previousFO.png</texturefocus>
-        <texturenofocus>buttonmenu/previousNF.png</texturenofocus>
-        <label>31316</label>
-		<onclick>Dialog.Close(1119)</onclick>
-		<onclick>ClearProperty(ShowOptions2,home)</onclick>
-		<onclick>SetFocus(9050)</onclick>
     </include>
 	
 </includes>

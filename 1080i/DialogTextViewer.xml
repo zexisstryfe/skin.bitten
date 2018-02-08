@@ -7,9 +7,9 @@
         <include>DialogOverlay</include>
 		
         <control type="group">
-            <posx>360</posx>
-            <posy>165</posy>
-            <include>Animation_Dialog_Center</include>
+            <left>360</left>
+            <top>165</top>
+            <include>Animation_Popup</include>
 			
             <control type="image">
                 <width>1200</width>
@@ -19,21 +19,34 @@
 
             <control type="image">
                 <width>1200</width>
-				<height>75</height>
+                <height>5</height>
                 <include>Common_Color_BaseMediumHigh</include>
             </control>
+
+            <control type="image">
+                <top>750</top>
+                <width>1200</width>
+                <height>5</height>
+                <include>Common_Color_Shadow</include>
+            </control>
+
+            <include content="Common_Separator_Horizontal">
+                <param name="top" value="78"/>   
+                <param name="width" value="1200"/>
+            </include>
 			
             <control type="label" id="1">
                 <description>header</description>
                 <width>1350</width>
-                <posx>15</posx>
+                <left>15</left>
 				<height>75</height>
 				<font>font45R</font>
+                <textcolor>BaseMediumHigh</textcolor>
             </control>
 
             <control type="textbox" id="5">
-                <posx>30</posx>
-                <posy>95</posy>
+                <left>30</left>
+                <top>95</top>
                 <width>1125</width>
                 <height>640</height>
                 <align>justify</align>
@@ -42,10 +55,10 @@
             </control>
 			
             <control type="scrollbar" id="61">
-                <posx>1190</posx>
-                <posy>75</posy>
+                <left>1190</left>
+                <top>80</top>
                 <width>10</width>
-                <height>675</height>
+                <height>670</height>
             </control>
 			
         </control>

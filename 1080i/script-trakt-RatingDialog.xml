@@ -1,69 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <window>
-    <coordinates>
-        <system>1</system>
-    </coordinates>
+	<depth>DepthDialog+</depth>	
 
     <controls>
         <include>DialogOverlay</include>
 		
 		<control type="group">
-			<posx>0</posx>
-			<posy>315</posy>			
-			<include>Common_Animation_Dialog</include>
+			<left>332</left>
+			<top>315</top>
 
-			<control type="image">			
-				<width>1920</width>
-				<height>450</height>
-				<texture colordiffuse="BaseWhite">colors/color_white.png</texture>			
-			</control>
-			
-			<control type="image">			
-				<width>1920</width>
-				<include>InfoDialog_Header</include>		
-			</control>		
-
-			<control type="group">	
-				<posy>75</posy>
-				<width>1920</width>
-				<height>375</height>
-
-				<include>Common_Logo_Backing</include>
-				
-			</control>	
+            <include content="Common_Window_Backing">
+                <param name="width" value="1256"/>
+                <param name="height" value="410"/>  
+                <param name="logo_height" value="275"/> 
+                <param name="header" value="$ADDON[script.trakt 32026]"/>
+                <param name="header_id" value="10011"/>
+                <param name="header_width" value="880"/>    
+                <param name="header_height" value="75"/>             
+            </include>  
 			
 			<control type="label" id="10011">			
 				<description>Heading</description>
-				<posx>300</posx>
+				<top>5</top>
+				<left>20</left>
 				<width>885</width>
-				<height>75</height>
-				<font>font45R</font>
-				<label>$ADDON[script.trakt 32026]</label>
+				<height>68</height>
+				<font>font36B</font>
+				<textcolor>BaseMediumHigh</textcolor>	
+				<label></label>
 			</control>
 		
 			<control type="group">			
-				<posx>450</posx>
-				<posy>130</posy>
+				<left>200</left>
+				<top>120</top>
 				
 				<control type="label" id="10012">
 					<description>Item to Rate Title</description>
-					<width>1020</width>
+					<width>856</width>
 					<height>30</height>
-					<aligny>center</aligny>
 					<align>center</align>
 					<font>font36</font>
 					<textcolor>BaseMediumHigh</textcolor>
 				</control>
 				
 				<control type="group" id="10015">
-					<posy>70</posy>
-					<posx>180</posx>
+					<top>80</top>
+					<left>97</left>
 					
 					<control type="button" id="11030">
 						<description>1 Button</description>
-						<posx>-1</posx>
-						<posy>-1</posy>
+						<left>-1</left>
+						<top>-1</top>
 						<include>RateDialog_Button</include>
 						<onleft>11039</onleft>
 						<onright>11031</onright>
@@ -71,14 +59,14 @@
 					
 					<control type="image">
 						<description>2 Button Placeholder</description>
-						<posx>68</posx>
+						<left>68</left>
 						<include>RateDialog_NoStar</include>
 					</control>
 					
 					<control type="button" id="11031">
 						<description>2 Button</description>
-						<posx>67</posx>
-						<posy>-1</posy>
+						<left>67</left>
+						<top>-1</top>
 						<include>RateDialog_Button</include>
 						<onleft>11030</onleft>
 						<onright>11032</onright>
@@ -87,14 +75,14 @@
 					
 					<control type="image">
 						<description>3 Button Placeholder</description>
-						<posx>135</posx>
+						<left>135</left>
 						<include>RateDialog_NoStar</include>
 					</control>
 					
 					<control type="button" id="11032">
 						<description>3 Button</description>
-						<posx>134</posx>
-						<posy>-1</posy>
+						<left>134</left>
+						<top>-1</top>
 						<include>RateDialog_Button</include>
 						<onleft>11031</onleft>
 						<onright>11033</onright>
@@ -103,14 +91,14 @@
 					
 					<control type="image">
 						<description>4 Button Placeholder</description>
-						<posx>202</posx>
+						<left>202</left>
 						<include>RateDialog_NoStar</include>
 					</control>
 					
 					<control type="button" id="11033">
 						<description>4 Button</description>
-						<posx>201</posx>
-						<posy>-1</posy>
+						<left>201</left>
+						<top>-1</top>
 						<include>RateDialog_Button</include>
 						<onleft>11032</onleft>
 						<onright>11034</onright>
@@ -119,14 +107,14 @@
 					
 					<control type="image">
 						<description>5 Button Placeholder</description>
-						<posx>270</posx>
+						<left>270</left>
 						<include>RateDialog_NoStar</include>
 					</control>
 					
 					<control type="button" id="11034">
 						<description>5 Button</description>
-						<posx>269</posx>
-						<posy>-1</posy>
+						<left>269</left>
+						<top>-1</top>
 						<include>RateDialog_Button</include>
 						<onleft>11033</onleft>
 						<onright>11035</onright>
@@ -135,14 +123,14 @@
 					
 					<control type="image">
 						<description>6 Button Placeholder</description>
-						<posx>338</posx>
+						<left>338</left>
 						<include>RateDialog_NoStar</include>
 					</control>
 					
 					<control type="button" id="11035">
 						<description>6 Button</description>
-						<posx>337</posx>
-						<posy>-1</posy>
+						<left>337</left>
+						<top>-1</top>
 						<include>RateDialog_Button</include>
 						<onleft>11034</onleft>
 						<onright>11036</onright>
@@ -151,14 +139,14 @@
 					
 					<control type="image">
 						<description>7 Button Placeholder</description>
-						<posx>405</posx>
+						<left>405</left>
 						<include>RateDialog_NoStar</include>
 					</control>
 					
 					<control type="button" id="11036">
 						<description>7 Button</description>
-						<posx>404</posx>
-						<posy>-1</posy>
+						<left>404</left>
+						<top>-1</top>
 						<include>RateDialog_Button</include>
 						<onleft>11035</onleft>
 						<onright>11037</onright>
@@ -167,14 +155,14 @@
 					
 					<control type="image">
 						<description>8 Button Placeholder</description>
-						<posx>472</posx>
+						<left>472</left>
 						<include>RateDialog_NoStar</include>
 					</control>
 					
 					<control type="button" id="11037">
 						<description>8 Button</description>
-						<posx>471</posx>
-						<posy>-1</posy>
+						<left>471</left>
+						<top>-1</top>
 						<include>RateDialog_Button</include>
 						<onleft>11036</onleft>
 						<onright>11038</onright>
@@ -183,14 +171,14 @@
 					
 					<control type="image">
 						<description>9 Button Placeholder</description>
-						<posx>540</posx>
+						<left>540</left>
 						<include>RateDialog_NoStar</include>
 					</control>
 					
 					<control type="button" id="11038">
 						<description>9 Button</description>
-						<posx>539</posx>
-						<posy>-1</posy>
+						<left>539</left>
+						<top>-1</top>
 						<include>RateDialog_Button</include>
 						<onleft>11037</onleft>
 						<onright>11039</onright>
@@ -199,14 +187,14 @@
 					
 					<control type="image">
 						<description>10 Button Placeholder</description>
-						<posx>608</posx>
+						<left>608</left>
 						<include>RateDialog_NoStar</include>
 					</control>
 					
 					<control type="button" id="11039">
 						<description>10 Button</description>
-						<posx>607</posx>
-						<posy>-1</posy>
+						<left>607</left>
+						<top>-1</top>
 						<include>RateDialog_Button</include>
 						<onleft>11038</onleft>
 						<onright>11030</onright>
@@ -216,11 +204,10 @@
 				</control>
 
 				<control type="label" id="10013">
-					<description>Item to Rate Title</description>
-					<posy>155</posy>
-					<width>1020</width>
+					<description>Rating Label</description>
+					<top>165</top>
+					<width>856</width>
 					<height>30</height>
-					<aligny>center</aligny>
 					<align>center</align>
 					<font>font36</font>
 					<textcolor>BaseMediumHigh</textcolor>
@@ -229,21 +216,20 @@
 			</control>
 					
  			<control type="grouplist">			
-				<posx>580</posx>
-				<posy>360</posy>
-				<width>760</width>
-				<itemgap>20</itemgap>
+				<top>350</top>
+				<width>1256</width>
+				<itemgap>0</itemgap>
+				<onup>11035</onup>
+				<ondown>11035</ondown>
 				<orientation>horizontal</orientation>
 				<align>center</align>
-				
-				<control type="button" id="11010">
-					<description>OK</description>
-					<label>222</label>
-					<onclick>PreviousMenu</onclick>
-					<include>InfoDialog_Button</include>
-					<onup>11035</onup>
-					<ondown>11035</ondown>
-				</control>
+
+                <include content="InfoDialog_Button">
+                    <param name="button_id" value="11010"/>  
+                    <param name="width" value="1256"/>
+                    <param name="label" value="222"/> 
+                    <param name="onclick" value="PreviousMenu"/>         
+                </include>
 				
 			</control>	
 			

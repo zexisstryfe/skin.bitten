@@ -6,70 +6,78 @@
 	
         <control type="group">
             <visible>Control.IsVisible(56)</visible>
-
 			
 			<!--Scrollbar-->
 			<control type="scrollbar" id="62">
-				<posx>1225</posx>
+				<left>1910</left>
 				<height>1080</height>
 				<width>10</width>
-				<include>ShowOptions_Left</include>
-				<onright>51</onright>
-			</control>	
+				<include>ShowOptions_Right</include>
+				<onleft>56</onleft>
+			</control>
+
 			<!--Panel Area-->
             <control type="group">
-				<posx>1235</posx>
-                <include>Animation_Slide_Right</include>
+            	<top>10</top>
+				<left>1235</left> 
+				<include>Animation_Popup_2</include>
+				
+				<control type="image"> 
+					<width>675</width>
+					<height>1060</height>
+					<include>Common_Color_BaseWhite</include>
+				</control>
 
-				<control type="image">                  
-                    <width>685</width> 
-                    <height>1080</height>
-                    <include>Common_Color_BaseWhite</include>
-                </control>
+				<control type="image"> 
+					<width>675</width>
+					<height>5</height>
+					<include>Common_Color_BaseMediumHigh</include>
+				</control>
 
                 <control type="panel" id="56">
 					<visible>Container.Content(genres)</visible>
-					<width>687</width>
-                    <height>1080</height>
+                    <top>5</top>
+                    <width>675</width>
+                    <height>1000</height>
                     <scrolltime>300</scrolltime>
                     <orientation>vertical</orientation>
-                    <viewtype label="genre panel">panel</viewtype>
-                    <onleft>66</onleft>
-                    <include>ShowOptions_Right</include>
+                    <viewtype label="31073">icon</viewtype>
+                    <onright>62</onright>
+                    <include>ShowOptions_Left</include>
                     <preloaditems>3</preloaditems>
                     <pagecontrol>62</pagecontrol>
-                    <itemlayout width="229" height="277">
+                    <itemlayout width="225" height="277">
 						
 						<control type="image">								
-							<width>227</width>
-							<height>227</height>
-							<include>Common_Color_BaseMediumHigh</include>
+							<width>225</width>
+							<height>225</height>
+							<include>Common_Color_BaseMediumMid</include>
 							<aspectratio scalediffuse="false">stretch</aspectratio>								
 						</control>
 						
 						<control type="image">
-							<width>227</width>
-							<height>227</height>
+							<width>225</width>
+							<height>225</height>
 							<texture>$VAR[Common_Fallback]</texture>
 							<aspectratio scalediffuse="false">keep</aspectratio>
 						</control>
 						
 						<control type="image">
-							<width>227</width>
-							<height>227</height>
+							<width>225</width>
+							<height>225</height>
 							<texture background="true" fallback="tiles/unknown.png">../extras/genres/$INFO[ListItem.Label].png</texture>
 							<aspectratio scalediffuse="false">stretch</aspectratio>
-							<visible>!stringcompare(ListItem.Label,..)</visible>
+							<visible>!String.IsEqual(ListItem.Label,..)</visible>
 						</control>
 
 						<control type="label">
-							<posx>10</posx>
-							<posy>227</posy>
-							<width>215</width>
+							<left>10</left>
+							<top>225</top>
+							<width>205</width>
 							<height>50</height>
 							<aligny>center</aligny>
 							<font>font20R</font>
-							<label>$VAR[Fanart_List_Title]</label>
+							<label>$VAR[Common_ListSection_Title]</label>
 							<textcolor>BaseMediumHigh</textcolor>
 						</control>
 						
@@ -78,85 +86,112 @@
                     <focusedlayout width="229" height="277">
 
 						<control type="image">
-							<width>227</width>
+							<width>225</width>
 							<height>277</height>
 							<include>Common_Color_Accent</include>
 						</control>
 
 						<control type="image">								
-							<width>227</width>
-							<height>227</height>
-							<include>Common_Color_BaseMid</include>
+							<width>225</width>
+							<height>225</height>
+							<include>Common_Color_BaseMediumMid</include>
 							<aspectratio scalediffuse="false">stretch</aspectratio>								
 						</control>
 						
 						<control type="image">
-							<width>227</width>
-							<height>227</height>
+							<width>225</width>
+							<height>225</height>
 							<texture>$VAR[Common_Fallback]</texture>
 							<aspectratio scalediffuse="false">keep</aspectratio>
 						</control>
 						
 						<control type="image">
-							<width>227</width>
-							<height>227</height>
+							<width>225</width>
+							<height>225</height>
 							<texture background="true" fallback="tiles/unknown.png">../extras/genres/$INFO[ListItem.Label].png</texture>
 							<aspectratio scalediffuse="false">stretch</aspectratio>
-							<visible>!stringcompare(ListItem.Label,..)</visible>
+							<visible>!String.IsEqual(ListItem.Label,..)</visible>
 						</control>
 
 						<control type="label">
-							<posx>10</posx>
-							<posy>227</posy>
-							<width>215</width>
+							<left>10</left>
+							<top>225</top>
+							<width>205</width>
 							<height>50</height>
 							<aligny>center</aligny>
 							<font>font20R</font>
-							<label>$VAR[Fanart_List_Title]</label>
+							<label>$VAR[Common_ListSection_Title]</label>
 						</control>
 
                     </focusedlayout>
 					
                 </control>
+
+	            <include content="Common_Separator_Horizontal">
+	                <param name="top" value="1005"/>   
+	                <param name="width" value="675"/>
+	            </include>
+
+				<control type="label">
+					<top>1007</top>
+                    <left>175</left>
+                    <width>440</width>
+                    <height>53</height>
+					<align>right</align>
+                    <font>font26R</font>
+                    <label>$INFO[Container.CurrentItem,, / ]$INFO[Container.NumItems]</label>
+					<textcolor>BaseMediumHigh</textcolor>
+                </control>
+
+				<control type="image">
+					<left>625</left>
+					<top>1015</top>
+					<width>40</width>
+					<height>40</height>
+					<texture colordiffuse="BaseMediumHigh">icons\files.png</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
 				
             </control>
 			
 			<!--Info Area-->
-            <control type="group">
-				<posy>654</posy>
-				<posx>80</posx>
-			
+			<control type="group">
+				<top>659</top>
+				<left>90</left>
+				<include>Animation_Popup_3</include>
+
 				<control type="image">					
-					<width>1145</width>
-					<height>430</height>
-					<include>Common_Color_BaseLow</include>
+					<width>1135</width>
+					<height>411</height>
+					<include>Common_Color_BaseLowest</include>
 				</control>
 
 				<control type="image">
-					<posy>366</posy>
-					<width>1145</width>
-					<height>60</height>
+					<width>1135</width>
+					<height>5</height>
 					<include>Common_Color_BaseMediumHigh</include>
 				</control>
+
+	            <include content="Common_Separator_Horizontal">
+	                <param name="top" value="351"/>   
+	                <param name="width" value="1135"/>
+	            </include>
+
+	            <include content="Common_Separator_Horizontal">
+	                <param name="top" value="100"/>   
+	                <param name="width" value="1135"/>
+	            </include>
 				
 				<control type="label">
-					<posx>30</posx>
+					<left>30</left>
 					<width>840</width>
 					<include>Common_Fanart_Fadelabel</include>
-					<label>$VAR[Fanart_Info_Title]</label>
-				</control>
-
-				<control type="image">
-					<posx>40</posx>
-					<posy>100</posy>
-					<width>1065</width>
-					<height>2</height>
-					<include>Common_Color_BaseMediumHigh</include>
+					<label>$VAR[Common_InfoSection_Title]</label>
 				</control>
 
 				<control type="textbox">
-					<posx>40</posx>
-					<posy>110</posy>
+					<left>40</left>
+					<top>110</top>
 					<width>1065</width>
 					<height>240</height>
 					<font>font26</font>
@@ -169,7 +204,14 @@
 			</control>	
 
 			<!--Fanart Background Area-->
-			<include>BG_Fanart_644</include>
+            <include content="Background_Fanart">
+                <param name="top" value="10"/>
+                <param name="left" value="90"/> 
+                <param name="width" value="1135"/>
+                <param name="height" value="639"/>  
+                <param name="logo_visible" value="true"/>  
+                <param name="topbar_visible" value="true"/>           
+            </include> 
 
         </control>
 

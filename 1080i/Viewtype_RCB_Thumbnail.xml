@@ -8,195 +8,211 @@
             <visible>Control.IsVisible(50)</visible>
 			
 			<control type="image">
-				<description>background image</description>
 				<include>Dimensions_Fullscreen</include>
 				<texture fallback="special://skin/extras/backgrounds/games.jpg">$INFO[ListItem.Property(background)]</texture>
 			</control>
 			<include>FanartOverlay</include>	
+
+			<!--Scrollbar-->
+			<control type="scrollbar" id="60">
+				<left>80</left>
+				<top>1070</top>
+				<width>1840</width>
+				<height>10</height>
+				<onup>50</onup>
+				<ondown>100</ondown>
+				<showonepage>false</showonepage>
+				<orientation>horizontal</orientation>
+			</control>
 	
 			<!--List Area-->
 			<control type="group">
-				<posy>400</posy>
-				
-				<control type="image">	
-					<include>Common_Animation_CenterMenu_Stage2</include>
-					<width>1920</width>
-					<height>620</height>
-					<texture colordiffuse="BaseMid">colors/color_white.png</texture>			
-				</control>					
+				<top>400</top>	
+				<include>Animation_Slide_Right</include>				
 
 				<control type="fixedlist" id="50">
-					<include>Common_Animation_CenterMenu_Stage3</include>
-					<posx>-200</posx>
-					<posy>10</posy>
-					<width>2250</width> 
+					<left>-200</left>
+					<width>2250</width>
 					<height>600</height>
+					<include>ShowOptions_Up</include>
 					<onup>100</onup>
 					<ondown>60</ondown>
-					<viewtype label="Extended">wrap</viewtype>
+					<viewtype label="21371">wrap</viewtype>
 					<orientation>horizontal</orientation>
 					<pagecontrol>60</pagecontrol>
 					<focusposition>1</focusposition>
-					<preloaditems>2</preloaditems>
-					<itemlayout width="460" height="600">
-					
-						<control type="group">							
+					<itemlayout width="470" height="600">
+							
+						<control type="image">
 							<width>450</width>
-							<height>600</height>
-							
-							<control type="image">
-								<include>Common_Color_BaseWhite</include>
-							</control>						
-							
-							<control type="image">
-								<height>500</height>
-								<include>Common_Color_BaseMediumHigh</include>
-							</control>
+							<height>600</height>	
+							<include>Common_Color_BaseWhite</include>
+						</control>						
+						
+						<control type="image">
+							<width>450</width>
+							<height>5</height>	
+							<include>Common_Color_BaseMediumHigh</include>
+						</control>
 
-							<control type="image">
-								<height>500</height>
-								<texture background="true">DefaultGame.png</texture>
-								<aspectratio aligny="top">keep</aspectratio>
-							</control>
-							
-							<control type="image">
-								<height>500</height>
-								<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-								<aspectratio aligny="top">scale</aspectratio>
-								<visible>!stringcompare(ListItem.Label,..)</visible>
-							</control>
-							
-							<control type="textbox">
-								<posx>20</posx>
-								<posy>500</posy>
-								<width>410</width>
-								<height>90</height>
-								<label>$VAR[Fanart_Info_Title]</label>
-								<font>font36B</font>
-								<align>center</align>
-								<textcolor>BaseMediumHigh</textcolor>
-							</control>
-							
-							<control type="image">
-								<posx>395</posx>
-								<posy>10</posy>
-								<height>45</height>
-								<width>45</width>
-								<texture>watched/lg_fav.png</texture>
-								<visible>!IsEmpty(ListItem.Property(isfavorite))</visible>
-							</control>
-							
+						<control type="image">
+							<top>5</top>
+							<width>450</width>
+							<height>500</height>
+							<include>Common_Color_BaseMediumMid</include>
+						</control>
+
+						<control type="image">
+							<top>5</top>
+							<width>450</width>
+							<height>500</height>
+							<texture background="true">DefaultGame.png</texture>
+							<aspectratio aligny="top">keep</aspectratio>
+						</control>
+						
+						<control type="image">
+							<top>5</top>
+							<width>450</width>
+							<height>500</height>
+							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<aspectratio aligny="top">scale</aspectratio>
+							<visible>!String.IsEqual(ListItem.Label,..)</visible>
+						</control>
+						
+						<control type="textbox">
+							<left>20</left>
+							<top>505</top>
+							<width>410</width>
+							<height>95</height>
+							<label>$VAR[Common_InfoSection_Title]</label>
+							<font>font36R</font>
+							<align>center</align>
+							<aligny>center</aligny>
+							<textcolor>BaseMediumHigh</textcolor>
+						</control>
+						
+						<control type="image">
+							<left>395</left>
+							<top>15</top>
+							<height>45</height>
+							<width>45</width>
+							<texture>watched/lg_fav.png</texture>
+							<visible>!IsEmpty(ListItem.Property(isfavorite))</visible>
 						</control>
 						
 					</itemlayout>
 					
 					<focusedlayout width="460" height="720">
-					
-						<control type="group">
+
+						<control type="image">
 							<width>450</width>
-							<height>600</height>
+							<height>5</height>
+							<include>Common_Color_Accent</include>
+						</control>
 						
-							<control type="image">
-								<height>500</height>
-								<include>Common_Color_BaseMediumHigh</include>
-							</control>
-							
-							<control type="image">
-								<height>500</height>
-								<texture background="true">DefaultGame.png</texture>
-								<aspectratio aligny="top">keep</aspectratio>
-							</control>
-							
-							<control type="image">
-								<height>500</height>
-								<texture background="true">$INFO[ListItem.ActualIcon]</texture>
-								<aspectratio aligny="top">scale</aspectratio>
-								<visible>!stringcompare(ListItem.Label,..)</visible>
-							</control>
-							
-							<control type="image">
-								<posy>500</posy>
-								<include>Common_Color_Accent</include>
-							</control>	
-							
-							<control type="image">
-								<posy>500</posy>
-								<animation effect="zoom" start="100,100" end="100,-250" time="400" delay="2000">Focus</animation>
-								<include>Common_Color_Accent</include>
-							</control>	
-							
-							<control type="textbox">
-								<posx>20</posx>
-								<posy>500</posy>
-								<width>410</width>
-								<height>90</height>
-								<label>$VAR[Fanart_Info_Title]</label>
-								<font>font36B</font>
-								<align>center</align>
-								<animation effect="slide" start="0,0" end="0,-250" time="400" delay="2050">Focus</animation>
-							</control>
-				
-							<control type="group">
-								<animation effect="fade" start="0" end="100" time="400" delay="2750">Focus</animation>
-				
-								<control type="label">
-									<posx>20</posx>
-									<posy>335</posy>
-									<width>410</width>
-									<height>30</height>
-									<font>font26R</font>
-									<label>$INFO[ListItem.Property(Genre)]</label>
-									<textcolor>BaseLow</textcolor>
-								</control>
+						<control type="image">
+							<top>5</top>
+							<width>450</width>
+							<height>500</height>
+							<include>Common_Color_BaseMediumMid</include>
+						</control>
 
-								<control type="textbox">
-									<posx>20</posx>
-									<posy>375</posy>
-									<width>410</width>
-									<height>188</height>
-									<label fallback="31245">$INFO[ListItem.Property(Plot)]</label>
-									<font>font24</font>
-									<align>justify</align>
-									<visible>!stringcompare(ListItem.Label,..)</visible>
-								</control>
-								
-								<control type="label">
-									<posx>20</posx>
-									<posy>565</posy>
-									<width>410</width>
-									<height>30</height>
-									<label>$INFO[ListItem.Property(Console)]</label>
-									<align>center</align>
-									<font>font24B</font>
-								</control>
-							
-							</control>
-
-							<control type="image">
-								<posx>395</posx>
-								<posy>10</posy>
-								<height>45</height>
-								<width>45</width>
-								<texture>watched/lg_fav.png</texture>
-								<visible>!IsEmpty(ListItem.Property(isfavorite))</visible>
-							</control>
-							
+						<control type="image">
+							<top>5</top>
+							<width>450</width>
+							<height>500</height>
+							<texture background="true">DefaultGame.png</texture>
+							<aspectratio aligny="top">keep</aspectratio>
+						</control>
+						
+						<control type="image">
+							<top>5</top>
+							<width>450</width>
+							<height>500</height>
+							<texture background="true">$INFO[ListItem.ActualIcon]</texture>
+							<aspectratio aligny="top">scale</aspectratio>
+							<visible>!String.IsEqual(ListItem.Label,..)</visible>
+						</control>
+						
+						<control type="image">
+							<top>505</top>
+							<height>95</height>
+							<width>450</width>
+							<include>Common_Color_BaseLowest</include>
 						</control>	
+						
+						<control type="image">
+							<top>505</top>
+							<height>95</height>
+							<width>450</width>
+							<animation effect="zoom" start="100,100" end="100,-250" time="400" delay="2000">Focus</animation>
+							<include>Common_Color_BaseLowest</include>
+						</control>	
+
+						<control type="textbox">
+							<left>20</left>
+							<top>505</top>
+							<width>410</width>
+							<height>95</height>
+							<label>$VAR[Common_InfoSection_Title]</label>
+							<font>font36R</font>
+							<align>center</align>
+							<aligny>center</aligny>
+							<textcolor>$VAR[Accent_100]</textcolor>
+							<animation effect="slide" start="0,0" end="0,-240" time="400" delay="2050">Focus</animation>
+						</control>
+			
+						<control type="group">
+							<animation effect="fade" start="0" end="100" time="400" delay="2750">Focus</animation>
+							<visible>Control.HasFocus(50)</visible>
+			
+							<control type="label">
+								<left>20</left>
+								<top>355</top>
+								<width>410</width>
+								<height>30</height>
+								<font>font24B</font>
+								<label>$INFO[ListItem.Property(Genre)]</label>
+								<align>center</align>
+								<textcolor>BaseMid</textcolor>
+							</control>
+
+							<control type="textbox">
+								<left>20</left>
+								<top>395</top>
+								<width>410</width>
+								<height>168</height>
+								<label fallback="31245">$INFO[ListItem.Property(Plot)]</label>
+								<font>font24</font>
+								<align>justify</align>
+								<visible>!String.IsEqual(ListItem.Label,..)</visible>
+								<textcolor>BaseMediumHigh</textcolor>
+							</control>
+							
+							<control type="label">
+								<left>20</left>
+								<top>565</top>
+								<width>410</width>
+								<height>30</height>
+								<label>$INFO[ListItem.Property(Console)]</label>
+								<align>center</align>
+								<font>font24B</font>
+								<textcolor>$VAR[Accent_100]</textcolor>
+							</control>
+						
+						</control>
+
+						<control type="image">
+							<left>395</left>
+							<top>15</top>
+							<height>45</height>
+							<width>45</width>
+							<texture>watched/lg_fav.png</texture>
+							<visible>!IsEmpty(ListItem.Property(isfavorite))</visible>
+						</control>
 							
 					</focusedlayout>
 					
-				</control>
-
-				<!--Scrollbar-->
-				<control type="scrollbar" id="60">
-					<posx>80</posx>
-					<posy>610</posy>
-					<width>1840</width>
-					<height>10</height>
-					<onup>50</onup>
-					<include>ShowOptions_Down</include>
-					<showonepage>false</showonepage>
-					<orientation>horizontal</orientation>
 				</control>
 				
 			</control>

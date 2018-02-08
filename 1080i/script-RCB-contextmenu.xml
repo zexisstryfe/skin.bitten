@@ -2,45 +2,44 @@
 
 <window id="5100">
     <defaultcontrol>5110</defaultcontrol>
-
+ 
     <coordinates>
-        <system>1</system>
+        <origin x="0" y="0" />
     </coordinates>
 	
     <controls>
         <include>DialogOverlay</include>
 		
         <control type="group">
-            <posx>698</posx>
-            <posy>52</posy>
-            <include>Animation_Dialog_Center</include>
+            <left>748</left>
+            <top>52</top>
+            <include>Animation_Popup</include>
 			
             <control type="image">
-                <description>background top image</description>
-                <width>525</width>
+                <width>425</width>
                 <height>975</height>
                 <include>Common_Color_BaseWhite</include>
             </control>
 			
             <control type="image">
-                <description>header</description>
-                <width>525</width>
-                <include>InfoDialog_Header</include>
+                <width>425</width>
+                <height>75</height>
+                <include>Common_Color_BaseMediumHigh</include>
             </control>
 			
-            <control type="label">
-                <description>menu</description>
-                <posx>15</posx>
-                <width>495</width>
-                <include>InfoDialog_Heading</include>
-                <label>$LOCALIZE[33061]</label>
+            <control type="label">           
+                <left>15</left>
+                <width>385</width>
+                <height>75</height>
+                <font>font45R</font>
+                <label>$LOCALIZE[33061]</label>       
             </control>
 			
             <control type="grouplist" id="5109">
-                <posy>105</posy>
-                <width>525</width>
+                <top>105</top>
+                <width>425</width>
+                <itemgap>0</itemgap>
                 <height>840</height>
-				<itemgap>0</itemgap>
 				
                 <control type="button" id="5110">
                     <description>button import games</description>

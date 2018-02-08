@@ -5,101 +5,174 @@
     <onload>Weather.Refresh</onload>
     <onload condition="!Skin.HasSetting(FirstTimeRun)">ActivateWindow(skinsettings)</onload>
     <onload condition="!Skin.HasSetting(FirstTimeRun)">ActivateWindow(1114)</onload>
-    <onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=trendingshows)</onload>
-    <onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=trendingmovies)</onload>
+    <onload condition="System.HasAddon(script.tv.show.next.aired) + Skin.HasSetting(UseNextAiredScript)">XBMC.RunScript(script.tv.show.next.aired,silent=True)</onload>
+    <onload condition="System.HasAddon(script.favourites) + Skin.HasSetting(UseFavouritesScript)">XBMC.RunScript(script.favourites,silent=True)</onload>
+    <onload condition="System.HasAddon(script.games.rom.collection.browser)">XBMC.RunScript(script.games.rom.collection.browser,limit=10)</onload>
+	<onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=trendingshows)</onload>
+    <onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=similarmovies)</onload>
     <onload condition="System.HasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=intheaters)</onload>
     <controls>
 	
-        <include>HomeBackground</include>
+        <include>Background_Global</include>
 
         <!-- HEADER / FOOTER -->
-		<include>HomeScreen_Header_Footer</include>
+		<include>Home_Header_Footer</include>
 		
 		<!--CONTENT LISTS -->
 		<control type="group">
 
-			<include>HomeScreen_Content_List</include>
+			<include>Home_Content_List</include>
 			
-			<include>HomeScreen_Options_List</include> 
+			<include>Home_Options_List</include> 
 		
 		</control> 
+
+        <!-- SUBMENUS -->
+        <control type="group">
+
+			<!-- Home Menu 1 (Movies) -->
+			<include content="Home_SubMenu">
+				<param name="home_number" value="Home1"/>
+				<param name="homemenu_number" value="HomeMenu1"/>	
+				<param name="id_number" value="15"/>
+				<param name="content_include" value="Home_SubMenu_$INFO[Skin.String(Home1SubMenu)]"/>				
+			</include>	
+
+			<!-- Home Menu 2 (TV Shows) -->
+			<include content="Home_SubMenu">
+				<param name="home_number" value="Home2"/>
+				<param name="homemenu_number" value="HomeMenu2"/>	
+				<param name="id_number" value="16"/>
+				<param name="content_include" value="Home_SubMenu_$INFO[Skin.String(Home2SubMenu)]"/>				
+			</include>	
+
+			<!-- Home Menu 3 (LiveTV) -->
+			<include content="Home_SubMenu">
+				<param name="home_number" value="Home3"/>
+				<param name="homemenu_number" value="HomeMenu3"/>	
+				<param name="id_number" value="17"/>
+				<param name="content_include" value="Home_SubMenu_$INFO[Skin.String(Home3SubMenu)]"/>				
+			</include>	
+
+			<!-- Home Menu 4 (Music) -->
+			<include content="Home_SubMenu">
+				<param name="home_number" value="Home4"/>
+				<param name="homemenu_number" value="HomeMenu4"/>	
+				<param name="id_number" value="18"/>
+				<param name="content_include" value="Home_SubMenu_$INFO[Skin.String(Home4SubMenu)]"/>				
+			</include>	
+
+			<!-- Home Menu 5 (Music Videos) -->
+			<include content="Home_SubMenu">
+				<param name="home_number" value="Home5"/>
+				<param name="homemenu_number" value="HomeMenu5"/>	
+				<param name="id_number" value="19"/>
+				<param name="content_include" value="Home_SubMenu_$INFO[Skin.String(Home5SubMenu)]"/>				
+			</include>	
+
+			<!-- Home Menu 6 (Pictures) -->
+			<include content="Home_SubMenu">
+				<param name="home_number" value="Home6"/>
+				<param name="homemenu_number" value="HomeMenu6"/>	
+				<param name="id_number" value="21"/>
+				<param name="content_include" value="Home_SubMenu_$INFO[Skin.String(Home6SubMenu)]"/>				
+			</include>	
+
+			<!-- Home Menu 7 (Games) -->
+			<include content="Home_SubMenu">
+				<param name="home_number" value="Home7"/>
+				<param name="homemenu_number" value="HomeMenu7"/>	
+				<param name="id_number" value="22"/>
+				<param name="content_include" value="Home_SubMenu_$INFO[Skin.String(Home7SubMenu)]"/>				
+			</include>	
+
+			<!-- Home Menu 8 (Weather) -->
+			<include content="Home_SubMenu">
+				<param name="home_number" value="Home8"/>
+				<param name="homemenu_number" value="HomeMenu8"/>	
+				<param name="id_number" value="23"/>
+				<param name="content_include" value="Home_SubMenu_$INFO[Skin.String(Home8SubMenu)]"/>				
+			</include>	
+
+			<!-- Home Menu 9 (Addons) -->
+			<include content="Home_SubMenu">
+				<param name="home_number" value="Home9"/>
+				<param name="homemenu_number" value="HomeMenu9"/>	
+				<param name="id_number" value="24"/>
+				<param name="content_include" value="Home_SubMenu_$INFO[Skin.String(Home9SubMenu)]"/>				
+			</include>	
+
+		</control>
 		
         <!-- CONTENT -->
         <control type="group">
             <include>Homescreen_Animation</include>
-			
-			<!-- TILE GROUPS -->
-			<control type="group" id="600">	
 
-				<include>HomeMenu1_Tiles</include>
+			<!-- Home Menu 1 (Movies) -->
+			<include content="Home_RightPanel">
+				<param name="home_number" value="Home1"/>
+				<param name="homemenu_number" value="HomeMenu1"/>
+				<param name="id_number" value="5"/>				
+			</include>	
 
-				<include>HomeMenu2_Tiles</include>
+			<!-- Home Menu 2 (TV Shows) -->
+			<include content="Home_RightPanel">
+				<param name="home_number" value="Home2"/>
+				<param name="homemenu_number" value="HomeMenu2"/>
+				<param name="id_number" value="6"/>				
+			</include>
 
-				<include>HomeMenu3_Tiles</include>
+			<!-- Home Menu 3 (Live TV) -->
+			<include content="Home_RightPanel">
+				<param name="home_number" value="Home3"/>
+				<param name="homemenu_number" value="HomeMenu3"/>
+				<param name="id_number" value="7"/>				
+			</include>
 
-				<include>HomeMenu4_Tiles</include>
+			<!-- Home Menu 4 (Music) -->
+			<include content="Home_RightPanel">
+				<param name="home_number" value="Home4"/>
+				<param name="homemenu_number" value="HomeMenu4"/>
+				<param name="id_number" value="8"/>				
+			</include>
 
-				<include>HomeMenu5_Tiles</include>
+			<!-- Home Menu 5 (Music Videos) -->
+			<include content="Home_RightPanel">
+				<param name="home_number" value="Home5"/>
+				<param name="homemenu_number" value="HomeMenu5"/>
+				<param name="id_number" value="9"/>				
+			</include>
 
-				<include>HomeMenu6_Tiles</include>
+			<!-- Home Menu 6 (Pictures) -->
+			<include content="Home_RightPanel">
+				<param name="home_number" value="Home6"/>
+				<param name="homemenu_number" value="HomeMenu6"/>
+				<param name="id_number" value="11"/>				
+			</include>
 
-				<include>HomeMenu7_Tiles</include>
+			<!-- Home Menu 7 (Games) -->
+			<include content="Home_RightPanel">
+				<param name="home_number" value="Home7"/>
+				<param name="homemenu_number" value="HomeMenu7"/>
+				<param name="id_number" value="12"/>				
+			</include>
 
-				<include>HomeMenu8_Tiles</include>
+			<!-- Home Menu 8 (Weather) -->
+			<include content="Home_RightPanel">
+				<param name="home_number" value="Home8"/>
+				<param name="homemenu_number" value="HomeMenu8"/>
+				<param name="id_number" value="13"/>				
+			</include>
 
-				<include>HomeMenu9_Tiles</include>
-
-				<include>HomeMenu10_Tiles</include>
-
-			</control>	
-			
-			<!-- PANELS -->
-			<control type="group" id="700">	
-
-				<include content="HomeMenu_Panel">
-					 <param name="homemenu" value="HomeMenu1"/>
-				</include>
-				
-				<include content="HomeMenu_Panel">
-					 <param name="homemenu" value="HomeMenu2"/>
-				</include>
-
-				<include content="HomeMenu_Panel">
-					 <param name="homemenu" value="HomeMenu3"/>
-				</include>
-
-				<include content="HomeMenu_Panel">
-					 <param name="homemenu" value="HomeMenu4"/>
-				</include>
-
-				<include content="HomeMenu_Panel">
-					 <param name="homemenu" value="HomeMenu5"/>
-				</include>
-
-				<include content="HomeMenu_Panel">
-					 <param name="homemenu" value="HomeMenu6"/>
-				</include>
-
-				<include content="HomeMenu_Panel">
-					 <param name="homemenu" value="HomeMenu7"/>
-				</include>
-
-				<include content="HomeMenu_Panel">
-					 <param name="homemenu" value="HomeMenu8"/>
-				</include>
-
-				<include content="HomeMenu_Panel">
-					 <param name="homemenu" value="HomeMenu9"/>
-				</include>				
-				
-				<include content="HomeMenu_Panel">
-					 <param name="homemenu" value="HomeMenu10"/>
-				</include>				
-
-			</control>
+			<!-- Home Menu 9 (Add-ons) -->
+			<include content="Home_RightPanel">
+				<param name="home_number" value="Home9"/>
+				<param name="homemenu_number" value="HomeMenu9"/>
+				<param name="id_number" value="14"/>				
+			</include>
 
         </control>
-		
+
     </controls>
 	
 </window>

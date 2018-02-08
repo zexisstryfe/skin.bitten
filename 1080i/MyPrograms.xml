@@ -2,14 +2,12 @@
 
 <window id="1">
     <defaultcontrol always="true">55</defaultcontrol>
+    <menucontrol>9050</menucontrol>
     <views>50,55,592</views>
-	
-    <!--Animation-->
-    <include condition="!Window.Previous(fullscreenvideo) + !Window.Previous(slideshow) + Skin.HasSetting(MetroAnimations)">Common_Animation_Splash_Flip</include>
-	
+
     <!--Background Area-->
     <controls>
-        <include>GlobalBackground</include>
+        <include>Background_Global</include>
 		
         <!--Available Views-->
         <control type="group">
@@ -25,10 +23,7 @@
         <!--Sort Overlays-->
         <include>Sort_Panel</include>
         <include>Sort_Panel_Alt</include>
-		
-        <!--Splash Screen-->
-        <include condition="!Window.Previous(fullscreenvideo) + !Window.Previous(slideshow) + Skin.HasSetting(MetroAnimations)">Common_Splash</include>
-		
+
     </controls>
 	
 </window>

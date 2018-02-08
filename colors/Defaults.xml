@@ -2,16 +2,21 @@
 	<!-- NEW COLORS- DO NOT RESPECT THEME -->
 	<color name="TrueWhite">FFFFFFFF</color>
 	<color name="TrueBlack">FF000000</color>
+	<color name="Shadow">33000000</color>
 	<!-- NEW COLORS- RESPECT THEME -->
-	<color name="BaseWhite">FFE8E8E8</color>
+	<color name="BaseWhite">FFFFFFFF</color>
 	<color name="BaseBlack">FF000000</color>
-	<color name="BaseWhite80">CCE8E8E8</color>
+	<color name="BaseWhite60">99FFFFFF</color>
+	<color name="BaseWhite80">CCFFFFFF</color>
+	<color name="BaseLowest">FFE8E8E8</color>
 	<color name="BaseLow">FFBBBBBB</color>
 	<color name="BaseLow40">66BBBBBB</color>
 	<color name="BaseLow80">CCBBBBBB</color>
+	<color name="BaseLow90">E6BBBBBB</color>
 	<color name="BaseMediumMid">FF999999</color>
 	<color name="BaseMediumMid40">66999999</color>
 	<color name="BaseMediumMid80">CC999999</color>
+	<color name="BaseMediumMid90">E6999999</color>
 	<color name="BaseMid">FF666666</color>
 	<color name="BaseMediumHigh">FF333333</color>
 	<color name="BaseMediumHigh60">99333333</color>

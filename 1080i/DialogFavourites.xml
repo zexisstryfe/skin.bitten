@@ -7,115 +7,122 @@
         <include>DialogOverlay</include>
 
         <control type="group">
-            <posy>630</posy>
-            <include>InfoDialog_Base</include>
+            <left>332</left>
+            <top>285</top>  
 
-            <control type="image">
-                <posy>450</posy>
-                <width>1920</width>
-                <height>100</height>
-                <include>Common_Color_BaseWhite</include>
-                <animation type="WindowOpen">
-                    <effect type="slide" start="0,450" end="0,0" center="auto" time="600" tween="back" easing="out" />
-                </animation>
-                <animation type="WindowClose">
-                    <effect type="slide" start="0,0" end="0,450" center="auto" time="400" tween="back" easing="in" />
-                </animation>
-            </control>
-
-            <control type="group">  
-                <posy>75</posy>
-                <width>1920</width>
-                <height>375</height>
-
-                <include>Common_Logo_Backing</include>
-                
-            </control>  
-
-            <control type="label" id="1">
-                <description>Heading</description>
-                <label>$LOCALIZE[1036]</label>
-                <width>1920</width>
-                <height>75</height>
-                <font>font45R</font>
-                <align>center</align>
-                <textcolor>$VAR[Accent_100]</textcolor>
-            </control>   
-
+            <include content="Common_Window_Backing">
+                <param name="width" value="1256"/>
+                <param name="height" value="490"/>  
+                <param name="logo_height" value="355"/> 
+                <param name="header" value="$LOCALIZE[1036]"/> 
+                <param name="header_id" value="1"/>
+                <param name="header_width" value="880"/> 
+                <param name="header_height" value="75"/>                
+            </include>
 
             <control type="fixedlist" id="450">
-                <posx>420</posx>
-                <posy>95</posy>
-                <width>1080</width>
-                <height>300</height>
+                <left>78</left>
+                <top>100</top>
+                <width>1100</width>
+                <height>315</height>
                 <onleft>451</onleft>
                 <onright>451</onright>
                 <pagecontrol>451</pagecontrol>
                 <focusposition>2</focusposition>
                 <orientation>horizontal</orientation>
-                <itemlayout height="300" width="220">
+                <itemlayout height="315" width="220">
 
                     <control type="image">
+                        <left>10</left>
                         <width>200</width>
-                        <height>300</height>
-                        <include>Common_Color_BaseMediumHigh</include>
+                        <height>305</height>
+                        <texture background="true" colordiffuse="Shadow">colors/color_white.png</texture>
                     </control>
 
                     <control type="image">
+                        <left>10</left>
                         <width>200</width>
                         <height>300</height>
-                        <texture background="true" fallback="tiles/favourites.png">$INFO[ListItem.Icon]</texture>
-                        <aspectratio aligny="top">scale</aspectratio>
+                        <texture background="true" colordiffuse="BaseMediumMid">colors/color_white.png</texture>    
                     </control>
 
-                    <control type="label">
-                        <posx>630</posx>
-                        <width>600</width>
-                        <height>135</height>
-                        <align>right</align>
-                        <info>ListItem.Label2</info>
+                    <control type="image">
+                        <left>10</left>
+                        <width>200</width>
+                        <height>300</height>
+                        <texture fallback="DefaultVideo.png" background="true">$INFO[ListItem.Icon]</texture>
+                        <aspectratio>scale</aspectratio>
+                    </control>
+
+                    <control type="image">
+                        <left>10</left>
+                        <width>200</width>
+                        <height>5</height>
+                        <include>Common_Color_BaseMediumHigh</include>  
                     </control>
 
                 </itemlayout>
 
-                <focusedlayout height="300" width="220">
+                <focusedlayout height="315" width="220">
 
-                    <control type="group">
-                        <animation type="Focus" reversible="false">
-                            <effect type="zoom" center="auto" start="100" end="105" time="300" tween="back" easing="out" />
-                        </animation>
+                <control type="group">
+                    <depth>DepthContentPopout</depth>
+                    <animation type="Focus">
+                        <effect type="zoom" start="100" end="107" time="200" tween="sine" easing="inout" center="auto" />
+                    </animation>
+                    <animation type="Unfocus">
+                        <effect type="zoom" start="107" end="100" time="200" tween="sine" easing="inout" center="auto" />
+                    </animation>
 
-                        <control type="image">
-                            <width>200</width>
-                            <height>300</height>
-                            <include>Common_Color_Accent</include>
-                            <include>VisibleFadeEffect</include>
-                        </control>
+                    <control type="image">
+                        <left>10</left>
+                        <width>200</width>
+                        <height>305</height>
+                        <texture background="true" colordiffuse="Shadow">colors/color_white.png</texture>
+                    </control>
 
-                        <control type="image">
-                            <width>200</width>
-                            <height>300</height>
-                            <bordersize>10</bordersize>
-                            <bordertexture colordiffuse="$VAR[Accent_100]">colors/color_white.png</bordertexture>
-                            <texture background="true" fallback="tiles/favourites.png">$INFO[ListItem.Icon]</texture>
-                            <aspectratio aligny="top">scale</aspectratio>
-                        </control>
+                    <control type="image">
+                        <left>10</left>
+                        <width>200</width>
+                        <height>300</height>
+                        <texture background="true" colordiffuse="BaseMediumMid">colors/color_white.png</texture>    
+                    </control>
 
-                    </control> 
+                    <control type="image">
+                        <left>10</left>
+                        <width>200</width>
+                        <height>300</height>
+                        <texture fallback="DefaultVideo.png" background="true">$INFO[ListItem.Icon]</texture>
+                        <aspectratio>scale</aspectratio>
+                    </control>
+
+                    <control type="image">
+                        <left>10</left>
+                        <width>200</width>
+                        <height>5</height>
+                        <include>Common_Color_Accent</include>  
+                    </control>
+
+                </control>
 
                 </focusedlayout>
 
             </control>
 
+            <control type="image">
+                <top>430</top>          
+                <width>1256</width>
+                <height>60</height>
+                <texture colordiffuse="BaseMediumMid">colors/color_white.png</texture>          
+            </control>
+
             <control type="label">
-                <posx>420</posx>
-                <posy>405</posy>
-                <width>1080</width>
-                <height>40</height>
+                <left>78</left>
+                <top>430</top>
+                <width>1100</width>
+                <height>60</height>
                 <align>center</align>
-                <aligny>center</aligny>
-                <font>font30B</font>
-                <textcolor>BaseMediumHigh</textcolor>
+                <font>font30R</font>
                 <label>$INFO[ListItem.Label]</label>
             </control>          
 

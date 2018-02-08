@@ -7,60 +7,56 @@
         <include>DialogOverlay</include>
 
 		<control type="group">	
-			<posy>200</posy>
+			<top>150</top>
+			<left>200</left>
+
+            <include content="Common_Window_Backing">
+                <param name="width" value="1520"/>
+                <param name="height" value="780"/>  
+                <param name="logo_visible" value="false"/> 
+                <param name="header" value="$LOCALIZE[31004]"/> 
+                <param name="header_width" value="1480"/>    
+                <param name="header_height" value="75"/>             
+            </include> 
+
+            <include content="Common_Separator_Vertical">
+                <param name="top" value="75"/> 
+                <param name="left" value="420"/>   
+                <param name="height" value="645"/>
+            </include>
+
+            <include content="Common_Separator_Vertical">
+                <param name="top" value="135"/> 
+                <param name="left" value="970"/>   
+                <param name="height" value="585"/>
+            </include>
+
+            <include content="Common_Separator_Horizontal">
+                <param name="top" value="135"/> 
+                <param name="left" value="420"/>   
+                <param name="width" value="1100"/>
+            </include>
 
 			<control type="label" id="20">
 				<description>Fake Label used to pass on name label</description>
 				<visible>false</visible>
 			</control>
-			
-			<include>Settings_GrayBand</include>
 
 			<control type="group">	
-				<posy>10</posy>
-			
-				<include>Settings_Backing</include>	
-
-				<control type="scrollbar" id="73">
-					<include>Common_Animation_CenterMenu_Stage2</include>
-					<posx>460</posx>
-					<width>10</width>
-					<height>780</height>
-					<onleft>13</onleft>
-					<onright>12</onright>
-				</control>
+				<top>75</top>
 
 				<control type="group">	
-					<include>Common_Animation_CenterMenu_Fade1</include>
-
-					<control type="label">
-						<posx>20</posx>
-						<width>420</width>
-						<height>75</height>
-						<font>font45R</font>
-						<label>$LOCALIZE[31004]</label>
-						<textcolor>$VAR[Accent_100]</textcolor>
-					</control>
-
-					<control type="image">
-						<posx>20</posx>
-						<posy>80</posy>
-						<width>420</width>
-						<height>2</height>
-						<include>Common_Color_BaseMediumHigh</include>
-					</control>
 
 					<control type="list" id="13">
-						<posy>100</posy>
-						<width>460</width>
-						<height>660</height>
+						<width>410</width>
+						<height>645</height>
 						<onleft>9000</onleft>
 						<onright>73</onright>
 						<pagecontrol>73</pagecontrol>
-						<itemlayout height="60" width="460">
+						<itemlayout height="60" width="410">
 						
 							<control type="label">
-								<posx>15</posx>
+								<left>15</left>
 								<width>430</width>
 								<info>ListItem.Label</info>
 								<textcolor>BaseMediumHigh</textcolor>
@@ -69,7 +65,7 @@
 							
 						</itemlayout>
 						
-						<focusedlayout height="60" width="460">
+						<focusedlayout height="60" width="410">
 						
 							<control type="image">
 								<width>460</width>
@@ -79,7 +75,7 @@
 							</control>
 							
 							<control type="label">
-								<posx>15</posx>
+								<left>15</left>
 								<width>430</width>
 								<info>ListItem.Label</info>
 								<font>font30R</font>
@@ -87,55 +83,66 @@
 							
 						</focusedlayout>
 						
-					</control>					
+					</control>
+
+					<control type="scrollbar" id="73">
+						<left>410</left>
+						<width>10</width>
+						<height>645</height>
+						<onleft>13</onleft>
+						<onright>12</onright>
+					</control>
 
 				</control>
 
 				<control type="group">	
-					<posx>470</posx>
-					<include>Common_Animation_CenterMenu_Fade2</include>
+					<left>422</left>
 
 					<control type="label" id="22">
-						<posx>20</posx>
-						<width>510</width>
-						<height>75</height>
-						<font>font45R</font>
+						<width>548</width>
+						<height>60</height>
+						<font>font40R</font>
 						<textcolor>BaseMediumHigh</textcolor>
+						<align>center</align>
 					</control>
 
 					<control type="label" id="21">
-						<posx>550</posx>
-						<width>510</width>
-						<height>75</height>
-						<font>font45R</font>
+						<left>550</left>
+						<width>548</width>
+						<height>60</height>
+						<font>font40R</font>
 						<textcolor>BaseMediumHigh</textcolor>
+						<align>center</align>
 					</control>					
-					
-					<control type="image">
-						<posx>20</posx>
-						<posy>80</posy>
-						<width>1010</width>
-						<height>2</height>
-						<include>Common_Color_BaseMediumHigh</include>
-					</control>
 
 					<control type="group">
-						<description>Grouped Channels list</description>
-						<posy>100</posy>
+						<top>62</top>
 
 						<control type="list" id="12">
-							<width>510</width>
-							<height>660</height>
+							<width>538</width>
+							<height>583</height>
 							<onleft>13</onleft>
 							<onright>11</onright>
 							<pagecontrol>72</pagecontrol>
 							<itemlayout height="60">
-							
+
 								<control type="label">
-									<posx>15</posx>
-									<width>660</width>
-									<label>$INFO[ListItem.ChannelNumber,,. ]$INFO[ListItem.ChannelName]</label>
-									<include>Common_Settings_Label</include>
+									<left>15</left>
+									<height>60</height>
+									<width>75</width>
+									<align>left</align>
+									<font>font34B</font>
+									<textcolor>BaseMediumHigh</textcolor>
+									<label>$INFO[ListItem.ChannelNumber]</label>
+								</control>
+								
+								<control type="label">
+									<left>100</left>
+									<height>60</height>
+									<width>340</width>
+									<font>font30R</font>
+									<label>$INFO[ListItem.ChannelName]</label>
+									<textcolor>BaseMediumHigh</textcolor>
 								</control>
 								
 							</itemlayout>
@@ -143,17 +150,34 @@
 							<focusedlayout height="60">
 							
 								<control type="image">
-									<width>510</width>
+									<width>538</width>
+									<height>60</height>
+									<include>Common_Color_BaseLowest</include>
+								</control>
+
+								<control type="image">
+									<width>90</width>
 									<height>60</height>
 									<include>Common_Color_Accent</include>
 									<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(12)">Conditional</animation>
 								</control>
 
 								<control type="label">
-									<posx>15</posx>
-									<width>375</width>
-									<label>$INFO[ListItem.ChannelNumber,,. ]$INFO[ListItem.ChannelName]</label>
+									<left>15</left>
+									<height>60</height>
+									<width>75</width>
+									<align>left</align>
+									<font>font34B</font>
+									<label>$INFO[ListItem.ChannelNumber]</label>
+								</control>
+								
+								<control type="label">
+									<left>100</left>
+									<height>60</height>
+									<width>340</width>
 									<font>font30R</font>
+									<label>$INFO[ListItem.ChannelName]</label>
+									<textcolor>$VAR[Accent_100]</textcolor>
 								</control>
 								
 							</focusedlayout>
@@ -161,31 +185,42 @@
 						</control>
 						
 						<control type="scrollbar" id="72">
-							<posx>510</posx>
+							<left>538</left>
 							<width>10</width>
-							<height>660</height>
+							<height>583</height>
 						</control>
 						
 					</control>
 
 					<control type="group">
-						<description>Channels list</description>
-						<posy>100</posy>
-						<posx>530</posx>
+						<top>62</top>
+						<left>550</left>
 
 						<control type="list" id="11">
-							<width>510</width>
-							<height>660</height>
+							<width>538</width>
+							<height>583</height>
 							<onleft>12</onleft>
 							<onright>9000</onright>
 							<pagecontrol>71</pagecontrol>
 							<itemlayout height="60">
 							
 								<control type="label">
-									<posx>15</posx>
-									<width>660</width>
-									<label>$INFO[ListItem.ChannelNumber,,. ]$INFO[ListItem.ChannelName]</label>
-									<include>Common_Settings_Label</include>
+									<left>15</left>
+									<height>60</height>
+									<width>75</width>
+									<align>left</align>
+									<font>font34B</font>
+									<textcolor>BaseMediumHigh</textcolor>
+									<label>$INFO[ListItem.ChannelNumber]</label>
+								</control>
+								
+								<control type="label">
+									<left>100</left>
+									<height>60</height>
+									<width>340</width>
+									<font>font30R</font>
+									<label>$INFO[ListItem.ChannelName]</label>
+									<textcolor>BaseMediumHigh</textcolor>
 								</control>
 								
 							</itemlayout>
@@ -193,17 +228,34 @@
 							<focusedlayout height="60">
 							
 								<control type="image">
-									<width>510</width>
+									<width>538</width>
+									<height>60</height>
+									<include>Common_Color_BaseLowest</include>
+								</control>
+
+								<control type="image">
+									<width>90</width>
 									<height>60</height>
 									<include>Common_Color_Accent</include>
 									<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(11)">Conditional</animation>
 								</control>
 
 								<control type="label">
-									<posx>15</posx>
-									<width>375</width>
-									<label>$INFO[ListItem.ChannelNumber,,. ]$INFO[ListItem.ChannelName]</label>
+									<left>15</left>
+									<height>60</height>
+									<width>75</width>
+									<align>left</align>
+									<font>font34B</font>
+									<label>$INFO[ListItem.ChannelNumber]</label>
+								</control>
+								
+								<control type="label">
+									<left>100</left>
+									<height>60</height>
+									<width>340</width>
 									<font>font30R</font>
+									<label>$INFO[ListItem.ChannelName]</label>
+									<textcolor>$VAR[Accent_100]</textcolor>
 								</control>
 								
 							</focusedlayout>
@@ -211,127 +263,49 @@
 						</control>
 						
 						<control type="scrollbar" id="71">
-							<posx>510</posx>
+							<left>538</left>
 							<width>10</width>
-							<height>660</height>
+							<height>583</height>
 						</control>
 						
 					</control>					
 										
-				</control>
+				</control>				
 
-				<control type="group">	
-					<posx>1520</posx>
-					<include>Common_Animation_CenterMenu_Fade3</include>
+				<control type="grouplist" id="9000">			
+					<top>645</top>
+					<width>1520</width>
+					<itemgap>0</itemgap>
+					<orientation>horizontal</orientation>
+					<onup>13</onup>
+					<ondown>13</ondown>
+					<align>center</align>
 
-					<control type="image">
-						<posx>20</posx>
-						<posy>80</posy>
-						<width>360</width>
-						<height>2</height>					
-						<include>Common_Color_BaseWhite</include>
-					</control>					
+	                <include content="InfoDialog_Button">
+	                    <param name="button_id" value="29"/>  
+	                    <param name="width" value="380"/>
+	                    <param name="label" value="186"/>          
+	                </include>
+
+	                <include content="InfoDialog_Button">
+	                    <param name="button_id" value="26"/>  
+	                    <param name="width" value="380"/>
+	                    <param name="label" value="31447"/>          
+	                </include>
+
+	                <include content="InfoDialog_Button">
+	                    <param name="button_id" value="27"/>  
+	                    <param name="width" value="380"/>  
+	                    <param name="label" value="31448"/>       
+	                </include>
+
+	                <include content="InfoDialog_Button">
+	                    <param name="button_id" value="28"/>  
+	                    <param name="width" value="380"/>  
+	                    <param name="label" value="31449"/>       
+	                </include>
 					
-					<control type="grouplist" id="9000">
-						<posy>100</posy>
-						<width>450</width>
-						<height>450</height>
-						<itemgap>3</itemgap>
-						<onright>20</onright>
-						<onup>34</onup>
-						<ondown>30</ondown>
-						
-						<control type="group">
-							<height>75</height>
-
-							<control type="image">
-								<include>Common_Settings_Button_Backing</include>
-								<visible>Control.HasFocus(29)</visible>
-							</control>	
-							
-							<control type="button" id="29">
-								<description>OK</description>
-								<include>Common_Settings_Button2</include>
-								<texturefocus>buttons/okFO.png</texturefocus>
-								<texturenofocus>buttons/okNF.png</texturenofocus>
-								<label>12321</label>
-								<onup>28</onup>
-								<onleft>11</onleft>
-								<onright>13</onright>
-								<ondown>26</ondown>
-							</control>
-
-						</control>
-						
-						<control type="group">
-							<height>75</height>
-							
-							<control type="image">
-								<include>Common_Settings_Button_Backing</include>
-								<visible>Control.HasFocus(26)</visible>
-							</control>	
-							
-							<control type="button" id="26">
-								<description>Add Group</description>
-								<include>Common_Settings_Button2</include>
-								<texturefocus>buttons/addFO.png</texturefocus>
-								<texturenofocus>buttons/addNF.png</texturenofocus>
-								<label>15019</label>
-								<onup>29</onup>
-								<ondown>27</ondown>
-								<onleft>11</onleft>
-								<onright>13</onright>
-							</control>
-
-						</control>
-						
-						<control type="group">
-							<height>75</height>
-
-							<control type="image">
-								<include>Common_Settings_Button_Backing</include>
-								<visible>Control.HasFocus(27)</visible>
-							</control>	
-							
-							<control type="button" id="27">
-								<description>Rename Group</description>
-								<include>Common_Settings_Button2</include>
-								<texturefocus>buttons/renameFO.png</texturefocus>
-								<texturenofocus>buttons/renameNF.png</texturenofocus>
-								<label>118</label>
-								<onup>26</onup>
-								<ondown>28</ondown>
-								<onleft>11</onleft>
-								<onright>13</onright>
-							</control>
-
-						</control>
-						
-						<control type="group">
-							<height>75</height>
-
-							<control type="image">
-								<include>Common_Settings_Button_Backing</include>
-								<visible>Control.HasFocus(28)</visible>
-							</control>
-							
-							<control type="button" id="28">
-								<description>Remove Group</description>
-								<include>Common_Settings_Button2</include>
-								<texturefocus>buttons/removeFO.png</texturefocus>
-								<texturenofocus>buttons/removeNF.png</texturenofocus>
-								<label>117</label>
-								<onup>27</onup>
-								<ondown>29</ondown>
-								<onleft>11</onleft>
-								<onright>13</onright>
-							</control>
-
-						</control>		
-						
-					</control>
-
-				</control>
+				</control>	
 
 			</control>
 

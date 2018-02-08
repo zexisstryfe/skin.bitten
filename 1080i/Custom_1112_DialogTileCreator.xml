@@ -13,64 +13,49 @@
         <include>DialogOverlay</include>
 		
 		<control type="group">
-			<posx>0</posx>
-			<posy>315</posy>			
-			<include>Common_Animation_Dialog</include>
+			<left>332</left>
+			<top>315</top>	
 
-			<control type="image">			
-				<width>1920</width>
-				<height>450</height>
-				<texture colordiffuse="BaseWhite">colors/color_white.png</texture>			
-			</control>
-
-			<control type="group">	
-				<posy>75</posy>
-				<width>1920</width>
-				<height>375</height>
-
-				<include>Common_Logo_Backing</include>
-				
-			</control>
-			
-			<control type="image">			
-				<width>1920</width>
-				<include>InfoDialog_Header</include>		
-			</control>		
-			
-			<control type="label" id="1">			
-				<description>Heading</description>
-				<posx>300</posx>
-				<width>885</width>
-				<height>75</height>
-				<font>font45R</font>
-				<label>$LOCALIZE[31197]</label>
-			</control>
+            <include content="Common_Window_Backing">
+                <param name="width" value="1256"/>
+                <param name="height" value="410"/>  
+                <param name="logo_height" value="275"/> 
+                <param name="header" value="$LOCALIZE[31197]"/> 
+                <param name="header_id" value="1"/>
+                <param name="header_width" value="880"/>
+                <param name="header_height" value="75"/>                 
+            </include> 
 
             <control type="group">
-				<posx>450</posx>
-				<posy>110</posy>
+				<left>178</left>
+				<top>95</top>
 			
                 <control type="image">
-                    <width>960</width>
+                    <width>900</width>
                     <height>60</height>
                     <include>Common_Color_Accent</include>
                     <visible>ControlGroup(2405).HasFocus</visible>
                 </control>
-				
-                <control type="button">
-                    <include>TileCreator_Buttons1</include>
-                    <visible>!ControlGroup(2405).HasFocus</visible>
-					<textcolor>BaseMediumHigh</textcolor>
-                </control>
-				
-                <control type="button">
-                    <include>TileCreator_Buttons1</include>
-                    <visible>ControlGroup(2405).HasFocus</visible>
-                </control>
+
+	            <include content="Dialog_TileCreator_Button">
+	                <param name="width" value="810"/>
+	                <param name="label" value="$LOCALIZE[467]"/>  
+	                <param name="label2" value="$INFO[Skin.String(HomeTileEdit.TypeName)]"/> 
+	                <param name="textcolor" value="BaseMediumHigh"/> 
+	                <param name="visible" value="!ControlGroup(2405).HasFocus"/>               
+	            </include> 
+
+	            <include content="Dialog_TileCreator_Button">
+	                <param name="width" value="810"/>
+	                <param name="label" value="$LOCALIZE[467]"/>  
+	                <param name="label2" value="$INFO[Skin.String(HomeTileEdit.TypeName)]"/> 
+	                <param name="textcolor" value="BaseWhite"/> 
+	                <param name="visible" value="ControlGroup(2405).HasFocus"/>               
+	            </include> 
 				
 				<control type="grouplist" id="2405">
-					<posx>880</posx>
-					<posy>10</posy>
+					<left>820</left>
+					<top>15</top>
 					<width>180</width>
 					<height>90</height>
 					<itemgap>0</itemgap>
@@ -81,7 +66,7 @@
 					<control type="button" id="24051">
 						<width>30</width>
 						<height>30</height>
-						<texturefocus colordiffuse="BaseMediumHigh">controls/ArrowDownFO.png</texturefocus>
+						<texturefocus colordiffuse="BaseWhite">controls/ArrowDownFO.png</texturefocus>
 						<texturenofocus colordiffuse="BaseMediumHigh">controls/ArrowDownNF.png</texturenofocus>
 						<onclick condition="Skin.String(HomeTileEdit.Type,6)">Skin.SetString(HomeTileEdit.Type,0)</onclick>
 						<onclick condition="Skin.String(HomeTileEdit.Type,6)">Skin.SetString(HomeTileEdit.TypeName,$LOCALIZE[1037])</onclick>
@@ -112,7 +97,7 @@
 					<control type="button" id="24052">
 						<width>30</width>
 						<height>30</height>
-						<texturefocus colordiffuse="BaseMediumHigh">controls/ArrowUpFO.png</texturefocus>
+						<texturefocus colordiffuse="BaseWhite">controls/ArrowUpFO.png</texturefocus>
 						<texturenofocus colordiffuse="BaseMediumHigh">controls/ArrowUpNF.png</texturenofocus>
 						<onclick condition="Skin.String(HomeTileEdit.Type,0)">Skin.SetString(HomeTileEdit.Type,6)</onclick>
 						<onclick condition="Skin.String(HomeTileEdit.Type,0)">Skin.SetString(HomeTileEdit.TypeName,$LOCALIZE[1036])</onclick>
@@ -143,9 +128,9 @@
 				</control>
 
 				<control type="button" id="2406">
-					<posy>50</posy>
-					<width>960</width>
-					<height>52</height>
+					<top>60</top>
+					<width>900</width>
+					<height>60</height>
 					<align>left</align>
 					<textoffsetx>15</textoffsetx>
 					<onup>2405</onup>
@@ -163,43 +148,50 @@
 					<onclick condition="Skin.String(HomeTileEdit.Type,5)">Skin.SetFile(HomeTileEdit.Path,.xsp|.m3u,special://profile/playlists/music/)</onclick>
 					<onclick condition="Skin.String(HomeTileEdit.Type,6)">RunScript(script.favourites,property=HomeTileEdit)</onclick>
 				</control>
-				
-            </control>
 
-            <control type="button" id="2141">
-                <posy>210</posy>
-                <include>TileCreator_Buttons2</include>
-                <onup>2406</onup>
-                <ondown>2142</ondown>
-                <label>$LOCALIZE[551]</label>
-                <label2>$INFO[Skin.String(HomeTileEdit.Label)]</label2>
-                <onclick>Skin.SetString(HomeTileEdit.Label)</onclick>
-            </control>
-			
-            <control type="button" id="2142">
-                <posy>260</posy>
-                <include>TileCreator_Buttons2</include>
-                <onup>2141</onup>
-                <ondown>11</ondown>
-                <label>$LOCALIZE[31205]</label>
-                <label2>$INFO[Skin.String(HomeTileEdit.Icon)]</label2>
-                <onclick>Skin.SetImage(HomeTileEdit.Icon)</onclick>
+	            <include content="Dialog_TileCreator_Button">
+	            	<param name="button_id" value="2141"/>
+	            	<param name="top" value="120"/>
+	                <param name="label" value="$LOCALIZE[551]"/>  
+	                <param name="label2" value="$INFO[Skin.String(HomeTileEdit.Label)]"/> 
+	                <param name="onup" value="2406"/>
+	                <param name="ondown" value="2142"/>
+	                <param name="onclick" value="Skin.SetString(HomeTileEdit.Label)"/>           
+	            </include> 
+
+	            <include content="Dialog_TileCreator_Button">
+	            	<param name="button_id" value="2142"/>
+	            	<param name="top" value="180"/>
+	                <param name="label" value="$LOCALIZE[31205]"/>  
+	                <param name="label2" value="$INFO[Skin.String(HomeTileEdit.Icon)]"/> 
+	                <param name="onup" value="2141"/>
+	                <param name="ondown" value="11"/>
+	                <param name="onclick" value="Skin.SetString(HomeTileEdit.Icon)"/>           
+	            </include>
+				
             </control>
 			
 			<control type="grouplist">			
-				<posx>630</posx>
-				<posy>360</posy>
-				<width>660</width>
-				<itemgap>20</itemgap>
+				<top>350</top>
+				<width>1256</width>
+				<itemgap>0</itemgap>
+				<onup>2142</onup>
+				<ondown>2405</ondown>
 				<orientation>horizontal</orientation>
-				<align>right</align>
-			
+				<align>center</align>
+
 				<control type="button" id="11">
-					<description>Yes</description>
-					<label>107</label>
-					<include>InfoDialog_Button</include>
-					<onup>2142</onup>
-					<ondown>2405</ondown>
+					<width>628</width>
+					<texturefocus colordiffuse="$VAR[Accent_100]">colors/color_white.png</texturefocus>
+					<texturenofocus colordiffuse="BaseMediumMid">colors/color_white.png</texturenofocus>
+					<font>font36</font>
+					<textcolor>BaseWhite</textcolor>
+					<label>$LOCALIZE[107]</label>
+					<focusedcolor>BaseWhite</focusedcolor>
+					<disabledcolor>BaseMid</disabledcolor>
+					<textoffsety>6</textoffsety>
+					<align>center</align>
+					<aligny>top</aligny>
 					<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)],$INFO[Skin.String(HomeTileEdit.Label)])</onclick>
 					<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Label,$INFO[Skin.String(HomeTileEdit.Label)])</onclick>
 					<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Icon,$INFO[Skin.String(HomeTileEdit.Icon)])</onclick>
@@ -208,16 +200,13 @@
 					<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Image,)</onclick>
 					<onclick>Dialog.Close(1112)</onclick>
 					<onclick>Dialog.Close(200)</onclick>
-				</control>
-				
-				<control type="button" id="10">
-					<description>No</description>
-					<label>106</label>
-					<include>InfoDialog_Button</include>
-					<onup>2142</onup>
-					<ondown>2405</ondown>
-					<onclick>Dialog.Close(1112)</onclick>
-				</control>
+				</control>	
+
+                <include content="InfoDialog_Button">
+                    <param name="button_id" value="10"/>  
+                    <param name="width" value="628"/>
+                    <param name="label" value="106"/>          
+                </include>
 				
 			</control>	
 

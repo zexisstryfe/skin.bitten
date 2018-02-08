@@ -1,19 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?> 
 
 <window id="20">
     <defaultcontrol always="true">55</defaultcontrol>
-    <views>50,55,592</views>
-	
-    <!--Animation-->
-    <include condition="!Window.Previous(fullscreenvideo) + !Window.Previous(slideshow) + Skin.HasSetting(MetroAnimations)">Common_Animation_Splash_Flip</include>
-	
+    <views>50,51,55,592</views>
+
     <!--Background Area-->
     <controls>
-        <include>GlobalBackground</include>
+        <include>Background_Global</include>
 		
         <!--Available Views-->
         <control type="group">
             <include>Viewtype_List</include>
+            <include>Viewtype_Fanart</include>
             <include>Viewtype_Tiles</include>
             <include>Viewtype_Thumbnail_Album</include>
         </control>
@@ -25,9 +23,6 @@
         <!--Sort Overlays-->
         <include>Sort_Panel</include>
         <include>Sort_Panel_Alt</include> 
-		
-        <!--Splash Screen-->
-        <include condition="!Window.Previous(fullscreenvideo) + !Window.Previous(slideshow) + Skin.HasSetting(MetroAnimations)">Common_Splash</include>
 		
     </controls>
 	

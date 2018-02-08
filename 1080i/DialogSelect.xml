@@ -10,8 +10,12 @@
 
     <controls>
         <include>DialogOverlay</include>
-		<include>Common_LeftMenu_Mid_Backing</include>			
-		<include>Common_LeftBar_Mid_LeftMenu</include>
+
+        <include content="Common_LeftMenu">
+            <param name="width" value="690"/>   
+            <param name="time" value="600"/>
+            <param name="header_id" value="1"/>
+        </include>  
 	
 		<control type="group">
 			<animation type="WindowOpen">
@@ -20,53 +24,28 @@
 			<animation type="WindowClose">
 				<effect type="fade" start="100" end="0" time="200" />
 			</animation>
-			
-			<control type="image">
-                <posy>175</posy>
-                <width>690</width>
-                <height>725</height>
-                <include>Common_Color_BaseLow</include>
-            </control>
 
-            <control type="label">
-                <description>Number Of Files</description>
-                <posy>95</posy>
-                <width>300</width>
-                <align>center</align>
-                <label>$INFO[Container(6).NumItems] $LOCALIZE[31053]</label>
-				<textcolor>BaseMediumHigh</textcolor>
-            </control>			
-			
-            <control type="label" id="1">
-                <description>header label</description>
-                <posx>15</posx>
-                <width>660</width>
-                <include>InfoDialog_Heading</include>
-            </control>
+            <include content="Common_Separator_Horizontal">
+                <param name="top" value="113"/> 
+                <param name="width" value="690"/>
+            </include>
 
-            <control type="button" id="5">
-                <description>Manual</description>
-                <posx>365</posx>
-                <posy>95</posy>
-                <width>300</width>
-                <label>368</label>
-                <onup>3</onup>
-                <ondown>3</ondown>
-				<textcolor>BaseMediumHigh</textcolor>
-                <texturenofocus colordiffuse="BaseLow">colors/color_white.png</texturenofocus>
-            </control>
+            <include content="Common_Separator_Horizontal">
+                <param name="top" value="840"/>   
+                <param name="width" value="690"/>
+            </include>       
 
             <control type="scrollbar" id="10">
-                <posx>680</posx>
-                <posy>175</posy>
+                <left>680</left>
+                <top>115</top>
                 <height>725</height>
-                <onleft>6</onleft>
-                <onright>6</onright>
+                <onleft condition="Control.IsVisible(3)">3</onleft>
+                <onleft condition="Control.IsVisible(6)">6</onleft>
                 <width>10</width>
             </control>			
 			
             <control type="list" id="3">
-                <posy>175</posy>
+                <top>115</top>
                 <width>680</width>
                 <height>725</height>
                 <onleft>10</onleft>
@@ -77,17 +56,19 @@
                 <itemlayout height="69">
 				
                     <control type="label">
-                        <posx>30</posx>
+                        <left>30</left>
                         <width>600</width>
-                        <font>font36R</font>
+                        <textcolor>BaseMediumHigh</textcolor>
+                        <selectedcolor>$VAR[Accent_100]</selectedcolor>
                         <info>ListItem.Label</info>
                     </control>
 					
                     <control type="label">
-                        <posx>660</posx>
+                        <left>60</left>
                         <width>600</width>
                         <align>right</align>
-                        <font>font36</font>
+                        <textcolor>BaseMediumMid</textcolor>
+                        <selectedcolor>$VAR[Accent_80]</selectedcolor>
                         <info>ListItem.Label2</info>
                     </control>
 					
@@ -103,17 +84,15 @@
                     </control>
 					
                     <control type="label">
-                        <posx>30</posx>
+                        <left>30</left>
                         <width>600</width>
-                        <font>font36R</font>
                         <info>ListItem.Label</info>
                     </control>
 					
                     <control type="label">
-                        <posx>630</posx>
+                        <left>60</left>
                         <width>600</width>
                         <align>right</align>
-                        <font>font36</font>
                         <info>ListItem.Label2</info>
                     </control>
 					
@@ -122,49 +101,57 @@
             </control>
 
             <control type="list" id="6">
-                <posy>175</posy>
+                <top>115</top> 
                 <width>680</width>
                 <height>725</height>
                 <onleft>7</onleft>
                 <onright>7</onright>
                 <onup>5</onup>
                 <ondown>5</ondown>
-                <pagecontrol>7</pagecontrol>
-                <itemlayout height="138">
+                <pagecontrol>10</pagecontrol>
+                <itemlayout height="140">
 					
                     <control type="image">
-                        <posx>8</posx>
-                        <posy>8</posy>
+                        <left>10</left>
+                        <top>10</top>
                         <width>120</width>
                         <height>120</height>
-                        <texture diffuse="masks/lg_circle.png" fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
-						<bordertexture diffuse="masks/lg_circle.png" colordiffuse="BaseMediumHigh">colors/color_white.png</bordertexture>
+                        <texture fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
+						<bordertexture colordiffuse="BaseMediumHigh">colors/color_white.png</bordertexture>
 					</control>
 					
                     <control type="label">
-                        <posx>150</posx>
-						<posy>10</posy>
+                        <left>150</left>
+						<top>10</top>
                         <width>500</width>
                         <height>45</height>
-                        <textcolor>$VAR[Accent_100]</textcolor>
-                        <font>font30B</font>
+                        <textcolor>BaseMediumHigh</textcolor>
+                        <selectedcolor>$VAR[Accent_100]</selectedcolor>
+                        <font>font30R</font>
                         <label>$INFO[ListItem.Label]</label>
                     </control>
 					
                     <control type="textbox">
-                        <posx>150</posx>
-						<posy>60</posy>
+                        <left>150</left>
+						<top>60</top>
                         <width>500</width>
-                        <height>60</height>
+                        <height>65</height>
                         <font>font26</font>
-						<textcolor>BaseMediumHigh</textcolor>
+						<textcolor>BaseMid</textcolor>
 						<autoscroll>false</autoscroll>
                         <label>$INFO[ListItem.Label2]</label>
                     </control>
-					
+
+                    <control type="image">
+                        <top>138</top>
+                        <width>680</width>
+                        <height>2</height>
+                        <include>Common_Color_BaseLowest</include>
+                    </control>
+				
                 </itemlayout>
 				
-                <focusedlayout height="138">
+                <focusedlayout height="140">
 				
                     <control type="button">
                         <onfocus condition="!IsEmpty(Window(selectdialog).Property(Property))">SetProperty(Label,$INFO[Container(6).ListItem.Label])</onfocus>
@@ -173,36 +160,45 @@
 					
                     <control type="image">
                         <width>680</width>
-                        <height>135</height>
-                        <include>Common_Color_Accent</include>
+                        <height>140</height>
+                        <include>Common_Color_BaseLowest</include>
 						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(6)">Conditional</animation>
                     </control>
 
                     <control type="image">
-                        <posx>8</posx>
-                        <posy>8</posy>
+                        <width>140</width>
+                        <height>140</height>
+                        <include>Common_Color_Accent</include>
+                        <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(6)">Conditional</animation>
+                    </control>
+
+                    <control type="image">
+                        <left>10</left>
+                        <top>10</top>
                         <width>120</width>
                         <height>120</height>
-                        <texture diffuse="masks/lg_circle.png" fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
-						<bordertexture diffuse="masks/lg_circle.png" colordiffuse="BaseMediumHigh">colors/color_white.png</bordertexture>
-					</control>
+                        <texture fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
+                        <bordertexture colordiffuse="BaseMediumHigh">colors/color_white.png</bordertexture>
+                    </control>
 					
                     <control type="label">
-                        <posx>150</posx>
-						<posy>10</posy>
+                        <left>150</left>
+						<top>10</top>
                         <width>500</width>
                         <height>45</height>
-                        <font>font30B</font>
+                        <font>font30R</font>
+                        <selectedcolor>BaseBlack</selectedcolor>
+                        <textcolor>$VAR[Accent_100]</textcolor>
                         <label>$INFO[ListItem.Label]</label>
                     </control>
 					
                     <control type="textbox">
-                        <posx>150</posx>
-						<posy>60</posy>
+                        <left>150</left>
+						<top>60</top>
                         <width>500</width>
-                        <height>60</height>
+                        <height>65</height>
                         <font>font26</font>
-						<textcolor>BaseLow</textcolor>
+						<textcolor>BaseMediumHigh</textcolor>
 						<autoscroll>true</autoscroll>
                         <label>$INFO[ListItem.Label2]</label>
                     </control>
@@ -213,30 +209,75 @@
 			
             <control type="image">
                 <description>Large Icon Image</description>
-                <posx>10</posx>
-                <posy>910</posy>
-                <width>160</width>
+                <left>10</left>
+                <top>850</top>
+                <width min="106" max="285">auto</width>
                 <height>160</height>
                 <texture fallback="DefaultAddonNone.png">$INFO[Container(6).ListItem.Icon]</texture>
-                <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                <aspectratio align="left" aligny="bottom">keep</aspectratio>
                 <bordertexture colordiffuse="$VAR[Accent_100]">colors/color_white.png</bordertexture>
                 <bordersize>5</bordersize>
             </control>			
-			
-			<control type="label">
-			  <visible>Control.HasFocus(6) + !IsEmpty(Container(6).ListItem.Property(Addon.Creator))</visible>
-			  <posy>1000</posy>
-			  <include>SelectDialog_Labels</include>
-			  <label>$INFO[Container(6).ListItem.Property(Addon.Creator),[B]$LOCALIZE[21863]:[/B] ]</label>
-			</control>
-			
-			<control type="label">
-			  <visible>Control.HasFocus(6) + !IsEmpty(Container(6).ListItem.Property(Addon.Version))</visible>
-			  <posy>920</posy>
-			  <include>SelectDialog_Labels</include>
-			  <label>$INFO[Container(6).ListItem.Property(Addon.Version),[B]$LOCALIZE[24051][/B] ]</label>
-			</control>			
-			
+
+            <control type="label">
+                <description>Number Of Files</description>
+                <top>860</top>
+                <align>right</align>
+                <include>SelectDialog_Labels</include>
+                <label>$INFO[Container(3).NumItems] $LOCALIZE[31053]</label>
+                <visible>Control.IsVisible(3)</visible>
+            </control> 
+
+            <control type="label">
+                <description>Number Of Files</description>
+                <top>860</top>
+                <left>270</left>
+                <align>right</align>
+                <include>SelectDialog_Labels</include>
+                <label>$INFO[Container(6).NumItems] $LOCALIZE[31053]</label>
+                <visible>Control.IsVisible(6)</visible>
+            </control> 
+
+            <control type="image">
+                <top>1020</top>          
+                <width>690</width>
+                <height>60</height>
+                <texture colordiffuse="BaseMediumMid">colors/color_white.png</texture>          
+            </control>
+
+            <control type="image">
+                <top>1020</top>          
+                <width>690</width>
+                <height>60</height>
+                <texture colordiffuse="$VAR[Accent_100]">colors/color_white.png</texture>   
+                <visible>Control.HasFocus(5) | Control.HasFocus(7)</visible>       
+            </control>
+
+            <control type="grouplist">          
+                <top>1020</top>
+                <width>690</width>
+                <itemgap>0</itemgap>
+                <onup condition="Control.IsVisible(3)">3</onup>
+                <onup condition="Control.IsVisible(6)">6</onup>
+                <ondown condition="Control.IsVisible(3)">3</ondown>
+                <ondown condition="Control.IsVisible(6)">6</ondown>
+                <orientation>horizontal</orientation>
+                <align>center</align>
+ 
+                <include content="InfoDialog_Button">
+                    <param name="button_id" value="5"/>  
+                    <param name="width" value="345"/>
+                    <param name="label" value="368"/>          
+                </include>  
+ 
+                <include content="InfoDialog_Button">
+                    <param name="button_id" value="7"/>  
+                    <param name="width" value="345"/>
+                    <param name="label" value="222"/>          
+                </include>
+                
+            </control>
+						
 		</control>
 
     </controls>

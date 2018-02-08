@@ -7,84 +7,110 @@
         <control type="group">
             <description>Fanart View (id=51)</description>
             <visible>Control.IsVisible(51)</visible>
-
-			<!--Scrollbar-->
-			<control type="scrollbar" id="580"> 
-				<posx>1380</posx>
-				<height>1080</height>
-				<width>10</width>
-				<include>ShowOptions_Left</include>
-				<onright>51</onright>
-			</control>
 			
 			<!--List Area-->
             <control type="group">
-				<posx>1390</posx>
-				<include>Animation_Slide_Right</include> 
+				<left>1390</left>
+				<include>Animation_Popup_2</include>
+
+				<!--Scrollbar-->
+				<control type="scrollbar" id="580"> 
+					<left>520</left>
+					<height>1060</height>
+					<width>10</width>
+					<include>ShowOptions_Right</include>
+					<onleft>51</onleft>
+				</control>
 				
-                <control type="image">                  
-                    <width>530</width>
-                    <height>1080</height>
+                <control type="image">
+                	<top>10</top>                  
+                    <width>520</width>
+                    <height>1060</height>
                     <include>Common_Color_BaseWhite</include>
                 </control>
-              
+
+                <control type="image">
+                	<top>10</top>                  
+                    <width>520</width>
+                    <height>5</height>
+                    <include>Common_Color_BaseMediumHigh</include>
+                </control>
+
+	            <include content="Common_Separator_Horizontal">
+	                <param name="top" value="1015"/>   
+	                <param name="width" value="520"/>
+	            </include>
+
+				<control type="label">
+					<top>1017</top>
+                    <left>20</left>
+                    <width>440</width>
+                    <height>53</height>
+					<align>right</align>
+                    <font>font26R</font>
+                    <label>$INFO[Container.CurrentItem,, / ]$INFO[Container.NumItems]</label>
+					<textcolor>BaseMediumHigh</textcolor>
+                </control>
+
+				<control type="image">
+					<left>470</left>
+					<top>1025</top>
+					<width>40</width>
+					<height>40</height>
+					<texture colordiffuse="BaseMediumHigh">icons\files.png</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
+
                 <control type="list" id="51">
-                    <width>530</width>
-                    <height>1080</height>
-                    <onleft>580</onleft>
-                    <include>ShowOptions_Right</include> 
+                	<top>15</top>
+                    <width>520</width>
+                    <height>1000</height>
+                    <onright>580</onright>
+                    <include>ShowOptions_Left</include> 
                     <onup>51</onup>
                     <ondown>51</ondown>
                     <pagecontrol>580</pagecontrol>
-                    <viewtype label="fanart">fanart</viewtype>
+                    <viewtype label="$LOCALIZE[20445]">list</viewtype>
                     <scrolltime>200</scrolltime>
                     <visible>Window.IsActive(1) | Window.IsActive(myvideonav.xml) | Window.IsActive(pictures) | Container.Content(songs)  | Container.Content(artists) | Container.Content(albums)  | Container.Content(musicvideos) | Window.IsActive(MyMusicSongs.xml)</visible>
-                    <itemlayout width="960" height="85">
+                    <itemlayout width="520" height="80"> 
 
-						<control type="image">
-							<posx>10</posx>
-							<posy>10</posy>
-							<width>65</width>
-							<height>65</height>
-							<texture>backings/circle.png</texture>
-						</control>
-
-						<control type="image">
-							<posx>10</posx>
-							<posy>10</posy>
-							<width>65</width>
-							<height>65</height>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<texture diffuse="masks/circle.png">$VAR[Fanart_List_Icon]</texture>
-						</control>  
+		                <control type="image">
+		                	<top>78</top>                  
+		                    <width>520</width>
+		                    <height>2</height>
+		                    <include>Common_Color_BaseLowest</include>
+		                </control> 
 						
-						<include>Common_Watched_Small</include>
+						<include>Common_Watched_Diamond</include>
 
 						<control type="label">
-                            <posx>85</posx>
-                            <width>320</width>
-                            <height>85</height>
+                            <left>70</left>
+                            <width>330</width>
+                            <height>80</height>
 							<aligny>center</aligny>
-                            <font>font26</font>
-                            <label>$VAR[Fanart_List_Title]</label>
+                            <font>font26R</font>
+                            <label>$VAR[Common_ListSection_Title]</label>
 							<wrapmultiline>true</wrapmultiline>
 							<textcolor>BaseMediumHigh</textcolor>
+							<selectedcolor>$VAR[Accent_100]</selectedcolor>
                         </control>
 
                         <control type="label">
-                            <posx>410</posx>
-							<posy>10</posy>
+                            <left>410</left>
+							<top>10</top>
                             <width>100</width>
-                            <height>45</height>
+                            <height>30</height>
                             <font>font20R</font>
 							<align>right</align>
-                            <label>$VAR[Fanart_List_Label2]</label>
+                            <label>$VAR[Common_ListSection_Label2]</label>
 							<textcolor>$VAR[Accent_100]</textcolor>
+							<selectedcolor>$VAR[Accent_100]</selectedcolor>
                         </control>
 						
 						<control type="image">
-							<posx>410</posx>
-							<posy>45</posy>
+							<left>410</left>
+							<top>45</top>
 							<width>100</width>
 							<height>30</height>
 							<texture colordiffuse="BaseMid">flags\ratings\rating5.png</texture>
@@ -92,8 +118,8 @@
 						</control>
 						
 						<control type="image">
-							<posx>410</posx>
-							<posy>45</posy>
+							<left>410</left>
+							<top>45</top>
 							<width>100</width>
 							<height>30</height>
 							<texture colordiffuse="$VAR[Accent_100]">flags\ratings\$INFO[ListItem.Rating].png</texture>
@@ -102,61 +128,54 @@
 
                     </itemlayout>
 					
-                    <focusedlayout width="960" height="85">
+                    <focusedlayout width="520" height="80">
 					
                         <control type="image">
-                            <width>562</width>
-                            <height>85</height>
+                            <width>520</width>
+                            <height>80</height>
+                            <include>Common_Color_BaseLowest</include>
+                            <animation condition="Container(51).OnNext" reversible="false" effect="slide" start="0,-45" end="0,0" time="100" tween="back" easing="out">Focus</animation>
+                            <animation condition="Container(51).OnPrevious" reversible="false" effect="slide" start="0,45" end="0,0" time="100" tween="back" easing="out">Focus</animation>
+                        </control>
+
+                        <control type="image">
+                            <width>60</width>
+                            <height>80</height>
                             <include>Common_Color_Accent</include>
                             <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(51)">Conditional</animation>
                             <animation condition="Container(51).OnNext" reversible="false" effect="slide" start="0,-45" end="0,0" time="100" tween="back" easing="out">Focus</animation>
                             <animation condition="Container(51).OnPrevious" reversible="false" effect="slide" start="0,45" end="0,0" time="100" tween="back" easing="out">Focus</animation>
                         </control>
 						
-						<control type="image">
-							<posx>10</posx>
-							<posy>10</posy>
-							<width>65</width>
-							<height>65</height>
-							<texture>backings/circle.png</texture>
-						</control>
-
-						<control type="image">
-							<posx>10</posx>
-							<posy>10</posy>
-							<width>65</width>
-							<height>65</height>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<texture diffuse="masks/circle.png">$VAR[Fanart_List_Icon]</texture>
-						</control> 
-						
-						<include>Common_Watched_Small</include>
+						<include>Common_Watched_Diamond</include>
 
 						<control type="label">
-                            <posx>85</posx>
-                            <width>320</width>
-                            <height>85</height>
+                            <left>70</left>
+                            <width>330</width>
+                            <height>80</height>
 							<aligny>center</aligny>
-                            <font>font26</font>
-                            <label>$VAR[Fanart_List_Title]</label>
+                            <font>font26R</font>
+                            <label>$VAR[Common_ListSection_Title]</label>
 							<wrapmultiline>true</wrapmultiline>
-							<textcolor>BaseWhite</textcolor>
+							<textcolor>$VAR[Accent_100]</textcolor>
+							<selectedcolor>$VAR[Accent_100]</selectedcolor>
                         </control>
 
                         <control type="label">
-                            <posx>410</posx>
-							<posy>10</posy>
+                            <left>410</left>
+							<top>10</top>
                             <width>100</width>
-                            <height>45</height>
+                            <height>30</height>
                             <font>font20R</font>
 							<align>right</align>
-                            <label>$VAR[Fanart_List_Label2]</label>
-							<textcolor>BaseLow</textcolor>
+                            <label>$VAR[Common_ListSection_Label2]</label>
+							<textcolor>$VAR[Accent_100]</textcolor>
+							<selectedcolor>$VAR[Accent_100]</selectedcolor>
                         </control>
 						
 						<control type="image">
-							<posx>410</posx>
-							<posy>45</posy>
+							<left>410</left>
+							<top>45</top>
 							<width>100</width>
 							<height>30</height>
 							<texture colordiffuse="BaseMid">flags\ratings\rating5.png</texture>
@@ -164,11 +183,11 @@
 						</control>
 						
 						<control type="image">
-							<posx>410</posx>
-							<posy>45</posy>
+							<left>410</left>
+							<top>45</top>
 							<width>100</width>
 							<height>30</height>
-							<texture colordiffuse="BaseLow">flags\ratings\$INFO[ListItem.Rating].png</texture>
+							<texture colordiffuse="$VAR[Accent_100]">flags\ratings\$INFO[ListItem.Rating].png</texture>
 							<aspectratio>keep</aspectratio>
 						</control>
 
@@ -180,63 +199,68 @@
 
 			<!--Info Area-->
 			<control type="group">
-				<posy>740</posy>
-				<posx>80</posx>	
+				<top>740</top>
+				<left>90</left>	
+				<include>Animation_Popup_3</include>
 				
 				<control type="image">
-					<width>1300</width>
-					<height>340</height>
-					<include>Common_Color_BaseLow</include>
+					<width>1290</width>
+					<height>330</height>
+					<include>Common_Color_BaseLowest</include>
 				</control>
 
 				<control type="image">
-					<posy>280</posy>
-					<width>1300</width>
-					<height>60</height>
+					<width>1290</width>
+					<height>5</height>
 					<include>Common_Color_BaseMediumHigh</include>
 				</control>	
+
+	            <include content="Common_Separator_Horizontal">
+	                <param name="top" value="270"/>   
+	                <param name="width" value="1290"/>
+	            </include>
+
+	            <include content="Common_Separator_Horizontal">
+	                <param name="top" value="100"/>   
+	                <param name="width" value="1290"/>
+	            </include>
 				
 				<!--Details Area- Movies, TVShows, Seasons-->
 				<control type="group">
-					<visible>!stringcompare(ListItem.Label,..) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)]</visible>
+					<visible>!String.IsEqual(ListItem.Label,..) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)]</visible>
 					
 					<control type="image">
-						<width>227</width>
-						<height>340</height>
-						<include>Common_Color_BaseMid</include>
+						<top>5</top>
+						<width>217</width>
+						<height>325</height>
+						<include>Common_Color_BaseMediumHigh</include>
 					</control>
 					
 					<control type="image" id="130">
-						<width>227</width>
-						<height>340</height>
+						<top>5</top>
+						<width>217</width>
+						<height>325</height>
 						<aspectratio align="left" aligny="center">stretch</aspectratio>
-						<texture fallback="DefaultVideo.png">$VAR[Fanart_Info_Icon]</texture>
+						<texture fallback="DefaultVideo.png">$VAR[Common_Artwork]</texture>
 						<visible>!IsEmpty(ListItem.Art(poster))</visible>
 					</control>
 
 					<control type="label" id="145">
-						<posx>250</posx>
+						<left>240</left>
+						<top>5</top>
 						<include>Common_Fanart_Title</include>
-						<label>$VAR[Fanart_Info_Title]</label>
+						<label>$VAR[Common_InfoSection_Title]</label>
 					</control>
 					
 					<control type="label">
-						<posx>250</posx>
-						<width>660</width>
+						<left>240</left>
+						<width>670</width>
 						<include>Common_Fanart_Subtitle</include>
 					</control>
 					
-					<control type="image">
-						<posx>260</posx>
-						<posy>100</posy>
-						<width>1000</width>
-						<height>2</height>
-						<include>Common_Color_BaseMediumHigh</include>
-					</control>
-					
 					<control type="grouplist">
-						<posx>855</posx>
-						<posy>20</posy>
+						<left>855</left>
+						<top>20</top>
 						<width>420</width>
 						<height>60</height>
 						<itemgap>0</itemgap>
@@ -253,7 +277,7 @@
 							</control>
 							
 							<control type="label">
-								<posy>30</posy>
+								<top>30</top>
 								<width>85</width>
 								<include>Common_Fanart_Data</include>
 								<label>$INFO[ListItem.Year]</label>
@@ -273,7 +297,7 @@
 							</control>
 							
 							<control type="label">
-								<posy>30</posy>
+								<top>30</top>
 								<width>140</width>
 								<include>Common_Fanart_Data</include>
 								<label>$INFO[ListItem.Duration]</label>
@@ -281,7 +305,7 @@
 							</control>
 							
 							<control type="label">
-								<posy>30</posy>
+								<top>30</top>
 								<width>140</width>
 								<include>Common_Fanart_Data</include>
 								<label>$INFO[ListItem.Duration,, min]</label>
@@ -289,7 +313,7 @@
 							</control>
 							
 							<control type="label">
-								<posy>30</posy>
+								<top>30</top>
 								<width>140</width>
 								<include>Common_Fanart_Data</include>
 								<label>$LOCALIZE[1446]</label>
@@ -310,7 +334,7 @@
 							</control>
 							
 							<control type="label">
-								<posy>30</posy>
+								<top>30</top>
 								<width>120</width>
 								<include>Common_Fanart_Data</include>
 								<label>$INFO[ListItem.Property(TotalSeasons)]</label>
@@ -329,7 +353,7 @@
 							</control>
 							
 							<control type="label">
-								<posy>30</posy>
+								<top>30</top>
 								<width>120</width>
 								<include>Common_Fanart_Data</include>
 								<label>$INFO[ListItem.Property(TotalEpisodes)]</label>
@@ -347,7 +371,7 @@
 							</control>
 							
 							<control type="image">
-								<posy>30</posy>
+								<top>30</top>
 								<width>140</width>
 								<height>30</height>
 								<texture colordiffuse="BaseMid">flags\ratings\rating5.png</texture>
@@ -356,10 +380,10 @@
 							</control>
 							
 							<control type="image">
-								<posy>30</posy>
+								<top>30</top>
 								<width>140</width>
 								<height>30</height>
-								<texture colordiffuse="BaseWhite">flags\ratings\$INFO[ListItem.Rating].png</texture>
+								<texture colordiffuse="$VAR[Accent_100]">flags\ratings\$INFO[ListItem.Rating].png</texture>
 								<align>center</align>
 								<aspectratio>keep</aspectratio>
 							</control>
@@ -369,54 +393,73 @@
 					</control>
 
 					<control type="grouplist">
-						<posx>260</posx>
-						<posy>290</posy>
+						<left>260</left>
+						<top>280</top>
 						<width>1000</width>
 						<height>125</height> 
-						<itemgap>50</itemgap>
+						<itemgap>20</itemgap>
 						<align>center</align>
 						<orientation>horizontal</orientation>								
 
 						<control type="group">						
-							<width>100</width>
-							<include>VideoMPAAFlaggingConditions</include>
+							<width>120</width>
+							<include content="VideoMPAAFlaggingConditions">
+								<param name="colordiffuse" value="BaseMediumHigh" />
+							</include>
 						</control>
 						
 						<control type="group">
 							<visible>!IsEmpty(ListItem.VideoResolution)</visible>
-							<width>100</width>
-							<include>VideoResolutionFlaggingConditions</include>
+							<width>120</width>
+							<include content="VideoResolutionFlaggingConditions">
+								<param name="colordiffuse" value="BaseMediumHigh" />
+							</include>
 						</control>
 						
 						<control type="group">
 							<visible>!IsEmpty(ListItem.VideoCodec)</visible>
-							<width>100</width>
-							<include>VideoCodecFlaggingConditions</include>
+							<width>120</width>
+							<include content="VideoCodecFlaggingConditions">
+								<param name="colordiffuse" value="BaseMediumHigh" />
+							</include>
 						</control>
 
 						<control type="group">
 							<visible>!IsEmpty(ListItem.VideoAspect)</visible>
-							<width>100</width>
-							<include>AspectCodecFlaggingConditions</include>
+							<width>120</width>
+							<include content="AspectCodecFlaggingConditions">
+								<param name="colordiffuse" value="BaseMediumHigh" />
+							</include>
 						</control>
 						
 						<control type="group">
 							<visible>!IsEmpty(ListItem.AudioCodec)</visible>
-							<width>100</width>
-							<include>AudioCodecFlaggingConditions</include>
+							<width>120</width>
+							<include content="AudioCodecFlaggingConditions">
+								<param name="colordiffuse" value="BaseMediumHigh" />
+							</include>
 						</control>
 
 						<control type="group">
 							<visible>!IsEmpty(ListItem.AudioChannels)</visible>
-							<width>100</width>
-							<include>AudioChannelsFlaggingConditions</include>
+							<width>120</width>
+							<include content="AudioChannelsFlaggingConditions">
+								<param name="colordiffuse" value="BaseMediumHigh" />
+							</include>
+						</control>
+
+						<control type="group">
+							<width>120</width>
+							<include content="UserRatingFlaggingConditions">
+								<param name="colordiffuse" value="BaseMediumHigh" />
+							</include>
 						</control>
 						
 					</control>
 
 					<control type="textbox">
-						<posx>260</posx>
-						<posy>110</posy>
+						<left>260</left>
+						<top>110</top>
 						<width>1000</width>
 						<height>150</height>
 						<font>font26</font>
@@ -430,38 +473,41 @@
 
 				<!--Details Area- Episodes-->
 				<control type="group">
-					<visible>!stringcompare(ListItem.Label,..) + Container.Content(episodes)</visible>
+					<visible>!String.IsEqual(ListItem.Label,..) + Container.Content(episodes)</visible>
 
 					<control type="image">
+						<top>5</top>
 						<width>455</width>
-						<height>340</height>
-						<include>Common_Color_BaseMid</include>
+						<height>325</height>
+						<include>Common_Color_BaseMediumHigh</include>
 					</control>
 
 					<control type="image" id="131">
+						<top>5</top>
 						<width>455</width>
-						<height>340</height>
+						<height>325</height>
 						<aspectratio align="left" aligny="center">scale</aspectratio>
-						<texture fallback="DefaultTVShows.png">$VAR[Fanart_Info_Icon]</texture>
+						<texture fallback="DefaultTVShows.png">$VAR[Common_Artwork]</texture>
 						<visible>!IsEmpty(ListItem.Art(thumb)) + Container.Content(episodes)</visible>
 					</control>
 					
 					<control type="fadelabel" id="145">
-						<posx>475</posx>
+						<top>5</top>
+						<left>475</left>
 						<width>800</width>
 						<include>Common_Fanart_Title</include>
-						<label>$VAR[Fanart_Info_Title]</label>
+						<label>$VAR[Common_InfoSection_Title]</label>
 					</control>
 					
 					<control type="label">
-						<posx>475</posx>
+						<left>475</left>
 						<width>800</width>
 						<include>Common_Fanart_Subtitle</include>
 					</control>
 					
 					<control type="image">
-						<posx>1135</posx>
-						<posy>60</posy>
+						<left>1135</left>
+						<top>60</top>
 						<width>140</width>
 						<height>30</height>
 						<texture colordiffuse="BaseMid">flags\ratings\rating5.png</texture>
@@ -470,26 +516,18 @@
 					</control>
 					
 					<control type="image">
-						<posx>1135</posx>
-						<posy>60</posy>
+						<left>1135</left>
+						<top>60</top>
 						<width>140</width>
 						<height>30</height>
-						<texture colordiffuse="BaseWhite">flags\ratings\$INFO[ListItem.Rating].png</texture>
+						<texture colordiffuse="$VAR[Accent_100]">flags\ratings\$INFO[ListItem.Rating].png</texture>
 						<align>center</align>
 						<aspectratio>keep</aspectratio>
 					</control>
 					
-					<control type="image">
-						<posx>485</posx>
-						<posy>100</posy>
-						<width>785</width>
-						<height>2</height>
-						<include>Common_Color_BaseMediumHigh</include>
-					</control>
-					
 					<control type="grouplist">
-						<posx>475</posx>
-						<posy>290</posy>
+						<left>462</left>
+						<top>280</top>
 						<width>800</width>
 						<height>125</height>
 						<itemgap>30</itemgap>
@@ -498,44 +536,56 @@
 
 						<control type="group">						
 							<width>100</width>
-							<include>VideoMPAAFlaggingConditions</include>
+							<include content="VideoMPAAFlaggingConditions">
+								<param name="colordiffuse" value="BaseMediumHigh" />
+							</include>
 						</control>
 						
 						<control type="group">
 							<visible>!IsEmpty(ListItem.VideoResolution)</visible>
 							<width>100</width>
-							<include>VideoResolutionFlaggingConditions</include>
+							<include content="VideoResolutionFlaggingConditions">
+								<param name="colordiffuse" value="BaseMediumHigh" />
+							</include>
 						</control>
 						
 						<control type="group">
 							<visible>!IsEmpty(ListItem.VideoCodec)</visible>
 							<width>100</width>
-							<include>VideoCodecFlaggingConditions</include>
+							<include content="VideoCodecFlaggingConditions">
+								<param name="colordiffuse" value="BaseMediumHigh" />
+							</include>
 						</control>
 
 						<control type="group">
 							<visible>!IsEmpty(ListItem.VideoAspect)</visible>
 							<width>100</width>
-							<include>AspectCodecFlaggingConditions</include>
+							<include content="AspectCodecFlaggingConditions">
+								<param name="colordiffuse" value="BaseMediumHigh" />
+							</include>
 						</control>
 						
 						<control type="group">
 							<visible>!IsEmpty(ListItem.AudioCodec)</visible>
 							<width>100</width>
-							<include>AudioCodecFlaggingConditions</include>
+							<include content="AudioCodecFlaggingConditions">
+								<param name="colordiffuse" value="BaseMediumHigh" />
+							</include>
 						</control>
 
 						<control type="group">
 							<visible>!IsEmpty(ListItem.AudioChannels)</visible>
 							<width>100</width>
-							<include>AudioChannelsFlaggingConditions</include>
+							<include content="AudioChannelsFlaggingConditions">
+								<param name="colordiffuse" value="BaseMediumHigh" />
+							</include>
 						</control>
 						
 					</control>
 
 					<control type="textbox">
-						<posx>485</posx>
-						<posy>110</posy>
+						<left>485</left>
+						<top>110</top>
 						<width>785</width>
 						<height>150</height>
 						<font>font26</font>
@@ -549,43 +599,37 @@
 				
 				<!--Details Area- Files, Artists, Albums, Songs, Music Videos-->
 				<control type="group">
-					<visible>stringcompare(ListItem.Label,..) | Container.Content(genres) | Container.Content(files) | Container.Content(albums) | Container.Content(songs) | Container.Content(artists) | Container.Content(musicvideos) | Container.Content(actors) | Container.Content(directors)</visible>
+					<visible>String.IsEqual(ListItem.Label,..) | Container.Content(genres) | Container.Content(files) | Container.Content(albums) | Container.Content(songs) | Container.Content(artists) | Container.Content(musicvideos) | Container.Content(actors) | Container.Content(directors)</visible>
 
 					<control type="image">
-						<width>340</width>
-						<height>340</height>
-						<include>Common_Color_BaseMid</include>
+						<top>5</top>
+						<width>325</width>
+						<height>325</height>
+						<include>Common_Color_BaseMediumHigh</include>
 					</control>
 					
-					<control type="image">				
+					<control type="image">	
+						<top>5</top>			
 						<include>Common_Fanart_Icon</include>
-						<texture>$VAR[Fanart_Info_Icon]</texture>
+						<texture>$VAR[Common_Artwork]</texture>
 					</control>
 					
 					<control type="fadelabel">
-						<posx>360</posx>
+						<left>345</left>
 						<width>560</width>
 						<include>Common_Fanart_Fadelabel</include>
-						<label>$VAR[Fanart_Info_Title]</label>
+						<label>$VAR[Common_InfoSection_Title]</label>
 					</control>
 					
 					<control type="label">
-						<posx>360</posx>
+						<left>345</left>
 						<width>550</width>
 						<include>Common_Fanart_Subtitle</include>
 					</control>
 					
-					<control type="image">
-						<posx>370</posx>
-						<posy>100</posy>
-						<width>900</width>
-						<height>2</height>
-						<include>Common_Color_BaseMediumHigh</include>
-					</control>
-					
 					<control type="grouplist">
-						<posx>920</posx>
-						<posy>20</posy>
+						<left>920</left>
+						<top>20</top>
 						<width>420</width>
 						<height>60</height>
 						<itemgap>0</itemgap>
@@ -602,7 +646,7 @@
 							</control>
 							
 							<control type="label">
-								<posy>30</posy>
+								<top>30</top>
 								<width>75</width>
 								<include>Common_Fanart_Data</include>
 								<label>$INFO[ListItem.Year]</label>
@@ -621,7 +665,7 @@
 							</control>
 							
 							<control type="label">
-								<posy>30</posy>
+								<top>30</top>
 								<width>225</width>
 								<include>Common_Fanart_Data</include>
 								<label fallback="1446">$INFO[ListItem.Property(Artist_YearsActive)]</label>
@@ -640,7 +684,7 @@
 							</control>
 							
 							<control type="label">
-								<posy>90</posy>
+								<top>90</top>
 								<width>135</width>
 								<include>Common_Fanart_Data</include>
 								<label>$INFO[ListItem.Duration]</label>
@@ -648,7 +692,7 @@
 							</control>
 							
 							<control type="label">
-								<posy>90</posy>
+								<top>90</top>
 								<width>135</width>
 								<include>Common_Fanart_Data</include>
 								<label>$INFO[ListItem.Duration,, min]</label>
@@ -656,7 +700,7 @@
 							</control>
 							
 							<control type="label">
-								<posy>90</posy>
+								<top>90</top>
 								<width>135</width>
 								<include>Common_Fanart_Data</include>
 								<label>$LOCALIZE[1446]</label>
@@ -667,7 +711,7 @@
 						
 						<control type="group">
 							<width>140</width>
-							<visible>!stringcompare(ListItem.Label,..) + !Container.Content(genres)</visible>
+							<visible>!String.IsEqual(ListItem.Label,..) + !Container.Content(genres)</visible>
 
 							<control type="label">
 								<width>140</width>
@@ -676,7 +720,7 @@
 							</control>
 							
 							<control type="image">
-								<posy>30</posy>
+								<top>30</top>
 								<width>140</width>
 								<height>30</height>
 								<texture colordiffuse="BaseMid">flags\ratings\rating5.png</texture>
@@ -685,10 +729,10 @@
 							</control>
 							
 							<control type="image">
-								<posy>30</posy>
+								<top>30</top>
 								<width>140</width>
 								<height>30</height>
-								<texture colordiffuse="BaseWhite">flags\ratings\$INFO[ListItem.Rating].png</texture>
+								<texture colordiffuse="$VAR[Accent_100]">flags\ratings\$INFO[ListItem.Rating].png</texture>
 								<align>center</align>
 								<aspectratio>keep</aspectratio>
 							</control>
@@ -699,8 +743,8 @@
 
 					
 					<control type="textbox">
-						<posx>370</posx>
-						<posy>110</posy>
+						<left>370</left>
+						<top>110</top>
 						<width>900</width>
 						<height>150</height>
 						<font>font26</font>
@@ -711,48 +755,86 @@
 					</control>				
 					
 					<control type="grouplist">
-						<posx>370</posx>
-						<posy>290</posy>
-						<width>905</width>
+						<left>345</left>
+						<top>280</top>
+						<width>925</width>
 						<height>125</height>
-						<itemgap>50</itemgap>
+						<itemgap>10</itemgap>
 						<align>center</align>
 						<visible>Container.Content(musicvideos)</visible>
 						<orientation>horizontal</orientation>								
 
 						<control type="group">						
-							<width>100</width>
-							<include>VideoMPAAFlaggingConditions</include>
+							<width>120</width>
+							<include content="VideoMPAAFlaggingConditions">
+								<param name="colordiffuse" value="BaseMediumHigh" />
+							</include>
 						</control>
 						
 						<control type="group">
 							<visible>!IsEmpty(ListItem.VideoResolution)</visible>
-							<width>100</width>
-							<include>VideoResolutionFlaggingConditions</include>
+							<width>120</width>
+							<include content="VideoResolutionFlaggingConditions">
+								<param name="colordiffuse" value="BaseMediumHigh" />
+							</include>
 						</control>
 						
 						<control type="group">
 							<visible>!IsEmpty(ListItem.VideoCodec)</visible>
-							<width>100</width>
-							<include>VideoCodecFlaggingConditions</include>
+							<width>120</width>
+							<include content="VideoCodecFlaggingConditions">
+								<param name="colordiffuse" value="BaseMediumHigh" />
+							</include>
 						</control>
 
 						<control type="group">
 							<visible>!IsEmpty(ListItem.VideoAspect)</visible>
-							<width>100</width>
-							<include>AspectCodecFlaggingConditions</include>
+							<width>120</width>
+							<include content="AspectCodecFlaggingConditions">
+								<param name="colordiffuse" value="BaseMediumHigh" />
+							</include>
 						</control>
 						
 						<control type="group">
 							<visible>!IsEmpty(ListItem.AudioCodec)</visible>
-							<width>100</width>
-							<include>AudioCodecFlaggingConditions</include>
+							<width>120</width>
+							<include content="AudioCodecFlaggingConditions">
+								<param name="colordiffuse" value="BaseMediumHigh" />
+							</include>
 						</control>
 
 						<control type="group">
 							<visible>!IsEmpty(ListItem.AudioChannels)</visible>
-							<width>100</width>
-							<include>AudioChannelsFlaggingConditions</include>
+							<width>120</width>
+							<include content="AudioChannelsFlaggingConditions">
+								<param name="colordiffuse" value="BaseMediumHigh" />
+							</include>
+						</control>
+
+						<control type="group">
+							<width>120</width>
+							<include content="UserRatingFlaggingConditions">
+								<param name="colordiffuse" value="BaseMediumHigh" />
+							</include>
+						</control>
+						
+					</control>
+
+					<control type="grouplist">
+						<left>345</left>
+						<top>280</top>
+						<width>925</width>
+						<height>125</height>
+						<itemgap>10</itemgap>
+						<align>center</align>
+						<visible>Container.Content(songs) | Container.Content(albums)</visible>
+						<orientation>horizontal</orientation>								
+
+						<control type="group">
+							<width>120</width>
+							<include content="UserRatingFlaggingConditions">
+								<param name="colordiffuse" value="BaseMediumHigh" />
+							</include>
 						</control>
 						
 					</control>
@@ -761,45 +843,40 @@
 
 				<!--Details Area- Pictures-->
 				<control type="group">
-					<visible>!stringcompare(ListItem.Label,..) + Window.IsActive(pictures) + !Container.Content(AddOns)</visible>
+					<visible>!String.IsEqual(ListItem.Label,..) + Window.IsActive(pictures) + !Container.Content(AddOns)</visible>
 
 					<control type="image">
-						<width>340</width>
-						<height>340</height>
-						<include>Common_Color_BaseMid</include>
-					</control>
-					
-					<control type="image">
-						<include>Common_Fanart_Icon</include>
-						<texture>$VAR[Fanart_Info_PicIcon]</texture>
-					</control>
-					
-					<control type="fadelabel">
-						<posx>360</posx>
-						<width>560</width>
-						<include>Common_Fanart_Fadelabel</include>
-						<label>$VAR[Fanart_Info_Title]</label>
-					</control>
-					
-					<control type="label">
-						<posx>360</posx>
-						<width>550</width>
-						<include>Common_Fanart_Subtitle</include>
-						<label>$INFO[ListItem.PictureDateTime]</label>
-					</control>
-
-					<control type="image">
-						<posx>370</posx>
-						<posy>100</posy>
-						<width>900</width>
-						<height>2</height>
+						<top>5</top>
+						<width>325</width>
+						<height>325</height>
 						<include>Common_Color_BaseMediumHigh</include>
 					</control>
 					
+					<control type="image">
+						<top>5</top>
+						<include>Common_Fanart_Icon</include>
+						<texture>$VAR[Common_Artwork]</texture>
+					</control>
+					
+					<control type="fadelabel">
+						<top>5</top>
+						<left>345</left>
+						<width>870</width>
+						<include>Common_Fanart_Fadelabel</include>
+						<label>$VAR[Common_InfoSection_Title]</label>
+					</control>
+					
+					<control type="label">
+						<left>345</left>
+						<width>860</width>
+						<include>Common_Fanart_Subtitle</include>
+						<label>$INFO[ListItem.PictureDateTime]</label>
+					</control>
+					
 					<control type="grouplist">
-						<posx>370</posx>
-						<posy>150</posy>
-						<width>820</width>
+						<left>330</left>
+						<top>150</top>
+						<width>860</width>
 						<height>60</height>
 						<itemgap>0</itemgap>
 						<align>center</align>
@@ -816,7 +893,7 @@
 							</control>
 							
 							<control type="label">
-								<posy>30</posy>
+								<top>30</top>
 								<width>202</width>
 								<include>Common_Fanart_Data</include>
 								<label>$INFO[ListItem.PictureResolution]</label>
@@ -835,7 +912,7 @@
 							</control>
 							
 							<control type="label">
-								<posy>30</posy>
+								<top>30</top>
 								<width>202</width>
 								<include>Common_Fanart_Data</include>
 								<label>$INFO[ListItem.Label2]</label>
@@ -849,18 +926,15 @@
 
 			</control>	
 				
-			<!--Fanart Background Area-->		
-			<include>BG_Fanart_731</include>
-
-            <control type="label">
-                <posx>410</posx>
-				<posy>10</posy>
-                <width>500</width>
-                <height>45</height>
-                <font>font45B</font>
-				<align>right</align>
-                <label>$INFO[Window(Home).Property(ShowOptions2)]</label>
-            </control>
+			<!--Fanart Area-->		
+            <include content="Background_Fanart">
+                <param name="top" value="10"/>
+                <param name="left" value="90"/> 
+                <param name="width" value="1290"/>
+                <param name="height" value="721"/>  
+                <param name="logo_visible" value="true"/>  
+                <param name="topbar_visible" value="true"/>           
+            </include>  
 
 		</control>
 		

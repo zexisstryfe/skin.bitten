@@ -7,74 +7,62 @@
         <include>DialogOverlay</include>
 		
         <control type="group">
-            <posx>0</posx>
-            <posy>285</posy>
-            <include>InfoDialog_Base</include>
+            <left>332</left>
+            <top>315</top>
 
-			<control type="group">	
-				<posy>75</posy>
-				<width>1920</width>
-				<height>375</height>
-
-				<include>Common_Logo_Backing</include>
-				
-			</control>	
+            <include content="Common_Window_Backing">
+                <param name="width" value="1256"/>
+                <param name="height" value="410"/>  
+                <param name="logo_height" value="275"/> 
+                <param name="header" value="$LOCALIZE[31199]"/> 
+                <param name="header_id" value="1"/>
+                <param name="header_width" value="880"/>     
+                <param name="header_height" value="75"/>            
+            </include>  
 			
             <control type="grouplist">
-                <posx>285</posx>
-                <width>1350</width>
-                <itemgap>30</itemgap>
+                <left>160</left>
+                <top>100</top>
+                <width>936</width>
+                <itemgap>20</itemgap>
                 <orientation>vertical</orientation>
-				
-                <control type="label" id="1">
-                    <description>Heading</description>
-                    <label>31199</label>
-                    <posx>300</posx>
-					<width>885</width>
-					<height>75</height>
-					<font>font45R</font>
-					<textcolor>$VAR[Accent_100]</textcolor>
-                </control>
 				
                 <control type="label" id="2">
                     <description>Line 1</description>
-                    <include>FirstRun_Labels</include>
+                    <include>Dialog_FirstRun_Label</include>
                     <label>31200</label>
-                    <textcolor>$VAR[Accent_100]</textcolor>
                 </control>
 				
                 <control type="label" id="3">
                     <description>Line 2</description>
-                    <include>FirstRun_Labels</include>
+                    <include>Dialog_FirstRun_Label</include>
                     <label>31201</label>
-                    <textcolor>$VAR[Accent_100]</textcolor>
                 </control>
 				
                 <control type="label" id="4">
                     <description>Line 3</description>
                     <label>31202</label>
-                    <include>FirstRun_Labels</include>
+                    <include>Dialog_FirstRun_Label</include>
                 </control>
 				
             </control>
-			
- 			<control type="grouplist">			
-				<posx>580</posx>
-				<posy>360</posy>
-				<width>760</width>
-				<itemgap>20</itemgap>
-				<orientation>horizontal</orientation>
-				<align>center</align>
-				
-                <control type="button" id="10">
-                    <description>Yes</description>
-                    <onclick>Skin.SetBool(FirstTimeRun)</onclick>
-                    <onclick>Dialog.Close(1114)</onclick>
-					<label>186</label>
-                    <include>InfoDialog_Button</include>
-                </control>
-				
-            </control>
+
+            <control type="grouplist">          
+                <top>350</top>
+                <width>1256</width>
+                <itemgap>0</itemgap>
+                <orientation>horizontal</orientation>
+                <align>center</align>
+
+                <include content="InfoDialog_Button">
+                    <param name="button_id" value="10"/>  
+                    <param name="width" value="1256"/>
+                    <param name="label" value="186"/>      
+                    <param name="onclick" value="Skin.SetBool(FirstTimeRun)"/>  
+                    <param name="onclick2" value="Dialog.Close(1114)"/>      
+                </include>
+                
+            </control>  
 			
         </control>
 		

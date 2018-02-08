@@ -2,13 +2,25 @@
 
 <includes>
 	
-    <include name="Tile_Content">
+    <include name="Content_Tiles">
 
-        <item id="901">
+        <item id="900">
             <label>$LOCALIZE[31196]</label>
             <onclick>ActivateWindow(1112)</onclick>
             <icon>../extras/tiles/custom.png</icon>
         </item>		
+
+        <item id="901">
+            <label>$LOCALIZE[1223]</label>
+            <onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)],DISABLED)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Label,$LOCALIZE[1223])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Type,99)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Image,../extras/tiles/disabled.png)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Icon,)</onclick> 
+            <onclick>Dialog.Close(1113)</onclick>
+            <icon>../extras/tiles/disabled.png</icon>
+        </item>
+
 		<!--Addon Tiles-->
         <item id="902">
             <label>$LOCALIZE[24001] - $LOCALIZE[24032]</label>
@@ -259,7 +271,6 @@
 		<!--Music Tiles-->
         <item id="924">
             <label>$LOCALIZE[2] - $LOCALIZE[132]</label>
-            <visible>Skin.String(TileSelector_Temp,MusicTile1)</visible>
             <onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)],Albums)</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Label,$LOCALIZE[358])</onclick>
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Path,ActivateWindow(Music,Albums,return))</onclick>
@@ -425,6 +436,7 @@
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Icon,)</onclick>			
             <onclick>Dialog.Close(1113)</onclick>
             <icon>../extras/tiles/favourites.png</icon>
+            <visible>Skin.HasSetting(UseFavouritesScript)</visible>
         </item>		
         <item id="939">
             <label>$LOCALIZE[0] - $LOCALIZE[31184]</label>
@@ -482,6 +494,7 @@
 			<onclick>Skin.SetString($INFO[Skin.String(TileSelector_Temp)].Icon,)</onclick>
             <onclick>Dialog.Close(1113)</onclick>
             <icon>../extras/tiles/tvguide.png</icon>
+            <visible>Skin.HasSetting(UseNextAiredScript)</visible>
         </item>		
 		<item id="944">
             <label>$LOCALIZE[20343] - $LOCALIZE[31009]</label>
@@ -532,329 +545,589 @@
 
     </include>
 
-	<include name="Panel_Content">
+    <include name="Content_Widgets">
 
         <item id="800">
             <label>$LOCALIZE[1223]</label>
             <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],DISABLED)</onclick>
             <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[1223])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/disabled.png)</onclick>
             <onclick>Dialog.Close(1113)</onclick>
             <icon>../extras/tiles/disabled.png</icon>
         </item>
-		<!--Addon Panels-->
-        <item id="801">
+
+        <!--Addon Panels-->
+        <item id="810">
+            <label>$LOCALIZE[24001] - $LOCALIZE[31391]</label>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],AddonsRepo)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,KODI $LOCALIZE[31390])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Path,addons://repository.xbmc.org/)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/addons.png)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Target,addonbrowser)</onclick>
+            <onclick>Dialog.Close(1113)</onclick>
+            <icon>../extras/tiles/addons.png</icon>
+        </item>  
+
+        <item id="811">
             <label>$LOCALIZE[24001] - $LOCALIZE[31154]</label>
             <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],AddonsRandom)</onclick>
             <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[24001] - $LOCALIZE[31154])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Path,addons://user/all)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/random.png)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Target,addonbrowser)</onclick>
             <onclick>Dialog.Close(1113)</onclick>
             <icon>../extras/tiles/random.png</icon>
-		</item>	
-		<!--LiveTV Panels-->
-        <item id="802">
+        </item> 
+
+        <item id="812">
+            <label>$LOCALIZE[24001] - $LOCALIZE[249]</label>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],AddonsMusic)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[31386])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Path,addons://sources/audio/)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/music_addons.png)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Target,addonbrowser)</onclick>
+            <onclick>Dialog.Close(1113)</onclick>
+            <icon>../extras/tiles/music_addons.png</icon>
+        </item> 
+
+        <item id="813">
+            <label>$LOCALIZE[24001] - $LOCALIZE[31387]</label>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],AddonsPicture)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[31388])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Path,addons://sources/image/)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/picture_addons.png)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Target,addonbrowser)</onclick>
+            <onclick>Dialog.Close(1113)</onclick>
+            <icon>../extras/tiles/picture_addons.png</icon>
+        </item> 
+
+        <item id="814">
+            <label>$LOCALIZE[24001] - $LOCALIZE[29908]</label>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],AddonsProgram)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[31389])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Path,addons://sources/executable/)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/program_addons.png)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Target,addonbrowser)</onclick>
+            <onclick>Dialog.Close(1113)</onclick>
+            <icon>../extras/tiles/program_addons.png</icon>
+        </item> 
+
+        <item id="815">
+            <label>$LOCALIZE[24001] - $LOCALIZE[157]</label>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],AddonsVideo)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[31384])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Path,addons://sources/video/)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/video_addons.png)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Target,addonbrowser)</onclick>
+            <onclick>Dialog.Close(1113)</onclick>
+            <icon>../extras/tiles/video_addons.png</icon>
+        </item>
+
+        <!--LiveTV Panels-->
+        <item id="820">
             <label>$LOCALIZE[31012] - $LOCALIZE[31032]</label>
             <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],PVRRecording)</onclick>
-            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[31012] - $LOCALIZE[31032])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[31420])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/recordings.png)</onclick>
             <onclick>Dialog.Close(1113)</onclick>
             <icon>../extras/tiles/recordings.png</icon>
         </item>
-		<!--Movie Panels-->
-        <item id="803">
+
+        <!--Movie Panels-->
+        <item id="830">
             <label>$LOCALIZE[342] - $LOCALIZE[31009]</label>
             <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],MovieRecent)</onclick>
-            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[342] - $LOCALIZE[31009])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[31277])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Path,special://skin/playlists/recentlyadded_movies.xsp)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/recent.png)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Target,videos)</onclick>
             <onclick>Dialog.Close(1113)</onclick>
             <icon>../extras/tiles/recent.png</icon>
         </item>
-        <item id="804">
-            <label>$LOCALIZE[342] - $LOCALIZE[31153]</label>
-            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],MovieRecommended)</onclick>
-            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[342] - $LOCALIZE[31153])</onclick>
+
+        <item id="831">
+            <label>$LOCALIZE[342] - $LOCALIZE[575]</label>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],MovieInProgress)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[31379])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Path,special://skin/playlists/inprogress_movies.xsp)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/recommend.png)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Target,videos)</onclick>
             <onclick>Dialog.Close(1113)</onclick>
             <icon>../extras/tiles/recommend.png</icon>
-        </item>		
-        <item id="805">
+        </item> 
+
+        <item id="832">
             <label>$LOCALIZE[342] - $LOCALIZE[31154]</label>
             <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],MovieRandom)</onclick>
-            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[342] - $LOCALIZE[31154])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[31029])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Path,special://skin/playlists/random_movies.xsp)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/random.png)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Target,videos)</onclick>
             <onclick>Dialog.Close(1113)</onclick>
             <icon>../extras/tiles/random.png</icon>
-        </item>		
-        <item id="806">
+        </item> 
+
+        <item id="833">
+            <label>$LOCALIZE[342] - $LOCALIZE[16101]</label>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],MovieUnwatched)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[31380])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Path,special://skin/playlists/unwatched_movies.xsp)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/unknown.png)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Target,videos)</onclick>
+            <onclick>Dialog.Close(1113)</onclick>
+            <icon>../extras/tiles/unknown.png</icon>
+        </item> 
+
+       <item id="834">
             <label>$LOCALIZE[342] - $LOCALIZE[31228]</label>
             <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],MovieTrending)</onclick>
-            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[342] - $LOCALIZE[31228])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[31228])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Path,plugin://script.extendedinfo?info=popularmovies)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/trending.png)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Target,)</onclick>  
             <onclick>Dialog.Close(1113)</onclick>
             <icon>../extras/tiles/trending.png</icon>
-        </item>			
-        <item id="807">
+        </item>     
+
+        <item id="835">
             <label>$LOCALIZE[342] - $LOCALIZE[31212]</label>
             <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],MovieInCinemas)</onclick>
-            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[342] - $LOCALIZE[31212])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[31212])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Path,plugin://script.extendedinfo?info=incinemamovies)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/cinema.png)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Target,)</onclick>            
             <onclick>Dialog.Close(1113)</onclick>
             <icon>../extras/tiles/cinema.png</icon>
-        </item>
-		<!--Music Panels-->
-        <item id="808">
+        </item> 
+
+        <!--Music Panels-->
+        <item id="840">
             <label>$LOCALIZE[2] - $LOCALIZE[31009]</label>
             <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],MusicRecent)</onclick>
-            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[2] - $LOCALIZE[31009])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[31279])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Path,musicdb://recentlyaddedalbums/)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/recent.png)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Target,music)</onclick>   
+            <onclick>Dialog.Close(1113)</onclick>
+            <icon>../extras/tiles/recent.png</icon>
+        </item> 
+
+        <item id="841">
+            <label>$LOCALIZE[2] - $LOCALIZE[31394]</label>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],MusicRecentPlay)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[31394])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Path,musicdb://recentlyplayedalbums/)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/recent.png)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Target,music)</onclick>   
             <onclick>Dialog.Close(1113)</onclick>
             <icon>../extras/tiles/recent.png</icon>
         </item>
-        <item id="809">
-            <label>$LOCALIZE[2] - $LOCALIZE[31155]</label>
-            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],MusicRecommended)</onclick>
-            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[2] - $LOCALIZE[31155])</onclick>
-            <onclick>Dialog.Close(1113)</onclick>
-            <icon>../extras/tiles/recommend.png</icon>
-        </item>		
-        <item id="810">
+
+        <item id="842">
             <label>$LOCALIZE[2] - $LOCALIZE[31035]</label>
             <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],MusicRandomAlbum)</onclick>
-            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[2] - $LOCALIZE[31035])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[31035])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Path,special://skin/playlists/random_albums.xsp)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/random.png)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Target,music)</onclick>   
             <onclick>Dialog.Close(1113)</onclick>
             <icon>../extras/tiles/random.png</icon>
         </item>
-        <item id="811">
+
+        <item id="843">
             <label>$LOCALIZE[2] - $LOCALIZE[31036]</label>
             <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],MusicRandomArtist)</onclick>
-            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[2] - $LOCALIZE[31036])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[31036])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Path,special://skin/playlists/random_artists.xsp)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/random.png)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Target,music)</onclick>              
             <onclick>Dialog.Close(1113)</onclick>
             <icon>../extras/tiles/random.png</icon>
-        </item>		
-        <item id="812">
+        </item> 
+
+        <item id="844">
             <label>$LOCALIZE[2] - $LOCALIZE[31037]</label>
             <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],MusicRandomSong)</onclick>
-            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[2] - $LOCALIZE[31037])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[31037])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Path,special://skin/playlists/random_songs.xsp)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Target,music)</onclick>  
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/random.png)</onclick>
             <onclick>Dialog.Close(1113)</onclick>
             <icon>../extras/tiles/random.png</icon>
         </item>
-		<!--Music Video Panels-->
-        <item id="813">
+
+        <item id="845">
+            <label>$LOCALIZE[2] - $LOCALIZE[31392]</label>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],MusicUnplayedAlbum)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[31392])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Path,special://skin/playlists/unplayed_albums.xsp)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/random.png)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Target,music)</onclick>  
+            <onclick>Dialog.Close(1113)</onclick>
+            <icon>../extras/tiles/random.png</icon>
+        </item>
+
+        <item id="846">
+            <label>$LOCALIZE[2] - $LOCALIZE[31393]</label>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],MusicMostplayedAlbum)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[31393])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Path,special://skin/playlists/mostplayed_albums.xsp)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Target,music)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/random.png)</onclick>
+            <onclick>Dialog.Close(1113)</onclick>
+            <icon>../extras/tiles/random.png</icon>
+        </item>
+
+        <!--Music Video Panels-->
+        <item id="850">
             <label>$LOCALIZE[20389] - $LOCALIZE[31009]</label>
             <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],MusicVidRecent)</onclick>
-            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[20389] - $LOCALIZE[31009])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[20390])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Path,videodb://recentlyaddedmusicvideos/)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Target,videos)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/recent.png)</onclick>
             <onclick>Dialog.Close(1113)</onclick>
             <icon>../extras/tiles/recent.png</icon>
-        </item>	
-        <item id="815">
+        </item> 
+
+        <item id="851">
             <label>$LOCALIZE[20389] - $LOCALIZE[31154]</label>
             <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],MusicVidRandom)</onclick>
-            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[20389] - $LOCALIZE[31154])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[31381])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Path,special://skin/playlists/random_musicvideos.xsp)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Target,videos)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/random.png)</onclick>
             <onclick>Dialog.Close(1113)</onclick>
             <icon>../extras/tiles/random.png</icon>
         </item>
-		<!--Programs Panels-->
-        <item id="816">
+
+        <!--Programs Panels-->
+        <item id="860">
             <label>$LOCALIZE[0] - $LOCALIZE[1036]</label>
             <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],ProgramsFavorites)</onclick>
-            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[0] - $LOCALIZE[1036])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[1036])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/favourites.png)</onclick>
             <onclick>Dialog.Close(1113)</onclick>
             <icon>../extras/tiles/favourites.png</icon>
-        </item>	
-        <item id="817">
+            <visible>Skin.HasSetting(UseFavouritesScript)</visible>
+        </item> 
+
+        <item id="861">
             <label>$LOCALIZE[0] - $LOCALIZE[31156]</label>
             <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],ProgramsRCB)</onclick>
-            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[0] - $LOCALIZE[31156])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[31395])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/addons.png)</onclick>
             <onclick>Dialog.Close(1113)</onclick>
             <icon>../extras/tiles/addons.png</icon>
-        </item>	
-		<!--TV Panels-->
-        <item id="818">
+        </item> 
+
+        <!--TV Panels-->
+        <item id="870">
             <label>$LOCALIZE[20343] - $LOCALIZE[31009]</label>
             <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],TVRecent)</onclick>
-            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[20343] - $LOCALIZE[31009])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[31278])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Path,special://skin/playlists/recentlyadded_episodes.xsp)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/recent.png)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Target,videos)</onclick>
             <onclick>Dialog.Close(1113)</onclick>
             <icon>../extras/tiles/recent.png</icon>
-        </item>				
-        <item id="819">
+        </item>     
+
+        <item id="871">
             <label>$LOCALIZE[20343] - $LOCALIZE[31026]</label>
-            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],TVRecommended)</onclick>
-            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[20343] - $LOCALIZE[31026])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],TVInProgress)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[31382])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Path,videodb://inprogresstvshows)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/recommend.png)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Target,videos)</onclick>
             <onclick>Dialog.Close(1113)</onclick>
             <icon>../extras/tiles/recommend.png</icon>
         </item>
-        <item id="820">
+
+        <item id="872">
             <label>$LOCALIZE[20343] - $LOCALIZE[31154]</label>
             <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],TVRandom)</onclick>
-            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[20343] - $LOCALIZE[31154])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[31030])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Path,special://skin/playlists/random_episodes.xsp)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/random.png)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Target,videos)</onclick>
             <onclick>Dialog.Close(1113)</onclick>
             <icon>../extras/tiles/random.png</icon>
-        </item>		
-        <item id="821">
-            <label>$LOCALIZE[20343] - $LOCALIZE[31031]</label>
-            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],TVNextAired)</onclick>
-            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[20343] - $LOCALIZE[31031])</onclick>
+        </item>     
+
+        <item id="873">
+            <label>$LOCALIZE[20343] - $LOCALIZE[16101]</label>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],TVUnwatched)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[31383])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Path,special://skin/playlists/unwatched_tvshows.xsp)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/random.png)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Target,videos)</onclick>
             <onclick>Dialog.Close(1113)</onclick>
-            <icon>../extras/tiles/tvguide.png</icon>
-        </item>	
-        <item id="822">
+            <icon>../extras/tiles/random.png</icon>
+        </item> 
+
+        <item id="874">
             <label>$LOCALIZE[20343] - $LOCALIZE[31229]</label>
             <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],TVTrending)</onclick>
-            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[20343] - $LOCALIZE[31229])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[31229])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Path,plugin://script.extendedinfo?info=trendingshows)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/trending.png)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Target,)</onclick>  
             <onclick>Dialog.Close(1113)</onclick>
             <icon>../extras/tiles/trending.png</icon>
         </item>
-		<!--Weather Panels-->
-        <item id="823">
-            <label>$LOCALIZE[12600] - $LOCALIZE[31157]</label>
-            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],WeatherForecast)</onclick>
-            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[12600] - $LOCALIZE[31157])</onclick>
+
+        <item id="875">
+            <label>$LOCALIZE[20343] - $LOCALIZE[31031]</label>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],TVNextAired)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[31031])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/tvguide.png)</onclick>
+            <onclick>Dialog.Close(1113)</onclick>
+            <icon>../extras/tiles/tvguide.png</icon>
+            <visible>Skin.HasSetting(UseNextAiredScript)</visible>
+        </item> 
+
+        <!--Weather Panels-->
+        <item id="880">
+            <label>$LOCALIZE[12600] - $LOCALIZE[31027]</label>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],WeatherCurrent)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[31027])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/weather.png)</onclick>
             <onclick>Dialog.Close(1113)</onclick>
             <icon>../extras/tiles/weather.png</icon>
         </item>
 
+        <item id="881">
+            <label>$LOCALIZE[12600] - $LOCALIZE[31397]</label>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],Weather10DayForecast)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[31397])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/weather.png)</onclick>
+            <onclick>Dialog.Close(1113)</onclick>
+            <icon>../extras/tiles/weather.png</icon>
+        </item>
+
+        <item id="882">
+            <label>$LOCALIZE[12600] - $LOCALIZE[31123]</label>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)],WeatherHourlyForecast)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Label,$LOCALIZE[31123])</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(PanelSelector_Temp)].Image,../extras/tiles/weather.png)</onclick>
+            <onclick>Dialog.Close(1113)</onclick>
+            <icon>../extras/tiles/weather.png</icon>
+        </item>
+
+    </include>
+
+	<include name="Content_SubMenus">
+
+        <item id="700">
+            <label>$LOCALIZE[1223]</label>
+            <onclick>Skin.SetString($INFO[Skin.String(SubMenuSelector_Temp)],DISABLED)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(SubMenuSelector_Temp)].Label,$LOCALIZE[1223])</onclick>
+            <onclick>Dialog.Close(1113)</onclick>
+            <icon>../extras/tiles/disabled.png</icon>
+        </item>
+
+        <item id="710">
+            <label>$LOCALIZE[24001]</label>
+            <onclick>Skin.SetString($INFO[Skin.String(SubMenuSelector_Temp)],Addons)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(SubMenuSelector_Temp)].Label,$LOCALIZE[24001])</onclick>
+            <onclick>Dialog.Close(1113)</onclick>
+            <icon>../extras/tiles/addons.png</icon>
+        </item>
+
+        <item id="711">
+            <label>$LOCALIZE[31012]</label>
+            <onclick>Skin.SetString($INFO[Skin.String(SubMenuSelector_Temp)],LiveTV)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(SubMenuSelector_Temp)].Label,$LOCALIZE[31012])</onclick>
+            <onclick>Dialog.Close(1113)</onclick>
+            <icon>../extras/tiles/livetv.png</icon>
+        </item> 
+
+        <item id="712">
+            <label>$LOCALIZE[342]</label>
+            <onclick>Skin.SetString($INFO[Skin.String(SubMenuSelector_Temp)],Movies)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(SubMenuSelector_Temp)].Label,$LOCALIZE[342])</onclick>
+            <onclick>Dialog.Close(1113)</onclick>
+            <icon>../extras/tiles/movies.png</icon>
+        </item>  
+
+        <item id="713">
+            <label>$LOCALIZE[249]</label>
+            <onclick>Skin.SetString($INFO[Skin.String(SubMenuSelector_Temp)],Music)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(SubMenuSelector_Temp)].Label,$LOCALIZE[249])</onclick>
+            <onclick>Dialog.Close(1113)</onclick>
+            <icon>../extras/tiles/music.png</icon>
+        </item> 
+
+        <item id="714">
+            <label>$LOCALIZE[20389]</label>
+            <onclick>Skin.SetString($INFO[Skin.String(SubMenuSelector_Temp)],MusicVideos)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(SubMenuSelector_Temp)].Label,$LOCALIZE[20389])</onclick>
+            <onclick>Dialog.Close(1113)</onclick>
+            <icon>../extras/tiles/musicvideos.png</icon>
+        </item> 
+
+        <item id="715">
+            <label>$LOCALIZE[20343]</label>
+            <onclick>Skin.SetString($INFO[Skin.String(SubMenuSelector_Temp)],TVShows)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(SubMenuSelector_Temp)].Label,$LOCALIZE[20343])</onclick>
+            <onclick>Dialog.Close(1113)</onclick>
+            <icon>../extras/tiles/tv.png</icon>
+		</item>	
+
+        <item id="716">
+            <label>$LOCALIZE[400]</label>
+            <onclick>Skin.SetString($INFO[Skin.String(SubMenuSelector_Temp)],Weather)</onclick>
+            <onclick>Skin.SetString($INFO[Skin.String(SubMenuSelector_Temp)].Label,$LOCALIZE[400])</onclick>
+            <onclick>Dialog.Close(1113)</onclick>
+            <icon>../extras/tiles/weather.png</icon>
+        </item> 
+
 	</include>
 	
-	<include name="BG_Content">
+	<include name="Content_Backgrounds">
 	
 			<control type="multiimage">
-				<include>BG_Content_Image</include>
+				<include>Content_Background_Image</include>
 				<imagepath background="true">$VAR[HomeMenu_1_Background]</imagepath>
 				<visible>Skin.String(BGSelector_Temp, HomeMenu1)</visible>			
             </control>
 	
 			<control type="multiimage">
-				<include>BG_Content_Image</include>
+				<include>Content_Background_Image</include>
 				<imagepath background="true">$VAR[HomeMenu_2_Background]</imagepath>
 				<visible>Skin.String(BGSelector_Temp, HomeMenu2)</visible>			
             </control>	
 	
 			<control type="multiimage">
-				<include>BG_Content_Image</include>
+				<include>Content_Background_Image</include>
 				<imagepath background="true">$VAR[HomeMenu_3_Background]</imagepath>
 				<visible>Skin.String(BGSelector_Temp, HomeMenu3)</visible>			
             </control>	
 	
 			<control type="multiimage">
-				<include>BG_Content_Image</include>
+				<include>Content_Background_Image</include>
 				<imagepath background="true">$VAR[HomeMenu_4_Background]</imagepath>
 				<visible>Skin.String(BGSelector_Temp, HomeMenu4)</visible>			
             </control>	
 	
 			<control type="multiimage">
-				<include>BG_Content_Image</include>
+				<include>Content_Background_Image</include>
 				<imagepath background="true">$VAR[HomeMenu_5_Background]</imagepath>
 				<visible>Skin.String(BGSelector_Temp, HomeMenu5)</visible>			
             </control>	
 	
 			<control type="multiimage">
-				<include>BG_Content_Image</include>
+				<include>Content_Background_Image</include>
 				<imagepath background="true">$VAR[HomeMenu_6_Background]</imagepath>
 				<visible>Skin.String(BGSelector_Temp, HomeMenu6)</visible>			
             </control>	
 	
 			<control type="multiimage">
-				<include>BG_Content_Image</include>
+				<include>Content_Background_Image</include>
 				<imagepath background="true">$VAR[HomeMenu_7_Background]</imagepath>
 				<visible>Skin.String(BGSelector_Temp, HomeMenu7)</visible>			
             </control>	
 	
 			<control type="multiimage">
-				<include>BG_Content_Image</include>
+				<include>Content_Background_Image</include>
 				<imagepath background="true">$VAR[HomeMenu_8_Background]</imagepath>
 				<visible>Skin.String(BGSelector_Temp, HomeMenu8)</visible>			
             </control>	
 	
 			<control type="multiimage">
-				<include>BG_Content_Image</include>
+				<include>Content_Background_Image</include>
 				<imagepath background="true">$VAR[HomeMenu_9_Background]</imagepath>
 				<visible>Skin.String(BGSelector_Temp, HomeMenu9)</visible>			
             </control>	
 	
 			<control type="multiimage">
-				<include>BG_Content_Image</include>
-				<imagepath background="true">$VAR[HomeMenu_10_Background]</imagepath>
-				<visible>Skin.String(BGSelector_Temp, HomeMenu10)</visible>			
-            </control>	
-	
-			<control type="multiimage">
-				<include>BG_Content_Image</include>
+				<include>Content_Background_Image</include>
 				<imagepath background="true">$VAR[HomeMenu_11_Background]</imagepath>
 				<visible>Skin.String(BGSelector_Temp, HomeMenu11)</visible>			
             </control>	
 	
 			<control type="multiimage">
-				<include>BG_Content_Image</include>
+				<include>Content_Background_Image</include>
 				<imagepath background="true">$VAR[HomeMenu_12_Background]</imagepath>
 				<visible>Skin.String(BGSelector_Temp, HomeMenu12)</visible>			
             </control>	
 	
 			<control type="multiimage">
-				<include>BG_Content_Image</include>
+				<include>Content_Background_Image</include>
 				<imagepath background="true">$VAR[HomeMenu_13_Background]</imagepath>
 				<visible>Skin.String(BGSelector_Temp, HomeMenu13)</visible>			
             </control>	
 			
 			<control type="multiimage">
-				<include>BG_Content_Image</include>
+				<include>Content_Background_Image</include>
 				<imagepath background="true">$VAR[Default_Background]</imagepath>
 				<visible>Skin.String(BGSelector_Temp, Default)</visible>			
             </control>
 
 			<control type="multiimage">
-				<include>BG_Content_Image</include>
+				<include>Content_Background_Image</include>
 				<imagepath background="true">$VAR[Movies_Background]</imagepath>
 				<visible>Skin.String(BGSelector_Temp, Movies)</visible>			
             </control>
 
 			<control type="multiimage">
-				<include>BG_Content_Image</include>
+				<include>Content_Background_Image</include>
 				<imagepath background="true">$VAR[TVShows_Background]</imagepath>
 				<visible>Skin.String(BGSelector_Temp, TVShows)</visible>			
             </control>
 
 			<control type="multiimage">
-				<include>BG_Content_Image</include>
+				<include>Content_Background_Image</include>
 				<imagepath background="true">$VAR[PVR_Background]</imagepath>
 				<visible>Skin.String(BGSelector_Temp, PVR)</visible>			
             </control>
 			
 			<control type="multiimage">
-				<include>BG_Content_Image</include>
+				<include>Content_Background_Image</include>
 				<imagepath background="true">$VAR[Music_Background]</imagepath>
 				<visible>Skin.String(BGSelector_Temp, Music)</visible>			
             </control>
 			
 			<control type="multiimage">
-				<include>BG_Content_Image</include>
+				<include>Content_Background_Image</include>
 				<imagepath background="true">$VAR[MusicVid_Background]</imagepath>
 				<visible>Skin.String(BGSelector_Temp, MusicVid)</visible>			
             </control>
 			
 			<control type="multiimage">
-				<include>BG_Content_Image</include>
+				<include>Content_Background_Image</include>
 				<imagepath background="true">$VAR[Pictures_Background]</imagepath>
 				<visible>Skin.String(BGSelector_Temp, Pictures)</visible>			
             </control>
 			
 			<control type="multiimage">
-				<include>BG_Content_Image</include>
+				<include>Content_Background_Image</include>
 				<imagepath background="true">$VAR[Programs_Background]</imagepath>
 				<visible>Skin.String(BGSelector_Temp, Programs)</visible>			
             </control>
 			
 			<control type="multiimage">
-				<include>BG_Content_Image</include>
+				<include>Content_Background_Image</include>
 				<imagepath background="true">$VAR[Games_Background]</imagepath>
 				<visible>Skin.String(BGSelector_Temp, Games)</visible>			
             </control>
 			
 			<control type="multiimage">
-				<include>BG_Content_Image</include>
+				<include>Content_Background_Image</include>
 				<imagepath background="true">$VAR[Addons_Background]</imagepath>
 				<visible>Skin.String(BGSelector_Temp, Addons)</visible>			
             </control>
 			
 			<control type="multiimage">
-				<include>BG_Content_Image</include>
+				<include>Content_Background_Image</include>
 				<imagepath background="true">$VAR[Settings_Background]</imagepath>
 				<visible>Skin.String(BGSelector_Temp, Settings)</visible>			
             </control>			
 
 	</include>
 
-	<include name="BG_Content_Image">
+	<include name="Content_Background_Image">
 		<posy>175</posy>
 		<posx>20</posx>
 		<width>650</width>
@@ -862,6 +1135,514 @@
 		<timeperimage>6000</timeperimage>
 		<randomize>true</randomize>
 		<fadetime>500</fadetime>					
-	</include>
+	</include>    
+
+    <include name="Content_Home_SubMenu_Movies">
+
+        <item>
+            <description>Now Playing</description>
+            <label>$LOCALIZE[31226]</label>
+            <thumb>../extras/tiles/play.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(fullscreenvideo)</onclick>
+            <visible>Player.HasVideo + VideoPlayer.Content(movies)</visible>
+        </item>
+        <item>
+            <description>Titles</description>
+            <label>$LOCALIZE[31227]</label>
+            <thumb>../extras/tiles/movies.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Videos,MovieTitles,return)</onclick>
+        </item>
+        <item>
+            <description>Recently Added</description>
+            <label>$LOCALIZE[31009]</label>
+            <thumb>../extras/tiles/recent.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Videos,RecentlyAddedMovies,return)</onclick>
+        </item>
+        <item>
+            <description>Actors</description>
+            <label>$LOCALIZE[344]</label>
+            <thumb>../extras/tiles/actors.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Videos,MovieActors,return)</onclick>
+        </item>                 
+        <item>
+            <description>Directors</description>
+            <label>$LOCALIZE[20348]</label>
+            <thumb>../extras/tiles/directors.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Videos,MovieDirectors,return)</onclick>
+        </item>                                     
+        <item>
+            <description>Genres</description>
+            <label>$LOCALIZE[135]</label>
+            <thumb>../extras/tiles/genres.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Videos,MovieGenres,return)</onclick>
+        </item>
+        <item>
+            <description>Years</description>
+            <label>$LOCALIZE[652]</label>
+            <thumb>../extras/tiles/years.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Videos,MovieYears,return)</onclick>
+        </item>
+        <item>
+            <description>Studios</description>
+            <label>$LOCALIZE[20388]</label>
+            <thumb>../extras/tiles/studios.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Videos,MovieStudios,return)</onclick>
+        </item>                 
+        <item>
+            <description>Countries</description>
+            <label>$LOCALIZE[20451]</label>
+            <thumb>../extras/tiles/countries.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Videos,MovieCountries,return)</onclick>
+        </item>
+        <item>
+            <description>Sets</description>
+            <label>$LOCALIZE[20434]</label>
+            <thumb>../extras/tiles/sets.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Videos,MovieSets,return)</onclick>
+        </item>
+        <item>
+            <description>Tags</description>
+            <label>$LOCALIZE[20459]</label>
+            <thumb>../extras/tiles/tags.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Videos,MovieTags,return)</onclick>
+        </item>                                     
+                
+    </include>  
+
+    <include name="Content_Home_SubMenu_TVShows">
+
+        <item>
+            <description>Now Playing</description>
+            <label>$LOCALIZE[31226]</label>
+            <thumb>../extras/tiles/play.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(fullscreenvideo)</onclick>
+            <visible>Player.HasVideo + VideoPlayer.Content(episodes)</visible>
+        </item>                 
+        <item>
+            <description>Titles</description>
+            <label>$LOCALIZE[31227]</label>
+            <thumb>../extras/tiles/tv.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Videos,TvShowTitles,return)</onclick>
+        </item>
+        <item>
+            <description>Recently Added</description>
+            <label>$LOCALIZE[31009]</label>
+            <thumb>../extras/tiles/recent.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
+        </item>
+        <item>
+            <description>Actors</description>
+            <label>$LOCALIZE[344]</label>
+            <thumb>../extras/tiles/actors.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Videos,TvShowActors,return)</onclick>
+        </item>
+        <item>
+            <description>Genres</description>
+            <label>$LOCALIZE[135]</label>
+            <thumb>../extras/tiles/genres.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Videos,TvShowGenres,return)</onclick>
+        </item>
+        <item>
+            <description>Years</description>
+            <label>$LOCALIZE[652]</label>
+            <thumb>../extras/tiles/years.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Videos,TvShowYears,return)</onclick>
+        </item>
+        <item>
+            <description>Studios</description>
+            <label>$LOCALIZE[20388]</label>
+            <thumb>../extras/tiles/studios.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Videos,TvShowStudios,return)</onclick>
+        </item>                                     
+                
+    </include>  
+
+    <include name="Content_Home_SubMenu_LiveTV">
+
+        <item>
+            <description>TV Channels</description>
+            <label>$LOCALIZE[19019]</label>
+            <thumb>../extras/tiles/channels.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(TVChannels)</onclick>
+        </item>
+        <item>
+            <description>Radio Channels</description>
+            <label>$LOCALIZE[31168]</label>
+            <thumb>../extras/tiles/radio.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(RadioChannels)</onclick>
+        </item> 
+        <item>
+            <description>TV Guide</description>
+            <label>$LOCALIZE[19069]</label>
+            <thumb>../extras/tiles/livetv.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(TVGuide)</onclick>
+        </item>
+        <item>
+            <description>TV Recordings</description>
+            <label>$LOCALIZE[19017]</label>
+            <thumb>../extras/tiles/recordings.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(TVRecordings)</onclick>
+        </item>                                                     
+        <item>
+            <description>TV Timers</description>
+            <label>$LOCALIZE[19040]</label>
+            <thumb>../extras/tiles/time.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(TVTimers)</onclick>
+        </item>
+        <item>
+            <description>TV Timer Rules</description>
+            <label>$LOCALIZE[19138]</label>
+            <thumb>../extras/tiles/settings.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(TVTimerRules)</onclick>
+        </item>                                 
+        <item>
+            <description>TV Search</description>
+            <label>$LOCALIZE[137]</label>
+            <thumb>../extras/tiles/search.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(TVSearch)</onclick>
+        </item>    
+
+    </include> 
 	
+    <include name="Content_Home_SubMenu_MusicVideos">
+
+        <item>
+            <description>Now Playing</description>
+            <label>$LOCALIZE[31226]</label>
+            <thumb>../extras/tiles/play.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(fullscreenvideo)</onclick>
+            <visible>Player.HasVideo + VideoPlayer.Content(musicvideos)</visible>
+        </item>                 
+        <item>
+            <description>Titles</description>
+            <label>$LOCALIZE[31227]</label>
+            <thumb>../extras/tiles/musicvideos.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Videos,MusicVideoTitles,return)</onclick>
+        </item>
+        <item>
+            <description>Recently Added</description>
+            <label>$LOCALIZE[31009]</label>
+            <thumb>../extras/tiles/recent.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Videos,RecentlyAddedMusicVideos,return)</onclick>
+        </item>
+        <item>
+            <description>Actors</description>
+            <label>$LOCALIZE[133]</label>
+            <thumb>../extras/tiles/actors.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Videos,MusicVideoArtists,return)</onclick>
+        </item>                 
+        <item>
+            <description>Directors</description>
+            <label>$LOCALIZE[20348]</label>
+            <thumb>../extras/tiles/directors.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Videos,MusicVideoDirectors,return)</onclick>
+        </item>                                     
+        <item>
+            <description>Genres</description>
+            <label>$LOCALIZE[135]</label>
+            <thumb>../extras/tiles/genres.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Videos,MusicVideoGenres,return)</onclick>
+        </item>
+        <item>
+            <description>Years</description>
+            <label>$LOCALIZE[652]</label>
+            <thumb>../extras/tiles/years.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Videos,MusicVideoYears,return)</onclick>
+        </item>
+        <item>
+            <description>Studios</description>
+            <label>$LOCALIZE[20388]</label>
+            <thumb>../extras/tiles/studios.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Videos,MusicVideoStudios,return)</onclick>
+        </item>                                   
+                
+    </include> 
+
+    <include name="Content_Home_SubMenu_Videos">
+
+        <item>
+            <description>Playlists</description>
+            <label>$LOCALIZE[136]</label>
+            <thumb>../extras/tiles/playlist.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Videos,special://videoplaylists/,return)</onclick>
+        </item>
+        <item>
+            <description>Addons</description>
+            <label>$LOCALIZE[24001]</label>
+            <thumb>../extras/tiles/addons.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Videos,addons://sources/video/,return)</onclick>
+        </item>
+        <item>
+            <description>Files</description>
+            <label>$LOCALIZE[744]</label>
+            <thumb>../extras/tiles/files.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Videos,Files,return)</onclick>
+        </item>                                 
+                
+    </include> 
+
+    <include name="Content_Home_SubMenu_Music">
+
+        <item>
+            <description>Now Playing</description>
+            <label>$LOCALIZE[31226]</label>
+            <thumb>../extras/tiles/play.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(visualisation)</onclick>
+            <visible>Player.HasMedia + Player.HasAudio</visible>
+        </item>
+        <item>
+            <description>Artists</description>
+            <label>$LOCALIZE[133]</label>
+            <thumb>../extras/tiles/actors.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Music,Artists,return)</onclick>
+        </item>
+        <item>
+            <description>Albums</description>
+            <label>$LOCALIZE[132]</label>
+            <thumb>../extras/tiles/albums.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Music,Albums,return)</onclick>
+        </item>
+        <item>
+            <description>Songs</description>
+            <label>$LOCALIZE[134]</label>
+            <thumb>../extras/tiles/songs.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Music,Songs,return)</onclick>
+        </item>
+        <item>
+            <description>Recently Added</description>
+            <label>$LOCALIZE[31009]</label>
+            <thumb>../extras/tiles/recent.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Music,RecentlyAddedAlbums,return)</onclick>
+        </item>
+        <item>
+            <description>Recently Played</description>
+            <label>$LOCALIZE[31351]</label>
+            <thumb>../extras/tiles/recent_play.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Music,RecentlyPlayedAlbums,return)</onclick>
+        </item>                                     
+        <item>
+            <description>Genres</description>
+            <label>$LOCALIZE[135]</label>
+            <thumb>../extras/tiles/genres.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Music,Genres,return)</onclick>
+        </item>
+        <item>
+            <description>Years</description>
+            <label>$LOCALIZE[652]</label>
+            <thumb>../extras/tiles/years.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Music,Years,return)</onclick>
+        </item>
+        <item>
+            <description>Top100</description>
+            <label>$LOCALIZE[271]</label>
+            <thumb>../extras/tiles/top100.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Music,Top100,return)</onclick>
+        </item>                                                     
+        <item>
+            <description>Playlists</description>
+            <label>$LOCALIZE[136]</label>
+            <thumb>../extras/tiles/playlist.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Music,special://musicplaylists/,return)</onclick>
+        </item>
+        <item>
+            <description>Addons</description>
+            <label>$LOCALIZE[24001]</label>
+            <thumb>../extras/tiles/addons.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Music,addons://sources/audio/,return)</onclick>
+        </item>                                
+                
+    </include>
+
+    <include name="Content_Home_SubMenu_Weather">
+
+        <item>
+            <description>Weather Details</description>
+            <label>$LOCALIZE[31399]</label>
+            <thumb>../extras/tiles/weather.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(weather)</onclick>
+        </item>
+        <item>
+            <description>Refresh</description>
+            <label>$LOCALIZE[31400]</label>
+            <thumb>../extras/tiles/random.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>Weather.Refresh</onclick>
+        </item>
+        <item>
+            <description>Previous Location</description>
+            <label>$LOCALIZE[31401]</label>
+            <thumb>../extras/tiles/location_prev.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>Weather.LocationPrevious</onclick>
+        </item>                                                     
+        <item>
+            <description>Next Location</description>
+            <label>$LOCALIZE[31402]</label>
+            <thumb>../extras/tiles/location_next.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>Weather.LocationNext</onclick>
+        </item>
+        <item>
+            <description>Add-on Settings</description>
+            <label>$LOCALIZE[31403]</label>
+            <thumb>../extras/tiles/settings.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(servicesettings,weather)</onclick>
+        </item>                                 
+                
+    </include> 
+
+    <include name="Content_Home_SubMenu_Addons">
+
+        <item>
+            <description>Add-on Browser</description>
+            <label>$LOCALIZE[31404]</label>
+            <thumb>../extras/tiles/addons.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(addonbrowser,root)</onclick>
+        </item> 
+        <item>
+            <description>Music Addons</description>
+            <label>$LOCALIZE[31386]</label>
+            <thumb>../extras/tiles/music_addons.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Music,Addons,return)</onclick>
+        </item>             
+        <item>
+            <description>Picture Addons</description>
+            <label>$LOCALIZE[31388]</label>
+            <thumb>../extras/tiles/picture_addons.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Pictures,Addons,return)</onclick>
+        </item>
+        <item>
+            <description>Program Addons</description>
+            <label>$LOCALIZE[31186]</label>
+            <thumb>../extras/tiles/program_addons.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Programs,Addons,return)</onclick>
+        </item>
+        <item>
+            <description>Video Addons</description>
+            <label>$LOCALIZE[31384]</label>
+            <thumb>../extras/tiles/video_addons.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(Videos,Addons,return)</onclick>
+        </item>                                                     
+        <item>
+            <description>Add-on Settings</description>
+            <label>$LOCALIZE[31403]</label>
+            <thumb>../extras/tiles/settings.png</thumb>
+            <onclick>ClearProperty(ShowSubMenu,home)</onclick>
+            <onclick>SetFocus(1000)</onclick>
+            <onclick>ActivateWindow(systemsettings,addons)</onclick>
+        </item>                                  
+                
+    </include> 
+
 </includes>

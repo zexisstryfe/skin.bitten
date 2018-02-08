@@ -5,9 +5,12 @@
 	
     <controls>	
         <include>DialogOverlay</include>
-		<include>Common_LeftMenu_Backing</include>
-		<include>Common_LeftMenu_Heading</include>				
-		<include>Common_LeftBar_LeftMenu</include>
+        
+		<include content="Common_LeftMenu">
+			<param name="width" value="420"/>	
+			<param name="time" value="400"/>
+			<param name="header" value="$LOCALIZE[10004]"/>
+		</include>	
 		
 		<control type="grouplist" id="1">
 			<animation type="WindowOpen">
@@ -16,180 +19,162 @@
 			<animation type="WindowClose">
 				<effect type="fade" start="100" end="0" time="200" />
 			</animation>
-			<posy>100</posy>
+			<top>100</top>
 			<width>420</width>
 			<height>1080</height>
-			<itemgap>20</itemgap>
-			<onup>1</onup>
-			<ondown>1</ondown>
-			<onright>Dialog.Close(111)</onright>
+			<itemgap>0</itemgap>
+			<onright>Dialog.Close(shutdownmenu)</onright>
 			<orientation>vertical</orientation>
 			
 			<control type="group">
-				<height>75</height>
+				<height>80</height>
 				
-				<control type="image">
-					<include>Common_Settings_Button_Backing</include>
-					<visible>Control.HasFocus(3110)</visible>
-				</control>
+				<include content="Common_Settings_Button_Backing">
+					<param name="visible" value="3110"/>			
+				</include>	
 
-				<control type="button" id="3110">
-					<include>Common_Settings_Button</include>
-					<texturefocus>buttonmenu/SettingsFO.png</texturefocus>
-					<texturenofocus>buttonmenu/settingsNF.png</texturenofocus>
-					<label>$LOCALIZE[5]</label>
-					<onclick>ActivateWindow(Settings)</onclick>
-					<ondown>3111</ondown>
-					<onup>3116</onup>
-					<onright>Dialog.Close(111)</onright>
-				</control>
+				<include content="Common_Settings_Button">
+					<param name="button_id" value="3110"/>		
+					<param name="texture" value="../extras/tiles/settings.png"/>
+					<param name="label" value="$LOCALIZE[5]"/>	
+					<param name="onclick" value="ActivateWindow(Settings)"/>
+					<param name="ondown" value="3111"/>
+					<param name="onup" value="3116"/>
+					<param name="onright" value="Dialog.Close(shutdownmenu)"/>
+				</include>	
 			
 			</control>
 			
 			<control type="group">
-				<height>75</height>
+				<height>80</height>
 				
-				<control type="image">
-					<include>Common_Settings_Button_Backing</include>
-					<visible>Control.HasFocus(3111)</visible>
-				</control>
+				<include content="Common_Settings_Button_Backing">
+					<param name="visible" value="3111"/>			
+				</include>
 
-				<control type="button" id="3111">
-					<include>Common_Settings_Button</include>
-					<texturefocus>buttonmenu/ejectFO.png</texturefocus>
-					<texturenofocus>buttonmenu/ejectNF.png</texturenofocus>
-					<label>$LOCALIZE[13391]</label>
-					<onclick>EjectTray()</onclick>
-					<ondown>3117</ondown>
-					<onup>3110</onup>	
-					<onright>Dialog.Close(111)</onright>					
-				</control>
+				<include content="Common_Settings_Button">
+					<param name="button_id" value="3111"/>		
+					<param name="texture" value="../extras/tiles/eject.png"/>
+					<param name="label" value="$LOCALIZE[13391]"/>	
+					<param name="onclick" value="EjectTray()"/>
+					<param name="ondown" value="3117"/>
+					<param name="onup" value="3110"/>
+					<param name="onright" value="Dialog.Close(shutdownmenu)"/>
+				</include>	
 			
 			</control>
 			
 			<control type="group">
-				<height>75</height>
+				<height>80</height>
 				
-				<control type="image">
-					<include>Common_Settings_Button_Backing</include>
-					<visible>Control.HasFocus(3117)</visible>
-				</control>
+				<include content="Common_Settings_Button_Backing">
+					<param name="visible" value="3117"/>			
+				</include>
 
-				<control type="button" id="3117">
-					<include>Common_Settings_Button</include>
-					<texturefocus>buttonmenu/filesFO.png</texturefocus>
-					<texturenofocus>buttonmenu/filesNF.png</texturenofocus>
-					<label>$LOCALIZE[7]</label>
-					<onclick>ActivateWindow(filemanager)</onclick>
-					<ondown>3112</ondown>
-					<onup>3111</onup>	
-					<onright>Dialog.Close(111)</onright>					
-				</control>
+				<include content="Common_Settings_Button">
+					<param name="button_id" value="3117"/>		
+					<param name="texture" value="../extras/tiles/filemanager.png"/>
+					<param name="label" value="$LOCALIZE[7]"/>	
+					<param name="onclick" value="ActivateWindow(filemanager)"/>
+					<param name="ondown" value="3112"/>
+					<param name="onup" value="3111"/>
+					<param name="onright" value="Dialog.Close(shutdownmenu)"/>
+				</include>	
 			
 			</control>
 			
 			<control type="group">
-				<height>75</height>
+				<height>80</height>
 				
-				<control type="image">
-					<include>Common_Settings_Button_Backing</include>
-					<visible>Control.HasFocus(3112)</visible>
-				</control>
+				<include content="Common_Settings_Button_Backing">
+					<param name="visible" value="3112"/>			
+				</include>
 
-				<control type="button" id="3112">
-					<include>Common_Settings_Button</include>
-					<texturefocus>buttonmenu/logoffFO.png</texturefocus>
-					<texturenofocus>buttonmenu/logoffNF.png</texturenofocus>
-					<label>$LOCALIZE[20126]</label>
-					<onclick>ActivateWindow(LoginScreen)</onclick>
-					<ondown>3113</ondown>
-					<onup>3117</onup>	
-					<onright>Dialog.Close(111)</onright>					
-				</control>
+				<include content="Common_Settings_Button">
+					<param name="button_id" value="3112"/>		
+					<param name="texture" value="../extras/tiles/logoff.png"/>
+					<param name="label" value="$LOCALIZE[20126]"/>	
+					<param name="onclick" value="ActivateWindow(LoginScreen)"/>
+					<param name="ondown" value="3113"/>
+					<param name="onup" value="3117"/>
+					<param name="onright" value="Dialog.Close(shutdownmenu)"/>
+				</include>	
 			
 			</control>
 				
 			<control type="group">
-				<height>75</height>
+				<height>80</height>
 				
-				<control type="image">
-					<include>Common_Settings_Button_Backing</include>
-					<visible>Control.HasFocus(3113)</visible>
-				</control>
+				<include content="Common_Settings_Button_Backing">
+					<param name="visible" value="3113"/>			
+				</include>
 
-				<control type="button" id="3113">
-					<include>Common_Settings_Button</include>
-					<texturefocus>buttonmenu/suspendFO.png</texturefocus>
-					<texturenofocus>buttonmenu/suspendNF.png</texturenofocus>
-					<label>$LOCALIZE[13011]</label>
-					<onclick>XBMC.Suspend()</onclick>
-					<ondown>3114</ondown>
-					<onup>3112</onup>
-					<onright>Dialog.Close(111)</onright>
-				</control>
-			
+				<include content="Common_Settings_Button">
+					<param name="button_id" value="3113"/>		
+					<param name="texture" value="../extras/tiles/suspend.png"/>
+					<param name="label" value="$LOCALIZE[13011]"/>	
+					<param name="onclick" value="XBMC.Suspend()"/>
+					<param name="ondown" value="3114"/>
+					<param name="onup" value="3112"/>
+					<param name="onright" value="Dialog.Close(shutdownmenu)"/>
+				</include>	
+
 			</control>				
 
 			<control type="group">
-				<height>75</height>
+				<height>80</height>
 				
-				<control type="image">
-					<include>Common_Settings_Button_Backing</include>
-					<visible>Control.HasFocus(3114)</visible>
-				</control>
+				<include content="Common_Settings_Button_Backing">
+					<param name="visible" value="3114"/>			
+				</include>
 
-				<control type="button" id="3114">
-					<include>Common_Settings_Button</include>
-					<texturefocus>buttonmenu/rebootFO.png</texturefocus>
-					<texturenofocus>buttonmenu/rebootNF.png</texturenofocus>
-					<label>$LOCALIZE[13313]</label>
-					<onclick>RestartApp</onclick>
-					<ondown>3115</ondown>
-					<onup>3113</onup>
-					<onright>Dialog.Close(111)</onright>
-				</control>
+				<include content="Common_Settings_Button">
+					<param name="button_id" value="3114"/>		
+					<param name="texture" value="../extras/tiles/reboot.png"/>
+					<param name="label" value="$LOCALIZE[13313]"/>	
+					<param name="onclick" value="RestartApp"/>
+					<param name="ondown" value="3115"/>
+					<param name="onup" value="3113"/>
+					<param name="onright" value="Dialog.Close(shutdownmenu)"/>
+				</include>	
 			
 			</control>
 
 			<control type="group">
-				<height>75</height>
+				<height>80</height>
 				
-				<control type="image">
-					<include>Common_Settings_Button_Backing</include>
-					<visible>Control.HasFocus(3115)</visible>
-				</control>
+				<include content="Common_Settings_Button_Backing">
+					<param name="visible" value="3115"/>			
+				</include>
 
-				<control type="button" id="3115">
-					<include>Common_Settings_Button</include>
-					<texturefocus>buttonmenu/timerFO.png</texturefocus>
-					<texturenofocus>buttonmenu/timerNF.png</texturenofocus>
-					<label>$LOCALIZE[19040]</label>
-					<onclick>AlarmClock(ShutdownTimer,Shutdown)</onclick>
-					<ondown>3116</ondown>
-					<onup>3114</onup>
-					<onright>Dialog.Close(111)</onright>
-				</control>
+				<include content="Common_Settings_Button">
+					<param name="button_id" value="3115"/>		
+					<param name="texture" value="../extras/tiles/timer.png"/>
+					<param name="label" value="$LOCALIZE[19040]"/>	
+					<param name="onclick" value="AlarmClock(ShutdownTimer,Shutdown)"/>
+					<param name="ondown" value="3116"/>
+					<param name="onup" value="3114"/>
+					<param name="onright" value="Dialog.Close(shutdownmenu)"/>
+				</include>	
 			
 			</control>		
 
 			<control type="group">
-				<height>75</height>
+				<height>80</height>
 				
-				<control type="image">
-					<include>Common_Settings_Button_Backing</include>
-					<visible>Control.HasFocus(3116)</visible>
-				</control>
+				<include content="Common_Settings_Button_Backing">
+					<param name="visible" value="3116"/>			
+				</include>
 
-				<control type="button" id="3116">
-					<include>Common_Settings_Button</include>
-					<texturefocus>buttonmenu/shutdownFO.png</texturefocus>
-					<texturenofocus>buttonmenu/shutdownNF.png</texturenofocus>
-					<label>$LOCALIZE[13005]</label>
-					<onclick>Shutdown()</onclick>
-					<ondown>3110</ondown>
-					<onup>3115</onup>
-					<onright>Dialog.Close(111)</onright>
-				</control>
+				<include content="Common_Settings_Button">
+					<param name="button_id" value="3116"/>		
+					<param name="texture" value="../extras/tiles/shutdown.png"/>
+					<param name="label" value="$LOCALIZE[13005]"/>	
+					<param name="onclick" value="Shutdown()"/>
+					<param name="ondown" value="3110"/>
+					<param name="onup" value="3115"/>
+					<param name="onright" value="Dialog.Close(shutdownmenu)"/>
+				</include>	
 			
 			</control>				
 

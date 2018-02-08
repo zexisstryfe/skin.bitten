@@ -1,65 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <window id="4">
-    <defaultcontrol always="false">50</defaultcontrol>
-    <include condition="!Window.Previous(fullscreenvideo) + !Window.Previous(slideshow) + Skin.HasSetting(MetroAnimations)">Common_Animation_Splash_Flip</include>
+    <defaultcontrol always="true">50</defaultcontrol>
 
     <controls>
-        <include>BG_Fanart_1080</include>
-		<include>FanartOverlay</include>
+		<include>Background_Global</include>
 
-		<control type="image">	
-			<include>Common_Animation_CenterMenu_Stage1</include>
-			<width>1920</width>
-			<height>760</height>
-			<posy>250</posy>
-			<texture colordiffuse="BaseMid">colors/color_white.png</texture>			
-		</control>
+		<control type="group">
+			<left>240</left>	
+			<top>240</top>
 
-		<control type="group">	
-			<posy>260</posy>
-		
-			<control type="image">	
-				<include>Common_Animation_CenterMenu_Stage4</include>
-				<width>1920</width>
-				<height>740</height>
-				<texture colordiffuse="BaseMediumHigh">colors/color_white.png</texture>			
-			</control>
-
-			<control type="image">	
-				<include>Common_Animation_CenterMenu_Stage3</include>
-				<width>1520</width>
-				<height>740</height>
-				<posx>-200</posx>
-				<texture colordiffuse="BaseWhite">colors/color_white.png</texture>			
-			</control>
+            <include content="Common_Window_Backing">
+                <param name="width" value="1520"/>
+                <param name="height" value="605"/>  
+                <param name="logo_visible" value="false"/>   
+                <param name="header_height" value="5"/>             
+            </include> 
 
 			<control type="group" id="378">
-				<include>Common_Animation_CenterMenu_Stage3</include>
-				<posy>10</posy>
-				
-				<control type="image">
-					<posx>745</posx>
-					<posy>20</posy>
-					<width>2</width>
-					<height>680</height>					
-					<include>Common_Color_BaseMediumHigh</include>
-				</control>
-				
-				<control type="image">
-					<posx>170</posx>
-					<posy>20</posy>
-					<width>2</width>
-					<height>680</height>					
-					<include>Common_Color_BaseMediumHigh</include>
-				</control>
+				<top>5</top>
+
+	            <include content="Common_Separator_Vertical"> 
+	                <param name="left" value="1000"/>   
+	                <param name="height" value="600"/>
+	            </include>
 
 				<control type="panel" id="50">
-					<posx>172</posx>
 					<width>1500</width>
 					<height>600</height>
 					<orientation>horizontal</orientation>
-					<itemlayout width="575" height="120">
+					<itemlayout width="500" height="120">
 					
 						<control type="label">
 							<posx>140</posx>
@@ -77,10 +47,17 @@
 					
 					</itemlayout>
 					
-					<focusedlayout width="575" height="120">
+					<focusedlayout width="500" height="120">
 					
 						<control type="image">
-							<width>573</width>
+							<width>500</width>
+							<height>120</height>
+							<texture colordiffuse="BaseLowest">colors/color_white.png</texture>
+						</control>
+
+						<control type="image">
+							<width>120</width>
+							<height>120</height>
 							<texture colordiffuse="$VAR[Accent_100]">colors/color_white.png</texture>
 						</control>
 						
@@ -89,6 +66,7 @@
 							<height>120</height>
 							<font>font36B</font>
 							<label>$INFO[ListItem.Label]</label>
+							<textcolor>$VAR[Accent_100]</textcolor>
 						</control>
 						
 						<control type="image">
@@ -104,79 +82,79 @@
 						<item id="1">
 							<description>Interface</description>
 							<label>$LOCALIZE[31372]</label>
-							<label2>31303</label2>
+							<label2>$LOCALIZE[31303]</label2>
 							<thumb>../extras/tiles/appearance.png</thumb>
 							<onclick>activatewindow(InterfaceSettings)</onclick>
 						</item>
 						
 						<item id="2">
 							<description>Skin</description>
-							<label>31132</label>
-							<label2>31313</label2>
+							<label>$LOCALIZE[31132]</label>
+							<label2>$LOCALIZE[31313]</label2>
 							<thumb>../extras/tiles/skin.png</thumb>
 							<onclick>activatewindow(skinsettings,return)</onclick>
 						</item>
 						
 						<item id="3">
 							<description>Media</description>
-							<label>$LOCALIZE[31373]</label>
-							<label2>31304</label2>
+							<label>$LOCALIZE[14022]</label>
+							<label2>$LOCALIZE[31304]</label2>
 							<thumb>../extras/tiles/videos.png</thumb>
 							<onclick>activatewindow(MediaSettings)</onclick>
 						</item>
 						
 						<item id="4">
 							<description>Live TV</description>
-							<label>31012</label>
-							<label2>31310</label2>
+							<label>$LOCALIZE[31434]</label>
+							<label2>$LOCALIZE[31310]</label2>
 							<thumb>../extras/tiles/livetv.png</thumb>
 							<onclick>activatewindow(PVRSettings,return)</onclick>
 						</item>
 						
 						<item id="5">
 							<description>Addons</description>
-							<label>24001</label>
-							<label2>31309</label2>
+							<label>$LOCALIZE[24001]</label>
+							<label2>$LOCALIZE[31309]</label2>
 							<thumb>../extras/tiles/addons.png</thumb>
 							<onclick>ActivateWindow(addonbrowser)</onclick>
 						</item>
 						
 						<item id="6">
-							<description>Weather</description>
-							<label>8</label>
-							<label2>31307</label2>
-							<thumb>../extras/tiles/weather.png</thumb>
-							<onclick>activatewindow(WeatherSettings,return)</onclick>
+							<description>Player</description>
+							<label>$LOCALIZE[14200]</label>
+							<label2>$LOCALIZE[31307]</label2>
+							<thumb>../extras/tiles/player.png</thumb>
+							<onclick>ActivateWindow(PlayerSettings,return)</onclick>
 						</item>
 						
 						<item id="7">
 							<description>Services</description>
-							<label>14036</label>
-							<label2>31311</label2>
+							<label>$LOCALIZE[14036]</label>
+							<label2>$LOCALIZE[31311]</label2>
 							<thumb>../extras/tiles/services.png</thumb>
 							<onclick>activatewindow(ServiceSettings,return)</onclick>
 						</item>
 						
 						<item id="8">
 							<description>System</description>
-							<label>13000</label>
-							<label2>31308</label2>
+							<label>$LOCALIZE[13000]</label>
+							<label2>$LOCALIZE[31308]</label2>
 							<thumb>../extras/tiles/system.png</thumb>
 							<onclick>activatewindow(SystemSettings,return)</onclick>
 						</item>
 						
 						<item id="9">
 							<description>Profiles</description>
-							<label>13200</label>
-							<label2>31312</label2>
+							<label>$LOCALIZE[13200]</label>
+							<label2>$LOCALIZE[31312]</label2>
 							<thumb>../extras/tiles/profile.png</thumb>
 							<onclick>activatewindow(Profiles,return)</onclick>
 						</item>
 						
 						<item id="10">
 							<description>System Info</description>
-							<label>130</label>
-							<label2>31314</label2>
+							<label>$LOCALIZE[130]</label>
+							<label2>$LOCALIZE[31314]</label2>
 							<thumb>../extras/tiles/info.png</thumb>
 							<onclick>activatewindow(7,return)</onclick>
 						</item>
@@ -186,33 +164,23 @@
 				</control>
 				
 				<control type="group">	
-					<posx>1320</posx>
-					<include>Common_Animation_CenterMenu_Fade2</include>
-					
-					<control type="image">
-						<posx>20</posx>
-						<posy>80</posy>
-						<width>560</width>
-						<height>2</height>					
-						<include>Common_Color_BaseWhite</include>
-					</control>
+					<left>1020</left>
+					<width>460</width>
 				
 					<control type="label">
-						<posx>20</posx>
-						<width>360</width>
 						<height>75</height>
-						<font>font45R</font>
+						<font>font40B</font>
 						<label>$INFO[Container(50).ListItem.Label]</label>
-						<textcolor>BaseLow</textcolor>
+						<textcolor>$VAR[Accent_100]</textcolor>
 					</control>
 					
 					<control type="textbox">
 						<description>description area</description>
-						<posx>30</posx>
-						<posy>100</posy>
-						<width>520</width>
+						<left>20</left>
+						<top>80</top>
 						<height>660</height>
-						<font>font30</font>
+						<font>font30R</font>
+						<textcolor>BaseMediumHigh</textcolor>
 						<label>$INFO[Container(50).ListItem.Label2]</label>
 					</control>
 				
@@ -223,8 +191,7 @@
 		</control>	
 			
 		<include>Common_LeftBar</include>		
-        <include condition="!Window.Previous(fullscreenvideo) + !Window.Previous(slideshow) + Skin.HasSetting(MetroAnimations)">Common_Splash</include>
- 
+
 	</controls>
 	
 </window>

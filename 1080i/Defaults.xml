@@ -3,8 +3,8 @@
 <includes>
 
     <default type="label">
-        <posx>0</posx>
-        <posy>0</posy>
+        <left>0</left>
+        <top>0</top>
         <label>-</label>
         <height>60</height>
         <align>left</align>
@@ -17,8 +17,8 @@
     </default>
 	
     <default type="fadelabel">
-        <posx>0</posx>
-        <posy>0</posy>
+        <left>0</left>
+        <top>0</top>
         <height>60</height>
         <label>-</label>
         <align>left</align>
@@ -33,8 +33,8 @@
     </default>
 	
     <default type="image">
-        <posx>0</posx>
-        <posy>0</posy>
+        <left>0</left>
+        <top>0</top>
         <width>-</width>
         <height>-</height>
         <align>center</align>
@@ -43,8 +43,8 @@
     </default>
 	
     <default type="button">
-        <posx>0</posx>
-        <posy>0</posy>
+        <left>0</left>
+        <top>0</top>
         <width>450</width>
         <height>60</height>
         <align>center</align>
@@ -60,8 +60,8 @@
     </default>
 	
     <default type="togglebutton">
-        <posx>0</posx>
-        <posy>0</posy>
+        <left>0</left>
+        <top>0</top>
         <width>450</width>
         <height>60</height>
         <label>-</label>
@@ -78,8 +78,8 @@
     </default>
 	
     <default type="radiobutton">
-        <posx>0</posx>
-        <posy>0</posy>
+        <left>0</left>
+        <top>0</top>
         <width>450</width>
         <height>60</height>
         <align>center</align>
@@ -103,8 +103,8 @@
     </default>
 	
     <default type="spincontrolex">
-        <posx>0</posx>
-        <posy>0</posy>
+        <left>0</left>
+        <top>0</top>
         <width>450</width>
         <height>60</height>
         <label>-</label>
@@ -129,8 +129,8 @@
     </default>
 	
     <default type="spincontrol">
-        <posx>0</posx>
-        <posy>0</posy>
+        <left>0</left>
+        <top>0</top>
         <height>22</height>
         <width>22</width>
         <spinwidth>39</spinwidth>
@@ -153,8 +153,8 @@
     </default>
 	
     <default type="sliderex">
-        <posx>0</posx>
-        <posy>0</posy>
+        <left>0</left>
+        <top>0</top>
         <height>60</height>
         <width>450</width>
         <texturefocus colordiffuse="$VAR[Accent_100]">colors/color_white.png</texturefocus>
@@ -172,8 +172,8 @@
     </default>
 	
     <default type="progress">
-        <posx>225</posx>
-        <posy>488</posy>
+        <left>225</left>
+        <top>488</top>
         <height>8</height>
         <texturebg colordiffuse="BaseWhite">controls/ProgressBack.png</texturebg>
         <lefttexture>-</lefttexture>
@@ -183,15 +183,14 @@
     </default>
 	
     <default type="slider">
-        <posx>0</posx>
-        <posy>0</posy>
-        <width>630</width>
+        <width>360</width>
         <height>30</height>
+        <orientation>horizontal</orientation>
         <texturefocus>-</texturefocus>
         <texturenofocus>-</texturenofocus>
-        <texturesliderbar colordiffuse="BaseMid">OSD/slider_bg.png</texturesliderbar>
-        <textureslidernib border="2" colordiffuse="BaseMediumMid">OSD/SliderNibFO.png</textureslidernib>
-        <textureslidernibfocus border="2" colordiffuse="$VAR[Accent_100]">OSD/SliderNibFO.png</textureslidernibfocus>
+        <texturesliderbar colordiffuse="BaseMid">controls/slider_bg.png</texturesliderbar>
+        <textureslidernib border="2" colordiffuse="BaseLow">constrols/SliderNibFO.png</textureslidernib>
+        <textureslidernibfocus border="2" colordiffuse="$VAR[Accent_100]">controls/SliderNibFO.png</textureslidernibfocus>
     </default>
 	
     <default type="scrollbar">

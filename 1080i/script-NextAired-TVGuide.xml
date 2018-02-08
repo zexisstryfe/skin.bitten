@@ -15,7 +15,6 @@
 	
         <!--Background Area-->
 		<include>BG_Fanart_1080</include>
-		<include>WhiteOverlay</include>	
 		
         <control type="group">
             <animation effect="fade" time="250">WindowOpen</animation>
@@ -108,8 +107,8 @@
 
 			<control type="label">
 				<label>$LOCALIZE[31129]</label>
-				<posx>585</posx>
-				<posy>395</posy>
+				<left>585</left>
+				<top>395</top>
 				<height>60</height>
 				<width>525</width>
 				<font>font45R</font>
@@ -122,7 +121,7 @@
 
         <!--Panel-->
         <control type="group">
-            <posy>150</posy>
+            <top>150</top>
             <width>1920</width>
             <height>720</height>
             <animation type="WindowOpen" condition="!Window.Previous(fullscreenvideo) + !Window.Previous(slideshow)">
@@ -139,125 +138,61 @@
             </animation>
 			
             <control type="group">
-                <posx>465</posx>
+                <left>465</left>
                 <width>1920</width>
                 <height>720</height>
 
                 <control type="label">
-                    <posx>90</posx>
-                    <posy>315</posy>
+                    <left>90</left>
+                    <top>315</top>
                     <width>1200</width>
                     <height>60</height>
                     <label>31206</label>
                     <font>font34R</font>
-                    <visible>[IsEmpty(Container(200).ListItem(0).Label) + StringCompare(Container(50).Position,0)] | [IsEmpty(Container(201).ListItem(0).Label) + StringCompare(Container(50).Position,1)] | [IsEmpty(Container(202).ListItem(0).Label) + StringCompare(Container(50).Position,2)] | [IsEmpty(Container(203).ListItem(0).Label) + StringCompare(Container(50).Position,3)] | [IsEmpty(Container(204).ListItem(0).Label) + StringCompare(Container(50).Position,4)] | [IsEmpty(Container(205).ListItem(0).Label) + StringCompare(Container(50).Position,5)] | [IsEmpty(Container(206).ListItem(0).Label) + StringCompare(Container(50).Position,6)]</visible>
+                    <visible>[IsEmpty(Container(200).ListItem(0).Label) + String.IsEqual(Container(50).Position,0)] | [IsEmpty(Container(201).ListItem(0).Label) + String.IsEqual(Container(50).Position,1)] | [IsEmpty(Container(202).ListItem(0).Label) + String.IsEqual(Container(50).Position,2)] | [IsEmpty(Container(203).ListItem(0).Label) + String.IsEqual(Container(50).Position,3)] | [IsEmpty(Container(204).ListItem(0).Label) + String.IsEqual(Container(50).Position,4)] | [IsEmpty(Container(205).ListItem(0).Label) + String.IsEqual(Container(50).Position,5)] | [IsEmpty(Container(206).ListItem(0).Label) + String.IsEqual(Container(50).Position,6)]</visible>
                 </control>
 				
                 <!--Monday-->
-                <control type="group">
-                    <width>1920</width>
-                    <height>720</height>
-                    <visible>!IsEmpty(Container(200).ListItem(0).Label) + StringCompare(Container(50).Position,0)</visible>
-					
-                    <control type="fixedlist" id="200">
-                        <onright>201</onright>
-                        <include content="TVGuide_FixedList">
-							<param name="control" value="200"/>
-						</include>
-                    </control>
-					
-                </control>
+                <include content="TVGuide_FixedList">
+                    <param name="visible" value="!IsEmpty(Container(200).ListItem(0).Label) + String.IsEqual(Container(50).Position,0)"/>
+                    <param name="control" value="200"/>
+                </include> 
 				
                 <!--Tuesday-->
-                <control type="group">
-                    <width>1920</width>
-                    <height>720</height>
-                    <visible>!IsEmpty(Container(201).ListItem(0).Label) + StringCompare(Container(50).Position,1)</visible>
-					
-                    <control type="fixedlist" id="201">
-                        <onright>201</onright>
-                        <include content="TVGuide_FixedList">
-							<param name="control" value="201"/>
-						</include>
-                    </control>
-					
-                </control>
+                <include content="TVGuide_FixedList">
+                    <param name="visible" value="!IsEmpty(Container(201).ListItem(0).Label) + String.IsEqual(Container(50).Position,1)"/>
+                    <param name="control" value="201"/>
+                </include>
 				
                 <!--Wednesday-->
-                <control type="group">
-                    <width>1920</width>
-                    <height>720</height>
-                    <visible>!IsEmpty(Container(202).ListItem(0).Label) + StringCompare(Container(50).Position,2)</visible>
-					
-                    <control type="fixedlist" id="202">
-                        <onright>202</onright>
-                        <include content="TVGuide_FixedList">
-							<param name="control" value="202"/>
-						</include>
-                    </control>
-					
-                </control>
+                <include content="TVGuide_FixedList">
+                    <param name="visible" value="!IsEmpty(Container(202).ListItem(0).Label) + String.IsEqual(Container(50).Position,2)"/>
+                    <param name="control" value="202"/>
+                </include>
 				
                 <!--Thursday-->
-                <control type="group">
-                    <width>1920</width>
-                    <height>720</height>
-                    <visible>!IsEmpty(Container(203).ListItem(0).Label) + StringCompare(Container(50).Position,3)</visible>
-					
-                    <control type="fixedlist" id="203">
-                        <onright>203</onright>
-                        <include content="TVGuide_FixedList">
-							<param name="control" value="203"/>
-						</include>
-                    </control>
-					
-                </control>
+                <include content="TVGuide_FixedList">
+                    <param name="visible" value="!IsEmpty(Container(203).ListItem(0).Label) + String.IsEqual(Container(50).Position,3)"/>
+                    <param name="control" value="203"/>
+                </include>
 				
                 <!--Friday-->
-                <control type="group">
-                    <width>1920</width>
-                    <height>720</height>
-                    <visible>!IsEmpty(Container(204).ListItem(0).Label) + StringCompare(Container(50).Position,4)</visible>
-					
-                    <control type="fixedlist" id="204">
-                        <onright>204</onright>
-                        <include content="TVGuide_FixedList">
-							<param name="control" value="204"/>
-						</include>
-                    </control>
-					
-                </control>
+                <include content="TVGuide_FixedList">
+                    <param name="visible" value="!IsEmpty(Container(204).ListItem(0).Label) + String.IsEqual(Container(50).Position,4)"/>
+                    <param name="control" value="204"/>
+                </include>
 				
                 <!--Saturday-->
-                <control type="group">
-                    <width>1920</width>
-                    <height>720</height>
-                    <visible>!IsEmpty(Container(205).ListItem(0).Label) + StringCompare(Container(50).Position,5)</visible>
-					
-                    <control type="fixedlist" id="205">
-                        <onright>205</onright>
-						<onfocus>SetFocus(Container(50).Position(5))</onfocus>
-                        <include content="TVGuide_FixedList">
-							<param name="control" value="205"/>
-						</include>
-                    </control>
-					
-                </control>
+                <include content="TVGuide_FixedList">
+                    <param name="visible" value="!IsEmpty(Container(205).ListItem(0).Label) + String.IsEqual(Container(50).Position,5)"/>
+                    <param name="control" value="205"/>
+                </include>
 				
                 <!--Sunday-->
-                <control type="group">
-                    <width>1920</width>
-                    <height>720</height>
-                    <visible>!IsEmpty(Container(206).ListItem(0).Label) + StringCompare(Container(50).Position,6)</visible>
-					
-                    <control type="fixedlist" id="206">
-                        <onright>206</onright>
-                        <include content="TVGuide_FixedList">
-							<param name="control" value="206"/>
-						</include>
-                    </control>
-					
-                </control>
+                <include content="TVGuide_FixedList">
+                    <param name="visible" value="!IsEmpty(Container(206).ListItem(0).Label) + String.IsEqual(Container(50).Position,6)"/>
+                    <param name="control" value="206"/>
+                </include>
 				
             </control>
 			
@@ -280,31 +215,29 @@
 				<animation type="Visible">
 					<effect type="fade" start="0" end="100" time="500" delay="500" />
 				</animation>
-				<posy>390</posy>
+				<top>390</top>
 				<width>455</width>
 				<height>560</height>
 				<visible allowhiddenfocus="true">![Control.HasFocus(8) | Control.HasFocus(9)]</visible>
 				<include>ShowOptions_Left</include>
-				<onright condition="StringCompare(Container(50).Position,0)">200</onright>
-				<onright condition="StringCompare(Container(50).Position,1)">201</onright>
-				<onright condition="StringCompare(Container(50).Position,2)">202</onright>
-				<onright condition="StringCompare(Container(50).Position,3)">203</onright>
-				<onright condition="StringCompare(Container(50).Position,4)">204</onright>
-				<onright condition="StringCompare(Container(50).Position,5)">205</onright>
-				<onright condition="StringCompare(Container(50).Position,6)">206</onright>
-				<onup>50</onup>
-				<ondown>50</ondown>
+				<onright condition="String.IsEqual(Container(50).Position,0)">200</onright>
+				<onright condition="String.IsEqual(Container(50).Position,1)">201</onright>
+				<onright condition="String.IsEqual(Container(50).Position,2)">202</onright>
+				<onright condition="String.IsEqual(Container(50).Position,3)">203</onright>
+				<onright condition="String.IsEqual(Container(50).Position,4)">204</onright>
+				<onright condition="String.IsEqual(Container(50).Position,5)">205</onright>
+				<onright condition="String.IsEqual(Container(50).Position,6)">206</onright>
 				<itemlayout width="455" height="80">
 				
 					<control type="image">
 						<include>Common_HomeMenu_Icons</include>
 						<texture>arrows/right.png</texture>
-						<visible>StringCompare(ListItem.Label,System.Date(DDD))</visible>
+						<visible>String.IsEqual(ListItem.Label,System.Date(DDD))</visible>
 					</control>	
 					
 					<control type="label">
-						<posx>110</posx>
-						<include>Common_HomeMenu_ListFont</include>
+						<left>110</left>
+						<include>TVGuide_ContentList</include>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 					
@@ -319,13 +252,13 @@
 					<control type="image">
 						<include>Common_HomeMenu_Icons</include>
 						<texture>arrows/right.png</texture>
-						<visible>StringCompare(ListItem.Label,System.Date(DDD))</visible>
+						<visible>String.IsEqual(ListItem.Label,System.Date(DDD))</visible>
 					</control>	
 					
 					<control type="label">
-						<posx>110</posx>
+						<left>110</left>
 						<textcolor>$VAR[Accent_100]</textcolor>
-						<include>Common_HomeMenu_ListFont</include>
+						<include>TVGuide_ContentList</include>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 					

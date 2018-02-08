@@ -3,6 +3,7 @@
     <defaultcontrol always="true">5</defaultcontrol>
 	
     <controls>
+
         <!--Background Area-->
         <control type="group">
 		
@@ -20,33 +21,35 @@
             </control>
 
             <control type="image">
-				<posy>110</posy>
-                <height>80</height>
+				<top>108</top>
+                <height>2</height>
 				<width>1920</width>
-                <texture colordiffuse="BaseMediumMid40">colors/color_white.png</texture>
+                <texture colordiffuse="BaseMediumMid">colors/color_white.png</texture>
 				<include>Animation_Common_InfoWindow</include>
             </control>
 
             <control type="image">
-				<posy>1000</posy>
+				<top>170</top>
+                <height>2</height>
+				<width>1920</width>
+                <texture colordiffuse="BaseMediumMid">colors/color_white.png</texture>
+				<include>Animation_Common_InfoWindow</include>
+            </control>
+
+            <control type="image">
+				<top>1000</top>
                 <height>80</height>
 				<width>1920</width>
                 <texture colordiffuse="BaseMediumHigh60">colors/color_white.png</texture>
 				<include>Animation_Common_InfoWindow</include> 
 			</control>
-			
-            <control type="image">
-                <height>1080</height>
-				<width>880</width>
-                <texture colordiffuse="BaseMediumMid">colors/color_white.png</texture>
-				<include>Animation_Common_InfoIcon</include>
-			</control>	
 
             <control type="image">
                 <width>880</width>
                 <height>1080</height>
 				<aspectratio>scale</aspectratio>
                 <texture background="true" fallback="DefaultAddon.png">$INFO[ListItem.Thumb]</texture>
+                <bordertexture colordiffuse="BaseMediumMid">colors/color_white.png</bordertexture>
 				<include>Animation_Common_InfoIcon</include> 
             </control>
 			
@@ -57,8 +60,8 @@
         <!--Top Section-->
 		<control type="group">
 			<include>Animation_Common_Window</include>
-			<posx>980</posx>
-			<posy>20</posy>
+			<left>980</left>
+			<top>20</top>
 			
 			<control type="label">
 				<width>900</width>
@@ -67,46 +70,53 @@
 				<textcolor>$VAR[Accent_100]</textcolor>
 				<label>$INFO[ListItem.Label]</label>
 			</control>
-	
+
+			<control type="label">
+				<top>90</top>
+				<width>1080</width>
+				<height>60</height>
+				<font>font30B</font>
+				<textcolor>BaseMid</textcolor>
+				<label>$LOCALIZE[31421]</label>
+			</control>
+
 			<!--Attribute List-->
 			<control type="list" id="5">
-				<posy>180</posy>
-				<width>920</width>
+				<left>-20</left>
+				<top>160</top>
+				<width>960</width>
                 <height>714</height>
                 <onup>5</onup>
                 <ondown>5</ondown>
-                <itemlayout height="40">
+                <itemlayout width="1000" height="40">			
 
-					<control type="label">
-						<include>Common_Info_Pics_Label</include>
-						<label>$INFO[ListItem.Label]</label>
-					</control>				
+					<include content="Common_Info_Pics_Label">
+						<param name="label" value="$INFO[ListItem.Label]"/>
+						<param name="textcolor" value="$VAR[Accent_100]"/>				
+					</include>
 
-					<control type="label">
-						<include>Common_Info_Pics</include>
-						<label>$INFO[ListItem.Label2]</label>
-					</control>					
+					<include content="Common_Info_Pics">
+						<param name="label" value="$INFO[ListItem.Label2]"/>
+						<param name="textcolor" value="BaseMid"/>				
+					</include>					
 
                 </itemlayout>
 				
-                <focusedlayout height="40">
+                <focusedlayout width="1000" height="40">
 				
                     <control type="image">
-                        <posx>-20</posx>
-						<width>960</width>
-                        <height>40</height>
                         <include>Common_Color_Accent</include>
                     </control>
 					
-					<control type="label">
-						<include>Common_Info_Pics_Label2</include>
-						<label>$INFO[ListItem.Label]</label>
-					</control>				
+					<include content="Common_Info_Pics_Label">
+						<param name="label" value="$INFO[ListItem.Label]"/>
+						<param name="textcolor" value="BaseWhite"/>				
+					</include>			
 
-					<control type="label">
-						<include>Common_Info_Pics2</include>
-						<label>$INFO[ListItem.Label2]</label>
-					</control>	
+					<include content="Common_Info_Pics">
+						<param name="label" value="$INFO[ListItem.Label2]"/>
+						<param name="textcolor" value="BaseWhite"/>			
+					</include>	
 					
                 </focusedlayout>
 				

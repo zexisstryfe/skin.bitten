@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window type="dialog" id="1118">
+    <defaultcontrol always="true">501</defaultcontrol>
+	
+    <controls>
+        <include>DialogOverlay</include>
+		
+        <control type="group">
+            <left>320</left>
+            <top>147</top>
+
+            <include content="Common_Window_Backing">
+                <param name="width" value="1280"/>
+                <param name="height" value="785"/>  
+                <param name="logo_visible" value="false"/>    
+                <param name="header_height" value="5"/>            
+            </include>  
+
+            <control type="image">
+                <top>5</top>
+                <width>1280</width>
+                <height>720</height>
+                <texture>general/home.jpg</texture>
+            </control>  
+
+            <!-- Content List -->
+            <control type="group">
+                <top>200</top>          
+                
+                <control type="grouplist" id="1000">
+                    <width>334</width>
+                    <height>534</height>
+                    <itemgap>0</itemgap>
+                    <orientation>vertical</orientation>
+                                        
+                    <control type="group">
+                        <height>54</height>
+                        <width>304</width>  
+                        
+                        <control type="image">
+                            <include>Common_HomeConfig_Accent</include>
+                            <visible>Skin.String(HomeFocus,HomeMenu1)</visible>
+                        </control>      
+
+                        <control type="image">
+                            <include>Common_HomeConfig_Icons</include>
+                            <texture>$VAR[HomeMenu_1_Icon]</texture>
+                        </control>  
+
+                        <include content="Common_HomeConfig_SubMenu_Arrow">
+                            <param name="home_number" value="Home1"/>           
+                        </include>  
+                        
+                        <control type="button" id="501">
+                            <description>movies</description>
+                            <include>Common_HomeConfig_ListFont</include>
+                            <label>$VAR[HomeMenu_1_Label]</label>
+                            <onup>1100</onup>
+                            <ondown>502</ondown>
+                            <onleft condition="!IsEmpty(Skin.String(Home1SubMenu.Label)) + !Skin.String(Home1SubMenu,DISABLED)">SetProperty(ShowSubMenu,True,home)</onleft>
+                            <onleft condition="!IsEmpty(Skin.String(Home1SubMenu.Label)) + !Skin.String(Home1SubMenu,DISABLED)">SetFocus(15000)</onleft>
+                            <onright>5000</onright>
+                            <onclick>Skin.SetString(HomeSelector_Temp,HomeMenu.1)</onclick>
+                            <onclick>ActivateWindow(1121)</onclick>
+                            <onfocus>Skin.SetString(HomeFocus,HomeMenu1)</onfocus>
+                            <onfocus>Skin.SetString(HomeFocus2,Home1SubMenu)</onfocus>
+                        </control>
+
+                        <control type="label">
+                            <left>84</left>
+                            <textcolor>Red</textcolor>
+                            <include>Common_HomeConfig_ListFont</include>
+                            <label>$VAR[HomeMenu_1_Label]</label>
+                            <visible>Skin.HasSetting(HomeMenu1.Hide)</visible>
+                        </control>
+                    
+                    </control>
+                
+                    <control type="group">
+                        <height>54</height>
+                        <width>304</width>  
+                        
+                        <control type="image">
+                            <include>Common_HomeConfig_Accent</include>
+                            <visible>Skin.String(HomeFocus,HomeMenu2)</visible>
+                        </control>      
+
+                        <control type="image">
+                            <include>Common_HomeConfig_Icons</include>
+                            <texture>$VAR[HomeMenu_2_Icon]</texture>
+                        </control>  
+
+                        <include content="Common_HomeConfig_SubMenu_Arrow">
+                            <param name="home_number" value="Home2"/>           
+                        </include>  
+
+                        <control type="button" id="502">
+                            <description>tvshows</description>
+                            <include>Common_HomeConfig_ListFont</include>
+                            <label>$VAR[HomeMenu_2_Label]</label>
+                            <onup>501</onup>
+                            <ondown>503</ondown>
+                            <onleft condition="!IsEmpty(Skin.String(Home2SubMenu.Label)) + !Skin.String(Home2SubMenu,DISABLED)">SetProperty(ShowSubMenu,True,home)</onleft>
+                            <onleft condition="!IsEmpty(Skin.String(Home2SubMenu.Label)) + !Skin.String(Home2SubMenu,DISABLED)">SetFocus(16000)</onleft>
+                            <onright>6000</onright>
+                            <onclick>Skin.SetString(HomeSelector_Temp,HomeMenu.2)</onclick>
+                            <onclick>ActivateWindow(1121)</onclick>
+                            <onfocus>Skin.SetString(HomeFocus,HomeMenu2)</onfocus>
+                            <onfocus>Skin.SetString(HomeFocus2,Home2)</onfocus>
+                        </control>
+
+                        <control type="label">
+                            <left>84</left>
+                            <textcolor>Red</textcolor>
+                            <include>Common_HomeConfig_ListFont</include>
+                            <label>$VAR[HomeMenu_2_Label]</label>
+                            <visible>Skin.HasSetting(HomeMenu2.Hide)</visible>
+                        </control>
+                    
+                    </control>
+                    
+                    <control type="group">
+                        <height>54</height>
+                        <width>304</width>  
+                        
+                        <control type="image">
+                            <include>Common_HomeConfig_Accent</include>
+                            <visible>Skin.String(HomeFocus,HomeMenu3)</visible>
+                        </control>      
+
+                        <control type="image">
+                            <include>Common_HomeConfig_Icons</include>
+                            <texture>$VAR[HomeMenu_3_Icon]</texture>
+                        </control>  
+
+                        <include content="Common_HomeConfig_SubMenu_Arrow">
+                            <param name="home_number" value="Home3"/>           
+                        </include>  
+
+                        <control type="button" id="503">
+                            <description>live tv</description>
+                            <include>Common_HomeConfig_ListFont</include>
+                            <label>$VAR[HomeMenu_3_Label]</label>
+                            <onup>502</onup>
+                            <ondown>504</ondown>
+                            <onleft condition="!IsEmpty(Skin.String(Home3SubMenu.Label)) + !Skin.String(Home3SubMenu,DISABLED)">SetProperty(ShowSubMenu,True,home)</onleft>
+                            <onleft condition="!IsEmpty(Skin.String(Home3SubMenu.Label)) + !Skin.String(Home3SubMenu,DISABLED)">SetFocus(17000)</onleft>
+                            <onright>7000</onright>
+                            <onclick>Skin.SetString(HomeSelector_Temp,HomeMenu.3)</onclick>
+                            <onclick>ActivateWindow(1121)</onclick>
+                            <onfocus>Skin.SetString(HomeFocus,HomeMenu3)</onfocus>
+                            <onfocus>Skin.SetString(HomeFocus2,Home3)</onfocus>
+                        </control>
+
+                        <control type="label">
+                            <left>84</left>
+                            <textcolor>Red</textcolor>
+                            <include>Common_HomeConfig_ListFont</include>
+                            <label>$VAR[HomeMenu_3_Label]</label>
+                            <visible>Skin.HasSetting(HomeMenu3.Hide)</visible>
+                        </control>
+                        
+                    </control>
+                    
+                    <control type="group">
+                        <height>54</height>
+                        <width>304</width>  
+                        
+                        <control type="image">
+                            <include>Common_HomeConfig_Accent</include>
+                            <visible>Skin.String(HomeFocus,HomeMenu4)</visible>
+                        </control>      
+
+                        <control type="image">
+                            <include>Common_HomeConfig_Icons</include>
+                            <texture>$VAR[HomeMenu_4_Icon]</texture>
+                        </control>  
+
+                        <include content="Common_HomeConfig_SubMenu_Arrow">
+                            <param name="home_number" value="Home4"/>           
+                        </include>  
+                        
+                        <control type="button" id="504">
+                            <description>music</description>
+                            <include>Common_HomeConfig_ListFont</include>
+                            <label>$VAR[HomeMenu_4_Label]</label>
+                            <onup>503</onup>
+                            <ondown>505</ondown>
+                            <onleft condition="!IsEmpty(Skin.String(Home4SubMenu.Label)) + !Skin.String(Home4SubMenu,DISABLED)">SetProperty(ShowSubMenu,True,home)</onleft>
+                            <onleft condition="!IsEmpty(Skin.String(Home4SubMenu.Label)) + !Skin.String(Home4SubMenu,DISABLED)">SetFocus(18000)</onleft>
+                            <onright>8000</onright>
+                            <onclick>Skin.SetString(HomeSelector_Temp,HomeMenu.4)</onclick>
+                            <onclick>ActivateWindow(1121)</onclick>
+                            <onfocus>Skin.SetString(HomeFocus,HomeMenu4)</onfocus>  
+                            <onfocus>Skin.SetString(HomeFocus2,Home4)</onfocus>             
+                        </control>
+ 
+                        <control type="label">
+                            <left>84</left>
+                            <textcolor>Red</textcolor>
+                            <include>Common_HomeConfig_ListFont</include>
+                            <label>$VAR[HomeMenu_4_Label]</label>
+                            <visible>Skin.HasSetting(HomeMenu4.Hide)</visible>
+                        </control>
+
+                    </control>
+                    
+                    <control type="group">
+                        <height>54</height>
+                        <width>304</width>  
+                        
+                        <control type="image">
+                            <include>Common_HomeConfig_Accent</include>
+                            <visible>Skin.String(HomeFocus,HomeMenu5)</visible>
+                        </control>      
+
+                        <control type="image">
+                            <include>Common_HomeConfig_Icons</include>
+                            <texture>$VAR[HomeMenu_5_Icon]</texture>
+                        </control>
+
+                        <include content="Common_HomeConfig_SubMenu_Arrow">
+                            <param name="home_number" value="Home5"/>           
+                        </include>  
+                        
+                        <control type="button" id="505">
+                            <description>music videos</description>
+                            <include>Common_HomeConfig_ListFont</include>
+                            <label>$VAR[HomeMenu_5_Label]</label>
+                            <onup>504</onup>
+                            <ondown>506</ondown>
+                            <onleft condition="!IsEmpty(Skin.String(Home5SubMenu.Label)) + !Skin.String(Home5SubMenu,DISABLED)">SetProperty(ShowSubMenu,True,home)</onleft>
+                            <onleft condition="!IsEmpty(Skin.String(Home5SubMenu.Label)) + !Skin.String(Home5SubMenu,DISABLED)">SetFocus(19000)</onleft>
+                            <onright>9000</onright>
+                            <onclick>Skin.SetString(HomeSelector_Temp,HomeMenu.5)</onclick>
+                            <onclick>ActivateWindow(1121)</onclick>
+                            <onfocus>Skin.SetString(HomeFocus,HomeMenu5)</onfocus>  
+                            <onfocus>Skin.SetString(HomeFocus2,Home5)</onfocus>                 
+                        </control>
+
+                        <control type="label">
+                            <left>84</left>
+                            <textcolor>Red</textcolor>
+                            <include>Common_HomeConfig_ListFont</include>
+                            <label>$VAR[HomeMenu_5_Label]</label>
+                            <visible>Skin.HasSetting(HomeMenu5.Hide)</visible>
+                        </control>
+                        
+                    </control>
+                    
+                    <control type="group">
+                        <height>54</height>
+                        <width>304</width>  
+                        
+                        <control type="image">
+                            <include>Common_HomeConfig_Accent</include>
+                            <visible>Skin.String(HomeFocus,HomeMenu6)</visible>
+                        </control>      
+
+                        <control type="image">
+                            <include>Common_HomeConfig_Icons</include>
+                            <texture>$VAR[HomeMenu_6_Icon]</texture>
+                        </control>
+
+                        <include content="Common_HomeConfig_SubMenu_Arrow">
+                            <param name="home_number" value="Home6"/>           
+                        </include>  
+
+                        <control type="button" id="506">
+                            <description>pictures</description>
+                            <include>Common_HomeConfig_ListFont</include>
+                            <label>$VAR[HomeMenu_6_Label]</label>
+                            <onup>505</onup>
+                            <ondown>507</ondown>
+                            <onleft condition="!IsEmpty(Skin.String(Home6SubMenu.Label)) + !Skin.String(Home6SubMenu,DISABLED)">SetProperty(ShowSubMenu,True,home)</onleft>
+                            <onleft condition="!IsEmpty(Skin.String(Home6SubMenu.Label)) + !Skin.String(Home6SubMenu,DISABLED)">SetFocus(21000)</onleft>
+                            <onright>11000</onright>
+                            <onclick>Skin.SetString(HomeSelector_Temp,HomeMenu.6)</onclick>
+                            <onclick>ActivateWindow(1121)</onclick>
+                            <onfocus>Skin.SetString(HomeFocus,HomeMenu6)</onfocus>
+                            <onfocus>Skin.SetString(HomeFocus2,Home6)</onfocus>
+                        </control>
+ 
+                        <control type="label">
+                            <left>84</left>
+                            <textcolor>Red</textcolor>
+                            <include>Common_HomeConfig_ListFont</include>
+                            <label>$VAR[HomeMenu_6_Label]</label>
+                            <visible>Skin.HasSetting(HomeMenu6.Hide)</visible>
+                        </control>
+
+                    </control>  
+                    
+                    <control type="group">
+                        <height>54</height>
+                        <width>304</width>  
+                        
+                        <control type="image">
+                            <include>Common_HomeConfig_Accent</include>
+                            <visible>Skin.String(HomeFocus,HomeMenu7)</visible>
+                        </control>      
+
+                        <control type="image">
+                            <include>Common_HomeConfig_Icons</include>
+                            <texture>$VAR[HomeMenu_7_Icon]</texture>
+                        </control>
+
+                        <include content="Common_HomeConfig_SubMenu_Arrow">
+                            <param name="home_number" value="Home7"/>           
+                        </include>  
+
+                        <control type="button" id="507">
+                            <description>games</description>
+                            <include>Common_HomeConfig_ListFont</include>
+                            <label>$VAR[HomeMenu_7_Label]</label>
+                            <onup>506</onup>
+                            <ondown>508</ondown>
+                            <onleft condition="!IsEmpty(Skin.String(Home7SubMenu.Label)) + !Skin.String(Home7SubMenu,DISABLED)">SetProperty(ShowSubMenu,True,home)</onleft>
+                            <onleft condition="!IsEmpty(Skin.String(Home7SubMenu.Label)) + !Skin.String(Home7SubMenu,DISABLED)">SetFocus(22000)</onleft>
+                            <onright>12000</onright>
+                            <onclick>Skin.SetString(HomeSelector_Temp,HomeMenu.7)</onclick>
+                            <onclick>ActivateWindow(1121)</onclick>
+                            <onfocus>Skin.SetString(HomeFocus,HomeMenu7)</onfocus>  
+                            <onfocus>Skin.SetString(HomeFocus2,Home7)</onfocus>                 
+                        </control>
+
+                        <control type="label">
+                            <left>84</left>
+                            <textcolor>Red</textcolor>
+                            <include>Common_HomeConfig_ListFont</include>
+                            <label>$VAR[HomeMenu_7_Label]</label>
+                            <visible>Skin.HasSetting(HomeMenu7.Hide)</visible>
+                        </control>
+                        
+                    </control>  
+                    
+                    <control type="group">
+                        <height>54</height>
+                        <width>304</width>  
+                        
+                        <control type="image">
+                            <include>Common_HomeConfig_Accent</include>
+                            <visible>Skin.String(HomeFocus,HomeMenu8)</visible>
+                        </control>      
+
+                        <control type="image">
+                            <include>Common_HomeConfig_Icons</include>
+                            <texture>$VAR[HomeMenu_8_Icon]</texture>
+                        </control>
+
+                        <include content="Common_HomeConfig_SubMenu_Arrow">
+                            <param name="home_number" value="Home8"/>           
+                        </include>  
+
+                        <control type="button" id="508">
+                            <description>weather</description>
+                            <include>Common_HomeConfig_ListFont</include>
+                            <label>$VAR[HomeMenu_8_Label]</label>
+                            <onup>507</onup>
+                            <ondown>509</ondown>
+                            <onleft condition="!IsEmpty(Skin.String(Home8SubMenu.Label)) + !Skin.String(Home8SubMenu,DISABLED)">SetProperty(ShowSubMenu,True,home)</onleft>
+                            <onleft condition="!IsEmpty(Skin.String(Home8SubMenu.Label)) + !Skin.String(Home8SubMenu,DISABLED)">SetFocus(23000)</onleft>
+                            <onright>13000</onright>
+                            <onclick>Skin.SetString(HomeSelector_Temp,HomeMenu.8)</onclick>
+                            <onclick>ActivateWindow(1121)</onclick>
+                            <onfocus>Skin.SetString(HomeFocus,HomeMenu8)</onfocus>  
+                            <onfocus>Skin.SetString(HomeFocus2,Home8)</onfocus>                 
+                        </control>
+
+                        <control type="label">
+                            <left>84</left>
+                            <textcolor>Red</textcolor>
+                            <include>Common_HomeConfig_ListFont</include>
+                            <label>$VAR[HomeMenu_8_Label]</label>
+                            <visible>Skin.HasSetting(HomeMenu8.Hide)</visible>
+                        </control>
+                        
+                    </control>
+                    
+                    <control type="group">
+                        <height>54</height>
+                        <width>304</width>  
+                        
+                        <control type="image">
+                            <include>Common_HomeConfig_Accent</include>
+                            <visible>Skin.String(HomeFocus,HomeMenu9)</visible>
+                        </control>      
+
+                        <control type="image">
+                            <include>Common_HomeConfig_Icons</include>
+                            <texture>$VAR[HomeMenu_9_Icon]</texture>
+                        </control>
+
+                        <include content="Common_HomeConfig_SubMenu_Arrow">
+                            <param name="home_number" value="Home9"/>           
+                        </include>  
+                        
+                        <control type="button" id="509">
+                            <description>addons</description>
+                            <include>Common_HomeConfig_ListFont</include>
+                            <label>$VAR[HomeMenu_9_Label]</label>
+                            <onup>508</onup>
+                            <ondown>10</ondown>
+                            <onleft condition="!IsEmpty(Skin.String(Home9SubMenu.Label)) + !Skin.String(Home9SubMenu,DISABLED)">SetProperty(ShowSubMenu,True,home)</onleft>
+                            <onleft condition="!IsEmpty(Skin.String(Home9SubMenu.Label)) + !Skin.String(Home9SubMenu,DISABLED)">SetFocus(24000)</onleft>
+                            <onright>14000</onright>
+                            <onclick>Skin.SetString(HomeSelector_Temp,HomeMenu.9)</onclick>
+                            <onclick>ActivateWindow(1121)</onclick>
+                            <onfocus>Skin.SetString(HomeFocus,HomeMenu9)</onfocus>  
+                            <onfocus>Skin.SetString(HomeFocus2,Home9)</onfocus>                 
+                        </control>
+
+                        <control type="label">
+                            <left>84</left>
+                            <textcolor>Red</textcolor>
+                            <include>Common_HomeConfig_ListFont</include>
+                            <label>$VAR[HomeMenu_9_Label]</label>
+                            <visible>Skin.HasSetting(HomeMenu9.Hide)</visible>
+                        </control>
+                        
+                    </control>  
+                    
+                </control>
+                
+            </control>  
+
+            <!-- Option List -->
+            <control type="group">
+
+                <control type="image">
+                    <description>profile</description>
+                    <left>54</left>
+                    <top>110</top>
+                    <height>57</height>
+                    <width>280</width>  
+                    <texture colordiffuse="BaseLowest">colors/color_white.png</texture> 
+                    <visible>Control.HasFocus(511) | Control.HasFocus(512) | Control.HasFocus(513) | Control.HasFocus(514)</visible>    
+                    <visible>IsEmpty(Window(Home).Property(ShowSubMenu))</visible>              
+                </control>  
+
+                <control type="grouplist" id="1100">           
+                    <left>60</left>
+                    <top>120</top>
+                    <width>290</width>
+                    <height>40</height>
+                    <itemgap>14</itemgap>
+                    <orientation>horizontal</orientation>       
+                    <align>center</align>
+
+                    <control type="group"> 
+                        <height>40</height>
+                        <width>60</width>
+                        
+                        <control type="button" id="511">
+                            <description>profile</description>
+                            <height>38</height>
+                            <width>38</width>
+                            <onup>10</onup>
+                            <ondown>501</ondown>
+                            <onright>512</onright>
+                            <onleft>514</onleft>
+                            <texturenofocus colordiffuse="BaseMediumHigh" diffuse="masks/circle.png">colors/color_white.png</texturenofocus>
+                            <texturefocus colordiffuse="$VAR[Accent_100]" diffuse="masks/circle.png">colors/color_white.png</texturefocus>
+                            <onclick>Skin.SetString(HomeSelector_Temp,HomeMenu.11)</onclick>
+                            <onclick>ActivateWindow(1121)</onclick>
+                            <onfocus>Skin.SetString(HomeFocus,HomeMenu11)</onfocus>
+                        </control>
+                        
+                        <control type="image">
+                            <description>profile</description>
+                            <left>2</left>
+                            <top>2</top>
+                            <height>34</height>
+                            <width>34</width>
+                            <texture diffuse="masks/circle.png">$INFO[System.ProfileThumb]</texture>                        
+                        </control>                      
+                        
+                    </control>  
+
+                    <control type="group">
+                        <height>40</height>
+                        <width>60</width>
+                        
+                        <control type="button" id="512">
+                            <height>38</height>
+                            <width>38</width>
+                            <onup>10</onup>
+                            <ondown>501</ondown>
+                            <onleft>511</onleft>
+                            <onright>513</onright>
+                            <texturenofocus colordiffuse="BaseMediumHigh">home/search.png</texturenofocus>
+                            <texturefocus colordiffuse="$VAR[Accent_100]">home/search.png</texturefocus>
+                            <onclick>Skin.SetString(HomeSelector_Temp,HomeMenu.12)</onclick>
+                            <onclick>ActivateWindow(1121)</onclick>
+                            <onfocus>Skin.SetString(HomeFocus,HomeMenu12)</onfocus>
+                        </control>  
+
+                    </control>  
+
+                    <control type="group">
+                        <height>40</height>
+                        <width>60</width>
+                    
+                        <control type="button" id="513">
+                            <height>38</height>
+                            <width>38</width>
+                            <onup>10</onup>
+                            <ondown>501</ondown>
+                            <onleft>512</onleft>
+                            <onright>514</onright>
+                            <texturenofocus colordiffuse="BaseMediumHigh">home/settings.png</texturenofocus>
+                            <texturefocus colordiffuse="$VAR[Accent_100]">home/settings.png</texturefocus>
+                            <onclick>Skin.SetString(HomeSelector_Temp,HomeMenu.13)</onclick>
+                            <onclick>ActivateWindow(1121)</onclick>
+                            <onfocus>Skin.SetString(HomeFocus,HomeMenu13)</onfocus>
+                        </control>  
+
+                    </control>  
+
+                    <control type="group">
+                        <height>40</height>
+                        <width>60</width>
+                    
+                        <control type="button" id="514">
+                            <height>38</height>
+                            <width>38</width>
+                            <onup>10</onup>
+                            <ondown>501</ondown>
+                            <onleft>513</onleft>
+                            <onright>511</onright>
+                            <texturenofocus colordiffuse="BaseMediumHigh">home/power.png</texturenofocus>
+                            <texturefocus colordiffuse="$VAR[Accent_100]">home/power.png</texturefocus>
+                            <onclick>Skin.SetString(HomeSelector_Temp,HomeMenu.14)</onclick>
+                            <onclick>ActivateWindow(1121)</onclick>
+                            <onfocus>Skin.SetString(HomeFocus,HomeMenu14)</onfocus>
+                        </control>  
+
+                    </control>  
+                    
+                </control>
+
+            </control>
+
+            <!-- Right Panel -->
+            <control type="group">
+
+                <!-- Home Menu 1 (Movies) -->
+                <include content="Common_HomeConfig_RightPanel">
+                    <param name="home_number" value="Home1"/>
+                    <param name="homemenu_number" value="HomeMenu1"/>
+                    <param name="id_number" value="5"/>             
+                </include>  
+
+                <!-- Home Menu 2 (TV Shows) -->
+                <include content="Common_HomeConfig_RightPanel">
+                    <param name="home_number" value="Home2"/>
+                    <param name="homemenu_number" value="HomeMenu2"/>
+                    <param name="id_number" value="6"/>             
+                </include>
+
+                <!-- Home Menu 3 (Live TV) -->
+                <include content="Common_HomeConfig_RightPanel">
+                    <param name="home_number" value="Home3"/>
+                    <param name="homemenu_number" value="HomeMenu3"/>
+                    <param name="id_number" value="7"/>             
+                </include>
+
+                <!-- Home Menu 4 (Music) -->
+                <include content="Common_HomeConfig_RightPanel">
+                    <param name="home_number" value="Home4"/>
+                    <param name="homemenu_number" value="HomeMenu4"/>
+                    <param name="id_number" value="8"/>             
+                </include>
+
+                <!-- Home Menu 5 (Music Videos) -->
+                <include content="Common_HomeConfig_RightPanel">
+                    <param name="home_number" value="Home5"/>
+                    <param name="homemenu_number" value="HomeMenu5"/>
+                    <param name="id_number" value="9"/>             
+                </include>
+
+                <!-- Home Menu 6 (Pictures) -->
+                <include content="Common_HomeConfig_RightPanel">
+                    <param name="home_number" value="Home6"/>
+                    <param name="homemenu_number" value="HomeMenu6"/>
+                    <param name="id_number" value="11"/>                
+                </include>
+
+                <!-- Home Menu 7 (Games) -->
+                <include content="Common_HomeConfig_RightPanel">
+                    <param name="home_number" value="Home7"/>
+                    <param name="homemenu_number" value="HomeMenu7"/>
+                    <param name="id_number" value="12"/>                
+                </include>
+
+                <!-- Home Menu 8 (Weather) -->
+                <include content="Common_HomeConfig_RightPanel">
+                    <param name="home_number" value="Home8"/>
+                    <param name="homemenu_number" value="HomeMenu8"/>
+                    <param name="id_number" value="13"/>                
+                </include>
+
+                <!-- Home Menu 9 (Add-ons) -->
+                <include content="Common_HomeConfig_RightPanel">
+                    <param name="home_number" value="Home9"/>
+                    <param name="homemenu_number" value="HomeMenu9"/>
+                    <param name="id_number" value="14"/>                
+                </include>
+
+            </control>
+
+            <control type="label">
+                <label>$INFO[System.Time(hh:mm)] $INFO[System.Time(xx)]</label>
+                <left>100</left>
+                <top>684</top>
+                <height>40</height>
+                <width>200</width>
+                <font>font28B</font>
+                <align>left</align>
+                <textcolor>TrueWhite</textcolor>
+                <visible>!IsEmpty(System.Time(xx))</visible>
+            </control>
+
+            <control type="grouplist">          
+                <top>725</top>
+                <width>1280</width>
+                <orientation>horizontal</orientation>
+                <align>center</align>
+                <onup>509</onup>
+                <ondown>1100</ondown>
+
+                <include content="InfoDialog_Button">
+                    <param name="button_id" value="10"/>  
+                    <param name="width" value="1280"/>
+                    <param name="label" value="186"/>      
+                    <param name="onclick" value="Skin.SetBool(FirstTimeRun)"/>  
+                    <param name="onclick2" value="Dialog.Close(1118)"/>      
+                </include>
+                
+            </control>  
+			
+        </control>
+		
+    </controls>
+	
+</window>

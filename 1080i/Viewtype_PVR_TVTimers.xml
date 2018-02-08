@@ -8,106 +8,96 @@
             <description>Timers group</description>
             <visible>Control.IsVisible(14)</visible>
 
-            <control type="image">
-				<include>Common_Animation_CenterMenu_Stage1</include>
-				<posy>315</posy>
-				<width>1920</width>
-				<height>675</height>
-                <texture colordiffuse="BaseMid">colors/color_white.png</texture>
-            </control>
-			
             <control type="group">
-				<include>Common_Animation_PVR</include>
-				<posy>320</posy>
+				<top>150</top>
+				<left>200</left>
 
-                <control type="label">
-                    <posx>114</posx>
-                    <width>900</width>
-                    <height>50</height>
-                    <aligny>center</aligny> 
-                    <font>font50B</font>
-                    <label>$INFO[Control.GetLabel(35),[COLOR White]$LOCALIZE[31084] [/COLOR]]</label>
-                    <textcolor>$VAR[Accent_100]</textcolor>
-                </control>
-				
-                <control type="label">
-                    <posx>592</posx>
-                    <width>1200</width>
-                    <height>50</height>
-                    <font>font45R</font>
-                    <label>$INFO[PVR.NextTimer]</label>
-                </control>
+	            <include content="Common_Window_Backing">
+	                <param name="width" value="1520"/>
+	                <param name="height" value="780"/>  
+	                <param name="logo_visible" value="false"/> 
+	                <param name="header_height" value="5"/>             
+	            </include> 
 
-				<control type="image">	
-					<include>Common_Animation_CenterMenu_Stage3</include>
-					<posy>65</posy>
-					<width>1920</width>
-					<height>596</height>
-					<texture colordiffuse="BaseMediumHigh">colors/color_white.png</texture>			
-				</control>
-				
-				<control type="image">	
-					<posy>65</posy>
-					<width>1000</width>
-					<height>596</height>
-					<texture colordiffuse="BaseWhite">colors/color_white.png</texture>	
-					<include>Common_Animation_CenterMenu_Stage2</include>
-				</control>
+	            <include content="Common_Separator_Horizontal">
+	                <param name="top" value="73"/>   
+	                <param name="width" value="1520"/>
+	            </include>
 
-                <control type="scrollbar" id="73">
-					<include>Common_Animation_CenterMenu_Stage2</include>
-					<posy>65</posy>
-					<posx>1000</posx>
-                    <height>596</height>
-                    <width>10</width>
-                    <include>ShowOptions_Right</include>
-                    <onleft>14</onleft>
-                </control>
+	            <include content="Common_Separator_Vertical">
+	            	<param name="top" value="75"/> 
+	                <param name="height" value="705"/>   
+	                <param name="left" value="760"/>
+	            </include>
+
+				<control type="label">			
+					<description>Heading</description>
+					<top>5</top>
+					<left>20</left>
+					<width>740</width>
+					<height>68</height>
+					<font>font36R</font>
+					<textcolor>BaseMediumHigh</textcolor>		
+					<label>$INFO[Control.GetLabel(35),[B]$LOCALIZE[31178]: [/B]]</label>	
+				</control>	
+
+				<control type="label">			
+					<description>Heading 2</description>
+					<top>5</top>
+					<left>780</left>
+					<width>740</width>
+					<height>68</height>
+					<font>font36R</font>
+					<textcolor>BaseMediumHigh</textcolor>		
+					<label>$INFO[PVR.NextTimer]</label>	
+				</control>	
 				
                 <control type="group">
-                    <posy>65</posy>
+                    <top>75</top>
+
+	                <control type="scrollbar" id="73">
+						<left>750</left>
+		                <height>705</height>
+		                <width>10</width>
+	                    <onright condition="Player.HasMedia">111</onright>
+						<onright condition="!Player.HasMedia">Dialog.Close(1119)</onright>
+						<onright condition="!Player.HasMedia">SetFocus(9050)</onright>
+		                <onleft>14</onleft>
+	                </control>
 
 					<control type="list" id="14">
-						<include>Common_Animation_CenterMenu_Stage2</include>
-						<posx>80</posx>
-						<width>920</width>
-						<height>596</height>
-						<include>ShowOptions_Left</include>
+						<width>750</width>
+						<height>705</height>
+						<onleft condition="Player.HasMedia">111</onleft>
+						<onleft condition="!Player.HasMedia">Dialog.Close(1119)</onleft>
+						<onleft condition="!Player.HasMedia">SetFocus(9050)</onleft>
+						<onright>73</onright>
 						<pagecontrol>73</pagecontrol>
 						<itemlayout height="85">
 						
-							<control type="image">
-								<posx>10</posx>
-								<posy>10</posy>
-								<width>65</width>
-								<height>65</height>
-								<texture>backings/circle.png</texture>
-							</control>
-
-							<control type="image">
-								<posx>15</posx>
-								<posy>15</posy>
-								<width>55</width>
-								<height>55</height>
-								<aspectratio scalediffuse="false">scale</aspectratio>
-								<texture diffuse="masks/circle.png">DefaultTVShows.png</texture>
-							</control> 
-
-							<include>Common_Watched_LiveTV</include>
+			                <control type="image">
+			                	<top>83</top>                  
+			                    <width>750</width>
+			                    <height>2</height>
+			                    <include>Common_Color_BaseLowest</include>
+			                </control> 
+							
+							<include>Common_Watched_Diamond</include>
 
 							<control type="label">
-								<posx>85</posx>
-								<width>620</width>
-								<height>85</height>
+	                            <left>70</left>
+	                            <width>400</width>
+	                            <height>85</height>
 								<aligny>center</aligny>
-								<font>font26R</font>
-								<info>ListItem.Label</info>
+	                            <font>font26R</font>
+								<label>$INFO[ListItem.Label]</label>
 								<wrapmultiline>true</wrapmultiline>
 								<textcolor>BaseMediumHigh</textcolor>
-							</control>
-							
+								<selectedcolor>$VAR[Accent_100]</selectedcolor>
+	                        </control>
+
 							<control type="label">
-								<posx>700</posx>
+								<left>530</left>
 								<width>200</width>
 								<height>45</height>
 								<font>font20R</font>
@@ -117,8 +107,8 @@
 							</control>
 							
 							<control type="label">
-								<posx>700</posx>
-								<posy>40</posy>
+								<left>530</left>
+								<top>40</top>
 								<width>200</width>
 								<height>45</height>
 								<font>font20R</font>
@@ -131,60 +121,55 @@
 						
 						<focusedlayout height="85">
 						
-							<control type="image">
-								<width>920</width>
-								<include>Common_Color_Accent</include>
-							</control>
+			                <control type="image">                
+			                    <width>750</width>
+			                    <height>85</height>
+			                    <include>Common_Color_BaseLowest</include>
+	                            <animation condition="Container(14).OnNext" reversible="false" effect="slide" start="0,-45" end="0,0" time="100" tween="back" easing="out">Focus</animation>
+	                            <animation condition="Container(14).OnPrevious" reversible="false" effect="slide" start="0,45" end="0,0" time="100" tween="back" easing="out">Focus</animation>
+			                </control> 
+
+			                <control type="image">                
+			                    <width>60</width>
+			                    <height>85</height>
+			                    <include>Common_Color_Accent</include>
+  		                        <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(14)">Conditional</animation>
+	                            <animation condition="Container(14).OnNext" reversible="false" effect="slide" start="0,-45" end="0,0" time="100" tween="back" easing="out">Focus</animation>
+	                            <animation condition="Container(14).OnPrevious" reversible="false" effect="slide" start="0,45" end="0,0" time="100" tween="back" easing="out">Focus</animation>
+			                </control> 
 							
-							<control type="image">
-								<posx>10</posx>
-								<posy>10</posy>
-								<width>65</width>
-								<height>65</height>
-								<texture>backings/circle.png</texture>
-							</control>
-
-							<control type="image">
-								<posx>15</posx>
-								<posy>15</posy>
-								<width>55</width>
-								<height>55</height>
-								<aspectratio scalediffuse="false">scale</aspectratio>
-								<texture diffuse="masks/circle.png">DefaultTVShows.png</texture>
-							</control> 
-
-							<include>Common_Watched_LiveTV</include>
+							<include>Common_Watched_Diamond</include>
 
 							<control type="label">
-								<posx>85</posx>
-								<width>620</width>
-								<height>85</height>
+	                            <left>70</left>
+	                            <width>400</width>
+	                            <height>85</height>
 								<aligny>center</aligny>
-								<font>font26R</font>
-								<info>ListItem.Label</info>
+	                            <font>font26R</font>
+								<label>$INFO[ListItem.Label]</label>
 								<wrapmultiline>true</wrapmultiline>
-								<textcolor>BaseWhite</textcolor>
-							</control>
+								<textcolor>$VAR[Accent_100]</textcolor>
+	                        </control>
 
 							<control type="label">
-								<posx>700</posx>
+								<left>530</left>
 								<width>200</width>
 								<height>45</height>
 								<font>font20R</font>
 								<align>right</align>
 								<info>ListItem.ChannelName</info>
-								<textcolor>BaseLow</textcolor>
+								<textcolor>$VAR[Accent_100]</textcolor>
 							</control>
 							
 							<control type="label">
-								<posx>700</posx>
-								<posy>40</posy>
+								<left>530</left>
+								<top>40</top>
 								<width>200</width>
 								<height>45</height>
 								<font>font20R</font>
 								<align>right</align>
 								<label>$INFO[ListItem.Date]</label>
-								<textcolor>BaseLow</textcolor>
+								<textcolor>BaseMediumHigh</textcolor>
 							</control>
 							
 						</focusedlayout>
@@ -192,47 +177,41 @@
 					</control>
 
 					<control type="group">
-						<include>Common_Animation_CenterMenu_Fade2</include>
-						<posx>1010</posx>
-						
-						<control type="fadelabel">
-							<posx>25</posx>
-							<posy>8</posy>
-							<width>860</width>
-							<height>45</height>
-							<font>font50R</font>
-							<label>$INFO[Container(14).ListItem.Label]</label>
-							<textcolor>$VAR[Accent_100]</textcolor>
-						</control>
-						
+						<left>760</left>
+
+			            <include content="Common_Separator_Horizontal">
+			                <param name="top" value="100"/>   
+			                <param name="width" value="760"/>
+			            </include>
+
 						<control type="label">
-							<posx>25</posx>
-							<posy>55</posy>
-							<width>860</width>
-							<height>45</height>
-							<font>font24B</font>
+							<left>20</left>
+							<top>5</top>
+							<width>670</width>
+							<scroll>true</scroll>
+							<include>Common_Fanart_Title</include>
+							<label>$INFO[Container(14).ListItem.Label]</label>
+						</control>
+
+						<control type="label">
+							<left>20</left>
+							<width>670</width>
 							<label>$INFO[Container(14).ListItem.Date]</label>
+							<include>Common_Fanart_Subtitle</include>
 						</control>
 						
-						<control type="image">
-							<posx>35</posx>
-							<posy>100</posy>
-							<width>840</width>
-							<height>2</height>
-							<include>Common_Color_BaseWhite</include>
-						</control>
-												
 						<control type="textbox">
-							<posx>35</posx>
-							<posy>120</posy>
-							<width>840</width>
-							<height>400</height>
+							<left>10</left>
+							<top>110</top>
+							<width>740</width>
+							<height>520</height>
+							<font>font26</font>
+							<textcolor>BaseMid</textcolor>
 							<align>justify</align>
-							<autoscroll time="3000" delay="6000" repeat="8000"></autoscroll>
-							<font>font30</font>
 							<label>$INFO[Container(14).ListItem.Plot]</label>
+							<autoscroll time="3000" delay="6000" repeat="8000"></autoscroll>
 						</control>
-						
+
 					</control>
 					
 				</control>

@@ -46,36 +46,6 @@
 
             <control type="label">
                 <include>WindowID</include>
-                <label>Custom_1101_Hub_Movies.xml</label>
-                <visible>Window.IsVisible(Custom_1101_Hub_Movies.xml)</visible>
-            </control>
-
-            <control type="label">
-                <include>WindowID</include>
-                <label>Custom_1102_Hub_TV.xml</label>
-                <visible>Window.IsVisible(Custom_1102_Hub_TV.xml)</visible>
-            </control>    
-
-            <control type="label">
-                <include>WindowID</include>
-                <label>Custom_1103_Hub_Music.xml</label>
-                <visible>Window.IsVisible(Custom_1103_Hub_Music.xml)</visible>
-            </control>    
-
-            <control type="label">
-                <include>WindowID</include>
-                <label>Custom_1104_Hub_MusicVid.xml</label>
-                <visible>Window.IsVisible(Custom_1104_Hub_MusicVid.xml)</visible>
-            </control>
-
-            <control type="label">
-                <include>WindowID</include>
-                <label>Custom_1105_Hub_TraktTV.xml</label>
-                <visible>Window.IsVisible(Custom_1105_Hub_TraktTV.xml)</visible>
-            </control>
-
-            <control type="label">
-                <include>WindowID</include>
                 <label>EventLog.xml</label>
                 <visible>Window.IsVisible(EventLog.xml)</visible>
             </control> 
@@ -245,14 +215,14 @@
 
             <control type="label">
                 <include>DialogID</include>
-                <label>Custom_1118_DialogTraktTV.xml</label>
-                <visible>Window.IsVisible(Custom_1118_DialogTraktTV.xml)</visible>
+                <label>Custom_1119_DialogViews.xml</label>
+                <visible>Window.IsVisible(Custom_1119_DialogViews.xml)</visible>
             </control>
 
             <control type="label">
                 <include>DialogID</include>
-                <label>Custom_1119_DialogViews.xml</label>
-                <visible>Window.IsVisible(Custom_1119_DialogViews.xml)</visible>
+                <label>Custom_1120_DialogSearch.xml</label>
+                <visible>Window.IsVisible(Custom_1120_DialogSearch.xml)</visible>
             </control>
 
             <control type="label">
@@ -521,6 +491,22 @@
                 <shadowcolor>Black</shadowcolor>
                 <label>VideoOSDBookmarks.xml</label>
                 <visible>Window.IsVisible(VideoOSDBookmarks.xml)</visible>
+            </control>
+
+            <control type="label">
+                <include>DialogID</include>
+                <textcolor>Red</textcolor>
+                <shadowcolor>Black</shadowcolor>
+                <label>script-script.extendedinfo-DialogInfo.xml</label>
+                <visible>Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)</visible>
+            </control>
+
+            <control type="label">
+                <include>DialogID</include>
+                <textcolor>Red</textcolor>
+                <shadowcolor>Black</shadowcolor>
+                <label>script-script.extendedinfo-DialogVideoInfo.xml</label>
+                <visible>Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml)</visible>
             </control>
 
             <control type="label">

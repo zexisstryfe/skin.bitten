@@ -25,15 +25,23 @@
             </control>
 
             <control type="image">
-				<posy>110</posy>
-                <height>80</height>
+				<top>108</top>
+                <height>2</height>
 				<width>1920</width>
-                <texture colordiffuse="BaseMediumMid40">colors/color_white.png</texture>
+                <texture colordiffuse="BaseMediumMid">colors/color_white.png</texture>
 				<include>Animation_Common_InfoWindow</include>
             </control>
 
             <control type="image">
-				<posy>1000</posy>
+				<top>170</top>
+                <height>2</height>
+				<width>1920</width>
+                <texture colordiffuse="BaseMediumMid">colors/color_white.png</texture>
+				<include>Animation_Common_InfoWindow</include>
+            </control>
+
+            <control type="image">
+				<top>1000</top>
                 <height>80</height>
 				<width>1920</width>
                 <texture colordiffuse="BaseMediumHigh60">colors/color_white.png</texture>
@@ -42,16 +50,15 @@
 			
             <control type="image">
                 <height>1080</height>
-				<width>880</width>
+				<width>720</width>
                 <texture colordiffuse="BaseMediumMid">colors/color_white.png</texture>
 				<include>Animation_Common_InfoIcon</include>
 			</control>
 
             <control type="image">
-				<posy>100</posy>
-                <width>880</width>
-                <height>880</height>
-				<aspectratio>scale</aspectratio>
+                <width>720</width>
+                <height>1080</height>
+				<aspectratio aligny="center">keep</aspectratio>
                 <texture background="true" fallback="DefaultAddon.png">$INFO[ListItem.Icon]</texture>
 				<include>Animation_Common_InfoIcon</include> 
             </control>
@@ -63,11 +70,11 @@
 		<!--Top Section-->
 		<control type="group">
 			<include>Animation_Common_Window</include>
-			<posx>980</posx>
-			<posy>20</posy>
+			<left>820</left>
+			<top>20</top>
 			
 			<control type="label">
-				<width>760</width>
+				<width>900</width>
 				<height>40</height>
 				<font>font45R</font>
 				<textcolor>$VAR[Accent_100]</textcolor>
@@ -75,8 +82,9 @@
 			</control>
 
 			<control type="label" id="145">
-				<posy>50</posy>
-				<width>760</width>
+				<top>50</top>
+				<height>20</height>
+				<width>900</width>
 				<textcolor>BaseMid</textcolor>
 				<label>$VAR[Music_Info_Subtitle]</label>
 				<include>Common_Fanart_Subtitle</include>
@@ -84,7 +92,7 @@
 			
 			<control type="group">
 				<width>120</width>
-				<posx>780</posx>
+				<left>940</left>
 				
 				<control type="image">
 					<width>120</width>
@@ -96,7 +104,7 @@
 				<control type="image">
 					<width>120</width>
 					<height>40</height>
-					<texture colordiffuse="$VAR[Accent_100]">flags\ratings\$INFO[ListItem.Rating].png</texture>
+					<texture colordiffuse="$VAR[Accent_100]">flags\ratings\$INFO[ListItem.UserRating].0.png</texture>
 					<aspectratio>keep</aspectratio>
 				</control>			
 			
@@ -104,131 +112,163 @@
 
 			<!--Control Section-->
             <control type="grouplist" id="9221">
-				<posy>105</posy>
-				<width>920</width>
-				<height>55</height>
-				<itemgap>20</itemgap>
-				<onup>1</onup>
-				<ondown>1</ondown>
+				<top>90</top>
+				<width>1080</width>
+				<height>60</height>
+				<itemgap>0</itemgap>
 				<orientation>horizontal</orientation>
 				<align>center</align>
 
 				<control type="group">
 					<width>200</width>
 					<visible>[System.HasAddon(script.playalbum) + Container.Content(Albums)] | [System.HasAddon(script.playalbum) + Container.Content(Songs)]</visible>
-					
-					<control type="button" id="15">
-						<include>Common_InfoControl_Button</include>
-						<texturefocus colordiffuse="$VAR[Accent_100]">OSD/playFO.png</texturefocus>
-						<texturenofocus colordiffuse="BaseMid">OSD/playNF.png</texturenofocus>
-						<label>$LOCALIZE[208]</label>
-						<onclick>RunScript(script.playalbum,albumid=$INFO[ListItem.DBID])</onclick>
-						<ondown>50</ondown>
-						<onup>50</onup>	
-						<onright>6</onright>	
-						<onleft>16</onleft>
-					</control>
+
+					<include content="Common_Info_Button_Backing">
+						<param name="visible" value="15"/>			
+					</include>
+
+					<include content="Common_Info_Button">
+						<param name="button_id" value="15"/>
+						<param name="texture" value="../extras/tiles/play.png"/>
+						<param name="label" value="$LOCALIZE[208]"/>
+						<param name="onup" value="50"/>
+						<param name="ondown" value="50"/>
+						<param name="onright" value="6"/>
+						<param name="onleft" value="16"/>
+						<param name="onclick" value="RunScript(script.playalbum,albumid=$INFO[ListItem.DBID])"/>
+						<param name="visible" value=""/>			
+					</include>
 				
 				</control>
 				
 				<control type="group">
 					<width>200</width>
 					<visible>Control.IsEnabled(6) + !Container.Content(Songs)</visible>
-					
-					<control type="button" id="6">
-						<include>Common_InfoControl_Button</include>
-						<texturefocus colordiffuse="$VAR[Accent_100]">OSD/repeatFO.png</texturefocus>
-						<texturenofocus colordiffuse="BaseMid">OSD/repeatNF.png</texturenofocus>
-						<label>$LOCALIZE[184]</label>
-						<ondown>50</ondown>
-						<onup>50</onup>	
-						<onright>7</onright>
-						<onleft>15</onleft>
-					</control>
+
+					<include content="Common_Info_Button_Backing">
+						<param name="visible" value="6"/>			
+					</include>
+
+					<include content="Common_Info_Button">
+						<param name="button_id" value="6"/>
+						<param name="texture" value="../extras/tiles/refresh.png"/>
+						<param name="label" value="$LOCALIZE[184]"/>
+						<param name="onup" value="50"/>
+						<param name="ondown" value="50"/>
+						<param name="onright" value="7"/>
+						<param name="onleft" value="15"/>
+						<param name="onclick" value=""/>
+						<param name="visible" value=""/>			
+					</include>
 				
 				</control>			
 
 				<control type="group">
-					<width>200</width>
+					<width>220</width>
 					<visible>Container.Content(Songs) | Container.Content(Albums)</visible>
-					
-					<control type="button" id="7">
-						<include>Common_InfoControl_Button</include>
-						<texturefocus colordiffuse="$VAR[Accent_100]">OSD/rateFO.png</texturefocus>
-						<texturenofocus colordiffuse="BaseMid">OSD/rateNF.png</texturenofocus>
-						<label>$LOCALIZE[31374]</label>
-						<ondown>50</ondown>
-						<onup>50</onup>	
-						<onright>10</onright>
-						<onleft>6</onleft>
-					</control>
+
+					<include content="Common_Info_Button_Backing">
+						<param name="visible" value="7"/>			
+					</include>
+
+					<include content="Common_Info_Button">
+						<param name="button_id" value="7"/>
+						<param name="texture" value="../extras/tiles/rating.png"/>
+						<param name="label" value="$VAR[Info_RateMedia]"/>
+						<param name="onup" value="50"/>
+						<param name="ondown" value="50"/>
+						<param name="onright" value="10"/>
+						<param name="onleft" value="6"/>
+						<param name="onclick" value=""/>
+						<param name="visible" value=""/>			
+					</include>
 				
 				</control>
 				
 				<control type="group">
 					<width>200</width>
-					
-					<control type="button" id="10">
-						<include>Common_InfoControl_Button</include>
-						<texturefocus colordiffuse="$VAR[Accent_100]">OSD/PhotoFO.png</texturefocus>
-						<texturenofocus colordiffuse="BaseMid">OSD/PhotoNF.png</texturenofocus>					
-						<label>$LOCALIZE[31343]</label>
-						<ondown>50</ondown>
-						<onup>50</onup>	
-						<onright>12</onright>
-						<onleft>7</onleft>
-					</control>
+
+					<include content="Common_Info_Button_Backing">
+						<param name="visible" value="10"/>			
+					</include>
+
+					<include content="Common_Info_Button">
+						<param name="button_id" value="10"/>
+						<param name="texture" value="../extras/tiles/photo.png"/>
+						<param name="label" value="$LOCALIZE[31343]"/>
+						<param name="onup" value="50"/>
+						<param name="ondown" value="50"/>
+						<param name="onright" value="12"/>
+						<param name="onleft" value="7"/>
+						<param name="onclick" value=""/>
+						<param name="visible" value=""/>			
+					</include>
 				
 				</control>					
 				
 				<control type="group">
 					<width>200</width>
 					<visible>Control.IsEnabled(12) + Container.Content(artists)</visible>
-					
-					<control type="button" id="12">
-						<include>Common_InfoControl_Button</include>
-						<texturefocus colordiffuse="$VAR[Accent_100]">OSD/ArtFO.png</texturefocus>
-						<texturenofocus colordiffuse="BaseMid">OSD/ArtNF.png</texturenofocus>
-						<label>$LOCALIZE[31344]</label>
-						<ondown>50</ondown>
-						<onup>50</onup>	
-						<onright>16</onright>
-						<onleft>10</onleft>
-					</control>
+
+					<include content="Common_Info_Button_Backing">
+						<param name="visible" value="12"/>			
+					</include>
+
+					<include content="Common_Info_Button">
+						<param name="button_id" value="12"/>
+						<param name="texture" value="../extras/tiles/fanart.png"/>
+						<param name="label" value="$LOCALIZE[31344]"/>
+						<param name="onup" value="50"/>
+						<param name="ondown" value="50"/>
+						<param name="onright" value="16"/>
+						<param name="onleft" value="10"/>
+						<param name="onclick" value=""/>
+						<param name="visible" value=""/>			
+					</include>
 				
 				</control>					
 
 				<control type="group">
 					<width>200</width>
 					<visible>Control.IsEnabled(12) + Container.Content(songs)</visible>
-					
-					<control type="button" id="12">
-						<include>Common_InfoControl_Button</include>
-						<texturefocus colordiffuse="$VAR[Accent_100]">OSD/infoFO.png</texturefocus>
-						<texturenofocus colordiffuse="BaseMid">OSD/infoNF.png</texturenofocus>
-						<label>$LOCALIZE[10523]</label>
-						<ondown>50</ondown>
-						<onup>50</onup>	
-						<onright>16</onright>
-						<onleft>10</onleft>
-					</control>
+
+					<include content="Common_Info_Button_Backing">
+						<param name="visible" value="12"/>			
+					</include>
+
+					<include content="Common_Info_Button">
+						<param name="button_id" value="12"/>
+						<param name="texture" value="../extras/tiles/info.png"/>
+						<param name="label" value="$LOCALIZE[31419]"/>
+						<param name="onup" value="50"/>
+						<param name="ondown" value="50"/>
+						<param name="onright" value="16"/>
+						<param name="onleft" value="10"/>
+						<param name="onclick" value=""/>
+						<param name="visible" value=""/>			
+					</include>
 				
 				</control>	
 
 				<control type="group">
 					<width>200</width>
 					<visible>Container.Content(artists)</visible>
-				
-					<control type="button" id="16">
-						<include>Common_InfoControl_Button</include>
-						<texturefocus colordiffuse="$VAR[Accent_100]">OSD/youtubeFO.png</texturefocus>
-						<texturenofocus colordiffuse="BaseMid">OSD/youtubeNF.png</texturenofocus>
-						<label>$LOCALIZE[31262]</label>
-						<ondown>50</ondown>
-						<onup>50</onup>	
-						<onright>15</onright>
-						<onleft>12</onleft>
-					</control>
+
+					<include content="Common_Info_Button_Backing">
+						<param name="visible" value="16"/>			
+					</include>
+
+					<include content="Common_Info_Button">
+						<param name="button_id" value="16"/>
+						<param name="texture" value="../extras/tiles/YouTube.png"/>
+						<param name="label" value="$LOCALIZE[31262]"/>
+						<param name="onup" value="50"/>
+						<param name="ondown" value="50"/>
+						<param name="onright" value="15"/>
+						<param name="onleft" value="12"/>
+						<param name="onclick" value=""/>
+						<param name="visible" value=""/>			
+					</include>
 				
 				</control>
 
@@ -237,7 +277,7 @@
 
 			<!--Info Section- Artists-->
 			<control type="grouplist">
-				<posy>180</posy>
+				<top>160</top>
 				<visible>Container.Content(Artists)</visible>
 				
 				<!-- Formed label -->
@@ -309,22 +349,22 @@
 				</control>
 
 				
-				<!--Plot-->
+				<!--Biography-->
 				<control type="group">
 					<width>850</width>
 					<height>365</height>
 					
 					<control type="image">
 						<height>2</height>
-						<width>920</width>
+						<width>1070</width>
 						<texture colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
 						<include>Animation_Common_Window</include>
 					</control>
 							
 					<control type="textbox" id="4">
 						<description>Plot</description>
-						<posy>10</posy>
-						<width>920</width>
+						<top>15</top>
+						<width>1070</width>
 						<height>215</height>
 						<font>font26R</font>
 						<align>justify</align>
@@ -338,7 +378,7 @@
 
 			<!--Info Section- Albums-->
 			<control type="grouplist">
-				<posy>180</posy>
+				<top>160</top>
 				<visible>Container.Content(Albums)</visible>
 				
 				<!-- Genre label -->
@@ -410,22 +450,22 @@
 				</control>
 
 				
-				<!--Plot-->
+				<!--Description-->
 				<control type="group">
 					<width>850</width>
 					<height>365</height>
 					
 					<control type="image">
 						<height>2</height>
-						<width>920</width>
+						<width>1070</width>
 						<texture colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
 						<include>Animation_Common_Window</include>
 					</control>
 							
 					<control type="textbox" id="4">
 						<description>Plot</description>
-						<posy>10</posy>
-						<width>920</width>
+						<top>15</top>
+						<width>1070</width>
 						<height>215</height>
 						<font>font26R</font>
 						<align>justify</align>
@@ -439,7 +479,7 @@
 
 			<!--Info Section- Songs-->
 			<control type="grouplist">
-				<posy>180</posy>
+				<top>160</top>
 				<visible>Container.Content(Songs)</visible>
 				
 				<!-- Genre label -->
@@ -511,22 +551,22 @@
 				</control>
 
 				
-				<!--Plot-->
+				<!--Description-->
 				<control type="group">
 					<width>850</width>
 					<height>365</height>
 					
 					<control type="image">
 						<height>2</height>
-						<width>920</width>
+						<width>1070</width>
 						<texture colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
 						<include>Animation_Common_Window</include>
 					</control>
 							
 					<control type="textbox" id="4">
 						<description>Plot</description>
-						<posy>10</posy>
-						<width>920</width>
+						<top>15</top>
+						<width>1070</width>
 						<height>215</height>
 						<font>font26R</font>
 						<align>justify</align>
@@ -539,7 +579,7 @@
 			</control>	
 						
 			<control type="image">
-				<posy>600</posy>
+				<top>600</top>
                 <height>2</height>
 				<width>1070</width>
                 <texture colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
@@ -548,9 +588,9 @@
 
 			<!--Album Section-->
 			<control type="group">
-				<posy>600</posy>
+				<top>600</top>
 				<width>1070</width>	
-				<height>320</height>
+				<height>325</height>
 				<visible>!StringCompare(Container(50).NumItems,0) + Container.Content(artists)</visible>	
 
 				<control type="label">
@@ -563,7 +603,7 @@
 
 				<control type="fixedlist" id="50">
 					<description>Albums</description>
-					<posy>40</posy>
+					<top>40</top>
 					<width>1070</width>
 					<height>765</height>
 					<onup>9221</onup>
@@ -571,102 +611,138 @@
 					<orientation>horizontal</orientation>
 					<pagecontrol>79</pagecontrol>
 					<scrolltime>200</scrolltime>
-					<itemlayout height="320" width="260">
+				<itemlayout height="325" width="260">
+				
+					<control type="image">
+						<width>240</width>
+						<height>320</height>
+						<include>Common_Color_BaseWhite</include>
+					</control>
 					
+					<control type="image">
+						<top>5</top>
+						<width>240</width>
+						<height>240</height>
+						<texture border="2" colordiffuse="BaseMediumMid">colors/color_white.png</texture>
+					</control>
+
+					<control type="image">
+						<width>240</width>
+						<height>5</height>
+						<texture border="2" colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
+					</control>
+
+					<control type="image">
+						<top>320</top>
+						<width>240</width>
+						<height>5</height>
+						<texture colordiffuse="Shadow">colors/color_white.png</texture>
+					</control>
+					
+					<control type="image">
+						<description>Actor Image</description>
+						<top>5</top>
+						<width>240</width>
+						<height>240</height>
+						<texture fallback="DefaultActor.png">$INFO[ListItem.Icon]</texture>
+						<aspectratio align="center" aligny="top">scale</aspectratio>
+					</control>
+					
+					<control type="label">
+						<top>250</top>
+						<left>10</left>
+						<height>40</height>
+						<width>220</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Label]</label>
+						<font>font26B</font>
+						<textcolor>BaseMediumHigh</textcolor>
+					</control>
+					
+					<control type="label">
+						<top>280</top>
+						<left>10</left>
+						<height>40</height>
+						<width>220</width>
+						<align>center</align>
+						<label>$INFO[ListItem.Label2]</label>
+						<font>font24R</font>
+						<textcolor>BaseMid</textcolor>
+					</control>
+					
+				</itemlayout>
+				
+				<focusedlayout height="325" width="260">
+
+					<control type="group">
+						<depth>DepthContentPopout</depth>
+						<animation type="Focus">
+							<effect type="zoom" start="100" end="105" time="200" tween="sine" easing="inout" center="auto" />
+						</animation>
+						<animation type="Unfocus">
+							<effect type="zoom" start="105" end="100" time="200" tween="sine" easing="inout" center="auto" />
+						</animation>
+				
 						<control type="image">
 							<width>240</width>
 							<height>320</height>
-							<include>Common_Color_TrueWhite</include>
+							<include>Common_Color_BaseLowest</include>
 						</control>
 						
 						<control type="image">
+							<top>5</top>
 							<width>240</width>
 							<height>240</height>
-							<texture border="2" colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
-						</control>
-						
-						<control type="image">
-							<description>Actor Image</description>
-							<width>240</width>
-							<height>240</height>
-							<texture fallback="DefaultAlbum.png">$INFO[ListItem.Icon]</texture>
-							<aspectratio align="center" aligny="center">scale</aspectratio>
+							<texture border="2" colordiffuse="BaseMediumMid">colors/color_white.png</texture>
 						</control>
 
-						<control type="label">
-							<posy>240</posy>
-							<posx>10</posx>
-							<height>40</height>
-							<width>220</width>
-							<align>center</align>
-							<label>$INFO[ListItem.Label]</label>
-							<font>font26B</font>
-							<textcolor>BaseMediumHigh</textcolor>
-						</control>
-						
-						<control type="label">
-							<posy>280</posy>
-							<posx>10</posx>
-							<height>40</height>
-							<width>220</width>
-							<align>center</align>
-							<label>$INFO[ListItem.Label2]</label>
-							<font>font24R</font>
-							<textcolor>BaseMid</textcolor>
-						</control>		
-						
-					</itemlayout>
-					
-					<focusedlayout height="320" width="260">
-					
 						<control type="image">
 							<width>240</width>
-							<height>320</height>
-							<include>Common_Color_TrueWhite</include>
-						</control>
-						
-						<control type="image">
-							<width>240</width>
-							<height>320</height>
-							<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(50)">Conditional</animation>
-							<include>Common_Color_Accent</include>
-						</control>
-						
-						<control type="image">
-							<width>240</width>
-							<height>240</height>
-							<texture border="2" colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
+							<height>5</height>
+							<texture border="2" colordiffuse="$VAR[Accent_100]">colors/color_white.png</texture>
 						</control>
 						
 						<control type="image">
 							<description>Actor Image</description>
+							<top>5</top>
 							<width>240</width>
 							<height>240</height>
-							<texture fallback="DefaultAlbum.png">$INFO[ListItem.Icon]</texture>
-							<aspectratio align="center" aligny="center">scale</aspectratio>
+							<texture fallback="DefaultActor.png">$INFO[ListItem.Icon]</texture>
+							<aspectratio align="center" aligny="top">scale</aspectratio>
+						</control>
+
+						<control type="image">
+							<top>320</top>
+							<width>240</width>
+							<height>5</height>
+							<texture colordiffuse="Shadow">colors/color_white.png</texture>
 						</control>
 						
 						<control type="label">
-							<posy>240</posy>
-							<posx>10</posx>
+							<top>250</top>
+							<left>10</left>
 							<height>40</height>
 							<width>220</width>
 							<align>center</align>
 							<label>$INFO[ListItem.Label]</label>
 							<font>font26B</font>
+							<textcolor>$VAR[Accent_100]</textcolor>
 						</control>
 						
 						<control type="label">
-							<posy>280</posy>
-							<posx>10</posx>
+							<top>280</top>
+							<left>10</left>
 							<height>40</height>
 							<width>220</width>
 							<align>center</align>
 							<label>$INFO[ListItem.Label2]</label>
 							<font>font24R</font>
+							<textcolor>BaseMediumHigh</textcolor>
 						</control>
-						
-					</focusedlayout>
+
+					</control>
+					
+				</focusedlayout>
 					
 				</control>
 				
@@ -674,7 +750,7 @@
 			
 			<!--Tracks Section-->
 			<control type="group">
-				<posy>600</posy>
+				<top>600</top>
 				<width>1070</width>	
 				<height>320</height>
 				<visible>!StringCompare(Container(50).NumItems,0) + Container.Content(albums)</visible>
@@ -688,7 +764,7 @@
 				</control>
 				
 				<control type="list" id="50">
-					<posy>40</posy>
+					<top>40</top>
 					<width>1070</width>
 					<height>320</height>
 					<onup>9221</onup>
@@ -709,8 +785,8 @@
 						</control>
 						
 						<control type="label">
-							<posx>110</posx>
-							<width>700</width>
+							<left>110</left>
+							<width>850</width>
 							<height>40</height>
 							<label>$INFO[ListItem.Label]</label>
 							<textcolor>BaseMid</textcolor>
@@ -719,7 +795,7 @@
 						</control>
 						
 						<control type="label">
-							<posx>830</posx>
+							<left>960</left>
 							<width>90</width>
 							<height>40</height>
 							<label>$INFO[ListItem.Duration]</label>
@@ -758,8 +834,8 @@
 							</control>
 							
 							<control type="label">
-								<posx>110</posx>
-								<width>700</width>
+								<left>110</left>
+								<width>850</width>
 								<height>40</height>
 								<label>$INFO[ListItem.Label]</label>
 								<font>font26R</font>
@@ -767,7 +843,7 @@
 							</control>
 							
 							<control type="label">
-								<posx>830</posx>
+								<left>960</left>
 								<width>90</width>
 								<height>40</height>
 								<label>$INFO[ListItem.Duration]</label>

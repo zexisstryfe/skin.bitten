@@ -4,51 +4,50 @@
     <defaultcontrol always="true">1000</defaultcontrol>
 	
     <coordinates>
-        <left>0</left>
-        <top>0</top>
-        <origin x="0" y="0">Window.IsActive(Home)</origin>
-        <origin x="0" y="0">!Window.IsActive(Home)</origin>
+        <origin x="0" y="0" />
     </coordinates>
 	
     <controls>	
         <include>DialogOverlay</include>
 		
         <control type="group">
-            <posx>698</posx>
-            <posy>200</posy>
-            <include>Animation_Dialog_Center</include>
-			
+            <left>748</left>
+            <top>200</top>
+            <include>Animation_Popup</include>          
+
             <control type="image" id="999">
                 <description>background image</description>
-                <width>525</width>
-                <height>954</height>
+                <width>425</width>
+                <height>680</height>
                 <include>Common_Color_BaseWhite</include>
             </control>
-			
+
             <control type="image">
                 <description>header</description>
-                <width>525</width>
-                <include>InfoDialog_Header</include>
+                <width>425</width>
+                <height>75</height>
+                <include>Common_Color_BaseMediumHigh</include>
             </control>
-			
-            <control type="label">
-                <description>menu</description>
-                <posx>15</posx>
-                <width>495</width>
-                <include>InfoDialog_Heading</include>
-                <label>$LOCALIZE[33061]</label>
+ 
+            <control type="label">           
+                <description>Heading</description>
+                <left>15</left>
+                <width>385</width>
+                <height>75</height>
+                <font>font45R</font>
+                <label>$LOCALIZE[33061]</label>       
             </control>
 			
             <control type="grouplist" id="996">
                 <description>grouplist for context buttons</description>
-                <posy>105</posy>
-                <width>525</width>
-                <height max="825">auto</height>
-                <itemgap>3</itemgap>
+                <top>105</top>
+                <width>425</width>
+                <height max="540">auto</height>
+                <itemgap>0</itemgap>
 				
                 <control type="button" id="1000">
                     <description>Buttons</description>
-                    <width>525</width>
+                    <width>425</width>
 					<textcolor>BaseMediumHigh</textcolor>
 					<focusedcolor>TrueWhite</focusedcolor>
                 </control>

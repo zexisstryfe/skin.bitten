@@ -7,48 +7,56 @@
         <include>DialogOverlay</include>
 
         <control type="group">
-            <posx>765</posx>
-            <posy>285</posy>
-            <include>Animation_Dialog_Center</include>
+            <left>692</left>
+            <top>287</top>
+            <include>Animation_Popup</include>
 		
 			<control type="image" id="999">
-                <width>390</width>
-                <height>510</height>
+                <width>535</width>
+                <height>505</height>
                 <include>Common_Color_BaseWhite</include>
             </control>
 			
             <control type="image">
-                <width>390</width>
+                <width>535</width>
                 <include>InfoDialog_Header</include>
             </control>
 			
 			<control type="label" id="1">
                 <description>Heading</description>
-                <width>390</width>
-				<height>75</height>
-                <font>font30R</font>
+                <top>5</top>
+                <width>535</width>
+				<height>68</height>
+                <font>font36B</font>
+                <textcolor>BaseMediumHigh</textcolor>
                 <align>center</align>
 				<aligny>center</aligny>
             </control>
+
+            <include content="Common_Separator_Horizontal">
+                <param name="top" value="73"/>   
+                <param name="width" value="535"/>
+            </include>
 			
 			<control type="image">
-				<posy>85</posy>
-				<width>390</width>
+				<left>20</left>
+				<top>85</top>
+				<width>495</width>
 				<height>75</height>
 				<include>Common_Color_BaseLow</include>
 			</control>
 			
 			<control type="label" id="4">
 				<description>Edit Text</description>
-				<posy>85</posy>
-				<width>390</width>
+				<top>85</top>
+				<width>535</width>
 				<height>75</height>
 				<align>center</align>
 			</control>
 			
 			<control type="group">
-				<posx>10</posx>
-				<posy>170</posy>
+				<left>20</left>
+				<top>170</top>
 				
 				<control type="button" id="11">
 					<description>1 button</description>
@@ -62,7 +70,7 @@
 				
 				<control type="button" id="12">
 					<description>2 button</description>
-					<posx>95</posx>
+					<left>125</left>
 					<include>Common_Keyboard_Keys</include>
 					<label>12312</label>
 					<onleft>11</onleft>
@@ -73,7 +81,7 @@
 				
 				<control type="button" id="13">
 					<description>3 button</description>
-					<posx>190</posx>
+					<left>250</left>
 					<include>Common_Keyboard_Keys</include>
 					<label>12313</label>
 					<onleft>12</onleft>
@@ -84,8 +92,8 @@
 				
 				<control type="button" id="23">
 					<description>Backspace button</description>
-					<posx>285</posx>
-					<height>160</height>
+					<left>375</left>
+					<height>155</height>
 					<font>font30</font>
 					<include>Common_Keyboard_Keys</include>
 					<label>$LOCALIZE[20181]</label>
@@ -99,7 +107,7 @@
 				
 				<control type="button" id="14">
 					<description>4 button</description>
-					<posy>85</posy>
+					<top>80</top>
 					<include>Common_Keyboard_Keys</include>
 					<label>12314</label>
 					<onleft>23</onleft>
@@ -110,8 +118,8 @@
 				
 				<control type="button" id="15">
 					<description>5 button</description>
-					<posx>95</posx>
-					<posy>85</posy>
+					<left>125</left>
+					<top>80</top>
 					<include>Common_Keyboard_Keys</include>
 					<label>12315</label>
 					<onleft>14</onleft>
@@ -122,8 +130,8 @@
 				
 				<control type="button" id="16">
 					<description>6 button</description>
-					<posx>190</posx>
-					<posy>85</posy>
+					<left>250</left>
+					<top>80</top>
 					<include>Common_Keyboard_Keys</include>
 					<label>12316</label>
 					<onleft>15</onleft>
@@ -134,7 +142,7 @@
 				
 				<control type="button" id="17">
 					<description>7 button</description>
-					<posy>170</posy>
+					<top>160</top>
 					<include>Common_Keyboard_Keys</include>
 					<label>12317</label>
 					<onleft>21</onleft>
@@ -145,8 +153,8 @@
 				
 				<control type="button" id="18">
 					<description>8 button</description>
-					<posx>95</posx>
-					<posy>170</posy>
+					<left>125</left>
+					<top>160</top>
 					<include>Common_Keyboard_Keys</include>
 					<label>12318</label>
 					<onleft>17</onleft>
@@ -157,8 +165,8 @@
 				
 				<control type="button" id="19">
 					<description>9 button</description>
-					<posx>190</posx>
-					<posy>170</posy>
+					<left>250</left>
+					<top>160</top>
 					<include>Common_Keyboard_Keys</include>
 					<label>12319</label>
 					<onleft>18</onleft>
@@ -169,9 +177,9 @@
 				
 				<control type="button" id="21">
 					<description>Done button</description>
-					<posx>285</posx>
-					<posy>170</posy>
-					<height>160</height>
+					<left>375</left>
+					<top>160</top>
+					<height>155</height>
 					<angle>270</angle>
 					<include>Common_Keyboard_Keys</include>
 					<label>$LOCALIZE[20177]</label>
@@ -183,7 +191,7 @@
 				
 				<control type="button" id="20">
 					<description>prev button</description>
-					<posy>255</posy>
+					<top>240</top>
 					<include>Common_Keyboard_Keys</include>
 					<label>&lt;</label>
 					<onleft>21</onleft>
@@ -194,8 +202,8 @@
 				
 				<control type="button" id="10">
 					<description>0 button</description>
-					<posx>95</posx>
-					<posy>255</posy>
+					<left>125</left>
+					<top>240</top>
 					<include>Common_Keyboard_Keys</include>
 					<label>12310</label>
 					<onleft>20</onleft>
@@ -206,8 +214,8 @@
 				
 				<control type="button" id="22">
 					<description>next button</description>
-					<posx>190</posx>
-					<posy>255</posy>
+					<left>250</left>
+					<top>240</top>
 					<include>Common_Keyboard_Keys</include>
 					<label>&gt;</label>
 					<onleft>10</onleft>

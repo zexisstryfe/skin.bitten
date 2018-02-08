@@ -5,8 +5,12 @@
 	
     <controls>
         <include>DialogOverlay</include>
-		<include>Common_LeftMenu_Wide_Backing</include>			
-		<include>Common_LeftBar_Wide_LeftMenu</include>	
+
+        <include content="Common_LeftMenu">
+            <param name="width" value="1100"/>   
+            <param name="time" value="800"/>
+            <param name="header" value="$LOCALIZE[137]"/> 
+        </include> 
 		
         <control type="group">
 			<animation type="WindowOpen">
@@ -15,17 +19,10 @@
 			<animation type="WindowClose">
 				<effect type="fade" start="100" end="0" time="200" />
 			</animation>
-
-            <control type="label">
-				<posx>15</posx>
-				<height>75</height>
-				<font>font45R</font>
-                <label>$LOCALIZE[137]</label>
-            </control>
 			
             <control type="edit" id="9">
                 <description>Search string</description>
-                <posy>105</posy>
+                <top>105</top>
                 <width>1100</width>
 				<texturenofocus colordiffuse="BaseLow">colors/color_white.png</texturenofocus>
                 <include>Common_PVRSearch_Edit</include>
@@ -35,18 +32,29 @@
 
 			<control type="textbox">
 				<description>Search help</description>
-				<posx>15</posx>
-                <posy>165</posy>
+				<left>15</left>
+                <top>165</top>
                 <width>1070</width>
                 <height>120</height>
-				<align>justify</align>
+				<align>center</align>
 				<textcolor>BaseMediumHigh</textcolor>
 				<label>$LOCALIZE[19001] $LOCALIZE[19002]</label>
 				<font>font30R</font>
 			</control>
-			
+
+            <include content="Common_Separator_Horizontal">
+                <param name="top" value="285"/>  
+                <param name="width" value="1100"/>
+            </include>
+
+            <include content="Common_Separator_Vertical">
+                <param name="top" value="285"/>  
+                <param name="left" value="549"/>  
+                <param name="height" value="900"/>
+            </include>
+            		
             <control type="grouplist">
-                <posy>305</posy>
+                <top>305</top>
                 <onup>9</onup>
                 <ondown>26</ondown>
 				
@@ -115,18 +123,10 @@
                 </control>
 				
             </control>
-
-			<control type="image">
-				<posx>549</posx>
-				<posy>325</posy>
-				<width>2</width>
-				<height>475</height>
-				<include>Common_Color_BaseMediumHigh</include>
-			</control>	
 			
             <control type="grouplist">
-                <posx>551</posx>
-                <posy>305</posy>
+                <left>551</left>
+                <top>305</top>
                 <onup>9</onup>
                 <ondown>26</ondown>
 
@@ -196,34 +196,34 @@
 				
             </control>
 
-			<control type="grouplist"  id="9000">			
-				<posy>980</posy>
-				<width>1100</width>
-				<itemgap>20</itemgap>
-				<onup>24</onup>
-				<ondown>9</ondown>
-				<orientation>horizontal</orientation>
-				<align>center</align>
-			
-				<control type="button" id="26">
-					<description>search</description>
-					<label>137</label>
-					<include>InfoDialog_Button</include>
-				</control>
-				
-				<control type="button" id="25">
-					<description>Cancel</description>
-					<label>222</label>
-					<include>InfoDialog_Button</include>
-				</control>
+            <control type="grouplist" id="9000">          
+                <top>1020</top>
+                <width>1100</width>
+                <itemgap>0</itemgap>
+                <onup>24</onup>
+                <ondown>9</ondown>
+                <orientation>horizontal</orientation>
+                <align>center</align>
 
-				<control type="button" id="28">
-					<description>Defaults</description>
-					<label>409</label>
-					<include>InfoDialog_Button</include>
-				</control>
-				
-			</control>
+                <include content="InfoDialog_Button">
+                    <param name="button_id" value="26"/>  
+                    <param name="width" value="366"/>
+                    <param name="label" value="137"/>          
+                </include>
+
+                <include content="InfoDialog_Button">
+                    <param name="button_id" value="25"/>  
+                    <param name="width" value="368"/>
+                    <param name="label" value="222"/>          
+                </include>                
+
+                <include content="InfoDialog_Button">
+                    <param name="button_id" value="28"/>  
+                    <param name="width" value="366"/>
+                    <param name="label" value="409"/>          
+                </include> 
+                
+            </control>
 			
         </control>
 		

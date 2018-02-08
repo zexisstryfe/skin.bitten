@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window type="dialog" id="1121">
+    <defaultcontrol always="true">2400</defaultcontrol>
+	
+    <controls>
+        <include>DialogOverlay</include>
+		
+		<control type="group">
+			<left>332</left>
+			<top>315</top>	
+
+            <include content="Common_Window_Backing">
+                <param name="width" value="1256"/>
+                <param name="height" value="470"/>  
+                <param name="logo_height" value="345"/> 
+                <param name="header" value="$LOCALIZE[24020] - $INFO[Skin.String(HomeFocus)]"/> 
+                <param name="header_id" value="1"/>
+                <param name="header_width" value="880"/>
+                <param name="header_height" value="75"/>                 
+            </include> 
+
+            <control type="group">
+				<left>178</left>
+				<top>95</top>
+
+	            <include content="Dialog_HomeCreator_RadioButton" description="Enabled">
+	            	<param name="button_id" value="2400"/>
+	            	<param name="top" value="0"/>
+	                <param name="label" value="$LOCALIZE[305]"/>  
+	                <param name="onup" value="10"/>
+	                <param name="ondown" value="2401"/>
+	                <param name="onclick" value="Skin.ToggleSetting($INFO[Skin.String(HomeFocus)].Hide)"/>           
+	            </include>
+
+	            <include content="Dialog_HomeCreator_Button" description="Title">
+	            	<param name="button_id" value="2401"/>
+	            	<param name="top" value="60"/>
+	                <param name="label" value="$LOCALIZE[369]"/>  
+	                <param name="label2" value="$VAR[HomeConfig_Label]"/> 
+	                <param name="onup" value="2400"/>
+	                <param name="ondown" value="2402"/>
+	                <param name="onclick" value="Skin.SetString($INFO[Skin.String(HomeSelector_Temp)].Label)"/>   
+	                <param name="visible" value="!Skin.String(HomeFocus,HomeMenu11) + !Skin.String(HomeFocus,HomeMenu12) + !Skin.String(HomeFocus,HomeMenu13) + !Skin.String(HomeFocus,HomeMenu14)"/>       
+	            </include>
+
+	            <include content="Dialog_HomeCreator_Button" description="Icon">
+	            	<param name="button_id" value="2402"/>
+	            	<param name="top" value="120"/>
+	                <param name="label" value="$LOCALIZE[31205]"/>  
+	                <param name="label2" value="$VAR[HomeConfig_Icon]"/> 
+	                <param name="onup" value="2401"/>
+	                <param name="ondown" value="2403"/>
+	                <param name="onclick" value="Skin.SetImage($INFO[Skin.String(HomeSelector_Temp)].Icon,special://skin/extras/tiles/)"/>           
+	                <param name="visible" value="!Skin.String(HomeFocus,HomeMenu11) + !Skin.String(HomeFocus,HomeMenu12) + !Skin.String(HomeFocus,HomeMenu13) + !Skin.String(HomeFocus,HomeMenu14)"/>       
+	            </include>
+
+	            <include content="Dialog_HomeCreator_Button" description="Action">
+	            	<param name="button_id" value="2403"/>
+	            	<param name="top" value="180"/>
+	                <param name="label" value="$LOCALIZE[31437]"/>  
+	                <param name="label2" value="$VAR[HomeConfig_Action]"/> 
+	                <param name="onup" value="2402"/>
+	                <param name="ondown" value="2404"/>
+	                <param name="onclick" value="Skin.SetString($INFO[Skin.String(HomeSelector_Temp)].Action)"/>           
+	                <param name="visible" value="!Skin.String(HomeFocus,HomeMenu11) + !Skin.String(HomeFocus,HomeMenu12) + !Skin.String(HomeFocus,HomeMenu13) + !Skin.String(HomeFocus,HomeMenu14)"/>       
+	            </include>
+
+	            <include content="Dialog_HomeCreator_Button" description="Sub-Menu">
+	            	<param name="button_id" value="2404"/>
+	            	<param name="top" value="240"/>
+	                <param name="label" value="$LOCALIZE[31398]"/>  
+	                <param name="label2" value="$VAR[HomeConfig_SubMenu]"/> 
+	                <param name="onup" value="2403"/>
+	                <param name="ondown" value="10"/>
+	                <param name="onclick" value="Skin.SetString(SelectorType,SubMenu)"/>      
+	                <param name="onclick2" value="$VAR[HomeConfig_SubMenu_Select]"/>   
+	                <param name="onclick3" value="ActivateWindow(1113)"/>        
+	                <param name="visible" value="!Skin.String(HomeFocus,HomeMenu11) + !Skin.String(HomeFocus,HomeMenu12) + !Skin.String(HomeFocus,HomeMenu13) + !Skin.String(HomeFocus,HomeMenu14)"/>       
+	            </include>
+				
+            </control>
+			
+			<control type="grouplist">			
+				<top>420</top>
+				<width>1256</width>
+				<itemgap>0</itemgap>
+				<onup>2404</onup>
+				<ondown>2400</ondown>
+				<orientation>horizontal</orientation>
+				<align>center</align>
+
+                <include content="InfoDialog_Button">
+                    <param name="button_id" value="10"/>  
+                    <param name="width" value="1256"/>
+                    <param name="label" value="$LOCALIZE[186]"/>          
+                </include>
+				
+			</control>	
+
+        </control>
+		
+    </controls>
+	
+</window>

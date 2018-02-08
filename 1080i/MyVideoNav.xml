@@ -2,15 +2,13 @@
 
 <window id="25">
     <defaultcontrol always="true">50</defaultcontrol>
+    <menucontrol>9050</menucontrol>
     <views>50,51,590,58,53,54,55,56,57,591</views>
 <!--     <menucontrol>9050</menucontrol> -->
 	
     <!--Script Loading-->
     <onload condition="System.HasAddon(script.tv.show.next.aired)">XBMC.RunScript(script.tv.show.next.aired,backend=True)</onload>
     <onload condition="System.HasAddon(script.tvtunes) + Skin.HasSetting(UseTVTunes)">RunScript(script.tvtunes,backend=True)</onload>
-
-    <!--Animation-->
-    <include condition="!Window.Previous(fullscreenvideo) + !Window.Previous(slideshow) + Skin.HasSetting(MetroAnimations)">Common_Animation_Splash_Flip</include>
 
     <!--Background Area-->
     <controls>
@@ -54,9 +52,6 @@
         <!--Sort Overlays-->
         <include>Sort_Panel</include>
         <include>Sort_Panel_Alt</include>
-		
-        <!--Splash Screen-->
-        <include condition="!Window.Previous(fullscreenvideo) + !Window.Previous(slideshow) + Skin.HasSetting(MetroAnimations)">Common_Splash</include>
 
 	</controls>
 	

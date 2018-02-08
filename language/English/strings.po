@@ -458,11 +458,11 @@ msgid "Add Tile"
 msgstr ""
 
 msgctxt "#31110"
-msgid "Random[CR]Off"
+msgid "Random: Off"
 msgstr ""
 
 msgctxt "#31111"
-msgid "Random[CR]On"
+msgid "Random: On"
 msgstr ""
 
 msgctxt "#31112"
@@ -490,15 +490,15 @@ msgid "Visual[CR]Presets"
 msgstr ""
 
 msgctxt "#31118"
-msgid "Repeat[CR]Off"
+msgid "Repeat: Off"
 msgstr ""
 
 msgctxt "#31119"
-msgid "Repeat[CR]One"
+msgid "Repeat: One"
 msgstr ""
 
 msgctxt "#31120"
-msgid "Repeat[CR]All"
+msgid "Repeat: All"
 msgstr ""
 
 msgctxt "#31121"
@@ -670,7 +670,7 @@ msgid "Show details in tile views"
 msgstr ""
 
 msgctxt "#31163"
-msgid "Use series logos in TV views"
+msgid "Use series logos in TV and movie views"
 msgstr ""
 
 msgctxt "#31164"
@@ -842,7 +842,7 @@ msgid "Icon"
 msgstr ""
 
 msgctxt "#31206"
-msgid "There ar eno episodes airing on thei day"
+msgid "There are no episodes airing on this day"
 msgstr ""
 
 msgctxt "#31207"
@@ -1230,51 +1230,53 @@ msgid "Add Panel"
 msgstr ""
 
 msgctxt "#31303"
-msgid "[B]Configure Interface Settings[/B][CR][CR] .     Change the skin[CR] .     Set language and region[CR] .     Change file listing options[CR] .     Set up a screensaver"
+msgid "[B]Configure Interface Settings[/B][CR][CR] •     Change the skin[CR] •     Set language and region[CR] •     Change file listing options[CR] •     Set up a screensaver"
 msgstr ""
 
 msgctxt "#31304"
-msgid "[B]Configure Media Settings[/B][CR][CR] .     Manage your media libraries[CR] .     Set playback options[CR] .     Change media listing options[CR] .     Set subtitle fonts[CR] .     Setup song submission"
+msgid "[B]Configure Library Settings[/B][CR][CR] •     Manage your media libraries[CR] •     Set playback options[CR] •     Change media listings[CR] •     Set subtitle fonts[CR] •     Setup song submission"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
 msgctxt "#31305"
-msgid "[B]Configure Music Settings[/B][CR][CR] .     Manage your music library[CR] .     Set music playback options[CR] .     Change music listing options[CR] .     Setup song submission"
+msgid "Configure Home screen"
 msgstr ""
 
+#: /1080i/Includes_Common.xml
 msgctxt "#31306"
-msgid "[B]Configure Picture Settings[/B][CR][CR] .     Set picture listing options[CR] .     Configure slideshows"
+msgid "Add Widget"
 msgstr ""
 
 msgctxt "#31307"
-msgid "[B]Configure Weather Settings[/B][CR][CR] .     Set up to three cities"
+msgid "[B]Configure Player Settings[/B][CR][CR] •     Playback Actions[CR] •     How Content is Played[CR]"
 msgstr ""
 
 msgctxt "#31308"
-msgid "[B]Configure System Settings[/B][CR][CR] .     Setup and calibrate displays[CR] .     Configure audio output[CR] .     Setup remote controls[CR] .     Set power saving options[CR] .     Enable debugging[CR] .     Setup master lock"
+msgid "[B]Configure System Settings[/B][CR][CR] •     Setup and calibrate displays[CR] •     Configure audio output[CR] •     Setup remote controls[CR] •     Set power saving options[CR] •     Enable debugging[CR] •     Setup master lock"
 msgstr ""
 
 msgctxt "#31309"
-msgid "[B]Configure Add-Ons[/B][CR][CR] .     Manage your installed Add-ons[CR] .     Install Add-ons from kodi.tv[CR] .     Modify Add-on settings"
+msgid "[B]Configure Add-Ons[/B][CR][CR] •     Manage your Add-ons[CR] •     Install Add-ons from kodi.tv[CR] •     Modify Add-on settings"
 msgstr ""
 
 msgctxt "#31310"
-msgid "[B]Configure TV Settings[/B][CR][CR] .     Change full screen info[CR] .     Manage EPG data settings"
+msgid "[B]Configure Live TV Settings[/B][CR][CR] •     Change full screen info[CR] •     Manage EPG data settings"
 msgstr ""
 
 msgctxt "#31311"
-msgid "[B]Configure Service Settings[/B][CR][CR] .     Control via UPnP and HTTP[CR] .     Configure file sharing[CR] .     Enable Zeroconf[CR] .     Configure AirPlay"
+msgid "[B]Configure Service Settings[/B][CR][CR] •     Control via UPnP and HTTP[CR] •     Configure file sharing[CR] •     Enable Zeroconf[CR] •     Configure AirPlay"
 msgstr ""
 
 msgctxt "#31312"
-msgid "[B]Configure Profile Settings[/B][CR][CR] .     Setup user profiles[CR] .     Enable login screen[CR] .     Set master locks[CR] .     Control access to content"
+msgid "[B]Configure Profile Settings[/B][CR][CR] •     Setup user profiles[CR] •     Enable login screen[CR] •     Set master locks[CR] •     Control access to content"
 msgstr ""
 
 msgctxt "#31313"
-msgid "[B]Configure Skin Settings[/B][CR][CR] .     Customize the home screen[CR] .     Set background options[CR] .     Configure OSD options[CR] .     Enable add-on support[CR] .     Disable screen elements"
+msgid "[B]Configure Skin Settings[/B][CR][CR] •     Customize the home screen[CR] •     Set background options[CR] •     Configure OSD options[CR] •     Enable add-on support[CR] •     Disable screen elements"
 msgstr ""
 
 msgctxt "#31314"
-msgid "[B]View System Information[/B][CR][CR] .     Summary[CR] .     Storage[CR] .     Network[CR] .     Video[CR] .     Hardware[CR] .     PVR Backend"
+msgid "[B]View System Information[/B][CR][CR] •     Summary[CR] •     Storage[CR] •     Network[CR] •     Video[CR] •     Hardware[CR] •     PVR Backend"
 msgstr ""
 
 msgctxt "#31315"
@@ -1549,4 +1551,379 @@ msgstr ""
 #: /1080i/Custom_1120_DialogSearch.xml
 msgctxt "#31378"
 msgid "Search MovieDB"
+msgstr ""
+
+#: /1080i/Home.xml
+msgctxt "#31379"
+msgid "In Progress Movies"
+msgstr ""
+
+#: /1080i/Home.xml
+msgctxt "#31380"
+msgid "Unwatched Movies"
+msgstr ""
+
+#: /1080i/Includes_Content.xml
+msgctxt "#31381"
+msgid "Featured Music Videos"
+msgstr ""
+
+#: /1080i/Includes_Content.xml
+msgctxt "#31382"
+msgid "In Progress Shows"
+msgstr ""
+
+#: /1080i/Includes_Content.xml
+msgctxt "#31383"
+msgid "Unwatched Shows"
+msgstr ""
+
+#: /1080i/Includes_Content.xml
+msgctxt "#31384"
+msgid "Video Add-ons"
+msgstr ""
+
+#: /1080i/Includes_Content.xml
+msgctxt "#31385"
+msgid "Audio Add-ons"
+msgstr ""
+
+#: /1080i/Includes_Content.xml
+msgctxt "#31386"
+msgid "Music Add-ons"
+msgstr ""
+
+#: /1080i/Includes_Content.xml
+msgctxt "#31387"
+msgid "Picture"
+msgstr ""
+
+#: /1080i/Includes_Content.xml
+msgctxt "#31388"
+msgid "Picture Add-ons"
+msgstr ""
+
+#: /1080i/Includes_Content.xml
+msgctxt "#31389"
+msgid "Program Add-ons"
+msgstr ""
+
+#: /1080i/Includes_Content.xml
+msgctxt "#31390"
+msgid "Add-on Repository"
+msgstr ""
+
+#: /1080i/Includes_Content.xml
+msgctxt "#31391"
+msgid "Repository"
+msgstr ""
+
+#: /1080i/Includes_Content.xml
+msgctxt "#31392"
+msgid "Unplayed Albums"
+msgstr ""
+
+#: /1080i/Includes_Content.xml
+msgctxt "#31393"
+msgid "Most Played Albums"
+msgstr ""
+
+#: /1080i/Includes_Content.xml
+msgctxt "#31394"
+msgid "Recently Played Albums"
+msgstr ""
+
+#: /1080i/Includes_Content.xml
+msgctxt "#31395"
+msgid "Most Played Games"
+msgstr ""
+
+#: /1080i/Includes_Content.xml
+msgctxt "#31396"
+msgid "5-Day Forecast"
+msgstr ""
+
+#: /1080i/Includes_Content.xml
+msgctxt "#31397"
+msgid "10-Day Forecast"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31398"
+msgid "Sub Menu"
+msgstr ""
+
+#: /1080i/Includes_Home.xml
+msgctxt "#31399"
+msgid "Weather Details"
+msgstr ""
+
+#: /1080i/Includes_Home.xml
+msgctxt "#31400"
+msgid "Refresh Data"
+msgstr ""
+
+#: /1080i/Includes_Home.xml
+msgctxt "#31401"
+msgid "Prev. Location"
+msgstr ""
+
+#: /1080i/Includes_Home.xml
+msgctxt "#31402"
+msgid "Next Location"
+msgstr ""
+
+#: /1080i/Includes_Home.xml
+msgctxt "#31403"
+msgid "Add-on Settings"
+msgstr ""
+
+#: /1080i/Includes_Home.xml
+msgctxt "#31404"
+msgid "Add-on Browser"
+msgstr ""
+
+#: /1080i/MyWeather.xml
+msgctxt "#31405"
+msgid "Location"
+msgstr ""
+
+#: /1080i/DialogKeyboard.xml
+msgctxt "#31406"
+msgid "Cursor[CR]Left"
+msgstr ""
+
+#: /1080i/DialogKeyboard.xml
+msgctxt "#31407"
+msgid "Cursor[CR]Right"
+msgstr ""
+
+#: /1080i/Variable.xml
+msgctxt "#31408"
+msgid "Event Log"
+msgstr ""
+
+#: /1080i/DialogSubtitles.xml
+msgctxt "#31409"
+msgid "Available Subtitles"
+msgstr ""
+
+#: /1080i/Variable.xml
+msgctxt "#31410"
+msgid "Rate Movie"
+msgstr ""
+
+#: /1080i/Variable.xml
+msgctxt "#31411"
+msgid "Rate Show"
+msgstr ""
+
+#: /1080i/Variable.xml
+msgctxt "#31412"
+msgid "Rate Episode"
+msgstr ""
+
+#: /1080i/Variable.xml
+msgctxt "#31413"
+msgid "Rate Video"
+msgstr ""
+
+#: /1080i/DialogVideoInfo.xml
+msgctxt "#31414"
+msgid "Recommended Movies"
+msgstr ""
+
+#: /1080i/DialogVideoInfo.xml
+msgctxt "#31415"
+msgid "Movie Set"
+msgstr ""
+
+#: /1080i/DialogVideoInfo.xml
+msgctxt "#31416"
+msgid "Audio Language"
+msgstr ""
+
+#: /1080i/Variable.xml
+msgctxt "#31417"
+msgid "Rate Artist"
+msgstr ""
+
+#: /1080i/Variable.xml
+msgctxt "#31418"
+msgid "Rate Album"
+msgstr ""
+
+#: /1080i/DialogMusicInfo.xml
+msgctxt "#31419"
+msgid "Album Info"
+msgstr ""
+
+#: /1080i/Includes_Content.xml
+msgctxt "#31420"
+msgid "Scheduled Recordings"
+msgstr ""
+
+#: /1080i/DialogPictureInfo.xml
+msgctxt "#31421"
+msgid "Picture Information"
+msgstr ""
+
+#: /1080i/Custom_1115_DialogAccent.xml
+msgctxt "#31422"
+msgid "Orange Red"
+msgstr ""
+
+#: /1080i/Custom_1115_DialogAccent.xml
+msgctxt "#31423"
+msgid "Brown"
+msgstr ""
+
+#: /1080i/Custom_1115_DialogAccent.xml
+msgctxt "#31424"
+msgid "Lime Green"
+msgstr ""
+
+#: /1080i/Custom_1115_DialogAccent.xml
+msgctxt "#31425"
+msgid "Dark Green"
+msgstr ""
+
+#: /1080i/Custom_1115_DialogAccent.xml
+msgctxt "#31426"
+msgid "Light Blue"
+msgstr ""
+
+#: /1080i/Custom_1115_DialogAccent.xml
+msgctxt "#31427"
+msgid "Violet"
+msgstr ""
+
+#: /1080i/Custom_1115_DialogAccent.xml
+msgctxt "#31428"
+msgid "Maroon"
+msgstr ""
+
+#: /1080i/FileBrowser.xml
+msgctxt "#31429"
+msgid "Mirror"
+msgstr ""
+
+#: /1080i/FileBrowser.xml
+msgctxt "#31430"
+msgid "New"
+msgstr ""
+
+#: /1080i/Includes_OSD.xml
+msgctxt "#31431"
+msgid "3D Mode"
+msgstr ""
+
+#: /1080i/MusicOSD.xml
+msgctxt "#31432"
+msgid "Visualization"
+msgstr ""
+
+#: /1080i/MusicOSD.xml
+msgctxt "#31433"
+msgid "Presets"
+msgstr ""
+
+#: /1080i/Settings.xml
+msgctxt "#31434"
+msgid "PVR / Live TV"
+msgstr ""
+
+#: /1080i/Includes_Common.xml
+msgctxt "#31435"
+msgid "Widget"
+msgstr ""
+
+#: /1080i/Custom_1121_DialogHomeCreator.xml
+msgctxt "#31436"
+msgid "Configure the Home Menu"
+msgstr ""
+
+#: /1080i/Custom_1121_DialogHomeCreator.xml
+msgctxt "#31437"
+msgid "On Click"
+msgstr ""
+
+#: /1080i/SmartPlaylistEditor.xml
+msgctxt "#31438"
+msgid "Playlist Type"
+msgstr ""
+
+#: /1080i/SmartPlaylistRule.xml
+msgctxt "#31439"
+msgid "Rule type"
+msgstr ""
+
+#: /1080i/SmartPlaylistRule.xml
+msgctxt "#31440"
+msgid "Rule operator"
+msgstr ""
+
+#: /1080i/VideoOSDBookmarks.xml
+msgctxt "#31441"
+msgid "Set bookmark"
+msgstr ""
+
+#: /1080i/VideoOSDBookmarks.xml
+msgctxt "#31442"
+msgid "Clear bookmark"
+msgstr ""
+
+#: /1080i/Viewtype_PVR_TVGuideNow.xml
+msgctxt "#31443"
+msgid "Progress"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31444"
+msgid "Use fanart overlays in media views"
+msgstr ""
+
+#: /1080i/DialogPVRChannelManager.xml
+msgctxt "#31445"
+msgid "Channel Manager"
+msgstr ""
+
+#: /1080i/DialogPVRChannelManager.xml
+msgctxt "#31446"
+msgid "New Channel"
+msgstr ""
+
+#: /1080i/DialogPVRGroupManager.xml
+msgctxt "#31447"
+msgid "Add Group"
+msgstr ""
+
+#: /1080i/DialogPVRGroupManager.xml
+msgctxt "#31448"
+msgid "Rename Group"
+msgstr ""
+
+#: /1080i/DialogPVRGroupManager.xml
+msgctxt "#31449"
+msgid "Delete Group"
+msgstr ""
+
+#: /1080i/DialogPVRInfo.xml
+msgctxt "#31450"
+msgid "View Show"
+msgstr ""
+
+#: /1080i/script-script.extendedinfo-DialogVideoInfo.xml
+msgctxt "#31451"
+msgid "Open Show"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31452"
+msgid "Enable ExtendedInfo Movie and TV dialogs"
+msgstr ""
+
+#: /1080i/script-script.extendedinfo-DialogVideoInfo.xml
+msgctxt "#31453"
+msgid "Posters"
 msgstr ""

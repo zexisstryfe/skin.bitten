@@ -2,15 +2,13 @@
 
 <window id="2">
     <defaultcontrol always="true">50</defaultcontrol>
+    <menucontrol>9050</menucontrol>
     <views>50,51,55</views>
-	
-    <!--Animation-->
-    <include condition="!Window.Previous(fullscreenvideo) + !Window.Previous(slideshow) + Skin.HasSetting(MetroAnimations)">Common_Animation_Splash_Flip</include>
-	
+
     <!--Background Area-->
     <controls>
-        <include>GlobalBackground</include>
-        <include>PictureBackground</include>
+        <include>Background_Global</include>
+        <include>Background_Picture</include>
 		
 		<control type="image">
             <include>Dimensions_Fullscreen</include>
@@ -19,7 +17,7 @@
 		
         <!--Available Views-->
         <control type="group">
-            <include>Viewtype_List_Pics</include>
+            <include>Viewtype_List</include>
             <include>Viewtype_Fanart</include>
             <include>Viewtype_Photos</include>
         </control>
@@ -31,10 +29,7 @@
         <!--Sort Overlays-->
         <include>Sort_Panel</include>
         <include>Sort_Panel_Alt</include>
-		
-        <!--Splash Screen-->
-        <include condition="!Window.Previous(fullscreenvideo) + !Window.Previous(slideshow) + Skin.HasSetting(MetroAnimations)">Common_Splash</include>
-		
+
     </controls>
 	
 </window>

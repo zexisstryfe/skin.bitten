@@ -8,321 +8,216 @@
             <description>Album View (id=58)</description>
 			<visible>Control.IsVisible(58)</visible>
 			
-            <include>BG_Fanart_1080</include>
-			<include>FanartOverlay</include>
+	        <include content="Background_Fanart">
+	            <param name="width" value="1920"/>
+	            <param name="height" value="1080"/>      
+                <param name="logo_visible" value="false"/>  
+                <param name="topbar_visible" value="false"/>      
+	        </include> 
+            <include>FanartOverlay</include>
 
 			<control type="group">	
-				<posy>350</posy>
-				
-				<control type="image">	
-					<include>Common_Animation_CenterMenu_Stage1</include>
-					<width>1920</width>
-					<height>600</height>
-					<texture colordiffuse="BaseMid">colors/color_white.png</texture>			
-				</control>	
-				
-				<control type="image">
-					<include>Common_Animation_CenterMenu_Stage4</include>
-					<posy>10</posy>
-					<width>1920</width>
-					<height>580</height>
-					<texture colordiffuse="BaseMediumHigh">colors/color_white.png</texture>			
-				</control>
+				<top>150</top>
+				<left>200</left>
 
-				<control type="image">
-					<include>Common_Animation_CenterMenu_Stage3</include>
-					<posy>10</posy>
-					<width>1500</width>
-					<height>580</height>
-					<texture colordiffuse="BaseLow">colors/color_white.png</texture>			
-				</control>
+	            <include content="Common_Window_Backing">
+	                <param name="width" value="1520"/>
+	                <param name="height" value="780"/>  
+	                <param name="logo_visible" value="false"/> 
+	                <param name="header" value="$VAR[Views_Header]"/> 
+	                <param name="header_id" value="20"/>
+	                <param name="header_width" value="1480"/>
+	                <param name="header_height" value="75"/>             
+	            </include> 
 
-				<control type="scrollbar" id="60">
-					<posy>10</posy>
-					<posx>1500</posx>
-					<height>580</height>
-					<onleft>58</onleft>
-					<include>ShowOptions_Right</include>
-					<include>Common_Animation_CenterMenu_Stage3</include>
-				</control>
-
-				<control type="list" id="58">
-					<posy>10</posy>
-					<posx>630</posx>
-					<height>580</height>
-					<width>870</width>
-					<include>ShowOptions_Left</include>
-					<onright>60</onright>
-					<pagecontrol>60</pagecontrol>
-					<viewtype label="album list">list</viewtype>
-					<orientation>vertical</orientation>
-					<visible>Container.Content(songs)</visible>
-					<include>Common_Animation_CenterMenu_Stage3</include>
-					<itemlayout width="870" height="85">
-					
-						<control type="image">
-							<posx>10</posx>
-							<posy>10</posy>
-							<width>65</width>
-							<height>65</height>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<texture colordiffuse="BaseMediumHigh" diffuse="masks/circle.png">colors/color_white.png</texture>
-						</control> 
-						
-						<control type="label">
-							<posx>10</posx>
-							<posy>10</posy>
-							<width>65</width>
-							<font>font40B</font>
-							<height>65</height>
-							<align>center</align>
-							<label>$INFO[ListItem.TrackNumber]</label>
-							<visible>!stringcompare(ListItem.Label,..)</visible>
-						</control>
-						
-						<control type="label">
-                            <posx>85</posx>
-                            <width>600</width>
-                            <height>85</height>
-							<aligny>center</aligny>
-                            <font>font22</font>
-                            <label>$INFO[ListItem.Title]</label>
-							<wrapmultiline>true</wrapmultiline>
-							<textcolor>BaseMediumHigh</textcolor>
-                        </control>
-
-						<control type="label">
-                            <posx>85</posx>
-                            <width>600</width>
-                            <height>85</height>
-							<aligny>center</aligny>
-                            <font>font22</font>
-							<label>$LOCALIZE[31194]</label>
-							<wrapmultiline>true</wrapmultiline>
-							<textcolor>BaseMediumHigh</textcolor>
-							<visible>stringcompare(ListItem.Label,..)</visible>
-						</control>
-						
-						<control type="group">
-							<visible>!stringcompare(ListItem.Label,..)</visible>
-						
-							<control type="label">
-								<posx>750</posx>
-								<posy>10</posy>
-								<width>100</width>
-								<height>45</height>
-								<font>font20R</font>
-								<align>right</align>
-								<label>$INFO[ListItem.Duration]</label>
-								<textcolor>$VAR[Accent_100]</textcolor>
-							</control>
-							
-							<control type="image">
-								<posx>750</posx>
-								<posy>45</posy>
-								<width>100</width>
-								<height>30</height>
-								<texture colordiffuse="BaseMid">flags\ratings\rating5.png</texture>
-								<aspectratio>keep</aspectratio>
-							</control>
-							
-							<control type="image">
-								<posx>750</posx>
-								<posy>45</posy>
-								<width>100</width>
-								<height>30</height>
-								<texture colordiffuse="$VAR[Accent_100]">flags\ratings\$INFO[ListItem.Rating].png</texture>
-								<aspectratio>keep</aspectratio>
-							</control>
-						
-						</control>
-
-					</itemlayout>
-					
-					<focusedlayout width="870" height="85">
-					
-						<control type="image">
-							<width>870</width>
-							<height>85</height>
-							<include>Common_Color_Accent</include>
-						</control>
-						
-						<control type="image">
-							<posx>10</posx>
-							<posy>10</posy>
-							<width>65</width>
-							<height>65</height>
-							<aspectratio scalediffuse="false">scale</aspectratio>
-							<texture colordiffuse="BaseMediumHigh" diffuse="masks/circle.png">colors/color_white.png</texture>
-						</control> 
-						
-						<control type="label">
-							<posx>10</posx>
-							<posy>10</posy>
-							<width>65</width>
-							<font>font40B</font>
-							<height>65</height>
-							<align>center</align>
-							<label>$INFO[ListItem.TrackNumber]</label>
-							<visible>!stringcompare(ListItem.Label,..)</visible>
-						</control>
-						
-						<control type="label">
-                            <posx>85</posx>
-                            <width>600</width>
-                            <height>85</height>
-							<aligny>center</aligny>
-                            <font>font22</font>
-                            <label>$INFO[ListItem.Title]</label>
-							<wrapmultiline>true</wrapmultiline>
-							<textcolor>BaseWhite</textcolor>
-                        </control>
-
-						<control type="label">
-                            <posx>85</posx>
-                            <width>600</width>
-                            <height>85</height>
-							<aligny>center</aligny>
-                            <font>font22</font>
-							<label>$LOCALIZE[31194]</label>
-							<wrapmultiline>true</wrapmultiline>
-							<textcolor>BaseWhite</textcolor>
-							<visible>stringcompare(ListItem.Label,..)</visible>
-						</control>
-						
-						<control type="group">
-							<visible>!stringcompare(ListItem.Label,..)</visible>
-						
-							<control type="label">
-								<posx>750</posx>
-								<posy>10</posy>
-								<width>100</width>
-								<height>45</height>
-								<font>font20R</font>
-								<align>right</align>
-								<label>$INFO[ListItem.Duration]</label>
-								<textcolor>BaseLow</textcolor>
-							</control>
-							
-							<control type="image">
-								<posx>750</posx>
-								<posy>45</posy>
-								<width>100</width>
-								<height>30</height>
-								<texture colordiffuse="BaseMid">flags\ratings\rating5.png</texture>
-								<aspectratio>keep</aspectratio>
-							</control>
-							
-							<control type="image">
-								<posx>750</posx>
-								<posy>45</posy>
-								<width>100</width>
-								<height>30</height>
-								<texture colordiffuse="BaseLow">flags\ratings\$INFO[ListItem.Rating].png</texture>
-								<aspectratio>keep</aspectratio>
-							</control>
-						
-						</control>
-						
-					</focusedlayout>
-					
-				</control>
-
-				<control type="image">
-					<include>Common_Animation_CenterMenu_Stage2</include>
-					<posy>10</posy>
-					<width>630</width>
-					<height>580</height>
-					<texture colordiffuse="BaseWhite">colors/color_white.png</texture>			
-				</control>
-				
 				<control type="group">
-					<include>Common_Animation_CenterMenu_Fade1</include>
-					<posy>30</posy>
-					<posx>70</posx>
-				
+					<top>75</top>
+
 					<control type="image">
-						<width>540</width>
-						<height>540</height>
-						<include>Common_Color_BaseMediumHigh</include>
-						<visible>!IsEmpty(ListItem.Icon) + Container.Content(songs)</visible>
-					</control>
-					
-					<control type="image">
-						<width>540</width>
-						<height>540</height>
+						<width>705</width>
+						<height>705</height>
 						<aspectratio>stretch</aspectratio>
+						<bordertexture colordiffuse="BaseMid">colors\color_white.png</bordertexture>
 						<texture background="true" fallback="$VAR[Common_Fallback]">$INFO[ListItem.Icon]</texture>
 					</control>
-				
-				</control>
 
-				<control type="group">
-					<include>Common_Animation_CenterMenu_Fade3</include>
-					<visible>!stringcompare(ListItem.Label,..)</visible>
-					<posx>1540</posx>
-					
-					<control type="image">
-						<posy>70</posy>
-						<width>350</width>
-						<height>2</height>					
-						<include>Common_Color_BaseWhite</include>
+		            <include content="Common_Separator_Vertical">
+		                <param name="height" value="705"/>   
+		                <param name="left" value="705"/>
+		            </include> 
+
+					<control type="list" id="58">
+						<left>707</left>
+						<height>705</height>
+						<width>928</width>
+						<include>ShowOptions_Left</include>
+						<onright>60</onright>
+						<pagecontrol>60</pagecontrol>
+						<viewtype label="558">list</viewtype>
+						<orientation>vertical</orientation>
+						<visible>Container.Content(songs)</visible>
+						<itemlayout width="803" height="60">
+						
+							<control type="image">
+								<left>10</left>
+								<top>9</top>
+								<width>40</width>
+								<height>40</height>
+								<aspectratio scalediffuse="false">scale</aspectratio>
+								<texture colordiffuse="BaseMediumHigh" diffuse="masks/circle.png">colors/color_white.png</texture>
+							</control> 
+							
+							<control type="label">
+								<left>10</left>
+								<top>9</top>
+								<width>40</width>
+								<font>font26B</font>
+								<height>40</height>
+								<align>center</align>
+								<label>$INFO[ListItem.TrackNumber]</label>
+								<visible>!String.IsEqual(ListItem.Label,..)</visible>
+							</control>
+							
+							<control type="label">
+	                            <left>70</left>
+	                            <width>600</width>
+	                            <height>58</height>
+								<aligny>center</aligny>
+	                            <font>font30R</font>
+	                            <label>$VAR[Views_List_Title]</label>
+								<wrapmultiline>true</wrapmultiline>
+								<textcolor>BaseMediumHigh</textcolor>
+	                        </control>
+							
+							<control type="group">
+								<visible>!String.IsEqual(ListItem.Label,..)</visible>
+								<left>685</left>	
+
+								<control type="label">
+									<width>100</width>
+									<height>30</height>
+									<font>font20R</font>
+									<align>right</align>
+									<label>$INFO[ListItem.Duration]</label>
+									<textcolor>$VAR[Accent_100]</textcolor>
+								</control>
+								
+								<control type="image">
+									<top>25</top>
+									<width>100</width>
+									<height>30</height>
+									<texture colordiffuse="BaseMid">flags\ratings\rating5.png</texture>
+									<aspectratio>keep</aspectratio>
+								</control>
+								
+								<control type="image">
+									<top>25</top>
+									<width>100</width>
+									<height>30</height>
+									<texture colordiffuse="$VAR[Accent_100]">flags\ratings\$INFO[ListItem.Rating].png</texture>
+									<aspectratio>keep</aspectratio>
+								</control>
+							
+							</control>
+
+			                <control type="image">
+			                	<top>58</top>                  
+			                    <width>803</width>
+			                    <height>2</height>
+			                    <include>Common_Color_BaseLowest</include>
+			                </control> 
+
+						</itemlayout>
+						
+						<focusedlayout width="803" height="60">
+
+							<control type="image">
+								<width>803</width>
+								<height>60</height>
+								<include>Common_Color_BaseLowest</include>
+							</control>
+						
+							<control type="image">
+								<width>60</width>
+								<height>60</height>
+								<include>Common_Color_Accent</include>
+								<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(58)">Conditional</animation>
+							</control>
+							
+							<control type="image">
+								<left>10</left>
+								<top>9</top>
+								<width>40</width>
+								<height>40</height>
+								<aspectratio scalediffuse="false">scale</aspectratio>
+								<texture colordiffuse="BaseMediumHigh" diffuse="masks/circle.png">colors/color_white.png</texture>
+							</control> 
+							
+							<control type="label">
+								<left>10</left>
+								<top>9</top>
+								<width>40</width>
+								<font>font26B</font>
+								<height>40</height>
+								<align>center</align>
+								<label>$INFO[ListItem.TrackNumber]</label>
+								<visible>!String.IsEqual(ListItem.Label,..)</visible>
+							</control>
+							
+							<control type="label">
+	                            <left>70</left>
+	                            <width>600</width>
+	                            <height>58</height>
+								<aligny>center</aligny>
+	                            <font>font30R</font>
+	                            <label>$VAR[Views_List_Title]</label>
+								<wrapmultiline>true</wrapmultiline>
+								<textcolor>$VAR[Accent_100]</textcolor>
+	                        </control>
+							
+							<control type="group">
+								<visible>!String.IsEqual(ListItem.Label,..)</visible>
+								<left>685</left>
+							
+								<control type="label">
+									<width>100</width>
+									<height>30</height>
+									<font>font20R</font>
+									<align>right</align>
+									<label>$INFO[ListItem.Duration]</label>
+									<textcolor>BaseMediumHigh</textcolor>
+								</control>
+								
+								<control type="image">
+									<top>25</top>
+									<width>100</width>
+									<height>30</height>
+									<texture colordiffuse="BaseMid">flags\ratings\rating5.png</texture>
+									<aspectratio>keep</aspectratio>
+								</control>
+								
+								<control type="image">
+									<top>25</top>
+									<width>100</width>
+									<height>30</height>
+									<texture colordiffuse="$VAR[Accent_100]">flags\ratings\$INFO[ListItem.Rating].png</texture>
+									<aspectratio>keep</aspectratio>
+								</control>
+							
+							</control>
+							
+						</focusedlayout>
+						
 					</control>
 
-					<control type="group">
-						<posy>30</posy>
-						<posx>-10</posx>
-						<width>390</width>
-					
-						<control type="label">
-							<font>font36B</font>
-							<height>30</height>
-							<label>$INFO[ListItem.Album]</label>
-						</control>
-						
-						<control type="label">
-							<posy>50</posy>
-							<textcolor>$VAR[Accent_100]</textcolor>
-							<font>font30B</font>
-							<height>30</height>
-							<label>$INFO[ListItem.Artist]</label>
-						</control>
-						
-						<control type="label">
-							<posy>80</posy>
-							<font>font30B</font>
-							<height>30</height>
-							<textcolor>BaseLow</textcolor>
-							<label>$INFO[ListItem.Year]</label>
-						</control>
-						
-						<control type="label">
-							<posy>110</posy>
-							<font>font24B</font>
-							<height>30</height>
-							<textcolor>BaseLow</textcolor>
-							<label>$INFO[ListItem.Genre]</label>
-						</control>
-					
+					<control type="scrollbar" id="60">
+						<left>1510</left>
+						<height>705</height>
+						<onleft>58</onleft>
+						<width>10</width>
+						<include>ShowOptions_Right</include>
 					</control>
-					
-					<control type="image">
-						<posy>180</posy>
-						<width>350</width>
-						<height>2</height>					
-						<include>Common_Color_BaseWhite</include>
-					</control>
-					
-					<control type="textbox">
-						<posy>190</posy>
-						<width>350</width>
-						<height>350</height>
-						<font>font26</font>
-						<align>justify</align>
-						<label>$VAR[Common_Plot]</label>
-						<autoscroll time="3000" delay="6000" repeat="8000"></autoscroll>
-					</control>	
-				
+
 				</control>
 
 			</control>

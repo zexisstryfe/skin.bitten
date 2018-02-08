@@ -2,19 +2,22 @@
 
 <window id="601">
     <defaultcontrol>14</defaultcontrol>
+    <menucontrol>9050</menucontrol>
     <views>14</views>
 	
     <!--Script Loading-->
     <onload>SetProperty(tvlist,$LOCALIZE[19020])</onload>
     <onload>SetProperty(radiolist,$LOCALIZE[19021])</onload>
-	
-    <!--Animation-->
-    <include condition="!Window.Previous(fullscreenvideo) + !Window.Previous(slideshow) + Skin.HasSetting(MetroAnimations)">Common_Animation_Splash_Flip</include>
-	
+
     <!--Background Area-->
     <controls>
-		<include>BG_Fanart_1080</include>
-		<include>FanartOverlay</include>
+        <include content="Background_Fanart">
+            <param name="width" value="1920"/>
+            <param name="height" value="1080"/>      
+            <param name="logo_visible" value="false"/>  
+            <param name="topbar_visible" value="false"/>      
+        </include> 
+        <include>FanartOverlay</include>
 		
         <!--Window Animations-->
         <control type="group">
@@ -57,10 +60,7 @@
         <!--Sort Overlays-->
         <include>Sort_Panel</include>
         <include>Sort_Panel_Alt</include>
-		
-        <!--Splash Screen-->
-        <include condition="!Window.Previous(fullscreenvideo) + !Window.Previous(slideshow) + Skin.HasSetting(MetroAnimations)">Common_Splash</include>
-		
+
     </controls>
 	
 </window>

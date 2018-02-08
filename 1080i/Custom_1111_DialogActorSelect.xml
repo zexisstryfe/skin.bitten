@@ -15,8 +15,12 @@
 	<controls>
 
         <include>DialogOverlay</include>
-		<include>Common_LeftMenu_Mid_Backing</include>			
-		<include>Common_LeftBar_Mid_LeftMenu</include>
+
+		<include content="Common_LeftMenu">
+			<param name="width" value="690"/>	
+			<param name="time" value="600"/>
+			<param name="header" value="$LOCALIZE[31360]"/>
+		</include>	
 
 		<control type="group">
 			<animation type="WindowOpen">
@@ -26,45 +30,37 @@
 				<effect type="fade" start="100" end="0" time="200" />
 			</animation>
 
-			<control type="image">
-                <posy>175</posy>
-                <width>690</width>
-                <height>725</height>
-                <include>Common_Color_BaseLow</include>
-            </control>
+            <include content="Common_Separator_Horizontal">
+                <param name="top" value="98"/> 
+                <param name="width" value="690"/>
+            </include>
 
-            <control type="label" id="1">
-                <description>header label</description>
-                <posx>15</posx>
-                <width>660</width>
-                <include>InfoDialog_Heading</include>
-                <label>$LOCALIZE[31360]</label>
-            </control>
+            <include content="Common_Separator_Horizontal">
+                <param name="top" value="980"/>   
+                <param name="width" value="690"/>
+            </include>
 
             <control type="scrollbar" id="60">
-                <posx>680</posx>
-                <posy>175</posy>
-                <height>725</height>
+                <left>680</left>
+                <top>100</top>
+                <height>880</height>
                 <onleft>6</onleft>
                 <onright>6</onright>
                 <width>10</width>
             </control>
 
 			<control type="list" id="90100">
-                <posy>175</posy>
+                <top>100</top>
                 <width>680</width>
-                <height>725</height>
-				<onup>90100</onup>
-				<ondown>90100</ondown>
-				<onleft>90100</onleft>
+                <height>900</height>
 				<onright>60</onright>
 				<pagecontrol>60</pagecontrol>
 				<itemlayout height="69">
 
                     <control type="label">
-                        <posx>30</posx>
+                        <left>30</left>
                         <width>600</width>
-                        <font>font36R</font>
+                        <textcolor>BaseMediumHigh</textcolor>
                         <info>ListItem.Label</info>
                     </control>
 
@@ -80,20 +76,21 @@
                     </control>
 					
                     <control type="label">
-                        <posx>30</posx>
+                        <left>30</left>
                         <width>600</width>
-                        <font>font36R</font>
                         <info>ListItem.Label</info>
                     </control>
 
 				</focusedlayout>
 
 				<content>
+
 					<item>
 						<label>$LOCALIZE[31358]</label>
 						<onclick>Dialog.Close(1111)</onclick>
 						<onclick>SetProperty(DoAction,True,movieinformation)</onclick>
 					</item>
+
 					<item>
 						<label>$LOCALIZE[31359]</label>
 						<onclick>Dialog.Close(1111)</onclick>
@@ -102,6 +99,7 @@
 						<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Window(movieinformation).Property(ActorName)]))</onclick>
 						<onclick>ClearProperty(ActorName,movieinformation)</onclick>
 					</item>
+					
 				</content>
 
 			</control>

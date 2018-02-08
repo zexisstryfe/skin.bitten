@@ -7,19 +7,24 @@
         <include condition="Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings)">DialogOverlay</include>
 		
         <control type="group">
-            <posx>615</posx>
+            <left>615</left>    
+            <top>20</top>
             <animation type="WindowOpen">
-                <effect type="slide" start="0,-140" end="0,0" time="400" center="960,540" tween="cubic" easing="out" />
-                <effect type="fade" start="0" end="100" time="400" />
+                <effect type="slide" start="0,-400" end="0,0" time="600" tween="cubic" easing="out" />
             </animation>
             <animation type="WindowClose">
-                <effect type="slide" start="0,0" end="0,-140" time="400" center="960,540" tween="cubic" easing="out" />
-                <effect type="fade" start="100" end="0" time="400" />
+                <effect type="slide" start="0,0" end="0,-400" time="400" delay="200" tween="cubic" easing="in" />
             </animation>
 			
             <control type="image">
                 <width>690</width>
-                <height>130</height>
+                <height>155</height>
+                <include>Common_Color_Shadow</include>
+            </control>
+
+            <control type="image">
+                <width>690</width>
+                <height>150</height>
                 <include>Common_Color_BaseWhite</include>
             </control>
 			
@@ -31,26 +36,24 @@
 			
             <control type="label" id="10">
                 <description>Heading</description>
-				<posx>15</posx>
+				<left>15</left>
 				<height>75</height>
 				<font>font36R</font>
             </control>
 			
             <control type="label" id="12">
-                <description>Label</description>
-                <posx>675</posx>
-				<posy>87</posy>
+                <left>570</left>
+				<top>75</top>
                 <width>100</width>
-				<height>30</height>
-                <font>font30</font>
+				<height>75</height>
+                <font>font30R</font>
                 <align>right</align>
 				<textcolor>BaseMediumHigh</textcolor>
             </control>
-			
+
             <control type="slider" id="11">
-                <description>Slider</description>
-                <posx>15</posx>
-                <posy>87</posy>
+                <left>20</left>
+                <top>97</top>
                 <width>580</width>
             </control>
 			

@@ -3,110 +3,73 @@
 <window>
 	<defaultcontrol always="true">50</defaultcontrol>
 	<views>50</views>
-	<menucontrol>9051</menucontrol>
-	<onload>SetProperty(Window.HasSettings,True,home)</onload>
-	<onload>ClearProperty(MediaMenu,Home)</onload>
-	<onunload>ClearProperty(Window.HasSettings,Home)</onunload>
+	<menucontrol>9050</menucontrol>
 
     <controls>
         <include>BG_Fanart_1080</include>
-		<include>WhiteOverlay</include>
+		<include>FanartOverlay</include>
 
 		<control type="group">
-			<posy>200</posy>
+			<top>175</top>
+			<left>300</left>
 
-			<include>Settings_GrayBand</include>
-
-			<!-- view id = 50 -->
 			<control type="group">	
 				<posy>10</posy>
 				<visible>Control.IsVisible(50) + !Window.IsActive(addoninformation)</visible>
-			
-				<control type="image">	
-					<include>Common_Animation_CenterMenu_Stage2</include>
-					<width>1920</width>
-					<height>780</height>
+				<include>Animation_Popup</include>	
+
+				<control type="image">						
+					<width>1320</width>
+					<height>725</height>
 					<texture colordiffuse="BaseWhite">colors/color_white.png</texture>			
 				</control>
 
 				<control type="image">	
-					<include>Common_Animation_CenterMenu_Stage2</include>
-					<posy>20</posy>
-					<posx>300</posx>
 					<width>1320</width>
-					<height>740</height>
-					<texture colordiffuse="BaseLow">colors/color_white.png</texture>			
+					<height>5</height>
+					<texture colordiffuse="BaseMediumHigh">colors/color_white.png</texture>			
+				</control>
+
+				<control type="image">
+					<top>725</top>	
+					<width>1320</width>
+					<height>5</height>
+					<texture colordiffuse="Shadow">colors/color_white.png</texture>			
 				</control>
 
 				<control type="group">	
-					<posy>20</posy>
-					<posx>300</posx>
-			        <animation type="WindowOpen">
-			            <effect type="fade" start="0" end="100" time="400" delay="1800"/>
-			        </animation>
-			        <animation type="WindowClose">
-			            <effect type="fade" start="100" end="0" time="600" />
-			        </animation>
+					<top>5</top>
+					<left>660</left>
+
+		            <include content="Common_Separator_Vertical">
+		                <param name="left" value="-2"/>   
+		                <param name="height" value="660"/>
+		            </include>
 
 					<control type="list" id="50">
-						<width>1320</width>
-						<height>740</height>
-						<onleft>SetProperty(MediaMenu,True,home)</onleft>
-						<onleft>SetFocus(9100)</onleft>
+						<width>650</width>
+						<height>735</height>
+						<include>ShowOptions_Left</include>
 						<onright>60</onright>
 						<viewtype label="535">list</viewtype>
 						<pagecontrol>60</pagecontrol>
 						<scrolltime tween="quadratic" easing="out">200</scrolltime>
-						<itemlayout height="120" width="1320">
-
-							<control type="image">
-								<posy>10</posy>
-								<posx>10</posx>
-								<width>100</width>
-								<height>100</height>
-								<aspectratio>keep</aspectratio>
-								<bordertexture colordiffuse="BaseMediumHigh">colors/color_white.png</bordertexture>
-								<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
-								<visible>SubString(ListItem.Icon,Default,left)</visible>
-							</control>
-
-							<control type="image">
-								<posy>10</posy>
-								<posx>10</posx>
-								<width>100</width>
-								<height>100</height>
-								<aspectratio>keep</aspectratio>
-								<texture background="true">$INFO[ListItem.Icon]</texture>
-								<visible>!SubString(ListItem.Icon,Default,left)</visible>
-							</control>
+						<itemlayout height="60" width="650">
 
 							<control type="label">
-								<posy>10</posy>
-								<posx>130</posx>
-								<width>1180</width>
-								<height>50</height>
+								<left>20</left>
+								<width>400</width>
+								<height>60</height>
 								<font>font24B</font>
-								<textcolor>BaseMediumHigh</textcolor>
 								<aligny>center</aligny>
+								<textcolor>BaseMediumHigh</textcolor>
 								<label>$INFO[ListItem.Label]</label>
 							</control>
 
 							<control type="label">
-								<posy>60</posy>
-								<posx>130</posx>
-								<width>1565</width>
-								<height>50</height>
-								<font>font18R</font>
-								<textcolor>BaseMid</textcolor>
-								<aligny>center</aligny>
-								<label>$INFO[ListItem.Property(Event.Description)]</label>
-							</control>
-
-							<control type="label">
-								<posy>10</posy>
-								<posx>130</posx>								
-								<width>1170</width>
-								<height>100</height>
+								<left>420</left>								
+								<width>210</width>
+								<height>60</height>
 								<font>font18R</font>
 								<align>right</align>
 								<textcolor>BaseMid</textcolor>
@@ -116,65 +79,31 @@
 
 						</itemlayout>
 
-						<focusedlayout height="120" width="1320">
+						<focusedlayout height="60" width="650">
 
 	                        <control type="image">
 	                            <width>1320</width>
-	                            <height>120</height>
+	                            <height>60</height>
 	                            <include>Common_Color_Accent</include>
 	                            <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(50)">Conditional</animation>
 	                        </control>
 
-							<control type="image">
-								<posy>10</posy>
-								<posx>10</posx>
-								<width>100</width>
-								<height>100</height>
-								<aspectratio>keep</aspectratio>
-								<bordertexture colordiffuse="BaseMediumHigh">colors/color_white.png</bordertexture>
-								<texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
-								<visible>SubString(ListItem.Icon,Default,left)</visible>
-							</control>
-
-							<control type="image">
-								<posy>10</posy>
-								<posx>10</posx>
-								<width>100</width>
-								<height>100</height>
-								<aspectratio>keep</aspectratio>
-								<texture background="true">$INFO[ListItem.Icon]</texture>
-								<visible>!SubString(ListItem.Icon,Default,left)</visible>
-							</control>
-
 							<control type="label">
-								<posy>10</posy>
-								<posx>130</posx>
-								<width>1180</width>
-								<height>50</height>
+								<left>20</left>
+								<width>400</width>
+								<height>60</height>
 								<font>font24B</font>
 								<aligny>center</aligny>
 								<label>$INFO[ListItem.Label]</label>
 							</control>
 
 							<control type="label">
-								<posy>60</posy>
-								<posx>130</posx>
-								<width>1565</width>
-								<height>50</height>
-								<font>font18R</font>
-								<textcolor>BaseLow</textcolor>
-								<aligny>center</aligny>
-								<label>$INFO[ListItem.Property(Event.Description)]</label>
-							</control>
-
-							<control type="label">
-								<posy>10</posy>
-								<posx>130</posx>								
-								<width>1170</width>
-								<height>100</height>
+								<left>420</left>								
+								<width>210</width>
+								<height>60</height>
 								<font>font18R</font>
 								<align>right</align>
-								<textcolor>BaseLow</textcolor>
+								<textcolor>BaseLowest</textcolor>
 								<aligny>center</aligny>
 								<label>$INFO[ListItem.Label2]</label>
 							</control>
@@ -184,13 +113,59 @@
 					</control>
 
 					<control type="scrollbar" id="60">
-						<posx>1310</posx>
+						<posx>650</posx>
 						<width>10</width>
-						<height>740</height>
+						<height>660</height>
 						<onleft>50</onleft>
 						<onright>9002</onright>
 					</control>
 
+				</control>
+
+				<control type="image">
+					<top>25</top>
+					<left>20</left>
+					<width>620</width>
+					<height>620</height>
+					<aspectratio>keep</aspectratio>
+					<bordertexture colordiffuse="BaseMediumHigh">colors/color_white.png</bordertexture>
+					<texture background="true">$INFO[Container(50).ListItem.Icon,views/list/]</texture>
+				</control>
+
+	            <include content="Common_Separator_Horizontal">
+	                <param name="top" value="663"/> 
+	                <param name="width" value="1320"/>
+	            </include>
+
+				<control type="label">
+					<top>675</top>
+					<left>20</left>
+					<width>950</width>
+					<height>40</height>
+					<font>font26R</font>
+					<textcolor>BaseMid</textcolor>
+					<aligny>center</aligny>
+					<label>$INFO[Container(50).ListItem.Property(Event.Description)]</label>
+				</control>
+
+				<control type="label">
+					<top>675</top>
+                    <left>970</left>
+                    <width>280</width>
+                    <height>40</height>
+					<align>right</align>
+                    <font>font26R</font>
+                    <label>$INFO[Container.CurrentItem,, / ]$INFO[Container.NumItems]</label>
+					<textcolor>BaseMediumHigh</textcolor>
+                </control>
+
+				<control type="image">
+					<left>1260</left>
+					<top>675</top>
+					<width>40</width>
+					<height>40</height>
+					<texture colordiffuse="BaseMediumHigh">icons\files.png</texture>
+					<aspectratio>keep</aspectratio>
 				</control>
 
 			</control>

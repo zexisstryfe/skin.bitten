@@ -4,12 +4,14 @@
 	<defaultcontrol always="true">5001</defaultcontrol>
 
 	<controls>
-
         <include>DialogOverlay</include>
-		<include>Common_LeftMenu_Backing</include>
-		<include>Common_LeftMenu_Heading</include>				
-		<include>Common_LeftBar_LeftMenu</include>
 
+		<include content="Common_LeftMenu">
+			<param name="width" value="420"/>	
+			<param name="time" value="400"/>
+			<param name="header" value="$LOCALIZE[137]"/>
+		</include>	
+		
 		<control type="grouplist" id="5000">
 			<animation type="WindowOpen">
 				<effect type="fade" start="0" end="100" time="500" delay="500" />
@@ -17,81 +19,73 @@
 			<animation type="WindowClose">
 				<effect type="fade" start="100" end="0" time="200" />
 			</animation>
-			<posy>100</posy>
+			<top>100</top>
 			<width>420</width>
 			<height>1080</height>
-			<itemgap>20</itemgap>
-			<onup>1</onup>
-			<ondown>1</ondown>
+			<itemgap>0</itemgap>
 			<onright>Dialog.Close(1120)</onright>
 			<orientation>vertical</orientation>
 
 			<control type="group">
-				<height>75</height>
-				
-				<control type="image">
-					<include>Common_Settings_Button_Backing</include>
-					<visible>Control.HasFocus(5001)</visible>
-				</control>
+				<height>80</height>
+				<visible>System.hasAddon(script.globalsearch)</visible>
 
-				<control type="button" id="5001">
-					<include>Common_Settings_Button</include>
-					<texturefocus>buttonmenu/searchdataFO.png</texturefocus>
-					<texturenofocus>buttonmenu/searchdataNF.png</texturenofocus>
-					<label>$LOCALIZE[31376]</label>
-					<onclick>Dialog.Close(all)</onclick>
-					<onclick condition="System.hasAddon(script.globalsearch)">RunScript(script.globalsearch)</onclick>
-					<onclick condition="!System.hasAddon(script.globalsearch)">InstallAddon(script.globalsearch)</onclick>
-					<ondown>5002</ondown>
-					<onup>5003</onup>
-					<onright>Dialog.Close(1120)</onright>
-				</control>
+				<include content="Common_Settings_Button_Backing">
+					<param name="visible" value="5001"/>			
+				</include>	
+
+				<include content="Common_Settings_Button">
+					<param name="button_id" value="5001"/>		
+					<param name="texture" value="../extras/tiles/searchdata.png"/>
+					<param name="label" value="$LOCALIZE[31376]"/>	
+					<param name="onclick" value="Dialog.Close(all)"/>
+					<param name="onclick2" value="RunScript(script.globalsearch)"/>
+					<param name="ondown" value="5002"/>
+					<param name="onup" value="5003"/>
+					<param name="onright" value="Dialog.Close(1120)"/>
+				</include>	
 			
 			</control>
 			
 			<control type="group">
-				<height>75</height>
-				
-				<control type="image">
-					<include>Common_Settings_Button_Backing</include>
-					<visible>Control.HasFocus(5002)</visible>
-				</control>
+				<height>80</height>
+				<visible>System.hasAddon(plugin.video.youtube)</visible>
 
-				<control type="button" id="5002">
-					<include>Common_Settings_Button</include>
-					<texturefocus>buttonmenu/youtubeFO.png</texturefocus>
-					<texturenofocus>buttonmenu/youtubeNF.png</texturenofocus>
-					<label>$LOCALIZE[31377]</label>
-					<onclick>Dialog.Close(all)</onclick>
-					<onclick condition="System.hasAddon(plugin.video.youtube)">ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/input/,return)</onclick>
-					<onclick condition="!System.hasAddon(plugin.video.youtube)">InstallAddon(plugin.video.youtube)</onclick>
-					<ondown>5003</ondown>
-					<onup>5001</onup>	
-					<onright>Dialog.Close(1120)</onright>					
-				</control>
+				<include content="Common_Settings_Button_Backing">
+					<param name="visible" value="5002"/>			
+				</include>	
+
+				<include content="Common_Settings_Button">
+					<param name="button_id" value="5002"/>		
+					<param name="texture" value="../extras/tiles/youtube.png"/>
+					<param name="label" value="$LOCALIZE[31377]"/>	
+					<param name="onclick" value="Dialog.Close(all)"/>
+					<param name="onclick2" value="ActivateWindow(videos,plugin://plugin.video.youtube/kodion/search/input/,return)"/>
+					<param name="ondown" value="5003"/>
+					<param name="onup" value="5001"/>
+					<param name="onright" value="Dialog.Close(1120)"/>
+				</include>	
 			
 			</control>
 			
 			<control type="group">
-				<height>75</height>
-				
-				<control type="image">
-					<include>Common_Settings_Button_Backing</include>
-					<visible>Control.HasFocus(5003)</visible>
-				</control>
+				<height>80</height>
+				<visible>System.hasAddon(script.extendedinfo)</visible>
 
-				<control type="button" id="5003">
-					<include>Common_Settings_Button</include>
-					<texturefocus>buttonmenu/searchworldFO.png</texturefocus>
-					<texturenofocus>buttonmenu/searchworldNF.png</texturenofocus>
-					<label>$LOCALIZE[31378]</label>
-					<onclick>Dialog.Close(all)</onclick>
-					<onclick condition="System.hasAddon(script.extendedinfo)">RunScript(script.extendedinfo,info=moviedbbrowser,search=True)</onclick>
-					<onclick condition="!System.hasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
-					<ondown>5001</ondown>
-					<onup>5002</onup>	
-					<onright>Dialog.Close(1120)</onright>					
-				</control>
+				<include content="Common_Settings_Button_Backing">
+					<param name="visible" value="5003"/>			
+				</include>	
+				
+				<include content="Common_Settings_Button">
+					<param name="button_id" value="5003"/>		
+					<param name="texture" value="../extras/tiles/searchworld.png"/>
+					<param name="label" value="$LOCALIZE[31378]"/>	
+					<param name="onclick" value="Dialog.Close(all)"/>
+					<param name="onclick2" value="RunScript(script.extendedinfo,info=moviedbbrowser,search=True)"/>
+					<param name="ondown" value="5001"/>
+					<param name="onup" value="5002"/>
+					<param name="onright" value="Dialog.Close(1120)"/>
+				</include>
 			
 			</control>
 

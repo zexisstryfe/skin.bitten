@@ -4,120 +4,95 @@
     <defaultcontrol always="true">10</defaultcontrol>
 	
     <controls>
-        <include>BG_Fanart_1080</include>
+        <include>Background_Fullscreen</include>
 		<include>FanartOverlay</include>
 
 		<control type="group">	
-			<posy>200</posy>
+			<top>150</top>
+			<left>190</left>
 
-			<include>Settings_GrayBand</include>
+            <include content="Common_Window_Backing">
+                <param name="width" value="1620"/>
+                <param name="height" value="780"/>  
+                <param name="logo_visible" value="false"/>   
+                <param name="header_height" value="75"/>   
+                <param name="header" value="$LOCALIZE[13200]"/>      
+            </include> 
+
+            <include content="Common_Separator_Vertical">
+                <param name="height" value="705"/>  
+                <param name="left" value="298"/>     
+                <param name="top" value="75"/>        
+            </include> 
+
+            <include content="Common_Separator_Vertical">
+                <param name="height" value="705"/>  
+                <param name="left" value="1320"/>    
+                <param name="top" value="75"/>         
+            </include> 
+
+			<control type="button" id="10">
+				<description>Default Category Button</description>
+				<top>100</top>
+				<width>298</width>
+				<include>Common_Settings_Label</include>
+				<label>$LOCALIZE[33063]</label>
+				<onleft>999</onleft>
+				<onright>999</onright>
+			</control>
 
 			<control type="group">	
-				<posy>10</posy>
-			
-				<include>Settings_Backing</include>
-				
-				<control type="group">	
-					<posx>80</posx>
-					<include>Common_Animation_CenterMenu_Fade1</include>
-					
-					<control type="image">
-						<posx>20</posx>
-						<posy>80</posy>
-						<width>340</width>
-						<height>2</height>
-						<include>Common_Color_BaseMediumHigh</include>
-					</control>
-				
-					<control type="label">
-						<posx>20</posx>
-						<width>340</width>
-						<height>75</height>
-						<font>font45R</font>
-						<textcolor>$VAR[Accent_100]</textcolor>
-						<label>$LOCALIZE[13200]</label>
-					</control>
-					
-					<control type="button" id="10">
-						<description>Default Category Button</description>
-						<width>380</width>
-						<posy>100</posy>
-						<include>Common_Settings_Label</include>
-						<label>33063</label>
-						<onleft>4</onleft>
-						<onright>4</onright>
-					</control>
-				
-				</control>				
+				<top>100</top>
+				<left>300</left>
 
-				<control type="group">	
-					<posx>460</posx>
-					<include>Common_Animation_CenterMenu_Fade2</include>				
-					
-					<control type="image">
-						<posx>20</posx>
-						<posy>80</posy>
-						<width>1020</width>
-						<height>2</height>
-						<include>Common_Color_BaseMediumHigh</include>
-					</control>
-					
+				<control type="grouplist" id="999">
+					<description>Control Area</description>
+					<width>1010</width>
+					<height>655</height>
+					<onleft>10</onleft>
+					<onright>66</onright>
+					<pagecontrol>66</pagecontrol>
+				
 					<control type="radiobutton" id="4">
 						<description>Enable Login Screen</description>
-						<posy>100</posy>
-						<width>1060</width>
+						<width>1010</width>
 						<label>$LOCALIZE[20096]</label>
 						<include>Common_Settings_Label</include>
-						<radioposx>960</radioposx>
-						<onright>10</onright>
-						<onleft>10</onleft>
-						<onup>2</onup>
-						<ondown>5</ondown>
 					</control>
-					
+
 					<control type="radiobutton" id="5">
 						<description>Auto Login</description>
-						<posy>160</posy>
-						<width>1060</width>
+						<width>1010</width>
 						<label>$LOCALIZE[33084]$INFO[system.profileautologin,:  ]</label>
 						<include>Common_Settings_Label</include>
-						<radioposx>960</radioposx>
-						<onright>10</onright>
-						<onleft>10</onleft>
-						<onup>4</onup>
-						<ondown>2</ondown>
 					</control>
 
-					<control type="label">
-						<description>users label</description>
-						<posx>40</posx>
-						<posy>220</posy>
-						<width>600</width>
-						<textcolor>$VAR[Accent_100]</textcolor>
-						<label>$LOCALIZE[31134]</label>						
-						<align>left</align>
-						<font>font30</font>
-					</control>
+		            <control type="label" id="6">
+		                <description>Default Label</description>
+		                <textcolor>$VAR[Accent_100]</textcolor>
+		                <label>$LOCALIZE[31134]</label>
+		                <align>center</align>
+		                <font>font30R</font>
+		            </control>
 
 					<control type="list" id="2">
-						<posy>280</posy>
-						<width>1060</width>
-						<height>466</height>
+						<width>1010</width>
+						<height>400</height>
 						<onleft>10</onleft>
-						<onright>10</onright>
+						<onright>66</onright>
 						<onup>5</onup>
 						<ondown>4</ondown>
 						<itemlayout height="60">
 						
 							<control type="label">
-								<posx>20</posx>
+								<left>20</left>
 								<width>500</width>
 								<info>ListItem.Label</info>
 								<include>Common_Settings_Label</include>
 							</control>
 							
 							<control type="label">
-								<posx>500</posx>
+								<left>450</left>
 								<width>525</width>
 								<align>right</align>
 								<info>ListItem.Label2</info>
@@ -137,20 +112,19 @@
 							</control>
 							
 							<control type="label">
-								<posx>20</posx>
+								<left>20</left>
 								<width>500</width>
 								<info>ListItem.Label</info>
-								<align>left</align>
-								<font>font30</font>
+								<font>font30R</font>
 								<textcolor>BaseWhite</textcolor>
 							</control>
 							
 							<control type="label">
-								<posx>500</posx>
+								<left>450</left>
 								<width>525</width>
 								<align>right</align>
 								<info>ListItem.Label2</info>
-								<textcolor>BaseWhite</textcolor>
+								<textcolor>BaseLowest</textcolor>
 								<font>font30</font>
 							</control>
 							
@@ -160,42 +134,34 @@
 
 				</control>
 
-				<control type="group">	
-					<posx>1520</posx>
-					<include>Common_Animation_CenterMenu_Fade3</include>
-					
-					<control type="image">
-						<posx>20</posx>
-						<posy>80</posy>
-						<width>360</width>
-						<height>2</height>					
-						<include>Common_Color_BaseWhite</include>
-					</control>
-				
-					<control type="label">
-						<posx>20</posx>
-						<width>360</width>
-						<height>75</height>
-						<font>font45R</font>
-						<label>21821</label>
-						<textcolor>BaseLow</textcolor>
-					</control>
-					
-					<control type="textbox" id="6">
-						<description>description area</description>
-						<posx>40</posx>
-						<posy>100</posy>
-						<width>320</width>
-						<height>660</height>
-						<font>font30</font>
-						<textcolor>BaseWhite</textcolor>
-						<label>$VAR[Settings_Profile_Description]</label>
-						<autoscroll time="1000" delay="2000" repeat="3000">true</autoscroll>
-					</control>
-				
-				</control>				
-				
-			</control>	
+				<control type="scrollbar" id="66">
+					<top>-25</top>
+					<left>1010</left>
+					<height>705</height>
+					<width>10</width>
+					<onleft>5</onleft>
+					<onright>20</onright>
+				</control>
+
+			</control>
+
+			<control type="group">	
+				<top>100</top>
+				<left>1322</left>
+				<width>298</width>
+
+				<control type="textbox" id="6">
+					<description>description area</description>
+					<left>20</left>
+					<width>258</width>
+					<height>600</height>
+					<font>font30</font>
+					<textcolor>BaseMid</textcolor>
+					<label>$VAR[Settings_Profile_Description]</label>
+					<autoscroll time="1000" delay="2000" repeat="3000">true</autoscroll>
+				</control>
+
+			</control>
 		
 		</control>
 		

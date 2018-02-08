@@ -7,8 +7,8 @@
         <control type="group">
             <visible>Control.IsVisible(50)</visible>
 			
-            <include>BG_Fanart_1080</include>
-			<include>FanartOverlay</include>
+	        <include>Background_Global</include>
+	        <include>Background_Picture</include>
 			
             <!--Top Area-->
             <control type="group">
@@ -55,7 +55,7 @@
 								<aspectratio align="right" aligny="top">stretch</aspectratio>
 								<texture>DefaultFolderBack.png</texture>
 								<bordertexture colordiffuse="BaseMediumHigh">colors/color_white.png</bordertexture>
-								<visible>stringcompare(ListItem.Label,..)</visible>
+								<visible>String.IsEqual(ListItem.Label,..)</visible>
 							</control>
 							
 						</control>
@@ -106,7 +106,7 @@
 									<width>65</width>
 									<height>65</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
-									<texture diffuse="masks/circle.png" fallback="$VAR[Common_Fallback]">$VAR[Fanart_List_Icon]</texture>
+									<texture diffuse="masks/circle.png" fallback="$VAR[Common_Fallback]">$VAR[Common_Artwork]</texture>
 								</control>
 						
 								<control type="label">
@@ -115,7 +115,7 @@
 									<height>85</height>
 									<aligny>center</aligny>
 									<font>font26</font>
-									<label>$VAR[Fanart_List_Title]</label>
+									<label>$VAR[Common_ListSection_Title]</label>
 									<wrapmultiline>true</wrapmultiline>
 									<textcolor>BaseMediumHigh</textcolor>
 								</control>
@@ -156,7 +156,7 @@
 									<width>65</width>
 									<height>65</height>
 									<aspectratio scalediffuse="false">scale</aspectratio>
-									<texture diffuse="masks/circle.png" fallback="$VAR[Common_Fallback]">$VAR[Fanart_List_Icon]</texture>
+									<texture diffuse="masks/circle.png" fallback="$VAR[Common_Fallback]">$VAR[Common_Artwork]</texture>
 								</control>
 								
 								<control type="label">
@@ -165,7 +165,7 @@
 									<height>85</height>
 									<aligny>center</aligny>
 									<font>font26</font>
-									<label>$VAR[Fanart_List_Title]</label>
+									<label>$VAR[Common_ListSection_Title]</label>
 									<wrapmultiline>true</wrapmultiline>
 								</control>
 
@@ -188,7 +188,7 @@
                         <width>500</width>
                         <height>600</height>
 						<include>Common_Animation_CenterMenu_Stage4</include>	
-						<visible>![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)] | stringcompare(ListItem.Label,..)</visible>
+						<visible>![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)] | String.IsEqual(ListItem.Label,..)</visible>
 
                         <control type="image">
                             <width>500</width>
@@ -200,7 +200,7 @@
 							<posx>20</posx>
 							<width>460</width>
 							<include>Common_Fanart_Title</include>
-							<label>$VAR[Fanart_Info_Title]</label>
+							<label>$VAR[Common_InfoSection_Title]</label>
 						</control>
 
 						<control type="image">

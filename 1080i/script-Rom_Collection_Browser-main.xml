@@ -6,10 +6,7 @@
     <coordinates>
         <system>1</system>
     </coordinates>
-	
-    <!--Animation-->
-    <include condition="!Window.Previous(fullscreenvideo) + !Window.Previous(slideshow) + Skin.HasSetting(MetroAnimations)">Common_Animation_Splash_Flip</include>
-    
+
     <controls>
 	
 		<!--Background Area-->
@@ -35,9 +32,6 @@
         <!--Sort Overlays-->
         <include>Sort_Panel</include>
         <include>Sort_Panel_Alt</include>
-
-        <!--Splash Screen-->
-        <include condition="!Window.Previous(fullscreenvideo) + !Window.Previous(slideshow) + Skin.HasSetting(MetroAnimations)">Common_Splash</include>
 
         <!-- filter controls -->
 		<include>RCB_TopBlade</include>

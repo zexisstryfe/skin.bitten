@@ -1,58 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <window>
-	
+    <depth>DepthDialog+</depth>	
+
     <controls>
         <include>DialogOverlay</include>
 
 		<control type="group">
-			<posx>0</posx>
-			<posy>315</posy>
-			
-			<include>InfoDialog_Base</include>
+			<left>332</left>
+			<top>315</top>		
 
-			<control type="group">	
-				<posy>75</posy>
-				<width>1920</width>
-				<height>375</height>
-
-				<include>Common_Logo_Backing</include>		
-
-			</control>			
+            <include content="Common_Window_Backing">
+                <param name="width" value="1256"/>
+                <param name="height" value="410"/>  
+                <param name="logo_height" value="275"/> 
+                <param name="header" value=""/> 
+                <param name="header_id" value="1"/>
+                <param name="header_width" value="880"/> 
+                <param name="header_height" value="75"/>                
+            </include>  
+        
+            <control type="group">          
+                <left>200</left>
+                <top>100</top>
+                
+                <control type="textbox" id="9">
+                    
+                    <description>Line 1</description>
+                    <width>856</width>
+                    <height>240</height>
+                    <font>font36</font>
+                    <align>center</align>
+                    <textcolor>BaseMediumHigh</textcolor>
+                    
+                </control>
+                
+            </control>
 
             <control type="progress" id="20">
                 <description>Progressbar</description>
-                <posx>450</posx>
-                <posy>310</posy>
-                <width>1020</width>
+                <left>40</left>
+                <top>310</top>
+                <width>1176</width>
                 <height>10</height>
                 <info>System.Progressbar</info>
             </control>
+
+            <control type="image">
+                <top>350</top>          
+                <width>1256</width>
+                <height>60</height>
+                <texture colordiffuse="BaseMediumMid">colors/color_white.png</texture>          
+            </control>
+
+            <control type="image">
+                <top>350</top>          
+                <width>1256</width>
+                <height>60</height>
+                <texture colordiffuse="$VAR[Accent_100]">colors/color_white.png</texture>   
+                <visible>Control.HasFocus(10) | Control.HasFocus(11) | Control.HasFocus(12)</visible>       
+            </control>
 			
 			<control type="grouplist">			
-				<posx>630</posx>
-				<posy>360</posy>
-				<width>660</width>
-				<itemgap>20</itemgap>
+				<top>350</top>
+				<width>1256</width>
+				<itemgap>0</itemgap>
 				<orientation>horizontal</orientation>
 				<align>center</align>
-			
-				<control type="button" id="11">
-					<description>Yes</description>
-					<label>107</label>
-					<include>InfoDialog_Button</include>
-				</control>
-				
-				<control type="button" id="10">
-					<description>No</description>
-					<label>106</label>
-					<include>InfoDialog_Button</include>
-				</control>
 
-				<control type="button" id="12">
-					<description>OK</description>
-					<include>InfoDialog_Button</include>
-				</control>
+                <include content="InfoDialog_Button">
+                    <param name="button_id" value="11"/>  
+                    <param name="width" value="628"/>
+                    <param name="label" value="107"/>          
+                </include>
+
+                <include content="InfoDialog_Button">
+                    <param name="button_id" value="10"/>  
+                    <param name="width" value="628"/>
+                    <param name="label" value="106"/>          
+                </include>
+
+                <include content="InfoDialog_Button">
+                    <param name="button_id" value="12"/>  
+                    <param name="width" value="628"/>        
+                </include>
 				
 			</control>	
 

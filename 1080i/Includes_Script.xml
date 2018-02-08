@@ -3,22 +3,20 @@
 <includes>
 
     <include name="RCB_Context_Button">
-        <width>525</width>
-        <align>center</align>
-        <height>60</height>
+        <width>425</width>
 		<textcolor>BaseMediumHigh</textcolor>
-		<focusedcolor>TrueWhite</focusedcolor>		
+		<focusedcolor>TrueWhite</focusedcolor>	
     </include>
 	
 	<include name="RCB_Import_Label1">
-		<posx>10</posx>
+		<left>10</left>
 		<width>300</width>
 		<height>60</height>
 		<font>font30R</font>	
     </include>
 
 	<include name="RCB_Import_Label2">
-		<posx>360</posx>
+		<left>360</left>
 		<width>500</width>
 		<height>60</height>
 		<align>right</align>
@@ -26,7 +24,7 @@
     </include>	
 
 	<include name="RCB_Import_Label3">
-		<posx>360</posx>
+		<left>360</left>
 		<width>380</width>
 		<height>60</height>
 		<align>right</align>
@@ -49,14 +47,14 @@
 	</include>	
 
 	<include name="RCB_EditRC_Label1">
-		<posx>10</posx>
+		<left>15</left>
 		<width>300</width>
 		<height>60</height>
 		<font>font30R</font>	
     </include>
 
 	<include name="RCB_EditRC_Label2">
-		<posx>360</posx>
+		<left>400</left>
 		<width>600</width>
 		<height>60</height>
 		<align>right</align>
@@ -64,16 +62,16 @@
     </include>	
 
     <include name="RCB_EditRC_RightButton">
-        <posx>360</posx>
+        <left>400</left>
         <width>710</width>
         <height>60</height>
         <texturefocus>-</texturefocus>
         <align>right</align>
-		<textcolor>BaseMediumHigh</textcolor>
+		<textcolor>BaseMid</textcolor>
     </include>	
 
     <include name="RCB_EditRC_RadioButton">
-        <width>1060</width>
+        <width>1100</width>
         <height>60</height>
         <texturefocus colordiffuse="$VAR[Accent_100]">colors/color_white.png</texturefocus>
         <align>left</align>
@@ -82,10 +80,10 @@
     </include>
 
 	<include name="RCB_EditRC_List">
-		<width>1060</width>
+		<width>1100</width>
 		<height>60</height>	
-		<scrolltime>0</scrolltime>
-		<itemlayout height="60" width="1060"></itemlayout>
+		<scrolltime>200</scrolltime>
+		<itemlayout height="60" width="1100"></itemlayout>
 	</include>
 	
     <include name="RCB_ArrowUp_Button">
@@ -103,7 +101,7 @@
     </include>
 
     <include name="RCB_MissingInfo_GrayButton">
-        <posx>22</posx>
+        <left>22</left>
         <textcolor>BaseMediumHigh</textcolor>
         <focusedcolor>TrueWhite</focusedcolor>
         <disabledcolor>80FFFFFF</disabledcolor>
@@ -124,23 +122,23 @@
             </control>
 
             <control type="image">
-                <posx>350</posx>
-                <posy>10</posy>
+                <left>350</left>
+                <top>10</top>
                 <width>2</width>
                 <height>240</height>
                 <include>Common_Color_BaseMediumHigh</include>
             </control>
 			
 			<control type="image">
-				<posx>352</posx>
-				<posy>50</posy>
+				<left>352</left>
+				<top>50</top>
 				<width>1900</width>
 				<height>200</height>
 				<include>Common_Color_BaseLow</include>
 			</control>
 			
             <control type="radiobutton" id="1000">
-                <posy>70</posy>
+                <top>70</top>
                 <width>350</width>
                 <height>60</height>
                 <label>$ADDON[script.games.rom.collection.browser 50004]:</label>
@@ -155,7 +153,7 @@
             </control>
 			
             <control type="button" id="1100">
-                <posy>130</posy>
+                <top>130</top>
                 <width>350</width>
                 <height>60</height>
                 <texturefocus colordiffuse="$VAR[Accent_100]">colors/color_white.png</texturefocus>
@@ -171,7 +169,7 @@
 				</control>
 
             <control type="group">
-                <posx>352</posx>
+                <left>352</left>
 				
                 <!-- Console filter -->
 				<control type="group">
@@ -186,7 +184,7 @@
 					</control>
 					
 					<control type="wraplist" id="500">
-						<posy>50</posy>
+						<top>50</top>
 						<width>311</width>
 						<height>200</height>
 						<onleft>1000</onleft>
@@ -195,7 +193,7 @@
 						<itemlayout height="45">
 						
 							<control type="label">
-								<posx>10</posx>
+								<left>10</left>
 								<width>291</width>
 								<height>45</height>
 								<font>font26R</font>
@@ -215,7 +213,7 @@
 							</control>
 							
 							<control type="label">
-								<posx>10</posx>
+								<left>10</left>
 								<width>291</width>
 								<height>45</height>
 								<font>font26R</font>
@@ -230,12 +228,12 @@
 				
                 <!-- Genre filter -->
 				<control type="image">
-					<posx>311</posx>
+					<left>311</left>
 					<include>RCB_Divider</include>
 				</control>				
 
 				<control type="group">
-					<posx>314</posx>
+					<left>314</left>
 				
 					<control type="label">
 						<width>311</width>
@@ -247,7 +245,7 @@
 					</control>
 					
 					<control type="wraplist" id="600">
-						<posy>50</posy>
+						<top>50</top>
 						<width>311</width>
 						<height>200</height>
 						<onleft>500</onleft>
@@ -256,7 +254,7 @@
 						<itemlayout height="45">
 						
 							<control type="label">
-								<posx>10</posx>
+								<left>10</left>
 								<width>291</width>
 								<height>45</height>
 								<font>font26R</font>
@@ -276,7 +274,7 @@
 							</control>
 							
 							<control type="label">
-								<posx>10</posx>
+								<left>10</left>
 								<width>291</width>
 								<height>45</height>
 								<font>font26R</font>
@@ -291,12 +289,12 @@
 				
                 <!-- Year filter -->
 				<control type="image">
-					<posx>625</posx>
+					<left>625</left>
 					<include>RCB_Divider</include>
 				</control>
 
 				<control type="group">
-					<posx>628</posx>
+					<left>628</left>
 
 					<control type="label">
 						<description>Year</description>
@@ -309,7 +307,7 @@
 					</control>
 
 					<control type="wraplist" id="700">
-						<posy>50</posy>
+						<top>50</top>
 						<width>311</width>
 						<height>200</height>
 						<onleft>600</onleft>
@@ -320,7 +318,7 @@
 						<itemlayout height="45">
 						
 							<control type="label">
-								<posx>10</posx>
+								<left>10</left>
 								<width>291</width>
 								<height>45</height>
 								<font>font26R</font>
@@ -340,7 +338,7 @@
 							</control>
 							
 							<control type="label">
-								<posx>10</posx>
+								<left>10</left>
 								<width>291</width>
 								<height>45</height>
 								<font>font26R</font>
@@ -355,12 +353,12 @@
 				
                 <!-- Publisher filter -->
 				<control type="image">
-					<posx>939</posx>
+					<left>939</left>
 					<include>RCB_Divider</include>
 				</control>
 
 				<control type="group">
-					<posx>942</posx>
+					<left>942</left>
 							
 					<control type="label">
 						<width>311</width>
@@ -372,7 +370,7 @@
 					</control>
 
 					<control type="wraplist" id="800">
-						<posy>50</posy>
+						<top>50</top>
 						<width>311</width>
 						<height>200</height>
 						<onleft>700</onleft>
@@ -381,7 +379,7 @@
 						<itemlayout height="45">
 						
 							<control type="label">
-								<posx>10</posx>
+								<left>10</left>
 								<width>291</width>
 								<height>45</height>
 								<font>font26R</font>
@@ -401,7 +399,7 @@
 							</control>
 							
 							<control type="label">
-								<posx>10</posx>
+								<left>10</left>
 								<width>291</width>
 								<height>45</height>
 								<font>font26R</font>
@@ -416,12 +414,12 @@
 				
                 <!-- Character filter -->
 				<control type="image">
-					<posx>1253</posx>
+					<left>1253</left>
 					<include>RCB_Divider</include>
 				</control>
 
 				<control type="group">
-					<posx>1256</posx>
+					<left>1256</left>
 										
 					<control type="label">
 						<width>312</width>
@@ -433,7 +431,7 @@
 					</control>
 					
 					<control type="wraplist" id="900">
-						<posy>50</posy>
+						<top>50</top>
 						<width>312</width>
 						<height>200</height>
 						<onleft>800</onleft>
@@ -442,7 +440,7 @@
 						<itemlayout height="45">
 						
 							<control type="label">
-								<posx>10</posx>
+								<left>10</left>
 								<width>291</width>
 								<height>45</height>
 								<font>font26R</font>
@@ -462,7 +460,7 @@
 							</control>
 							
 							<control type="label">
-								<posx>10</posx>
+								<left>10</left>
 								<width>291</width>
 								<height>45</height>
 								<font>font26R</font>
@@ -483,7 +481,7 @@
 
 	<include name="RCB_Divider">		
 		<width>3</width>
-		<posy>60</posy>
+		<top>60</top>
 		<height>180</height>
 		<include>Common_Color_BaseMediumHigh</include>					
 	</include>
@@ -495,9 +493,9 @@
             <include>DialogOverlay</include>
 			
             <control type="group">
-                <posx>735</posx>
-                <posy>486</posy>
-                <include>Animation_Dialog_Center</include>
+                <left>735</left>
+                <top>486</top>
+                <include>Animation_Popup</include>
 				
                 <control type="image">
                     <description>background image</description>
@@ -508,8 +506,8 @@
 				
                 <control type="image">
                     <description>Busy animation</description>
-                    <posx>30</posx>
-                    <posy>30</posy>
+                    <left>30</left>
+                    <top>30</top>
                     <width>48</width>
                     <height>48</height>
                     <texture>busy/busy.png</texture>
@@ -519,8 +517,8 @@
 				
                 <control type="label" id="4000">
                     <description>Notes</description>
-                    <posx>105</posx>
-                    <posy>30</posy>
+                    <left>105</left>
+                    <top>30</top>
                     <width>420</width>
                     <height>48</height>
 					<font>font30R</font>
@@ -542,7 +540,7 @@
 				<effect type="slide" start="0,0" end="-500,0" center="auto" time="400" delay="700" tween="cubic" easing="out" />
 			</animation>			
 			<description>White Backing</description>
-			<width>500</width>7
+			<width>500</width>
 			<height>1080</height>
 			<visible>true</visible>
 			<texture border="2" colordiffuse="TrueWhite">colors/color_white.png</texture>
@@ -553,175 +551,166 @@
 	</include>
 
     <include name="TVGuide_FixedList">
-		<onleft>50</onleft>
-		<onup>Control.Move(50,-1)</onup>
-		<onup>SetFocus(50)</onup>
-		<ondown>Control.Move(50,1)</ondown>
-		<ondown>SetFocus(50)</ondown>
-        <posx>85</posx>
-        <posy>315</posy>
-        <width>1500</width>
-        <height>825</height>
-        <viewtype label="$LOCALIZE[31368]">wrap</viewtype>
-        <orientation>horizontal</orientation>
-        <pagecontrol>63</pagecontrol>
-        <focusposition>0</focusposition>
-        <preloaditems>2</preloaditems>
-        <itemlayout width="330" height="472">
+
+		<control type="group">
+		    <width>1920</width>
+		    <height>720</height>
+		    <visible>$PARAM[visible]</visible>
+			
+		    <control type="fixedlist" id="$PARAM[control]">
+		        <onright>$PARAM[control]</onright>
+				<onleft>50</onleft>
+				<onup>Control.Move(50,-1)</onup>
+				<onup>SetFocus(50)</onup>
+				<ondown>Control.Move(50,1)</ondown>
+				<ondown>SetFocus(50)</ondown>
+		        <left>85</left>
+		        <top>315</top>
+		        <width>1500</width>
+		        <height>825</height>
+		        <orientation>horizontal</orientation>
+		        <focusposition>0</focusposition>
+		        <itemlayout width="340" height="472">
+				
+					<control type="image">
+						<width>320</width>
+						<height>472</height>
+						<include>Common_Color_BaseWhite</include>
+					</control>
+
+					<control type="image">
+						<width>320</width>
+						<height>5</height>
+						<include>Common_Color_BaseMediumHigh</include>
+					</control>
+					
+					<control type="image">
+						<description>Logo</description>
+						<top>12</top>
+						<width>320</width>
+						<height>90</height>
+						<aspectratio aligny="top">keep</aspectratio>
+						<texture background="true">$VAR[Common_Logo]</texture>
+					</control>
+					
+					<control type="textbox">
+						<left>15</left>
+						<top>112</top>
+						<width>290</width>
+						<height>90</height>
+						<label>$INFO[ListItem.Property(NextTitle)]</label>
+						<font>font24B</font>
+						<align>center</align>
+						<textcolor>BaseMediumHigh</textcolor>
+						<autoscroll>true</autoscroll>
+					</control>
+					
+					<control type="textbox">
+						<left>15</left>
+						<top>202</top>
+						<width>290</width>
+						<height>30</height>
+						<label>$INFO[ListItem.Property(ShortTime)]</label>
+						<font>font24R</font>
+						<textcolor>BaseMid</textcolor>
+						<align>center</align>
+					</control>
+					
+					<control type="image">
+						<description>Thumb</description>
+						<top>240</top>
+						<width>320</width>
+						<height>232</height>
+						<aspectratio aligny="top">scale</aspectratio>
+						<texture background="true">$INFO[ListItem.Property(Fanart)]</texture>
+					</control>
+					
+		        </itemlayout>
+				
+		        <focusedlayout width="340" height="472">
+
+					<control type="group">
+						<depth>DepthContentPopout</depth>
+						<animation type="Focus">
+							<effect type="zoom" start="100" end="105" time="200" tween="sine" easing="inout" center="auto" />
+						</animation>
+						<animation type="Unfocus">
+							<effect type="zoom" start="105" end="100" time="200" tween="sine" easing="inout" center="auto" />
+						</animation>
+
+						<control type="image">
+							<width>320</width>
+							<height>472</height>
+							<include>Common_Color_BaseLowest</include>
+						</control>
+
+						<control type="image">
+							<width>320</width>
+							<height>5</height>
+							<include>Common_Color_Accent</include>
+						</control>
+
+						<control type="image">
+							<description>Logo</description>
+							<top>12</top>
+							<width>320</width>
+							<height>90</height>
+							<aspectratio aligny="top">keep</aspectratio>
+							<texture background="true">$VAR[Common_Logo]</texture>
+						</control>
+						
+						<control type="textbox">
+							<left>15</left>
+							<top>112</top>
+							<width>290</width>
+							<height>90</height>
+							<label>$INFO[ListItem.Property(NextTitle)]</label>
+							<font>font24B</font>
+							<align>center</align>
+							<autoscroll>true</autoscroll>
+							<textcolor>$VAR[Accent_100]</textcolor>
+						</control>
+						
+						<control type="textbox">
+							<left>15</left>
+							<top>202</top>
+							<width>290</width>
+							<height>30</height>
+							<label>$INFO[ListItem.Property(ShortTime)]</label>
+							<font>font24R</font>
+							<align>center</align>
+							<textcolor>BaseMediumHigh</textcolor>
+						</control>
+						
+						<control type="image">
+							<description>Thumb</description>
+							<top>240</top>
+							<width>320</width>
+							<height>232</height>
+							<aspectratio aligny="top">scale</aspectratio>
+							<texture background="true">$INFO[ListItem.Property(Fanart)]</texture>
+						</control>
+
+		            </control>		
+
+		        </focusedlayout>
+
+		    </control>
+			
+		</control>
 		
-			<control type="image">
-				<width>320</width>
-				<height>472</height>
-				<include>Common_Color_BaseMediumHigh</include>
-			</control>
-			
-			<control type="image">
-				<description>Logo</description>
-				<posy>12</posy>
-				<width>320</width>
-				<height>90</height>
-				<aspectratio aligny="top">keep</aspectratio>
-				<texture background="true">$VAR[Common_Logo]</texture>
-			</control>
-			
-			<control type="textbox">
-				<posx>15</posx>
-				<posy>112</posy>
-				<width>290</width>
-				<height>90</height>
-				<label>$INFO[ListItem.Property(NextTitle)]</label>
-				<font>font24B</font>
-				<align>center</align>
-				<autoscroll>true</autoscroll>
-			</control>
-			
-			<control type="textbox">
-				<posx>15</posx>
-				<posy>202</posy>
-				<width>290</width>
-				<height>30</height>
-				<label>$INFO[ListItem.Property(ShortTime)]</label>
-				<font>font24R</font>
-				<align>center</align>
-			</control>
-			
-			<control type="image">
-				<description>Thumb</description>
-				<posy>240</posy>
-				<width>320</width>
-				<height>232</height>
-				<aspectratio aligny="top">scale</aspectratio>
-				<texture background="true">$INFO[ListItem.Property(Fanart)]</texture>
-			</control>
-			
-        </itemlayout>
-		
-        <focusedlayout width="330" height="472">
+    </include>
 
-            <control type="group">
-                <visible>Control.HasFocus(207)</visible>
-				
-				<control type="image">
-					<width>320</width>
-					<height>472</height>
-					<include>Common_Color_Accent</include>
-					<animation effect="fade" start="100" end="50" condition="!Control.HasFocus($PARAM[control])">Conditional</animation>
-				</control>
-				
-				<control type="image">
-					<description>Logo</description>
-					<posy>12</posy>
-					<width>320</width>
-					<height>90</height>
-					<aspectratio aligny="top">keep</aspectratio>
-					<texture background="true">$VAR[Common_Logo]</texture>
-				</control>
-				
-				<control type="textbox">
-					<posx>15</posx>
-					<posy>112</posy>
-					<width>290</width>
-					<height>90</height>
-					<label>$INFO[ListItem.Property(NextTitle)]</label>
-					<font>font24B</font>
-					<align>center</align>
-					<autoscroll>true</autoscroll>
-				</control>
-				
-				<control type="textbox">
-					<posx>15</posx>
-					<posy>202</posy>
-					<width>290</width>
-					<height>30</height>
-					<label>$INFO[ListItem.Property(ShortTime)]</label>
-					<font>font24R</font>
-					<align>center</align>
-				</control>
-				
-				<control type="image">
-					<description>Thumb</description>
-					<posy>240</posy>
-					<width>320</width>
-					<height>232</height>
-					<aspectratio aligny="top">scale</aspectratio>
-					<texture background="true">$INFO[ListItem.Property(Fanart)]</texture>
-				</control>
-
-            </control>		
-
-            <control type="group">
-                <visible>!Control.HasFocus(207)</visible>
-			
-				<control type="image">
-					<width>320</width>
-					<height>472</height>
-					<include>Common_Color_Accent</include>
-					<animation effect="fade" start="100" end="50" condition="!Control.HasFocus($PARAM[control])">Conditional</animation>
-				</control>
-				
-				<control type="image">
-					<description>Logo</description>
-					<posy>12</posy>
-					<width>320</width>
-					<height>90</height>
-					<aspectratio aligny="top">keep</aspectratio>
-					<texture background="true">$VAR[Common_Logo]</texture>
-				</control>
-				
-				<control type="textbox">
-					<posx>15</posx>
-					<posy>112</posy>
-					<width>290</width>
-					<height>90</height>
-					<label>$INFO[ListItem.Property(NextTitle)]</label>
-					<font>font24B</font>
-					<align>center</align>
-					<autoscroll>true</autoscroll>
-				</control>
-				
-				<control type="textbox">
-					<posx>15</posx>
-					<posy>202</posy>
-					<width>290</width>
-					<height>30</height>
-					<label>$INFO[ListItem.Property(ShortTime)]</label>
-					<font>font24R</font>
-					<align>center</align>
-				</control>
-				
-				<control type="image">
-					<description>Thumb</description>
-					<posy>240</posy>
-					<width>320</width>
-					<height>232</height>
-					<aspectratio aligny="top">scale</aspectratio>
-					<texture background="true">$INFO[ListItem.Property(Fanart)]</texture>
-				</control>
-			
-			</control>
-
-        </focusedlayout>
-		
+	<include name="TVGuide_ContentList">
+		<left>80</left>
+		<height>80</height>
+		<textwidth>360</textwidth>
+        <align>left</align>
+        <aligny>center</aligny>
+        <font>font50</font>
+        <focusedcolor>$VAR[Accent_100]</focusedcolor>
+        <texturefocus colordiffuse="BaseLowest">colors/color_white.png</texturefocus>
+        <textcolor>BaseMediumHigh</textcolor>
     </include>
 
 	<include name="HiddenCast">
@@ -731,6 +720,8 @@
 			<top>-100</top>
 			<width>100</width>
 			<height>100</height>
+			<onfocus>90019</onfocus>
+			<ondown>90019</ondown>
 			<itemlayout height="100" width="100" />
 			<focusedlayout height="100" width="100" />
 		</control>
@@ -740,10 +731,10 @@
     <include name="VideoInfo_DefaultCast">
 
 		<control type="group"> 
-			<posy>600</posy>
+			<top>600</top>
 			<width>1070</width>	
 			<height>360</height>
-            <visible>!StringCompare(Container(50).NumItems,0)</visible>	
+            <visible>!String.IsEqual(Container(50).NumItems,0)</visible>	
 
 			<control type="label">
 				<textcolor>$VAR[Accent_100]</textcolor>
@@ -755,7 +746,7 @@
 
 			<control type="fixedlist" id="50">
 				<description>Cast</description>
-				<posy>40</posy>
+				<top>40</top>
 				<width>1080</width>
 				<height>320</height>
 				<onup>9221</onup>
@@ -763,31 +754,46 @@
 				<orientation>horizontal</orientation>
 				<pagecontrol>79</pagecontrol>
 				<scrolltime>200</scrolltime>
-				<itemlayout height="320" width="260">
+				<itemlayout height="325" width="260">
 				
 					<control type="image">
 						<width>240</width>
 						<height>320</height>
-						<include>Common_Color_TrueWhite</include>
+						<include>Common_Color_BaseWhite</include>
 					</control>
 					
 					<control type="image">
+						<top>5</top>
 						<width>240</width>
 						<height>240</height>
+						<texture border="2" colordiffuse="BaseMediumMid">colors/color_white.png</texture>
+					</control>
+
+					<control type="image">
+						<width>240</width>
+						<height>5</height>
 						<texture border="2" colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
+					</control>
+
+					<control type="image">
+						<top>320</top>
+						<width>240</width>
+						<height>5</height>
+						<texture border="2" colordiffuse="Shadow">colors/color_white.png</texture>
 					</control>
 					
 					<control type="image">
 						<description>Actor Image</description>
+						<top>5</top>
 						<width>240</width>
 						<height>240</height>
 						<texture fallback="DefaultActor.png">$INFO[ListItem.Icon]</texture>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<aspectratio align="center" aligny="top">scale</aspectratio>
 					</control>
 					
 					<control type="label">
-						<posy>240</posy>
-						<posx>10</posx>
+						<top>250</top>
+						<left>10</left>
 						<height>40</height>
 						<width>220</width>
 						<align>center</align>
@@ -797,8 +803,8 @@
 					</control>
 					
 					<control type="label">
-						<posy>280</posy>
-						<posx>10</posx>
+						<top>280</top>
+						<left>10</left>
 						<height>40</height>
 						<width>220</width>
 						<align>center</align>
@@ -809,53 +815,74 @@
 					
 				</itemlayout>
 				
-				<focusedlayout height="320" width="260">
+				<focusedlayout height="325" width="260">
+
+					<control type="group">
+						<depth>DepthContentPopout</depth>
+						<animation type="Focus">
+							<effect type="zoom" start="100" end="105" time="200" tween="sine" easing="inout" center="auto" />
+						</animation>
+						<animation type="Unfocus">
+							<effect type="zoom" start="105" end="100" time="200" tween="sine" easing="inout" center="auto" />
+						</animation>
 				
-					<control type="image">
-						<width>240</width>
-						<height>320</height>
-						<include>Common_Color_TrueWhite</include>
-					</control>
-					
-					<control type="image">
-						<width>240</width>
-						<height>320</height>
-						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(50)">Conditional</animation>
-						<include>Common_Color_Accent</include>
-					</control>
-					
-					<control type="image">
-						<width>240</width>
-						<height>240</height>
-						<texture border="2" colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
-					</control>
-					
-					<control type="image">
-						<description>Actor Image</description>
-						<width>240</width>
-						<height>240</height>
-						<texture fallback="DefaultActor.png">$INFO[ListItem.Icon]</texture>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-					</control>
-					
-					<control type="label">
-						<posy>240</posy>
-						<posx>10</posx>
-						<height>40</height>
-						<width>220</width>
-						<align>center</align>
-						<label>$INFO[ListItem.Label]</label>
-						<font>font26B</font>
-					</control>
-					
-					<control type="label">
-						<posy>280</posy>
-						<posx>10</posx>
-						<height>40</height>
-						<width>220</width>
-						<align>center</align>
-						<label>$INFO[ListItem.Label2]</label>
-						<font>font24R</font>
+						<control type="image">
+							<width>240</width>
+							<height>320</height>
+							<include>Common_Color_BaseLowest</include>
+						</control>
+						
+						<control type="image">
+							<top>5</top>
+							<width>240</width>
+							<height>240</height>
+							<texture border="2" colordiffuse="BaseMediumMid">colors/color_white.png</texture>
+						</control>
+
+						<control type="image">
+							<width>240</width>
+							<height>5</height>
+							<texture border="2" colordiffuse="$VAR[Accent_100]">colors/color_white.png</texture>
+						</control>
+
+						<control type="image">
+							<top>320</top>
+							<width>240</width>
+							<height>5</height>
+							<texture border="2" colordiffuse="Shadow">colors/color_white.png</texture>
+						</control>
+						
+						<control type="image">
+							<description>Actor Image</description>
+							<top>5</top>
+							<width>240</width>
+							<height>240</height>
+							<texture fallback="DefaultActor.png">$INFO[ListItem.Icon]</texture>
+							<aspectratio align="center" aligny="top">scale</aspectratio>
+						</control>
+						
+						<control type="label">
+							<top>250</top>
+							<left>10</left>
+							<height>40</height>
+							<width>220</width>
+							<align>center</align>
+							<label>$INFO[ListItem.Label]</label>
+							<font>font26B</font>
+							<textcolor>$VAR[Accent_100]</textcolor>
+						</control>
+						
+						<control type="label">
+							<top>280</top>
+							<left>10</left>
+							<height>40</height>
+							<width>220</width>
+							<align>center</align>
+							<label>$INFO[ListItem.Label2]</label>
+							<font>font24R</font>
+							<textcolor>BaseMediumHigh</textcolor>
+						</control>
+
 					</control>
 					
 				</focusedlayout>
@@ -864,59 +891,73 @@
 
 		</control>
 
-    </include>
+    </include>   	
 
-    <include name="VideoInfo_ExtendedCast">
+    <include name="VideoInfo_Widget_Cast">
 
 		<control type="group"> 
-			<posy>600</posy>
+			<top>600</top>
 			<width>1070</width>	
-			<height>360</height>
+			<height>365</height>
+			<visible>$PARAM[visible]</visible>
 
 			<control type="label">
 				<textcolor>$VAR[Accent_100]</textcolor>
 				<font>font26B</font>
 				<width>200</width>
 				<height>40</height>
-				<label>$LOCALIZE[344]</label>
+				<label>$PARAM[label]</label>
 			</control>
 
-			<control type="fixedlist" id="90019">
+			<control type="fixedlist" id="$PARAM[list_id]">
 				<description>Extended Cast</description>
-				<posy>40</posy>
+				<top>40</top>
 				<width>1080</width>
-				<height>320</height>
-				<onleft>90019</onleft>
-				<onright>90019</onright>
-				<onup>9221</onup>
-				<ondown>90011</ondown>
+				<height>325</height>
+				<onup>$PARAM[onup]</onup>
+				<ondown>$PARAM[ondown]</ondown>
 				<orientation>horizontal</orientation>
 				<scrolltime>200</scrolltime>
-				<itemlayout height="320" width="260">
+				<itemlayout height="325" width="260">
 				
 					<control type="image">
 						<width>240</width>
 						<height>320</height>
-						<include>Common_Color_TrueWhite</include>
+						<include>Common_Color_BaseWhite</include>
 					</control>
 					
 					<control type="image">
+						<top>5</top>
 						<width>240</width>
 						<height>240</height>
+						<texture border="2" colordiffuse="BaseMediumMid">colors/color_white.png</texture>
+					</control>
+
+					<control type="image">
+						<top>320</top>
+						<width>240</width>
+						<height>5</height>
+						<texture colordiffuse="Shadow">colors/color_white.png</texture>
+					</control>
+
+					<control type="image">
+						<width>240</width>
+						<height>5</height>
 						<texture border="2" colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
 					</control>
 					
 					<control type="image">
 						<description>Actor Image</description>
+						<top>5</top>
 						<width>240</width>
 						<height>240</height>
 						<texture fallback="DefaultActor.png">$INFO[ListItem.Icon]</texture>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<aspectratio align="center" aligny="top">scale</aspectratio>
 					</control>
 					
 					<control type="label">
-						<posy>240</posy>
-						<posx>10</posx>
+						<top>250</top>
+						<left>10</left>
 						<height>40</height>
 						<width>220</width>
 						<align>center</align>
@@ -926,8 +967,8 @@
 					</control>
 					
 					<control type="label">
-						<posy>280</posy>
-						<posx>10</posx>
+						<top>280</top>
+						<left>10</left>
 						<height>40</height>
 						<width>220</width>
 						<align>center</align>
@@ -938,58 +979,80 @@
 					
 				</itemlayout>
 				
-				<focusedlayout height="320" width="260">
+				<focusedlayout height="325" width="260">
+
+					<control type="group">
+						<depth>DepthContentPopout</depth>
+						<animation type="Focus">
+							<effect type="zoom" start="100" end="105" time="200" tween="sine" easing="inout" center="auto" />
+						</animation>
+						<animation type="Unfocus">
+							<effect type="zoom" start="105" end="100" time="200" tween="sine" easing="inout" center="auto" />
+						</animation>
 				
-					<control type="image">
-						<width>240</width>
-						<height>320</height>
-						<include>Common_Color_TrueWhite</include>
-					</control>
-					
-					<control type="image">
-						<width>240</width>
-						<height>320</height>
-						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(90019)">Conditional</animation>
-						<include>Common_Color_Accent</include>
-					</control>
-					
-					<control type="image">
-						<width>240</width>
-						<height>240</height>
-						<texture border="2" colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
-					</control>
-					
-					<control type="image">
-						<description>Actor Image</description>
-						<width>240</width>
-						<height>240</height>
-						<texture fallback="DefaultActor.png">$INFO[ListItem.Icon]</texture>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-					</control>
-					
-					<control type="label">
-						<posy>240</posy>
-						<posx>10</posx>
-						<height>40</height>
-						<width>220</width>
-						<align>center</align>
-						<label>$INFO[ListItem.Label]</label>
-						<font>font26B</font>
-					</control>
-					
-					<control type="label">
-						<posy>280</posy>
-						<posx>10</posx>
-						<height>40</height>
-						<width>220</width>
-						<align>center</align>
-						<label>$INFO[ListItem.Label2]</label>
-						<font>font24R</font>
+						<control type="image">
+							<width>240</width>
+							<height>320</height>
+							<include>Common_Color_BaseLowest</include>
+						</control>
+						
+						<control type="image">
+							<top>5</top>
+							<width>240</width>
+							<height>240</height>
+							<texture border="2" colordiffuse="BaseMediumMid">colors/color_white.png</texture>
+						</control>
+
+						<control type="image">
+							<top>320</top>
+							<width>240</width>
+							<height>5</height>
+							<texture border="2" colordiffuse="Shadow">colors/color_white.png</texture>
+						</control>
+
+						<control type="image">
+							<width>240</width>
+							<height>5</height>
+							<texture border="2" colordiffuse="$VAR[Accent_100]">colors/color_white.png</texture>
+						</control>
+						
+						<control type="image">
+							<description>Actor Image</description>
+							<top>5</top>
+							<width>240</width>
+							<height>240</height>
+							<texture fallback="DefaultActor.png">$INFO[ListItem.Icon]</texture>
+							<aspectratio align="center" aligny="top">scale</aspectratio>
+						</control>
+						
+						<control type="label">
+							<top>250</top>
+							<left>10</left>
+							<height>40</height>
+							<width>220</width>
+							<align>center</align>
+							<label>$INFO[ListItem.Label]</label>
+							<font>font26B</font>
+							<textcolor>$VAR[Accent_100]</textcolor>
+						</control>
+						
+						<control type="label">
+							<top>280</top>
+							<left>10</left>
+							<height>40</height>
+							<width>220</width>
+							<align>center</align>
+							<label>$INFO[ListItem.Label2]</label>
+							<font>font24R</font>
+							<textcolor>BaseMediumHigh</textcolor>
+						</control>
+
 					</control>
 					
 				</focusedlayout>
 
 				<content>
+
 					<item>
 						<label>$INFO[Container(50).ListItemAbsolute(0).Label]</label>
 						<label2>$INFO[Container(50).ListItemAbsolute(0).Label2]</label2>
@@ -999,6 +1062,7 @@
 						<onclick>ActivateWindow(1111)</onclick>
 						<visible>!IsEmpty(Container(50).ListItemAbsolute(0).Label)</visible>
 					</item>
+
 					<item>
 						<label>$INFO[Container(50).ListItemAbsolute(1).Label]</label>
 						<label2>$INFO[Container(50).ListItemAbsolute(1).Label2]</label2>
@@ -1008,6 +1072,7 @@
 						<onclick>ActivateWindow(1111)</onclick>
 						<visible>!IsEmpty(Container(50).ListItemAbsolute(1).Label)</visible>
 					</item>
+
 					<item>
 						<label>$INFO[Container(50).ListItemAbsolute(2).Label]</label>
 						<label2>$INFO[Container(50).ListItemAbsolute(2).Label2]</label2>
@@ -1017,6 +1082,7 @@
 						<onclick>ActivateWindow(1111)</onclick>
 						<visible>!IsEmpty(Container(50).ListItemAbsolute(2).Label)</visible>
 					</item>
+
 					<item>
 						<label>$INFO[Container(50).ListItemAbsolute(3).Label]</label>
 						<label2>$INFO[Container(50).ListItemAbsolute(3).Label2]</label2>
@@ -1026,6 +1092,7 @@
 						<onclick>ActivateWindow(1111)</onclick>
 						<visible>!IsEmpty(Container(50).ListItemAbsolute(3).Label)</visible>
 					</item>
+
 					<item>
 						<label>$INFO[Container(50).ListItemAbsolute(4).Label]</label>
 						<label2>$INFO[Container(50).ListItemAbsolute(4).Label2]</label2>
@@ -1035,6 +1102,7 @@
 						<onclick>ActivateWindow(1111)</onclick>
 						<visible>!IsEmpty(Container(50).ListItemAbsolute(4).Label)</visible>
 					</item>
+
 					<item>
 						<label>$INFO[Container(50).ListItemAbsolute(5).Label]</label>
 						<label2>$INFO[Container(50).ListItemAbsolute(5).Label2]</label2>
@@ -1044,6 +1112,7 @@
 						<onclick>ActivateWindow(1111)</onclick>
 						<visible>!IsEmpty(Container(50).ListItemAbsolute(5).Label)</visible>
 					</item>
+
 					<item>
 						<label>$INFO[Container(50).ListItemAbsolute(6).Label]</label>
 						<label2>$INFO[Container(50).ListItemAbsolute(6).Label2]</label2>
@@ -1053,6 +1122,7 @@
 						<onclick>ActivateWindow(1111)</onclick>
 						<visible>!IsEmpty(Container(50).ListItemAbsolute(6).Label)</visible>
 					</item>
+
 					<item>
 						<label>$INFO[Container(50).ListItemAbsolute(7).Label]</label>
 						<label2>$INFO[Container(50).ListItemAbsolute(7).Label2]</label2>
@@ -1062,6 +1132,7 @@
 						<onclick>ActivateWindow(1111)</onclick>
 						<visible>!IsEmpty(Container(50).ListItemAbsolute(7).Label)</visible>
 					</item>
+
 					<item>
 						<label>$INFO[Container(50).ListItemAbsolute(8).Label]</label>
 						<label2>$INFO[Container(50).ListItemAbsolute(8).Label2]</label2>
@@ -1071,6 +1142,7 @@
 						<onclick>ActivateWindow(1111)</onclick>
 						<visible>!IsEmpty(Container(50).ListItemAbsolute(8).Label)</visible>
 					</item>
+
 					<item>
 						<label>$INFO[Container(50).ListItemAbsolute(9).Label]</label>
 						<label2>$INFO[Container(50).ListItemAbsolute(9).Label2]</label2>
@@ -1080,6 +1152,7 @@
 						<onclick>ActivateWindow(1111)</onclick>
 						<visible>!IsEmpty(Container(50).ListItemAbsolute(9).Label)</visible>
 					</item>
+
 					<item>
 						<label>$INFO[Container(50).ListItemAbsolute(10).Label]</label>
 						<label2>$INFO[Container(50).ListItemAbsolute(10).Label2]</label2>
@@ -1089,6 +1162,7 @@
 						<onclick>ActivateWindow(1111)</onclick>
 						<visible>!IsEmpty(Container(50).ListItemAbsolute(10).Label)</visible>
 					</item>
+
 					<item>
 						<label>$INFO[Container(50).ListItemAbsolute(11).Label]</label>
 						<label2>$INFO[Container(50).ListItemAbsolute(11).Label2]</label2>
@@ -1098,6 +1172,7 @@
 						<onclick>ActivateWindow(1111)</onclick>
 						<visible>!IsEmpty(Container(50).ListItemAbsolute(11).Label)</visible>
 					</item>
+
 					<item>
 						<label>$INFO[Container(50).ListItemAbsolute(12).Label]</label>
 						<label2>$INFO[Container(50).ListItemAbsolute(12).Label2]</label2>
@@ -1107,6 +1182,7 @@
 						<onclick>ActivateWindow(1111)</onclick>
 						<visible>!IsEmpty(Container(50).ListItemAbsolute(12).Label)</visible>
 					</item>
+
 					<item>
 						<label>$INFO[Container(50).ListItemAbsolute(13).Label]</label>
 						<label2>$INFO[Container(50).ListItemAbsolute(13).Label2]</label2>
@@ -1116,6 +1192,7 @@
 						<onclick>ActivateWindow(1111)</onclick>
 						<visible>!IsEmpty(Container(50).ListItemAbsolute(13).Label)</visible>
 					</item>
+
 					<item>
 						<label>$INFO[Container(50).ListItemAbsolute(14).Label]</label>
 						<label2>$INFO[Container(50).ListItemAbsolute(14).Label2]</label2>
@@ -1125,49 +1202,46 @@
 						<onclick>ActivateWindow(1111)</onclick>
 						<visible>!IsEmpty(Container(50).ListItemAbsolute(14).Label)</visible>
 					</item>
+
 				</content>
 				
 			</control>
 
 		</control>
 
-	</include>   	
+	</include>   
 
-    <include name="VideoInfo_ExtendedSimilarMovies">
+    <include name="VideoInfo_Widget_Poster">
 
 		<control type="group"> 
-			<posy>600</posy>
+			<top>600</top>
 			<width>1070</width>	
-			<height>360</height>
-			<visible>!StringCompare(Window(Home).Property(SimilarMovies.Count),0)</visible>
-			<visible>Container.Content(movies)</visible>
+			<height>365</height>
+			<visible>$PARAM[visible]</visible>
 
 			<control type="label">
 				<textcolor>$VAR[Accent_100]</textcolor>
 				<font>font26B</font>
-				<width>200</width>
+				<width>1000</width>
 				<height>40</height>
-				<label>$LOCALIZE[31353]</label>
+				<label>$PARAM[label]</label>
 			</control>
 
-			<control type="fixedlist" id="90011">
-				<description>Extended Cast</description>
-				<posy>40</posy>
+			<control type="fixedlist" id="$PARAM[list_id]">
+				<top>40</top>
 				<width>1080</width>
-				<height>320</height>
-				<onleft>90019</onleft>
-				<onright>90019</onright>
-				<onup>90019</onup>
-				<ondown>90012</ondown>				
+				<height>325</height>
+				<onup>$PARAM[onup]</onup>
+				<ondown>$PARAM[ondown]</ondown>				
 				<orientation>horizontal</orientation>
 				<scrolltime>200</scrolltime>
 				
-				<itemlayout height="320" width="234">
+				<itemlayout height="325" width="234">
 				
 					<control type="image">
 						<width>214</width>
 						<height>320</height>
-						<include>Common_Color_TrueWhite</include>
+						<include>Common_Color_BaseMediumMid</include>
 					</control>
 					
 					<control type="image">
@@ -1177,549 +1251,155 @@
 						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
 						<aspectratio align="center" aligny="center">scale</aspectratio>
 					</control>
+
+					<control type="image">
+						<width>214</width>
+						<height>5</height>
+						<include>Common_Color_BaseMediumHigh</include>
+					</control>
+
+					<control type="image">
+						<top>320</top>
+						<width>214</width>
+						<height>5</height>
+						<texture colordiffuse="Shadow">colors/color_white.png</texture>
+					</control>
+
+                    <control type="image">
+                        <width>30</width>
+                        <height>30</height>
+                        <top>15</top>
+                        <left>174</left>
+                        <texture>flags/ratings/star.png</texture>
+                        <visible>!String.IsEmpty(ListItem.dbid)</visible>
+                    </control>
 					
 				</itemlayout>
 				
-				<focusedlayout height="320" width="234">
-				
-					<control type="image">
-						<width>214</width>
-						<height>320</height>
-						<include>Common_Color_TrueWhite</include>
-					</control>
+				<focusedlayout height="325" width="234">
+
+					<control type="group">
+						<depth>DepthContentPopout</depth>
+						<animation type="Focus">
+							<effect type="zoom" start="100" end="105" time="200" tween="sine" easing="inout" center="auto" />
+						</animation>
+						<animation type="Unfocus">
+							<effect type="zoom" start="105" end="100" time="200" tween="sine" easing="inout" center="auto" />
+						</animation>
 					
-					<control type="image">
-						<width>214</width>
-						<height>320</height>
-						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(90011)">Conditional</animation>
-						<include>Common_Color_Accent</include>
-					</control>
-					
-					<control type="image">
-						<description>Movie Image</description>
-						<width>214</width>
-						<height>320</height>
-						<bordersize>5</bordersize>
-						<bordertexture border="5" colordiffuse="$VAR[Accent_100]">colors/color_white.png</bordertexture>
-						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<control type="image">
+							<width>214</width>
+							<height>320</height>
+							<animation effect="fade" start="100" end="50" condition="!Control.HasFocus($PARAM[list_id])">Conditional</animation>
+							<include>Common_Color_BaseLowest</include>
+						</control>
+						
+						<control type="image">
+							<description>Movie Image</description>
+							<width>214</width>
+							<height>320</height>
+							<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
+							<aspectratio align="center" aligny="center">scale</aspectratio>
+						</control>
+
+						<control type="image">
+							<width>214</width>
+							<height>5</height>
+							<include>Common_Color_Accent</include>
+						</control>
+
+						<control type="image">
+							<top>320</top>
+							<width>214</width>
+							<height>5</height>
+							<texture colordiffuse="Shadow">colors/color_white.png</texture>
+						</control>
+
+	                    <control type="image">
+	                        <width>30</width>
+	                        <height>30</height>
+	                        <top>15</top>
+	                        <left>174</left>
+	                        <texture colordiffuse="$VAR[Accent_100]">flags/ratings/star.png</texture>
+	                        <visible>!String.IsEmpty(ListItem.dbid)</visible>
+	                    </control>
+
 					</control>
 					
 				</focusedlayout>
 
-				<content>plugin://script.extendedinfo?info=similarmovies&amp;&amp;id=$INFO[ListItem.DBID]</content>
+				<content>$PARAM[content]</content>
 					
 			</control>
 
 		</control>
 
-	</include>   	
+	</include>
 
-    <include name="VideoInfo_ExtendedDirectorMovies">
+    <include name="VideoInfo_Widget_Poster_2">
 
 		<control type="group"> 
-			<posy>600</posy>
+			<top>600</top>
 			<width>1070</width>	
-			<height>360</height>
-			<visible>!StringCompare(Window(Home).Property(DirectorMovies.Count),0)</visible>
-			<visible>Container.Content(movies)</visible>
+			<height>365</height>
+			<visible>$PARAM[visible]</visible>
 
 			<control type="label">
 				<textcolor>$VAR[Accent_100]</textcolor>
 				<font>font26B</font>
 				<width>1000</width>
 				<height>40</height>
-				<label>$LOCALIZE[31354]</label>
+				<label>$PARAM[label]</label>
 			</control>
 
-			<control type="fixedlist" id="90012">
-				<description>Director Movies</description>
-				<posy>40</posy>
-				<width>1080</width>
-				<height>320</height>
-				<onleft>90019</onleft>
-				<onright>90019</onright>
-				<onup>90011</onup>
-				<ondown>90013</ondown>				
-				<orientation>horizontal</orientation>
-				<scrolltime>200</scrolltime>
-				
-				<itemlayout height="320" width="234">
-				
-					<control type="image">
-						<width>214</width>
-						<height>320</height>
-						<include>Common_Color_TrueWhite</include>
-					</control>
-					
-					<control type="image">
-						<description>Movie Image</description>
-						<width>214</width>
-						<height>320</height>
-						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-					</control>
-					
-				</itemlayout>
-				
-				<focusedlayout height="320" width="234">
-				
-					<control type="image">
-						<width>214</width>
-						<height>320</height>
-						<include>Common_Color_TrueWhite</include>
-					</control>
-					
-					<control type="image">
-						<width>214</width>
-						<height>320</height>
-						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(90012)">Conditional</animation>
-						<include>Common_Color_Accent</include>
-					</control>
-					
-					<control type="image">
-						<description>Movie Image</description>
-						<width>214</width>
-						<height>320</height>
-						<bordersize>5</bordersize>
-						<bordertexture border="5" colordiffuse="$VAR[Accent_100]">colors/color_white.png</bordertexture>
-						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-					</control>
-					
-				</focusedlayout>
-
-				<content target="video">plugin://script.extendedinfo?info=directormovies&amp;&amp;director=$INFO[ListItem.Director]</content>
-					
-			</control>
-
-		</control>
-
-	</include>   	
-
-    <include name="VideoInfo_ExtendedWriterMovies">
-
-		<control type="group"> 
-			<posy>600</posy>
-			<width>1070</width>	
-			<height>360</height>
-			<visible>!StringCompare(Window(Home).Property(WriterMovies.Count),0)</visible>
-			<visible>Container.Content(movies)</visible>
-
-			<control type="label">
-				<textcolor>$VAR[Accent_100]</textcolor>
-				<font>font26B</font>
-				<width>1000</width>
-				<height>40</height>
-				<label>$LOCALIZE[31355]</label>
-			</control>
-
-			<control type="fixedlist" id="90013">
-				<description>Writer Movies</description>
-				<posy>40</posy>
-				<width>1080</width>
-				<height>320</height>
-				<onleft>90019</onleft>
-				<onright>90019</onright>
-				<onup>90012</onup>
-				<ondown>90014</ondown>				
-				<orientation>horizontal</orientation>
-				<scrolltime>200</scrolltime>
-				
-				<itemlayout height="320" width="234">
-				
-					<control type="image">
-						<width>214</width>
-						<height>320</height>
-						<include>Common_Color_TrueWhite</include>
-					</control>
-					
-					<control type="image">
-						<description>Movie Image</description>
-						<width>214</width>
-						<height>320</height>
-						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-					</control>
-					
-				</itemlayout>
-				
-				<focusedlayout height="320" width="234">
-				
-					<control type="image">
-						<width>214</width>
-						<height>320</height>
-						<include>Common_Color_TrueWhite</include>
-					</control>
-					
-					<control type="image">
-						<width>214</width>
-						<height>320</height>
-						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(90013)">Conditional</animation>
-						<include>Common_Color_Accent</include>
-					</control>
-					
-					<control type="image">
-						<description>Movie Image</description>
-						<width>214</width>
-						<height>320</height>
-						<bordersize>5</bordersize>
-						<bordertexture border="5" colordiffuse="$VAR[Accent_100]">colors/color_white.png</bordertexture>
-						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-					</control>
-					
-				</focusedlayout>
-
-				<content target="video">plugin://script.extendedinfo?info=writermovies&amp;&amp;writer=$INFO[ListItem.Writer]</content>
-					
-			</control>
-
-		</control>
-
-	</include>   	
-	
-    <include name="VideoInfo_ExtendedStudioMovies">
-
-		<control type="group"> 
-			<posy>600</posy>
-			<width>1070</width>	
-			<height>360</height>
-			<visible>!StringCompare(Window(Home).Property(StudioInfo.Count),0)</visible>
-			<visible>Container.Content(movies)</visible>
-
-			<control type="label">
-				<textcolor>$VAR[Accent_100]</textcolor>
-				<font>font26B</font>
-				<width>1000</width>
-				<height>40</height>
-				<label>$LOCALIZE[31356]</label>
-			</control>
-
-			<control type="fixedlist" id="90014">
-				<description>Writer Movies</description>
-				<posy>40</posy>
-				<width>1080</width>
-				<height>320</height>
-				<onleft>90019</onleft>
-				<onright>90019</onright>
-				<onup>90013</onup>
-				<ondown>90015</ondown>				
-				<orientation>horizontal</orientation>
-				<scrolltime>200</scrolltime>
-				
-				<itemlayout height="320" width="234">
-				
-					<control type="image">
-						<width>214</width>
-						<height>320</height>
-						<include>Common_Color_TrueWhite</include>
-					</control>
-					
-					<control type="image">
-						<description>Movie Image</description>
-						<width>214</width>
-						<height>320</height>
-						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-					</control>
-					
-				</itemlayout>
-				
-				<focusedlayout height="320" width="234">
-				
-					<control type="image">
-						<width>214</width>
-						<height>320</height>
-						<include>Common_Color_TrueWhite</include>
-					</control>
-					
-					<control type="image">
-						<width>214</width>
-						<height>320</height>
-						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(90014)">Conditional</animation>
-						<include>Common_Color_Accent</include>
-					</control>
-					
-					<control type="image">
-						<description>Movie Image</description>
-						<width>214</width>
-						<height>320</height>
-						<bordersize>5</bordersize>
-						<bordertexture border="5" colordiffuse="$VAR[Accent_100]">colors/color_white.png</bordertexture>
-						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-					</control>
-					
-				</focusedlayout>
-
-				<content target="video">plugin://script.extendedinfo?info=studio&amp;&amp;studio=$INFO[ListItem.Studio]</content>
-					
-			</control>
-
-		</control>
-
-	</include>   	
-
-    <include name="VideoInfo_ExtendedSimilarTVShows">
-
-		<control type="group"> 
-			<posy>600</posy>
-			<width>1070</width>	
-			<height>360</height>
-			<visible>!StringCompare(Window(Home).Property(SimilarTVShows.Count),0)</visible>
-			<visible>Container.Content(tvshows)</visible>
-
-			<control type="label">
-				<textcolor>$VAR[Accent_100]</textcolor>
-				<font>font26B</font>
-				<width>1000</width>
-				<height>40</height>
-				<label>$LOCALIZE[31357]</label>
-			</control>
-
-			<control type="fixedlist" id="90015">
-				<description>Writer Movies</description>
-				<posy>40</posy>
-				<width>1080</width>
-				<height>320</height>
-				<onleft>90019</onleft>
-				<onright>90019</onright>
-				<onup>90014</onup>
-				<ondown>90016</ondown>				
-				<orientation>horizontal</orientation>
-				<scrolltime>200</scrolltime>				
-				<itemlayout height="320" width="234">
-				
-					<control type="image">
-						<width>214</width>
-						<height>320</height>
-						<include>Common_Color_TrueWhite</include>
-					</control>
-					
-					<control type="image">
-						<description>Movie Image</description>
-						<width>214</width>
-						<height>320</height>
-						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-					</control>
-					
-				</itemlayout>
-				
-				<focusedlayout height="320" width="234">
-				
-					<control type="image">
-						<width>214</width>
-						<height>320</height>
-						<include>Common_Color_TrueWhite</include>
-					</control>
-					
-					<control type="image">
-						<width>214</width>
-						<height>320</height>
-						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(90015)">Conditional</animation>
-						<include>Common_Color_Accent</include>
-					</control>
-					
-					<control type="image">
-						<description>Movie Image</description>
-						<width>214</width>
-						<height>320</height>
-						<bordersize>5</bordersize>
-						<bordertexture border="5" colordiffuse="$VAR[Accent_100]">colors/color_white.png</bordertexture>
-						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-					</control>
-					
-				</focusedlayout>
-
-				<content target="video">plugin://script.extendedinfo?info=similartvshows&amp;&amp;dbid=$INFO[ListItem.DBID]</content>
-					
-			</control>
-
-		</control>
-
-	</include>   	
-
-    <include name="VideoInfo_DefaultSeasons">
-
-		<control type="group"> 
-			<posy>600</posy>
-			<width>1070</width>	
-			<height>360</height>
-			<visible>IntegerGreaterThan(ListItem.Property(TotalSeasons),0)</visible>
-			<visible>Container.Content(tvshows)</visible>
-
-			<control type="label">
-				<textcolor>$VAR[Accent_100]</textcolor>
-				<font>font26B</font>
-				<width>1000</width>
-				<height>40</height>
-				<label>$LOCALIZE[33054]</label>
-			</control>
-
-			<control type="fixedlist" id="90016">
+			<control type="fixedlist" id="$PARAM[list_id]">
 				<description>Seasons</description>
-				<posy>40</posy>
+				<top>40</top>
 				<width>1080</width>
-				<height>320</height>
-				<onleft>90019</onleft>
-				<onright>90019</onright>
-				<onup>90015</onup>
-				<ondown>9221</ondown>				
+				<height>325</height>
+				<onup>$PARAM[onup]</onup>
+				<ondown>$PARAM[ondown]</ondown>				
 				<orientation>horizontal</orientation>
 				<scrolltime>200</scrolltime>				
-				<itemlayout height="320" width="234">
+				<itemlayout height="325" width="234">
 				
 					<control type="image">
 						<width>214</width>
 						<height>320</height>
-						<include>Common_Color_TrueWhite</include>
+						<include>Common_Color_BaseMediumMid</include>
+					</control>
+
+					<control type="image">
+						<top>280</top>
+						<width>214</width>
+						<height>40</height>
+						<include>Common_Color_BaseWhite</include>
 					</control>
 					
 					<control type="image">
 						<description>Movie Image</description>
 						<width>214</width>
-						<height>320</height>
-						<texture fallback="DefaultTVShows.png">$INFO[ListItem.Art(poster)]</texture>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<height>280</height>
+						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio align="center" aligny="top">scale</aspectratio>
 					</control>
 
 					<control type="image">
-						<posy>280</posy>						
 						<width>214</width>
-						<height>40</height>
-						<include>Common_Color_BaseWhite80</include>
-					</control>
-
-					<control type="label">
-						<posy>280</posy>
-						<posx>10</posx>
-						<height>40</height>
-						<width>194</width>
-						<align>center</align>
-						<label>$INFO[ListItem.Label]</label>
-						<font>font26B</font>
-						<textcolor>BaseMediumHigh</textcolor>
-					</control>
-					
-				</itemlayout>
-				
-				<focusedlayout height="320" width="234">
-				
-					<control type="image">
-						<width>214</width>
-						<height>320</height>
-						<include>Common_Color_TrueWhite</include>
-					</control>
-					
-					<control type="image">
-						<width>214</width>
-						<height>320</height>
-						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(90016)">Conditional</animation>
-						<include>Common_Color_Accent</include>
-					</control>
-					
-					<control type="image">
-						<description>Movie Image</description>
-						<width>214</width>
-						<height>320</height>
-						<bordersize>5</bordersize>
-						<bordertexture border="5" colordiffuse="$VAR[Accent_100]">colors/color_white.png</bordertexture>
-						<texture fallback="DefaultTVShows.png">$INFO[ListItem.Art(poster)]</texture>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-					</control>
-
-					<control type="image">
-						<posy>280</posy>						
-						<width>214</width>
-						<height>40</height>
-						<include>Common_Color_Accent_80</include>
-					</control>
-
-					<control type="label">
-						<posy>280</posy>
-						<posx>10</posx>
-						<height>40</height>
-						<width>194</width>
-						<align>center</align>
-						<label>$INFO[ListItem.Label]</label>
-						<font>font26B</font>
-					</control>
-					
-				</focusedlayout>
-
-				<content target="video">videodb://tvshows/titles/$INFO[ListItem.DBID]/</content>
-					
-			</control>
-
-		</control>
-
-	</include>  
-
-    <include name="ActorInfo_MovieRoles">
-
-		<control type="group"> 
-			<posy>600</posy>
-			<width>1070</width>	
-			<height>360</height>
-			<visible>!StringCompare(Container(150).NumItems,0)</visible>
-
-			<control type="label">
-				<textcolor>$VAR[Accent_100]</textcolor>
-				<font>font26B</font>
-				<width>1000</width>
-				<height>40</height>
-				<label>$LOCALIZE[31270]$INFO[Container(150).NumItems, (,)]</label>
-			</control>
-
-			<control type="fixedlist" id="150">
-				<description>Movie Roles</description>
-				<posy>40</posy>
-				<width>1080</width>
-				<height>320</height>
-				<onleft>90019</onleft>
-				<onright>90019</onright>
-				<onup>450</onup>
-				<ondown>550</ondown>				
-				<orientation>horizontal</orientation>
-				<scrolltime>200</scrolltime>				
-				<itemlayout height="320" width="234">
-				
-					<control type="image">
-						<width>214</width>
-						<height>320</height>
+						<height>5</height>
 						<include>Common_Color_BaseMediumHigh</include>
 					</control>
-					
-					<control type="image">
-						<description>Movie Image</description>
-						<width>214</width>
-						<height>320</height>
-						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-					</control>
 
 					<control type="image">
-						<posy>240</posy>						
+						<top>320</top>
 						<width>214</width>
-						<height>80</height>
-						<include>Common_Color_BaseWhite80</include>
+						<height>5</height>
+						<texture colordiffuse="Shadow">colors/color_white.png</texture>
 					</control>
-
-                    <control type="image">
-                        <width>30</width>
-                        <height>30</height>
-                        <posy>10</posy>
-                        <posx>174</posx>
-                        <texture>flags/ratings/star.png</texture>
-                        <visible>!IsEmpty(ListItem.Property(DBID))</visible>
-                    </control>
 
 					<control type="label">
-						<posy>240</posy>
-						<posx>10</posx>
+						<top>280</top>
+						<left>10</left>
 						<height>40</height>
 						<width>194</width>
 						<align>center</align>
@@ -1728,615 +1408,69 @@
 						<textcolor>BaseMediumHigh</textcolor>
 					</control>
 					
-					<control type="label">
-						<posy>280</posy>
-						<posx>10</posx>
-						<height>40</height>
-						<width>194</width>
-						<align>center</align>
-						<label>$INFO[ListItem.Property(character)]</label>
-						<font>font24R</font>
-						<textcolor>BaseMid</textcolor>
-					</control>
-					
 				</itemlayout>
 				
-				<focusedlayout height="320" width="234">
-					
-					<control type="image">
-						<width>214</width>
-						<height>320</height>
-						<include>Common_Color_Accent</include>
-					</control>
-					
-					<control type="image">
-						<description>Movie Image</description>
-						<width>214</width>
-						<height>320</height>
-						<bordersize>5</bordersize>
-						<bordertexture border="5" colordiffuse="$VAR[Accent_100]">colors/color_white.png</bordertexture>
-						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-					</control>
+				<focusedlayout height="325" width="234">
 
-					<control type="image">
-						<posy>240</posy>						
-						<width>214</width>
-						<height>80</height>
-						<include>Common_Color_Accent_80</include>
-					</control>
-
-                    <control type="image">
-                        <width>30</width>
-                        <height>30</height>
-                        <posy>10</posy>
-                        <posx>174</posx>
-                        <texture colordiffuse="$VAR[Accent_100]">flags/ratings/star.png</texture>
-                        <visible>!IsEmpty(ListItem.Property(DBID))</visible>
-                    </control>
-
-					<control type="label">
-						<posy>240</posy>
-						<posx>10</posx>
-						<height>40</height>
-						<width>194</width>
-						<align>center</align>
-						<label>$INFO[ListItem.Label]</label>
-						<font>font26B</font>
-					</control>
+					<control type="group">
+						<depth>DepthContentPopout</depth>
+						<animation type="Focus">
+							<effect type="zoom" start="100" end="105" time="200" tween="sine" easing="inout" center="auto" />
+						</animation>
+						<animation type="Unfocus">
+							<effect type="zoom" start="105" end="100" time="200" tween="sine" easing="inout" center="auto" />
+						</animation>
 					
-					<control type="label">
-						<posy>280</posy>
-						<posx>10</posx>
-						<height>40</height>
-						<width>194</width>
-						<align>center</align>
-						<label>$INFO[ListItem.Property(character)]</label>
-						<font>font24R</font>
+						<control type="image">
+							<width>214</width>
+							<height>320</height>
+							<include>Common_Color_BaseMediumMid</include>
+						</control>
+
+						<control type="image">
+							<top>280</top>
+							<width>214</width>
+							<height>40</height>
+							<include>Common_Color_BaseLowest</include>
+						</control>
+						
+						<control type="image">
+							<description>Movie Image</description>
+							<width>214</width>
+							<height>280</height>
+							<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
+							<aspectratio align="center" aligny="top">scale</aspectratio>
+						</control>
+
+						<control type="image">
+							<width>214</width>
+							<height>5</height>
+							<include>Common_Color_Accent</include>
+						</control>
+
+						<control type="image">
+							<top>320</top>
+							<width>214</width>
+							<height>5</height>
+							<texture colordiffuse="Shadow">colors/color_white.png</texture>
+						</control>
+
+						<control type="label">
+							<top>280</top>
+							<left>10</left>
+							<height>40</height>
+							<width>194</width>
+							<align>center</align>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>$VAR[Accent_100]</textcolor>
+							<font>font26B</font>
+						</control>
+
 					</control>
 					
 				</focusedlayout>
-					
-			</control>
 
-		</control>
-
-	</include>  
-
-    <include name="ActorInfo_MovieCrew">
-
-		<control type="group"> 
-			<posy>600</posy>
-			<width>1070</width>	
-			<height>360</height>
-			<visible>!StringCompare(Container(550).NumItems,0)</visible>
-
-			<control type="label">
-				<textcolor>$VAR[Accent_100]</textcolor>
-				<font>font26B</font>
-				<width>1000</width>
-				<height>40</height>
-				<label>$LOCALIZE[31272]$INFO[Container(550).NumItems, (,)]</label>
-			</control>
-
-			<control type="fixedlist" id="550">
-				<description>Movie Crew</description>
-				<posy>40</posy>
-				<width>1080</width>
-				<height>320</height>
-				<onleft>90019</onleft>
-				<onright>90019</onright>
-				<onup>150</onup>
-				<ondown>250</ondown>				
-				<orientation>horizontal</orientation>
-				<scrolltime>200</scrolltime>				
-				<itemlayout height="320" width="234">
-				
-					<control type="image">
-						<width>214</width>
-						<height>320</height>
-						<include>Common_Color_BaseMediumHigh</include>
-					</control>
-					
-					<control type="image">
-						<description>Movie Image</description>
-						<width>214</width>
-						<height>320</height>
-						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-					</control>
-
-					<control type="image">
-						<posy>240</posy>						
-						<width>214</width>
-						<height>80</height>
-						<include>Common_Color_BaseWhite80</include>
-					</control>
-
-                    <control type="image">
-                        <width>30</width>
-                        <height>30</height>
-                        <posy>10</posy>
-                        <posx>174</posx>
-                        <texture>flags/ratings/star.png</texture>
-                        <visible>!IsEmpty(ListItem.Property(DBID))</visible>
-                    </control>
-
-					<control type="label">
-						<posy>240</posy>
-						<posx>10</posx>
-						<height>40</height>
-						<width>194</width>
-						<align>center</align>
-						<label>$INFO[ListItem.Label]</label>
-						<font>font26B</font>
-						<textcolor>BaseMediumHigh</textcolor>
-					</control>
-					
-					<control type="label">
-						<posy>280</posy>
-						<posx>10</posx>
-						<height>40</height>
-						<width>194</width>
-						<align>center</align>
-						<label>$INFO[ListItem.Property(job)]</label>
-						<font>font24R</font>
-						<textcolor>BaseMid</textcolor>
-					</control>
-					
-				</itemlayout>
-				
-				<focusedlayout height="320" width="234">
-					
-					<control type="image">
-						<width>214</width>
-						<height>320</height>
-						<include>Common_Color_Accent</include>
-					</control>
-					
-					<control type="image">
-						<description>Movie Image</description>
-						<width>214</width>
-						<height>320</height>
-						<bordersize>5</bordersize>
-						<bordertexture border="5" colordiffuse="$VAR[Accent_100]">colors/color_white.png</bordertexture>
-						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-					</control>
-
-					<control type="image">
-						<posy>240</posy>						
-						<width>214</width>
-						<height>80</height>
-						<include>Common_Color_Accent_80</include>
-					</control>
-
-                    <control type="image">
-                        <width>30</width>
-                        <height>30</height>
-                        <posy>10</posy>
-                        <posx>174</posx>
-                        <texture colordiffuse="$VAR[Accent_100]">flags/ratings/star.png</texture>
-                        <visible>!IsEmpty(ListItem.Property(DBID))</visible>
-                    </control>
-
-					<control type="label">
-						<posy>240</posy>
-						<posx>10</posx>
-						<height>40</height>
-						<width>194</width>
-						<align>center</align>
-						<label>$INFO[ListItem.Label]</label>
-						<font>font26B</font>
-					</control>
-					
-					<control type="label">
-						<posy>280</posy>
-						<posx>10</posx>
-						<height>40</height>
-						<width>194</width>
-						<align>center</align>
-						<label>$INFO[ListItem.Property(job)]</label>
-						<font>font24R</font>
-					</control>
-					
-				</focusedlayout>
-					
-			</control>
-
-		</control>
-
-	</include>  
-
-    <include name="ActorInfo_TVRoles">
-
-		<control type="group"> 
-			<posy>600</posy>
-			<width>1070</width>	
-			<height>360</height>
-			<visible>!StringCompare(Container(250).NumItems,0)</visible>
-
-			<control type="label">
-				<textcolor>$VAR[Accent_100]</textcolor>
-				<font>font26B</font>
-				<width>1000</width>
-				<height>40</height>
-				<label>$LOCALIZE[31271]$INFO[Container(250).NumItems, (,)]</label>
-			</control>
-
-			<control type="fixedlist" id="250">
-				<description>TV Roles</description>
-				<posy>40</posy>
-				<width>1080</width>
-				<height>320</height>
-				<onleft>90019</onleft>
-				<onright>90019</onright>
-				<onup>550</onup>
-				<ondown>650</ondown>				
-				<orientation>horizontal</orientation>
-				<scrolltime>200</scrolltime>				
-				<itemlayout height="320" width="234">
-				
-					<control type="image">
-						<width>214</width>
-						<height>320</height>
-						<include>Common_Color_BaseMediumHigh</include>
-					</control>
-					
-					<control type="image">
-						<description>Movie Image</description>
-						<width>214</width>
-						<height>320</height>
-						<texture fallback="DefaultTVShows.png">$INFO[ListItem.Thumb]</texture>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-					</control>
-
-					<control type="image">
-						<posy>240</posy>						
-						<width>214</width>
-						<height>80</height>
-						<include>Common_Color_BaseWhite80</include>
-					</control>
-
-                    <control type="image">
-                        <width>30</width>
-                        <height>30</height>
-                        <posy>10</posy>
-                        <posx>174</posx>
-                        <texture>flags/ratings/star.png</texture>
-                        <visible>!IsEmpty(ListItem.Property(DBID))</visible>
-                    </control>
-
-					<control type="label">
-						<posy>240</posy>
-						<posx>10</posx>
-						<height>40</height>
-						<width>194</width>
-						<align>center</align>
-						<label>$INFO[ListItem.Label]</label>
-						<font>font26B</font>
-						<textcolor>BaseMediumHigh</textcolor>
-					</control>
-					
-					<control type="label">
-						<posy>280</posy>
-						<posx>10</posx>
-						<height>40</height>
-						<width>194</width>
-						<align>center</align>
-						<label>$INFO[ListItem.Property(character)]</label>
-						<font>font24R</font>
-						<textcolor>BaseMid</textcolor>
-					</control>
-					
-				</itemlayout>
-				
-				<focusedlayout height="320" width="234">
-					
-					<control type="image">
-						<width>214</width>
-						<height>320</height>
-						<include>Common_Color_Accent</include>
-					</control>
-					
-					<control type="image">
-						<description>Movie Image</description>
-						<width>214</width>
-						<height>320</height>
-						<bordersize>5</bordersize>
-						<bordertexture border="5" colordiffuse="$VAR[Accent_100]">colors/color_white.png</bordertexture>
-						<texture fallback="DefaultTVShows.png">$INFO[ListItem.Thumb]</texture>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-					</control>
-
-					<control type="image">
-						<posy>240</posy>						
-						<width>214</width>
-						<height>80</height>
-						<include>Common_Color_Accent_80</include>
-					</control>
-
-                    <control type="image">
-                        <width>30</width>
-                        <height>30</height>
-                        <posy>10</posy>
-                        <posx>174</posx>
-                        <texture colordiffuse="$VAR[Accent_100]">flags/ratings/star.png</texture>
-                        <visible>!IsEmpty(ListItem.Property(DBID))</visible>
-                    </control>
-
-					<control type="label">
-						<posy>240</posy>
-						<posx>10</posx>
-						<height>40</height>
-						<width>194</width>
-						<align>center</align>
-						<label>$INFO[ListItem.Label]</label>
-						<font>font26B</font>
-					</control>
-					
-					<control type="label">
-						<posy>280</posy>
-						<posx>10</posx>
-						<height>40</height>
-						<width>194</width>
-						<align>center</align>
-						<label>$INFO[ListItem.Property(character)]</label>
-						<font>font24R</font>
-					</control>
-					
-				</focusedlayout>
-					
-			</control>
-
-		</control>
-
-	</include>  
-
-    <include name="ActorInfo_TVCrew">
-
-		<control type="group"> 
-			<posy>600</posy>
-			<width>1070</width>	
-			<height>360</height>
-			<visible>!StringCompare(Container(650).NumItems,0)</visible>
-
-			<control type="label">
-				<textcolor>$VAR[Accent_100]</textcolor>
-				<font>font26B</font>
-				<width>1000</width>
-				<height>40</height>
-				<label>$LOCALIZE[31273]$INFO[Container(650).NumItems, (,)]</label>
-			</control>
-
-			<control type="fixedlist" id="650">
-				<description>Movie Crew</description>
-				<posy>40</posy>
-				<width>1080</width>
-				<height>320</height>
-				<onleft>90019</onleft>
-				<onright>90019</onright>
-				<onup>250</onup>
-				<ondown>350</ondown>				
-				<orientation>horizontal</orientation>
-				<scrolltime>200</scrolltime>				
-				<itemlayout height="320" width="234">
-				
-					<control type="image">
-						<width>214</width>
-						<height>320</height>
-						<include>Common_Color_BaseMediumHigh</include>
-					</control>
-					
-					<control type="image">
-						<description>Movie Image</description>
-						<width>214</width>
-						<height>320</height>
-						<texture fallback="DefaultTVShows.png">$INFO[ListItem.Thumb]</texture>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-					</control>
-
-					<control type="image">
-						<posy>240</posy>						
-						<width>214</width>
-						<height>80</height>
-						<include>Common_Color_BaseWhite80</include>
-					</control>
-
-                    <control type="image">
-                        <width>30</width>
-                        <height>30</height>
-                        <posy>10</posy>
-                        <posx>174</posx>
-                        <texture>flags/ratings/star.png</texture>
-                        <visible>!IsEmpty(ListItem.Property(DBID))</visible>
-                    </control>
-
-					<control type="label">
-						<posy>240</posy>
-						<posx>10</posx>
-						<height>40</height>
-						<width>194</width>
-						<align>center</align>
-						<label>$INFO[ListItem.Label]</label>
-						<font>font26B</font>
-						<textcolor>BaseMediumHigh</textcolor>
-					</control>
-					
-					<control type="label">
-						<posy>280</posy>
-						<posx>10</posx>
-						<height>40</height>
-						<width>194</width>
-						<align>center</align>
-						<label>$INFO[ListItem.Property(job)]</label>
-						<font>font24R</font>
-						<textcolor>BaseMid</textcolor>
-					</control>
-					
-				</itemlayout>
-				
-				<focusedlayout height="320" width="234">
-					
-					<control type="image">
-						<width>214</width>
-						<height>320</height>
-						<include>Common_Color_Accent</include>
-					</control>
-					
-					<control type="image">
-						<description>Movie Image</description>
-						<width>214</width>
-						<height>320</height>
-						<bordersize>5</bordersize>
-						<bordertexture border="5" colordiffuse="$VAR[Accent_100]">colors/color_white.png</bordertexture>
-						<texture fallback="DefaultTVShows.png">$INFO[ListItem.Thumb]</texture>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-					</control>
-
-					<control type="image">
-						<posy>240</posy>						
-						<width>214</width>
-						<height>80</height>
-						<include>Common_Color_Accent_80</include>
-					</control>
-
-                    <control type="image">
-                        <width>30</width>
-                        <height>30</height>
-                        <posy>10</posy>
-                        <posx>174</posx>
-                        <texture colordiffuse="$VAR[Accent_100]">flags/ratings/star.png</texture>
-                        <visible>!IsEmpty(ListItem.Property(DBID))</visible>
-                    </control>
-
-					<control type="label">
-						<posy>240</posy>
-						<posx>10</posx>
-						<height>40</height>
-						<width>194</width>
-						<align>center</align>
-						<label>$INFO[ListItem.Label]</label>
-						<font>font26B</font>
-					</control>
-					
-					<control type="label">
-						<posy>280</posy>
-						<posx>10</posx>
-						<height>40</height>
-						<width>194</width>
-						<align>center</align>
-						<label>$INFO[ListItem.Property(job)]</label>
-						<font>font24R</font>
-					</control>
-					
-				</focusedlayout>
-					
-			</control>
-
-		</control>
-
-	</include>  
-
-    <include name="ActorInfo_YouTube">
-
-		<control type="group"> 
-			<posy>600</posy>
-			<width>1070</width>	
-			<height>360</height>
-			<visible>!StringCompare(Container(350).NumItems,0)</visible>
-
-			<control type="label">
-				<textcolor>$VAR[Accent_100]</textcolor>
-				<font>font26B</font>
-				<width>1000</width>
-				<height>40</height>
-				<label>$LOCALIZE[31262]$INFO[Container(350).NumItems, (,)]</label>
-			</control>
-
-			<control type="fixedlist" id="350">
-				<description>YouTube</description>
-				<posy>40</posy>
-				<width>1080</width>
-				<height>320</height>
-				<onleft>90019</onleft>
-				<onright>90019</onright>
-				<onup>650</onup>
-				<ondown>450</ondown>				
-				<orientation>horizontal</orientation>
-				<scrolltime>200</scrolltime>				
-				<itemlayout height="320" width="589">
-				
-					<control type="image">
-						<width>569</width>
-						<height>320</height>
-						<include>Common_Color_BaseMediumHigh</include>
-					</control>
-					
-					<control type="image">
-						<description>Movie Image</description>
-						<width>569</width>
-						<height>320</height>
-						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-					</control>
-
-					<control type="image">
-						<posy>280</posy>						
-						<width>569</width>
-						<height>40</height>
-						<include>Common_Color_BaseWhite80</include>
-					</control>
-
-					<control type="label">
-						<posy>280</posy>
-						<posx>10</posx>
-						<height>40</height>
-						<width>549</width>
-						<align>center</align>
-						<label>$INFO[ListItem.Label]</label>
-						<font>font26B</font>
-						<textcolor>BaseMediumHigh</textcolor>
-					</control>
-					
-				</itemlayout>
-				
-				<focusedlayout height="320" width="589">
-					
-					<control type="image">
-						<width>569</width>
-						<height>320</height>
-						<include>Common_Color_Accent</include>
-					</control>
-					
-					<control type="image">
-						<description>Movie Image</description>
-						<width>569</width>
-						<height>320</height>
-						<bordersize>5</bordersize>
-						<bordertexture border="5" colordiffuse="$VAR[Accent_100]">colors/color_white.png</bordertexture>
-						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
-					</control>
-
-					<control type="image">
-						<posy>280</posy>						
-						<width>569</width>
-						<height>40</height>
-						<include>Common_Color_Accent_80</include>
-					</control>
-
-					<control type="label">
-						<posy>280</posy>
-						<posx>10</posx>
-						<height>40</height>
-						<width>549</width>
-						<align>center</align>
-						<label>$INFO[ListItem.Label]</label>
-						<font>font26B</font>
-					</control>
-					
-				</focusedlayout>
+				<content target="video">$PARAM[content]/</content>
 					
 			</control>
 
@@ -2344,75 +1478,871 @@
 
 	</include> 
 
-    <include name="ActorInfo_Headshots">
+    <include name="Extended_Cast">
+		<param name="image">$INFO[ListItem.Thumb]</param>  
 
-		<control type="group"> 
-			<posy>600</posy>
-			<width>1070</width>	
-			<height>360</height>
-			<visible>!StringCompare(Container(450).NumItems,0)</visible>
+		<definition>
+
+			<control type="group" id="$PARAM[group_id]">
+				<visible>$PARAM[visible]</visible>
+				<height>365</height>
+
+				<control type="label">
+					<textcolor>$VAR[Accent_100]</textcolor>
+					<font>font26B</font>
+					<width>400</width>
+					<height>40</height>
+					<label>$PARAM[header]</label>
+				</control>
+		
+				<control type="fixedlist" id="$PARAM[panel_id]">
+					<top>40</top>
+					<width>1080</width>
+					<height>325</height>
+					<onup>$PARAM[on_up]</onup>
+					<ondown>$PARAM[on_down]</ondown>
+					<scrolltime>200</scrolltime>
+					<orientation>horizontal</orientation>
+					<itemlayout height="325" width="260">
+
+						<control type="image">
+							<width>240</width>
+							<height>320</height>
+							<include>Common_Color_BaseWhite</include>
+						</control>
+						
+						<control type="image">
+							<top>5</top>
+							<width>240</width>
+							<height>240</height>
+							<texture border="2" colordiffuse="BaseMediumMid">colors/color_white.png</texture>
+						</control>
+
+						<control type="image">
+							<top>320</top>
+							<width>240</width>
+							<height>5</height>
+							<texture colordiffuse="Shadow">colors/color_white.png</texture>
+						</control>
+
+						<control type="image">
+							<width>240</width>
+							<height>5</height>
+							<texture border="2" colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
+						</control>
+						
+						<control type="image">
+							<description>Actor Image</description>
+							<top>5</top>
+							<width>240</width>
+							<height>240</height>
+							<texture fallback="$PARAM[fallback]">$PARAM[image]</texture>
+							<aspectratio align="center">scale</aspectratio>
+						</control>
+
+						<control type="textbox">
+							<top>250</top>
+							<left>10</left>
+							<height>64</height>
+							<width>220</width>
+							<align>center</align>
+							<label>$PARAM[label]</label>
+							<font>font24B</font>
+							<textcolor>BaseMediumHigh</textcolor>
+							<autoscroll>false</autoscroll>
+						</control>
+					
+					</itemlayout>
+					
+					<focusedlayout height="325" width="260">
+
+						<control type="group">
+							<depth>DepthContentPopout</depth>
+							<animation type="Focus">
+								<effect type="zoom" start="100" end="105" time="200" tween="sine" easing="inout" center="auto" />
+							</animation>
+							<animation type="Unfocus">
+								<effect type="zoom" start="105" end="100" time="200" tween="sine" easing="inout" center="auto" />
+							</animation>
+					
+							<control type="image">
+								<width>240</width>
+								<height>320</height>
+								<include>Common_Color_BaseLowest</include>
+							</control>
+							
+							<control type="image">
+								<top>5</top>
+								<width>240</width>
+								<height>240</height>
+								<texture border="2" colordiffuse="BaseMediumMid">colors/color_white.png</texture>
+							</control>
+
+							<control type="image">
+								<top>320</top>
+								<width>240</width>
+								<height>5</height>
+								<texture border="2" colordiffuse="Shadow">colors/color_white.png</texture>
+							</control>
+
+							<control type="image">
+								<width>240</width>
+								<height>5</height>
+								<texture border="2" colordiffuse="$VAR[Accent_100]">colors/color_white.png</texture>
+							</control>
+							
+							<control type="image">
+								<description>Actor Image</description>
+								<top>5</top>
+								<width>240</width>
+								<height>240</height>
+								<texture fallback="$PARAM[fallback]">$PARAM[image]</texture>
+								<aspectratio align="center">scale</aspectratio>
+							</control>
+							
+							<control type="textbox">
+								<top>250</top>
+								<left>10</left>
+								<height>64</height>
+								<width>220</width>
+								<align>center</align>
+								<label>$PARAM[label]</label>
+								<font>font24B</font>
+								<textcolor>$VAR[Accent_100]</textcolor>
+							</control>
+
+						</control>
+					
+					</focusedlayout>
+				
+				</control>
+			
+			</control>
+
+		</definition>
+
+	</include>
+
+    <include name="Extended_Fanart">
+
+		<control type="group" id="$PARAM[group_id]">
+			<visible>$PARAM[visible]</visible>
+			<height>365</height>
 
 			<control type="label">
 				<textcolor>$VAR[Accent_100]</textcolor>
 				<font>font26B</font>
-				<width>1000</width>
+				<width>400</width>
 				<height>40</height>
-				<label>$LOCALIZE[31274]$INFO[Container(450).NumItems, (,)]</label>
+				<label>$PARAM[header]</label>
 			</control>
-
-			<control type="fixedlist" id="450">
-				<description>Movie Roles</description>
-				<posy>40</posy>
+	
+			<control type="fixedlist" id="$PARAM[panel_id]">
+				<top>40</top>
 				<width>1080</width>
-				<height>320</height>
-				<onleft>90019</onleft>
-				<onright>90019</onright>
-				<onup>350</onup>
-				<ondown>150</ondown>				
+				<height>325</height>
+				<onup>$PARAM[on_up]</onup>
+				<ondown>$PARAM[on_down]</ondown>
+				<scrolltime>200</scrolltime>
 				<orientation>horizontal</orientation>
-				<scrolltime>200</scrolltime>				
-				<itemlayout height="320" width="234">
-				
+				<itemlayout height="325" width="580">
+		
 					<control type="image">
-						<width>214</width>
+						<width>560</width>
 						<height>320</height>
-						<include>Common_Color_BaseMediumHigh</include>
+						<include>Common_Color_BaseMediumMid</include>
+					</control>
+
+					<control type="image">
+						<top>320</top>
+						<width>560</width>
+						<height>5</height>
+						<texture colordiffuse="Shadow">colors/color_white.png</texture>
+					</control>
+
+					<control type="image">
+						<width>560</width>
+						<height>5</height>
+						<texture border="2" colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
 					</control>
 					
 					<control type="image">
 						<description>Movie Image</description>
-						<width>214</width>
+						<top>5</top>
+						<width>560</width>
 						<height>320</height>
-						<texture fallback="DefaultActor.png">$INFO[ListItem.Thumb]</texture>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
+						<texture fallback="DefaultPicture.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio align="center">scale</aspectratio>
 					</control>
-					
+		
 				</itemlayout>
-				
-				<focusedlayout height="320" width="234">
-					
-					<control type="image">
-						<width>214</width>
-						<height>320</height>
-						<include>Common_Color_Accent</include>
-					</control>
-					
-					<control type="image">
-						<description>Movie Image</description>
-						<width>214</width>
-						<height>320</height>
-						<bordersize>5</bordersize>
-						<bordertexture border="5" colordiffuse="$VAR[Accent_100]">colors/color_white.png</bordertexture>
-						<texture fallback="DefaultActor.png">$INFO[ListItem.Thumb]</texture>
-						<aspectratio align="center" aligny="center">scale</aspectratio>
+		
+				<focusedlayout height="325" width="580">
+		
+					<control type="group">
+						<depth>DepthContentPopout</depth>
+						<animation type="Focus">
+							<effect type="zoom" start="100" end="105" time="200" tween="sine" easing="inout" center="auto" />
+						</animation>
+						<animation type="Unfocus">
+							<effect type="zoom" start="105" end="100" time="200" tween="sine" easing="inout" center="auto" />
+						</animation>
+
+						<control type="image">
+							<width>560</width>
+							<height>320</height>
+							<include>Common_Color_BaseMediumMid</include>
+						</control>
+
+						<control type="image">
+							<top>320</top>
+							<width>560</width>
+							<height>5</height>
+							<texture colordiffuse="Shadow">colors/color_white.png</texture>
+						</control>
+
+						<control type="image">
+							<width>560</width>
+							<height>5</height>
+							<include>Common_Color_Accent</include>
+						</control>
+						
+						<control type="image">
+							<description>Movie Image</description>
+							<top>5</top>
+							<width>560</width>
+							<height>320</height>
+							<texture fallback="DefaultVideo.png">$INFO[ListItem.Thumb]</texture>
+							<aspectratio align="center">scale</aspectratio>
+						</control>
+
 					</control>
 		
 				</focusedlayout>
-					
+		
 			</control>
-
+		
 		</control>
 
-	</include>  
+	</include>
+
+    <include name="Extended_Poster">
+
+		<control type="group" id="$PARAM[group_id]">
+			<visible>$PARAM[visible]</visible>
+			<height>365</height>
+
+			<control type="label">
+				<textcolor>$VAR[Accent_100]</textcolor>
+				<font>font26B</font>
+				<width>400</width>
+				<height>40</height>
+				<label>$PARAM[header]</label>
+			</control>
+	
+			<control type="fixedlist" id="$PARAM[panel_id]">
+				<top>40</top>
+				<width>1080</width>
+				<height>325</height>
+				<onup>$PARAM[on_up]</onup>
+				<ondown>$PARAM[on_down]</ondown>
+				<scrolltime>200</scrolltime>
+				<orientation>horizontal</orientation>
+				<itemlayout height="325" width="234">
+	
+					<control type="image">
+						<width>214</width>
+						<height>320</height>
+						<include>Common_Color_BaseMediumMid</include>
+					</control>
+					
+					<control type="image">
+						<description>Movie Image</description>
+						<width>214</width>
+						<height>320</height>
+						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+					</control>
+
+					<control type="image">
+						<width>214</width>
+						<height>5</height>
+						<include>Common_Color_BaseMediumHigh</include>
+					</control>
+
+					<control type="image">
+						<top>320</top>
+						<width>214</width>
+						<height>5</height>
+						<texture colordiffuse="Shadow">colors/color_white.png</texture>
+					</control>
+
+					<control type="image">
+						<top>5</top>
+						<left>164</left>
+						<width>50</width>
+						<height>50</height>
+						<texture colordiffuse="BaseMid">colors/color_white.png</texture>
+						<visible>!String.IsEmpty(ListItem.dbid)</visible>
+					</control>
+
+                    <control type="image">
+                        <width>30</width>
+                        <height>30</height>
+                        <top>15</top>
+                        <left>174</left>
+                        <texture>flags/ratings/star.png</texture>
+                        <visible>!String.IsEmpty(ListItem.dbid)</visible>
+                    </control>
+				
+				</itemlayout>
+				
+				<focusedlayout height="325" width="234">
+					
+					<control type="group">
+						<depth>DepthContentPopout</depth>
+						<animation type="Focus">
+							<effect type="zoom" start="100" end="105" time="200" tween="sine" easing="inout" center="auto" />
+						</animation>
+						<animation type="Unfocus">
+							<effect type="zoom" start="105" end="100" time="200" tween="sine" easing="inout" center="auto" />
+						</animation>
+					
+						<control type="image">
+							<width>214</width>
+							<height>320</height>
+							<animation effect="fade" start="100" end="50" condition="!Control.HasFocus($PARAM[list_id])">Conditional</animation>
+							<include>Common_Color_BaseLowest</include>
+						</control>
+						
+						<control type="image">
+							<description>Movie Image</description>
+							<width>214</width>
+							<height>320</height>
+							<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
+							<aspectratio align="center" aligny="center">scale</aspectratio>
+						</control>
+
+						<control type="image">
+							<width>214</width>
+							<height>5</height>
+							<include>Common_Color_Accent</include>
+						</control>
+
+						<control type="image">
+							<top>320</top>
+							<width>214</width>
+							<height>5</height>
+							<texture colordiffuse="Shadow">colors/color_white.png</texture>
+						</control>
+
+						<control type="image">
+							<top>5</top>
+							<left>164</left>
+							<width>50</width>
+							<height>50</height>
+							<texture colordiffuse="BaseMid">colors/color_white.png</texture>
+							<visible>!String.IsEmpty(ListItem.dbid)</visible>
+						</control>
+
+	                    <control type="image">
+	                        <width>30</width>
+	                        <height>30</height>
+	                        <top>15</top>
+	                        <left>174</left>
+	                        <texture>flags/ratings/star.png</texture>
+	                        <visible>!String.IsEmpty(ListItem.dbid)</visible>
+	                    </control>
+
+					</control>
+				
+				</focusedlayout>
+			
+			</control>
+		
+		</control>
+
+	</include>
+
+    <include name="Extended_Poster_Details">
+
+		<control type="group" id="$PARAM[group_id]">
+			<visible>$PARAM[visible]</visible>
+			<height>365</height>
+
+			<control type="label">
+				<textcolor>$VAR[Accent_100]</textcolor>
+				<font>font26B</font>
+				<width>400</width>
+				<height>40</height>
+				<label>$PARAM[header]</label>
+			</control>
+	
+			<control type="fixedlist" id="$PARAM[panel_id]">
+				<top>40</top>
+				<width>1080</width>
+				<height>325</height>
+				<onup>$PARAM[on_up]</onup>
+				<ondown>$PARAM[on_down]</ondown>
+				<scrolltime>200</scrolltime>
+				<orientation>horizontal</orientation>
+				<itemlayout height="325" width="234">
+	
+					<control type="image">
+						<width>214</width>
+						<height>320</height>
+						<include>Common_Color_BaseMediumMid</include>
+					</control>
+					
+					<control type="image">
+						<description>Movie Image</description>
+						<width>214</width>
+						<height>320</height>
+						<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio align="center" aligny="center">scale</aspectratio>
+					</control>
+
+					<control type="image">
+						<width>214</width>
+						<height>5</height>
+						<include>Common_Color_BaseMediumHigh</include>
+					</control>
+
+					<control type="image">
+						<top>320</top>
+						<width>214</width>
+						<height>5</height>
+						<texture colordiffuse="Shadow">colors/color_white.png</texture>
+					</control>
+
+					<control type="image">
+						<top>5</top>
+						<left>164</left>
+						<width>50</width>
+						<height>50</height>
+						<texture colordiffuse="BaseMid">colors/color_white.png</texture>
+						<visible>!String.IsEmpty(ListItem.dbid)</visible>
+					</control>
+
+                    <control type="image">
+                        <width>30</width>
+                        <height>30</height>
+                        <top>15</top>
+                        <left>174</left>
+                        <texture>flags/ratings/star.png</texture>
+                        <visible>!String.IsEmpty(ListItem.dbid)</visible>
+                    </control>
+
+					<control type="image">
+						<top>240</top>						
+						<width>214</width>
+						<height>80</height>
+						<include>Common_Color_BaseWhite80</include>
+					</control>
+
+					<control type="label">
+						<top>250</top>
+						<left>10</left>
+						<height>40</height>
+						<width>194</width>
+						<align>center</align>
+						<label>$PARAM[label_1]</label>
+						<font>font26B</font>
+						<textcolor>BaseMediumHigh</textcolor>
+					</control>
+					
+					<control type="label">
+						<top>280</top>
+						<left>10</left>
+						<height>40</height>
+						<width>194</width>
+						<align>center</align>
+						<label>$PARAM[label_2]</label>
+						<font>font24R</font>
+						<textcolor>BaseMid</textcolor>
+					</control>
+				
+				</itemlayout>
+				
+				<focusedlayout height="325" width="234">
+					
+					<control type="group">
+						<depth>DepthContentPopout</depth>
+						<animation type="Focus">
+							<effect type="zoom" start="100" end="105" time="200" tween="sine" easing="inout" center="auto" />
+						</animation>
+						<animation type="Unfocus">
+							<effect type="zoom" start="105" end="100" time="200" tween="sine" easing="inout" center="auto" />
+						</animation>
+					
+						<control type="image">
+							<width>214</width>
+							<height>320</height>
+							<animation effect="fade" start="100" end="50" condition="!Control.HasFocus($PARAM[list_id])">Conditional</animation>
+							<include>Common_Color_BaseLowest</include>
+						</control>
+						
+						<control type="image">
+							<description>Movie Image</description>
+							<width>214</width>
+							<height>320</height>
+							<texture fallback="DefaultMovies.png">$INFO[ListItem.Thumb]</texture>
+							<aspectratio align="center" aligny="center">scale</aspectratio>
+						</control>
+
+						<control type="image">
+							<width>214</width>
+							<height>5</height>
+							<include>Common_Color_Accent</include>
+						</control>
+
+						<control type="image">
+							<top>320</top>
+							<width>214</width>
+							<height>5</height>
+							<texture colordiffuse="Shadow">colors/color_white.png</texture>
+						</control>
+
+						<control type="image">
+							<top>5</top>
+							<left>164</left>
+							<width>50</width>
+							<height>50</height>
+							<texture colordiffuse="BaseMid">colors/color_white.png</texture>
+							<visible>!String.IsEmpty(ListItem.dbid)</visible>
+						</control>
+
+	                    <control type="image">
+	                        <width>30</width>
+	                        <height>30</height>
+	                        <top>15</top>
+	                        <left>174</left>
+	                        <texture>flags/ratings/star.png</texture>
+	                        <visible>!String.IsEmpty(ListItem.dbid)</visible>
+	                    </control>
+
+						<control type="image">
+							<top>240</top>						
+							<width>214</width>
+							<height>80</height>
+							<include>Common_Color_BaseWhite80</include>
+						</control>
+
+						<control type="label">
+							<top>250</top>
+							<left>10</left>
+							<height>40</height>
+							<width>194</width>
+							<align>center</align>
+							<label>$PARAM[label_1]</label>
+							<font>font26B</font>
+							<textcolor>$VAR[Accent_100]</textcolor>
+						</control>
+						
+						<control type="label">
+							<top>280</top>
+							<left>10</left>
+							<height>40</height>
+							<width>194</width>
+							<align>center</align>
+							<label>$PARAM[label_2]</label>
+							<font>font24R</font>
+							<textcolor>BaseMediumHigh</textcolor>
+						</control>
+
+					</control>
+				
+				</focusedlayout>
+			
+			</control>
+		
+		</control>
+
+	</include>
+
+    <include name="Extended_Studio">
+		<param name="image">$INFO[ListItem.Thumb]</param>  
+
+		<definition>
+
+			<control type="group" id="$PARAM[group_id]">
+				<visible>$PARAM[visible]</visible>
+				<height>365</height>
+
+				<control type="label">
+					<textcolor>$VAR[Accent_100]</textcolor>
+					<font>font26B</font>
+					<width>400</width>
+					<height>40</height>
+					<label>$PARAM[header]</label>
+				</control>
+		
+				<control type="fixedlist" id="$PARAM[panel_id]">
+					<top>40</top>
+					<width>1080</width>
+					<height>325</height>
+					<onup>$PARAM[on_up]</onup>
+					<ondown>$PARAM[on_down]</ondown>
+					<scrolltime>200</scrolltime>
+					<orientation>horizontal</orientation>
+					<itemlayout height="325" width="260">
+
+						<control type="image">
+							<width>240</width>
+							<height>320</height>
+							<include>Common_Color_BaseWhite</include>
+						</control>
+						
+						<control type="image">
+							<top>5</top>
+							<width>240</width>
+							<height>240</height>
+							<texture border="2" colordiffuse="BaseMediumMid">colors/color_white.png</texture>
+						</control>
+
+						<control type="image">
+							<top>320</top>
+							<width>240</width>
+							<height>5</height>
+							<texture colordiffuse="Shadow">colors/color_white.png</texture>
+						</control>
+
+						<control type="image">
+							<width>240</width>
+							<height>5</height>
+							<texture border="2" colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
+						</control>
+						
+						<control type="image">
+							<description>Actor Image</description>
+							<top>5</top>
+							<width>240</width>
+							<height>240</height>
+							<texture fallback="$PARAM[fallback]">$PARAM[image]</texture>
+							<aspectratio aligny="center" align="center">keep</aspectratio>
+						</control>
+
+						<control type="textbox">
+							<top>250</top>
+							<left>10</left>
+							<height>64</height>
+							<width>220</width>
+							<align>center</align>
+							<label>$PARAM[label]</label>
+							<font>font24B</font>
+							<textcolor>BaseMediumHigh</textcolor>
+							<autoscroll>false</autoscroll>
+						</control>
+					
+					</itemlayout>
+					
+					<focusedlayout height="325" width="260">
+
+						<control type="group">
+							<depth>DepthContentPopout</depth>
+							<animation type="Focus">
+								<effect type="zoom" start="100" end="105" time="200" tween="sine" easing="inout" center="auto" />
+							</animation>
+							<animation type="Unfocus">
+								<effect type="zoom" start="105" end="100" time="200" tween="sine" easing="inout" center="auto" />
+							</animation>
+					
+							<control type="image">
+								<width>240</width>
+								<height>320</height>
+								<include>Common_Color_BaseLowest</include>
+							</control>
+							
+							<control type="image">
+								<top>5</top>
+								<width>240</width>
+								<height>240</height>
+								<texture border="2" colordiffuse="BaseMediumMid">colors/color_white.png</texture>
+							</control>
+
+							<control type="image">
+								<top>320</top>
+								<width>240</width>
+								<height>5</height>
+								<texture border="2" colordiffuse="Shadow">colors/color_white.png</texture>
+							</control>
+
+							<control type="image">
+								<width>240</width>
+								<height>5</height>
+								<texture border="2" colordiffuse="$VAR[Accent_100]">colors/color_white.png</texture>
+							</control>
+							
+							<control type="image">
+								<description>Actor Image</description>
+								<top>5</top>
+								<width>240</width>
+								<height>240</height>
+								<texture fallback="$PARAM[fallback]">$PARAM[image]</texture>
+								<aspectratio aligny="center" align="center">keep</aspectratio>
+							</control>
+							
+							<control type="textbox">
+								<top>250</top>
+								<left>10</left>
+								<height>64</height>
+								<width>220</width>
+								<align>center</align>
+								<label>$PARAM[label]</label>
+								<font>font24B</font>
+								<textcolor>$VAR[Accent_100]</textcolor>
+							</control>
+
+						</control>
+					
+					</focusedlayout>
+				
+				</control>
+			
+			</control>
+
+		</definition>
+
+	</include>
+
+    <include name="Extended_Video">
+
+		<control type="group" id="$PARAM[group_id]">
+			<visible>$PARAM[visible]</visible>
+			<height>365</height>
+
+			<control type="label">
+				<textcolor>$VAR[Accent_100]</textcolor>
+				<font>font26B</font>
+				<width>400</width>
+				<height>40</height>
+				<label>$PARAM[header]</label>
+			</control>
+		
+			<control type="fixedlist" id="$PARAM[panel_id]">
+				<top>40</top>
+				<width>1080</width>
+				<height>325</height>
+				<onup>$PARAM[on_up]</onup>
+				<ondown>$PARAM[on_down]</ondown>
+				<scrolltime>200</scrolltime>
+				<orientation>horizontal</orientation>
+				<itemlayout height="325" width="436">
+
+					<control type="image">
+						<width>416</width>
+						<height>320</height>
+						<include>Common_Color_BaseWhite</include>
+					</control>
+					
+					<control type="image">
+						<top>5</top>
+						<width>416</width>
+						<height>234</height>
+						<texture border="2" colordiffuse="BaseMediumMid">colors/color_white.png</texture>
+					</control>
+
+					<control type="image">
+						<top>320</top>
+						<width>416</width>
+						<height>5</height>
+						<texture colordiffuse="Shadow">colors/color_white.png</texture>
+					</control>
+
+					<control type="image">
+						<width>416</width>
+						<height>5</height>
+						<texture border="2" colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
+					</control>
+					
+					<control type="image">
+						<description>Movie Image</description>
+						<top>5</top>
+						<width>416</width>
+						<height>234</height>
+						<texture fallback="DefaultVideo.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio align="center">scale</aspectratio>
+					</control>
+					
+					<control type="textbox">
+						<top>240</top>
+						<left>10</left>
+						<height>64</height>
+						<width>396</width>
+						<align>center</align>
+						<label>$PARAM[label]</label>
+						<font>font26B</font>
+						<textcolor>BaseMediumHigh</textcolor>
+						<autoscroll>false</autoscroll>
+					</control>
+		
+				</itemlayout>
+		
+				<focusedlayout height="325" width="436">
+		
+					<control type="group">
+						<depth>DepthContentPopout</depth>
+						<animation type="Focus">
+							<effect type="zoom" start="100" end="105" time="200" tween="sine" easing="inout" center="auto" />
+						</animation>
+						<animation type="Unfocus">
+							<effect type="zoom" start="105" end="100" time="200" tween="sine" easing="inout" center="auto" />
+						</animation>
+
+						<control type="image">
+							<width>416</width>
+							<height>320</height>
+							<include>Common_Color_BaseLowest</include>
+						</control>
+						
+						<control type="image">
+							<top>5</top>
+							<width>416</width>
+							<height>234</height>
+							<texture border="2" colordiffuse="BaseMediumMid">colors/color_white.png</texture>
+						</control>
+
+						<control type="image">
+							<top>320</top>
+							<width>416</width>
+							<height>5</height>
+							<texture colordiffuse="Shadow">colors/color_white.png</texture>
+						</control>
+
+						<control type="image">
+							<width>416</width>
+							<height>5</height>
+							<include>Common_Color_Accent</include>
+						</control>
+						
+						<control type="image">
+							<description>Movie Image</description>
+							<top>5</top>
+							<width>416</width>
+							<height>234</height>
+							<texture fallback="DefaultVideo.png">$INFO[ListItem.Thumb]</texture>
+							<aspectratio align="center">scale</aspectratio>
+						</control>
+						
+						<control type="textbox">
+							<top>240</top>
+							<left>10</left>
+							<height>64</height>
+							<width>396</width>
+							<align>center</align>
+							<label>$PARAM[label]</label>
+							<font>font26B</font>
+							<textcolor>$VAR[Accent_100]</textcolor>
+						</control>
+
+					</control>
+		
+				</focusedlayout>
+		
+			</control>
+		
+		</control>
+		
+	</include>
 
 </includes>

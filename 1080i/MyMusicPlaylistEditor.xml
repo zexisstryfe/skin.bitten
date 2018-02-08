@@ -8,624 +8,515 @@
 	
         <include>HomeBackground</include>
 
-		<!--Left Panel Backing-->
-		<control type="group">
-			<include>Animation_Common_Playlist_Left</include> 
-		
-			<control type="image">
-                <width>720</width>
-                <height>1080</height>
-				<aspectratio>scale</aspectratio>
-                <texture colordiffuse="BaseWhite">colors/color_white.png</texture>
-           </control>
+        <control type="group">  
+            <top>50</top>
+            <left>200</left>
 
-			<control type="image">
-				<description>Header Backing</description>
-				<width>720</width>
-				<height>80</height>
-				<texture border="2" colordiffuse="BaseMediumHigh">colors/color_white.png</texture>				
-			</control>
+            <include content="Common_Window_Backing">
+                <param name="width" value="1520"/>
+                <param name="height" value="980"/>  
+                <param name="logo_visible" value="false"/> 
+                <param name="header" value="$LOCALIZE[31101]"/> 
+                <param name="header_id" value=""/>
+                <param name="header_width" value="700"/>    
+                <param name="header_height" value="75"/>             
+            </include>  
 
-			<control type="image">
-                <posx>20</posx>
-                <posy>100</posy>
-                <width>670</width>
-                <height>960</height>
-                <include>Common_Color_BaseLow</include>
-            </control>
+            <include content="Common_Separator_Vertical">
+                <param name="top" value="75"/> 
+                <param name="left" value="759"/>   
+                <param name="height" value="900"/>
+            </include>
 
-            <control type="scrollbar" id="60">
-                <posx>710</posx>
-                <height>1080</height>
-                <width>10</width>
-                <onleft>50</onleft>
-                <onright>9000</onright>
-            </control>
-			
-		</control>
+            <include content="Common_Separator_Horizontal">
+                <param name="top" value="720"/>   
+                <param name="width" value="1520"/>
+            </include>
 
-		<!--Right Panel Backing-->		
-		<control type="group">
-			<posx>1120</posx>
-			<include>Animation_Common_Playlist_Right</include> 		
-		
-            <control type="image">				
-                <width>800</width>
-                <height>1080</height>
-				<aspectratio>scale</aspectratio>
-                <texture colordiffuse="BaseWhite">colors/color_white.png</texture>
-           </control>		   
+            <control type="group" description="Left Panel">
+                <top>75</top>
 
-			<control type="image">
-				<description>Header Backing</description>
-				<width>800</width>
-				<height>80</height>
-				<texture border="2" colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
-			</control>
-			
-			<control type="image">
-                <posx>30</posx>
-                <posy>100</posy>
-                <width>670</width>
-                <height>960</height>
-                <include>Common_Color_BaseLow</include>
-            </control>
+                <control type="list" id="50">
+                    <width>749</width>
+                    <height>645</height>
+                    <onright>60</onright>
+                    <onup>9000</onup>
+                    <ondown>9000</ondown>
+                    <scrolltime>200</scrolltime>
+                    <pagecontrol>60</pagecontrol>
+                    <itemlayout height="85" width="749">
 
-            <control type="scrollbar" id="61">
-                <height>1080</height>
-                <width>10</width>
-				<onleft>9000</onleft>
-                <onright>100</onright>
-            </control>			
-			
-		</control>
-			
-		<include>Common_LeftBar</include>
-		
-        <!--Left Panel Info-->
-		<control type="group">
-            <description>Left panel</description>
-			<include>Animation_Common_Playlist_Content</include>
-            <posx>80</posx>
-			
-            <control type="label">
-                <posx>20</posx>
-                <width>615</width>
-                <height>80</height>
-                <font>font45B</font>
-                <label>$LOCALIZE[31101]</label>
-            </control>
+                        <control type="image">
+                            <left>10</left>
+                            <top>10</top>
+                            <width>65</width>
+                            <height>65</height>
+                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <texture fallback="DefaultFile.png">$INFO[Listitem.Icon]</texture>
+                            <bordertexture colordiffuse="BaseMediumHigh">colors/color_white.png</bordertexture> 
+                        </control> 
 
-            <control type="list" id="50">
-                <posx>20</posx>
-                <posy>100</posy>
-                <width>670</width>
-                <height>960</height>
-                <onright>60</onright>
-                <scrolltime>200</scrolltime>
-                <pagecontrol>60</pagecontrol>
-                <itemlayout height="85" width="670">
-				
-					<control type="image">
-						<posx>10</posx>
-						<posy>10</posy>
-						<width>65</width>
-						<height>65</height>
-						<texture>backings/circle.png</texture>
-					</control>
+                        <control type="label">
+                            <left>105</left>
+                            <width>500</width>
+                            <height>85</height>
+                            <aligny>center</aligny>
+                            <font>font26B</font>
+                            <label>$INFO[ListItem.Label]</label>
+                            <wrapmultiline>true</wrapmultiline>
+                            <textcolor>BaseMediumHigh</textcolor>
+                            <selectedcolor>$VAR[Accent_100]</selectedcolor>
+                        </control>
+                        
+                        <control type="label">
+                            <left>630</left>
+                            <width>100</width>
+                            <height>85</height>
+                            <font>font20R</font>
+                            <align>right</align>
+                            <label>$INFO[ListItem.Label2]</label>
+                            <textcolor>BaseMediumMid</textcolor>
+                            <selectedcolor>$VAR[Accent_100]</selectedcolor>
+                        </control>
 
-					<control type="image">
-						<posx>10</posx>
-						<posy>10</posy>
-						<width>65</width>
-						<height>65</height>
-						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture diffuse="masks/circle.png" fallback="DefaultFile.png">$INFO[Listitem.Icon]</texture>
-					</control> 
+                        <control type="image">
+                            <top>83</top>
+                            <width>749</width>
+                            <height>2</height>
+                            <include>Common_Color_BaseLowest</include>
+                        </control>
 
-					<control type="label">
-						<posx>85</posx>
-						<width>500</width>
-						<height>85</height>
-						<aligny>center</aligny>
-						<font>font26B</font>
-						<label>$INFO[ListItem.Label]</label>
-						<wrapmultiline>true</wrapmultiline>
-						<textcolor>BaseMediumHigh</textcolor>
-					</control>
-					
-					<control type="label">
-						<posx>550</posx>
-						<width>100</width>
-						<height>85</height>
-						<font>font20R</font>
-						<align>right</align>
-						<label>$INFO[ListItem.Label2]</label>
-						<textcolor>$VAR[Accent_100]</textcolor>
-					</control>
+                    </itemlayout>
+                    
+                    <focusedlayout height="85" width="749">
+                    
+                        <control type="image">
+                            <width>749</width>
+                            <height>85</height>
+                            <include>Common_Color_BaseLowest</include>
+                        </control>
 
-                </itemlayout>
-				
-                <focusedlayout height="85" width="670">
-				
-                    <control type="image">
-                        <width>670</width>
-                        <height>85</height>
-                        <include>Common_Color_Accent</include>
-                        <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(50)">Conditional</animation>
+                        <control type="image">
+                            <width>85</width>
+                            <height>85</height>
+                            <include>Common_Color_Accent</include>
+                            <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(50)">Conditional</animation>
+                        </control>
+
+                        <control type="image">
+                            <left>10</left>
+                            <top>10</top>
+                            <width>65</width>
+                            <height>65</height>
+                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <texture fallback="DefaultFile.png">$INFO[Listitem.Icon]</texture>
+                            <bordertexture colordiffuse="BaseMediumHigh">colors/color_white.png</bordertexture> 
+                        </control> 
+
+                        <control type="label">
+                            <left>105</left>
+                            <width>500</width>
+                            <height>85</height>
+                            <aligny>center</aligny>
+                            <font>font26B</font>
+                            <label>$INFO[ListItem.Label]</label>
+                            <wrapmultiline>true</wrapmultiline>
+                            <textcolor>$VAR[Accent_100]</textcolor>
+                            <selectedcolor>$VAR[Accent_100]</selectedcolor>
+                        </control>
+
+                        <control type="label">
+                            <left>630</left>
+                            <width>100</width>
+                            <height>85</height>
+                            <font>font20R</font>
+                            <align>right</align>
+                            <label>$INFO[ListItem.Label2]</label>
+                            <textcolor>BaseMediumHigh</textcolor>
+                            <selectedcolor>$VAR[Accent_100]</selectedcolor>
+                        </control>                  
+
+                    </focusedlayout>
+                    
+                </control>
+
+                <control type="scrollbar" id="60">
+                    <left>749</left>
+                    <height>645</height>
+                    <width>10</width>
+                    <onleft>50</onleft>
+                    <onright>100</onright>
+                </control>
+
+                <control type="image">
+                    <top>667</top>
+                    <left>20</left>
+                    <width>160</width>
+                    <height>160</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture fallback="DefaultAlbumCover.png">$INFO[Container(50).ListItem.Icon]</texture>
+                    <bordertexture colordiffuse="BaseMediumHigh">colors/color_white.png</bordertexture>
+                </control>
+
+                <control type="grouplist">
+                    <top>667</top>
+                    <left>200</left>
+                    <width>739</width>
+                    <height>160</height>
+                    <itemgap>0</itemgap>
+                    <orientation>vertical</orientation>
+
+                    <control type="group">
+                        <height>30</height>
+                        <width>739</width>
+                        <visible>!IsEmpty(Container(50).ListItem.Title)</visible> 
+
+                        <control type="label">
+                            <include>Common_MyPlaylist_Label</include>
+                            <label>$LOCALIZE[556] </label>
+                        </control>
+                        
+                        <control type="label">
+                            <include>Common_MyPlaylist_Detail</include>
+                            <label>$INFO[Container(50).ListItem.Title]</label>
+                        </control>
+
                     </control>
 
-					<control type="image">
-						<posx>10</posx>
-						<posy>10</posy>
-						<width>65</width>
-						<height>65</height>
-						<texture>backings/circle.png</texture>
-					</control>
+                    <control type="group">
+                        <height>30</height>
+                        <width>739</width>
+                        <visible>!IsEmpty(Container(50).ListItem.Artist)</visible> 
 
-					<control type="image">
-						<posx>10</posx>
-						<posy>10</posy>
-						<width>65</width>
-						<height>65</height>
-						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture diffuse="masks/circle.png" fallback="DefaultFile.png">$INFO[Listitem.Icon]</texture>
-					</control> 
+                        <control type="label">
+                            <include>Common_MyPlaylist_Label</include>
+                            <label>$LOCALIZE[557] </label>
+                        </control>
+                        
+                        <control type="label">
+                            <include>Common_MyPlaylist_Detail</include>
+                            <label>$INFO[Container(50).ListItem.Artist]</label>
+                        </control>
 
-					<control type="label">
-						<posx>85</posx>
-						<width>500</width>
-						<height>85</height>
-						<aligny>center</aligny>
-						<font>font26B</font>
-						<label>$INFO[ListItem.Label]</label>
-						<wrapmultiline>true</wrapmultiline>
-						<textcolor>BaseWhite</textcolor>
-					</control>
+                    </control>
 
-					<control type="label">
-						<posx>550</posx>
-						<width>100</width>
-						<height>85</height>
-						<font>font20R</font>
-						<align>right</align>
-						<label>$INFO[ListItem.Label2]</label>
-						<textcolor>BaseLow</textcolor>
-					</control>					
+                    <control type="group">
+                        <height>30</height>
+                        <width>739</width>
+                        <visible>!IsEmpty(Container(50).ListItem.Album)</visible> 
 
-                </focusedlayout>
-				
+                        <control type="label">
+                            <include>Common_MyPlaylist_Label</include>
+                            <label>$LOCALIZE[558] </label>
+                        </control>
+                        
+                        <control type="label">
+                            <include>Common_MyPlaylist_Detail</include>
+                            <label>$INFO[Container(50).ListItem.Album]</label>
+                        </control>
+
+                    </control>
+
+                    <control type="group">
+                        <height>30</height>
+                        <width>739</width>
+                        <visible>!IsEmpty(Container(50).ListItem.Duration)</visible> 
+
+                        <control type="label">
+                            <include>Common_MyPlaylist_Label</include>
+                            <label>$LOCALIZE[555] </label>
+                        </control>
+                        
+                        <control type="label">
+                            <include>Common_MyPlaylist_Detail</include>
+                            <label>$INFO[Container(50).ListItem.Duration]</label>
+                        </control>
+
+                    </control>
+
+                    <control type="group">
+                        <height>30</height>
+                        <width>739</width>
+                        <visible>!IsEmpty(Container(50).ListItem.Genre)</visible> 
+
+                        <control type="label">
+                            <include>Common_MyPlaylist_Label</include>
+                            <label>$LOCALIZE[515] </label>
+                        </control>
+                        
+                        <control type="label">
+                            <include>Common_MyPlaylist_Detail</include>
+                            <label>$INFO[Container(50).ListItem.Genre]</label>
+                        </control>
+
+                    </control>
+
+                </control>
+
             </control>
 
-        </control>
+            <control type="group" description="Right Panel">
+                <top>75</top>
+                <left>761</left>
 
-		<!--Center Panel-->
-        <control type="group">
-            <description>Middle Panel</description>
-            <posx>820</posx>
-            <posy>80</posy>
-			<include>Animation_Common_Playlist_Content</include>
-			
-            <control type="label">
-                <width>280</width>
-                <height>40</height>
-                <font>font36B</font>
+                <control type="label">           
+                    <description>Heading</description>
+                    <top>-75</top>
+                    <left>20</left>
+                    <width>700</width>
+                    <height>75</height>
+                    <font>font36B</font>
+                    <textcolor>BaseWhite</textcolor>        
+                    <label>$LOCALIZE[31044]</label>   
+                </control>
+
+                <control type="list" id="100">
+                    <width>749</width>
+                    <height>645</height>
+                    <onleft>50</onleft>
+                    <onright>61</onright>
+                    <onup>9000</onup>
+                    <ondown>9000</ondown>
+                    <scrolltime>200</scrolltime>
+                    <pagecontrol>61</pagecontrol>
+                    <itemlayout height="85" width="749">
+
+                        <control type="image">
+                            <left>10</left>
+                            <top>10</top>
+                            <width>65</width>
+                            <height>65</height>
+                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <texture fallback="DefaultFile.png">$INFO[Listitem.Icon]</texture>
+                            <bordertexture colordiffuse="BaseMediumHigh">colors/color_white.png</bordertexture> 
+                        </control> 
+
+                        <control type="label">
+                            <left>105</left>
+                            <width>500</width>
+                            <height>85</height>
+                            <aligny>center</aligny>
+                            <font>font26B</font>
+                            <label>$INFO[ListItem.Label]</label>
+                            <wrapmultiline>true</wrapmultiline>
+                            <textcolor>BaseMediumHigh</textcolor>
+                        </control>
+                        
+                        <control type="label">
+                            <left>630</left>
+                            <width>100</width>
+                            <height>85</height>
+                            <font>font20R</font>
+                            <align>right</align>
+                            <label>$INFO[ListItem.Label2]</label>
+                            <textcolor>BaseMediumMid</textcolor>
+                        </control>
+
+                        <control type="image">
+                            <top>83</top>
+                            <width>749</width>
+                            <height>2</height>
+                            <include>Common_Color_BaseLowest</include>
+                        </control>
+
+                    </itemlayout>
+                    
+                    <focusedlayout height="85" width="749">
+                    
+                        <control type="image">
+                            <width>749</width>
+                            <height>85</height>
+                            <include>Common_Color_BaseLowest</include>
+                        </control>
+
+                        <control type="image">
+                            <width>85</width>
+                            <height>85</height>
+                            <include>Common_Color_Accent</include>
+                            <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(100)">Conditional</animation>
+                        </control>
+
+                        <control type="image">
+                            <left>10</left>
+                            <top>10</top>
+                            <width>65</width>
+                            <height>65</height>
+                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <texture fallback="DefaultFile.png">$INFO[Listitem.Icon]</texture>
+                            <bordertexture colordiffuse="BaseMediumHigh">colors/color_white.png</bordertexture> 
+                        </control> 
+
+                        <control type="label">
+                            <left>105</left>
+                            <width>500</width>
+                            <height>85</height>
+                            <aligny>center</aligny>
+                            <font>font26B</font>
+                            <label>$INFO[ListItem.Label]</label>
+                            <wrapmultiline>true</wrapmultiline>
+                            <textcolor>$VAR[Accent_100]</textcolor>
+                        </control>
+
+                        <control type="label">
+                            <left>630</left>
+                            <width>100</width>
+                            <height>85</height>
+                            <font>font20R</font>
+                            <align>right</align>
+                            <label>$INFO[ListItem.Label2]</label>
+                            <textcolor>BaseMediumHigh</textcolor>
+                        </control>                  
+
+                    </focusedlayout>
+                    
+                </control>
+
+                <control type="scrollbar" id="61">
+                    <left>749</left>
+                    <height>645</height>
+                    <width>10</width>
+                    <onleft>100</onleft>
+                </control>
+
+                <control type="image">
+                    <top>667</top>
+                    <left>20</left>
+                    <width>160</width>
+                    <height>160</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture fallback="DefaultAlbumCover.png">$INFO[Container(100).ListItem.Icon]</texture>
+                    <bordertexture colordiffuse="BaseMediumHigh">colors/color_white.png</bordertexture>
+                </control>
+
+                <control type="grouplist">
+                    <top>667</top>
+                    <left>200</left>
+                    <width>739</width>
+                    <height>160</height>
+                    <itemgap>0</itemgap>
+                    <orientation>vertical</orientation>
+
+                    <control type="group">
+                        <height>30</height>
+                        <width>739</width>
+                        <visible>!IsEmpty(Container(100).ListItem.Title)</visible> 
+
+                        <control type="label">
+                            <include>Common_MyPlaylist_Label</include>
+                            <label>$LOCALIZE[556] </label>
+                        </control>
+                        
+                        <control type="label">
+                            <include>Common_MyPlaylist_Detail</include>
+                            <label>$INFO[Container(100).ListItem.Title]</label>
+                        </control>
+
+                    </control>
+
+                    <control type="group">
+                        <height>30</height>
+                        <width>739</width>
+                        <visible>!IsEmpty(Container(100).ListItem.Artist)</visible> 
+
+                        <control type="label">
+                            <include>Common_MyPlaylist_Label</include>
+                            <label>$LOCALIZE[557] </label>
+                        </control>
+                        
+                        <control type="label">
+                            <include>Common_MyPlaylist_Detail</include>
+                            <label>$INFO[Container(100).ListItem.Artist]</label>
+                        </control>
+
+                    </control>
+
+                    <control type="group">
+                        <height>30</height>
+                        <width>739</width>
+                        <visible>!IsEmpty(Container(100).ListItem.Album)</visible> 
+
+                        <control type="label">
+                            <include>Common_MyPlaylist_Label</include>
+                            <label>$LOCALIZE[558] </label>
+                        </control>
+                        
+                        <control type="label">
+                            <include>Common_MyPlaylist_Detail</include>
+                            <label>$INFO[Container(100).ListItem.Album]</label>
+                        </control>
+
+                    </control>
+
+                    <control type="group">
+                        <height>30</height>
+                        <width>739</width>
+                        <visible>!IsEmpty(Container(100).ListItem.Duration)</visible> 
+
+                        <control type="label">
+                            <include>Common_MyPlaylist_Label</include>
+                            <label>$LOCALIZE[555] </label>
+                        </control>
+                        
+                        <control type="label">
+                            <include>Common_MyPlaylist_Detail</include>
+                            <label>$INFO[Container(100).ListItem.Duration]</label>
+                        </control>
+
+                    </control>
+
+                    <control type="group">
+                        <height>30</height>
+                        <width>739</width>
+                        <visible>!IsEmpty(Container(100).ListItem.Genre)</visible> 
+
+                        <control type="label">
+                            <include>Common_MyPlaylist_Label</include>
+                            <label>$LOCALIZE[515] </label>
+                        </control>
+                        
+                        <control type="label">
+                            <include>Common_MyPlaylist_Detail</include>
+                            <label>$INFO[Container(100).ListItem.Genre]</label>
+                        </control>
+
+                    </control>
+
+                </control>
+
+            </control>
+
+            <control type="grouplist" id="9000">          
+                <top>920</top>
+                <width>1520</width>
+                <itemgap>0</itemgap>
+                <orientation>horizontal</orientation>
+                <onup>50</onup>
+                <ondown>50</ondown>
                 <align>center</align>
-                <label>31044</label>
-				<textcolor>BaseMediumHigh</textcolor>
-            </control>
-			
-            <control type="image">
-                <posy>60</posy>
-                <width>280</width>
-                <height>280</height>
-                <aspectratio>keep</aspectratio>
-                <texture fallback="DefaultAlbumCover.png">$INFO[Container(50).ListItem.Icon]</texture>
-                <bordertexture border="5" colordiffuse="BaseMid">colors/color_white.png</bordertexture>
-                <bordersize>10</bordersize>
-                <visible>Control.HasFocus(50)</visible>
-            </control>
-			
-            <control type="image">
-                <posy>60</posy>
-                <width>280</width>
-                <height>280</height>
-                <aspectratio>keep</aspectratio>
-                <texture fallback="DefaultAlbumCover.png">$INFO[Container(100).ListItem.Icon]</texture>
-                <bordertexture border="5" colordiffuse="BaseMid">colors/color_white.png</bordertexture>
-                <bordersize>10</bordersize>
-                <visible>Control.HasFocus(100)</visible>
-            </control>
-			
-            <control type="grouplist">
-                <posy>360</posy>
-                <width>280</width>
-                <height>750</height>
-                <itemgap>0</itemgap>
-                <orientation>vertical</orientation>
-                <visible>Control.HasFocus(50)</visible>
-				
-                <control type="group">
-                    <height>80</height>
-                    <visible>!IsEmpty(Container(50).ListItem.Title)</visible>
-					
-                    <control type="label">
-                        <description>Type Label</description>
-                        <include>Common_Playlist_Label</include>
-                        <label>$LOCALIZE[556]</label>
-                    </control>
-					
-                    <control type="label">
-                        <description>Type Value</description>
-                        <include>Common_Playlist_Info</include>
-                        <label>$INFO[Container(50).ListItem.Title]</label>
-                    </control>
-					
-                </control>
-				
-                <control type="group">
-                    <height>80</height>
-                    <visible>!IsEmpty(Container(50).ListItem.Artist)</visible>
-					
-                    <control type="label">
-                        <description>Type Label</description>
-                        <include>Common_Playlist_Label</include>
-                        <label>$LOCALIZE[557]</label>
-                    </control>
-					
-                    <control type="label">
-                        <description>Type Value</description>
-                        <include>Common_Playlist_Info</include>
-                        <label>$INFO[Container(50).ListItem.Artist]</label>
-                    </control>
-					
-                </control>
-				
-                <control type="group">
-                    <height>80</height>
-                    <visible>!IsEmpty(Container(50).ListItem.Album)</visible>
-					
-                    <control type="label">
-                        <description>Type Label</description>
-                        <include>Common_Playlist_Label</include>
-                        <label>$LOCALIZE[558]</label>
-                    </control>
-					
-                    <control type="label">
-                        <description>Type Value</description>
-                        <include>Common_Playlist_Info</include>
-                        <label>$INFO[Container(50).ListItem.Album]</label>
-                    </control>
-					
-                </control>
-				
-                <control type="group">
-                    <height>80</height>
-                    <visible>!IsEmpty(Container(50).ListItem.Duration)</visible>
-					
-                    <control type="label">
-                        <description>Type Label</description>
-                        <include>Common_Playlist_Label</include>
-                        <label>$LOCALIZE[555]</label>
-                    </control>
-					
-                    <control type="label">
-                        <description>Type Value</description>
-                        <include>Common_Playlist_Info</include>
-                        <label>$INFO[Container(50).ListItem.Duration]</label>
-                    </control>
-					
-                </control>
-				
-                <control type="group">
-                    <height>80</height>
-                    <visible>!IsEmpty(Container(50).ListItem.TrackNumber)</visible>
-					
-                    <control type="label">
-                        <description>Type Label</description>
-                        <include>Common_Playlist_Label</include>
-                        <label>$LOCALIZE[554]</label>
-                    </control>
-					
-                    <control type="label">
-                        <description>Type Value</description>
-                        <include>Common_Playlist_Info</include>
-                        <label>$INFO[Container(50).ListItem.TrackNumber]</label>
-                    </control>
-					
-                </control>
-				
-                <control type="group">
-                    <height>80</height>
-                    <visible>!IsEmpty(Container(50).ListItem.Genre)</visible>
-					
-                    <control type="label">
-                        <description>Type Label</description>
-                        <include>Common_Playlist_Label</include>
-                        <label>$LOCALIZE[515]</label>
-                    </control>
-					
-                    <control type="label">
-                        <description>Type Value</description>
-                        <include>Common_Playlist_Info</include>
-                        <label>$INFO[Container(50).ListItem.Genre]</label>
-                    </control>
-					
-                </control>
-				
-            </control>
-			
-            <control type="grouplist">
-                <posy>360</posy>
-                <width>280</width>
-                <height>750</height>
-                <itemgap>0</itemgap>
-                <orientation>vertical</orientation>
-                <visible>Control.HasFocus(100)</visible>
-				
-                <control type="group">
-                    <height>80</height>
-                    <visible>!IsEmpty(Container(100).ListItem.Title)</visible>
-					
-                    <control type="label">
-                        <description>Type Label</description>
-                        <include>Common_Playlist_Label</include>
-                        <label>$LOCALIZE[556]</label>
-                    </control>
-					
-                    <control type="label">
-                        <description>Type Value</description>
-                        <include>Common_Playlist_Info</include>
-                        <label>$INFO[Container(100).ListItem.Title]</label>
-                    </control>
-					
-                </control>
-				
-                <control type="group">
-                    <height>80</height>
-                    <visible>!IsEmpty(Container(100).ListItem.Artist)</visible>
-					
-                    <control type="label">
-                        <description>Type Label</description>
-                        <include>Common_Playlist_Label</include>
-                        <label>$LOCALIZE[557]</label>
-                    </control>
-					
-                    <control type="label">
-                        <description>Type Value</description>
-                        <include>Common_Playlist_Info</include>
-                        <label>$INFO[Container(100).ListItem.Artist]</label>
-                    </control>
-					
-                </control>
-				
-                <control type="group">
-                    <height>80</height>
-                    <visible>!IsEmpty(Container(100).ListItem.Album)</visible>
-					
-                    <control type="label">
-                        <description>Type Label</description>
-                        <include>Common_Playlist_Label</include>
-                        <label>$LOCALIZE[558]</label>
-                    </control>
-					
-                    <control type="label">
-                        <description>Type Value</description>
-                        <include>Common_Playlist_Info</include>
-                        <label>$INFO[Container(100).ListItem.Album]</label>
-                    </control>
-					
-                </control>
-				
-                <control type="group">
-                    <height>80</height>
-                    <visible>!IsEmpty(Container(100).ListItem.Duration)</visible>
-					
-                    <control type="label">
-                        <description>Type Label</description>
-                        <include>Common_Playlist_Label</include>
-                        <label>$LOCALIZE[555]</label>
-                    </control>
-					
-                    <control type="label">
-                        <description>Type Value</description>
-                        <include>Common_Playlist_Info</include>
-                        <label>$INFO[Container(100).ListItem.Duration]</label>
-                    </control>
-					
-                </control>
-				
-                <control type="group">
-                    <height>80</height>
-                    <visible>!IsEmpty(Container(100).ListItem.TrackNumber)</visible>
-					
-                    <control type="label">
-                        <description>Type Label</description>
-                        <include>Common_Playlist_Label</include>
-                        <label>$LOCALIZE[554]</label>
-                    </control>
-					
-                    <control type="label">
-                        <description>Type Value</description>
-                        <include>Common_Playlist_Info</include>
-                        <label>$INFO[Container(100).ListItem.TrackNumber]</label>
-                    </control>
-					
-                </control>
-				
-                <control type="group">
-                    <height>80</height>
-                    <visible>!IsEmpty(Container(100).ListItem.Genre)</visible>
-					
-                    <control type="label">
-                        <description>Type Label</description>
-                        <include>Common_Playlist_Label</include>
-                        <label>$LOCALIZE[515]</label>
-                    </control>
-					
-                    <control type="label">
-                        <description>Type Value</description>
-                        <include>Common_Playlist_Info</include>
-                        <label>$INFO[Container(100).ListItem.Genre]</label>
-                    </control>
-					
-                </control>
-				
-            </control>
 
-			<!--Playlist Controls-->
-            <control type="grouplist" id="9000">
-                <posy>900</posy>
-				<width>280</width>
-				<orientation>horizontal</orientation>
-				<align>center</align>
-				<onleft>50</onleft>
-				<onright>100</onright>
-				<itemgap>20</itemgap>
-				
-                <control type="button" id="6">
-                    <description>Open</description>
-                    <include>Dialog_Button</include>
-                    <texturefocus colordiffuse="$VAR[Accent_100]">buttons/openFO.png</texturefocus>
-                    <texturenofocus colordiffuse="BaseMediumHigh">buttons/openNF.png</texturenofocus>
-                </control>
-				
-                <control type="button" id="7">
-                    <description>Save</description>
-                    <include>Dialog_Button</include>
-                    <texturefocus colordiffuse="$VAR[Accent_100]">buttons/saveFO.png</texturefocus>
-                    <texturenofocus colordiffuse="BaseMediumHigh">buttons/saveNF.png</texturenofocus>
-                </control>
-				
-                <control type="button" id="8">
-                    <description>Save</description>
-					<include>Dialog_Button</include>
-					<texturefocus colordiffuse="$VAR[Accent_100]">buttons/cancelFO.png</texturefocus>
-					<texturenofocus colordiffuse="BaseMediumHigh">buttons/cancelNF.png</texturenofocus>
-                </control>
-				
-            </control>
-			
-        </control>
+                <include content="InfoDialog_Button">
+                    <param name="button_id" value="6"/>  
+                    <param name="width" value="506"/>
+                    <param name="label" value="$LOCALIZE[31045]"/>          
+                </include>
 
-		<!--Right Panel Info-->
-        <control type="group">
-            <description>Right Panel</description>
-            <posx>1140</posx>
-            <include>Animation_Common_Playlist_Content</include>
+                <include content="InfoDialog_Button">
+                    <param name="button_id" value="7"/>  
+                    <param name="width" value="508"/>
+                    <param name="label" value="$LOCALIZE[31046]"/>          
+                </include>
 
-            <control type="label">
-                <posx>680</posx>
-                <width>615</width>
-                <height>80</height>
-                <font>font45B</font>
-				<align>right</align>
-                <label>$LOCALIZE[31055]</label>
-            </control>			
-			
-            <control type="list" id="100">
-                <posx>10</posx>
-                <posy>100</posy>
-                <width>670</width>
-                <height>960</height>
-                <onleft>61</onleft>
-                <viewtype label="">list</viewtype>
-                <scrolltime>200</scrolltime>
-                <pagecontrol>61</pagecontrol>
-                <itemlayout height="85" width="670">
-				
-					<control type="image">
-						<posx>10</posx>
-						<posy>10</posy>
-						<width>65</width>
-						<height>65</height>
-						<texture>backings/circle.png</texture>
-					</control>
-
-					<control type="image">
-						<posx>10</posx>
-						<posy>10</posy>
-						<width>65</width>
-						<height>65</height>
-						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture diffuse="masks/circle.png" fallback="DefaultFile.png">$INFO[Listitem.Icon]</texture>
-					</control> 
-
-					<control type="label">
-						<posx>85</posx>
-						<width>500</width>
-						<height>85</height>
-						<aligny>center</aligny>
-						<font>font26B</font>
-						<label>$INFO[ListItem.Label]</label>
-						<wrapmultiline>true</wrapmultiline>
-						<textcolor>BaseMediumHigh</textcolor>
-					</control>
-					
-					<control type="label">
-						<posx>550</posx>
-						<width>100</width>
-						<height>85</height>
-						<font>font20R</font>
-						<align>right</align>
-						<label>$INFO[ListItem.Label2]</label>
-						<textcolor>$VAR[Accent_100]</textcolor>
-					</control>
-
-                </itemlayout>
-				
-                <focusedlayout height="85" width="670">
-				
-                    <control type="image">
-                        <width>670</width>
-                        <height>85</height>
-                        <include>Common_Color_Accent</include>
-                        <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(100)">Conditional</animation>
-                    </control>
-
-					<control type="image">
-						<posx>10</posx>
-						<posy>10</posy>
-						<width>65</width>
-						<height>65</height>
-						<texture>backings/circle.png</texture>
-					</control>
-
-					<control type="image">
-						<posx>10</posx>
-						<posy>10</posy>
-						<width>65</width>
-						<height>65</height>
-						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture diffuse="masks/circle.png" fallback="DefaultFile.png">$INFO[Listitem.Icon]</texture>
-					</control> 
-
-					<control type="label">
-						<posx>85</posx>
-						<width>500</width>
-						<height>85</height>
-						<aligny>center</aligny>
-						<font>font26B</font>
-						<label>$INFO[ListItem.Label]</label>
-						<wrapmultiline>true</wrapmultiline>
-						<textcolor>BaseWhite</textcolor>
-					</control>
-
-					<control type="label">
-						<posx>550</posx>
-						<width>100</width>
-						<height>85</height>
-						<font>font20R</font>
-						<align>right</align>
-						<label>$INFO[ListItem.Label2]</label>
-						<textcolor>BaseLow</textcolor>
-					</control>					
-
-                </focusedlayout>
-				
-            </control>
+                <include content="InfoDialog_Button">
+                    <param name="button_id" value="8"/>  
+                    <param name="width" value="506"/>  
+                    <param name="label" value="$LOCALIZE[222]"/>       
+                </include>
+                
+            </control>  
 
         </control>
+
+        <include>Common_LeftBar</include>
 		
     </controls>
 	

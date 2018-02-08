@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <window>
-    <coordinates>
-        <system>1</system>
-    </coordinates>
-	
+
     <controls>
         <include>DialogOverlay</include>	
 	
@@ -14,74 +11,83 @@
             <animation type="Conditional" condition="Control.HasFocus(150) | Control.HasFocus(160)" reversible="true">
                 <effect type="slide" end="-375,0" time="400" />
             </animation>
-			<posx>570</posx>
+			<left>570</left>
 			
             <control type="image">
-                <posx>150</posx>
+                <left>145</left>
+                <width>5</width>
+                <height>1080</height>
+                <include>Common_Color_BaseMediumHigh</include>
+            </control>
+
+            <control type="image">
+                <left>150</left>
                 <width>1725</width>
                 <height>1080</height>
                 <include>Common_Color_BaseWhite</include>
             </control>
-			
-			<control type="image">
-                <posx>150</posx>
+
+            <control type="image">
+                <left>150</left>
                 <width>1725</width>
                 <height>75</height>
                 <include>Common_Color_BaseMediumHigh</include>
             </control>
-			
-			<control type="image">
-				<posx>150</posx>
-                <posy>175</posy>
-                <width>1600</width>
-                <height>800</height>
-                <include>Common_Color_BaseLow</include>
-            </control>	
+
+            <include content="Common_Separator_Horizontal">
+                <param name="top" value="148"/> 
+                <param name="left" value="150"/>   
+                <param name="width" value="1725"/>
+            </include>
+
+            <include content="Common_Separator_Horizontal">
+                <param name="top" value="1000"/> 
+                <param name="left" value="150"/>   
+                <param name="width" value="1600"/>
+            </include>
 			
 			<control type="label">
-				<posx>180</posx>
-				<height>75</height>
+				<left>170</left>
+				<height>78</height>
 				<font>font45R</font>
-				<textcolor>BaseWhite</textcolor>
-				<scroll>true</scroll>
-				<label>$LOCALIZE[31131]</label>
+				<label>$LOCALIZE[31409]</label>
 			</control>
 			
 			<control type="image" id="110">
 				<description>Service Logo</description>
-				<posx>1020</posx>
-				<posy>12</posy>
+				<left>1020</left>
+				<top>10</top>
 				<width>300</width>
 				<height>60</height>
 				<aspectratio>keep</aspectratio>
 			</control>		
 
 			<control type="label" id="100">
-				<posx>150</posx>
-				<posy>75</posy>
+				<left>150</left>
+				<top>75</top>
 				<width>1200</width>
-				<height>100</height>
+				<height>75</height>
 				<font>font30R</font>
 				<align>center</align>
 				<textcolor>BaseMediumHigh</textcolor>
 			</control>
 			
 			<control type="image">
-				<posx>1300</posx>
-				<posy>107</posy>
+				<left>1300</left>
+				<top>75</top>
 				<width>36</width>
-				<height>36</height>
+				<height>75</height>
 				<texture colordiffuse="$VAR[Accent_100]">arrows/nav-right.png</texture>
-				<aspectration>scale</aspectration>
+				<aspectratio>keep</aspectratio>
 			</control>
 
             <control type="group">
 			
                 <control type="list" id="120">
-                    <posx>150</posx>
-                    <posy>175</posy>
+                    <left>150</left>
+                    <top>160</top>
                     <width>1200</width>
-                    <height>800</height>
+                    <height>840</height>
                     <onleft>121</onleft>
                     <onright>150</onright>
                     <onup>120</onup>
@@ -91,8 +97,7 @@
                     <itemlayout width="1200" height="85">
 					
                         <control type="label">
-                            <posx>30</posx>
-                            <posy>3</posy>
+                            <left>20</left>
                             <width>950</width>
                             <height>45</height>
                             <label>$INFO[ListItem.Label2]</label>
@@ -101,8 +106,8 @@
                         </control>
 						
 						<control type="image">
-							<posx>50</posx>
-							<posy>50</posy>
+							<left>50</left>
+							<top>45</top>
 							<width>150</width>
 							<height>30</height>
 							<texture colordiffuse="BaseMid">flags\ratings\rating5.png</texture>
@@ -110,8 +115,8 @@
 						</control>
 						
                         <control type="image">
-							<posx>50</posx>
-							<posy>50</posy>
+							<left>50</left>
+							<top>45</top>
 							<width>150</width>
 							<height>30</height>
                             <texture colordiffuse="$VAR[Accent_100]">flags\ratings\$INFO[ListItem.ActualIcon]star.png</texture>
@@ -119,18 +124,18 @@
                         </control>
 						
                         <control type="label">
-                            <posx>240</posx>
-                            <posy>50</posy>
+                            <left>240</left>
+                            <top>45</top>
                             <width min="30" max="780">auto</width>
                             <height>30</height>
                             <label>$INFO[ListItem.Label]</label>
                             <font>font26R</font>
-                            <textcolor>$VAR[Accent_100]</textcolor>
+                            <textcolor>BaseMid</textcolor>
                         </control>
 						
                         <control type="image">
-                            <posx>970</posx>
-                            <posy>30</posy>
+                            <left>990</left>
+                            <top>25</top>
                             <width>90</width>
                             <height>30</height>
                             <texture colordiffuse="BaseMediumHigh">subtitles/subtitles_hearingimpaired.png</texture>
@@ -139,13 +144,20 @@
                         </control>
 						
                         <control type="image">
-                            <posx>1060</posx>
-                            <posy>30</posy>
+                            <left>1080</left>
+                            <top>25</top>
                             <width>90</width>
                             <height>30</height>
                             <texture colordiffuse="BaseMediumHigh">subtitles/subtitles_sync.png</texture>
                             <aspectratio>keep</aspectratio>
 							<animation effect="fade" start="100" end="40" condition="!ListItem.property(sync)">Conditional</animation>
+                        </control>
+
+                        <control type="image">
+                            <top>83</top>
+                            <width>1725</width>
+                            <height>2</height>
+                            <include>Common_Color_BaseLowest</include>
                         </control>
 
                     </itemlayout>
@@ -154,66 +166,65 @@
 					
                         <control type="image">
                             <width>1230</width>
-                            <height>90</height>
+                            <height>85</height>
                             <include>Common_Color_Accent</include>
                             <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(120)">Conditional</animation>
                         </control>
 						
                         <control type="label">
-                            <posx>30</posx>
-                            <posy>3</posy>
+                            <left>20</left>
                             <width>950</width>
                             <height>45</height>
                             <label>$INFO[ListItem.Label2]</label>
                             <font>font30R</font>
                         </control>
-						
-						<control type="image">
-							<posx>50</posx>
-							<posy>50</posy>
-							<width>150</width>
-							<height>30</height>
-							<texture colordiffuse="BaseMid">flags\ratings\rating5.png</texture>
-							<aspectratio>keep</aspectratio>
-						</control>
-						
+                        
                         <control type="image">
-							<posx>50</posx>
-							<posy>50</posy>
-							<width>150</width>
-							<height>30</height>
-                            <texture colordiffuse="BaseLow">flags\ratings\$INFO[ListItem.ActualIcon]star.png</texture>
-							<aspectratio>keep</aspectratio>
+                            <left>50</left>
+                            <top>45</top>
+                            <width>150</width>
+                            <height>30</height>
+                            <texture colordiffuse="BaseMid">flags\ratings\rating5.png</texture>
+                            <aspectratio>keep</aspectratio>
                         </control>
-						
+                        
+                        <control type="image">
+                            <left>50</left>
+                            <top>45</top>
+                            <width>150</width>
+                            <height>30</height>
+                            <texture>flags\ratings\$INFO[ListItem.ActualIcon]star.png</texture>
+                            <aspectratio>keep</aspectratio>
+                        </control>
+                        
                         <control type="label">
-                            <posx>240</posx>
-                            <posy>50</posy>
+                            <left>240</left>
+                            <top>45</top>
                             <width min="30" max="780">auto</width>
                             <height>30</height>
                             <label>$INFO[ListItem.Label]</label>
                             <font>font26R</font>
-                            <textcolor>BaseLow</textcolor>
+                            <textcolor>BaseLowest</textcolor>
                         </control>
-						
+                        
                         <control type="image">
-                            <posx>970</posx>
-                            <posy>30</posy>
+                            <left>990</left>
+                            <top>25</top>
                             <width>90</width>
                             <height>30</height>
-                            <texture colordiffuse="BaseWhite">subtitles/subtitles_hearingimpaired.png</texture>
+                            <texture>subtitles/subtitles_hearingimpaired.png</texture>
                             <aspectratio>keep</aspectratio>
-							<animation effect="fade" start="100" end="40" condition="!ListItem.property(hearing_imp)">Conditional</animation>
+                            <animation effect="fade" start="100" end="40" condition="!ListItem.property(hearing_imp)">Conditional</animation>
                         </control>
-						
+                        
                         <control type="image">
-                            <posx>1060</posx>
-                            <posy>30</posy>
+                            <left>1080</left>
+                            <top>25</top>
                             <width>90</width>
                             <height>30</height>
-                            <texture colordiffuse="BaseWhite">subtitles/subtitles_sync.png</texture>
+                            <texture>subtitles/subtitles_sync.png</texture>
                             <aspectratio>keep</aspectratio>
-							<animation effect="fade" start="100" end="40" condition="!ListItem.property(sync)">Conditional</animation>
+                            <animation effect="fade" start="100" end="40" condition="!ListItem.property(sync)">Conditional</animation>
                         </control>
 						
                     </focusedlayout>
@@ -222,8 +233,8 @@
 				
                 <control type="spincontrol" id="121">
                     <description>Next page button</description>
-                    <posx>1260</posx>
-                    <posy>1015</posy>
+                    <left>1260</left>
+                    <top>1025</top>
                     <width>30</width>
                     <height>30</height>
                     <font>font30R</font>
@@ -248,8 +259,8 @@
 				
 				<control type="label">
 					<description>Content Picker label</description>
-					<posx>180</posx>
-					<posy>1015</posy>
+					<left>180</left>
+					<top>1025</top>
 					<width>950</width>
 					<height>30</height>
 					<font>font30R</font>
@@ -260,20 +271,18 @@
             </control>
 			
             <control type="group">
-			
-				<control type="image">
-					<posx>1350</posx>
-					<posy>105</posy>
-					<width>2</width>
-					<height>945</height>
-					<include>Common_Color_BaseMediumHigh</include>
-				</control>
+
+                <include content="Common_Separator_Vertical">
+                    <param name="top" value="755"/> 
+                    <param name="left" value="1350"/>   
+                    <param name="height" value="1005"/>
+                </include>
 
                 <control type="label">
-                    <posx>1350</posx>
-					<posy>75</posy>
-					<width>375</width>
-					<height>100</height>
+                    <left>1352</left>
+					<top>75</top>
+					<width>373</width>
+					<height>75</height>
 					<font>font30R</font>
 					<align>center</align>
 					<textcolor>BaseMediumHigh</textcolor>
@@ -281,10 +290,10 @@
                 </control>
 				
 				<control type="button" id="160">
-					<posx>1350</posx>
-					<posy>175</posy>
-					<width>375</width>
-					<label>31319</label>
+					<posx>1352</posx>
+					<posy>160</posy>
+					<width>373</width>
+					<label>$LOCALIZE[31319]</label>
 					<ondown>150</ondown>
                     <onup>150</onup>					
 					<onleft>120</onleft>
@@ -292,36 +301,38 @@
 					<font>font30</font>
 					<textcolor>BaseMediumHigh</textcolor>
 					<focusedcolor>BaseWhite</focusedcolor>
+                    <selectedcolor>$VAR[Accent_100]</selectedcolor>
 					<texturefocus colordiffuse="$VAR[Accent_100]">colors/color_white.png</texturefocus>
 				</control>				
 
                 <control type="list" id="150">
-                    <posx>1350</posx>
-                    <posy>235</posy>
-                    <width>375</width>
+                    <left>1352</left>
+                    <top>220</top>
+                    <width>373</width>
                     <height>740</height>
                     <onleft>120</onleft>
                     <onright>120</onright>
                     <onup>160</onup>
 					<ondown>160</ondown>
                     <viewtype label="535">list</viewtype>
-                    <itemlayout width="375" height="60">
+                    <itemlayout width="373" height="60">
 					
                         <control type="label">
                             <posx>30</posx>
-                            <width>375</width>
+                            <width>373</width>
                             <height>60</height>
                             <font>font30</font>
                             <textcolor>BaseMediumHigh</textcolor>
+                            <selectedcolor>$VAR[Accent_100]</selectedcolor>
                             <info>ListItem.Label</info>
                         </control>
 						
                     </itemlayout>
 					
-                    <focusedlayout width="375" height="60">
+                    <focusedlayout width="373" height="60">
 					
                         <control type="image">
-                            <width>375</width>
+                            <width>373</width>
                             <height>60</height>
                             <include>Common_Color_Accent</include>
                             <visible>Control.HasFocus(150)</visible>
@@ -329,7 +340,7 @@
 						
                         <control type="label">
                             <posx>30</posx>
-                            <width>375</width>
+                            <width>373</width>
                             <height>60</height>
                             <font>font30</font>
                             <info>ListItem.Label</info>
@@ -338,10 +349,11 @@
 						
 						<control type="label">
                             <posx>30</posx>
-                            <width>375</width>
+                            <width>373</width>
                             <height>60</height>
                             <font>font30</font>
-                            <selectedcolor>BaseMediumHigh</selectedcolor>
+                            <textcolor>BaseMediumHigh</textcolor>
+                            <selectedcolor>$VAR[Accent_100]</selectedcolor>
                             <info>ListItem.Label</info>
 							<visible>!Control.HasFocus(150)</visible>
                         </control>

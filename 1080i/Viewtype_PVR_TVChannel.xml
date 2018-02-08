@@ -8,63 +8,55 @@
             <description>TV Channels group</description>
             <visible>Control.IsVisible(11)</visible>
 			
-			<control type="image">
-				<include>Common_Animation_CenterMenu_Stage2</include>
-				<posy>315</posy>
-				<width>1920</width>
-				<height>675</height>
-                <texture colordiffuse="BaseMid">colors/color_white.png</texture>
-            </control>
-			
             <control type="group">
-				<include>Common_Animation_PVR</include>
-				<posy>320</posy>
+				<top>150</top>
+				<left>200</left>
 
-                <control type="label"> 
-					<posx>114</posx>
-                    <width>900</width>
-                    <height>50</height>
-                    <font>font50B</font>
-                    <label>$INFO[Control.GetLabel(29),[COLOR White]$LOCALIZE[31084] [/COLOR]]</label>
-                    <textcolor>$VAR[Accent_100]</textcolor>
-                </control>
+	            <include content="Common_Window_Backing">
+	                <param name="width" value="1520"/>
+	                <param name="height" value="780"/>  
+	                <param name="logo_visible" value="false"/> 
+	                <param name="header_height" value="5"/>             
+	            </include> 
 
-				<control type="image">	
-					<include>Common_Animation_CenterMenu_Stage3</include>
-					<posy>65</posy>
-					<width>1920</width>
-					<height>596</height>
-					<texture colordiffuse="BaseMediumHigh">colors/color_white.png</texture>			
+	            <include content="Common_Separator_Horizontal">
+	                <param name="top" value="73"/>   
+	                <param name="width" value="1520"/>
+	            </include>
+
+	            <include content="Common_Separator_Vertical">
+	            	<param name="top" value="75"/> 
+	                <param name="height" value="705"/>   
+	                <param name="left" value="760"/>
+	            </include> 
+
+				<control type="label">			
+					<description>Heading</description>
+					<top>5</top>
+					<left>20</left>
+					<width>1760</width>
+					<height>68</height>
+					<font>font36R</font>
+					<textcolor>BaseMediumHigh</textcolor>		
+					<label>$INFO[Control.GetLabel(29),[B]$LOCALIZE[31178]: [/B]]</label>	
 				</control>
-				
-				<control type="image">	
-					<posy>65</posy>
-					<width>1000</width>
-					<height>596</height>
-					<texture colordiffuse="BaseWhite">colors/color_white.png</texture>	
-					<include>Common_Animation_CenterMenu_Stage2</include>
-				</control>
 
-                <control type="scrollbar" id="70">
-					<include>Common_Animation_CenterMenu_Stage2</include>
-					<posy>65</posy>
-					<posx>1000</posx>
-                    <height>596</height>
-                    <width>10</width>
-                    <onright condition="Player.HasMedia">111</onright>
-					<onright condition="!Player.HasMedia">Dialog.Close(1119)</onright>
-					<onright condition="!Player.HasMedia">SetFocus(9050)</onright>
-                    <onleft>11</onleft>
-                </control>
-				
                 <control type="group">
-                    <posy>65</posy>			
-					
+                    <top>75</top>			
+
+	                <control type="scrollbar" id="70">
+						<left>750</left>
+	                    <height>705</height>
+	                    <width>10</width>
+	                    <onright condition="Player.HasMedia">111</onright>
+						<onright condition="!Player.HasMedia">Dialog.Close(1119)</onright>
+						<onright condition="!Player.HasMedia">SetFocus(9050)</onright>
+	                    <onleft>11</onleft>
+	                </control>
+								
 					<control type="list" id="11">
-						<include>Common_Animation_CenterMenu_Stage2</include>
-						<posx>80</posx>
-						<width>920</width>
-						<height>596</height>
+						<width>750</width>
+						<height>705</height>
 						<onleft condition="Player.HasMedia">111</onleft>
 						<onleft condition="!Player.HasMedia">Dialog.Close(1119)</onleft>
 						<onleft condition="!Player.HasMedia">SetFocus(9050)</onleft>
@@ -74,160 +66,201 @@
 						<pagecontrol>70</pagecontrol>
 						<itemlayout height="85">
 
+			                <control type="image">
+			                	<top>83</top>                  
+			                    <width>750</width>
+			                    <height>2</height>
+			                    <include>Common_Color_BaseLowest</include>
+			                </control> 
+
 							<control type="image">
-								<posx>10</posx>
-								<posy>10</posy>
-								<width>65</width>
-								<height>65</height>
-								<texture>backings/circle.png</texture>
+								<left>15</left>
+								<top>15</top>
+								<width>55</width>
+								<height>55</height>
+								<texture colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
 							</control>
 
 							<control type="label">
-								<posx>10</posx>
-								<posy>10</posy>
-								<width>65</width>
-								<height>65</height>
+								<left>15</left>
+								<top>15</top>
+								<width>55</width>
+								<height>55</height>
 								<align>center</align>
 								<font>font26B</font>
 								<label>$INFO[ListItem.ChannelNumber]</label>
 							</control>
-							
-							<include>Common_Watched_LiveTV</include>
 
 							<control type="label">
-								<posx>85</posx>
-								<width>280</width>
+								<left>105</left>
+								<width>250</width>
 								<height>85</height>
-								<font>font30B</font>
+								<font>font26B</font>
 								<textcolor>BaseMediumHigh</textcolor>
+								<selectedcolor>$VAR[Accent_100]</selectedcolor>
 								<label>$INFO[ListItem.Label]</label>
 							</control>
 
 							<control type="textbox">
-								<posx>380</posx>
-								<width>520</width>
+								<left>360</left>
+								<width>330</width>
+								<height>85</height>
 								<font>font26R</font>
-								<textcolor>BaseMediumHigh</textcolor>
+								<textcolor>BaseMid</textcolor>
 								<aligny>center</aligny>
+								<autoscroll>false</autoscroll>
 								<label>$INFO[ListItem.Title]</label>
 							</control>
+							
+							<include>Common_Watched_LiveTV</include>
 							
 						</itemlayout>
 						
 						<focusedlayout height="85">
 						
+			                <control type="image">              
+			                    <width>750</width>
+			                    <height>85</height>
+			                    <include>Common_Color_BaseLowest</include>
+	                            <animation condition="Container(11).OnNext" reversible="false" effect="slide" start="0,-45" end="0,0" time="100" tween="back" easing="out">Focus</animation>
+	                            <animation condition="Container(11).OnPrevious" reversible="false" effect="slide" start="0,45" end="0,0" time="100" tween="back" easing="out">Focus</animation>
+			                </control> 
+
+			                <control type="image">              
+			                    <width>85</width>
+			                    <height>85</height>
+			                    <include>Common_Color_Accent</include>
+  		                        <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(11)">Conditional</animation>
+	                            <animation condition="Container(11).OnNext" reversible="false" effect="slide" start="0,-45" end="0,0" time="100" tween="back" easing="out">Focus</animation>
+	                            <animation condition="Container(11).OnPrevious" reversible="false" effect="slide" start="0,45" end="0,0" time="100" tween="back" easing="out">Focus</animation>
+			                </control> 
+
 							<control type="image">
-								<width>920</width>
-								<include>Common_Color_Accent</include>
-							</control>
-							
-							<control type="image">
-								<posx>10</posx>
-								<posy>10</posy>
-								<width>65</width>
-								<height>65</height>
-								<texture diffuse="masks/circle.png">colors/color_white.png</texture>
+								<left>15</left>
+								<top>15</top>
+								<width>55</width>
+								<height>55</height>
+								<texture colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
 							</control>
 
 							<control type="label">
-								<posx>10</posx>
-								<posy>10</posy>
-								<width>65</width>
-								<height>65</height>
+								<left>15</left>
+								<top>15</top>
+								<width>55</width>
+								<height>55</height>
 								<align>center</align>
 								<font>font26B</font>
-								<textcolor>BaseMediumHigh</textcolor>
 								<label>$INFO[ListItem.ChannelNumber]</label>
 							</control>
-							
-							<include>Common_Watched_LiveTV</include>
 
 							<control type="label">
-								<posx>85</posx>
-								<width>280</width>
+								<left>105</left>
+								<width>250</width>
 								<height>85</height>
-								<font>font30B</font>
+								<font>font26B</font>
+								<textcolor>$VAR[Accent_100]</textcolor>
 								<label>$INFO[ListItem.Label]</label>
 							</control>
 
 							<control type="textbox">
-								<posx>380</posx>
-								<width>520</width>
+								<left>360</left>
+								<width>330</width>
+								<height>85</height>
 								<font>font26R</font>
-								<textcolor>BaseLow</textcolor>
+								<textcolor>BaseMediumHigh</textcolor>
 								<aligny>center</aligny>
 								<label>$INFO[ListItem.Title]</label>
 							</control>
+							
+							<include>Common_Watched_LiveTV</include>
 							
 						</focusedlayout>
 						
 					</control>
 
 					<control type="group">
-						<include>Common_Animation_CenterMenu_Fade2</include>
-						<posx>1010</posx>
-						
-						<control type="fadelabel">
-							<posx>25</posx>
-							<posy>8</posy>
-							<width>860</width>
-							<height>45</height>
-							<font>font50R</font>
+						<left>760</left>
+
+			            <include content="Common_Separator_Horizontal">
+			                <param name="top" value="100"/>   
+			                <param name="width" value="760"/>
+			            </include>
+
+			            <include content="Common_Separator_Horizontal">
+			                <param name="top" value="643"/>   
+			                <param name="width" value="760"/>
+			            </include>
+
+						<control type="label">
+							<left>20</left>
+							<top>5</top>
+							<width>670</width>
+							<scroll>true</scroll>
+							<include>Common_Fanart_Title</include>
 							<label>$INFO[Container(11).ListItem.Title]</label>
-							<textcolor>$VAR[Accent_100]</textcolor>
 						</control>
 
 						<control type="label">
-							<posx>25</posx>
-							<posy>55</posy>
-							<width>860</width>
-							<height>45</height>
-							<font>font24B</font>
+							<left>20</left>
+							<width>670</width>
 							<label>$INFO[Container(11).ListItem.Genre] • $INFO[Container(11).ListItem.StartTime] - $INFO[Container(11).ListItem.EndTime]</label>
-						</control>
-						
-						<control type="image">
-							<posx>35</posx>
-							<posy>100</posy>
-							<width>840</width>
-							<height>2</height>
-							<include>Common_Color_BaseWhite</include>
-						</control>
-						
-						<control type="textbox">
-							<posx>35</posx>
-							<posy>120</posy>
-							<width>840</width>
-							<height>380</height>
-							<align>justify</align>
-							<autoscroll time="3000" delay="6000" repeat="8000"></autoscroll>
-							<font>font30</font>
-							<label>$INFO[Container(11).ListItem.Plot]</label>
+							<include>Common_Fanart_Subtitle</include>
 						</control>
 
 						<control type="image">
-							<posx>35</posx>
-							<posy>530</posy>
-							<width>840</width>
-							<height>2</height>
-							<include>Common_Color_BaseWhite</include>
+							<left>695</left>
+							<top>28</top>
+							<width>45</width>
+							<height>45</height>
+							<texture colordiffuse="Blue">colors\color_white.png</texture>
+							<visible>Container(11).ListItem.HasTimer</visible>
+				        </control>
+
+						<control type="image">
+							<left>695</left>
+							<top>28</top>
+							<width>45</width>
+							<height>45</height>
+							<texture>colors\color_maroon.png</texture>
+							<visible>Container(11).ListItem.IsRecording</visible>
+				        </control>
+
+						<control type="image">
+							<left>695</left>
+							<top>28</top>
+							<width>45</width>
+							<height>45</height>
+							<texture>$VAR[Watched_Image_LiveTV]</texture>
+				        </control>
+
+						<control type="textbox">
+							<left>10</left>
+							<top>110</top>
+							<width>740</width>
+							<height>520</height>
+							<font>font26</font>
+							<textcolor>BaseMid</textcolor>
+							<align>justify</align>
+							<label>$INFO[Container(11).ListItem.Plot]</label>
+							<autoscroll time="3000" delay="6000" repeat="8000"></autoscroll>
 						</control>
 						
-						<control type="fadelabel">
-							<posx>25</posx>
-							<posy>543</posy>
+						<control type="label">
+							<left>20</left>
+							<top>645</top>
 							<width>100</width>
-							<height>30</height>
-							<font>font34B</font>
+							<height>60</height>
+							<font>font34R</font>
 							<label>$LOCALIZE[19031]:</label>
+							<textcolor>BaseMediumHigh</textcolor>
 						</control>
 						
-						<control type="fadelabel">
-							<posx>135</posx>
-							<posy>543</posy>
+						<control type="label">
+							<left>130</left>
+							<top>645</top>
 							<width>755</width>
-							<height>30</height>
-							<font>font34B</font>
+							<height>60</height>
+							<font>font34R</font>
 							<textcolor>$VAR[Accent_100]</textcolor>
 							<label>$INFO[Container(11).ListItem.NextTitle]</label>
 						</control>

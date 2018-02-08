@@ -28,6 +28,13 @@
 		<platform>all</platform>
 		<summary>Created by ZexisStryfe</summary>
 		<description>Bit(ten) inspired by Windows 10 "Modern" UI with strong clear icons and typography.</description>
-	</extension>
+
+        <assets>
+            <icon>extras/icon.png</icon>
+            <fanart>extras/fanart.jpg</fanart>
+        </assets>
+
+
+		</extension>
 	
 </addon>

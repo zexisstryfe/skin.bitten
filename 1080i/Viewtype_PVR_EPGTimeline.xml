@@ -5,59 +5,60 @@
     <include name="EPGTimelineView">
 	
         <control type="group">
-
             <description>TV Guide Timeline</description>
             <visible>Control.IsVisible(10)</visible>
 			
-            <control type="image">
-				<include>Common_Animation_CenterMenu_Stage2</include>
-                <posy>180</posy>
-                <width>1920</width>
-                <height>840</height>
-                <texture colordiffuse="BaseMid">colors/color_white.png</texture>
-            </control>
-			
 			<control type="group">
-				<include>Common_Animation_PVR</include>
-				<posy>185</posy>
-				<posx>114</posx> 
-			
-				<control type="label">
-					<width>900</width>
-					<height>50</height>
-					<font>font50B</font>
-					<label>$INFO[Control.GetLabel(29),[COLOR White]$LOCALIZE[31084] [/COLOR]]</label>
-					<textcolor>$VAR[Accent_100]</textcolor>
-				</control>
-				
-				<control type="label">
-					<posx>478</posx>
-					<width>900</width>
-					<height>50</height>
-					<font>font50B</font>
-					<label>$INFO[Control.GetLabel(30),[COLOR White]$LOCALIZE[31178]: [/COLOR]]</label>
-					<textcolor>$VAR[Accent_100]</textcolor>
+				<include>Animation_Popup_1</include>
+				<top>130</top>
+				<left>100</left> 
+
+				<control type="image">
+					<width>1800</width>
+					<height>825</height>
+					<texture colordiffuse="Shadow">colors/color_white.png</texture>
 				</control>
 				
 				<control type="image">
-					<posy>65</posy>
-					<width>1920</width>
-					<height>60</height>
+					<width>1800</width>
+					<height>820</height>
 					<texture colordiffuse="BaseWhite">colors/color_white.png</texture>
 				</control>
+
+				<control type="image">
+					<width>1800</width>
+					<height>5</height>
+					<texture colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
+				</control>
+
+	            <include content="Common_Separator_Horizontal">
+	                <param name="top" value="73"/>   
+	                <param name="width" value="1800"/>
+	            </include>
 				
 				<control type="image">
 					<posy>125</posy>
-					<width>1920</width>
-					<height>525</height>
-					<texture colordiffuse="BaseLow">colors/color_white.png</texture>
+					<width>1800</width>
+					<height>480</height>
+					<texture colordiffuse="BaseLowest">colors/color_white.png</texture>
+				</control>
+
+				<control type="label">			
+					<description>Heading</description>
+					<top>5</top>
+					<left>20</left>
+					<width>1760</width>
+					<height>68</height>
+					<font>font36R</font>
+					<textcolor>BaseMediumHigh</textcolor>		
+					<label>$INFO[Control.GetLabel(30),[B]$LOCALIZE[31178]: [/B]]</label>	
 				</control>
 				
 				<control type="epggrid" id="10">
 					<description>EPG Grid</description>
-					<posy>65</posy>
-					<width>1806</width>
-					<height>585</height>
+					<top>65</top>
+					<width>1800</width>
+					<height>540</height>
 					<progresstexture border="10">general/progressline.png</progresstexture>
 					<timeblocks>20</timeblocks>
 					<rulerunit>6</rulerunit>
@@ -68,162 +69,174 @@
 					<rulerlayout height="60" width="60">
 					
 						<control type="label" id="2">
-							<font>font30R</font>
+							<top>5</top>
+							<font>font26B</font>
 							<textcolor>BaseMediumHigh</textcolor>
-							<label>   $INFO[ListItem.Label]</label>
+							<label>  $INFO[ListItem.Label]</label>
 						</control>
 						
 					</rulerlayout>
 					
-					<channellayout height="75" width="366">
+					<channellayout height="60" width="366">
 						<animation effect="fade" start="110" time="200">OnFocus</animation>
-						
-						<control type="image">
-							<posx>10</posx>
-							<posy>10</posy>
-							<width>55</width>
-							<height>55</height>
-							<texture>backings/circle.png</texture>
-						</control>
 
 						<control type="label">
-							<posx>10</posx>
-							<posy>10</posy>
-							<width>55</width>
-							<height>55</height>
+							<top>10</top>
+							<width>60</width>
+							<height>40</height>
 							<align>center</align>
 							<font>font26B</font>
+							<textcolor>BaseMediumHigh</textcolor>
 							<label>$INFO[ListItem.ChannelNumber]</label>
 						</control>
 						
 						<control type="label">
-							<posx>85</posx>
+							<top>10</top>
+							<left>80</left>
 							<width>280</width>
-							<height>75</height>
-							<font>font30B</font>
-							<textcolor>BaseMediumHigh</textcolor>
+							<height>40</height>
+							<font>font30R</font>
+							<textcolor>BaseMid</textcolor>
 							<label>$INFO[ListItem.ChannelName]</label>
 						</control>
 
 					</channellayout>
 					
-					<focusedchannellayout height="75" width="366">
-						<animation effect="fade" start="110" time="200">OnFocus</animation>
-						
+					<focusedchannellayout height="60" width="366">
+						<animation effect="fade" start="110" time="200">OnFocus</animation>						
+
 						<control type="image">
 							<width>366</width>
-							<height>75</height>
+							<height>60</height>
+							<include>Common_Color_BaseLow</include>
+						</control>
+
+						<control type="image">
+							<width>60</width>
+							<height>60</height>
 							<include>Common_Color_Accent</include>
 						</control>
 
-						<control type="image">
-							<posx>10</posx>
-							<posy>10</posy>
-							<width>55</width>
-							<height>55</height>
-							<texture diffuse="masks/circle.png">colors/color_white.png</texture>
-						</control>
-
 						<control type="label">
-							<posx>10</posx>
-							<posy>10</posy>
-							<width>55</width>
-							<height>55</height>
+							<top>10</top>
+							<width>60</width>
+							<height>40</height>
 							<align>center</align>
 							<font>font26B</font>
-							<textcolor>BaseMediumHigh</textcolor>
 							<label>$INFO[ListItem.ChannelNumber]</label>
 						</control>
 						
 						<control type="label">
-							<posx>85</posx>
+							<top>10</top>
+							<left>80</left>
 							<width>280</width>
-							<height>75</height>
-							<font>font30B</font>
+							<height>40</height>
+							<font>font30R</font>
+							<textcolor>BaseMediumHigh</textcolor>
 							<label>$INFO[ListItem.ChannelName]</label>
 						</control>
 						
 					</focusedchannellayout>
 					
-					<itemlayout height="75" width="215">
+					<itemlayout height="60" width="215">
 					
 						<control type="image" id="2">
-							<posx>5</posx>
-							<width>210</width>
-							<height>73</height>
+							<left>2</left>
+							<width>213</width>
+							<height>58</height>
 							<texture fallback="colors\color_black.png">pvrgenre/$INFO[ListItem.Property(GenreType)].png</texture>
 							<aspectratio>scale</aspectratio>
 						</control>
 						
 						<control type="image" id="2">
-							<posx>5</posx>
-							<width>210</width>
-							<height>73</height>
+							<left>2</left>
+							<width>213</width>
+							<height>58</height>
 							<aspectratio>stretch</aspectratio>
 							<texture border="5">colors/color_maroon.png</texture>
 							<visible>ListItem.IsRecording</visible>
 						</control>
 						
 						<control type="label" id="1">
-							<posx>35</posx>
-							<height>73</height>
+							<left>20</left>
+							<height>58</height>
 							<width>180</width>
 							<font>font26R</font>
 							<info>ListItem.Label</info>
+							<visible>!ListItem.IsRecording + !ListItem.HasTimer</visible>
 						</control>
 						
+						<control type="label" id="1">
+							<left>40</left>
+							<height>58</height>
+							<width>180</width>
+							<font>font26R</font>
+							<info>ListItem.Label</info>
+							<visible>ListItem.IsRecording | ListItem.HasTimer</visible>
+						</control>
+												
 						<control type="image">
-							<posx>5</posx>
-							<posy>22</posy>
+							<left>5</left>
+							<top>15</top>
 							<width>30</width>
 							<height>30</height>
-							<texture>tiles/recordings.png</texture>
+							<texture>../extras/tiles/recordings.png</texture>
 							<visible>ListItem.IsRecording</visible>
 						</control>
 						
 						<control type="image">
-							<posx>5</posx>
-							<posy>22</posy>
+							<left>5</left>
+							<top>15</top>
 							<width>30</width>
 							<height>30</height>
-							<texture>tiles/recent.png</texture>
+							<texture>../extras/tiles/recent.png</texture>
 							<visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
 						</control>
 						
 					</itemlayout>
 					
-					<focusedlayout height="75" width="215">
+					<focusedlayout height="60" width="215">
 					
 						<control type="image" id="2">
-							<posx>5</posx>
-							<width>210</width>
-							<height>73</height>
+							<left>2</left>
+							<width>213</width>
+							<height>58</height>
 							<include>Common_Color_Accent</include>
 						</control>
 						
 						<control type="label" id="1">
-							<posx>35</posx>
+							<left>20</left>
+							<height>58</height>
 							<width>180</width>
-							<height>73</height>
 							<font>font26R</font>
-							<label>$INFO[ListItem.Label]</label>
+							<info>ListItem.Label</info>
+							<visible>!ListItem.IsRecording + !ListItem.HasTimer</visible>
+						</control>
+						
+						<control type="label" id="1">
+							<left>40</left>
+							<height>58</height>
+							<width>180</width>
+							<font>font26R</font>
+							<info>ListItem.Label</info>
+							<visible>ListItem.IsRecording | ListItem.HasTimer</visible>
 						</control>
 						
 						<control type="image">
-							<posx>5</posx>
-							<posy>22</posy>
+							<left>5</left>
+							<top>15</top>
 							<width>30</width>
 							<height>30</height>
-							<texture>tiles/recordings.png</texture>
+							<texture>../extras/tiles/recordings.png</texture>
 							<visible>ListItem.IsRecording</visible>
 						</control>
 						
 						<control type="image">
-							<posx>5</posx>
-							<posy>22</posy>
+							<left>5</left>
+							<top>15</top>
 							<width>30</width>
 							<height>30</height>
-							<texture>tiles/recent.png</texture>
+							<texture>../extras/tiles/recent.png</texture>
 							<visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
 						</control>
 						
@@ -232,37 +245,26 @@
 				</control>
 				
 				<control type="group">
-					<posy>650</posy>
+					<top>605</top>
+
+		            <include content="Common_Separator_Horizontal">
+		                <param name="top" value="85"/>   
+		                <param name="width" value="1800"/>
+		            </include>
 					
 					<control type="image">
-						<width>1806</width>
-						<height>175</height>
-						<texture colordiffuse="BaseWhite">colors/color_white.png</texture>
-					</control>
-					
-					<control type="image">
-						<posx>15</posx>
-						<posy>15</posy>
-						<width>145</width>
-						<height>145</height>
-						<include>Common_Color_BaseMediumHigh</include>
-					</control>
-					
-					<control type="image">
-						<posx>15</posx>
-						<posy>15</posy>
-						<width>145</width>
-						<height>145</height>
+						<width>215</width>
+						<height>215</height>
+						<bordertexture colordiffuse="BaseMediumHigh">colors/color_white.png</bordertexture>
 						<texture fallback="DefaultVideo.png" background="true">$INFO[ListItem.Icon]</texture>
 					</control>
 					
 					<control type="fadelabel">
 						<label>$INFO[ListItem.Title]</label>
-						<posx>200</posx>
+						<left>230</left>
 						<height>45</height>
 						<width>1190</width>
 						<font>font45R</font>
-						<scroll>true</scroll>
 						<pauseatend>600</pauseatend>
 						<scrollspeed>50</scrollspeed>
 						<aligny>top</aligny>
@@ -270,18 +272,18 @@
 					</control>
 					
 					<control type="label">
-						<posx>1775</posx>
+						<left>1330</left>
 						<width>450</width>
 						<height>45</height>
-						<font>font34B</font>
+						<font>font30R</font>
 						<align>right</align>
 						<textcolor>BaseMediumHigh</textcolor>
 						<label>$INFO[ListItem.StartTime] - $INFO[ListItem.EndTime]</label>
 					</control>
 					
 					<control type="label">
-						<posx>200</posx>
-						<posy>50</posy>
+						<left>230</left>
+						<top>50</top>
 						<width>1118</width>
 						<height>30</height>
 						<font>font24B</font>
@@ -289,22 +291,14 @@
 						<label>$INFO[ListItem.Genre]</label>
 					</control>
 					
-					<control type="image">
-						<posx>220</posx>
-						<posy>85</posy>
-						<width>1566</width>
-						<height>2</height>
-						<include>Common_Color_BaseMediumHigh</include>
-					</control>
-					
 					<control type="textbox">
-						<posx>220</posx>
-						<posy>90</posy>
-						<width>1566</width>
-						<height>75</height>
+						<left>230</left>
+						<top>90</top>
+						<width>1550</width>
+						<height>120</height>
 						<align>justify</align>
 						<autoscroll time="3000" delay="6000" repeat="8000"></autoscroll>
-						<font>font30</font>
+						<font>font26</font>
 						<textcolor>BaseMediumHigh</textcolor>
 						<label>$INFO[ListItem.Plot]</label>
 					</control>

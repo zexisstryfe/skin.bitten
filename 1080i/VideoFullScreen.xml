@@ -8,7 +8,7 @@
         <control type="image">
             <width>1920</width>
             <height>250</height>
-            <include>Common_Color_Black60</include>
+            <include>Common_Color_BaseBlack60</include>
         </control>
 		
         <control type="label" id="10">

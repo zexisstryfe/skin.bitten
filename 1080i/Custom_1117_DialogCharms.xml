@@ -14,9 +14,8 @@
 			<animation type="WindowClose">
 				<effect type="slide" start="0,0" end="200,0" center="auto" time="400" delay="200" tween="cubic" easing="out"/>
 			</animation>			
-			<posx>1800</posx> 
+			<left>1800</left> 
 			
-
 			<control type="image">
 				<animation type="WindowClose">
 					<effect type="fade" start="100" end="0" time="200" delay="600" />
@@ -25,211 +24,138 @@
 				<width>200</width>
 				<texture colordiffuse="BaseMediumHigh">colors/color_white.png</texture>
 			</control>		
-		
-			<control type="grouplist" id="8100">
-				<posy>90</posy>
-				<width>455</width>
+
+			<control type="panel" id="8100">
+				<animation effect="slide" end="0,60" time="0" condition="!Integer.IsGreater(Container(8100).NumItems,0)">conditional</animation>
+				<animation effect="slide" end="0,60" time="0" condition="!Integer.IsGreater(Container(8100).NumItems,1)">conditional</animation>
+				<animation effect="slide" end="0,60" time="0" condition="!Integer.IsGreater(Container(8100).NumItems,2)">conditional</animation>
+				<animation effect="slide" end="0,60" time="0" condition="!Integer.IsGreater(Container(8100).NumItems,3)">conditional</animation>
+				<animation effect="slide" end="0,60" time="0" condition="!Integer.IsGreater(Container(8100).NumItems,4)">conditional</animation>
+				<animation effect="slide" end="0,60" time="0" condition="!Integer.IsGreater(Container(8100).NumItems,5)">conditional</animation>
+				<animation effect="slide" end="0,60" time="0" condition="!Integer.IsGreater(Container(8100).NumItems,6)">conditional</animation>
+				<animation effect="slide" end="0,60" time="0" condition="!Integer.IsGreater(Container(8100).NumItems,7)">conditional</animation>
+				<animation effect="slide" end="0,60" time="0" condition="!Integer.IsGreater(Container(8100).NumItems,8)">conditional</animation>
+				<width>120</width>
 				<height>1080</height>
-				<itemgap>10</itemgap>
-				<orientation>vertical</orientation>		
-				
-				<control type="group">
+				<orientation>vertical</orientation>	
+				<onleft>Dialog.Close(1117,force)</onleft>
+				<onright>noop</onright>
+
+				<itemlayout width="120" height="120">
+
+					<control type="image">
+						<left>10</left>
+						<include>Common_Charms_Icons</include>
+						<aspectratio>keep</aspectratio>
+						<texture>$INFO[ListItem.Art(thumb)]</texture>
+					</control>
+
+					<control type="label">
+						<include>Common_Charms_ListFont</include>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+
+				</itemlayout>
+
+				<focusedlayout width="120" height="120">
+
+					<control type="image">
+						<height>120</height>
+						<width>120</width>
+						<include>Common_Color_Accent</include>
+					</control>
+
+					<control type="image">
+						<left>10</left>
+						<include>Common_Charms_Icons</include>
+						<aspectratio>keep</aspectratio>
+						<texture>$INFO[ListItem.Art(thumb)]</texture>
+					</control>
+
+					<control type="label">
+						<include>Common_Charms_ListFont</include>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+
+				</focusedlayout>
+
+				<content>
+
+				<item id="1">
+					<thumb>$VAR[HomeMenu_1_Icon]</thumb>
+					<label>$VAR[HomeMenu_1_Label]</label>
+					<onclick>Dialog.Close(all,force)</onclick>
+					<onclick>$VAR[HomeMenu_1_Action]</onclick>
 					<visible>!Skin.HasSetting(HomeMenu1.Hide)</visible>
-					<height>120</height>
-					<width>100</width>	
-					
-					<control type="image">
-						<include>Common_Charms_Accent</include>
-						<visible>Control.HasFocus(8101)</visible>
-					</control>		
+				</item>
 
-					<control type="image">
-						<posx>10</posx>
-						<include>Common_Charms_Icons</include>
-						<aspectratio>keep</aspectratio>
-						<texture>$VAR[HomeMenu_1_Icon]</texture>
-					</control>	
-					
-					<control type="button" id="8101">
-						<include>Common_Charms_ListFont</include>
-						<label>$VAR[HomeMenu_1_Label]</label>
-						<onup>8107</onup>
-						<ondown>8102</ondown>
-						<onclick>Dialog.Close(all,force)</onclick>
-						<onclick>$VAR[HomeMenu_1_Action]</onclick>
-					</control>
-				
-				</control>				
-		
-				<control type="group">
+				<item id="2">
+					<thumb>$VAR[HomeMenu_2_Icon]</thumb>
+					<label>$VAR[HomeMenu_2_Label]</label>
+					<onclick>Dialog.Close(all,force)</onclick>
+					<onclick>$VAR[HomeMenu_2_Action]</onclick>
 					<visible>!Skin.HasSetting(HomeMenu2.Hide)</visible>
-					<height>120</height>
-					<width>100</width>	
-					
-					<control type="image">
-						<include>Common_Charms_Accent</include>
-						<visible>Control.HasFocus(8102)</visible>
-					</control>		
+				</item>
 
-					<control type="image">
-						<posx>10</posx>
-						<include>Common_Charms_Icons</include>
-						<aspectratio>keep</aspectratio>
-						<texture>$VAR[HomeMenu_2_Icon]</texture>
-					</control>	
-					
-					<control type="button" id="8102">
-						<include>Common_Charms_ListFont</include>
-						<label>$VAR[HomeMenu_2_Label]</label>
-						<onup>8101</onup>
-						<ondown>8103</ondown>
-						<onclick>Dialog.Close(all,force)</onclick>
-						<onclick>$VAR[HomeMenu_2_Action]</onclick>
-					</control>
-				
-				</control>			
-		
-				<control type="group">
+				<item id="3">
+					<thumb>$VAR[HomeMenu_3_Icon]</thumb>
+					<label>$VAR[HomeMenu_3_Label]</label>
+					<onclick>Dialog.Close(all,force)</onclick>
+					<onclick>$VAR[HomeMenu_3_Action]</onclick>
 					<visible>!Skin.HasSetting(HomeMenu3.Hide)</visible>
-					<height>120</height>
-					<width>100</width>	
-					
-					<control type="image">
-						<include>Common_Charms_Accent</include>
-						<visible>Control.HasFocus(8103)</visible>
-					</control>		
+				</item>
 
-					<control type="image">
-						<posx>10</posx>
-						<include>Common_Charms_Icons</include>
-						<aspectratio>keep</aspectratio>
-						<texture>$VAR[HomeMenu_3_Icon]</texture>
-					</control>	
-					
-					<control type="button" id="8103">
-						<include>Common_Charms_ListFont</include>
-						<label>$VAR[HomeMenu_3_Label]</label>
-						<onup>8102</onup>
-						<ondown>8104</ondown>
-						<onclick>Dialog.Close(all,force)</onclick>
-						<onclick>$VAR[HomeMenu_3_Action]</onclick>
-					</control>
-				
-				</control>	
-
-				<control type="group">
+				<item id="4">
+					<thumb>$VAR[HomeMenu_4_Icon]</thumb>
+					<label>$VAR[HomeMenu_4_Label]</label>
+					<onclick>Dialog.Close(all,force)</onclick>
+					<onclick>$VAR[HomeMenu_4_Action]</onclick>
 					<visible>!Skin.HasSetting(HomeMenu4.Hide)</visible>
-					<height>120</height>
-					<width>100</width>	
-					
-					<control type="image">
-						<include>Common_Charms_Accent</include>
-						<visible>Control.HasFocus(8104)</visible>
-					</control>		
+				</item>
 
-					<control type="image">
-						<posx>10</posx>
-						<include>Common_Charms_Icons</include>
-						<aspectratio>keep</aspectratio>
-						<texture>$VAR[HomeMenu_4_Icon]</texture>
-					</control>	
-					
-					<control type="button" id="8104">
-						<include>Common_Charms_ListFont</include>
-						<label>$VAR[HomeMenu_4_Label]</label>
-						<onup>8103</onup>
-						<ondown>8105</ondown>
-						<onclick>Dialog.Close(all,force)</onclick>						
-						<onclick>$VAR[HomeMenu_4_Action]</onclick>
-					</control>
-				
-				</control>					
-	
-				<control type="group">
+				<item id="5">
+					<thumb>$VAR[HomeMenu_5_Icon]</thumb>
+					<label>$VAR[HomeMenu_5_Label]</label>
+					<onclick>Dialog.Close(all,force)</onclick>
+					<onclick>$VAR[HomeMenu_5_Action]</onclick>
 					<visible>!Skin.HasSetting(HomeMenu5.Hide)</visible>
-					<height>120</height>
-					<width>100</width>	
-					
-					<control type="image">
-						<include>Common_Charms_Accent</include>
-						<visible>Control.HasFocus(8105)</visible>
-					</control>		
+				</item>
 
-					<control type="image">
-						<posx>10</posx>
-						<include>Common_Charms_Icons</include>
-						<aspectratio>keep</aspectratio>
-						<texture>$VAR[HomeMenu_5_Icon]</texture>
-					</control>	
-					
-					<control type="button" id="8105">
-						<include>Common_Charms_ListFont</include>
-						<label>$VAR[HomeMenu_5_Label]</label>
-						<onup>8104</onup>
-						<ondown>8106</ondown>
-						<onclick>Dialog.Close(all,force)</onclick>						
-						<onclick>$VAR[HomeMenu_5_Action]</onclick>
-					</control>
-				
-				</control>	
-
-				<control type="group">
+				<item id="6">
+					<thumb>$VAR[HomeMenu_6_Icon]</thumb>
+					<label>$VAR[HomeMenu_6_Label]</label>
+					<onclick>Dialog.Close(all,force)</onclick>
+					<onclick>$VAR[HomeMenu_6_Action]</onclick>
 					<visible>!Skin.HasSetting(HomeMenu6.Hide)</visible>
-					<height>120</height>
-					<width>100</width>	
-					
-					<control type="image">
-						<include>Common_Charms_Accent</include>
-						<visible>Control.HasFocus(8106)</visible>
-					</control>		
+				</item>
 
-					<control type="image">
-						<posx>10</posx>
-						<include>Common_Charms_Icons</include>
-						<aspectratio>keep</aspectratio>
-						<texture>$VAR[HomeMenu_6_Icon]</texture>
-					</control>	
-					
-					<control type="button" id="8106">
-						<include>Common_Charms_ListFont</include>
-						<label>$VAR[HomeMenu_6_Label]</label>
-						<onup>8105</onup>
-						<ondown>8107</ondown>
-						<onclick>Dialog.Close(all,force)</onclick>						
-						<onclick>$VAR[HomeMenu_6_Action]</onclick>
-					</control>
-				
-				</control>		
-
-				<control type="group">
+				<item id="7">
+					<thumb>$VAR[HomeMenu_7_Icon]</thumb>
+					<label>$VAR[HomeMenu_7_Label]</label>
+					<onclick>Dialog.Close(all,force)</onclick>
+					<onclick>$VAR[HomeMenu_7_Action]</onclick>
 					<visible>!Skin.HasSetting(HomeMenu7.Hide)</visible>
-					<height>120</height>
-					<width>100</width>	
-					
-					<control type="image">
-						<include>Common_Charms_Accent</include>
-						<visible>Control.HasFocus(8107)</visible>
-					</control>		
+				</item>
 
-					<control type="image">
-						<posx>10</posx>
-						<include>Common_Charms_Icons</include>
-						<aspectratio>keep</aspectratio>
-						<texture>$VAR[HomeMenu_7_Icon]</texture>
-					</control>	
-					
-					<control type="button" id="8107">
-						<include>Common_Charms_ListFont</include>
-						<label>$VAR[HomeMenu_7_Label]</label>
-						<onup>8106</onup>
-						<ondown>8101</ondown>
-						<onclick>Dialog.Close(all,force)</onclick>						
-						<onclick>$VAR[HomeMenu_7_Action]</onclick>
-					</control>
-				
-				</control>					
-		
-			</control>
+				<item id="8">
+					<thumb>$VAR[HomeMenu_8_Icon]</thumb>
+					<label>$VAR[HomeMenu_8_Label]</label>
+					<onclick>Dialog.Close(all,force)</onclick>
+					<onclick>$VAR[HomeMenu_8_Action]</onclick>
+					<visible>!Skin.HasSetting(HomeMenu8.Hide)</visible>
+				</item>
+
+				<item id="9">
+					<thumb>$VAR[HomeMenu_9_Icon]</thumb>
+					<label>$VAR[HomeMenu_9_Label]</label>
+					<onclick>Dialog.Close(all,force)</onclick>
+					<onclick>$VAR[HomeMenu_9_Action]</onclick>
+					<visible>!Skin.HasSetting(HomeMenu9.Hide)</visible>
+				</item>
+
+				</content>
+
+			</control>	
 	
 		</control>
 	

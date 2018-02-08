@@ -1,122 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <window id="129">
-    <defaultcontrol always="true">9001</defaultcontrol>
+    <defaultcontrol always="true">15</defaultcontrol>
 	
     <controls>
         <include>DialogOverlay</include>
 		
         <control type="group">
-			<posy>315</posy>
+            <left>332</left>
+            <top>315</top>  
 			
-            <include>InfoDialog_Base</include>
-			
-			<control type="label">			
-				<description>Heading</description>
-				<posx>300</posx>
-				<width>885</width>
-				<height>75</height>
-				<font>font45R</font>
-				<label>21421</label>
-			</control>
-			
-            <control type="label">
-                <posy>105</posy>
-                <width>1920</width>
-                <label>21422</label>
-                <font>font30B</font>
-                <textcolor>$VAR[Accent_100]</textcolor>
-                <align>center</align>
-            </control>
-			
-            <control type="group" id="9001">
-				<posx>410</posx>
-				<posy>180</posy>
-			
-                <control type="spincontrolex" id="15">
-                    <description>Rule Field</description>
-                    <width>550</width>
-                    <onright>16</onright>
-                    <onleft>16</onleft>
-                    <onup>9000</onup>
-                    <ondown>17</ondown>
-					<align>left</align>
-                </control>
+            <include content="Common_Window_Backing">
+                <param name="width" value="1256"/>
+                <param name="height" value="410"/>  
+                <param name="logo_height" value="275"/> 
+                <param name="header" value="21421"/> 
+                <param name="header_width" value="880"/> 
+                <param name="header_height" value="75"/>                
+            </include> 
 
-                <control type="spincontrolex" id="16">
-                    <description>Rule operator</description>
-                    <posx>550</posx>
-                    <width>550</width>
-                    <onright>15</onright>
-                    <onleft>15</onleft>
-                    <onup>9000</onup>
-                    <ondown>17</ondown>
-                </control>
-				
-            </control>
-			
-            <control type="edit" id="17">
-                <description>Value Button</description>
-                <posx>410</posx>
-                <posy>264</posy>
-                <width>1020</width>
-                <onup>9001</onup>
-                <onleft>20</onleft>
-                <onright>20</onright>
-                <ondown>9000</ondown>
-            </control>
-			
             <control type="group">
-                <height>60</height>
-                <posx>1450</posx>
-                <posy>264</posy>
-				
-                <control type="button" id="20">
-                    <description>Browse button</description>
-                    <texturefocus colordiffuse="$VAR[Accent_100]">colors/color_white.png</texturefocus>
-                    <texturenofocus colordiffuse="BaseMediumMid">colors/color_white.png</texturenofocus>
-                    <width>60</width>
-                    <height>60</height>
-                    <textwidth>1</textwidth>
-                    <textoffsetx>-1800</textoffsetx>
+                <left>178</left>
+                <top>80</top>
+			
+                <control type="label">
+                    <width>900</width>
+                    <label>$LOCALIZE[21422]</label>
+                    <font>font30R</font>
+                    <textcolor>$VAR[Accent_100]</textcolor>
+                    <align>center</align>
+                </control>
+
+                <control type="button" id="15">
+                    <top>60</top>
+                    <width>900</width>
+                    <onup>9000</onup>
+                    <ondown>16</ondown>
+                    <align>right</align>
+                    <textcolor>BaseMediumHigh</textcolor>
+                </control>
+
+                <include content="Common_Button_LeftText">
+                    <param name="width" value="500"/>
+                    <param name="top" value="60"/> 
+                    <param name="label" value="31439"/>    
+                    <param name="visible" value="Control.HasFocus(15)"/>             
+                </include>
+
+                <control type="button" id="16">
+                    <top>120</top>
+                    <width>900</width>
+                    <onup>15</onup>
+                    <ondown>17</ondown>
+                    <align>right</align>
+                    <textcolor>BaseMediumHigh</textcolor>
+                </control>
+
+                <include content="Common_Button_LeftText">
+                    <param name="width" value="500"/>
+                    <param name="top" value="120"/> 
+                    <param name="label" value="31440"/>    
+                    <param name="visible" value="Control.HasFocus(16)"/>             
+                </include> 
+
+                <control type="edit" id="17">
+                    <description>Value Button</description>
+                    <top>180</top>
+                    <width>840</width>
                     <onup>16</onup>
-                    <ondown>18</ondown>
-                    <onright>17</onright>
-                    <onleft>17</onleft>
+                    <onleft>20</onleft>
+                    <onright>20</onright>
+                    <ondown>9000</ondown>
                 </control>
-				
-                <control type="image">
-					<height>60</height>
-					<width>60</width>
-                    <include>Common_Control_Button</include>
-                    <texture>icons/browse.png</texture>
+    			
+                <control type="group">
+                    <left>840</left>
+                    <top>180</top>
+    				
+                    <control type="button" id="20">
+                        <description>Browse button</description>
+                        <texturefocus colordiffuse="$VAR[Accent_100]">colors/color_white.png</texturefocus>
+                        <texturenofocus colordiffuse="BaseMediumMid">colors/color_white.png</texturenofocus>
+                        <width>60</width>
+                        <height>60</height>
+                        <textwidth>1</textwidth>
+                        <textoffsetx>-1800</textoffsetx>
+                        <onup>16</onup>
+                        <ondown>9000</ondown>
+                        <onright>17</onright>
+                        <onleft>17</onleft>
+                    </control>
+    				
+                    <control type="image">
+    					<height>60</height>
+    					<width>60</width>
+                        <include>Common_Control_Button</include>
+                        <texture>../extras/tiles/browse.png</texture>
+                    </control>
+    				
                 </control>
-				
+
             </control>
 
-			<control type="grouplist" id="9000">			
-				<posx>630</posx>
-				<posy>360</posy>
-				<width>660</width>
-				<itemgap>20</itemgap>
-				<orientation>horizontal</orientation>
-				<onup>17</onup>
-				<ondown>9001</ondown>
-				<align>right</align>
-			
-				<control type="button" id="18">
-					<description>Yes</description>
-					<label>186</label>
-					<include>InfoDialog_Button</include>
-				</control>
-				
-				<control type="button" id="19">
-					<description>No</description>
-					<label>222</label>
-					<include>InfoDialog_Button</include>
-				</control>
-				
-			</control>	
+            <control type="grouplist" id="9000">          
+                <top>350</top>
+                <width>1256</width>
+                <itemgap>0</itemgap>
+                <orientation>horizontal</orientation>
+                <align>center</align>
+                <onup>17</onup>
+                <ondown>15</ondown>
+
+                <include content="InfoDialog_Button">
+                    <param name="button_id" value="18"/>  
+                    <param name="width" value="628"/>
+                    <param name="label" value="186"/>          
+                </include>
+
+                <include content="InfoDialog_Button">
+                    <param name="button_id" value="19"/>  
+                    <param name="width" value="628"/>
+                    <param name="label" value="222"/>          
+                </include>
+                
+            </control>  
 
         </control>
 		

@@ -6,17 +6,17 @@
 
         <control type="group">
             <include>DialogOverlay</include>
-            <visible>!Skin.HasSetting(DisableSortLetter) + Container.Scrolling + !Control.IsVisible(50) + StringCompare(Container.SortMethod,title)</visible>
+            <visible>!Skin.HasSetting(DisableSortLetter) + Container.Scrolling + !Control.IsVisible(50) + String.IsEqual(Container.SortMethod,title)</visible>
             <animation effect="fade" start="0" end="100" time="400" delay="2000" reversible="true">Visible</animation>
             <animation effect="fade" start="100" end="0" time="400" reversible="true">Hidden</animation>
         </control>
 
         <control type="group">
-            <posx>98</posx>
-            <posy>262</posy>
+            <left>135</left>
+            <top>262</top>
             <width>1920</width>
             <height>165</height>
-            <visible>!Skin.HasSetting(DisableSortLetter) + Container.Scrolling + !Control.IsVisible(50) + StringCompare(Container.SortMethod,title)</visible>
+            <visible>!Skin.HasSetting(DisableSortLetter) + Container.Scrolling + !Control.IsVisible(50) + String.IsEqual(Container.SortMethod,title)</visible>
             <animation effect="fade" start="0" end="100" time="400" delay="2000" reversible="true">Visible</animation>
             <animation effect="fade" start="100" end="0" time="400" reversible="true">Hidden</animation>
 
@@ -32,15 +32,14 @@
                     <height>165</height>
                     <include>SortLetter_Normal</include>
 
-                    <control type="image">
-                        <include>SortLetter_Highlight</include>
-                        <visible>StringCompare(ListItem.SortLetter,0) | StringCompare(ListItem.SortLetter,1) | StringCompare(ListItem.SortLetter,2) | StringCompare(ListItem.SortLetter,3) | StringCompare(ListItem.SortLetter,4) | StringCompare(ListItem.SortLetter,5) | StringCompare(ListItem.SortLetter,6) | StringCompare(ListItem.SortLetter,7) | StringCompare(ListItem.SortLetter,8) | StringCompare(ListItem.SortLetter,9)</visible>
-                    </control>
+                    <include content="SortLetter_Highlight">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,0) | String.IsEqual(ListItem.SortLetter,1) | String.IsEqual(ListItem.SortLetter,2) | String.IsEqual(ListItem.SortLetter,3) | String.IsEqual(ListItem.SortLetter,4) | String.IsEqual(ListItem.SortLetter,5) | String.IsEqual(ListItem.SortLetter,6) | String.IsEqual(ListItem.SortLetter,7) | String.IsEqual(ListItem.SortLetter,8) | String.IsEqual(ListItem.SortLetter,9)"/>
+                    </include>
 
-                    <control type="label">
-                        <include>SortLetter_Label</include>
-                        <label>#</label>
-                    </control>
+                    <include content="SortLetter_Label">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,0) | String.IsEqual(ListItem.SortLetter,1) | String.IsEqual(ListItem.SortLetter,2) | String.IsEqual(ListItem.SortLetter,3) | String.IsEqual(ListItem.SortLetter,4) | String.IsEqual(ListItem.SortLetter,5) | String.IsEqual(ListItem.SortLetter,6) | String.IsEqual(ListItem.SortLetter,7) | String.IsEqual(ListItem.SortLetter,8) | String.IsEqual(ListItem.SortLetter,9)"/>
+                        <param name="letter" value="#"/>
+                    </include>
 
                 </control>
 
@@ -50,15 +49,14 @@
                     <height>165</height>
                     <include>SortLetter_Normal</include>
 
-                    <control type="image">
-                        <include>SortLetter_Highlight</include>
-                        <visible>StringCompare(ListItem.SortLetter,A)</visible>
-                    </control>
+                    <include content="SortLetter_Highlight">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,A)"/>
+                    </include>
 
-                    <control type="label">
-                        <include>SortLetter_Label</include>
-                        <label>a</label>
-                    </control>
+                    <include content="SortLetter_Label">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,A)"/>
+                        <param name="letter" value="A"/>
+                    </include>
 
                 </control>
 
@@ -68,15 +66,14 @@
                     <height>165</height>
                     <include>SortLetter_Normal</include>
 
-                    <control type="image">
-                        <include>SortLetter_Highlight</include>
-                        <visible>StringCompare(ListItem.SortLetter,B)</visible>
-                    </control>
+                    <include content="SortLetter_Highlight">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,B)"/>
+                    </include>
 
-                    <control type="label">
-                        <include>SortLetter_Label</include>
-                        <label>b</label>
-                    </control>
+                    <include content="SortLetter_Label">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,B)"/>
+                        <param name="letter" value="B"/>
+                    </include>
 
                 </control>
 
@@ -86,15 +83,14 @@
                     <height>165</height>
                     <include>SortLetter_Normal</include>
 
-                    <control type="image">
-                        <include>SortLetter_Highlight</include>
-                        <visible>StringCompare(ListItem.SortLetter,C)</visible>
-                    </control>
+                    <include content="SortLetter_Highlight">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,C)"/>
+                    </include>
 
-                    <control type="label">
-                        <include>SortLetter_Label</include>
-                        <label>c</label>
-                    </control>
+                    <include content="SortLetter_Label">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,C)"/>
+                        <param name="letter" value="C"/>
+                    </include>
 
                 </control>
 
@@ -104,15 +100,14 @@
                     <height>165</height>
                     <include>SortLetter_Normal</include>
 
-                    <control type="image">
-                        <include>SortLetter_Highlight</include>
-                        <visible>StringCompare(ListItem.SortLetter,D)</visible>
-                    </control>
+                    <include content="SortLetter_Highlight">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,D)"/>
+                    </include>
 
-                    <control type="label">
-                        <include>SortLetter_Label</include>
-                        <label>d</label>
-                    </control>
+                    <include content="SortLetter_Label">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,D)"/>
+                        <param name="letter" value="D"/>
+                    </include>
 
                 </control>
 
@@ -122,15 +117,14 @@
                     <height>165</height>
                     <include>SortLetter_Normal</include>
 
-                    <control type="image">
-                        <include>SortLetter_Highlight</include>
-                        <visible>StringCompare(ListItem.SortLetter,E)</visible>
-                    </control>
+                    <include content="SortLetter_Highlight">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,E)"/>
+                    </include>
 
-                    <control type="label">
-                        <include>SortLetter_Label</include>
-                        <label>e</label>
-                    </control>
+                    <include content="SortLetter_Label">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,E)"/>
+                        <param name="letter" value="E"/>
+                    </include>
 
                 </control>
 
@@ -140,15 +134,14 @@
                     <height>165</height>
                     <include>SortLetter_Normal</include>
 
-                    <control type="image">
-                        <include>SortLetter_Highlight</include>
-                        <visible>StringCompare(ListItem.SortLetter,F)</visible>
-                    </control>
+                    <include content="SortLetter_Highlight">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,F)"/>
+                    </include>
 
-                    <control type="label">
-                        <include>SortLetter_Label</include>
-                        <label>f</label>
-                    </control>
+                    <include content="SortLetter_Label">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,F)"/>
+                        <param name="letter" value="F"/>
+                    </include>
 
                 </control>
 
@@ -158,15 +151,14 @@
                     <height>165</height>
                     <include>SortLetter_Normal</include>
 
-                    <control type="image">
-                        <include>SortLetter_Highlight</include>
-                        <visible>StringCompare(ListItem.SortLetter,G)</visible>
-                    </control>
+                    <include content="SortLetter_Highlight">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,G)"/>
+                    </include>
 
-                    <control type="label">
-                        <include>SortLetter_Label</include>
-                        <label>g</label>
-                    </control>
+                    <include content="SortLetter_Label">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,G)"/>
+                        <param name="letter" value="G"/>
+                    </include>
 
                 </control>
 
@@ -176,22 +168,21 @@
                     <height>165</height>
                     <include>SortLetter_Normal</include>
 
-                    <control type="image">
-                        <include>SortLetter_Highlight</include>
-                        <visible>StringCompare(ListItem.SortLetter,H)</visible>
-                    </control>
+                    <include content="SortLetter_Highlight">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,H)"/>
+                    </include>
 
-                    <control type="label">
-                        <include>SortLetter_Label</include>
-                        <label>h</label>
-                    </control>
+                    <include content="SortLetter_Label">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,H)"/>
+                        <param name="letter" value="H"/>
+                    </include>
 
                 </control>
 
             </control>
 
             <control type="grouplist">
-                <posy>195</posy>
+                <top>195</top>
                 <width>1920</width>
                 <height>165</height>
                 <itemgap>30</itemgap>
@@ -203,15 +194,14 @@
                     <height>165</height>
                     <include>SortLetter_Normal</include>
 
-                    <control type="image">
-                        <include>SortLetter_Highlight</include>
-                        <visible>StringCompare(ListItem.SortLetter,I)</visible>
-                    </control>
+                    <include content="SortLetter_Highlight">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,I)"/>
+                    </include>
 
-                    <control type="label">
-                        <include>SortLetter_Label</include>
-                        <label>i</label>
-                    </control>
+                    <include content="SortLetter_Label">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,I)"/>
+                        <param name="letter" value="I"/>
+                    </include>
 
                 </control>
 
@@ -221,15 +211,14 @@
                     <height>165</height>
                     <include>SortLetter_Normal</include>
 
-                    <control type="image">
-                        <include>SortLetter_Highlight</include>
-                        <visible>StringCompare(ListItem.SortLetter,J)</visible>
-                    </control>
+                    <include content="SortLetter_Highlight">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,J)"/>
+                    </include>
 
-                    <control type="label">
-                        <include>SortLetter_Label</include>
-                        <label>j</label>
-                    </control>
+                    <include content="SortLetter_Label">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,J)"/>
+                        <param name="letter" value="J"/>
+                    </include>
 
                 </control>
 
@@ -239,15 +228,14 @@
                     <height>165</height>
                     <include>SortLetter_Normal</include>
 
-                    <control type="image">
-                        <include>SortLetter_Highlight</include>
-                        <visible>StringCompare(ListItem.SortLetter,K)</visible>
-                    </control>
+                    <include content="SortLetter_Highlight">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,K)"/>
+                    </include>
 
-                    <control type="label">
-                        <include>SortLetter_Label</include>
-                        <label>k</label>
-                    </control>
+                    <include content="SortLetter_Label">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,K)"/>
+                        <param name="letter" value="K"/>
+                    </include>
 
                 </control>
 
@@ -257,15 +245,14 @@
                     <height>165</height>
                     <include>SortLetter_Normal</include>
 
-                    <control type="image">
-                        <include>SortLetter_Highlight</include>
-                        <visible>StringCompare(ListItem.SortLetter,L)</visible>
-                    </control>
+                    <include content="SortLetter_Highlight">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,L)"/>
+                    </include>
 
-                    <control type="label">
-                        <include>SortLetter_Label</include>
-                        <label>l</label>
-                    </control>
+                    <include content="SortLetter_Label">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,L)"/>
+                        <param name="letter" value="L"/>
+                    </include>
 
                 </control>
 
@@ -275,15 +262,14 @@
                     <height>165</height>
                     <include>SortLetter_Normal</include>
 
-                    <control type="image">
-                        <include>SortLetter_Highlight</include>
-                        <visible>StringCompare(ListItem.SortLetter,M)</visible>
-                    </control>
+                    <include content="SortLetter_Highlight">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,M)"/>
+                    </include>
 
-                    <control type="label">
-                        <include>SortLetter_Label</include>
-                        <label>m</label>
-                    </control>
+                    <include content="SortLetter_Label">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,M)"/>
+                        <param name="letter" value="M"/>
+                    </include>
 
                 </control>
 
@@ -293,15 +279,14 @@
                     <height>165</height>
                     <include>SortLetter_Normal</include>
 
-                    <control type="image">
-                        <include>SortLetter_Highlight</include>
-                        <visible>StringCompare(ListItem.SortLetter,N)</visible>
-                    </control>
+                    <include content="SortLetter_Highlight">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,N)"/>
+                    </include>
 
-                    <control type="label">
-                        <include>SortLetter_Label</include>
-                        <label>n</label>
-                    </control>
+                    <include content="SortLetter_Label">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,N)"/>
+                        <param name="letter" value="N"/>
+                    </include>
 
                 </control>
 
@@ -311,15 +296,14 @@
                     <height>165</height>
                     <include>SortLetter_Normal</include>
 
-                    <control type="image">
-                        <include>SortLetter_Highlight</include>
-                        <visible>StringCompare(ListItem.SortLetter,O)</visible>
-                    </control>
+                    <include content="SortLetter_Highlight">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,O)"/>
+                    </include>
 
-                    <control type="label">
-                        <include>SortLetter_Label</include>
-                        <label>o</label>
-                    </control>
+                    <include content="SortLetter_Label">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,O)"/>
+                        <param name="letter" value="O"/>
+                    </include>
 
                 </control>
 
@@ -329,15 +313,14 @@
                     <height>165</height>
                     <include>SortLetter_Normal</include>
 
-                    <control type="image">
-                        <include>SortLetter_Highlight</include>
-                        <visible>StringCompare(ListItem.SortLetter,P)</visible>
-                    </control>
+                    <include content="SortLetter_Highlight">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,P)"/>
+                    </include>
 
-                    <control type="label">
-                        <include>SortLetter_Label</include>
-                        <label>p</label>
-                    </control>
+                    <include content="SortLetter_Label">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,P)"/>
+                        <param name="letter" value="P"/>
+                    </include>
 
                 </control>
 
@@ -347,22 +330,21 @@
                     <height>165</height>
                     <include>SortLetter_Normal</include>
 
-                    <control type="image">
-                        <include>SortLetter_Highlight</include>
-                        <visible>StringCompare(ListItem.SortLetter,Q)</visible>
-                    </control>
+                    <include content="SortLetter_Highlight">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,Q)"/>
+                    </include>
 
-                    <control type="label">
-                        <include>SortLetter_Label</include>
-                        <label>q</label>
-                    </control>
+                    <include content="SortLetter_Label">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,Q)"/>
+                        <param name="letter" value="Q"/>
+                    </include>
 
                 </control>
 
             </control>
 
             <control type="grouplist">
-                <posy>390</posy>
+                <top>390</top>
                 <width>1920</width>
                 <height>165</height>
                 <itemgap>30</itemgap>
@@ -374,15 +356,14 @@
                     <height>165</height>
                     <include>SortLetter_Normal</include>
 
-                    <control type="image">
-                        <include>SortLetter_Highlight</include>
-                        <visible>StringCompare(ListItem.SortLetter,R)</visible>
-                    </control>
+                    <include content="SortLetter_Highlight">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,R)"/>
+                    </include>
 
-                    <control type="label">
-                        <include>SortLetter_Label</include>
-                        <label>r</label>
-                    </control>
+                    <include content="SortLetter_Label">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,R)"/>
+                        <param name="letter" value="R"/>
+                    </include>
 
                 </control>
 
@@ -392,15 +373,14 @@
                     <height>165</height>
                     <include>SortLetter_Normal</include>
 
-                    <control type="image">
-                        <include>SortLetter_Highlight</include>
-                        <visible>StringCompare(ListItem.SortLetter,S)</visible>
-                    </control>
+                    <include content="SortLetter_Highlight">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,S)"/>
+                    </include>
 
-                    <control type="label">
-                        <include>SortLetter_Label</include>
-                        <label>s</label>
-                    </control>
+                    <include content="SortLetter_Label">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,S)"/>
+                        <param name="letter" value="S"/>
+                    </include>
 
                 </control>
 
@@ -410,15 +390,14 @@
                     <height>165</height>
                     <include>SortLetter_Normal</include>
 
-                    <control type="image">
-                        <include>SortLetter_Highlight</include>
-                        <visible>StringCompare(ListItem.SortLetter,T)</visible>
-                    </control>
+                    <include content="SortLetter_Highlight">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,T)"/>
+                    </include>
 
-                    <control type="label">
-                        <include>SortLetter_Label</include>
-                        <label>t</label>
-                    </control>
+                    <include content="SortLetter_Label">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,T)"/>
+                        <param name="letter" value="T"/>
+                    </include>
 
                 </control>
 
@@ -428,15 +407,14 @@
                     <height>165</height>
                     <include>SortLetter_Normal</include>
 
-                    <control type="image">
-                        <include>SortLetter_Highlight</include>
-                        <visible>StringCompare(ListItem.SortLetter,U)</visible>
-                    </control>
+                    <include content="SortLetter_Highlight">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,U)"/>
+                    </include>
 
-                    <control type="label">
-                        <include>SortLetter_Label</include>
-                        <label>u</label>
-                    </control>
+                    <include content="SortLetter_Label">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,U)"/>
+                        <param name="letter" value="U"/>
+                    </include>
 
                 </control>
 
@@ -446,15 +424,14 @@
                     <height>165</height>
                     <include>SortLetter_Normal</include>
 
-                    <control type="image">
-                        <include>SortLetter_Highlight</include>
-                        <visible>StringCompare(ListItem.SortLetter,V)</visible>
-                    </control>
+                    <include content="SortLetter_Highlight">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,V)"/>
+                    </include>
 
-                    <control type="label">
-                        <include>SortLetter_Label</include>
-                        <label>v</label>
-                    </control>
+                    <include content="SortLetter_Label">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,V)"/>
+                        <param name="letter" value="V"/>
+                    </include>
 
                 </control>
 
@@ -464,15 +441,14 @@
                     <height>165</height>
                     <include>SortLetter_Normal</include>
 
-                    <control type="image">
-                        <include>SortLetter_Highlight</include>
-                        <visible>StringCompare(ListItem.SortLetter,W)</visible>
-                    </control>
+                    <include content="SortLetter_Highlight">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,W)"/>
+                    </include>
 
-                    <control type="label">
-                        <include>SortLetter_Label</include>
-                        <label>w</label>
-                    </control>
+                    <include content="SortLetter_Label">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,W)"/>
+                        <param name="letter" value="W"/>
+                    </include>
 
                 </control>
 
@@ -482,15 +458,14 @@
                     <height>165</height>
                     <include>SortLetter_Normal</include>
 
-                    <control type="image">
-                        <include>SortLetter_Highlight</include>
-                        <visible>StringCompare(ListItem.SortLetter,X)</visible>
-                    </control>
+                    <include content="SortLetter_Highlight">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,X)"/>
+                    </include>
 
-                    <control type="label">
-                        <include>SortLetter_Label</include>
-                        <label>x</label>
-                    </control>
+                    <include content="SortLetter_Label">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,X)"/>
+                        <param name="letter" value="X"/>
+                    </include>
 
                 </control>
 
@@ -500,15 +475,14 @@
                     <height>165</height>
                     <include>SortLetter_Normal</include>
 
-                    <control type="image">
-                        <include>SortLetter_Highlight</include>
-                        <visible>StringCompare(ListItem.SortLetter,Y)</visible>
-                    </control>
+                    <include content="SortLetter_Highlight">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,Y)"/>
+                    </include>
 
-                    <control type="label">
-                        <include>SortLetter_Label</include>
-                        <label>y</label>
-                    </control>
+                    <include content="SortLetter_Label">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,Y)"/>
+                        <param name="letter" value="Y"/>
+                    </include>
 
                 </control>
 
@@ -518,15 +492,14 @@
                     <height>165</height>
                     <include>SortLetter_Normal</include>
 
-                    <control type="image">
-                        <include>SortLetter_Highlight</include>
-                        <visible>StringCompare(ListItem.SortLetter,Z)</visible>
-                    </control>
+                    <include content="SortLetter_Highlight">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,Z)"/>
+                    </include>
 
-                    <control type="label">
-                        <include>SortLetter_Label</include>
-                        <label>z</label>
-                    </control>
+                    <include content="SortLetter_Label">
+                        <param name="visible" value="String.IsEqual(ListItem.SortLetter,Z)"/>
+                        <param name="letter" value="Z"/>
+                    </include>
 
                 </control>
 
@@ -540,17 +513,17 @@
 
         <control type="group">
             <include>DialogOverlay</include>
-            <visible>Skin.HasSetting(DisableSortLetter) + Container.Scrolling + !Control.IsVisible(50) + StringCompare(Container.SortMethod,title)</visible>
+            <visible>Skin.HasSetting(DisableSortLetter) + Container.Scrolling + !Control.IsVisible(50) + String.IsEqual(Container.SortMethod,title)</visible>
             <animation effect="fade" start="0" end="100" time="400" delay="2000" reversible="true">Visible</animation>
             <animation effect="fade" start="100" end="0" time="400" reversible="true">Hidden</animation>
         </control>
 
         <control type="group">
-            <posx>878</posx>
-            <posy>458</posy>
+            <left>878</left>
+            <top>458</top>
             <width>165</width>
             <height>165</height>
-            <visible>Skin.HasSetting(DisableSortLetter) + Container.Scrolling + !Control.IsVisible(50) + StringCompare(Container.SortMethod,title)</visible>
+            <visible>Skin.HasSetting(DisableSortLetter) + Container.Scrolling + !Control.IsVisible(50) + String.IsEqual(Container.SortMethod,title)</visible>
             <animation effect="fade" start="0" end="100" time="400" delay="2000" reversible="true">Visible</animation>
             <animation effect="fade" start="100" end="0" time="400" reversible="true">Hidden</animation>
 
@@ -561,11 +534,11 @@
             </control>
 
             <control type="label">
-                <posx>30</posx>
-                <posy>75</posy>
+                <left>30</left>
+                <top>75</top>
                 <width>165</width>
                 <height>165</height>
-                <font>font32UB</font>
+                <font>font50B</font>
                 <label>$INFO[ListItem.SortLetter]</label>
                 <aligny>top</aligny>
             </control>
@@ -579,24 +552,64 @@
         <control type="image">
             <width>165</width>
             <height>165</height>
+            <include>Common_Color_BaseWhite</include>
+        </control>
+
+        <control type="image">
+            <width>165</width>
+            <height>5</height>
             <include>Common_Color_BaseMediumHigh</include>
         </control>
 
     </include>
 
     <include name="SortLetter_Highlight">
-        <width>165</width>
-        <height>165</height>
-        <include>Common_Color_Accent</include>
+
+        <control type="group">
+            <visible>$PARAM[visible]</visible>
+
+            <control type="image">
+                <width>165</width>
+                <height>165</height>
+                <include>Common_Color_BaseLowest</include>
+            </control>
+
+            <control type="image">
+                <width>165</width>
+                <height>5</height>
+                <include>Common_Color_Accent</include>
+            </control>
+
+        </control>
+
     </include>
 
     <include name="SortLetter_Label">
-        <posx>30</posx>
-        <posy>75</posy>
-        <width>165</width>
-        <height>165</height>
-        <font>font32UB</font>
-        <aligny>top</aligny>
+
+        <control type="label">
+            <visible>!$PARAM[visible]</visible>
+            <left>30</left>
+            <top>75</top>
+            <width>165</width>
+            <height>165</height>
+            <font>font50B</font>
+            <aligny>top</aligny>
+            <textcolor>BaseMediumHigh</textcolor>
+            <label>$PARAM[letter]</label>
+        </control>
+
+        <control type="label">
+            <visible>$PARAM[visible]</visible>
+            <left>30</left>
+            <top>75</top>
+            <width>165</width>
+            <height>165</height>
+            <font>font50B</font>
+            <aligny>top</aligny>
+            <textcolor>$VAR[Accent_100]</textcolor>
+            <label>$PARAM[letter]</label>
+        </control>
+
     </include>
     
 </includes>

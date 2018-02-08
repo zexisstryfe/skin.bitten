@@ -2,84 +2,76 @@
 
 <window id="10140">
     <defaultcontrol always="true">9</defaultcontrol>
+    <depth>DepthDialog+</depth>	
 	
     <controls>
         <include>DialogOverlay</include>
 		
 		<control type="group">	
-			<posy>200</posy>
+			<top>150</top>
+			<left>200</left>
 
-			<include>Settings_GrayBand</include>			
-			
+            <include content="Common_Window_Backing">
+                <param name="width" value="1520"/>
+                <param name="height" value="780"/>  
+                <param name="logo_visible" value="false"/> 
+                <param name="header" value=""/> 
+                <param name="header_id" value="20"/>
+                <param name="header_width" value="1480"/>    
+                <param name="header_height" value="75"/>             
+            </include>  
+
+            <include content="Common_Separator_Vertical">
+                <param name="top" value="75"/> 
+                <param name="left" value="420"/>   
+                <param name="height" value="705"/>
+            </include>
+
 			<control type="group">	
-				<posy>10</posy>
+				<top>75</top>			
 
-				<include>Settings_Backing</include>					
-
-				<control type="group">	
-					<include>Common_Animation_CenterMenu_Fade1</include>						
-
-					<control type="image">
-						<posx>20</posx>
-						<posy>80</posy>
-						<width>420</width>
-						<height>2</height>
-						<include>Common_Color_BaseMediumHigh</include>
-					</control>					
+				<control type="group">										
 
 					<control type="grouplist" id="9">
 						<description>button area</description>
-						<posy>100</posy>
-						<width>460</width>
-						<height>660</height>
-						<onleft>9001</onleft>
+						<top>20</top>
+						<width>420</width>
+						<height>615</height>
+						<onleft>2</onleft>
 						<onright>2</onright>
+						<onup>9001</onup>
+						<ondown>9001</ondown>
 					</control>
 
 					<control type="button" id="13">
 						<description>Default Category Button</description>
-						<width>460</width>
+						<width>420</width>
 						<include>Common_Settings_Label</include>
 					</control>
 
 				</control>
 
 				<control type="group">	
-					<posx>460</posx>
-					<include>Common_Animation_CenterMenu_Fade2</include>					
-
-					<control type="label" id="20">
-						<description>Header Label</description>
-						<posx>20</posx>
-						<width>1020</width>
-						<height>75</height>
-						<font>font45R</font>
-						<textcolor>$VAR[Accent_100]</textcolor>
-					</control>
-
-					<control type="image">
-						<posx>20</posx>
-						<posy>80</posy>
-						<width>1020</width>
-						<height>2</height>
-						<include>Common_Color_BaseMediumHigh</include>
-					</control>
+					<left>420</left>					
 					
 					<control type="scrollbar" id="81">
-						<posx>1050</posx>
-						<height>780</height>
+						<left>1090</left>
+						<height>645</height>
 						<width>10</width>
 						<onleft>2</onleft>
-						<onright>9001</onright>
+						<onright>9</onright>
 					</control>					
 					
 					<control type="grouplist" id="2">
 						<description>control area</description>
-						<posy>100</posy>
-						<width>1050</width>
-						<height>660</height>
+						<left>10</left>
+						<top>20</top>
+						<width>1070</width>
+						<height>615</height>
 						<onleft>9</onleft>
-						<onright>9001</onright>
+						<onright>81</onright>
+						<onup>9001</onup>
+						<ondown>9001</ondown>						
 						<pagecontrol>81</pagecontrol>
 					</control>					
 					
@@ -87,133 +79,82 @@
 						<description>Default Button</description>
 						<include>Common_Settings_Label</include>
 					</control>
+
 					<control type="radiobutton" id="4">
 						<description>Default RadioButton</description>
-						<radioposx>960</radioposx>
 						<include>Common_Settings_Label</include>
 					</control>
+
 					<control type="spincontrolex" id="5">
 						<description>Default spincontrolex</description>
 						<include>Common_Settings_Label</include>
 					</control>
+
 					<control type="label" id="7">
 						<label>-</label>
 						<textcolor>$VAR[Accent_100]</textcolor>
-						<font>font20UB</font>
+						<font>font30B</font>
 					</control>
+
 					<control type="image" id="6">
 						<description>Default Seperator</description>
 						<height>2</height>
 						<include>Common_Color_BaseMediumHigh</include>
 					</control>
+
 					<control type="sliderex" id="8">
 						<description>Default Slider</description>
 						<width>300</width>
 						<include>Common_Settings_Label</include>
 					</control>					
 					
-				</control>
-				
-				<control type="group">	
-					<posx>1520</posx>
-					<include>Common_Animation_CenterMenu_Fade3</include>
-
-					<control type="image">
-						<posx>20</posx>
-						<posy>80</posy>
-						<width>360</width>
-						<height>2</height>					
-						<include>Common_Color_BaseWhite</include>
-					</control>					
-					
-					<control type="grouplist" id="9001">
-						<posy>100</posy>
-						<width>450</width>
-						<height>450</height>
-						<itemgap>3</itemgap>
-						
-						<control type="group">
-							<height>75</height>
-							
-							<control type="image">
-								<include>Common_Settings_Button_Backing</include>
-								<visible>Control.HasFocus(10)</visible>
-							</control>	
-							
-							<control type="button" id="10">
-								<description>ok button</description>
-								<include>Common_Settings_Button2</include>
-								<texturefocus>buttons/okFO.png</texturefocus>
-								<texturenofocus>buttons/okNF.png</texturenofocus>
-								<label>186</label>
-								<onup>12</onup>
-								<ondown>11</ondown>
-								<onright>9</onright>
-								<onleft>2</onleft>
-							</control>
-
-						</control>
-						
-						<control type="group">
-							<height>75</height>
-
-							<control type="image">
-								<include>Common_Settings_Button_Backing</include>
-								<visible>Control.HasFocus(11)</visible>
-							</control>								
-
-							<control type="button" id="11">
-								<description>cancel button</description>
-								<include>Common_Settings_Button2</include>
-								<texturefocus>buttons/cancelFO.png</texturefocus>
-								<texturenofocus>buttons/cancelNF.png</texturenofocus>
-								<label>222</label>
-								<onup>10</onup>
-								<ondown>12</ondown>
-								<onright>9</onright>
-								<onleft>2</onleft>
-							</control>
-
-						</control>					
-
-						<control type="group">
-							<height>75</height>
-
-							<control type="image">
-								<include>Common_Settings_Button_Backing</include>
-								<visible>Control.HasFocus(12)</visible>
-							</control>								
-
-							<control type="button" id="12">
-								<description>defaults button</description>
-								<include>Common_Settings_Button2</include>
-								<texturefocus>buttons/defaultsFO.png</texturefocus>
-								<texturenofocus>buttons/defaultsNF.png</texturenofocus>
-								<label>31161</label>
-								<onup>11</onup>
-								<ondown>10</ondown>
-								<onright>9</onright>
-								<onleft>2</onleft>
-							</control>
-
-						</control>	
-						
-					</control>
-
-					<control type="image">
-						<posx>20</posx>
-						<posy>400</posy>
-						<width>360</width>
-						<height>360</height>
-						<texture fallback="DefaultAddon.png">$INFO[ListItem.Icon]</texture>
-						<aspectratio align="center" aligny="bottom">keep</aspectratio>
-						<bordertexture border="5" colordiffuse="$VAR[Accent_100]">colors/color_white.png</bordertexture>
-						<bordersize>5</bordersize>
-					</control>					
-					
-				</control>		
+				</control>	
 
 			</control>
+
+            <control type="image">
+                <top>720</top>          
+                <width>1520</width>
+                <height>60</height>
+                <texture colordiffuse="BaseMediumMid">colors/color_white.png</texture>          
+            </control>
+
+            <control type="image">
+                <top>720</top>          
+                <width>1520</width>
+                <height>60</height>
+                <texture colordiffuse="$VAR[Accent_100]">colors/color_white.png</texture>   
+                <visible>Control.HasFocus(10) | Control.HasFocus(11) | Control.HasFocus(12)</visible>       
+            </control>
+
+			<control type="grouplist" id="9001">			
+				<top>720</top>
+				<width>1520</width>
+				<itemgap>0</itemgap>
+				<orientation>horizontal</orientation>
+				<onup>9</onup>
+				<ondown>9</ondown>
+				<align>center</align>
+
+                <include content="InfoDialog_Button">
+                    <param name="button_id" value="10"/>  
+                    <param name="width" value="506"/>
+                    <param name="label" value="186"/>          
+                </include>
+
+                <include content="InfoDialog_Button">
+                    <param name="button_id" value="11"/>  
+                    <param name="width" value="508"/>
+                    <param name="label" value="222"/>          
+                </include>
+
+                <include content="InfoDialog_Button">
+                    <param name="button_id" value="12"/>  
+                    <param name="width" value="506"/>  
+                    <param name="label" value="31161"/>       
+                </include>
+				
+			</control>	
 			
 		</control>
 		

@@ -7,76 +7,49 @@
         <include>BG_Fanart_1080</include>
 		<include>FanartOverlay</include>
 
-		<control type="image">	
-			<include>Common_Animation_CenterMenu_Stage1</include>
-			<width>1920</width>
-			<height>760</height>
-			<posy>250</posy>
-			<texture colordiffuse="BaseMid">colors/color_white.png</texture>			
-		</control>
-
 		<control type="group">	
-			<posy>260</posy>
-			<include>Common_Animation_CenterMenu_Stage2</include>
+			<top>150</top>
+			<left>200</left>
 
-			<control type="image">					
-				<width>2120</width>
-				<height>740</height>
-				<posx>-200</posx>
-				<texture colordiffuse="BaseWhite">colors/color_white.png</texture>			
-			</control>				
+            <include content="Common_Window_Backing">
+                <param name="width" value="1520"/>
+                <param name="height" value="780"/>  
+                <param name="logo_visible" value="false"/> 
+                <param name="header" value=""/> 
+                <param name="header_id" value="20"/>
+                <param name="header_width" value="1480"/>    
+                <param name="header_height" value="75"/>             
+            </include>  						
 
-			<control type="image">					
-				<width>2120</width>
-				<height>75</height>
-				<posx>-200</posx>
-				<include>Common_Color_BaseMediumHigh</include>		
-			</control>
-			
-			<control type="image">					
-				<width>2</width>
-				<height>720</height>
-				<posx>999</posx>
-				<include>Common_Color_BaseMediumHigh</include>		
-			</control>
+            <include content="Common_Separator_Vertical">
+                <param name="top" value="75"/> 
+                <param name="left" value="759"/>   
+                <param name="height" value="705"/>
+            </include>
 
-			<control type="image">					
-				<width>2</width>
-				<height>55</height>
-				<posx>999</posx>
-				<posy>20</posy>
-				<include>Common_Color_BaseWhite</include>		
-			</control>			
-			
-			<control type="image">
-				<posx>120</posx>
-				<posy>100</posy>
-				<width>840</width>
-				<height>580</height>
-				<include>Common_Color_BaseLow</include>
-			</control>			
+            <include content="Common_Separator_Horizontal">
+                <param name="top" value="135"/>   
+                <param name="width" value="1520"/>
+            </include>
+
+            <include content="Common_Separator_Horizontal">
+                <param name="top" value="720"/>   
+                <param name="width" value="1520"/>
+            </include>
 
 			<control type="scrollbar" id="18">
-				<posx>950</posx>
-				<posy>100</posy>
-				<height>580</height>
+				<left>749</left>
+				<top>135</top>
+				<height>585</height>
 				<onleft>20</onleft>
 				<onright>21</onright>
 				<width>10</width>
 			</control>			
-			
-			<control type="image">
-				<posx>1040</posx>
-				<posy>100</posy>
-				<width>840</width>
-				<height>580</height>
-				<include>Common_Color_BaseLow</include>
-			</control>	
 
             <control type="scrollbar" id="19">
-                <posx>1870</posx>
-                <posy>100</posy>
-                <height>580</height>
+                <left>1510</left>
+                <top>135</top>
+                <height>585</height>
                 <onleft>21</onleft>
                 <onright>20</onright>
                 <width>10</width>
@@ -84,13 +57,11 @@
 			
 			<control type="group">
 				<description>Left panel</description>			
-				<include>Common_Animation_CenterMenu_Fade1</include>
-				<posx>120</posx>
 				
 				<control type="label" id="101">
 					<description>Header Label</description>
-					<posx>15</posx>
-					<width>810</width>
+					<left>15</left>
+					<width>700</width>
 					<height>75</height>
 					<font>font45R</font>
 				</control>				
@@ -101,22 +72,17 @@
 					<onleft>21</onleft>
 					<onright>18</onright>
 					<pagecontrol>18</pagecontrol>
-					<itemlayout height="85" width="830">
+					<itemlayout height="85" width="749">
 					
 						<include>Common_FileManager_ItemLayout</include>
 						
 					</itemlayout>
 					
-					<focusedlayout height="85" width="830">
-					
-						<control type="image">
-							<width>830</width>
-							<height>85</height>
-							<include>Common_Color_Accent</include>
-							<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(20)">Conditional</animation>
-						</control>
-						
-						<include>Common_FileManager_FocusedLayout</include>
+					<focusedlayout height="85" width="749">
+
+			            <include content="Common_FileManager_FocusedLayout">
+			                <param name="panel_id" value="20"/>          
+			            </include>
 						
 					</focusedlayout>
 					
@@ -130,13 +96,12 @@
 			
 			<control type="group">
 				<description>Right panel</description>			
-				<include>Common_Animation_CenterMenu_Fade2</include>
-				<posx>1040</posx>			
+				<left>761</left>			
 			
 				<control type="label" id="102">
 					<description>Header Label</description>
-					<posx>15</posx>
-					<width>810</width>
+					<left>15</left>
+					<width>700</width>
 					<height>75</height>
 					<font>font45R</font>
 				</control>			
@@ -155,14 +120,9 @@
 						
 					<focusedlayout height="85" width="830">
 						
-						<control type="image">
-							<width>830</width>
-							<height>85</height>
-							<include>Common_Color_Accent</include>
-							<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(21)">Conditional</animation>
-						</control>
-						
-						<include>Common_FileManager_FocusedLayout</include>
+			            <include content="Common_FileManager_FocusedLayout">
+			                <param name="panel_id" value="21"/>          
+			            </include>
 						
 					</focusedlayout>
 						
@@ -177,8 +137,7 @@
 		</control>
 		
 		<include>Common_LeftBar</include>		
-        <include condition="!Window.Previous(fullscreenvideo) + !Window.Previous(slideshow) + Skin.HasSetting(MetroAnimations)">Common_Splash</include>		
-		
+				
     </controls>
 	
 </window>

@@ -2,10 +2,8 @@
 
 <window id="502">
     <defaultcontrol always="true">50</defaultcontrol>
-    <views>50,51,52,53,54,55,56,57,58,591,592</views>
-	
-    <!--Animation-->
-    <include condition="!Window.Previous(fullscreenvideo) + !Window.Previous(slideshow) + Skin.HasSetting(MetroAnimations)">Common_Animation_Splash_Flip</include>
+    <menucontrol>9050</menucontrol>
+    <views>50,51,53,54,55,56,57,58,591,592</views>
 
     <!--Background Area-->
     <controls>
@@ -17,26 +15,28 @@
 		
         <!--Available Views-->
         <control type="group">
-            <include>Viewtype_List</include>
+
             <!-- ID 50 -->
-            <include>Viewtype_Album</include>
-            <!-- ID 58 -->
-            <include>Viewtype_Tiles</include>
-            <!-- ID 55 -->
-            <include>Viewtype_Dialog</include>
-            <!-- ID 53 -->
-            <include>Viewtype_Fanart</include>
+            <include>Viewtype_List</include>
             <!-- ID 51 -->
-            <include>Viewtype_Panel_Album</include>
+            <include>Viewtype_Fanart</include>
+            <!-- ID 53 -->
+            <include>Viewtype_Dialog</include>
             <!-- ID 54 -->
-            <include>Viewtype_Panel_Genre</include>
+            <include>Viewtype_Panel_Album</include>
+            <!-- ID 55 -->
+            <include>Viewtype_Tiles</include>
             <!-- ID 56 -->
-            <include>Viewtype_Showcase_Album</include>
+            <include>Viewtype_Panel_Genre</include>
             <!-- ID 57 -->
-            <include>Viewtype_Thumbnail</include>
+            <include>Viewtype_Showcase_Album</include>
+            <!-- ID 58 -->
+            <include>Viewtype_Album</include>
             <!-- ID 591 -->
-            <include>Viewtype_Thumbnail_Album</include>
+            <include>Viewtype_Thumbnail</include>
             <!-- ID 592 -->
+            <include>Viewtype_Thumbnail_Album</include>
+            
         </control>
 
         <!--Options Menu-->
@@ -46,9 +46,6 @@
         <!--Sort Overlays-->
         <include>Sort_Panel</include>
         <include>Sort_Panel_Alt</include>
-
-        <!--Splash Screen-->
-        <include condition="!Window.Previous(fullscreenvideo) + !Window.Previous(slideshow) + Skin.HasSetting(MetroAnimations)">Common_Splash</include>
 
 	</controls>
 	

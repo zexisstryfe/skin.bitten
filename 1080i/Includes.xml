@@ -2,38 +2,34 @@
 
 <includes>
     <!-- Views -->
+
+    <!-- id 50 -->    
     <include file="Viewtype_List.xml" />
-    <!-- id 50 -->
-    <include file="Viewtype_List_Pics.xml" />
-    <!-- id 50 -->
-    <include file="Viewtype_Fanart.xml" />
     <!-- id 51 -->
-    <include file="Viewtype_Dialog.xml" />
+    <include file="Viewtype_Fanart.xml" />
     <!-- id 53 -->
+    <include file="Viewtype_Dialog.xml" />
+    <!-- id 54 -->
     <include file="Viewtype_Panel.xml" />
-    <!-- id 54 -->
     <include file="Viewtype_Panel_Album.xml" />
-    <!-- id 54 -->
+    <!-- id 55 -->
     <include file="Viewtype_Tiles.xml" />
-    <!-- id 55 -->
     <include file="Viewtype_Photos.xml" />
-    <!-- id 55 -->
-    <include file="Viewtype_Panel_Genre.xml" />
     <!-- id 56 -->
+    <include file="Viewtype_Panel_Genre.xml" />
+    <!-- id 57 -->
     <include file="Viewtype_Showcase.xml" />
-    <!-- id 57 -->
     <include file="Viewtype_Showcase_Album.xml" />
-    <!-- id 57 -->
+    <!-- id 58 -->
     <include file="Viewtype_Logo.xml" />
-    <!-- id 58 -->
     <include file="Viewtype_Album.xml" />
-    <!-- id 58 -->
-    <include file="Viewtype_Fanart_Banner.xml" />
     <!-- id 590 -->
-    <include file="Viewtype_Thumbnail.xml" />
+    <include file="Viewtype_Fanart_Banner.xml" />
     <!-- id 591 -->
-    <include file="Viewtype_Thumbnail_Album.xml" />
+    <include file="Viewtype_Thumbnail.xml" />
     <!-- id 592 -->
+    <include file="Viewtype_Thumbnail_Album.xml" />
+
     <!-- PVR Views -->
     <include file="Viewtype_PVR_TVChannel.xml" />
     <include file="Viewtype_PVR_RadioChannel.xml" />
@@ -55,8 +51,9 @@
     <include file="Includes_Content.xml" />
     <include file="Includes_Dialogs.xml" />
     <include file="Includes_Home.xml" />
-    <include file="Includes_Hub.xml" />
+    <include file="Includes_VideoLyrics.xml" />
     <include file="Includes_Options.xml" />
+    <include file="Includes_OSD.xml" />
     <include file="Includes_Script.xml" />
     <include file="Includes_Settings.xml" />
     <include file="Includes_Sort.xml" />
